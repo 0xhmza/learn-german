@@ -223,7 +223,7 @@ class Logger:
     def error(self, message): emit(f'{self.episode}: {redact(message)}')
 
 
-def download_episode(url):
+def download_episode(url, resume=True):
     number = int(url.rsplit('-', 1)[1])
     episode = ('' if SERIES == 'simpsons' and SEASON_NUMBER == 6 else SERIES + '.') + f's{SEASON_NUMBER:02d}e{number:02d}'
     destination = MEDIA / (f'simpsons.{episode}.mp4' if SERIES == 'simpsons' and SEASON_NUMBER == 6 else f'{episode}.mp4')
@@ -261,7 +261,7 @@ def download_episode(url):
         'socket_timeout': 30, 'retries': 5, 'fragment_retries': 5,
         'file_access_retries': 12, 'retry_sleep_functions': {'file_access': lambda count: min(count, 4)},
         'concurrent_fragment_downloads': 4, 'skip_unavailable_fragments': False,
-        'continuedl': True, 'overwrites': False,
+        'continuedl': resume, 'overwrites': False,
         'hls_prefer_native': True, 'hls_use_mpegts': False,
         'postprocessors': [{'key': 'FFmpegVideoRemuxer', 'preferedformat': 'mp4'}],
         'progress_hooks': [progress],
@@ -281,6 +281,7 @@ def main():
     parser.add_argument('--season', type=int)
     parser.add_argument('--episodes', help='Comma-separated episode numbers; default: all listed episodes')
     parser.add_argument('--workers', type=int, default=2, choices=[1, 2, 3])
+    parser.add_argument('--restart-partial', action='store_true', help='Start unfinished files over while retaining verified videos.')
     args = parser.parse_args()
     SERIES = args.series
     SEASON_NUMBER = args.season if args.season is not None else (6 if SERIES == 'simpsons' else 3)
@@ -312,7 +313,7 @@ def main():
     emit(f'Found {len(urls)} requested episodes; {args.workers} concurrent downloads.')
     failures = []
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
-        futures = {executor.submit(download_episode, url): url for url in urls}
+        futures = {executor.submit(download_episode, url, not args.restart_partial): url for url in urls}
         for future in as_completed(futures):
             url = futures[future]
             episode = ('' if SERIES == 'simpsons' and SEASON_NUMBER == 6 else SERIES + '.') + f's{SEASON_NUMBER:02d}e{int(url.rsplit("-", 1)[1]):02d}'

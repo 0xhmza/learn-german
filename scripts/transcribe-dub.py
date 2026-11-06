@@ -86,31 +86,60 @@ def segment_record(segment, offset=0):
             'words': [{'start': word.start + offset, 'end': word.end + offset, 'word': word.word, 'probability': word.probability} for word in segment.words or []]}
 
 
-def refine_gaps(model, audio, segments, duration):
+def refine_gaps(model, audio, segments, duration, pipeline=None, batch_size=4):
     """Recheck anomalous timestamps against an uncropped audio window.
 
     VAD concatenation can attach a sentence's first word to an earlier speech
     island. A second recognition pass includes the intervening original audio;
     it is accepted only when it agrees with the sentence, not an external script.
     """
-    refined = []
     normalize = lambda text: re.sub(r'\W+', '', text.casefold())
-    for segment in segments:
+    windows = {}
+    for index, segment in enumerate(segments):
         words = segment.get('words') or []
         gaps = [(words[index + 1]['start'] - word['end'], index) for index, word in enumerate(words[:-1])]
         mean_confidence = sum(float(word.get('probability', 0)) for word in words) / max(1, len(words))
         uncertain = mean_confidence < 0.82 or any(len(re.sub(r'\W', '', word['word'])) > 2 and word['probability'] < 0.55 for word in words)
         timing_gap = bool(gaps and max(gaps)[0] >= 1.5)
         if not timing_gap and not uncertain:
+            continue
+        gap, word_index = max(gaps) if gaps else (0, 0)
+        start = max(0, words[word_index + 1]['start'] - 2 if timing_gap and gap > 3 else segment['start'] - 0.6)
+        end = min(duration, segment['end'] + 0.6)
+        windows[index] = (start, end, timing_gap, mean_confidence)
+
+    batched = {}
+    if pipeline and windows:
+        # The batched API returns the original clip offset in its seek field.
+        # Skip duplicate offsets and clips that exceed its 30-second limit.
+        by_seek = {}
+        for index, (start, end, _, _) in windows.items():
+            seek = int(int(start * 16000) / 16000 * model.frames_per_second)
+            by_seek.setdefault(seek, []).append(index)
+        unique = {seek:indices[0] for seek,indices in by_seek.items()
+                  if len(indices) == 1 and 0.02 < windows[indices[0]][1] - windows[indices[0]][0] <= 30}
+        clips = [{'start':windows[index][0], 'end':windows[index][1]} for index in unique.values()]
+        if clips:
+            batched = {index:[] for index in unique.values()}
+            candidates, _ = pipeline.transcribe(audio, language='de', task='transcribe', clip_timestamps=clips,
+                                                beam_size=10, temperature=0.0, word_timestamps=True, batch_size=batch_size)
+            for candidate in candidates:
+                if candidate.seek in unique:
+                    batched[unique[candidate.seek]].append(segment_record(candidate))
+
+    refined = []
+    for index, segment in enumerate(segments):
+        if index not in windows:
             refined.append(segment)
             continue
-        gap, index = max(gaps) if gaps else (0, 0)
-        start = max(0, words[index + 1]['start'] - 2 if timing_gap and gap > 3 else segment['start'] - 0.6)
-        end = min(duration, segment['end'] + 0.6)
-        candidates, _ = model.transcribe(audio[round(start * 16000):round(end * 16000)], language='de', task='transcribe',
-                                        beam_size=10, temperature=0.0, word_timestamps=True,
-                                        vad_filter=False, condition_on_previous_text=False)
-        candidates = [segment_record(candidate, start) for candidate in candidates]
+        start, end, timing_gap, mean_confidence = windows[index]
+        if index in batched:
+            candidates = batched[index]
+        else:
+            candidates, _ = model.transcribe(audio[round(start * 16000):round(end * 16000)], language='de', task='transcribe',
+                                            beam_size=10, temperature=0.0, word_timestamps=True,
+                                            vad_filter=False, condition_on_previous_text=False)
+            candidates = [segment_record(candidate, start) for candidate in candidates]
         if not timing_gap:
             # Context can include a neighboring utterance; retain only words in
             # this utterance's own time window rather than duplicate its neighbor.
@@ -138,7 +167,10 @@ def transcribe(model, pipeline, video, episode, args, status):
     raw_path = WORK / f'{episode}.words.json'
     raw = read_json(raw_path, {})
     model_source = read_json(args.model / 'source.json', {'repository': 'Systran/faster-whisper-large-v3'})
-    reusable = raw.get('complete') and raw.get('pipeline_version') == 3 and raw.get('video_sha256') == fingerprint and raw.get('model') == model_source and not args.sample_seconds
+    refine_mode = 'batched' if getattr(args, 'batch_refine', False) else 'serial'
+    reusable = (raw.get('complete') and raw.get('pipeline_version') == 3 and raw.get('video_sha256') == fingerprint
+                and raw.get('model') == model_source and not args.sample_seconds
+                and (args.rebuild_from_cache or raw.get('refinement', 'serial') == refine_mode))
     started = time.monotonic()
     if reusable:
         print(f'{episode}: reusing completed audio transcript', flush=True)
@@ -160,7 +192,7 @@ def transcribe(model, pipeline, video, episode, args, status):
         segments, info = pipeline.transcribe(audio, **options)
         raw = {'episode': episode, 'model': model_source, 'pipeline_version': 3, 'video': video.name, 'video_sha256': fingerprint,
                'language': 'de', 'task': 'transcribe', 'sample_seconds': args.sample_seconds,
-               'duration': duration, 'complete': False, 'segments': [], 'created_at': datetime.now(timezone.utc).isoformat()}
+               'duration': duration, 'complete': False, 'segments': [], 'refinement': refine_mode, 'created_at': datetime.now(timezone.utc).isoformat()}
         last_output = 0
         for segment in segments:
             item = segment_record(segment)
@@ -173,7 +205,8 @@ def transcribe(model, pipeline, video, episode, args, status):
                 status['episodes'][episode] = {'status': 'transcribing', 'audio_seconds': segment.end, 'duration': duration}
                 write_json(WORK / 'status.json', status)
                 last_output = now
-        raw['segments'] = refine_gaps(model, audio, raw['segments'], duration)
+        raw['segments'] = refine_gaps(model, audio, raw['segments'], duration,
+                                     pipeline if refine_mode == 'batched' else None, min(8,args.batch_size))
         raw['complete'] = True
         raw['elapsed_seconds'] = round(time.monotonic() - started, 2)
         write_json(WORK / (f'pilot.{episode}.words.json' if args.sample_seconds else raw_path.name), raw)
@@ -224,6 +257,7 @@ def main():
     parser.add_argument('--episodes')
     parser.add_argument('--model', type=Path, default=DEFAULT_MODEL)
     parser.add_argument('--batch-size', type=int, default=4)
+    parser.add_argument('--batch-refine', action='store_true', help='Recheck uncertain audio windows in GPU batches.')
     parser.add_argument('--sample-seconds', type=float, default=0, help='Create a pilot without replacing installed subtitles.')
     parser.add_argument('--rebuild-from-cache', action='store_true', help='Apply text corrections from cached recognized words without rerunning the model.')
     args = parser.parse_args()
