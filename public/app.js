@@ -7,6 +7,8 @@
   const C = window.StoryCatalog;
   const CS = window.CaptionStyle;
   const store = window.LibraryStore;
+  const remote = window.SecureLibrary;
+  const stateKey = remote ? 'sprechzimmer.remote.state' : 'sprechzimmer.state';
   const LANGUAGES = {ar:'Arabic',en:'English',fr:'French',es:'Spanish',tr:'Turkish',fa:'Persian',ur:'Urdu',ru:'Russian',uk:'Ukrainian',it:'Italian',pt:'Portuguese',pl:'Polish',hi:'Hindi',zh:'Chinese',ja:'Japanese',ko:'Korean'};
   const SAMPLE = [
     ['Guten Morgen! Bist du bereit für einen neuen Tag?','صباح الخير! هل أنت مستعد ليوم جديد؟'],
@@ -20,11 +22,11 @@
     ['Kein Problem. Ich wünsche dir einen schönen Tag.','لا مشكلة. أتمنى لك يومًا جميلًا.'],
     ['Jeden Tag ein bisschen. So wird es leichter.','قليلٌ كل يوم. هكذا يصبح الأمر أسهل.']
   ];
-  const demo = {id:'demo',title:'A little German, every day',de:SAMPLE.map((pair,i) => ({start:i*4+0.2,end:i*4+3.7,text:pair[0]})),tracks:{ar:{code:'ar',name:'Arabic',source:'Original sample · translated',cues:SAMPLE.map((pair,i) => ({start:i*4+0.2,end:i*4+3.7,text:pair[1]}))}},video:'/practice.mp4'};
+  const demo = {id:'demo',title:'A little German, every day',de:SAMPLE.map((pair,i) => ({start:i*4+0.2,end:i*4+3.7,text:pair[0]})),tracks:{ar:{code:'ar',name:'Arabic',source:'Original sample · translated',cues:SAMPLE.map((pair,i) => ({start:i*4+0.2,end:i*4+3.7,text:pair[1]}))}},video:'./practice.mp4'};
   const defaults = {last:'demo',saved:[],progress:{},settings:{mother:'ar',speed:1,captionMode:'dual',showSecond:true,autoPause:false,autoFollow:true,theme:'system',volume:1,muted:false,collection:'simpsons-s06',captions:CS.defaults},timing:{},reviews:0,welcomed:false};
   let state = structuredClone(defaults), storageWarning = false;
   try {
-    const saved = JSON.parse(localStorage.getItem('sprechzimmer.state') || 'null');
+    const saved = JSON.parse(localStorage.getItem(stateKey) || 'null');
     if (saved && saved.version === 1) state = {...defaults,...saved,settings:{...defaults.settings,...saved.settings}};
   } catch {storageWarning = true;}
   let localEpisodes = new Map(), folderEpisodes = new Map();
@@ -42,7 +44,7 @@
   function feedback(message) {$('player-feedback').textContent = message;$('player-feedback').hidden = false;clearTimeout(feedbackTimer);feedbackTimer = setTimeout(() => $('player-feedback').hidden = true,1400);}
   function notice(message) {$('app-status').textContent = message; $('app-status').hidden = !message;}
   function persist() {
-    try {localStorage.setItem('sprechzimmer.state',JSON.stringify({...state,version:1}));}
+    try {localStorage.setItem(stateKey,JSON.stringify({...state,progress:remote ? {} : state.progress,version:1}));}
     catch {if (!persistFailed) {toast('Browser storage is full or unavailable. Export a backup to keep this session.'); persistFailed = true;}}
   }
   function options(select,includeGerman = false) {
@@ -93,7 +95,21 @@
     renderDashboard();
   }
   async function refreshFolder(silent = false) {
-    try {const response = await fetch('/api/library');if (!response.ok) throw new Error('Library is unavailable.');const data = await response.json();folderEpisodes = new Map(data.episodes.map(episode => [episode.id,episode]));renderLibrary();if (!silent) {await loadEpisode(current.id);toast('Local media folder refreshed.');}}
+    try {
+      let episodes;
+      if (remote) episodes = await remote.list(!silent);
+      else {
+        const response = await fetch('/api/library');
+        if (!response.ok) throw new Error('Library is unavailable.');
+        ({episodes} = await response.json());
+      }
+      folderEpisodes = new Map(episodes.map(episode => [episode.id,episode]));
+      renderLibrary();
+      if (!silent) {
+        await loadEpisode(current.id);
+        toast(remote ? 'Encrypted library refreshed.' : 'Local media folder refreshed.');
+      }
+    }
     catch (error) {if (!silent) toast(error.message);}
   }
   async function readSubtitles(file,language = 'de',encoding = 'auto') {
@@ -154,7 +170,7 @@
       $('de-offset').value = offset();$('second-offset').value = secondOffset();
       $('video-badge').hidden = id !== 'demo';
       $('practice-scene').hidden = id !== 'demo';
-      $('episode-meta').textContent = id === 'demo' ? 'Original silent practice clip · German + Arabic · 40 sec' : `Season ${String(entry.season).padStart(2,'0')} · Episode ${String(entry.number).padStart(2,'0')} · ${source ? 'Local German video' : 'Video missing'}`;
+      $('episode-meta').textContent = id === 'demo' ? 'Original silent practice clip · German + Arabic · 40 sec' : `Season ${String(entry.season).padStart(2,'0')} · Episode ${String(entry.number).padStart(2,'0')} · ${source ? remote && !source.startsWith('blob:') ? 'Encrypted German video' : 'Local German video' : 'Video missing'}`;
       $('player-empty').hidden = !!source;
       if (source) {
         const resume = Number.isFinite(forceTime) ? forceTime : state.progress[id]?.time || 0;
@@ -262,7 +278,14 @@
     if (!video.paused) frameHandle = video.requestVideoFrameCallback ? video.requestVideoFrameCallback(frame) : requestAnimationFrame(frame);
   }
   function cancelFrame() {if (frameHandle !== null) {if (video.cancelVideoFrameCallback) video.cancelVideoFrameCallback(frameHandle);else cancelAnimationFrame(frameHandle);frameHandle = null;}}
-  function saveProgress() {if (loadedVideo && Number.isFinite(video.duration)) {state.progress[current.id] = {time:video.currentTime,duration:video.duration,updated:Date.now()};persist();}}
+  function saveProgress() {
+    if (!loadedVideo || !Number.isFinite(video.duration)) return;
+    const previous = state.progress[current.id];
+    if (previous?.time === video.currentTime && previous.duration === video.duration) return;
+    state.progress[current.id] = {time:video.currentTime,duration:video.duration,updated:Date.now()};
+    remote?.saveProgress(state.progress);
+    persist();
+  }
   function syncControls() {
     for (const id of ['play','seek','speed','mute','volume','skip-back','skip-forward']) $(id).toggleAttribute('disabled',!loadedVideo);
     for (const id of ['previous','replay','next','loop','auto-pause','player-save']) $(id).disabled = !loadedVideo || !cues.length;
@@ -309,7 +332,7 @@
     const available = C.episodes.map(episode => episode.id).filter(id => meta(id).hasVideo);
     continueID = P.continueEpisode(state.progress,available,state.last);
     const continueEntry = C.get(continueID), progress = state.progress[continueID], resuming = progress?.time > 0 && progress.time < progress.duration*0.95;
-    $('continue-tag').textContent = resuming ? 'PICK UP WHERE YOU LEFT OFF' : available.length ? `${available.length} LOCAL EPISODES · READY TO WATCH` : 'YOUR FIRST LITTLE STEP';
+    $('continue-tag').textContent = resuming ? 'PICK UP WHERE YOU LEFT OFF' : available.length ? `${available.length} EPISODES · READY TO WATCH` : 'YOUR FIRST LITTLE STEP';
     $('continue-title').textContent = continueID === 'demo' ? 'A little German, every day.' : `${continueEntry.seriesTitle}.`;
     if (continueID !== 'demo') $('continue-tag').textContent = `SEASON ${String(continueEntry.season).padStart(2,'0')} · EPISODE ${String(continueEntry.number).padStart(2,'0')} · ${resuming ? 'CONTINUE' : 'READY TO WATCH'}`;
     $('continue-description').textContent = continueID === 'demo' ? 'Try the silent practice clip, or add a German story of your own.' : 'A familiar story, a new way to listen. German audio, with subtitles at your pace.';
@@ -465,6 +488,7 @@
         if (/^[a-f0-9]{64}$/.test(value.deReference || '')) state.timing[id].deReference = value.deReference;
       }
       state.reviews = Math.max(state.reviews,Number.isSafeInteger(data.state.reviews) && data.state.reviews > 0 ? data.state.reviews : 0);
+      remote?.saveProgress(state.progress);
       persist();applySettings();updateStats();renderLibrary();renderSaved();await loadEpisode(current.id);$('backup-status').textContent = 'Backup restored. Videos already on this device were preserved.';
     } catch (error) {$('backup-status').textContent = `Could not restore: ${error.message}`;}
   }
@@ -563,7 +587,27 @@
     navigate(initialPage,{replace:true,focus:false});
     try {localEpisodes = new Map((await store.all()).map(episode => [episode.id,episode]));} catch {notice('Browser storage is unavailable. Folder videos and the practice clip still work. Enable browser storage to import and save files.');}
     if (storageWarning) notice('Previous browser settings could not be read. You can restore an exported backup.');
-    await refreshFolder(true);await loadEpisode(C.get(state.last) ? state.last : 'demo');refreshSecondaryIndex();
+    if (remote) {
+      $('translate-open').hidden = true;
+      await loadEpisode('demo');
+      await remote.start({
+        onOpen:() => video.pause(),
+        onSync:message => {$('secure-open').title = message;},
+        async onConnection(progress,message = '') {
+          loadedVideo = false;
+          video.pause();
+          state.progress = {...progress};
+          await refreshFolder(true);
+          const next = P.continueEpisode(state.progress,[...folderEpisodes.keys()],state.last);
+          await loadEpisode(next);
+          notice(message);
+        }
+      });
+    } else {
+      await refreshFolder(true);
+      await loadEpisode(C.get(state.last) ? state.last : 'demo');
+    }
+    refreshSecondaryIndex();
   }
   init().catch(error => notice(`Startup failed: ${error.message}`));
 })();

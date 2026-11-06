@@ -2,6 +2,8 @@
 
 A local German learning platform: watch your own German videos with German and mother-language subtitles, replay individual sentences, and collect useful expressions.
 
+The `github-pages-sftp` branch also supports a [static GitHub Pages frontend with encrypted SFTP media and progress](docs/github-pages.md).
+
 ## Start
 
 Install Node.js 22 or later. On Windows, double-click `Start-Sprechzimmer.cmd`, or run from this folder:
@@ -10,7 +12,7 @@ Install Node.js 22 or later. On Windows, double-click `Start-Sprechzimmer.cmd`, 
 npm start
 ```
 
-Open **http://127.0.0.1:4173** in a modern browser. There are no npm dependencies to install. The server listens only on this computer. Keep the terminal running while using it. To choose another port:
+Open **http://127.0.0.1:4173** in a modern browser. The local app uses the vendored player and starts without installing packages. The server listens only on this computer. Keep the terminal running while using it. To choose another port:
 
 ```powershell
 $env:PORT = '4174'
@@ -23,7 +25,7 @@ Use the same browser, hostname, and port each time: browser imports and learning
 
 - A welcome guide with translation-language setup, a dashboard with continue-watching and actual learning statistics, and dedicated watching and sentence-collection pages. Back/forward navigation and page links work locally.
 - Light and dark appearances. The first visit follows the system theme; the appearance button saves your preference without a page reload.
-- A custom player with seeking, volume, speed, captions, optional picture in picture, and sentence controls **inside fullscreen**. Controls remain visible in fullscreen and support touch and keyboard use.
+- A Media Chrome player with seeking, volume, speed, captions, optional picture in picture, and sentence controls in fullscreen. Controls fade during idle playback. **Aa** adjusts subtitle font, size, colors, opacity and edges.
 - Local MP4/WebM playback with efficient byte-range streaming and seeking.
 - German and translated captions, independent subtitle delays, German-only and captions-off modes, and right-to-left Arabic display.
 - Click-to-replay transcript, previous/next sentence, sentence looping, auto-pause at the end of each line, and 0.5×–2× playback.
@@ -44,7 +46,7 @@ The library also has **SpongeBob Schwammkopf, season 3**, with 20 episode slots 
 
 The subtitle survey is retained in `artifacts/spongebob/subtitle-survey.json`. Available downloadable German series subtitles were not found in that survey; entries offering AI translation are not counted as existing tracks. German captions are generated directly from each German video's audio with the installed local Whisper model and labeled AI generated. They are not human verified.
 
-The two downloaded Arabic subtitle files describe the two individual stories in the first source video, not two full source episodes. `scripts/prepare-spongebob-subtitles.py` combines them into episode 1 with separate timing anchors for each story. Original files and provenance are retained. Other episodes show no Arabic track unless you import one or generate a translation. A downloaded English season archive is kept for reference and is not advertised as an aligned installed track: the source's episode order and cuts differ.
+All 20 SpongeBob episodes have Arabic tracks generated from the German transcripts with the local NLLB model. The player labels them as AI translations. The prior Arabic track for episode 1 is preserved in `media/translations/previous-subtitles/`. Run `scripts/translate-spongebob.py` with the installed transcription Python environment to regenerate the tracks from the pinned model in `.models/nllb-1.3b-int8/`.
 
 Resume German downloads and generate audio captions:
 
@@ -53,7 +55,7 @@ python scripts/download-season.py --series spongebob --season 3
 .\.venv-transcribe\Scripts\python.exe scripts/transcribe-dub.py --series spongebob --season 3 --wait-for-media
 python scripts/normalize-spongebob-spelling.py
 .\.venv-transcribe\Scripts\python.exe scripts/transcribe-dub.py --series spongebob --season 3 --rebuild-from-cache
-python scripts/prepare-spongebob-subtitles.py
+.\.venv-transcribe\Scripts\python.exe scripts/translate-spongebob.py
 node scripts/verify-collection.js spongebob-s03
 ```
 
@@ -109,7 +111,7 @@ These are **AI-generated audio transcripts**, not fully human-verified verbatim 
 
 The old installed German tracks are preserved in `media/dub-transcripts/previous-subtitles/`. Arabic subtitle files are retained. A completed, validated German track replaces the root-level `simpsons.s06eXX.de.srt` atomically. The library checks its hash against the transcription manifest, gives it a versioned URL, and prefers it over old cached folder copies or legacy restored copies. Obsolete German subtitle delays are reset when the new audio-based timing is first selected; Arabic delays and later adjustments are preserved. A new German subtitle file that you explicitly import remains your chosen override.
 
-The local transcription runtime is isolated in `.venv-transcribe`; the player still has no npm dependencies. Setup requires Python 3.11+, ffmpeg/ffprobe, and a compatible NVIDIA GPU. The current Windows setup uses the pinned packages in `requirements-transcribe.txt` and model files in `.models/whisper-large-v3/`:
+The local transcription runtime is isolated in `.venv-transcribe`. Setup requires Python 3.11+, ffmpeg/ffprobe, and a compatible NVIDIA GPU. The current Windows setup uses the pinned packages in `requirements-transcribe.txt` and model files in `.models/whisper-large-v3/`:
 
 ```powershell
 python -m venv .venv-transcribe
