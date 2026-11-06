@@ -259,6 +259,7 @@ def download_episode(url):
         'quiet': True, 'no_warnings': False, 'logger': Logger(episode),
         'http_headers': {'User-Agent': UA, 'Referer': player_url},
         'socket_timeout': 30, 'retries': 5, 'fragment_retries': 5,
+        'file_access_retries': 12, 'retry_sleep_functions': {'file_access': lambda count: min(count, 4)},
         'concurrent_fragment_downloads': 4, 'skip_unavailable_fragments': False,
         'continuedl': True, 'overwrites': False,
         'hls_prefer_native': True, 'hls_use_mpegts': False,
