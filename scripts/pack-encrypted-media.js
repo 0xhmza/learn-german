@@ -6,6 +6,7 @@ const {randomBytes} = require('node:crypto');
 const {parseArgs} = require('node:util');
 const {scanLibrary,safeFile} = require('../lib/library');
 const format = require('../public/secure-format');
+const catalog = require('../public/catalog');
 
 const MIME = {mp4:'video/mp4',m4v:'video/mp4',webm:'video/webm',srt:'text/plain',vtt:'text/plain'};
 
@@ -30,8 +31,12 @@ async function encryptAsset(source,output,key) {
   } finally {await input.close();}
 }
 
-async function pack({source,output,keyFile,log = console.log}) {
-  const episodes = (await scanLibrary(source)).filter(episode => episode.video);
+async function pack({source,output,keyFile,collections = [],log = console.log}) {
+  const selected = new Set(collections);
+  for (const id of selected) if (!catalog.collections.some(collection => collection.id === id)) {
+    throw new Error(`Unknown collection: ${id}`);
+  }
+  const episodes = (await scanLibrary(source)).filter(episode => episode.video && (!selected.size || selected.has(episode.collection)));
   if (!episodes.length) throw new Error('The source folder has no recognized episode videos.');
   const absoluteOutput = path.resolve(output);
   const keyPath = path.resolve(keyFile);
@@ -52,6 +57,19 @@ async function pack({source,output,keyFile,log = console.log}) {
   const key = await format.importKey(keyText);
   await fs.mkdir(output,{recursive:true});
   const result = [];
+  if (selected.size) {
+    const previous = await fs.readFile(path.join(output,'library.szc')).catch(error => {
+      if (error.code !== 'ENOENT') throw error;
+    });
+    if (previous) {
+      const index = await format.openJSON(key,'library',previous).catch(() => {
+        throw new Error('The key does not unlock the existing library index.');
+      });
+      if (index.version !== 1 || !Array.isArray(index.episodes)) throw new Error('Unsupported existing encrypted library index.');
+      const replacing = new Set(episodes.map(episode => episode.id));
+      result.push(...index.episodes.filter(episode => !replacing.has(episode.id)));
+    }
+  }
   async function asset(url) {
     const name = decodeURIComponent(url.split('?')[0].slice('/media/'.length));
     const file = await safeFile(source,name);
@@ -65,6 +83,8 @@ async function pack({source,output,keyFile,log = console.log}) {
     result.push({id:episode.id,video,tracks});
     log(`Packed ${episode.id} with ${tracks.length} subtitle tracks.`);
   }
+  const order = new Map(catalog.episodes.map((episode,index) => [episode.id,index]));
+  result.sort((a,b) => (order.get(a.id) ?? Infinity) - (order.get(b.id) ?? Infinity));
   const index = await format.sealJSON(key,'library', {version:1,episodes:result});
   if (index.length > format.chunkBytes) throw new Error('Encrypted library index is too large.');
   const temporary = path.join(output,`library.${randomBytes(8).toString('hex')}.tmp`);
@@ -74,9 +94,10 @@ async function pack({source,output,keyFile,log = console.log}) {
 }
 
 if (require.main === module) {
-  const {values} = parseArgs({options:{source:{type:'string',default:'media'},output:{type:'string',default:'encrypted-library'},'key-file':{type:'string',default:'.keys/media.key'}}});
-  pack({source:values.source,output:values.output,keyFile:values['key-file']}).then(episodes => {
-    console.log(`Packed ${episodes.length} episodes. Upload ${path.resolve(values.output)}. Keep ${path.resolve(values['key-file'])} private.`);
+  const {values} = parseArgs({options:{source:{type:'string',default:'media'},output:{type:'string',default:'encrypted-library'},'key-file':{type:'string',default:'.keys/media.key'},collections:{type:'string',default:''}}});
+  const collections = values.collections.split(',').map(id => id.trim()).filter(Boolean);
+  pack({source:values.source,output:values.output,keyFile:values['key-file'],collections}).then(episodes => {
+    console.log(`Encrypted index has ${episodes.length} episodes. Upload ${path.resolve(values.output)}. Keep ${path.resolve(values['key-file'])} private.`);
   }).catch(error => {console.error(error.message);process.exitCode = 1;});
 }
 

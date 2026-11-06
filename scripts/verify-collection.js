@@ -6,6 +6,7 @@ const {execFileSync} = require('node:child_process');
 const C = require('../public/catalog');
 const S = require('../public/subtitles');
 const {scanLibrary} = require('../lib/library');
+const options = new Set(process.argv.slice(3));
 const collection = C.collections.find(item => item.id === (process.argv[2] || 'spongebob-s03'));
 if (!collection) throw new Error('Choose a configured collection.');
 const root = path.join(__dirname,'..','media');
@@ -29,7 +30,7 @@ function fastStart(file,bytes) {
   const manifest = read(path.join(root,'dub-transcripts','manifest.json')),library = await scanLibrary(root);
   const translationFile = path.join(root,'translations','manifest.json');
   const translations = fs.existsSync(translationFile) ? read(translationFile).episodes : {};
-  const report = {checkedAt:new Date().toISOString(),collection:collection.id,episodes:[],missingVideos:[],missingGerman:[],errors:[]};
+  const report = {checkedAt:new Date().toISOString(),collection:collection.id,episodes:[],missingVideos:[],missingGerman:[],missingArabic:[],errors:[]};
   for (const entry of C.inCollection(collection.id)) {
     const {id,file} = entry,video = path.join(root,`${file}.mp4`),episode = {id,tracks:[]};
     if (!fs.existsSync(video)) {report.missingVideos.push(id);continue;}
@@ -40,7 +41,11 @@ function fastStart(file,bytes) {
       if (!episode.fastStart) throw new Error('MP4 metadata follows its media data; optimize for streaming.');
       for (const code of ['de','ar','en']) {
         const subtitle = path.join(root,`${file}.${code}.srt`);
-        if (!fs.existsSync(subtitle)) {if (code === 'de') report.missingGerman.push(id);continue;}
+        if (!fs.existsSync(subtitle)) {
+          if (code === 'de') report.missingGerman.push(id);
+          if (code === 'ar') report.missingArabic.push(id);
+          continue;
+        }
         const data = fs.readFileSync(subtitle),cues = S.parse(data.toString('utf8'));
         if (cues.length < 50 || cues.some(cue => cue.start < 0 || cue.end > episode.duration+0.3)) throw new Error(`${code}: invalid cue count or out-of-bounds subtitle timing.`);
         episode.tracks.push({code,cues:cues.length,first:cues[0].start,last:cues.at(-1).end});
@@ -62,6 +67,7 @@ function fastStart(file,bytes) {
   }
   report.summary = {videos:report.episodes.length,german:report.episodes.filter(e => e.tracks.some(t => t.code === 'de')).length,arabic:report.episodes.filter(e => e.tracks.some(t => t.code === 'ar')).length,fastStart:report.episodes.filter(e => e.fastStart).length,bytes:report.episodes.reduce((sum,e) => sum+(e.bytes || 0),0),humanVerified:false};
   fs.writeFileSync(path.join(root,`${collection.series}.s${String(collection.season).padStart(2,'0')}.validation.json`),JSON.stringify(report,null,2));
-  console.log(JSON.stringify({summary:report.summary,missingVideos:report.missingVideos,missingGerman:report.missingGerman,errors:report.errors},null,2));
-  if (report.errors.length || report.missingVideos.length || report.missingGerman.length) process.exitCode = 1;
+  console.log(JSON.stringify({summary:report.summary,missingVideos:report.missingVideos,missingGerman:report.missingGerman,missingArabic:report.missingArabic,errors:report.errors},null,2));
+  if (report.errors.length || report.missingGerman.length || (!options.has('--available-only') && report.missingVideos.length) ||
+      (options.has('--require-arabic') && report.missingArabic.length)) process.exitCode = 1;
 })().catch(error => {console.error(error.message);process.exitCode = 1;});

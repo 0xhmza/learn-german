@@ -6,11 +6,13 @@
 })(typeof window !== 'undefined' ? window : globalThis,() => {
   const collections = [
     {id:'simpsons-s06',series:'simpsons',name:'The Simpsons',season:6,count:25,description:'A familiar world. A little more German.',symbol:'✳'},
-    {id:'spongebob-s03',series:'spongebob',name:'SpongeBob Schwammkopf',season:3,count:20,description:'A little German, under the sea.',symbol:'▧'}
+    {id:'spongebob-s03',series:'spongebob',name:'SpongeBob Schwammkopf',season:3,count:20,description:'A little German, under the sea.',symbol:'▧'},
+    {id:'simpsons-s07',series:'simpsons',name:'The Simpsons',season:7,count:25,description:'More everyday German from Springfield.',symbol:'✳'},
+    {id:'spongebob-s04',series:'spongebob',name:'SpongeBob Schwammkopf',season:4,count:20,description:'More stories from Bikini Bottom.',symbol:'▧'}
   ];
   const episodes = collections.flatMap(collection => Array.from({length:collection.count},(_,index) => {
     const number = index+1, code = `s${String(collection.season).padStart(2,'0')}e${String(number).padStart(2,'0')}`;
-    const id = collection.series === 'simpsons' ? code : `${collection.series}.${code}`;
+    const id = collection.id === 'simpsons-s06' ? code : `${collection.series}.${code}`;
     return {id,collection:collection.id,series:collection.series,seriesTitle:collection.name,season:collection.season,number,file:`${collection.series}.${code}`,label:`${collection.name} · S${String(collection.season).padStart(2,'0')} E${String(number).padStart(2,'0')}`};
   }));
   const byID = new Map(episodes.map(episode => [episode.id,episode]));

@@ -1,4 +1,4 @@
-"""Translate the installed German SpongeBob subtitles into Arabic locally.
+"""Translate installed German dub subtitles into Arabic locally.
 
 Uses OpenNMT's pinned NLLB-1.3B CTranslate2 weights. No text or video is uploaded.
 Partial batches are resumable; existing subtitle tracks are backed up and only
@@ -87,9 +87,10 @@ class Translator:
         return output
 
 
-def translate_episode(engine, number, model_source, batch_size):
-    episode = f'spongebob.s03e{number:02d}'
-    source = MEDIA/f'{episode}.de.srt'
+def translate_episode(engine, number, model_source, batch_size, series='spongebob', season=3):
+    stem = f'{series}.s{season:02d}e{number:02d}'
+    episode = stem.removeprefix('simpsons.') if series == 'simpsons' and season == 6 else stem
+    source = MEDIA/f'{stem}.de.srt'
     data = source.read_bytes();source_hash = digest(data)
     cues = player_subtitles('parse',data.decode('utf-8-sig'))
     groups = sentence_groups(cues)
@@ -112,7 +113,7 @@ def translate_episode(engine, number, model_source, batch_size):
     if len(verified) != len(groups) or any(abs(a['start']-b['start'])>0.002 or abs(a['end']-b['end'])>0.002 for a,b in zip(verified,groups)):
         raise ValueError('Translated subtitles failed cue count or timing checks.')
     if source.read_bytes() != data: raise ValueError('German subtitles changed during translation; the previous Arabic track was preserved.')
-    target = MEDIA/f'{episode}.ar.srt'
+    target = MEDIA/f'{stem}.ar.srt'
     backup_dir = WORK/'previous-subtitles';backup_dir.mkdir(exist_ok=True)
     if target.exists() and target.read_bytes() != text.encode('utf-8'):
         backup = backup_dir/f'{episode}.{digest(target.read_bytes())[:12]}.ar.srt'
@@ -126,18 +127,23 @@ def translate_episode(engine, number, model_source, batch_size):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--episodes',default=','.join(str(i) for i in range(1,21)))
+    parser.add_argument('--series',choices=['spongebob','simpsons'],default='spongebob')
+    parser.add_argument('--season',type=int)
+    parser.add_argument('--episodes',help='Comma-separated episode numbers')
     parser.add_argument('--batch-size',type=int,default=16)
     args = parser.parse_args()
-    numbers = sorted(set(int(value) for value in args.episodes.split(',')))
-    if not numbers or any(number not in range(1,21) for number in numbers) or not 1<=args.batch_size<=64: parser.error('Choose valid season-3 episodes and a batch size from 1 to 64.')
+    season = args.season if args.season is not None else (3 if args.series == 'spongebob' else 6)
+    maximum = 20 if args.series == 'spongebob' else 25
+    numbers = sorted(set(int(value) for value in args.episodes.split(','))) if args.episodes else list(range(1,maximum+1))
+    if not 1 <= season <= 30 or not numbers or any(number not in range(1,maximum+1) for number in numbers) or not 1<=args.batch_size<=64:
+        parser.error('Choose a valid season, episode numbers and a batch size from 1 to 64.')
     WORK.mkdir(exist_ok=True)
     model_source = read_json(MODEL/'source.json',{})
     if not model_source: raise ValueError('Install the pinned local NLLB model first.')
     print('Loading local NLLB German-to-Arabic model on CUDA.',flush=True)
     engine = Translator(MODEL);failures = []
     for number in numbers:
-        try: translate_episode(engine,number,model_source,args.batch_size)
+        try: translate_episode(engine,number,model_source,args.batch_size,args.series,season)
         except Exception as error:
             failures.append(number);print(f'Episode {number}: FAILED: {error}',flush=True)
     write_json(WORK/'status.json',{'status':'complete' if not failures else 'failed','episodes':numbers,'failures':failures,'updated':datetime.now(timezone.utc).isoformat()})

@@ -31,7 +31,7 @@ Use the same browser, hostname, and port each time: browser imports and learning
 - Click-to-replay transcript, previous/next sentence, sentence looping, auto-pause at the end of each line, and 0.5×–2× playback.
 - Search German and translated sentences; hide translations for listening practice; optionally follow the current sentence.
 - Starred sentences, flashcard review, CSV export, SRT export, progress resume, and JSON backup/restore.
-- 25 Simpsons season 6 episode slots. Language badges and video availability reflect the files actually present in `media/`.
+- The Simpsons seasons 6 and 7 and SpongeBob seasons 3 and 4. Language badges and video availability reflect the files in `media/`.
 - An original **40-second silent practice clip**, with 10 original German sentences and Arabic translations. This is a reading/player demonstration, not a Simpsons episode or a German audio sample. Its separate SRT files are in `examples/`.
 - Optional generation of translated subtitles using a local Ollama model, in 8-cue batches. Existing tracks are retained unless a complete translation succeeds. The app does not claim that a generated track is human verified.
 - Responsive interface, keyboard navigation, offline system fonts, no analytics, and no external front-end requests.
@@ -93,7 +93,7 @@ media/
   simpsons.s06e01.en.vtt
 ```
 
-The filename must end with `s06e01` through `s06e25`, followed by `.mp4`, `.m4v`, or `.webm` for video, or a two-letter language code and `.srt`/`.vtt` for subtitles. The library reads this folder directly and streams videos without copying entire episodes into memory. No recursive scan is performed.
+Use the show and episode stems in [the media naming guide](media/README.md). Use `.mp4`, `.m4v`, or `.webm` for video and a two-letter language code before `.srt` or `.vtt` for subtitles. The library streams videos directly from this folder.
 
 **Alternatively:** click **Add files**, pick an episode slot, and select any video or subtitle files you have. You can import video, German subtitles, and the second language separately. Reimporting replaces the corresponding file or language. Imported videos are stored as IndexedDB blobs; subtitle metadata is stored separately so opening the library does not load every video. Browser imports take precedence over folder files for the same slot and language.
 

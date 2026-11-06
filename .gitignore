@@ -16,3 +16,4 @@ encrypted-library/
 *.szc
 *.pem
 *.key
+graphify-out/

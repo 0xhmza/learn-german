@@ -10,6 +10,8 @@ Upload the `.szc` assets in `encrypted-library/` using your SFTP client, with `l
 
 `--source`, `--output` and `--key-file` override the defaults. For later updates, pack into a fresh output directory with the same key file and upload the new assets before replacing the index. Keep the old assets available until browsers using the old index have refreshed. Using a different media key requires migrating the old encrypted progress or starting with a fresh progress directory.
 
+To extend an existing encrypted library, use `npm run pack:media -- --collections simpsons-s07,spongebob-s04`. This keeps the existing key and index entries for other collections. Upload the new asset files before replacing `library.szc`.
+
 ## Run the HTTPS bridge
 
 Install the branch on a trusted host that can reach your SFTP server. Use an SFTP account limited to read access for the encrypted library and write access for its own progress directory. Create that progress directory before connecting. For multiple accounts, use private home directories or chroots so each account has its own `progress` directory. The SFTP server must support the OpenSSH POSIX rename extension for atomic progress updates.
