@@ -21,6 +21,7 @@ import threading
 import time
 import urllib.parse
 import urllib.request
+import uuid
 
 import yt_dlp
 
@@ -232,6 +233,11 @@ def download_episode(url, resume=True):
         record(episode, status='complete', file=destination.name, **verified)
         emit(f'{episode}: already present and verified')
         return episode
+    download_path = destination
+    if not resume:
+        staging = MEDIA / 'download-staging' / f'{episode}-{uuid.uuid4().hex}'
+        staging.mkdir(parents=True)
+        download_path = staging / destination.name
     if VERIFICATION_NEEDED.is_set():
         raise VerificationRequired('Waiting for source verification; this episode was not requested again.')
     record(episode, status='resolving', episode_url=url)
@@ -255,7 +261,7 @@ def download_episode(url, resume=True):
             last_progress[0] = now
 
     options = {
-        'outtmpl': str(destination), 'format': 'best', 'noplaylist': True,
+        'outtmpl': str(download_path), 'format': 'best', 'noplaylist': True,
         'quiet': True, 'no_warnings': False, 'logger': Logger(episode),
         'http_headers': {'User-Agent': UA, 'Referer': player_url},
         'socket_timeout': 30, 'retries': 5, 'fragment_retries': 5,
@@ -268,7 +274,9 @@ def download_episode(url, resume=True):
     }
     with yt_dlp.YoutubeDL(options) as downloader:
         downloader.download([config['source']])
-    verified = probe(destination)
+    verified = probe(download_path)
+    if download_path != destination:
+        download_path.replace(destination)
     record(episode, status='complete', file=destination.name, **verified)
     emit(f'{episode}: complete, {verified["duration"] / 60:.1f} minutes, {verified["bytes"] / 1048576:.1f} MiB')
     return episode
