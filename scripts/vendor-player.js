@@ -1,0 +1,11 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const source = path.join(__dirname,'..','node_modules','media-chrome');
+const target = path.join(__dirname,'..','public','vendor');
+fs.mkdirSync(target,{recursive:true});
+fs.copyFileSync(path.join(source,'dist','iife','index.js'),path.join(target,'media-chrome.js'));
+fs.copyFileSync(path.join(source,'LICENSE'),path.join(target,'media-chrome.LICENSE'));
+const version = JSON.parse(fs.readFileSync(path.join(source,'package.json'),'utf8')).version;
+fs.writeFileSync(path.join(target,'media-chrome.version.json'),JSON.stringify({name:'media-chrome',version,source:'https://github.com/muxinc/media-chrome',license:'MIT'},null,2));
+console.log(`Vendored Media Chrome ${version} for offline playback.`);

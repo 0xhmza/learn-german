@@ -1,0 +1,39 @@
+1
+00:00:00,200 --> 00:00:03,700
+Guten Morgen! Bist du bereit für einen neuen Tag?
+
+2
+00:00:04,200 --> 00:00:07,700
+Ich hätte gern einen Kaffee und ein Brötchen.
+
+3
+00:00:08,200 --> 00:00:11,700
+Natürlich. Möchtest du auch etwas Wasser?
+
+4
+00:00:12,200 --> 00:00:15,700
+Ja, bitte. Wie viel kostet das zusammen?
+
+5
+00:00:16,200 --> 00:00:19,700
+Das macht fünf Euro und zwanzig Cent.
+
+6
+00:00:20,200 --> 00:00:23,700
+Entschuldigung, wo ist die nächste Haltestelle?
+
+7
+00:00:24,200 --> 00:00:27,700
+Geh geradeaus und dann nach links.
+
+8
+00:00:28,200 --> 00:00:31,700
+Vielen Dank für deine Hilfe!
+
+9
+00:00:32,200 --> 00:00:35,700
+Kein Problem. Ich wünsche dir einen schönen Tag.
+
+10
+00:00:36,200 --> 00:00:39,700
+Jeden Tag ein bisschen. So wird es leichter.
