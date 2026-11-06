@@ -14,5 +14,6 @@ test('malformed backup settings cannot insert CSS or unsupported style values',(
   const hostile = {font:'serif; color:red',scale:'999',color:'#fff;url(https://outside)',secondColor:'red',background:'var(--secret)',backgroundOpacity:-1,textOpacity:2,edge:'url(https://outside)'};
   for (const input of [hostile,null,[],false]) assert.deepEqual(C.sanitize(input),C.defaults);
   assert.deepEqual(C.sanitize({font:'__proto__',scale:Infinity}),C.defaults);
+  assert.deepEqual(C.sanitize({font:{toString:null},color:['#000000']}),C.defaults);
   assert.deepEqual(C.variables(hostile),C.variables(C.defaults));
 });

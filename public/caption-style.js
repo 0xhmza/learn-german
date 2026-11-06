@@ -4,9 +4,9 @@
   const defaults={font:'sans',scale:1,color:'#ffffff',secondColor:'#eeeeee',background:'#000000',backgroundOpacity:0.75,textOpacity:1,edge:'shadow'};
   function sanitize(input={}) {
     if(!input||typeof input!=='object')input={};const value={...defaults};
-    if(Object.hasOwn(fonts,input.font))value.font=input.font;
+    if(typeof input.font==='string'&&Object.hasOwn(fonts,input.font))value.font=input.font;
     if([0.75,1,1.25,1.5,1.75,2].includes(Number(input.scale)))value.scale=Number(input.scale);
-    for(const key of ['color','secondColor','background'])if(/^#[0-9a-f]{6}$/i.test(input[key]||''))value[key]=input[key].toLowerCase();
+    for(const key of ['color','secondColor','background'])if(typeof input[key]==='string'&&/^#[0-9a-f]{6}$/i.test(input[key]))value[key]=input[key].toLowerCase();
     if([0,0.25,0.5,0.75,1].includes(Number(input.backgroundOpacity))&&input.backgroundOpacity!==null)value.backgroundOpacity=Number(input.backgroundOpacity);
     if([0.5,0.75,1].includes(Number(input.textOpacity)))value.textOpacity=Number(input.textOpacity);
     if(['none','shadow','outline'].includes(input.edge))value.edge=input.edge;

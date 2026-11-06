@@ -149,7 +149,8 @@
         data = {id,de:preferFolder ? [] : local.de || [],deSource:local.deSource || 'browser-subtitles',deRevision:local.deRevision,tracks:{...local.tracks}};
         const remoteTracks = await Promise.all((episode.folder?.tracks || []).map(async track => {
           const localTrack = local.tracks?.[track.code];
-          const preferTranslation = track.kind === 'ai-translation' && localTrack?.source !== 'Imported subtitle file';
+          const userTrack = ['Imported subtitle file','AI generated · local Ollama'].includes(localTrack?.source);
+          const preferTranslation = track.kind === 'ai-translation' && !userTrack;
           if ((track.code === 'de' && local.de?.length && !preferFolder) || (localTrack && !preferTranslation)) return null;
           const response = await fetch(track.url);if (!response.ok) throw new Error(`Could not read ${track.name} subtitles.`);
           return {...track,cues:await readSubtitles(await response.blob(),track.code)};
