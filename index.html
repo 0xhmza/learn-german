@@ -7,182 +7,403 @@
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --surface-hover: #f1f5f9;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e2e8f0;
-      --accent: #d97706;
-      --shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
-      --shadow-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.14);
+      --background: #f5f0e8;
+      --text: #231c29;
+      --muted: #59505b;
+      --rule: #d6c9cb;
+      --headline: #9f3d28;
+      --warm-glow: 235, 166, 121;
+      --cool-glow: 161, 151, 217;
+      --grid: #6f59691f;
+      --line-start: #a06fb200;
+      --line-middle: #9376ad65;
+      --line-end: #aa5d4a7a;
+      --focus: #763ba5;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0b0f19;
-        --surface: #131a2a;
-        --surface-hover: #1b2438;
-        --text: #f1f5f9;
-        --muted: #94a3b8;
-        --border: #243049;
-        --accent: #f59e0b;
-        --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
-        --shadow-hover: 0 12px 28px -4px rgba(0, 0, 0, 0.6);
+        --background: #14111d;
+        --text: #faf2e7;
+        --muted: #c2b7c7;
+        --rule: #f5e7f128;
+        --headline: #f8af91;
+        --warm-glow: 191, 76, 70;
+        --cool-glow: 107, 72, 189;
+        --grid: #f1dfff19;
+        --line-start: #a486e700;
+        --line-middle: #b499ed72;
+        --line-end: #ffa18f9c;
+        --focus: #dfbfff;
       }
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
+      min-height: 100vh;
       min-height: 100dvh;
       margin: 0;
-      padding: 1.5rem;
       display: grid;
-      place-items: center;
-      background-color: var(--bg);
+      align-items: center;
+      padding: clamp(2rem, 7vw, 6rem) clamp(1.25rem, 6vw, 5rem);
+      background: var(--background);
       color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.5;
+      font: 1rem/1.55 "Geist", system-ui, sans-serif;
+    }
+
+    .background {
+      --cursor-x: 77%;
+      --cursor-y: 34%;
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 32rem 28rem at var(--cursor-x) var(--cursor-y), rgba(var(--warm-glow), .24), transparent),
+        radial-gradient(ellipse at 89% 15%, rgba(var(--cool-glow), .27), transparent 61%);
+    }
+
+    .background::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background-image: radial-gradient(circle, var(--grid) 1px, transparent 1px);
+      background-size: 20px 20px;
+      mask-image: linear-gradient(125deg, transparent 12%, #000 76%);
+    }
+
+    canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
 
     main {
-      width: 100%;
-      max-width: 44rem;
-      text-align: center;
+      position: relative;
+      width: min(100%, 64rem);
+      margin-inline: auto;
     }
 
-    .flag-bar {
-      display: inline-flex;
-      width: 3rem;
-      height: 0.3rem;
-      border-radius: 999px;
-      overflow: hidden;
-      margin-bottom: 1rem;
+    header {
+      max-width: 40rem;
+      margin-bottom: clamp(2rem, 5vw, 3.75rem);
     }
 
-    .flag-bar span:nth-child(1) { flex: 1; background: #18181b; }
-    .flag-bar span:nth-child(2) { flex: 1; background: #dc2626; }
-    .flag-bar span:nth-child(3) { flex: 1; background: #facc15; }
+    .flag {
+      display: block;
+      width: 2.15rem;
+      height: 1.45rem;
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      border: 1px solid var(--rule);
+      border-radius: .3rem;
+      background: linear-gradient(#26222a 0 33.33%, #d94139 33.33% 66.66%, #ffcb68 66.66%);
+    }
 
     h1 {
-      margin: 0 0 0.5rem;
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      margin: 0;
+      font-size: clamp(3.3rem, 10vw, 8.25rem);
+      font-weight: 650;
+      letter-spacing: -.065em;
+      line-height: .92;
+    }
+
+    h1 em {
+      color: var(--headline);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -.06em;
     }
 
     .subtitle {
-      margin: 0 auto 2.25rem;
-      max-width: 30rem;
+      max-width: 29rem;
+      margin: clamp(1.1rem, 3vw, 1.85rem) 0 0;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      text-wrap: pretty;
     }
 
     nav {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-      gap: 1.25rem;
-      text-align: left;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
     }
 
     .card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      padding: 1.5rem;
-      background-color: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 1rem;
-      color: inherit;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto 1fr;
+      column-gap: 1.25rem;
+      row-gap: clamp(1rem, 3vw, 2rem);
+      min-height: 12.5rem;
+      padding: clamp(1.2rem, 3vw, 1.9rem);
+      border: 1px solid var(--card-border);
+      border-radius: 1.35rem;
+      background: radial-gradient(ellipse at 100% 0%, var(--card-glow), transparent 64%), var(--card-base);
+      color: var(--card-text);
       text-decoration: none;
-      box-shadow: var(--shadow);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      background-color: var(--surface-hover);
-      border-color: var(--accent);
-      box-shadow: var(--shadow-hover);
+    .media {
+      --card-base: #f8e5d9;
+      --card-glow: #f4c6b1a8;
+      --card-border: #dfb9a7;
+      --card-text: #3d251e;
+      --card-muted: #644339;
+      --icon-bg: #f9d1c0;
+      --accent: #9a351f;
+      --shadow: #9d4e362a;
+    }
+
+    .grammar {
+      --card-base: #eae3f6;
+      --card-glow: #d7c8f6b8;
+      --card-border: #c8b7de;
+      --card-text: #35244a;
+      --card-muted: #534468;
+      --icon-bg: #dfd1f1;
+      --accent: #63399a;
+      --shadow: #663d9829;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .media {
+        --card-base: #2c2029;
+        --card-glow: #7f48394d;
+        --card-border: #64433e;
+        --card-text: #fff0e9;
+        --card-muted: #dac1bd;
+        --icon-bg: #4b2e33;
+        --accent: #ffba9e;
+        --shadow: #fc885338;
+      }
+
+      .grammar {
+        --card-base: #241e35;
+        --card-glow: #7351a85c;
+        --card-border: #54446d;
+        --card-text: #f7edff;
+        --card-muted: #cec0e0;
+        --icon-bg: #3e3157;
+        --accent: #dec0ff;
+        --shadow: #b882fc37;
+      }
     }
 
     .card:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
+      outline: 2px solid var(--focus);
+      outline-offset: 4px;
     }
 
-    .icon {
-      width: 2.5rem;
-      height: 2.5rem;
+    .icon, .arrow {
       display: grid;
       place-items: center;
-      border-radius: 0.65rem;
-      background-color: color-mix(in srgb, var(--accent) 14%, transparent);
       color: var(--accent);
     }
 
-    .card-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .card-desc {
-      margin: 0;
-      font-size: 0.925rem;
-      color: var(--muted);
+    .icon {
+      width: 3.3rem;
+      height: 3.3rem;
+      border-radius: .9rem;
+      background: var(--icon-bg);
     }
 
     .arrow {
-      transition: transform 0.18s ease;
+      width: 2.7rem;
+      height: 2.7rem;
+      border: 1px solid var(--card-border);
+      border-radius: 50%;
+      transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
     }
 
-    .card:hover .arrow {
-      transform: translateX(4px);
+    .card-copy { grid-column: 1 / -1; }
+
+    .card-title {
+      margin: 0;
+      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+      font-weight: 650;
+      letter-spacing: -.035em;
+    }
+
+    .card-desc {
+      max-width: 29rem;
+      margin: .3rem 0 0;
+      color: var(--card-muted);
+      font-size: .95rem;
+      text-wrap: pretty;
+    }
+
+    @media (hover: hover) {
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: 0 12px 30px -10px var(--shadow);
+      }
+
+      .card:hover .arrow {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: var(--card-base);
+      }
+    }
+
+    @media (max-width: 42rem) {
+      h1 { letter-spacing: -.055em; }
+      nav { grid-template-columns: 1fr; }
+      .card { min-height: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card, .arrow { transition: none; }
+      .card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
+  <div class="background" aria-hidden="true"><canvas></canvas></div>
+
   <main>
-    <div class="flag-bar" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
-    <h1>Learn German</h1>
-    <p class="subtitle">Choose a study mode to practice listening comprehension or master core grammar rules.</p>
+    <header>
+      <span class="flag" aria-hidden="true"></span>
+      <h1>Learn <em>German</em></h1>
+      <p class="subtitle">Choose a study mode to practice listening comprehension or master core grammar rules.</p>
+    </header>
 
     <nav aria-label="Learn German">
-      <a class="card" href="./media-player/">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      <a class="card media" href="./media-player/" aria-labelledby="media-title" aria-describedby="media-description">
+        <span class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2.5" y="4.5" width="19" height="15" rx="3"/>
+            <path d="m10 9 5 3-5 3z"/>
           </svg>
+        </span>
+        <span class="arrow" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 12h12m-5-5 5 5-5 5"/>
+          </svg>
+        </span>
+        <div class="card-copy">
+          <h2 class="card-title" id="media-title">Media Player</h2>
+          <p class="card-desc" id="media-description">Immerse yourself in German audio and video with interactive playback.</p>
         </div>
-        <div class="card-title">
-          <span>Media Player</span>
-          <span class="arrow" aria-hidden="true">&rarr;</span>
-        </div>
-        <p class="card-desc">Immerse yourself in German audio and video with interactive playback.</p>
       </a>
 
-      <a class="card" href="./grammar/">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      <a class="card grammar" href="./grammar/" aria-labelledby="grammar-title" aria-describedby="grammar-description">
+        <span class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 6c-2-2-5-2.5-9-1v14c4-1.5 7-1 9 1 2-2 5-2.5 9-1V5c-4-1.5-7-1-9 1Zm0 0v14"/>
+            <path d="M6 9h3m-3 4h3m6-4h3m-3 4h3"/>
           </svg>
+        </span>
+        <span class="arrow" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 12h12m-5-5 5 5-5 5"/>
+          </svg>
+        </span>
+        <div class="card-copy">
+          <h2 class="card-title" id="grammar-title">Grammar Platform</h2>
+          <p class="card-desc" id="grammar-description">Explore structured lessons, cases, verb conjugations, and exercises.</p>
         </div>
-        <div class="card-title">
-          <span>Grammar Platform</span>
-          <span class="arrow" aria-hidden="true">&rarr;</span>
-        </div>
-        <p class="card-desc">Explore structured lessons, cases, verb conjugations, and exercises.</p>
       </a>
     </nav>
   </main>
+
+  <script>
+    const background = document.querySelector('.background');
+    const canvas = background.querySelector('canvas');
+    const context = canvas.getContext('2d');
+
+    if (context) {
+      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      const finePointer = matchMedia('(any-pointer: fine)');
+      const darkTheme = matchMedia('(prefers-color-scheme: dark)');
+      const resting = { x: .77, y: .34 };
+      const pointer = { ...resting };
+      const target = { ...resting };
+      let width, height, lineColor, frame;
+
+      function draw(time) {
+        pointer.x += (target.x - pointer.x) * .075;
+        pointer.y += (target.y - pointer.y) * .075;
+        const x = pointer.x * width;
+        const y = pointer.y * height;
+        background.style.setProperty('--cursor-x', x + 'px');
+        background.style.setProperty('--cursor-y', y + 'px');
+
+        context.clearRect(0, 0, width, height);
+        context.strokeStyle = lineColor;
+        const step = 16;
+        const spacing = Math.max(9, height * .019);
+        const waveHeight = Math.min(width * .18, height * .3);
+        const reach = Math.min(250, width * .32);
+        for (let line = 0; line < 29; line++) {
+          context.beginPath();
+          for (let left = -step; left < width + 2 * step; left += step) {
+            const progress = left / width;
+            const phase = progress * 5.2 + line * .07 + time;
+            const baseline = height * .51 + (line - 14) * spacing
+              + Math.sin(phase) * waveHeight
+              + Math.sin(progress * 8 - line * .04 - time) * waveHeight * .26;
+            const distance = Math.hypot(left - x, baseline - y);
+            const displacement = Math.max(0, 1 - distance / reach) ** 2
+              * (baseline - y) * 1.5;
+            if (left === -step) context.moveTo(left, baseline + displacement);
+            else context.lineTo(left, baseline + displacement);
+          }
+          context.lineWidth = line % 5 === 0 ? 1.2 : .65;
+          context.stroke();
+        }
+      }
+
+      function animate(now) {
+        draw(now / 7500);
+        frame = requestAnimationFrame(animate);
+      }
+
+      function refresh() {
+        cancelAnimationFrame(frame);
+        const bounds = canvas.getBoundingClientRect();
+        width = bounds.width;
+        height = bounds.height;
+        const scale = Math.min(devicePixelRatio || 1, 2);
+        canvas.width = Math.round(width * scale);
+        canvas.height = Math.round(height * scale);
+        context.setTransform(scale, 0, 0, scale, 0, 0);
+        const style = getComputedStyle(document.documentElement);
+        lineColor = context.createLinearGradient(0, 0, width, 0);
+        lineColor.addColorStop(0, style.getPropertyValue('--line-start').trim());
+        lineColor.addColorStop(.3, style.getPropertyValue('--line-start').trim());
+        lineColor.addColorStop(.72, style.getPropertyValue('--line-middle').trim());
+        lineColor.addColorStop(1, style.getPropertyValue('--line-end').trim());
+
+        if (reducedMotion.matches || !finePointer.matches) {
+          Object.assign(pointer, resting);
+          Object.assign(target, resting);
+          draw(0);
+        } else if (!document.hidden) {
+          frame = requestAnimationFrame(animate);
+        }
+      }
+
+      window.addEventListener('pointermove', event => {
+        if (reducedMotion.matches || event.pointerType === 'touch') return;
+        target.x = event.clientX / width;
+        target.y = event.clientY / height;
+      }, { passive: true });
+
+      document.documentElement.addEventListener('pointerleave', () => Object.assign(target, resting));
+      window.addEventListener('blur', () => Object.assign(target, resting));
+      window.addEventListener('resize', refresh);
+      document.addEventListener('visibilitychange', refresh);
+      for (const preference of [reducedMotion, finePointer, darkTheme]) {
+        preference.addEventListener('change', refresh);
+      }
+      refresh();
+    }
+  </script>
 </body>
 </html>
