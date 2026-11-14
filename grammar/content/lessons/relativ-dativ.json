@@ -1,0 +1,443 @@
+{
+  "id": "relativ-dativ",
+  "level": "B1.1",
+  "island": "relativsaetze",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "🧩",
+  "german": "Relativpronomen und Relativsätze im Dativ",
+  "source": {
+    "lektion": 1,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Nomen",
+    ",",
+    "dem · der · dem · denen",
+    "…",
+    "Verb",
+    ","
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Der Mann, dem ich helfe,"
+        ],
+        [
+          "v",
+          "wohnt"
+        ],
+        [
+          "mf",
+          "nebenan"
+        ]
+      ]
+    },
+    {
+      "k": "rel",
+      "parts": [
+        [
+          "c",
+          "dem"
+        ],
+        [
+          "mf",
+          "ich"
+        ],
+        [
+          "ve",
+          "helfe"
+        ]
+      ]
+    }
+  ],
+  "example": "Der Mann, dem ich helfe, wohnt nebenan.",
+  "stepExamples": [
+    "Der Mann wohnt nebenan. Ich helfe dem Mann.",
+    "Maskulin: dem · Feminin: der · Neutrum: dem · Plural: denen",
+    "Der Mann, dem ich helfe, wohnt nebenan.",
+    "Ich besuche die Nachbarin, der ich oft helfe."
+  ],
+  "pitfallPair": "Das sind die Leute, den ich danke. → Das sind die Leute, denen ich danke.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/5272"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "ضمائر الوصل في الداتيف",
+      "lead": "جملة الوصل تضيف معلومة إلى اسم سبق ذكره. حين يكون دور ذلك الاسم داخل الوصل في حالة الداتيف، تختار ضميرًا من `dem، der، denen`.",
+      "translation": "الرجل الذي أساعده يسكن في البيت المجاور.",
+      "steps": [
+        {
+          "text": "افصل الجملتين",
+          "why": "الاسم المرجعي هو `der Mann`. في الجملة الثانية يطلب الفعل `helfen` داتيف. اسأل `Wem helfe ich?` لتتعرف على الوظيفة."
+        },
+        {
+          "text": "اختر الضمير من الجنس والعدد",
+          "why": "الجنس والعدد يأتيان من الاسم المرجعي. الحالة تأتي من موقع الضمير داخل جملة الوصل. انتبه إلى أن صيغة ضمير الوصل للجمع هنا `denen` حتى حين تبدأ مجموعة اسمية في الداتيف بـ `den`."
+        },
+        {
+          "text": "رتّب الوصل بعد الاسم",
+          "why": "حلّ الضمير محل الاسم المكرر. جاء في أول الوصل وانتقل `helfe` إلى آخره. ظل `wohnt` فعل الجملة الرئيسية."
+        },
+        {
+          "text": "اختبر استقلال الحالتين",
+          "why": "في الرئيسية `die Nachbarin` مفعول `besuchen` في الأكوزاتيف. في الوصل `der` داتيف مع `helfen`. تغيير وظيفة الاسم خارج الوصل لا يغيّر الوظيفة التي يحددها فعل الوصل."
+        }
+      ],
+      "explain": [
+        "استعمل الطريقة نفسها مع `danken` (يشكر)، و`vertrauen` (يثق)، و`antworten` (يجيب)، و`gefallen` (يروق). قارن `die Frau, die mich besucht` حيث `die` فاعل، و`die Frau, die ich besuche` حيث `die` مفعول مباشر، و`die Frau, der ich helfe` حيث `der` داتيف."
+      ],
+      "pitfall": "لجمع الأشخاص مع `danken` نحتاج داتيف الجمع لضمير الوصل، أي `denen`.",
+      "recall": [
+        "ما صيغة الداتيف مع `das Kind`؟",
+        "نختار `dem` لأن `Kind` محايد، مثل `das Kind, dem ich antworte`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 1 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "أدوات جمل الوصل · grammis"
+      ],
+      "table": [
+        [
+          "الحالة",
+          "مذكر",
+          "مؤنث",
+          "محايد",
+          "جمع"
+        ],
+        [
+          "Nominativ",
+          "der",
+          "die",
+          "das",
+          "die"
+        ],
+        [
+          "Akkusativ",
+          "den",
+          "die",
+          "das",
+          "die"
+        ],
+        [
+          "Dativ",
+          "dem",
+          "der",
+          "dem",
+          "denen"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Relativpronomen im Dativ",
+      "lead": "Ein Relativsatz gibt mehr Informationen über ein Nomen, das schon genannt wurde. Hat dieses Nomen im Relativsatz die Rolle eines Dativs, wählst du eines der Pronomen `dem`, `der`, `denen`.",
+      "steps": [
+        {
+          "text": "Trenne die beiden Sätze",
+          "why": "Das Bezugswort ist `der Mann`. Im zweiten Satz verlangt `helfen` den Dativ. Frag `Wem helfe ich?`, um die Funktion zu erkennen."
+        },
+        {
+          "text": "Wähle das Pronomen nach Genus und Numerus",
+          "why": "Genus und Numerus kommen vom Bezugswort, der Kasus von der Rolle des Pronomens im Relativsatz. Achtung: Im Plural heißt das Relativpronomen `denen`, auch wenn der Dativartikel im Plural `den` ist."
+        },
+        {
+          "text": "Stell den Relativsatz hinter das Nomen",
+          "why": "Das Pronomen ersetzt das wiederholte Nomen. Es steht am Anfang des Relativsatzes, `helfe` geht ans Ende. `wohnt` bleibt das Verb des Hauptsatzes."
+        },
+        {
+          "text": "Prüfe, dass beide Kasus unabhängig sind",
+          "why": "Im Hauptsatz ist `die Nachbarin` Akkusativobjekt von `besuchen`. Im Relativsatz steht `der` im Dativ wegen `helfen`. Die Funktion außerhalb ändert nichts am Kasus, den das Verb im Relativsatz verlangt."
+        }
+      ],
+      "explain": [
+        "Geh genauso mit `danken`, `vertrauen`, `antworten` und `gefallen` vor. Vergleiche: `die Frau, die mich besucht` (`die` = Subjekt), `die Frau, die ich besuche` (`die` = Akkusativobjekt) und `die Frau, der ich helfe` (`der` = Dativ)."
+      ],
+      "pitfall": "Bei Personen im Plural brauchen wir mit `danken` das Relativpronomen im Dativ Plural, also `denen`.",
+      "recall": [
+        "Wie lautet der Dativ bei `das Kind`?",
+        "`dem`, weil `Kind` neutral ist, z. B. `das Kind, dem ich antworte`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 1 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Relativpronomen · grammis"
+      ],
+      "table": [
+        [
+          "Kasus",
+          "Maskulin",
+          "Feminin",
+          "Neutrum",
+          "Plural"
+        ],
+        [
+          "Nominativ",
+          "der",
+          "die",
+          "das",
+          "die"
+        ],
+        [
+          "Akkusativ",
+          "den",
+          "die",
+          "das",
+          "die"
+        ],
+        [
+          "Dativ",
+          "dem",
+          "der",
+          "dem",
+          "denen"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "relativ-dativ-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Das ist der Kollege, {{1}} ich danke.",
+      "blanks": [
+        [
+          "dem"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل ضمير الوصل للمذكر.",
+          "explain": "danken يطلب الداتيف. المذكر المفرد في داتيف الوصل dem.",
+          "hints": [
+            "اسأل Wem danke ich?"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Relativpronomen für ein maskulines Nomen.",
+          "explain": "`danken` verlangt den Dativ. Maskulin Singular im Dativ: `dem`.",
+          "hints": [
+            "Frag: Wem danke ich?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-dativ-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Die Freundin, {{1}} ich vertraue, wohnt hier.",
+      "blanks": [
+        [
+          "der"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل ضمير الوصل للمؤنث.",
+          "explain": "vertrauen يطلب الداتيف. die Freundin مؤنث، فيكون الضمير der.",
+          "hints": [
+            "حدّد الجنس ثم فكّر في الفعل vertrauen."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Relativpronomen für ein feminines Nomen.",
+          "explain": "`vertrauen` verlangt den Dativ. `die Freundin` ist feminin, also `der`.",
+          "hints": [
+            "Bestimme das Genus und denk an das Verb `vertrauen`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-dativ-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "denen",
+        "den",
+        "dem"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "ما ضمير داتيف الوصل لجمع die Kinder؟",
+          "explain": "den أداة الداتيف للجمع، وdem ضمير للمذكر أو المحايد المفرد، أما denen فهو ضمير الوصل في داتيف الجمع.",
+          "hints": [
+            "فكّر في صيغة الوصل الخاصة بالجمع."
+          ]
+        },
+        "de": {
+          "prompt": "Wie lautet das Relativpronomen im Dativ für den Plural `die Kinder`?",
+          "explain": "`den` ist der Dativartikel im Plural, `dem` das Pronomen für Maskulin oder Neutrum Singular. `denen` ist das Relativpronomen im Dativ Plural.",
+          "hints": [
+            "Denk an die besondere Pluralform des Relativpronomens."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-dativ-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Das ist das Kind, {{1}} ich morgen {{2}}.",
+      "blanks": [
+        [
+          "dem"
+        ],
+        [
+          "antworte"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الضمير ثم اكتب الفعل المصرف من antworten.",
+          "explain": "Kind محايد وantworten يطلب الداتيف. يبقى الفعل في آخر الوصل.",
+          "hints": [
+            "حدد الجنس والحالة أولًا، ثم صرّف مع ich."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Pronomen und dann die konjugierte Form von `antworten`.",
+          "explain": "`Kind` ist neutral und `antworten` verlangt den Dativ. Das Verb steht am Ende des Relativsatzes.",
+          "hints": [
+            "Bestimme erst Genus und Kasus, dann konjugiere mit `ich`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-dativ-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "denen",
+        "er",
+        "oft",
+        "geholfen",
+        "hat"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الوصل بعد die Personen. اجعل er بعد الضمير، وoft قبل اسم المفعول.",
+          "explain": "denen يشير إلى جمع في الداتيف. ينتهي الوصل بـ geholfen hat.",
+          "hints": [
+            "ضع المساعد المصرف بعد اسم المفعول."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Relativsatz nach `die Personen`. Setz `er` nach das Pronomen und `oft` vor das Partizip.",
+          "explain": "`denen` verweist auf einen Plural im Dativ. Der Relativsatz endet mit `geholfen hat`.",
+          "hints": [
+            "Setz das konjugierte Hilfsverb nach das Partizip."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-dativ-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "في Ich kenne die Frau, der er hilft ما الذي حدّد der؟",
+          "explain": "helfen يطلب الداتيف. في الرئيسية المرأة مفعول، وحالة ذلك المفعول مستقلة عن حالة ضمير الوصل.",
+          "hints": [
+            "احسب الحالة من وظيفة الاسم في جملة الوصل."
+          ],
+          "options": [
+            "الفعل hilft داخل الوصل والجنس المؤنث للاسم المرجعي.",
+            "الفعل kenne خارج الوصل والجنس المؤنث للاسم المرجعي.",
+            "كون المرأة فاعلًا في الجملة الرئيسية."
+          ]
+        },
+        "de": {
+          "prompt": "Was bestimmt `der` in `Ich kenne die Frau, der er hilft`?",
+          "explain": "`helfen` verlangt den Dativ. Im Hauptsatz ist die Frau Objekt, aber ihr Kasus dort ist unabhängig vom Kasus des Relativpronomens.",
+          "hints": [
+            "Bestimme den Kasus aus der Funktion im Relativsatz."
+          ],
+          "options": [
+            "Das Verb `hilft` im Relativsatz und das feminine Genus des Bezugsworts.",
+            "Das Verb `kenne` außerhalb des Relativsatzes und das feminine Genus des Bezugsworts.",
+            "Dass die Frau im Hauptsatz das Subjekt ist."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-dativ-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich kenne die Nachbarn, denen ich geholfen habe.",
+      "i18n": {
+        "ar": {
+          "prompt": "اربط الجملتين بضمير وصل. ضع الوصل بعد die Nachbarn. Ich kenne die Nachbarn. Ich habe den Nachbarn geholfen.",
+          "explain": "استخدم denen للجمع في الداتيف، واختتم التابعة بالفعل المصرف habe.",
+          "hints": [
+            "هل الفعل الثاني يأخذ داتيفًا؟ وأين يأتي habe؟"
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde die Sätze mit einem Relativpronomen. Stell den Relativsatz nach `die Nachbarn`: `Ich kenne die Nachbarn. Ich habe den Nachbarn geholfen.`",
+          "explain": "Benutze `denen` für den Dativ Plural und beende den Nebensatz mit dem konjugierten Verb `habe`.",
+          "hints": [
+            "Verlangt das zweite Verb einen Dativ? Und wo steht `habe`?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-dativ-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das sind die Leute, denen ich danke.",
+      "context": "Das sind die Leute, den ich danke.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "لجمع الأشخاص مع `danken` نحتاج داتيف الجمع لضمير الوصل، أي `denen`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Bei Personen im Plural brauchen wir mit `danken` das Relativpronomen im Dativ Plural, also `denen`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-dativ-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "نختار `dem` لأن `Kind` محايد، مثل `das Kind, dem ich antworte`.",
+      "i18n": {
+        "ar": {
+          "prompt": "ما صيغة الداتيف مع `das Kind`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wie lautet der Dativ bei `das Kind`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,432 @@
+{
+  "id": "genitiv-adjektiv",
+  "level": "B1.1",
+  "island": "adjektive",
+  "order": 3,
+  "prereqs": [
+    "genitiv"
+  ],
+  "emoji": "🧶",
+  "german": "Adjektivdeklination im Genitiv",
+  "source": {
+    "lektion": 4,
+    "kind": "toc"
+  },
+  "pattern": [
+    "mit Artikel → -en",
+    "·",
+    "ohne Artikel: f / Pl → -er",
+    "·",
+    "m / n → -en"
+  ],
+  "frames": [
+    {
+      "k": "np",
+      "parts": [
+        [
+          "c",
+          "wegen"
+        ],
+        [
+          "n",
+          "des"
+        ],
+        [
+          "hl",
+          "starken"
+        ],
+        [
+          "n",
+          "Regens"
+        ]
+      ]
+    },
+    {
+      "k": "np",
+      "parts": [
+        [
+          "c",
+          "wegen"
+        ],
+        [
+          "hl",
+          "starker"
+        ],
+        [
+          "n",
+          "Regenfälle"
+        ]
+      ]
+    }
+  ],
+  "example": "wegen des starken Regens · wegen starker Regenfälle",
+  "stepExamples": [
+    "trotz des kalten Windes",
+    "eines guten Freundes · der netten Nachbarin · meiner neuen Kollegen",
+    "wegen starker Kälte · wegen starker Regenfälle",
+    "trotz starken Windes · der Geschmack frischen Brotes"
+  ],
+  "pitfallPair": "wegen starken Kälte → wegen starker Kälte",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/korpusgrammatik/6941"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "نهايات الصفة في Genitiv",
+      "lead": "عندما تضيف صفة إلى اسم في الجينيتيف، تتوزع علامات الحالة بين الأداة والصفة والاسم. لاحظ ما يظهر بالفعل قبل أن تختار نهاية الصفة.",
+      "translation": "بسبب المطر الغزير · بسبب أمطار غزيرة.",
+      "steps": [
+        {
+          "text": "تعرّف إلى المجموعة كلها",
+          "why": "أولًا يحدد `trotz` الجينيتيف. الاسم `Wind` مذكر وتظهر الحالة في `des` و`Windes`. تأخذ الصفة `-en`."
+        },
+        {
+          "text": "اكتب -en بعد الأداة المحددة أو ما يشبه ein",
+          "why": "تأخذ الصفة `-en` في كل الأجناس وفي الجمع هنا. تعمل أدوات الملكية مثل `meiner` بالطريقة نفسها في الجينيتيف."
+        },
+        {
+          "text": "استعمل -er بلا أداة للمؤنث والجمع",
+          "why": "تحمل الصفة علامة الحالة عندما تغيب الأداة في هذين الصنفين. أسماء المؤنث والجمع نفسها لا تضيف `-s` خاصة بالجينيتيف."
+        },
+        {
+          "text": "استعمل -en بلا أداة للمذكر والمحايد",
+          "why": "في هذين المثالين يحمل الاسم نهاية الجينيتيف `-es`. تأتي الصفة بـ `-en` حتى من دون أداة. افحص شكل الاسم إلى جانب الصفة."
+        }
+      ],
+      "explain": [
+        "إذا اجتمعت صفتان لهما وظيفة متوازية اتبعتا نمط التصريف نفسه في أمثلة مثل `wegen des starken, kalten Windes` و`wegen starker, anhaltender Regenfälle`. قارن أيضًا `wegen der kalten Luft` و`wegen kalter Luft`. الاسم مؤنث في الاثنين، ووجود الأداة هو الذي يغيّر النهاية."
+      ],
+      "pitfall": "الاسم مؤنث والجينيتيف هنا بلا أداة، فتأخذ الصفة `-er`.",
+      "recall": [
+        "أين علامات الجينيتيف في `des alten Computers`؟",
+        "تظهر `des` للأداة و`-s` في الاسم. الصفة `alt` تأخذ `-en` بعد الأداة."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 4 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "علامات الجينيتيف · grammis"
+      ],
+      "table": [
+        [
+          "أداة",
+          "مذكر",
+          "مؤنث",
+          "محايد",
+          "جمع"
+        ],
+        [
+          "محدّدة",
+          "des kalten Windes",
+          "der kalten Luft",
+          "des kalten Wassers",
+          "der kalten Tage"
+        ],
+        [
+          "بلا أداة",
+          "kalten Windes",
+          "kalter Luft",
+          "kalten Wassers",
+          "kalter Tage"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Adjektivdeklination im Genitiv",
+      "lead": "Kommt ein Adjektiv zu einem Nomen im Genitiv, verteilen sich die Kasussignale auf Artikel, Adjektiv und Nomen. Schau, was schon sichtbar ist, bevor du die Adjektivendung wählst.",
+      "steps": [
+        {
+          "text": "Erkenne die ganze Gruppe",
+          "why": "Zuerst bestimmt `trotz` den Genitiv. `Wind` ist maskulin; den Kasus zeigen `des` und `Windes`. Das Adjektiv bekommt `-en`."
+        },
+        {
+          "text": "Schreib -en nach bestimmtem Artikel oder ein-Wort",
+          "why": "Das Adjektiv bekommt hier bei allen Genera und im Plural `-en`. Possessivartikel wie `meiner` funktionieren im Genitiv genauso."
+        },
+        {
+          "text": "Benutze -er ohne Artikel bei Femininum und Plural",
+          "why": "Fehlt der Artikel, trägt das Adjektiv das Kasussignal. Feminine Nomen und Pluralnomen bekommen selbst kein Genitiv-`s`."
+        },
+        {
+          "text": "Benutze -en ohne Artikel bei Maskulinum und Neutrum",
+          "why": "In diesen Beispielen trägt das Nomen die Genitivendung `-es`. Das Adjektiv bekommt `-en`, auch ohne Artikel. Prüf die Form des Nomens zusammen mit dem Adjektiv."
+        }
+      ],
+      "explain": [
+        "Stehen zwei gleichrangige Adjektive zusammen, folgen sie demselben Muster: `wegen des starken, kalten Windes` und `wegen starker, anhaltender Regenfälle`. Vergleiche auch `wegen der kalten Luft` und `wegen kalter Luft`: In beiden ist das Nomen feminin – nur der Artikel ändert die Endung."
+      ],
+      "pitfall": "Das Nomen ist feminin und der Genitiv steht hier ohne Artikel, deshalb bekommt das Adjektiv `-er`.",
+      "recall": [
+        "Wo sind die Genitivsignale in `des alten Computers`?",
+        "`des` am Artikel und `-s` am Nomen. Das Adjektiv `alt` bekommt nach dem Artikel `-en`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 4 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Genitivmarkierung · grammis"
+      ],
+      "table": [
+        [
+          "Artikel",
+          "Maskulin",
+          "Feminin",
+          "Neutrum",
+          "Plural"
+        ],
+        [
+          "bestimmt",
+          "des kalten Windes",
+          "der kalten Luft",
+          "des kalten Wassers",
+          "der kalten Tage"
+        ],
+        [
+          "ohne Artikel",
+          "kalten Windes",
+          "kalter Luft",
+          "kalten Wassers",
+          "kalter Tage"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "genitiv-adjektiv-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "wegen des stark{{1}} Regens",
+      "blanks": [
+        [
+          "-en",
+          "en"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل نهاية الصفة.",
+          "explain": "بعد des تأخذ الصفة في الجينيتيف -en.",
+          "hints": [
+            "هل الأداة موجودة؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Adjektivendung.",
+          "explain": "Nach `des` bekommt das Adjektiv im Genitiv `-en`.",
+          "hints": [
+            "Gibt es einen Artikel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-adjektiv-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "die Idee einer {{1}} Kollegin",
+      "blanks": [
+        [
+          "netten"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الصفة بعد einer. استعمل nett.",
+          "explain": "بعد einer تأخذ الصفة -en في الجينيتيف.",
+          "hints": [
+            "الأداة هنا تحمل علامة الجينيتيف."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Adjektiv nach `einer`. Benutze `nett`.",
+          "explain": "Nach `einer` bekommt das Adjektiv im Genitiv `-en`.",
+          "hints": [
+            "Der Artikel trägt hier das Genitivsignal."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-adjektiv-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "wegen starker Regenfälle",
+        "wegen starken Regenfälle",
+        "wegen starke Regenfälle"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر جينيتيف الجمع بلا أداة.",
+          "explain": "-er علامة الصفة للجمع بلا أداة. -en يلائم وجود أداة في هذا المثال.",
+          "hints": [
+            "في الجمع بلا أداة احمل العلامة على الصفة."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle den Genitiv Plural ohne Artikel.",
+          "explain": "`-er` ist das Signal des Adjektivs im Plural ohne Artikel. `-en` passt, wenn es in diesem Beispiel einen Artikel gibt.",
+          "hints": [
+            "Im Plural ohne Artikel trägt das Adjektiv das Signal."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-adjektiv-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "der Duft {{1}} Luft · der Duft {{2}} Brotes",
+      "blanks": [
+        [
+          "frischer"
+        ],
+        [
+          "frischen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الصفة بلا أداة. استعمل frisch في الموضعين.",
+          "explain": "Luft مؤنث بلا أداة فتأخذ الصفة -er. Brot محايد والجينيتيف ظاهر في Brotes، فتأخذ الصفة -en.",
+          "hints": [
+            "ميّز المؤنث عن المحايد."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Adjektiv ohne Artikel. Benutze zweimal `frisch`.",
+          "explain": "`Luft` ist feminin ohne Artikel, also `-er`. `Brot` ist neutral, der Genitiv ist in `Brotes` sichtbar, also `-en`.",
+          "hints": [
+            "Unterscheide Femininum und Neutrum."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-adjektiv-5",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "trotz {{1}}, {{2}} Winde",
+      "blanks": [
+        [
+          "kalter"
+        ],
+        [
+          "starker"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الصفتين بلا أداة من kalt وstark.",
+          "explain": "في جينيتيف الجمع بلا أداة تأخذ الصفتان -er.",
+          "hints": [
+            "الصفتان تصفان الجمع نفسه."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze beide Adjektive ohne Artikel mit `kalt` und `stark`.",
+          "explain": "Im Genitiv Plural ohne Artikel bekommen beide Adjektive `-er`.",
+          "hints": [
+            "Beide Adjektive beschreiben denselben Plural."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-adjektiv-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "die Fragen meiner neuen Nachbarn",
+        "die Fragen meiner neuer Nachbarn",
+        "die Fragen meiner neue Nachbarn"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي صيغة صحيحة مع كلمة الملكية meiner؟",
+          "explain": "بعد meiner تأخذ الصفة -en في الجينيتيف مهما كان الجنس أو العدد.",
+          "hints": [
+            "تعامل مع meiner كما تتعامل مع أداة مصرّفة."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Form ist mit dem Possessivartikel `meiner` richtig?",
+          "explain": "Nach `meiner` bekommt das Adjektiv im Genitiv immer `-en`, egal welches Genus oder welcher Numerus.",
+          "hints": [
+            "Behandle `meiner` wie einen deklinierten Artikel."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-adjektiv-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "wegen starker Kälte",
+      "i18n": {
+        "ar": {
+          "prompt": "أعد كتابة wegen der starken Kälte بلا أداة مع تصريف الصفة.",
+          "explain": "الاسم مؤنث، لذلك نكتب starker بلا أداة في الجينيتيف.",
+          "hints": [
+            "بعد حذف der تنتقل العلامة إلى الصفة."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib `wegen der starken Kälte` ohne Artikel und dekliniere das Adjektiv.",
+          "explain": "Das Nomen ist feminin, deshalb schreiben wir ohne Artikel im Genitiv `starker`.",
+          "hints": [
+            "Ohne `der` wandert das Signal zum Adjektiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-adjektiv-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "wegen starker Kälte",
+      "context": "wegen starken Kälte",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "الاسم مؤنث والجينيتيف هنا بلا أداة، فتأخذ الصفة `-er`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Das Nomen ist feminin und der Genitiv steht hier ohne Artikel, deshalb bekommt das Adjektiv `-er`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-adjektiv-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "تظهر `des` للأداة و`-s` في الاسم. الصفة `alt` تأخذ `-en` بعد الأداة.",
+      "i18n": {
+        "ar": {
+          "prompt": "أين علامات الجينيتيف في `des alten Computers`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wo sind die Genitivsignale in `des alten Computers`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

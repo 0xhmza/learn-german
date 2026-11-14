@@ -1,0 +1,14 @@
+[
+  {
+    "id": "B1.1",
+    "book": "Auf jeden Fall! Deutsch B1.1",
+    "lektionen": [1, 6],
+    "sample": "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf"
+  },
+  {
+    "id": "B1.2",
+    "book": "Auf jeden Fall! Deutsch B1.2",
+    "lektionen": [7, 12],
+    "sample": null
+  }
+]

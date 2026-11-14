@@ -1,0 +1,43 @@
+/* The archipelago map. Colours come from tokens so both themes work. */
+.map-host { position: relative; border-radius: 24px; overflow: hidden; }
+.map-svg { display: block; width: 100%; height: auto; direction: ltr; user-select: none; -webkit-user-select: none; }
+.map-svg.wide { max-height: 660px; margin-inline: auto; }
+.map-svg text { font-family: var(--font); }
+.map-svg .sea { fill: var(--sea); }
+.map-svg .wave { fill: none; stroke: var(--sea-deep); stroke-width: 2.5; stroke-linecap: round; opacity: .9; }
+.map-svg .route-seg { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 2 11; stroke-linecap: round; }
+.map-svg .route-done { fill: none; stroke: var(--brand); stroke-width: 4; stroke-linecap: round; opacity: .75; }
+.isle { cursor: pointer; outline: none; }
+.isle > g { transition: transform .2s ease; }
+.isle .isle-water { fill: var(--sea-shallow); }
+.isle .isle-beach { fill: var(--sand); }
+.isle .isle-land { fill: color-mix(in srgb, var(--isle-tint) 50%, var(--isle-green)); stroke: var(--isle-edge); stroke-width: 2; }
+.isle .isle-emoji { font-size: 40px; }
+.isle .isle-fog { fill: var(--surface); opacity: .28; pointer-events: none; }
+.isle.untouched .isle-emoji { opacity: .75; }
+.isle .ring-bg { fill: var(--surface); stroke: var(--line); }
+.isle .ring-track, .isle .ring-arc { fill: none; stroke-width: 4.5; }
+.isle .ring-track { stroke: var(--line); }
+.isle .ring-arc { stroke: var(--brand); stroke-linecap: round; }
+.isle.conquered .ring-arc { stroke: var(--gold); }
+.isle .ring-num { font-size: 15px; font-weight: 800; fill: var(--ink); }
+.isle .flag { font-size: 28px; }
+.isle .plate rect { fill: var(--surface); stroke: var(--line); filter: drop-shadow(0 2px 4px #1c1a2b26); }
+.isle .plate-name { font-size: 15px; font-weight: 760; fill: var(--ink); }
+.isle .plate-sub { font-size: 12px; font-weight: 650; fill: var(--muted); }
+.isle.conquered .plate rect { stroke: var(--gold-line); }
+.isle:hover .plate rect, .isle:focus-visible .plate rect { stroke: var(--brand); stroke-width: 2; }
+.isle:focus-visible .isle-water { stroke: var(--focus); stroke-width: 5; }
+.isle .pulse { fill: none; stroke: var(--brand); stroke-width: 3; opacity: .55; transform-box: fill-box; transform-origin: center; animation: pulse 1.6s ease-out infinite; }
+@keyframes pulse { from { transform: scale(.95); opacity: .65; } to { transform: scale(1.14); opacity: 0; } }
+.map-svg .treasure circle { fill: var(--gold-bg); stroke: var(--gold-line); stroke-width: 2; }
+.map-svg .treasure text { font-size: 30px; }
+.map-svg .treasure:not(.open) { opacity: .45; filter: grayscale(.8); }
+.map-svg .token circle { fill: var(--surface); stroke: var(--brand); stroke-width: 3; filter: drop-shadow(0 3px 6px #1c1a2b40); }
+.map-svg .token text { font-size: 24px; }
+@media (hover: hover) {
+  .isle:hover > g { transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .isle .pulse { animation: none; opacity: .5; }
+}

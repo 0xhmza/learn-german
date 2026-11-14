@@ -1,0 +1,18 @@
+[
+  { "id": "first-step", "emoji": "👣", "name": { "de": "Erster Schritt", "ar": "الخطوة الأولى" }, "text": { "de": "Die erste Lektion abgeschlossen.", "ar": "أنهيتَ الدرس الأول." } },
+  { "id": "bullseye", "emoji": "🎯", "name": { "de": "Volltreffer", "ar": "إصابة كاملة" }, "text": { "de": "Zum ersten Mal drei Sterne in einer Lektion.", "ar": "نلتَ ثلاث نجوم في درس لأول مرة." } },
+  { "id": "streak-3", "emoji": "🔥", "name": { "de": "3 Tage am Stück", "ar": "ثلاثة أيام متتالية" }, "text": { "de": "Das Tagesziel drei Tage hintereinander erreicht.", "ar": "حقّقتَ الهدف اليومي ثلاثة أيام متتالية." } },
+  { "id": "streak-7", "emoji": "🔥", "name": { "de": "Eine Woche", "ar": "أسبوع كامل" }, "text": { "de": "Das Tagesziel sieben Tage hintereinander erreicht.", "ar": "حقّقتَ الهدف اليومي سبعة أيام متتالية." } },
+  { "id": "streak-30", "emoji": "🌋", "name": { "de": "Ein Monat", "ar": "شهر كامل" }, "text": { "de": "Das Tagesziel 30 Tage hintereinander erreicht.", "ar": "حقّقتَ الهدف اليومي ثلاثين يومًا متتاليًا." } },
+  { "id": "land-ho", "emoji": "🚩", "name": { "de": "Land in Sicht", "ar": "أرضٌ في الأفق" }, "text": { "de": "Die erste Insel erobert.", "ar": "فتحتَ أول جزيرة." } },
+  { "id": "half-chart", "emoji": "🗺️", "name": { "de": "Halbe Seekarte", "ar": "نصف الخريطة" }, "text": { "de": "Fünf Inseln erobert.", "ar": "فتحتَ خمس جزر." } },
+  { "id": "all-islands", "emoji": "👑", "name": { "de": "Alle Inseln", "ar": "كل الجزر" }, "text": { "de": "Alle zehn Inseln erobert.", "ar": "فتحتَ الجزر العشر كلها." } },
+  { "id": "b11", "emoji": "📘", "name": { "de": "B1.1 komplett", "ar": "أتممتَ B1.1" }, "text": { "de": "Alle Lektionen der Stufe B1.1 abgeschlossen.", "ar": "أنهيتَ كل دروس المستوى B1.1." } },
+  { "id": "b12", "emoji": "📗", "name": { "de": "B1.2 komplett", "ar": "أتممتَ B1.2" }, "text": { "de": "Alle Lektionen der Stufe B1.2 abgeschlossen.", "ar": "أنهيتَ كل دروس المستوى B1.2." } },
+  { "id": "flawless-exam", "emoji": "💎", "name": { "de": "Fehlerfrei", "ar": "بلا أخطاء" }, "text": { "de": "Eine Inselprüfung ohne Fehler bestanden.", "ar": "نجحتَ في اختبار جزيرة دون أي خطأ." } },
+  { "id": "mistake-hunter", "emoji": "🧹", "name": { "de": "Fehlerjäger·in", "ar": "صيّاد الأخطاء" }, "text": { "de": "20 Fragen aus der Fehlerliste geholt.", "ar": "أخرجتَ عشرين سؤالًا من قائمة الأخطاء." } },
+  { "id": "reviewer", "emoji": "🔁", "name": { "de": "Dranbleiben", "ar": "المواظبة" }, "text": { "de": "50 fällige Wiederholungen beantwortet.", "ar": "أجبتَ عن خمسين سؤال مراجعة في موعدها." } },
+  { "id": "timed-ace", "emoji": "⏱️", "name": { "de": "Gegen die Uhr", "ar": "سباق مع الوقت" }, "text": { "de": "Mindestens 90 % im Test mit Zeitlimit.", "ar": "حقّقتَ ٩٠٪ أو أكثر في الاختبار المؤقّت." } },
+  { "id": "xp-1000", "emoji": "⭐", "name": { "de": "1 000 XP", "ar": "١٠٠٠ نقطة" }, "text": { "de": "1 000 Erfahrungspunkte gesammelt.", "ar": "جمعتَ ألف نقطة." } },
+  { "id": "xp-5000", "emoji": "🌟", "name": { "de": "5 000 XP", "ar": "٥٠٠٠ نقطة" }, "text": { "de": "5 000 Erfahrungspunkte gesammelt.", "ar": "جمعتَ خمسة آلاف نقطة." } }
+]

@@ -1,0 +1,379 @@
+{
+  "id": "relativ-praep",
+  "level": "B1.1",
+  "island": "relativsaetze",
+  "order": 2,
+  "prereqs": [
+    "relativ-dativ"
+  ],
+  "emoji": "🔗",
+  "german": "Relativsätze mit Präpositionen",
+  "source": {
+    "lektion": 1,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Präposition",
+    "+",
+    "Relativpronomen",
+    "…",
+    "Verb"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Das"
+        ],
+        [
+          "v",
+          "ist"
+        ],
+        [
+          "mf",
+          "der Bus, auf den wir warten"
+        ]
+      ]
+    },
+    {
+      "k": "rel",
+      "parts": [
+        [
+          "c",
+          "auf den"
+        ],
+        [
+          "mf",
+          "wir"
+        ],
+        [
+          "ve",
+          "warten"
+        ]
+      ]
+    }
+  ],
+  "example": "Das ist der Bus, auf den wir warten.",
+  "stepExamples": [
+    "Wir warten auf den Bus.",
+    "…, auf den wir warten.",
+    "Das ist die Frau, mit der ich arbeite.",
+    "der Tisch, an dem wir sitzen · der Tisch, an den wir den Stuhl stellen"
+  ],
+  "pitfallPair": "Das ist die Person, der ich mit arbeite. → Das ist die Person, mit der ich arbeite.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/5272"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "جملة الوصل مع حرف جر",
+      "lead": "إذا كان الفعل مرتبطًا بحرف جر مثل `warten auf`، احتفظ بالحرف حين تحوّل الاسم إلى ضمير وصل. الحرف والضمير يبدآن الجملة التابعة معًا.",
+      "translation": "هذه هي الحافلة التي ننتظرها.",
+      "steps": [
+        {
+          "text": "استرجع الجملة القصيرة",
+          "why": "احفظ التعبير كاملًا. هنا `auf` مع `warten` يطلب الأكوزاتيف. لذلك تكتب `den` للمذكر."
+        },
+        {
+          "text": "استبدل الاسم وانقل المجموعة",
+          "why": "انتقل حرف الجر مع الضمير إلى البداية. وضع الفعل `warten` في النهاية يحافظ على ترتيب الوصل."
+        },
+        {
+          "text": "قارن بحرف ثابت الداتيف",
+          "why": "حرف `mit` يأخذ الداتيف دائمًا. الاسم المرجعي مؤنث، فتصبح المجموعة `mit der`. ومع الجمع تقول `mit denen`."
+        },
+        {
+          "text": "افحص المكان والاتجاه إذا كان الحرف مكانيًا",
+          "why": "الجلوس يصف موقعًا ثابتًا فيستعمل `an dem`. وضع الكرسي عند الطاولة يحدد وجهة الحركة فيستعمل `an den`."
+        }
+      ],
+      "explain": [
+        "اقرأ الجملة التابعة بمفردها قبل اختيار الضمير. في `Das ist das Thema, über das wir sprechen` تختار `über das` لأن `sprechen über` يأخذ الأكوزاتيف و`Thema` محايد. في `Das sind die Bücher, aus denen ich lerne` يحدد `aus` الداتيف ويحدد الجمع صيغة `denen`. الصيغ `im` و`am` تختصر حرف الجر مع الأداة، أما في الوصل فقل `in dem` و`an dem` لكي يبقى ضمير الوصل ظاهرًا."
+      ],
+      "pitfall": "تنتقل المجموعة `mit der` كوحدة واحدة إلى بداية الجملة.",
+      "recall": [
+        "ماذا تقول مع `für` و`die Projekte`؟",
+        "`für die`، لأن `für` يأخذ الأكوزاتيف وصيغة جمع الوصل فيه `die`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 1 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "أدوات جمل الوصل · grammis"
+      ]
+    },
+    "de": {
+      "title": "Relativsätze mit Präposition",
+      "lead": "Gehört zum Verb eine feste Präposition wie bei `warten auf`, bleibt die Präposition erhalten, wenn das Nomen zum Relativpronomen wird. Präposition und Pronomen eröffnen den Nebensatz gemeinsam.",
+      "steps": [
+        {
+          "text": "Erinnere dich an den kurzen Satz",
+          "why": "Lerne den Ausdruck als Ganzes. `warten auf` verlangt den Akkusativ, deshalb schreibst du beim Maskulinum `den`."
+        },
+        {
+          "text": "Ersetze das Nomen und verschiebe die Gruppe",
+          "why": "Die Präposition wandert zusammen mit dem Pronomen an den Anfang. `warten` steht am Ende – so bleibt die Wortstellung des Relativsatzes erhalten."
+        },
+        {
+          "text": "Vergleiche mit einer Dativ-Präposition",
+          "why": "`mit` steht immer mit Dativ. Das Bezugswort ist feminin, also `mit der`. Im Plural sagst du `mit denen`."
+        },
+        {
+          "text": "Prüfe Ort und Richtung bei Wechselpräpositionen",
+          "why": "Sitzen beschreibt einen festen Ort, deshalb `an dem`. Den Stuhl an den Tisch stellen gibt eine Richtung an, deshalb `an den`."
+        }
+      ],
+      "explain": [
+        "Lies den Nebensatz für sich, bevor du das Pronomen wählst. In `Das ist das Thema, über das wir sprechen` wählst du `über das`, weil `sprechen über` den Akkusativ verlangt und `Thema` neutral ist. In `Das sind die Bücher, aus denen ich lerne` bestimmt `aus` den Dativ und der Plural die Form `denen`. `im` und `am` sind Verschmelzungen aus Präposition und Artikel – im Relativsatz sagst du `in dem` und `an dem`, damit das Relativpronomen sichtbar bleibt."
+      ],
+      "pitfall": "Die Gruppe `mit der` wandert als Einheit an den Anfang des Nebensatzes.",
+      "recall": [
+        "Was sagst du mit `für` und `die Projekte`?",
+        "`für die`, weil `für` den Akkusativ verlangt und das Relativpronomen im Plural dort `die` lautet."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 1 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Relativpronomen · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "relativ-praep-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Das ist der Mann, {{1}} ich arbeite.",
+      "blanks": [
+        [
+          "mit dem"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المجموعة المبدوءة بـ mit.",
+          "explain": "مع المذكر في الداتيف تقول mit dem.",
+          "hints": [
+            "mit يطلب حالة ثابتة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Gruppe mit `mit`.",
+          "explain": "Maskulin im Dativ: `mit dem`.",
+          "hints": [
+            "`mit` verlangt immer denselben Kasus."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-praep-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Das ist die Firma, {{1}} ich arbeite.",
+      "blanks": [
+        [
+          "für die"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المجموعة المبدوءة بـ für.",
+          "explain": "für يطلب الأكوزاتيف. صيغة المؤنث هي die.",
+          "hints": [
+            "فكّر في صيغة أكوزاتيف المؤنث."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Gruppe mit `für`.",
+          "explain": "`für` verlangt den Akkusativ. Die feminine Form ist `die`.",
+          "hints": [
+            "Denk an den Akkusativ feminin."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-praep-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "auf",
+        "mit",
+        "über"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أيّ حرف يلائم الفعل warten عند الحديث عن انتظار القطار؟",
+          "explain": "نقول auf den Zug warten. لذلك تبدأ جملة الوصل بـ auf den.",
+          "hints": [
+            "تذكّر الحرف الملازم للفعل warten في هذا التعبير."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Präposition passt zu `warten`, wenn man auf den Zug wartet?",
+          "explain": "Man sagt `auf den Zug warten`. Deshalb beginnt der Relativsatz mit `auf den`.",
+          "hints": [
+            "Erinnere dich an die feste Präposition von `warten`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-praep-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Das ist der Schrank, {{1}} die Gläser stehen und {{2}} ich die Tassen stelle.",
+      "blanks": [
+        [
+          "in dem"
+        ],
+        [
+          "in den"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المكان الثابت ثم الوجهة.",
+          "explain": "stehen يدل على مكان ثابت فيأخذ الداتيف مع in. stellen هنا اتجاه إلى داخل الخزانة فيأخذ الأكوزاتيف.",
+          "hints": [
+            "ميّز مكان الأشياء عن وجهة وضعها."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze zuerst den festen Ort, dann die Richtung.",
+          "explain": "`stehen` beschreibt einen festen Ort, also Dativ mit `in`. `stellen` gibt hier die Richtung in den Schrank an, also Akkusativ.",
+          "hints": [
+            "Unterscheide, wo etwas ist und wohin man es stellt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-praep-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "über das",
+        "wir",
+        "gestern",
+        "gesprochen",
+        "haben"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الوصل بعد das Thema. ضع الفاعل قبل gestern.",
+          "explain": "sprechen über يطلب Akkusativ هنا، وThema محايد. المساعد المصرف في الآخر.",
+          "hints": [
+            "ابدأ بحرف الجر والضمير كوحدة."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Relativsatz nach `das Thema`. Setz das Subjekt vor `gestern`.",
+          "explain": "`sprechen über` verlangt hier den Akkusativ, und `Thema` ist neutral. Das konjugierte Hilfsverb steht am Ende.",
+          "hints": [
+            "Beginne mit Präposition und Pronomen als Einheit."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-praep-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "die Bücher, aus denen wir lernen",
+        "die Bücher, aus den wir lernen",
+        "die Bücher, denen wir aus lernen"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر جملة الوصل الصحيحة للجملة Wir lernen aus den Büchern.",
+          "explain": "aus يطلب الداتيف. den أداة الجمع وليست صيغة ضمير الوصل هنا، وموضع aus قبل denen.",
+          "hints": [
+            "ضمير الوصل في داتيف الجمع له شكل خاص. ضع حرف الجر قبله."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle den richtigen Relativsatz zu `Wir lernen aus den Büchern.`",
+          "explain": "`aus` verlangt den Dativ. `den` ist der Pluralartikel, nicht das Relativpronomen, und `aus` steht vor `denen`.",
+          "hints": [
+            "Das Relativpronomen im Dativ Plural hat eine besondere Form. Setz die Präposition davor."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-praep-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Der Zug, auf den wir warten, hat Verspätung.",
+      "i18n": {
+        "ar": {
+          "prompt": "ادمج الجملتين. Der Zug hat Verspätung. Wir warten auf den Zug.",
+          "explain": "auf den للمذكر في الأكوزاتيف مع warten auf. يوضع warten آخر الوصل ثم تستأنف الرئيسية بـ hat.",
+          "hints": [
+            "حافظ على حرف الجر، وأدرج الوصل بين فاصلتين."
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde die Sätze: `Der Zug hat Verspätung. Wir warten auf den Zug.`",
+          "explain": "`auf den` für Maskulin Akkusativ mit `warten auf`. `warten` steht am Ende des Relativsatzes, dann geht der Hauptsatz mit `hat` weiter.",
+          "hints": [
+            "Behalte die Präposition und setz den Relativsatz zwischen zwei Kommas."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-praep-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das ist die Person, mit der ich arbeite.",
+      "context": "Das ist die Person, der ich mit arbeite.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "تنتقل المجموعة `mit der` كوحدة واحدة إلى بداية الجملة.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Die Gruppe `mit der` wandert als Einheit an den Anfang des Nebensatzes.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-praep-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`für die`، لأن `für` يأخذ الأكوزاتيف وصيغة جمع الوصل فيه `die`.",
+      "i18n": {
+        "ar": {
+          "prompt": "ماذا تقول مع `für` و`die Projekte`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Was sagst du mit `für` und `die Projekte`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

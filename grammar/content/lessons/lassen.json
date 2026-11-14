@@ -1,0 +1,368 @@
+{
+  "id": "lassen",
+  "level": "B1.1",
+  "island": "infinitiv-verben",
+  "order": 5,
+  "prereqs": [],
+  "emoji": "🪄",
+  "german": "Das Verb lassen",
+  "source": {
+    "lektion": 6,
+    "kind": "toc"
+  },
+  "pattern": [
+    "lassen",
+    "…",
+    "Infinitiv (ohne zu)"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "lasse"
+        ],
+        [
+          "mf",
+          "mein Fahrrad"
+        ],
+        [
+          "ve",
+          "reparieren"
+        ]
+      ]
+    }
+  ],
+  "example": "Ich lasse mein Fahrrad reparieren.",
+  "stepExamples": [
+    "Ich lasse meine Brille reparieren.",
+    "Sie lässt die Kinder draußen spielen. · Sie lässt die Kinder dort nicht spielen.",
+    "Das lässt sich reparieren. · Ich lasse die Tasche hier.",
+    "ich lasse · du lässt · er lässt · wir lassen"
+  ],
+  "pitfallPair": "Ich lasse mein Fahrrad zu reparieren. → Ich lasse mein Fahrrad reparieren.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/fragen/101"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "معاني الفعل lassen",
+      "lead": "يمكن أن يدل `lassen` على طلب تنفيذ خدمة أو السماح لآخر بفعل شيء. وتوجد استعمالات مألوفة أخرى تعرفها من الكلمات التي تأتي معه.",
+      "translation": "أطلب إصلاح دراجتي لدى شخص آخر.",
+      "steps": [
+        {
+          "text": "عبّر عن خدمة يقوم بها شخص آخر",
+          "why": "المتكلم يرتب إصلاح النظارة. الشخص الذي يقوم بالإصلاح يمكن أن يبقى مجهولًا. ضع `lassen` المصرف مبكرًا في الرئيسية، ثم المصدر `reparieren` في النهاية بلا `zu`."
+        },
+        {
+          "text": "عبّر عن السماح أو المنع",
+          "why": "تلعب المجموعة التي تظهر في الأكوزاتيف، وهي `die Kinder`. يظهر ذلك بوضوح مع الضمير `sie` أو مع المذكر في `Sie lässt ihn spielen`. النفي يمنع الفعل في المثال الثاني."
+        },
+        {
+          "text": "تعرّف إلى التركيب الانعكاسي وإلى الفعل المستقل",
+          "why": "التركيب الانعكاسي يفيد إمكان الإصلاح، أي `Das kann repariert werden`. وفي مثال الحقيبة يعني الفعل أنني أتركها هنا، ويكتمل المعنى بلا مصدر إضافي."
+        },
+        {
+          "text": "صرّف الفعل وميّز الماضي",
+          "why": "يتغيّر حرف العلة مع `du` و`er/sie/es`. في الماضي البسيط تقول `ich ließ`. في الماضي المركب مع مصدر آخر تقول `Ich habe das Rad reparieren lassen`، وحين يستعمل وحده تقول `Ich habe die Tasche hier gelassen`."
+        }
+      ],
+      "explain": [
+        "ميّز الخدمة عن الفعل الذاتي في `Ich lasse mir die Haare schneiden` و`Ich schneide mir die Haare`. في الجملة الأولى يحدد `mir` المستفيد من الخدمة. وفي `Lass das!` يطلب المتكلم ترك الفعل أو التوقف عنه. إذا احتجت إلى تحديد المعنى، اسأل من يقوم بالفعل الذي يظهر في المصدر."
+      ],
+      "pitfall": "في هذا الاستعمال يأتي المصدر بعد `lassen` بلا `zu`.",
+      "recall": [
+        "ماذا تعني `Die Tür lässt sich öffnen`؟",
+        "يمكن فتح الباب. تركيب `sich lassen + Infinitiv` هنا يعبر عن الإمكان."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 6 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "المصدر البديل وترتيب الأفعال · grammis"
+      ]
+    },
+    "de": {
+      "title": "Das Verb lassen",
+      "lead": "`lassen` kann bedeuten, dass man eine Dienstleistung beauftragt oder jemandem etwas erlaubt. Es gibt noch weitere gängige Bedeutungen, die du an den Wörtern daneben erkennst.",
+      "steps": [
+        {
+          "text": "Drück eine Dienstleistung durch eine andere Person aus",
+          "why": "Die sprechende Person organisiert die Reparatur der Brille. Wer repariert, kann unbekannt bleiben. Setz konjugiertes `lassen` früh in den Hauptsatz und den Infinitiv `reparieren` ohne `zu` ans Ende."
+        },
+        {
+          "text": "Drück Erlaubnis oder Verbot aus",
+          "why": "Wer spielt, ist die Gruppe im Akkusativ: `die Kinder`. Deutlich sieht man das mit dem Pronomen `sie` oder mit dem Maskulinum: `Sie lässt ihn spielen`. Die Verneinung verbietet im zweiten Beispiel die Handlung."
+        },
+        {
+          "text": "Lerne die reflexive Struktur und das Vollverb kennen",
+          "why": "Die reflexive Struktur drückt Möglichkeit aus: `Das kann repariert werden`. Im Beispiel mit der Tasche bedeutet das Verb, dass ich sie hier zurücklasse – ohne weiteren Infinitiv."
+        },
+        {
+          "text": "Konjugiere das Verb und unterscheide die Vergangenheit",
+          "why": "Bei `du` und `er/sie/es` ändert sich der Vokal. Im Präteritum sagst du `ich ließ`. Im Perfekt mit einem weiteren Infinitiv: `Ich habe das Rad reparieren lassen`; allein: `Ich habe die Tasche hier gelassen`."
+        }
+      ],
+      "explain": [
+        "Unterscheide die Dienstleistung von der eigenen Handlung: `Ich lasse mir die Haare schneiden` und `Ich schneide mir die Haare`. Im ersten Satz zeigt `mir`, wer von der Dienstleistung profitiert. Mit `Lass das!` fordert man jemanden auf, mit etwas aufzuhören. Brauchst du Klarheit, frag: Wer führt die Handlung im Infinitiv aus?"
+      ],
+      "pitfall": "In dieser Bedeutung steht der Infinitiv nach `lassen` ohne `zu`.",
+      "recall": [
+        "Was bedeutet `Die Tür lässt sich öffnen`?",
+        "Man kann die Tür öffnen. `sich lassen + Infinitiv` drückt hier eine Möglichkeit aus."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 6 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Ersatzinfinitiv und Verbstellung · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "lassen-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Er {{1}} sein Rad reparieren.",
+      "blanks": [
+        [
+          "lässt"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "صرّف lassen مع er.",
+          "explain": "نقول er lässt ثم المصدر المجرد.",
+          "hints": [
+            "تتغيّر حركة a في المفرد الثالث."
+          ]
+        },
+        "de": {
+          "prompt": "Konjugiere `lassen` mit `er`.",
+          "explain": "Wir sagen `er lässt` und dann den reinen Infinitiv.",
+          "hints": [
+            "In der 3. Person Singular ändert sich der Vokal `a`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lassen-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Ich lasse die Uhr {{1}}. (reparieren)",
+      "blanks": [
+        [
+          "reparieren"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المصدر الذي يدل على خدمة إصلاح.",
+          "explain": "يأتي reparieren بلا zu.",
+          "hints": [
+            "lassen هنا فعل مصرف يتبعه مصدر."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Infinitiv, der eine Reparatur als Dienstleistung ausdrückt.",
+          "explain": "`reparieren` steht ohne `zu`.",
+          "hints": [
+            "`lassen` ist hier konjugiert, danach folgt ein Infinitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lassen-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "من يصلح الأحذية في Ich lasse meine Schuhe reparieren؟",
+          "explain": "lassen هنا يفيد أن المتكلم يرتب إصلاح الحذاء لدى شخص آخر.",
+          "hints": [
+            "فرق بين ترتيب الخدمة وأداء الفعل."
+          ],
+          "options": [
+            "شخص آخر يتولى الخدمة.",
+            "المتكلم يصلحها بيده.",
+            "الحذاء يقوم بالإصلاح بنفسه."
+          ]
+        },
+        "de": {
+          "prompt": "Wer repariert die Schuhe in `Ich lasse meine Schuhe reparieren`?",
+          "explain": "`lassen` bedeutet hier, dass die sprechende Person die Reparatur bei jemand anderem beauftragt.",
+          "hints": [
+            "Unterscheide: eine Dienstleistung organisieren oder selbst handeln."
+          ],
+          "options": [
+            "Eine andere Person übernimmt die Arbeit.",
+            "Die sprechende Person repariert sie selbst.",
+            "Der Schuh repariert sich selbst."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lassen-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Ich habe den Wagen waschen {{1}}. · Ich habe die Tasche zu Hause {{2}}.",
+      "blanks": [
+        [
+          "lassen"
+        ],
+        [
+          "gelassen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الماضي من lassen في حالتين.",
+          "explain": "مع waschen نستخدم المصدر البديل lassen. عند استعماله وحده بمعنى ترك نكتب gelassen.",
+          "hints": [
+            "هل يوجد مصدر آخر في الجملة؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Vergangenheit von `lassen` in zwei Fällen.",
+          "explain": "Mit `waschen` benutzen wir den Ersatzinfinitiv `lassen`. Allein im Sinne von „zurücklassen“ schreiben wir `gelassen`.",
+          "hints": [
+            "Gibt es noch einen weiteren Infinitiv im Satz?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lassen-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Die Tür lässt sich öffnen.",
+        "Die Tür lässt mich öffnen.",
+        "Ich lasse die Tür offen."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي صيغة تعبّر عن إمكان الفتح؟",
+          "explain": "sich öffnen مع lassen يفيد الإمكان. mich يدل على شخص، وoffen تصف الباب متروكًا مفتوحًا.",
+          "hints": [
+            "ابحث عن ضمير انعكاسي مع lassen والمصدر."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Form drückt aus, dass man etwas öffnen kann?",
+          "explain": "`sich öffnen` mit `lassen` drückt eine Möglichkeit aus. `mich` verweist auf eine Person, `offen` beschreibt eine Tür, die offen gelassen wird.",
+          "hints": [
+            "Such ein Reflexivpronomen mit `lassen` und dem Infinitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lassen-6",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Heute",
+        "lasse",
+        "ich",
+        "mir",
+        "die Haare",
+        "schneiden."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة مع Heute أولًا. المتكلم هو من يطلب الخدمة لنفسه.",
+          "explain": "lasse يأتي بعد Heute، وmir يحدد المستفيد من خدمة القص.",
+          "hints": [
+            "بعد الظرف الأول يأتي الفعل المصرف، والمصدر يأتي في الآخر."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz mit `Heute` am Anfang. Die sprechende Person beauftragt die Dienstleistung für sich selbst.",
+          "explain": "`lasse` kommt nach `Heute`, und `mir` zeigt, wer vom Haareschneiden profitiert.",
+          "hints": [
+            "Nach dem ersten Adverb steht das konjugierte Verb, der Infinitiv kommt ans Ende."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lassen-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Sie lässt ihn hier nicht spielen.",
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب «هي لا تسمح له باللعب هنا» باستعمال lassen وihn.",
+          "explain": "lässt مع المفرد الثالث. ihn هو الشخص الذي سيؤدي spielen، وهو مصدر بلا zu.",
+          "hints": [
+            "صرّف lassen مع Sie وضع فعل اللعب في الطرف الآخر."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib „Sie lässt ihn hier nicht spielen“ mit `lassen` und `ihn`.",
+          "explain": "`lässt` in der 3. Person Singular. `ihn` ist die Person, die spielen würde; `spielen` steht ohne `zu`.",
+          "hints": [
+            "Konjugiere `lassen` mit `Sie` und setz das Verb `spielen` ans andere Ende."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lassen-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich lasse mein Fahrrad reparieren.",
+      "context": "Ich lasse mein Fahrrad zu reparieren.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "في هذا الاستعمال يأتي المصدر بعد `lassen` بلا `zu`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "In dieser Bedeutung steht der Infinitiv nach `lassen` ohne `zu`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lassen-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "يمكن فتح الباب. تركيب `sich lassen + Infinitiv` هنا يعبر عن الإمكان.",
+      "i18n": {
+        "ar": {
+          "prompt": "ماذا تعني `Die Tür lässt sich öffnen`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Was bedeutet `Die Tür lässt sich öffnen`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

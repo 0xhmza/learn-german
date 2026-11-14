@@ -1,0 +1,426 @@
+{
+  "id": "doppelkonjunktionen",
+  "level": "B1.1",
+  "island": "gegensatz-vergleich",
+  "order": 5,
+  "prereqs": [],
+  "emoji": "🧵",
+  "german": "Doppelkonjunktionen",
+  "source": {
+    "lektion": 2,
+    "kind": "toc"
+  },
+  "pattern": [
+    "sowohl … als auch",
+    "·",
+    "nicht nur … sondern auch",
+    "·",
+    "entweder … oder",
+    "·",
+    "weder … noch",
+    "·",
+    "zwar … aber"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Sie"
+        ],
+        [
+          "v",
+          "hat"
+        ],
+        [
+          "c",
+          "sowohl"
+        ],
+        [
+          "mf",
+          "Erfahrung"
+        ],
+        [
+          "c",
+          "als auch"
+        ],
+        [
+          "mf",
+          "gute Sprachkenntnisse"
+        ]
+      ]
+    }
+  ],
+  "example": "Sie hat sowohl Erfahrung als auch gute Sprachkenntnisse.",
+  "stepExamples": [
+    "sowohl A als auch B · nicht nur A, sondern auch B",
+    "entweder A oder B",
+    "weder A noch B",
+    "zwar A, aber B"
+  ],
+  "pitfallPair": "Er hat zwar Zeit, sondern auch Geduld. → Er hat nicht nur Zeit, sondern auch Geduld.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/kontrastive-grammatik/3789"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الربط بأدوات من جزأين",
+      "lead": "يختصر الربط المزدوج علاقتك بين شيئين. حدّد هل تريد جمعهما أم الاختيار بينهما أم نفيهما أم إثبات أحدهما مع قيد أو إضافة.",
+      "translation": "لديها خبرة ومهارات لغوية جيدة أيضًا.",
+      "steps": [
+        {
+          "text": "اجمع شيئين أو أكّد الثاني",
+          "why": "الأولى تثبت الأمرين. الثانية تضيف تأكيدًا على الثاني، مثل `Er schreibt nicht nur Berichte, sondern auch Angebote`. ضع الجزأين قبل العنصرين اللذين تريد ربطهما."
+        },
+        {
+          "text": "اعرض بديلين",
+          "why": "في `Wir arbeiten entweder im Büro oder zu Hause` البديلان مكانان للعمل. حافظ على التوازي حتى يقرأ السامع ما يقع في مقابل ماذا."
+        },
+        {
+          "text": "انفِ الأمرين",
+          "why": "في `Er hat weder Zeit noch Geld` ينفي التركيب الوقت والمال معًا. يكفي النفي الذي يحمله الزوج نفسه في هذه الجملة."
+        },
+        {
+          "text": "أثبت الأمر الأول ثم ضع قيدًا",
+          "why": "في `Die Stelle ist zwar befristet, aber sie ist gut bezahlt` الأمران صحيحان. تقصر `aber` أثر المعلومة الأولى أو توازنها بمعلومة مقابلة."
+        }
+      ],
+      "explain": [
+        "عند ربط مجموعات بسيطة تُكتب `sowohl … als auch` و`weder … noch` و`entweder … oder` عادة بلا فاصلة. ضع فاصلة قبل `aber` و`sondern`. وإذا ربطت جملتين رئيسيتين مستقلتين بـ `oder` تستطيع استخدام الفاصلة لتوضيح البنية. ترتيب الفعل يعتمد على موضع المجموعة في الجملة، وتستطيع استعمال الصيغة البسيطة بموازاة عنصرين بعد الفعل: `Wir brauchen sowohl Zeit als auch Geld`."
+      ],
+      "pitfall": "الزوج `nicht nur … sondern auch` يثبت الاثنين مع التأكيد على الثاني. يقترن `zwar` بـ `aber` حين تقصد التقييد.",
+      "recall": [
+        "أي زوج يناسب معنى «لا السبت ولا الأحد»؟",
+        "`weder am Samstag noch am Sonntag`. الزوج ينفي الخيارين."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 2 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "أدوات الربط · grammis"
+      ],
+      "table": [
+        [
+          "العلاقة",
+          "الزوج"
+        ],
+        [
+          "إثبات الاثنين",
+          "sowohl … als auch"
+        ],
+        [
+          "إثبات الاثنين مع إبراز الثاني",
+          "nicht nur …, sondern auch"
+        ],
+        [
+          "عرض بديلين",
+          "entweder … oder"
+        ],
+        [
+          "نفي الاثنين",
+          "weder … noch"
+        ],
+        [
+          "إثبات مع قيد",
+          "zwar …, aber"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Doppelkonjunktionen",
+      "lead": "Eine Doppelkonjunktion zeigt kurz die Beziehung zwischen zwei Dingen. Entscheide: Willst du beide verbinden, zwischen ihnen wählen, beide verneinen oder eines bestätigen und einschränken bzw. ergänzen?",
+      "steps": [
+        {
+          "text": "Verbinde zwei Dinge oder betone das zweite",
+          "why": "Die erste Form bestätigt beides. Die zweite betont zusätzlich das Zweite: `Er schreibt nicht nur Berichte, sondern auch Angebote`. Setz die beiden Teile vor die zwei Elemente, die du verbindest."
+        },
+        {
+          "text": "Nenne zwei Alternativen",
+          "why": "In `Wir arbeiten entweder im Büro oder zu Hause` sind die Alternativen zwei Arbeitsorte. Bleib parallel, damit man versteht, was wem gegenübersteht."
+        },
+        {
+          "text": "Verneine beides",
+          "why": "In `Er hat weder Zeit noch Geld` werden Zeit und Geld zusammen verneint. Die Verneinung steckt schon im Paar – mehr braucht der Satz nicht."
+        },
+        {
+          "text": "Bestätige das Erste und schränke ein",
+          "why": "In `Die Stelle ist zwar befristet, aber sie ist gut bezahlt` stimmt beides. `aber` schränkt die erste Information ein oder stellt ihr etwas gegenüber."
+        }
+      ],
+      "explain": [
+        "Verbindest du einfache Gruppen, schreibt man `sowohl … als auch`, `weder … noch` und `entweder … oder` meist ohne Komma. Vor `aber` und `sondern` steht ein Komma. Verbindest du zwei selbstständige Hauptsätze mit `oder`, kannst du ein Komma setzen, um die Struktur klarer zu machen. Die Verbposition hängt davon ab, wo die Gruppe im Satz steht; parallel nach dem Verb geht es ganz einfach: `Wir brauchen sowohl Zeit als auch Geld`."
+      ],
+      "pitfall": "`nicht nur … sondern auch` bestätigt beides und betont das Zweite. `zwar` gehört zu `aber`, wenn du einschränken willst.",
+      "recall": [
+        "Welches Paar passt zu „weder Samstag noch Sonntag“?",
+        "`weder am Samstag noch am Sonntag`. Das Paar verneint beide Möglichkeiten."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 2 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Konnektoren · grammis"
+      ],
+      "table": [
+        [
+          "Beziehung",
+          "Paar"
+        ],
+        [
+          "beides bestätigen",
+          "sowohl … als auch"
+        ],
+        [
+          "beides bestätigen, das Zweite betonen",
+          "nicht nur …, sondern auch"
+        ],
+        [
+          "zwei Alternativen",
+          "entweder … oder"
+        ],
+        [
+          "beides verneinen",
+          "weder … noch"
+        ],
+        [
+          "bestätigen mit Einschränkung",
+          "zwar …, aber"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "doppelkonjunktionen-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wir brauchen sowohl Zeit {{1}} Geduld.",
+      "blanks": [
+        [
+          "als auch"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الربط لإثبات الخيارين.",
+          "explain": "sowohl … als auch يثبت الحاجة إلى الوقت والصبر معًا.",
+          "hints": [
+            "اختر المكمل المعتاد لـ sowohl."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Verbindung, die beide Möglichkeiten bestätigt.",
+          "explain": "`sowohl … als auch` bestätigt, dass man Zeit und Geduld braucht.",
+          "hints": [
+            "Wähle den üblichen zweiten Teil zu `sowohl`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "doppelkonjunktionen-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Sie hat weder angerufen {{1}} geschrieben.",
+      "blanks": [
+        [
+          "noch"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الربط لنفي الخيارين.",
+          "explain": "weder … noch ينفي الاتصال والكتابة.",
+          "hints": [
+            "weder هي بداية زوج للنفي."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Verbindung, die beide Möglichkeiten verneint.",
+          "explain": "`weder … noch` verneint Anrufen und Schreiben.",
+          "hints": [
+            "`weder` ist der Anfang eines verneinenden Paares."
+          ]
+        }
+      }
+    },
+    {
+      "id": "doppelkonjunktionen-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "entweder … oder",
+        "sowohl … als auch",
+        "weder … noch"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي زوج يعلن بديلين للاختيار؟",
+          "explain": "entweder … oder يقدّم بديلين. الزوج الثاني يجمعهما والثالث ينفيهما.",
+          "hints": [
+            "ابحث عن معنى «إما… أو…»."
+          ]
+        },
+        "de": {
+          "prompt": "Welches Paar nennt zwei Alternativen zur Wahl?",
+          "explain": "`entweder … oder` bietet zwei Alternativen an. Das zweite Paar verbindet beide, das dritte verneint beide.",
+          "hints": [
+            "Such die Bedeutung „das eine oder das andere“."
+          ]
+        }
+      }
+    },
+    {
+      "id": "doppelkonjunktionen-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Er liest nicht nur Berichte, {{1}} Angebote.",
+      "blanks": [
+        [
+          "sondern auch"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل معنى الإضافة مع التأكيد.",
+          "explain": "يقابل nicht nur هنا sondern auch وتسبقها فاصلة.",
+          "hints": [
+            "الجزء الثاني إضافة مؤكدة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Bedeutung „zusätzlich, mit Betonung“.",
+          "explain": "Zu `nicht nur` gehört hier `sondern auch`, davor steht ein Komma.",
+          "hints": [
+            "Der zweite Teil ist eine betonte Ergänzung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "doppelkonjunktionen-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Die Stelle",
+        "ist",
+        "zwar",
+        "befristet,",
+        "aber",
+        "gut bezahlt."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة. ضع zwar بعد ist مباشرة.",
+          "explain": "zwar يقدّم الصفة الأولى وتأتي aber بعد الفاصلة لتوازنها بالثانية.",
+          "hints": [
+            "ابدأ بتقرير المعلومة ثم ضع القيد بعدها."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz. Setz `zwar` direkt nach `ist`.",
+          "explain": "`zwar` leitet die erste Eigenschaft ein, `aber` folgt nach dem Komma und stellt die zweite gegenüber.",
+          "hints": [
+            "Bestätige zuerst die Information und setz dann die Einschränkung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "doppelkonjunktionen-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Sie spricht sowohl Deutsch als auch Arabisch.",
+        "Sie spricht sowohl Deutsch, als auch Arabisch.",
+        "Sie spricht sowohl Deutsch oder Arabisch."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر كتابة صحيحة لربط اسمين.",
+          "explain": "الزوج هو sowohl … als auch ولا توضع فاصلة بين العنصرين البسيطين.",
+          "hints": [
+            "هنا نربط اسمين بلا جملتين مستقلتين."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle die richtige Schreibweise für die Verbindung zweier Nomen.",
+          "explain": "Das Paar ist `sowohl … als auch`, und zwischen zwei einfachen Elementen steht kein Komma.",
+          "hints": [
+            "Hier verbinden wir zwei Nomen, keine zwei Sätze."
+          ]
+        }
+      }
+    },
+    {
+      "id": "doppelkonjunktionen-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich mag zwar den Beruf, aber die Arbeitszeiten sind schwierig.",
+      "i18n": {
+        "ar": {
+          "prompt": "ادمج Ich mag den Beruf وDie Arbeitszeiten sind schwierig مع zwar … aber.",
+          "explain": "تأتي zwar مع الإثبات الأول. تسبق aber فاصلة وتبقى جملة Arbeitszeiten في ترتيب رئيسي.",
+          "hints": [
+            "أثبت حب العمل في الجزء الأول وأضف القيد في الثاني."
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde `Ich mag den Beruf` und `Die Arbeitszeiten sind schwierig` mit zwar … aber.",
+          "explain": "`zwar` gehört zur ersten Aussage. Vor `aber` steht ein Komma, und der Satz mit den Arbeitszeiten bleibt in Hauptsatz-Wortstellung.",
+          "hints": [
+            "Bestätige im ersten Teil, dass du den Beruf magst, und setz die Einschränkung in den zweiten."
+          ]
+        }
+      }
+    },
+    {
+      "id": "doppelkonjunktionen-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Er hat nicht nur Zeit, sondern auch Geduld.",
+      "context": "Er hat zwar Zeit, sondern auch Geduld.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "الزوج `nicht nur … sondern auch` يثبت الاثنين مع التأكيد على الثاني. يقترن `zwar` بـ `aber` حين تقصد التقييد.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "`nicht nur … sondern auch` bestätigt beides und betont das Zweite. `zwar` gehört zu `aber`, wenn du einschränken willst.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "doppelkonjunktionen-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`weder am Samstag noch am Sonntag`. الزوج ينفي الخيارين.",
+      "i18n": {
+        "ar": {
+          "prompt": "أي زوج يناسب معنى «لا السبت ولا الأحد»؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Welches Paar passt zu „weder Samstag noch Sonntag“?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

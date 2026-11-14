@@ -1,0 +1,380 @@
+{
+  "id": "partizip1",
+  "level": "B1.1",
+  "island": "adjektive",
+  "order": 4,
+  "prereqs": [],
+  "emoji": "🌱",
+  "german": "Partizip I",
+  "source": {
+    "lektion": 2,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Infinitiv",
+    "+ d",
+    "+ Adjektivendung"
+  ],
+  "frames": [
+    {
+      "k": "np",
+      "parts": [
+        [
+          "n",
+          "die"
+        ],
+        [
+          "hl",
+          "im Hof spielenden"
+        ],
+        [
+          "n",
+          "Kinder"
+        ]
+      ]
+    },
+    {
+      "k": "rel",
+      "parts": [
+        [
+          "n",
+          "die Kinder,"
+        ],
+        [
+          "c",
+          "die"
+        ],
+        [
+          "mf",
+          "im Hof"
+        ],
+        [
+          "ve",
+          "spielen"
+        ]
+      ]
+    }
+  ],
+  "example": "Die Kinder spielen. → die spielenden Kinder",
+  "stepExamples": [
+    "spielen",
+    "spielen + d → spielend",
+    "die spielenden Kinder",
+    "die im Hof spielenden Kinder"
+  ],
+  "pitfallPair": "ein weinenes Kind → ein weinendes Kind",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/terms/view/180"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "وصف من يقوم بالفعل",
+      "lead": "حين تريد وصف شخص أو شيء بفعل يؤديه، يمكنك بناء صيغة `Partizip I` من مصدر الفعل. غالبًا يصف الاسم وهو يقوم بالفعل في الوقت المعني بالسياق.",
+      "translation": "الأطفال يلعبون ← الأطفال الذين يلعبون.",
+      "steps": [
+        {
+          "text": "ابدأ بالمصدر كاملًا",
+          "why": "المصدر هو شكل القاموس. احتفظ به كاملًا قبل إضافة حرف الاشتقاق."
+        },
+        {
+          "text": "أضف d في نهاية المصدر",
+          "why": "هذه صيغة `Partizip I` الأساسية. من `arbeiten` نحصل على `arbeitend` ومن `anrufen` على `anrufend`. تبقى البادئة المتصلة في صيغة المصدر جزءًا من الكلمة."
+        },
+        {
+          "text": "ضع الصيغة قبل الاسم مع النهاية",
+          "why": "عندما تتحول الصيغة إلى صفة قبل الاسم، تلحقها نهاية الصفة. هنا الجمع بعد `die` يأخذ `-en`. حرف `d` جزء من الصيغة، و`-en` جزء من التصريف."
+        },
+        {
+          "text": "وسّع الوصف إذا احتجت",
+          "why": "تسبق معلومات مثل `im Hof` الصفة. تستطيع تفكيك الوصف إلى جملة وصل، `die Kinder, die im Hof spielen`، لتحدد من يقوم بالفعل."
+        }
+      ],
+      "explain": [
+        "الزمن يُفهم من السياق. في `Gestern sah ich ein schlafendes Kind` كان الطفل نائمًا وقت رؤيتي له أمس. وفي `Sie kam lächelnd herein` تصف `lächelnd` طريقة دخولها، وتأتي هنا بلا نهاية صفة لأنها خارج المجموعة الاسمية. الصيغتان الشائعتان `seiend` و`tuend` تبنيان من `sein` و`tun` مع حرف العلة المسموع في الصيغة."
+      ],
+      "pitfall": "أضف `d` إلى `weinen` أولًا، ثم `-es` للمحايد بعد `ein` في هذا السياق.",
+      "recall": [
+        "كيف تفكّ `die wartenden Gäste` إلى جملة وصل؟",
+        "`die Gäste, die warten`. الضيوف أنفسهم يقومون بالانتظار."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 2 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "Partizip I · grammis"
+      ]
+    },
+    "de": {
+      "title": "Partizip I",
+      "lead": "Willst du eine Person oder Sache durch eine Handlung beschreiben, die sie gerade ausführt, kannst du aus dem Infinitiv das `Partizip I` bilden. Meist beschreibt es, dass das Nomen die Handlung zur gleichen Zeit ausführt.",
+      "steps": [
+        {
+          "text": "Beginne mit dem vollständigen Infinitiv",
+          "why": "Der Infinitiv ist die Wörterbuchform. Behalte ihn komplett, bevor du die Endung anhängst."
+        },
+        {
+          "text": "Häng ein d an den Infinitiv",
+          "why": "Das ist die Grundform des `Partizip I`. Aus `arbeiten` wird `arbeitend`, aus `anrufen` `anrufend`. Das Präfix bleibt Teil des Wortes."
+        },
+        {
+          "text": "Stell die Form mit Endung vor das Nomen",
+          "why": "Wird das Partizip zum Adjektiv vor einem Nomen, bekommt es eine Adjektivendung. Hier: Plural nach `die` → `-en`. Das `d` gehört zum Partizip, das `-en` zur Deklination."
+        },
+        {
+          "text": "Erweitere die Beschreibung bei Bedarf",
+          "why": "Angaben wie `im Hof` stehen vor dem Partizip. Du kannst die Gruppe in einen Relativsatz auflösen – `die Kinder, die im Hof spielen` – und so sehen, wer die Handlung ausführt."
+        }
+      ],
+      "explain": [
+        "Die Zeit ergibt sich aus dem Kontext. In `Gestern sah ich ein schlafendes Kind` schlief das Kind, als ich es gestern sah. In `Sie kam lächelnd herein` beschreibt `lächelnd`, wie sie hereinkam – ohne Adjektivendung, weil es außerhalb einer Nominalgruppe steht. Die häufigen Formen `seiend` und `tuend` werden aus `sein` und `tun` gebildet."
+      ],
+      "pitfall": "Häng zuerst ein `d` an `weinen` und dann in diesem Kontext `-es` für das Neutrum nach `ein`.",
+      "recall": [
+        "Wie löst du `die wartenden Gäste` in einen Relativsatz auf?",
+        "`die Gäste, die warten`. Die Gäste selbst warten."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 2 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Partizip I · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "partizip1-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "warten → {{1}}",
+      "blanks": [
+        [
+          "wartend"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب Partizip I من warten بلا نهاية صفة.",
+          "explain": "تضاف d إلى المصدر كاملًا.",
+          "hints": [
+            "أضف حرفًا واحدًا إلى المصدر."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib das Partizip I von `warten` ohne Adjektivendung.",
+          "explain": "An den vollständigen Infinitiv wird ein `d` angehängt.",
+          "hints": [
+            "Häng einen Buchstaben an den Infinitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip1-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "ein {{1}} Kind",
+      "blanks": [
+        [
+          "schlafendes"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "كوّن صيغة الوصف من schlafen بعد ein.",
+          "explain": "schlafen + d يعطي schlafend، ثم تأتي -es مع ein Kind.",
+          "hints": [
+            "افصل اشتقاق الصيغة عن نهاية المحايد."
+          ]
+        },
+        "de": {
+          "prompt": "Bilde die Form von `schlafen` nach `ein`.",
+          "explain": "`schlafen` + `d` ergibt `schlafend`, dann kommt `-es` mit `ein Kind`.",
+          "hints": [
+            "Trenne die Bildung des Partizips von der Neutrum-Endung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip1-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "die wartenden Gäste",
+        "die gewarteten Gäste",
+        "die warten Gäste"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي وصف يعني أن الضيوف يقومون بالانتظار؟",
+          "explain": "Partizip I يدل على نشاط الضيوف. warteten/gewarteten لا يحققان هذا البناء، وwarten مصدر مجرد.",
+          "hints": [
+            "اختر صيغة المصدر + d مع النهاية المناسبة."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Beschreibung bedeutet, dass die Gäste gerade warten?",
+          "explain": "Das Partizip I zeigt, dass die Gäste aktiv sind. `warteten`/`gewarteten` bilden diese Struktur nicht, und `warten` ist nur der Infinitiv.",
+          "hints": [
+            "Wähle Infinitiv + d mit der passenden Endung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip1-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Die {{1}} Gäste warten am Eingang.",
+      "blanks": [
+        [
+          "ankommenden"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اشتق الصفة من ankommen للجمع.",
+          "explain": "ankommen يصبح ankommend ثم ankommenden.",
+          "hints": [
+            "احتفظ بالبادئة وأضف نهاية الجمع بعد die."
+          ]
+        },
+        "de": {
+          "prompt": "Bilde das Adjektiv von `ankommen` für den Plural.",
+          "explain": "`ankommen` wird zu `ankommend`, dann `ankommenden`.",
+          "hints": [
+            "Behalte das Präfix und häng die Pluralendung nach `die` an."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip1-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "die",
+        "im Hof",
+        "spielenden",
+        "Kinder"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب العبارة بوضع الوصف قبل الاسم. ضع im Hof قبل الصفة.",
+          "explain": "im Hof يحدد مكان اللعب ويتقدم على spielenden داخل المجموعة.",
+          "hints": [
+            "الوصف كله يجيب عن سؤال أي أطفال؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Ausdruck und stell die Beschreibung vor das Nomen. Setz `im Hof` vor das Adjektiv.",
+          "explain": "`im Hof` gibt den Ort des Spielens an und steht in der Gruppe vor `spielenden`.",
+          "hints": [
+            "Die ganze Beschreibung beantwortet die Frage: Welche Kinder?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip1-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "لماذا تأتي lächelnd بلا نهاية في Sie kam lächelnd herein؟",
+          "explain": "هنا الصيغة ظرفية. عندما تصف اسمًا قبلَه، مثل ein lächelndes Kind، تأخذ نهاية.",
+          "hints": [
+            "هل توجد كلمة اسمية بعدها تصفها مباشرة؟"
+          ],
+          "options": [
+            "تصف طريقة دخولها خارج المجموعة الاسمية.",
+            "لأن كل Partizip I بلا نهاية حتى قبل الاسم.",
+            "لأن الماضي يحذف نهايات الصفات."
+          ]
+        },
+        "de": {
+          "prompt": "Warum hat `lächelnd` in `Sie kam lächelnd herein` keine Endung?",
+          "explain": "Hier wird das Partizip adverbial benutzt. Beschreibt es ein Nomen direkt davor, z. B. `ein lächelndes Kind`, bekommt es eine Endung.",
+          "hints": [
+            "Gibt es direkt danach ein Nomen, das es beschreibt?"
+          ],
+          "options": [
+            "Es beschreibt, wie sie hereinkam – außerhalb einer Nominalgruppe.",
+            "Weil Partizip I nie eine Endung hat, auch nicht vor einem Nomen.",
+            "Weil die Vergangenheit Adjektivendungen löscht."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip1-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "die im Garten lachenden Kinder",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Die Kinder, die im Garten lachen إلى مجموعة اسمية فيها Partizip I.",
+          "explain": "lachen + d يعطي lachend. أضف -en للجمع بعد die وضع im Garten قبل الصفة.",
+          "hints": [
+            "من الذي يضحك؟ أين توضع معلومات المكان داخل الوصف؟"
+          ]
+        },
+        "de": {
+          "prompt": "Mach aus `Die Kinder, die im Garten lachen` eine Nominalgruppe mit Partizip I.",
+          "explain": "`lachen` + `d` ergibt `lachend`. Häng `-en` für den Plural nach `die` an und stell `im Garten` vor das Adjektiv.",
+          "hints": [
+            "Wer lacht? Wo steht die Ortsangabe in der Beschreibung?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip1-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "ein weinendes Kind",
+      "context": "ein weinenes Kind",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "أضف `d` إلى `weinen` أولًا، ثم `-es` للمحايد بعد `ein` في هذا السياق.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Häng zuerst ein `d` an `weinen` und dann in diesem Kontext `-es` für das Neutrum nach `ein`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip1-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`die Gäste, die warten`. الضيوف أنفسهم يقومون بالانتظار.",
+      "i18n": {
+        "ar": {
+          "prompt": "كيف تفكّ `die wartenden Gäste` إلى جملة وصل؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wie löst du `die wartenden Gäste` in einen Relativsatz auf?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

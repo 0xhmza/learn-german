@@ -1,0 +1,380 @@
+{
+  "id": "relativ-ort",
+  "level": "B1.1",
+  "island": "relativsaetze",
+  "order": 5,
+  "prereqs": [],
+  "emoji": "📍",
+  "german": "Relativsätze mit wo, wohin und woher",
+  "source": {
+    "lektion": 4,
+    "kind": "toc"
+  },
+  "pattern": [
+    "wo = Ort",
+    "·",
+    "wohin = Ziel",
+    "·",
+    "woher = Herkunft"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Das"
+        ],
+        [
+          "v",
+          "ist"
+        ],
+        [
+          "mf",
+          "der Ort, wo ich wohne"
+        ]
+      ]
+    },
+    {
+      "k": "rel",
+      "parts": [
+        [
+          "c",
+          "wo / wohin / woher"
+        ],
+        [
+          "mf",
+          "ich"
+        ],
+        [
+          "ve",
+          "wohne / ziehe / komme"
+        ]
+      ]
+    }
+  ],
+  "example": "Das ist der Ort, wo ich wohne / wohin ich ziehe / woher ich komme.",
+  "stepExamples": [
+    "Dort, wo ich wohne, gibt es einen Park.",
+    "Das ist der Ort, wohin sie fährt.",
+    "Das ist die Stadt, woher er kommt.",
+    "der Park, wo wir laufen · die Person, die wir sehen"
+  ],
+  "pitfallPair": "Das ist der Ort, woher sie morgen hinfährt. → Das ist der Ort, wohin sie morgen fährt.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/5272",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/2093"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الوصل المكاني: أين، إلى أين، من أين",
+      "lead": "تخبرنا هذه الجمل بموقع الحدث أو وجهته أو مصدره. جرّب صياغة سؤال مكاني عن الفعل داخل الوصل لتعرف أي أداة تحتاج.",
+      "translation": "هذا هو المكان الذي أقيم فيه / أنتقل إليه / جئت منه.",
+      "steps": [
+        {
+          "text": "استعمل wo لموقع الحدث",
+          "why": "تسأل `Wo wohne ich?` أي أين أقيم. الفعل `wohnen` يصف الإقامة في المكان. يمكن في أمثلة كثيرة مع اسم مكان استعمال حرف وضمير، مثل `der Ort, an dem ich wohne`."
+        },
+        {
+          "text": "استعمل wohin للوجهة",
+          "why": "السؤال `Wohin fährt sie?` يعني إلى أين. الحركة نحو الوجهة هي المقصودة. ويمكن صياغة وجهة إلى بلد مثل `das Land, in das sie zieht`."
+        },
+        {
+          "text": "استعمل woher للمصدر",
+          "why": "اسأل `Woher kommt er?`. التركيز على نقطة المنشأ، مثل `die Stadt, aus der er kommt`."
+        },
+        {
+          "text": "احصر هذا الاستعمال في المعنى المكاني",
+          "why": "يمكن أن توجد حركة مع `wo` حين نصف مكانها، مثل الجري داخل الحديقة. لو وصفت شخصًا رأيناه تستعمل ضمير وصل يبيّن دوره، فتقول `die` في المثال."
+        }
+      ],
+      "explain": [
+        "يفيدك التمييز بين الحركة في نطاق والحركة إلى نطاق. `der Park, wo wir laufen` يفيد مكان الجري. `der Park, wohin wir laufen` يفيد وجهته. وإذا كانت جملة الوصل في الوسط فاستأنف الرئيسية بعد الفاصلة الثانية، مثل `Dort, wo wir wohnen, ist es ruhig`."
+      ],
+      "pitfall": "إذا كانت تتجه إلى هذا المكان فقل `Das ist der Ort, wohin sie morgen fährt.` تدل `woher` على نقطة الانطلاق.",
+      "recall": [
+        "ما الأنسب مع `ursprünglich kommen` حين نقصد بلد الأصل؟",
+        "`woher`، مثل `das Land, woher sie ursprünglich kommt`. ويمكن القول `das Land, aus dem sie ursprünglich kommt`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 4 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "أدوات جمل الوصل · grammis",
+        "أدوات المكان · grammis"
+      ]
+    },
+    "de": {
+      "title": "Relativsätze mit wo, wohin und woher",
+      "lead": "Diese Sätze sagen, wo etwas passiert, wohin es geht oder woher es kommt. Stell dir eine Ortsfrage zum Verb im Relativsatz, um das passende Wort zu finden.",
+      "steps": [
+        {
+          "text": "Benutze wo für den Ort des Geschehens",
+          "why": "Du fragst `Wo wohne ich?`. `wohnen` beschreibt den Aufenthalt an einem Ort. Bei Ortsnomen geht oft auch Präposition + Pronomen: `der Ort, an dem ich wohne`."
+        },
+        {
+          "text": "Benutze wohin für das Ziel",
+          "why": "Die Frage `Wohin fährt sie?` zielt auf die Richtung. Gemeint ist die Bewegung zum Ziel. Bei einem Land geht auch `das Land, in das sie zieht`."
+        },
+        {
+          "text": "Benutze woher für die Herkunft",
+          "why": "Frag `Woher kommt er?`. Im Fokus steht der Ausgangspunkt, z. B. `die Stadt, aus der er kommt`."
+        },
+        {
+          "text": "Benutze diese Wörter nur für räumliche Bedeutung",
+          "why": "Mit `wo` kann es eine Bewegung geben, wenn du ihren Ort beschreibst – z. B. Laufen im Park. Beschreibst du eine Person, die wir gesehen haben, brauchst du ein Relativpronomen, das ihre Rolle zeigt: hier `die`."
+        }
+      ],
+      "explain": [
+        "Unterscheide Bewegung innerhalb eines Ortes und Bewegung zu einem Ort: `der Park, wo wir laufen` nennt den Ort des Laufens, `der Park, wohin wir laufen` das Ziel. Steht der Relativsatz in der Mitte, geht der Hauptsatz nach dem zweiten Komma weiter: `Dort, wo wir wohnen, ist es ruhig`."
+      ],
+      "pitfall": "Fährt sie zu diesem Ort, sag `Das ist der Ort, wohin sie morgen fährt.` `woher` bezeichnet den Ausgangspunkt.",
+      "recall": [
+        "Was passt zu `ursprünglich kommen`, wenn das Herkunftsland gemeint ist?",
+        "`woher`, z. B. `das Land, woher sie ursprünglich kommt`. Man kann auch sagen: `das Land, aus dem sie ursprünglich kommt`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 4 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Relativpronomen · grammis",
+        "Lokale Präpositionen · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "relativ-ort-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Das ist der Ort, {{1}} wir arbeiten.",
+      "blanks": [
+        [
+          "wo"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بأداة الموقع الثابت.",
+          "explain": "wo يدل على المكان الذي يحدث فيه العمل.",
+          "hints": [
+            "اسأل أين نعمل؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Wort für einen festen Ort.",
+          "explain": "`wo` zeigt den Ort, an dem gearbeitet wird.",
+          "hints": [
+            "Frag: Wo arbeiten wir?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-ort-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Das ist die Stadt, {{1}} sie morgen fährt.",
+      "blanks": [
+        [
+          "wohin"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بأداة الوجهة.",
+          "explain": "wohin يدل على اتجاه الحركة نحو المدينة.",
+          "hints": [
+            "اسأل إلى أين تتجه؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Wort für ein Ziel.",
+          "explain": "`wohin` zeigt die Richtung der Bewegung zur Stadt.",
+          "hints": [
+            "Frag: Wohin fährt sie?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-ort-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "das Land, woher er kommt",
+        "das Land, wohin er fährt",
+        "das Land, wo er wohnt"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي صيغة تصف بلد الأصل؟",
+          "explain": "woher يحدد المنشأ. wohin للوجهة وwo للمكان.",
+          "hints": [
+            "فكّر في نقطة البداية."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Form beschreibt das Herkunftsland?",
+          "explain": "`woher` bestimmt die Herkunft, `wohin` das Ziel, `wo` den Ort.",
+          "hints": [
+            "Denk an den Ausgangspunkt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-ort-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "der Park, {{1}} wir spazieren gehen (داخل الحديقة) · der Park, {{2}} wir fahren (إليها)",
+      "blanks": [
+        [
+          "wo"
+        ],
+        [
+          "wohin"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بأداتين مختلفتين.",
+          "explain": "المشي داخل الحديقة يحدد المكان، والذهاب إليها يحدد الوجهة.",
+          "hints": [
+            "قد توجد حركة حتى عند وصف موقع ثابت."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze zwei verschiedene Wörter.",
+          "explain": "Spazieren im Park nennt den Ort, zum Park gehen das Ziel.",
+          "hints": [
+            "Auch wenn man einen festen Ort beschreibt, kann es eine Bewegung geben."
+          ],
+          "text": "der Park, {{1}} wir spazieren gehen (im Park) · der Park, {{2}} wir fahren (dorthin)"
+        }
+      }
+    },
+    {
+      "id": "relativ-ort-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "die Person, die wir gesehen haben",
+        "die Person, wo wir gesehen haben",
+        "die Person, wohin wir gesehen haben"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي وصل قياسي يصف الشخص الذي رأيناه؟",
+          "explain": "die ضمير الوصل في أكوزاتيف المؤنث. wo وwohin تعبّران عن علاقة مكانية هنا.",
+          "hints": [
+            "الشخص مفعول مباشر في الوصل."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Standard-Relativsatz beschreibt die Person, die wir gesehen haben?",
+          "explain": "`die` ist das Relativpronomen im Akkusativ feminin. `wo` und `wohin` drücken hier eine räumliche Beziehung aus.",
+          "hints": [
+            "Die Person ist im Relativsatz das Akkusativobjekt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-ort-6",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "woher",
+        "sie",
+        "ursprünglich",
+        "kommt"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجزء المكاني بعد die Stadt وابدأ بأداة المصدر. ضع sie قبل ursprünglich.",
+          "explain": "woher تدل على الأصل. يأتي kommt في نهاية الجملة التابعة.",
+          "hints": [
+            "اجعل الفعل المصرف يغلق الوصل."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Ortsteil nach `die Stadt` und beginne mit dem Herkunftswort. Setz `sie` vor `ursprünglich`.",
+          "explain": "`woher` zeigt die Herkunft. `kommt` steht am Ende des Nebensatzes.",
+          "hints": [
+            "Das konjugierte Verb schließt den Relativsatz."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-ort-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das ist die Stadt, aus der sie kommt.",
+      "i18n": {
+        "ar": {
+          "prompt": "أعد صياغة Das ist die Stadt, woher sie kommt باستعمال aus وضمير وصل.",
+          "explain": "تحل aus der محل woher مع الحفاظ على معنى المصدر، ويبقى kommt في الآخر.",
+          "hints": [
+            "تطلب aus الداتيف. Stadt مؤنث."
+          ]
+        },
+        "de": {
+          "prompt": "Formuliere `Das ist die Stadt, woher sie kommt` mit `aus` und einem Relativpronomen.",
+          "explain": "`aus der` ersetzt `woher` und behält die Bedeutung der Herkunft; `kommt` bleibt am Ende.",
+          "hints": [
+            "`aus` verlangt den Dativ. `Stadt` ist feminin."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-ort-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das ist der Ort, wohin sie morgen fährt.",
+      "context": "Das ist der Ort, woher sie morgen hinfährt.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح أداة الوصل حتى تعني أن هذا المكان هو وجهة رحلتها غدًا.",
+          "explain": "إذا كانت تتجه إلى هذا المكان فقل `Das ist der Ort, wohin sie morgen fährt.` تدل `woher` على نقطة الانطلاق.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere das Wort im Relativsatz, sodass der Ort das Ziel ihrer Fahrt morgen ist.",
+          "explain": "Fährt sie zu diesem Ort, sag `Das ist der Ort, wohin sie morgen fährt.` `woher` bezeichnet den Ausgangspunkt.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-ort-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`woher`، مثل `das Land, woher sie ursprünglich kommt`. ويمكن القول `das Land, aus dem sie ursprünglich kommt`.",
+      "i18n": {
+        "ar": {
+          "prompt": "ما الأنسب مع `ursprünglich kommen` حين نقصد بلد الأصل؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Was passt zu `ursprünglich kommen`, wenn das Herkunftsland gemeint ist?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

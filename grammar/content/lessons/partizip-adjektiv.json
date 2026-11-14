@@ -1,0 +1,378 @@
+{
+  "id": "partizip-adjektiv",
+  "level": "B1.1",
+  "island": "adjektive",
+  "order": 5,
+  "prereqs": [
+    "partizip1"
+  ],
+  "emoji": "🎨",
+  "german": "Partizip I und II als Adjektiv",
+  "source": {
+    "lektion": 2,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Partizip I = macht gerade (aktiv)",
+    "·",
+    "Partizip II = Ergebnis (passiv / fertig)"
+  ],
+  "frames": [
+    {
+      "k": "np",
+      "parts": [
+        [
+          "n",
+          "die"
+        ],
+        [
+          "hl",
+          "schließende"
+        ],
+        [
+          "n",
+          "Tür"
+        ]
+      ]
+    },
+    {
+      "k": "np",
+      "parts": [
+        [
+          "n",
+          "die"
+        ],
+        [
+          "hl",
+          "geschlossene"
+        ],
+        [
+          "n",
+          "Tür"
+        ]
+      ]
+    }
+  ],
+  "example": "die schließende Tür · die geschlossene Tür",
+  "stepExamples": [
+    "die reparierende Person",
+    "das reparierte Fahrrad",
+    "öffnen → geöffnet · schreiben → geschrieben · verkaufen → verkauft",
+    "mit einem frisch gestrichenen Tisch"
+  ],
+  "pitfallPair": "die reparierenden Fahrräder → die reparierten Fahrräder",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/terms/view/180"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الفرق بين الوصف بالفعل ونتيجته",
+      "lead": "يقودك اختيار الصيغة إلى سؤالين. هل الاسم يقوم بالفعل؟ أم وقع عليه الإجراء أو صار في الحالة الناتجة عنه؟",
+      "translation": "الباب الذي ينغلق الآن · الباب المغلق.",
+      "steps": [
+        {
+          "text": "افهم دور الاسم مع Partizip I",
+          "why": "الشخص هو من يصلح. من المصدر `reparieren` نصنع `reparierend` ثم نضيف `-e` للمؤنث بعد الأداة المحددة في الرفع."
+        },
+        {
+          "text": "اختر Partizip II لوصف النتيجة",
+          "why": "الدراجة هي ما أُصلح. صيغة `repariert` تعرفها من الماضي، وتضاف إليها `-e` حين تأتي صفة للمحايد بعد `das` في الرفع أو الأكوزاتيف."
+        },
+        {
+          "text": "انتبه إلى شكل الفعل الأصلي",
+          "why": "احتفظ بصيغة `Partizip II` كما هي قبل إلحاق نهاية الصفة. أفعال مثل `reparieren` و`verkaufen` لا تكتسب `ge-` في هذه الصيغة."
+        },
+        {
+          "text": "افصل الصيغة عن النهاية",
+          "why": "في `gestrichenen` الأساس `gestrichen`، ثم أضفت `-en` بعد `einem`. الداتيف يأتي من `mit`، حتى مع وجود كلمة إضافية مثل `frisch`."
+        }
+      ],
+      "explain": [
+        "قد يحمل `Partizip II` معنى الإتمام حتى عندما يكون الاسم نفسه من قام بالحركة. مثال ذلك `die angekommenen Gäste`، أي الضيوف الذين وصلوا بالفعل. قارنها بـ `die ankommenden Gäste` أي الذين يصلون الآن أو في الوقت المعني. الصفة قبل الاسم تحمل نهاية، بينما في `Die Tür ist geschlossen` تظهر `geschlossen` بلا نهاية بعد `sein`."
+      ],
+      "pitfall": "إذا كنت تقصد الدراجات التي أُصلحت فقل `die reparierten Fahrräder`. اختيار `reparierenden` يجعل الدراجات تقوم بالإصلاح.",
+      "recall": [
+        "ما الفرق بين `ein geschriebenes Wort` و`ein schreibendes Kind`؟",
+        "الكلمة نتيجة الكتابة، والطفل يقوم بالكتابة. نهاية المحايد بعد `ein` هي `-es` في الحالتين."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 2 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "Partizip I · grammis"
+      ]
+    },
+    "de": {
+      "title": "Partizip I und II als Adjektiv",
+      "lead": "Bei der Wahl der Form helfen dir zwei Fragen: Führt das Nomen die Handlung selbst aus? Oder ist mit ihm etwas passiert bzw. ist es im Ergebnis-Zustand?",
+      "steps": [
+        {
+          "text": "Verstehe die Rolle des Nomens beim Partizip I",
+          "why": "Die Person repariert selbst. Aus `reparieren` wird `reparierend`, dazu kommt `-e` für das Femininum nach dem bestimmten Artikel im Nominativ."
+        },
+        {
+          "text": "Wähle Partizip II für das Ergebnis",
+          "why": "Das Fahrrad wurde repariert. Die Form `repariert` kennst du aus dem Perfekt; als Adjektiv für ein Neutrum nach `das` (Nominativ oder Akkusativ) bekommt sie `-e`."
+        },
+        {
+          "text": "Achte auf die Form des Verbs",
+          "why": "Behalte das `Partizip II` genau so, bevor du die Adjektivendung anhängst. Verben wie `reparieren` und `verkaufen` bekommen in dieser Form kein `ge-`."
+        },
+        {
+          "text": "Trenne Form und Endung",
+          "why": "In `gestrichenen` ist die Basis `gestrichen`, danach kommt `-en` nach `einem`. Der Dativ kommt von `mit` – auch mit einem Zusatzwort wie `frisch`."
+        }
+      ],
+      "explain": [
+        "Das `Partizip II` kann Abgeschlossenheit ausdrücken, sogar wenn das Nomen selbst die Bewegung gemacht hat: `die angekommenen Gäste` sind die Gäste, die schon da sind. Vergleiche mit `die ankommenden Gäste`, die gerade (oder zum gemeinten Zeitpunkt) ankommen. Vor dem Nomen hat das Partizip eine Endung, nach `sein` dagegen nicht: `Die Tür ist geschlossen`."
+      ],
+      "pitfall": "Meinst du Fahrräder, die repariert wurden, sag `die reparierten Fahrräder`. Mit `reparierenden` würden die Fahrräder selbst reparieren.",
+      "recall": [
+        "Was ist der Unterschied zwischen `ein geschriebenes Wort` und `ein schreibendes Kind`?",
+        "Das Wort ist das Ergebnis des Schreibens, das Kind schreibt selbst. Die Neutrum-Endung nach `ein` ist in beiden Fällen `-es`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 2 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Partizip I · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "partizip-adjektiv-1",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "das reparierte Fahrrad",
+        "das reparierende Fahrrad",
+        "das reparieren Fahrrad"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي عبارة تعني «الدراجة التي أُصلحت»؟",
+          "explain": "repariert يصف نتيجة الإصلاح. reparierend يجعل الدراجة هي التي تصلح. reparieren مصدر.",
+          "hints": [
+            "اسأل من الذي قام بالإصلاح."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Ausdruck bedeutet „das Fahrrad, das repariert wurde“?",
+          "explain": "`repariert` beschreibt das Ergebnis der Reparatur. `reparierend` würde bedeuten, dass das Fahrrad repariert. `reparieren` ist der Infinitiv.",
+          "hints": [
+            "Frag, wer repariert hat."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip-adjektiv-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "der {{1}} Brief",
+      "blanks": [
+        [
+          "geschriebene"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "صف الرسالة بوصفها نتيجة الكتابة. استعمل schreiben.",
+          "explain": "geschrieben يأخذ -e قبل المذكر في الرفع بعد der.",
+          "hints": [
+            "ابدأ بصيغة Partizip II للفعل الشاذ."
+          ]
+        },
+        "de": {
+          "prompt": "Beschreib den Brief als Ergebnis des Schreibens. Benutze `schreiben`.",
+          "explain": "`geschrieben` bekommt `-e` vor einem Maskulinum im Nominativ nach `der`.",
+          "hints": [
+            "Beginne mit dem Partizip II des unregelmäßigen Verbs."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip-adjektiv-3",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "die {{1}} Menschen",
+      "blanks": [
+        [
+          "arbeitenden"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الوصف لعمّال يؤدّون العمل الآن. استعمل arbeiten.",
+          "explain": "arbeitend + -en للجمع بعد die.",
+          "hints": [
+            "هؤلاء يقومون بالفعل."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Beschreibung für Arbeiter, die gerade arbeiten. Benutze `arbeiten`.",
+          "explain": "`arbeitend` + `-en` für den Plural nach `die`.",
+          "hints": [
+            "Diese Menschen führen die Handlung aus."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip-adjektiv-4",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "die angekommenen Gäste",
+        "die ankommenden Gäste",
+        "die ankommen Gäste"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أيّ عبارة تدل على أن الضيوف وصلوا بالفعل؟",
+          "explain": "angekommen يصف اكتمال الوصول. ankommend يصف حركة الوصول في الوقت المعني.",
+          "hints": [
+            "ركّز على اكتمال فعل الوصول."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Ausdruck zeigt, dass die Gäste schon angekommen sind?",
+          "explain": "`angekommen` beschreibt das abgeschlossene Ankommen. `ankommend` beschreibt das Ankommen zum gemeinten Zeitpunkt.",
+          "hints": [
+            "Konzentrier dich auf das abgeschlossene Ankommen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip-adjektiv-5",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "mit einem frisch {{1}} Tisch",
+      "blanks": [
+        [
+          "gestrichenen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بوصف الطاولة بعد دهنها. استعمل streichen.",
+          "explain": "gestrichen + -en بعد einem مع الاسم المذكر في الداتيف.",
+          "hints": [
+            "اكتب Partizip II ثم نهاية الداتيف."
+          ]
+        },
+        "de": {
+          "prompt": "Beschreib den Tisch, nachdem er gestrichen wurde. Benutze `streichen`.",
+          "explain": "`gestrichen` + `-en` nach `einem` mit einem maskulinen Nomen im Dativ.",
+          "hints": [
+            "Schreib das Partizip II und dann die Dativendung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip-adjektiv-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر فرق المعنى بين das geöffnete Tor وdas sich öffnende Tor.",
+          "explain": "geöffnet هو Partizip II ويعرض النتيجة. sich öffnend يصف ما يجري.",
+          "hints": [
+            "أيّ وصف يضم Partizip II؟"
+          ],
+          "options": [
+            "الأولى تصف بوابة فُتحت، والثانية بوابة تنفتح.",
+            "العبارتان تصفان بوابة أُغلقت.",
+            "الأولى تصف بدء الفتح، والثانية تصف اكتماله."
+          ]
+        },
+        "de": {
+          "prompt": "Was ist der Unterschied zwischen `das geöffnete Tor` und `das sich öffnende Tor`?",
+          "explain": "`geöffnet` ist Partizip II und zeigt das Ergebnis. `sich öffnend` beschreibt, was gerade passiert.",
+          "hints": [
+            "Welche Beschreibung enthält ein Partizip II?"
+          ],
+          "options": [
+            "Das erste ist ein Tor, das geöffnet wurde; das zweite ein Tor, das sich gerade öffnet.",
+            "Beide beschreiben ein geschlossenes Tor.",
+            "Das erste beschreibt den Beginn des Öffnens, das zweite das Ende."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip-adjektiv-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "das geputzte Fenster und das sich schließende Fenster",
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب وصفين لـ das Fenster. النافذة المنظَّفة من putzen، والنافذة التي تنغلق من sich schließen.",
+          "explain": "geputzt + -e وصف النتيجة. sich schließend + -e يصف الانغلاق الجاري.",
+          "hints": [
+            "حدّد أي وصف فيه نتيجة وأيهما فيه عملية."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib zwei Beschreibungen für `das Fenster`: das geputzte Fenster (`putzen`) und das Fenster, das sich gerade schließt (`sich schließen`).",
+          "explain": "`geputzt` + `-e` beschreibt das Ergebnis. `sich schließend` + `-e` beschreibt das laufende Schließen.",
+          "hints": [
+            "Bestimme, welche Beschreibung ein Ergebnis und welche einen Vorgang zeigt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip-adjektiv-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "die reparierten Fahrräder",
+      "context": "die reparierenden Fahrräder",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الوصف حتى يعني «الدراجات التي أُصلحت». واشرح اختيارك.",
+          "explain": "إذا كنت تقصد الدراجات التي أُصلحت فقل `die reparierten Fahrräder`. اختيار `reparierenden` يجعل الدراجات تقوم بالإصلاح.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere die Beschreibung, sodass sie „die Fahrräder, die repariert wurden“ bedeutet, und erkläre deine Wahl.",
+          "explain": "Meinst du Fahrräder, die repariert wurden, sag `die reparierten Fahrräder`. Mit `reparierenden` würden die Fahrräder selbst reparieren.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "partizip-adjektiv-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "الكلمة نتيجة الكتابة، والطفل يقوم بالكتابة. نهاية المحايد بعد `ein` هي `-es` في الحالتين.",
+      "i18n": {
+        "ar": {
+          "prompt": "ما الفرق بين `ein geschriebenes Wort` و`ein schreibendes Kind`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Was ist der Unterschied zwischen `ein geschriebenes Wort` und `ein schreibendes Kind`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "grammar",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["grammar/server.js"],
+      "port": 4180
+    }
+  ]
+}

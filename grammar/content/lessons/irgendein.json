@@ -1,0 +1,450 @@
+{
+  "id": "irgendein",
+  "level": "B1.1",
+  "island": "pronomen",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "🎲",
+  "german": "irgendein / irgendeine / irgendwelche",
+  "source": {
+    "lektion": 3,
+    "kind": "sample"
+  },
+  "pattern": [
+    "irgend-",
+    "+",
+    "ein- (Singular)",
+    "·",
+    "welch- (Plural)",
+    "+ Endung wie ein"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "suche"
+        ],
+        [
+          "hl",
+          "irgendeinen"
+        ],
+        [
+          "mf",
+          "Stuhl"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "suche"
+        ],
+        [
+          "hl",
+          "irgendwelche"
+        ],
+        [
+          "mf",
+          "Stühle"
+        ]
+      ]
+    }
+  ],
+  "example": "Ich suche irgendeinen Stuhl. · Ich suche irgendwelche Stühle.",
+  "stepExamples": [
+    "Hast du irgendeine Idee?",
+    "Nom. irgendein / irgendeine / irgendein · Akk. irgendeinen / irgendeine / irgendein · Dat. irgendeinem / irgendeiner / irgendeinem",
+    "Nom./Akk. irgendwelche · Dat. irgendwelchen",
+    "Das ist nicht irgendein Tisch."
+  ],
+  "pitfallPair": "mit irgendwelche Freunden → mit irgendwelchen Freunden",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=13"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "التعبير عن شيء أو شخص غير محدد",
+      "lead": "تستخدم هذه الأداة حين لا تعرف أي فرد تقصد، أو لا يهمك تحديد فرد بعينه. تحدد حالة الاسم نهايتها مثلما تحدد نهاية `ein`.",
+      "translation": "أبحث عن أي كرسي · أبحث عن بعض الكراسي أيًّا كانت.",
+      "steps": [
+        {
+          "text": "افهم أثر irgendein",
+          "why": "قد تحمل العبارة معنى «أي فكرة على الإطلاق». ويمكن أن تعبّر عن هوية غير معروفة، كما في `Irgendein Nachbar hat angerufen`. يوضح السياق أي المعنيين تقصد."
+        },
+        {
+          "text": "صرّف المفرد مثل ein",
+          "why": "الترتيب هنا مذكر، مؤنث، محايد. مع `suchen` المذكر مفعول مباشر، لذلك تقول `irgendeinen Stuhl`. ومع `mit` تقول `mit irgendeinem Stuhl`."
+        },
+        {
+          "text": "كوّن الجمع بجذر irgendwelch-",
+          "why": "تحتاج في الجمع إلى الجذر `irgendwelch-`. ويأخذ اسم الجمع في الداتيف عادة `-n` إذا لم ينتهِ بها أو بـ `-s`، مثل `mit irgendwelchen Stühlen`."
+        },
+        {
+          "text": "اقرأ موقع النفي",
+          "why": "قد تعني العبارة أن لهذه الطاولة بعينها أهمية خاصة. أما `Das ist kein Tisch` فتنفي انتماء الشيء إلى فئة الطاولات."
+        }
+      ],
+      "explain": [
+        "عندما تكتب، حدّد أولًا هل الاسم مفرد أو جمع. ثم عيّن الجنس للمفرد والحالة للجميع. قارن `irgendein Laden öffnet` و`ich suche irgendeinen Laden` و`ich kaufe in irgendeinem Laden ein`. بقي الاسم مذكرًا بينما تغيّرت وظيفته في الجملة."
+      ],
+      "pitfall": "يطلب `mit` الداتيف، وصيغة الجمع في الداتيف هي `irgendwelchen`.",
+      "recall": [
+        "لماذا تختلف الأداة بين `irgendein Bild` و`irgendwelche Bilder`؟",
+        "الأولى مفرد محايد. الثانية جمع وتستعمل جذر `irgendwelch-`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 3 · telc، ص 2",
+        "شرح القواعد، ص 35 من الكتاب · telc"
+      ],
+      "table": [
+        [
+          "الحالة",
+          "مذكر",
+          "مؤنث",
+          "محايد",
+          "جمع"
+        ],
+        [
+          "Nominativ",
+          "irgendein",
+          "irgendeine",
+          "irgendein",
+          "irgendwelche"
+        ],
+        [
+          "Akkusativ",
+          "irgendeinen",
+          "irgendeine",
+          "irgendein",
+          "irgendwelche"
+        ],
+        [
+          "Dativ",
+          "irgendeinem",
+          "irgendeiner",
+          "irgendeinem",
+          "irgendwelchen"
+        ]
+      ]
+    },
+    "de": {
+      "title": "irgendein / irgendeine / irgendwelche",
+      "lead": "Du benutzt dieses Wort, wenn du nicht weißt, welches einzelne Ding oder welche Person gemeint ist – oder wenn es dir egal ist. Der Kasus bestimmt die Endung genau wie bei `ein`.",
+      "steps": [
+        {
+          "text": "Verstehe die Wirkung von irgendein",
+          "why": "Der Ausdruck kann „überhaupt irgendeine Idee“ bedeuten. Er kann auch eine unbekannte Identität ausdrücken: `Irgendein Nachbar hat angerufen`. Der Kontext zeigt, was gemeint ist."
+        },
+        {
+          "text": "Dekliniere den Singular wie ein",
+          "why": "Die Reihenfolge ist maskulin, feminin, neutral. Mit `suchen` ist das Maskulinum Akkusativobjekt, also `irgendeinen Stuhl`. Mit `mit` sagst du `mit irgendeinem Stuhl`."
+        },
+        {
+          "text": "Bilde den Plural mit irgendwelch-",
+          "why": "Im Plural brauchst du den Stamm `irgendwelch-`. Nomen im Dativ Plural bekommen meist ein `-n`, wenn sie nicht schon auf `-n` oder `-s` enden: `mit irgendwelchen Stühlen`."
+        },
+        {
+          "text": "Lies die Position der Verneinung",
+          "why": "Der Satz kann bedeuten, dass gerade dieser Tisch etwas Besonderes ist. `Das ist kein Tisch` dagegen sagt, dass es überhaupt kein Tisch ist."
+        }
+      ],
+      "explain": [
+        "Wenn du schreibst, bestimme zuerst, ob das Nomen Singular oder Plural ist. Dann bestimmst du das Genus (im Singular) und den Kasus. Vergleiche: `irgendein Laden öffnet`, `ich suche irgendeinen Laden`, `ich kaufe in irgendeinem Laden ein`. Das Nomen bleibt maskulin, nur seine Funktion im Satz ändert sich."
+      ],
+      "pitfall": "`mit` verlangt den Dativ, und die Pluralform im Dativ ist `irgendwelchen`.",
+      "recall": [
+        "Warum unterscheidet sich das Wort in `irgendein Bild` und `irgendwelche Bilder`?",
+        "Das erste ist Singular neutral. Das zweite ist Plural und benutzt den Stamm `irgendwelch-`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 3 · telc, S. 2",
+        "Grammatikerklärung, S. 35 im Buch · telc"
+      ],
+      "table": [
+        [
+          "Kasus",
+          "Maskulin",
+          "Feminin",
+          "Neutrum",
+          "Plural"
+        ],
+        [
+          "Nominativ",
+          "irgendein",
+          "irgendeine",
+          "irgendein",
+          "irgendwelche"
+        ],
+        [
+          "Akkusativ",
+          "irgendeinen",
+          "irgendeine",
+          "irgendein",
+          "irgendwelche"
+        ],
+        [
+          "Dativ",
+          "irgendeinem",
+          "irgendeiner",
+          "irgendeinem",
+          "irgendwelchen"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "irgendein-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Ich suche {{1}} Laden.",
+      "blanks": [
+        [
+          "irgendeinen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل أداة غير المحدد مع المذكر في الجملة.",
+          "explain": "Laden مذكر في الأكوزاتيف، فالنهاية -en.",
+          "hints": [
+            "ما حالة مفعول suchen؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das unbestimmte Wort für das maskuline Nomen.",
+          "explain": "`Laden` ist maskulin im Akkusativ, also Endung `-en`.",
+          "hints": [
+            "In welchem Kasus steht das Objekt von `suchen`?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "irgendein-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Das ist {{1}} Lampe.",
+      "blanks": [
+        [
+          "irgendeine"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل أداة غير المحدد مع المؤنث.",
+          "explain": "الأداة في الرفع للمؤنث irgendeine.",
+          "hints": [
+            "بعد sein هنا تأتي مجموعة في الرفع."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das unbestimmte Wort für ein feminines Nomen.",
+          "explain": "Im Nominativ feminin heißt es `irgendeine`.",
+          "hints": [
+            "Nach `sein` steht hier eine Gruppe im Nominativ."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irgendein-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "irgendwelche",
+        "irgendeine",
+        "irgendwelchen"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي أداة تسبق Bücher هنا؟ Ich kaufe … Bücher.",
+          "explain": "irgendwelche للجمع في الرفع أو الأكوزاتيف، وirgendwelchen للداتيف.",
+          "hints": [
+            "Bücher جمع في الأكوزاتيف."
+          ]
+        },
+        "de": {
+          "prompt": "Welches Wort steht hier vor `Bücher`? `Ich kaufe … Bücher.`",
+          "explain": "`irgendwelche` für Plural im Nominativ oder Akkusativ, `irgendwelchen` im Dativ.",
+          "hints": [
+            "`Bücher` ist Plural im Akkusativ."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irgendein-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "mit {{1}} Nachbarin · mit {{2}} Nachbarn (Pl.)",
+      "blanks": [
+        [
+          "irgendeiner"
+        ],
+        [
+          "irgendwelchen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الأداة من irgendein-/irgendwelch-.",
+          "explain": "المؤنث المفرد في الداتيف -er. الجمع في الداتيف -en.",
+          "hints": [
+            "تحقق من العدد قبل كتابة النهاية."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Wort mit `irgendein-` / `irgendwelch-`.",
+          "explain": "Feminin Singular im Dativ: `-er`. Plural im Dativ: `-en`.",
+          "hints": [
+            "Prüf den Numerus, bevor du die Endung schreibst."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irgendein-5",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "mit {{1}} {{2}} (die Stühle)",
+      "blanks": [
+        [
+          "irgendwelchen"
+        ],
+        [
+          "Stühlen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل أداة غير المحدد ثم اسم الجمع في الداتيف.",
+          "explain": "irgendwelchen تحمل -en. يضاف n إلى Stühle في داتيف الجمع.",
+          "hints": [
+            "راقب الاسم نفسه بعد تصريف الأداة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das unbestimmte Wort und dann das Pluralnomen im Dativ.",
+          "explain": "`irgendwelchen` hat `-en`. `Stühle` bekommt im Dativ Plural ein `n`.",
+          "hints": [
+            "Achte auch auf das Nomen selbst, nachdem du das Wort dekliniert hast."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irgendein-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي معنى يلائم Das ist nicht irgendein Bild في سياق مدح اللوحة؟",
+          "explain": "nicht irgendein يشير هنا إلى تميّز اللوحة. kein Bild ينفي أن تكون لوحة أصلًا.",
+          "hints": [
+            "النفي يقع على فكرة «أيّ لوحة»."
+          ],
+          "options": [
+            "هذه لوحة لها قيمة خاصة.",
+            "هذا الشيء ليس لوحة.",
+            "هذه أي لوحة، وتحديدها غير مهم."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Bedeutung passt zu `Das ist nicht irgendein Bild`, wenn jemand das Bild lobt?",
+          "explain": "`nicht irgendein` zeigt hier, dass das Bild besonders ist. `kein Bild` würde sagen, dass es gar kein Bild ist.",
+          "hints": [
+            "Die Verneinung bezieht sich auf die Idee „irgendein Bild“."
+          ],
+          "options": [
+            "Das ist ein Bild mit besonderem Wert.",
+            "Das ist gar kein Bild.",
+            "Das ist irgendein Bild – welches, ist egal."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irgendein-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich suche irgendeinen Tisch und spreche mit irgendwelchen Freunden.",
+      "i18n": {
+        "ar": {
+          "prompt": "استبدل الأدوات العادية بأدوات عدم التحديد. Ich suche einen Tisch und spreche mit Freunden.",
+          "explain": "المذكر في الأكوزاتيف irgendeinen. الجمع في الداتيف irgendwelchen، وFreunden في الداتيف بالفعل.",
+          "hints": [
+            "حدّد حالة Tisch ثم حالة Freunde بعد mit."
+          ]
+        },
+        "de": {
+          "prompt": "Ersetze die normalen Artikel durch unbestimmte Wörter: `Ich suche einen Tisch und spreche mit Freunden.`",
+          "explain": "Maskulin Akkusativ: `irgendeinen`. Plural Dativ: `irgendwelchen` – `Freunden` steht schon im Dativ.",
+          "hints": [
+            "Bestimme den Kasus von `Tisch` und dann den von `Freunde` nach `mit`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irgendein-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "mit irgendwelchen Freunden",
+      "context": "mit irgendwelche Freunden",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "يطلب `mit` الداتيف، وصيغة الجمع في الداتيف هي `irgendwelchen`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "`mit` verlangt den Dativ, und die Pluralform im Dativ ist `irgendwelchen`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "irgendein-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "الأولى مفرد محايد. الثانية جمع وتستعمل جذر `irgendwelch-`.",
+      "i18n": {
+        "ar": {
+          "prompt": "لماذا تختلف الأداة بين `irgendein Bild` و`irgendwelche Bilder`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Warum unterscheidet sich das Wort in `irgendein Bild` und `irgendwelche Bilder`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

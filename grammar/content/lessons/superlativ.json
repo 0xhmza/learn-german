@@ -1,0 +1,459 @@
+{
+  "id": "superlativ",
+  "level": "B1.1",
+  "island": "adjektive",
+  "order": 2,
+  "prereqs": [
+    "komparativ"
+  ],
+  "emoji": "🏆",
+  "german": "Adjektivdeklination mit Superlativ",
+  "source": {
+    "lektion": 5,
+    "kind": "toc"
+  },
+  "pattern": [
+    "am … -sten (nach Verb)",
+    "·",
+    "der / die / das … -st- + Endung (vor Nomen)"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Diese Suppe"
+        ],
+        [
+          "v",
+          "ist"
+        ],
+        [
+          "hl",
+          "am günstigsten"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Das"
+        ],
+        [
+          "v",
+          "ist"
+        ],
+        [
+          "mf",
+          "die"
+        ],
+        [
+          "hl",
+          "günstigste"
+        ],
+        [
+          "mf",
+          "Suppe"
+        ]
+      ]
+    }
+  ],
+  "example": "Diese Suppe ist am günstigsten. → Das ist die günstigste Suppe.",
+  "stepExamples": [
+    "günstig → günstigst- · frisch → frischest-",
+    "Die Suppe ist am günstigsten.",
+    "die günstigste Suppe · das frischeste Brot",
+    "den besten Salat · mit der frischesten Milch · die günstigsten Angebote"
+  ],
+  "pitfallPair": "Ich nehme das am besten Brot. → Ich nehme das beste Brot.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/4067"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "تصريف صفة التفضيل",
+      "lead": "تستعمل درجة التفضيل لأعلى أو أدنى قيمة داخل مجموعة. تعلّم التبديل بين وصف النتيجة بعد الفعل ووصف الاسم مباشرة.",
+      "translation": "هذا الحساء هو الأرخص ← هذا أرخص حساء.",
+      "steps": [
+        {
+          "text": "ابنِ أساس التفضيل",
+          "why": "غالبًا تحصل على `-st-`. وقد تحتاج `-est-` لتسهيل النطق كما في `heißest-`. مع `frisch` تُستعمل الصيغتان `frischest-` و`frischst-`. احفظ الصيغ الشائعة مثل `best-` و`höchst-` و`nächst-`."
+        },
+        {
+          "text": "استعمل am … -sten بعد الفعل عند وصف الدرجة",
+          "why": "تتكون الصيغة من `am` ودرجة التفضيل في هذه البنية، مثل `am besten` و`am frischesten`. وهي تعمل أيضًا مع الفعل في `Sie kocht am schnellsten`."
+        },
+        {
+          "text": "احذف am إذا وضعت الصفة مباشرة قبل اسم",
+          "why": "استخدم أساس التفضيل وأضف نهاية صفة. هنا تأتي `-e` بعد أداة التعريف للمؤنث والمحايد في الرفع. تجمع `frischeste` بين الأساس `frischest-` والنهاية `-e`."
+        },
+        {
+          "text": "صرّف في الحالات الأخرى",
+          "why": "بعد الأداة المحددة نجد `-en` في المذكر في الأكوزاتيف، وفي الداتيف، وفي الجمع هنا. درجة التفضيل لا تغيّر قواعد الحالات."
+        }
+      ],
+      "explain": [
+        "اذكر المجموعة عند الحاجة، مثل `das günstigste Gericht auf der Karte` أو `Von allen Gerichten ist dieses am günstigsten`. وتظهر الصفة بعد أداة ملكية أيضًا، كما في `mein ältester Bruder`. قارن `mein älterer Bruder` التي تعني الأخ الأكبر مقارنةً بآخر، و`mein ältester Bruder` التي تحدد الأكبر ضمن المجموعة."
+      ],
+      "pitfall": "إذا قصدت «سآخذ أفضل خبز» فقل `Ich nehme das beste Brot.` قد تأتي `am besten` في جملة أخرى بمعنى «من الأفضل»، مثل `Am besten nehme ich Brot`.",
+      "recall": [
+        "لماذا نكتب `mit dem besten Plan`؟",
+        "`mit` يطلب الداتيف، وبعد `dem` تأخذ صفة التفضيل `-en`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 5 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "تصريف الصفات · grammis"
+      ],
+      "table": [
+        [
+          "مع أداة التعريف",
+          "مذكر",
+          "مؤنث",
+          "محايد",
+          "جمع"
+        ],
+        [
+          "Nominativ",
+          "der beste Plan",
+          "die beste Idee",
+          "das beste Bild",
+          "die besten Pläne"
+        ],
+        [
+          "Akkusativ",
+          "den besten Plan",
+          "die beste Idee",
+          "das beste Bild",
+          "die besten Pläne"
+        ],
+        [
+          "Dativ",
+          "dem besten Plan",
+          "der besten Idee",
+          "dem besten Bild",
+          "den besten Plänen"
+        ],
+        [
+          "Genitiv",
+          "des besten Plans",
+          "der besten Idee",
+          "des besten Bildes",
+          "der besten Pläne"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Adjektivdeklination mit Superlativ",
+      "lead": "Mit dem Superlativ nennst du den höchsten oder niedrigsten Wert in einer Gruppe. Lern, zwischen der Form nach dem Verb und der Form direkt vor dem Nomen zu wechseln.",
+      "steps": [
+        {
+          "text": "Bilde die Superlativ-Basis",
+          "why": "Meist bekommst du `-st-`. Für die Aussprache brauchst du manchmal `-est-`, wie in `heißest-`. Bei `frisch` gehen `frischest-` und `frischst-`. Lern die häufigen Formen `best-`, `höchst-`, `nächst-`."
+        },
+        {
+          "text": "Benutze am … -sten nach dem Verb",
+          "why": "Die Form besteht aus `am` und dem Superlativ: `am besten`, `am frischesten`. Sie funktioniert auch mit Verben: `Sie kocht am schnellsten`."
+        },
+        {
+          "text": "Lass am weg, wenn das Adjektiv direkt vor dem Nomen steht",
+          "why": "Nimm die Superlativ-Basis und häng eine Adjektivendung an. Hier kommt `-e` nach dem bestimmten Artikel bei Femininum und Neutrum im Nominativ. `frischeste` = Basis `frischest-` + Endung `-e`."
+        },
+        {
+          "text": "Dekliniere in den anderen Kasus",
+          "why": "Nach dem bestimmten Artikel steht `-en` im Akkusativ maskulin, im Dativ und hier im Plural. Der Superlativ ändert die Kasusregeln nicht."
+        }
+      ],
+      "explain": [
+        "Nenne die Gruppe, wenn nötig: `das günstigste Gericht auf der Karte` oder `Von allen Gerichten ist dieses am günstigsten`. Das Adjektiv steht auch nach einem Possessivartikel: `mein ältester Bruder`. Vergleiche `mein älterer Bruder` (älter als ein anderer) mit `mein ältester Bruder` (der Älteste in der Gruppe)."
+      ],
+      "pitfall": "Meinst du „Ich nehme das beste Brot“, sag `Ich nehme das beste Brot.` `am besten` kann in einem anderen Satz „es ist das Beste, …“ bedeuten: `Am besten nehme ich Brot`.",
+      "recall": [
+        "Warum schreiben wir `mit dem besten Plan`?",
+        "`mit` verlangt den Dativ, und nach `dem` bekommt der Superlativ `-en`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 5 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Adjektivdeklination · grammis"
+      ],
+      "table": [
+        [
+          "mit bestimmtem Artikel",
+          "Maskulin",
+          "Feminin",
+          "Neutrum",
+          "Plural"
+        ],
+        [
+          "Nominativ",
+          "der beste Plan",
+          "die beste Idee",
+          "das beste Bild",
+          "die besten Pläne"
+        ],
+        [
+          "Akkusativ",
+          "den besten Plan",
+          "die beste Idee",
+          "das beste Bild",
+          "die besten Pläne"
+        ],
+        [
+          "Dativ",
+          "dem besten Plan",
+          "der besten Idee",
+          "dem besten Bild",
+          "den besten Plänen"
+        ],
+        [
+          "Genitiv",
+          "des besten Plans",
+          "der besten Idee",
+          "des besten Bildes",
+          "der besten Pläne"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "superlativ-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Dieses Brot schmeckt am {{1}}.",
+      "blanks": [
+        [
+          "besten"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل صيغة التفضيل من gut بعد الفعل.",
+          "explain": "gut تصبح best- في التفضيل. في بناء am نكتب am besten.",
+          "hints": [
+            "تذكّر الأساس الشاذ للتفضيل."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Superlativ von `gut` nach dem Verb.",
+          "explain": "`gut` wird im Superlativ zu `best-`. Mit `am` schreiben wir `am besten`.",
+          "hints": [
+            "Denk an die unregelmäßige Superlativ-Basis."
+          ]
+        }
+      }
+    },
+    {
+      "id": "superlativ-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Das ist die {{1}} Suppe.",
+      "blanks": [
+        [
+          "günstigste"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل التفضيل من günstig قبل اسم مؤنث.",
+          "explain": "günstigst- + -e بعد die للمؤنث في الرفع.",
+          "hints": [
+            "أضف نهاية الصفة بعد أساس التفضيل."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Superlativ von `günstig` vor einem femininen Nomen.",
+          "explain": "`günstigst-` + `-e` nach `die` für Femininum im Nominativ.",
+          "hints": [
+            "Häng nach der Superlativ-Basis die Adjektivendung an."
+          ]
+        }
+      }
+    },
+    {
+      "id": "superlativ-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "das heißeste Gericht",
+        "das heißste Gericht",
+        "das am heißesten Gericht"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر العبارة التي تعني «أكثر الأطباق سخونة».",
+          "explain": "heiß يعطي heißest-. بعد das وقبل Gericht نضيف -e ونستعمل صيغة التفضيل بلا am.",
+          "hints": [
+            "انظر إلى نهاية heiß وإلى موقع الصفة قبل الاسم."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle den Ausdruck für „das heißeste Gericht“.",
+          "explain": "`heiß` ergibt `heißest-`. Nach `das` und vor `Gericht` kommt `-e`, und der Superlativ steht ohne `am`.",
+          "hints": [
+            "Schau auf das Ende von `heiß` und auf die Position vor dem Nomen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "superlativ-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Ich nehme den {{1}} Salat mit der {{2}} Milch.",
+      "blanks": [
+        [
+          "besten"
+        ],
+        [
+          "frischesten",
+          "frischsten"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل صيغتي التفضيل من gut وfrisch.",
+          "explain": "تأخذ الصفتان -en بعد الأداة هنا. الأساسان best- وfrischest-.",
+          "hints": [
+            "حدّد حالتي المذكر بعد den والمؤنث بعد mit."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Superlative von `gut` und `frisch`.",
+          "explain": "Beide Adjektive bekommen hier nach dem Artikel `-en`. Die Basen sind `best-` und `frischest-`.",
+          "hints": [
+            "Bestimme den Kasus beim Maskulinum nach `den` und beim Femininum nach `mit`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "superlativ-5",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "mein {{1}} Bruder",
+      "blanks": [
+        [
+          "ältester"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل التفضيل من alt بعد كلمة الملكية.",
+          "explain": "alt يعطي ältest-. المذكر في الرفع بعد mein يحتاج -er على الصفة.",
+          "hints": [
+            "استعمل التفضيل ثم لاحظ غياب علامة النهاية عن mein."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Superlativ von `alt` nach dem Possessivartikel.",
+          "explain": "`alt` ergibt `ältest-`. Maskulinum im Nominativ nach `mein` braucht `-er` am Adjektiv.",
+          "hints": [
+            "Bilde den Superlativ und beachte, dass `mein` keine Endung zeigt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "superlativ-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Von allen Gerichten ist dieses am gesündesten.",
+        "Von allen Gerichten ist dieses gesünder.",
+        "Von allen Gerichten ist dieses so gesund wie das andere."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة تعني «هذا الطبق هو الأصحّ بين جميع الأطباق»؟",
+          "explain": "am gesündesten للتفضيل. gesünder للمقارنة، وso gesund wie للتساوي.",
+          "hints": [
+            "أشر إلى أعلى درجة ضمن مجموعة."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz bedeutet „Dieses Gericht ist von allen das gesündeste“?",
+          "explain": "`am gesündesten` ist Superlativ, `gesünder` Komparativ, `so gesund wie` Gleichheit.",
+          "hints": [
+            "Zeig den höchsten Grad in einer Gruppe."
+          ]
+        }
+      }
+    },
+    {
+      "id": "superlativ-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das sind die günstigsten Angebote.",
+      "i18n": {
+        "ar": {
+          "prompt": "أعد صياغة Diese Angebote sind am günstigsten بدءًا من Das sind die، واذكر الاسم.",
+          "explain": "تُحذف am في بناء الصفة قبل الاسم، ويأخذ الجمع بعد die نهاية -en.",
+          "hints": [
+            "انقل التفضيل إلى ما قبل جمع معرّف."
+          ]
+        },
+        "de": {
+          "prompt": "Formuliere `Diese Angebote sind am günstigsten` neu, beginne mit `Das sind die` und nenne das Nomen.",
+          "explain": "Vor dem Nomen fällt `am` weg, und der Plural nach `die` bekommt `-en`.",
+          "hints": [
+            "Stell den Superlativ vor ein bestimmtes Pluralnomen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "superlativ-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich nehme das beste Brot.",
+      "context": "Ich nehme das am besten Brot.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الجملة حتى تعني «سآخذ أفضل خبز».",
+          "explain": "إذا قصدت «سآخذ أفضل خبز» فقل `Ich nehme das beste Brot.` قد تأتي `am besten` في جملة أخرى بمعنى «من الأفضل»، مثل `Am besten nehme ich Brot`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Satz, sodass er „Ich nehme das beste Brot“ bedeutet.",
+          "explain": "Meinst du „Ich nehme das beste Brot“, sag `Ich nehme das beste Brot.` `am besten` kann in einem anderen Satz „es ist das Beste, …“ bedeuten: `Am besten nehme ich Brot`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "superlativ-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`mit` يطلب الداتيف، وبعد `dem` تأخذ صفة التفضيل `-en`.",
+      "i18n": {
+        "ar": {
+          "prompt": "لماذا نكتب `mit dem besten Plan`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Warum schreiben wir `mit dem besten Plan`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

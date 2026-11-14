@@ -1,0 +1,413 @@
+{
+  "id": "infinitiv-zu",
+  "level": "B1.1",
+  "island": "infinitiv-verben",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "✍️",
+  "german": "Infinitiv mit zu",
+  "source": {
+    "lektion": 2,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Hauptsatz",
+    ",",
+    "… zu + Infinitiv"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "habe"
+        ],
+        [
+          "ve",
+          "vor"
+        ]
+      ]
+    },
+    {
+      "k": "inf",
+      "parts": [
+        [
+          "mf",
+          "mich morgen"
+        ],
+        [
+          "ve",
+          "zu bewerben"
+        ]
+      ]
+    }
+  ],
+  "example": "Ich habe vor, mich morgen zu bewerben.",
+  "stepExamples": [
+    "Ich versuche … · Ich habe vor … · Es ist wichtig …",
+    "Ich verspreche dir, pünktlich zu kommen.",
+    "zu lesen · zu verstehen · anzurufen",
+    "Ich habe den Wunsch, im Ausland zu arbeiten.",
+    "Ich lerne Deutsch, um im Alltag sicherer zu sprechen."
+  ],
+  "pitfallPair": "Ich versuche, morgen zu aufstehen. → Ich versuche, morgen aufzustehen.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/6852",
+    "https://grammis.ids-mannheim.de/rechtschreibung/6203"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "المصدر مع zu",
+      "lead": "بعد أفعال وتعبيرات معيّنة، يمكنك قول ما تنوي فعله أو ما هو مهم لك باستعمال مجموعة مصدرية. شكل المصدر نفسه يبقى ثابتًا.",
+      "translation": "أنوي أن أتقدّم غدًا بطلب.",
+      "steps": [
+        {
+          "text": "ابحث عن التعبير الذي يفتح المجموعة",
+          "why": "بعد تعبيرات مثل `versuchen` و`vorhaben` و`es ist wichtig` تكمل المجموعة المصدرية المعنى. اسأل ماذا يحاول الشخص أو ماذا ينوي."
+        },
+        {
+          "text": "استدل على صاحب الفعل من الجملة",
+          "why": "الذي سيأتي هو صاحب الوعد. في `Ich bitte dich, pünktlich zu kommen` المخاطب هو الذي سيأتي. الفعل الأول يساعدك على تحديد الشخص المقصود."
+        },
+        {
+          "text": "ضع zu بحسب نوع الفعل",
+          "why": "مع الفعل البسيط وغير القابل للفصل تسبق `zu` المصدر. مع القابل للفصل تدخل بين البادئة والجذر وتكتب الكلمة متصلة، مثل `aufzustehen` و`mitzubringen`."
+        },
+        {
+          "text": "راجع الفاصلة ومكان المجموعة",
+          "why": "تفصل الفاصلة المجموعة المصدرية التي تؤدي وظيفة جملة تابعة. هنا تتعلق المجموعة بالاسم `Wunsch`. وتظهر الفاصلة كذلك مع رابط مثل `ohne` أو كلمة تمهّد للمجموعة مثل `daran` في `Sie denkt daran, früher zu gehen`."
+        },
+        {
+          "text": "عبّر عن الهدف بـ um … zu",
+          "why": "تجيب مجموعة `um … zu` عن سؤال `Wozu lerne ich Deutsch?`، أي ما الهدف؟ الذي يتعلّم هو نفسه الذي يريد أن يتحدث بثقة أكبر. إذا كان الهدف يخص شخصًا آخر يمكنك التصريح بفاعله في جملة `damit`، مثل `Ich spreche langsam, damit du mich verstehst`. وقارن `Ich hoffe, sicherer zu sprechen` حيث تبيّن المجموعة مضمون الأمل، و`Ich übe, um sicherer zu sprechen` حيث تبيّن الهدف."
+        }
+      ],
+      "explain": [
+        "قد تظهر `zu` مع فعل ناقص إذا كان هو نفسه آخر المجموعة المصدرية، كما في `Ich hoffe, bald kommen zu können`. أما عندما يكون الفعل الناقص مصرفًا في الرئيسية فتقول `Ich kann bald kommen` بمصدر مجرد. وعند الحاجة إلى ذكر فاعل مختلف صراحةً تستطيع استعمال جملة `dass` حيث يسمح التعبير بذلك، مثل `Ich hoffe, dass du bald kommst`. في الإملاء الحالي تفصل المجموعة المصدرية التي تؤدي وظيفة جملة تابعة بفاصلة. ويجوز في بعض التراكيب القصيرة مثل `Sie versucht(,) zu schlafen` تحليل المصدر وحده على أنه مجموعة كلمات، فتكون الفاصلة جائزة. وفي `Es scheint zu regnen` يشكل الفعلان مسندًا واحدًا وتكتب الجملة بلا فاصلة."
+      ],
+      "pitfall": "الفعل `aufstehen` قابل للفصل، لذلك تدخل `zu` بعد `auf`.",
+      "recall": [
+        "من الذي يرسل الرسالة في `Sie bittet mich, die Mail zu schicken`؟",
+        "المتكلم هو الذي يرسلها. `mich` يعيّن صاحب الفعل المطلوب في مجموعة المصدر."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 2 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "المجموعات المصدرية · grammis",
+        "الفاصلة في الجمل التابعة · القواعد الإملائية الرسمية"
+      ]
+    },
+    "de": {
+      "title": "Infinitiv mit zu",
+      "lead": "Nach bestimmten Verben und Ausdrücken kannst du mit einer Infinitivgruppe sagen, was du vorhast oder was dir wichtig ist. Der Infinitiv selbst bleibt dabei unverändert.",
+      "steps": [
+        {
+          "text": "Finde den Ausdruck, der die Gruppe öffnet",
+          "why": "Nach Ausdrücken wie `versuchen`, `vorhaben` und `es ist wichtig` ergänzt die Infinitivgruppe die Bedeutung. Frag: Was versucht oder plant die Person?"
+        },
+        {
+          "text": "Erschließe aus dem Satz, wer handelt",
+          "why": "Wer kommen wird, ist die Person, die das Versprechen gibt. In `Ich bitte dich, pünktlich zu kommen` ist es die angesprochene Person. Das erste Verb zeigt dir, wer gemeint ist."
+        },
+        {
+          "text": "Setz zu je nach Verbtyp",
+          "why": "Bei einfachen und untrennbaren Verben steht `zu` vor dem Infinitiv. Bei trennbaren Verben steht es zwischen Präfix und Stamm, und man schreibt alles zusammen: `aufzustehen`, `mitzubringen`."
+        },
+        {
+          "text": "Prüfe Komma und Position der Gruppe",
+          "why": "Das Komma trennt eine Infinitivgruppe, die wie ein Nebensatz funktioniert. Hier hängt die Gruppe am Nomen `Wunsch`. Ein Komma steht auch mit einem Einleitewort wie `ohne` oder mit einem Verweiswort wie `daran`: `Sie denkt daran, früher zu gehen`."
+        },
+        {
+          "text": "Drück ein Ziel mit um … zu aus",
+          "why": "Die Gruppe `um … zu` beantwortet die Frage `Wozu lerne ich Deutsch?`. Wer lernt, ist auch die Person, die sicherer sprechen will. Betrifft das Ziel eine andere Person, nenne ihr Subjekt in einem `damit`-Satz: `Ich spreche langsam, damit du mich verstehst`. Vergleiche: `Ich hoffe, sicherer zu sprechen` (Inhalt der Hoffnung) und `Ich übe, um sicherer zu sprechen` (Ziel)."
+        }
+      ],
+      "explain": [
+        "`zu` kann mit einem Modalverb stehen, wenn das Modalverb selbst am Ende der Infinitivgruppe steht: `Ich hoffe, bald kommen zu können`. Ist das Modalverb im Hauptsatz konjugiert, steht der reine Infinitiv: `Ich kann bald kommen`. Willst du ausdrücklich ein anderes Subjekt nennen, benutze – wo es der Ausdruck erlaubt – einen `dass`-Satz: `Ich hoffe, dass du bald kommst`. Nach den aktuellen Regeln trennt man eine Infinitivgruppe, die wie ein Nebensatz funktioniert, mit Komma. Bei kurzen Strukturen wie `Sie versucht(,) zu schlafen` ist das Komma freigestellt. In `Es scheint zu regnen` bilden die beiden Verben ein Prädikat – ohne Komma."
+      ],
+      "pitfall": "`aufstehen` ist trennbar, deshalb steht `zu` nach `auf`.",
+      "recall": [
+        "Wer schickt die Mail in `Sie bittet mich, die Mail zu schicken`?",
+        "Die sprechende Person (ich). `mich` bestimmt, wer die gewünschte Handlung in der Infinitivgruppe ausführt."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 2 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Infinitivgruppen · grammis",
+        "Komma bei Nebensätzen · Amtliches Regelwerk"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "infinitiv-zu-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Sie versucht, Deutsch {{1}}.",
+      "blanks": [
+        [
+          "zu lernen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل صيغة المصدر من lernen مع zu.",
+          "explain": "تكتب zu كلمة منفصلة قبل lernen.",
+          "hints": [
+            "الفعل بسيط وغير قابل للفصل."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Infinitiv von `lernen` mit `zu`.",
+          "explain": "`zu` steht als eigenes Wort vor `lernen`.",
+          "hints": [
+            "Das Verb ist einfach und nicht trennbar."
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Er hat vor, morgen {{1}}.",
+      "blanks": [
+        [
+          "anzurufen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل صيغة anrufen مع zu.",
+          "explain": "an جزء قابل للفصل، فتأتي zu بعده داخل الكلمة.",
+          "hints": [
+            "أين تذهب البادئة في صيغة المصدر؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Form von `anrufen` mit `zu`.",
+          "explain": "`an` ist ein trennbares Präfix, deshalb steht `zu` danach im Wort.",
+          "hints": [
+            "Wohin geht das Präfix im Infinitiv?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "kommen",
+        "zu kommen",
+        "zukommen"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر ما يناسب Ich kann morgen ….",
+          "explain": "يطلب kann هنا مصدرًا مجردًا. zu kommen لا يلائم هذا التركيب، وzukommen فعل مختلف.",
+          "hints": [
+            "kann فعل ناقص مصرف."
+          ]
+        },
+        "de": {
+          "prompt": "Was passt zu `Ich kann morgen …`?",
+          "explain": "`kann` verlangt hier den reinen Infinitiv. `zu kommen` passt nicht in diese Struktur, und `zukommen` ist ein anderes Verb.",
+          "hints": [
+            "`kann` ist ein konjugiertes Modalverb."
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-4",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "من المتصل في Ich bitte ihn, anzurufen؟",
+          "explain": "المخاطَب بالطلب هو من يُفهم أنه يؤدي الفعل في المصدر.",
+          "hints": [
+            "حلّل bitte ihn أولًا."
+          ],
+          "options": [
+            "هو، أي الشخص الذي أطلب منه.",
+            "أنا، أي الشخص الذي يطلب.",
+            "يتصل الاثنان معًا."
+          ]
+        },
+        "de": {
+          "prompt": "Wer ruft an in `Ich bitte ihn, anzurufen`?",
+          "explain": "Die Person, die gebeten wird, führt die Handlung im Infinitiv aus.",
+          "hints": [
+            "Analysiere zuerst `bitte ihn`."
+          ],
+          "options": [
+            "Er – die Person, die ich bitte.",
+            "Ich – die Person, die bittet.",
+            "Beide rufen zusammen an."
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-5",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Ich hoffe, den Pass {{1}}. · Ich hoffe, morgen {{2}}.",
+      "blanks": [
+        [
+          "mitzubringen"
+        ],
+        [
+          "kommen zu können"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل مجموعة المصدر من mitbringen ثم صيغة الاستطاعة من kommen können.",
+          "explain": "mit + zu + bringen. في التركيب الثاني تأتي zu قبل können، وهو المصدر الأخير.",
+          "hints": [
+            "أدخل zu داخل الفعل المنفصل. عند وجود مصدر ناقص ضعه آخرًا."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Infinitivgruppe von `mitbringen` und dann die Form von `kommen können`.",
+          "explain": "`mit` + `zu` + `bringen`. In der zweiten Struktur steht `zu` vor `können`, dem letzten Infinitiv.",
+          "hints": [
+            "Setz `zu` in das trennbare Verb. Bei einem Modalverb steht es zuletzt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-6",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "um",
+        "Deutsch",
+        "sicherer",
+        "zu sprechen"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب مجموعة الهدف بعد Ich übe jeden Tag. ضع Deutsch قبل sicherer.",
+          "explain": "تبيّن مجموعة um … zu لماذا أتدرّب. تأتي بعد الفاصلة ويغلقها المصدر zu sprechen.",
+          "hints": [
+            "ابدأ برابط الهدف واختم بصيغة zu مع المصدر."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne die Zielgruppe nach `Ich übe jeden Tag`. Setz `Deutsch` vor `sicherer`.",
+          "explain": "Die Gruppe `um … zu` zeigt, warum ich übe. Sie steht nach dem Komma und endet mit `zu sprechen`.",
+          "hints": [
+            "Beginne mit dem Ziel-Wort und ende mit zu + Infinitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-7",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "den Termin",
+        "rechtzeitig",
+        "abzusagen"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب المصدر بعد Sie denkt daran. ضع المفعول قبل المصدر.",
+          "explain": "تأتي المكملات قبل abzusagen. وتأتي فاصلة قبل المجموعة بعد daran.",
+          "hints": [
+            "أبقِ zu داخل الفعل المنفصل."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne die Infinitivgruppe nach `Sie denkt daran`. Setz das Objekt vor den Infinitiv.",
+          "explain": "Die Ergänzungen stehen vor `abzusagen`. Nach `daran` steht ein Komma vor der Gruppe.",
+          "hints": [
+            "Lass `zu` im trennbaren Verb."
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Sie bittet mich, früh aufzustehen.",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Sie sagt zu mir: „Bitte steh früh auf!“ إلى جملة تبدأ بـ Sie bittet mich.",
+          "explain": "mich يحدّد من يقوم بالفعل. aufstehen يعطي aufzustehen.",
+          "hints": [
+            "حافظ على الضمير الذي يحدد صاحب الفعل، وحوّل الأمر إلى مصدر."
+          ]
+        },
+        "de": {
+          "prompt": "Forme `Sie sagt zu mir: „Bitte steh früh auf!“` in einen Satz um, der mit `Sie bittet mich` beginnt.",
+          "explain": "`mich` bestimmt, wer handelt. `aufstehen` wird zu `aufzustehen`.",
+          "hints": [
+            "Behalte das Pronomen, das zeigt, wer handelt, und mach aus dem Imperativ einen Infinitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-9",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich versuche, morgen aufzustehen.",
+      "context": "Ich versuche, morgen zu aufstehen.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "الفعل `aufstehen` قابل للفصل، لذلك تدخل `zu` بعد `auf`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "`aufstehen` ist trennbar, deshalb steht `zu` nach `auf`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "infinitiv-zu-10",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "المتكلم هو الذي يرسلها. `mich` يعيّن صاحب الفعل المطلوب في مجموعة المصدر.",
+      "i18n": {
+        "ar": {
+          "prompt": "من الذي يرسل الرسالة في `Sie bittet mich, die Mail zu schicken`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wer schickt die Mail in `Sie bittet mich, die Mail zu schicken`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "id": "komparativ",
+  "level": "B1.1",
+  "island": "adjektive",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "⚖️",
+  "german": "Adjektivdeklination mit Komparativ",
+  "source": {
+    "lektion": 5,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Adjektiv",
+    "+ -er (Komparativ)",
+    "+ Adjektivendung"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Der Salat"
+        ],
+        [
+          "v",
+          "ist"
+        ],
+        [
+          "hl",
+          "günstiger"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "nehme"
+        ],
+        [
+          "mf",
+          "einen"
+        ],
+        [
+          "hl",
+          "günstigeren"
+        ],
+        [
+          "mf",
+          "Salat"
+        ]
+      ]
+    }
+  ],
+  "example": "Der Salat ist günstiger. → Ich nehme einen günstigeren Salat.",
+  "stepExamples": [
+    "günstig → günstiger · gesund → gesünder",
+    "Der Salat ist günstiger. · ein günstigerer Salat",
+    "einen günstigeren Salat · eine günstigere Suppe · ein günstigeres Menü",
+    "frischere Zutaten · mit frischeren Zutaten"
+  ],
+  "pitfallPair": "Ich nehme einen gesünder Salat. → Ich nehme einen gesünderen Salat.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/4067"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "تصريف صفة المقارنة",
+      "lead": "عندما تضع المقارنة قبل الاسم، يتكوّن شكل الصفة من درجة المقارنة أولًا ثم نهاية التصريف. افصل المهمتين في ذهنك حتى لا تخلط بين حرف المقارنة ونهاية الحالة.",
+      "translation": "السلطة أرخص ← سآخذ سلطة أرخص.",
+      "steps": [
+        {
+          "text": "ابنِ درجة المقارنة",
+          "why": "أضف غالبًا `-er`. يتغير الصوت في بعض الصفات مثل `alt → älter` و`kurz → kürzer`. احفظ الصيغ الخاصة مثل `gut → besser` و`viel → mehr` و`hoch → höher`."
+        },
+        {
+          "text": "حدّد هل الصفة قبل اسم",
+          "why": "بعد `sein` تأتي صيغة المقارنة وحدها. قبل الاسم تضيف نهاية الصفة المناسبة. `günstiger + er` يعطي `günstigerer` بعد `ein` مع المذكر في الرفع."
+        },
+        {
+          "text": "اختر النهاية من الأداة والحالة والجنس",
+          "why": "كلها أمثلة في الأكوزاتيف. يأخذ المذكر بعد `einen` نهاية `-en`، والمؤنث بعد `eine` نهاية `-e`، والمحايد بعد `ein` نهاية `-es`."
+        },
+        {
+          "text": "قارِن النمط مع الجمع والداتيف",
+          "why": "بلا أداة يأخذ جمع الأكوزاتيف في المثال `-e`، وبعد `mit` يأخذ جمع الداتيف `-en`. وفي `mit einer besseren Mischung` تؤدي `einer` وظيفة العلامة، وتأتي الصفة بـ `-en`."
+        }
+      ],
+      "explain": [
+        "استعمل `als` عند ذكر الطرف الثاني بعد المقارنة، مثل `Die Suppe ist günstiger als der Salat`. في المقارنة المتساوية تقول `so günstig wie`. بعض صيغ المقارنة مثل `mehr` و`weniger` تُستعمل عادة بلا نهاية عندما تدل على كمية في `mehr Wasser` و`weniger Salz`. في التمرين ابحث عن اسم يلي الصفة، ثم اختر طريقة التصريف."
+      ],
+      "pitfall": "الصيغة `gesünder` صحيحة للمقارنة. موقعها قبل اسم مذكر بعد `einen` يتطلب `-en` إضافية.",
+      "recall": [
+        "كيف تصف طبقًا محايدًا بعد `ein` باستعمال `besser` في الأكوزاتيف؟",
+        "`ein besseres Gericht`. أساس المقارنة `besser` ثم النهاية `-es`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 5 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "تصريف الصفات · grammis"
+      ],
+      "table": [
+        [
+          "مع ein-",
+          "مذكر",
+          "مؤنث",
+          "محايد",
+          "جمع مع keine"
+        ],
+        [
+          "Nominativ",
+          "ein besserer Plan",
+          "eine bessere Idee",
+          "ein besseres Bild",
+          "keine besseren Ideen"
+        ],
+        [
+          "Akkusativ",
+          "einen besseren Plan",
+          "eine bessere Idee",
+          "ein besseres Bild",
+          "keine besseren Ideen"
+        ],
+        [
+          "Dativ",
+          "einem besseren Plan",
+          "einer besseren Idee",
+          "einem besseren Bild",
+          "keinen besseren Ideen"
+        ],
+        [
+          "Genitiv",
+          "eines besseren Plans",
+          "einer besseren Idee",
+          "eines besseren Bildes",
+          "keiner besseren Ideen"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Adjektivdeklination mit Komparativ",
+      "lead": "Steht ein Komparativ vor dem Nomen, besteht die Form aus zwei Teilen: zuerst die Steigerung, dann die Deklinationsendung. Trenne die beiden Aufgaben im Kopf, damit du das Komparativ-`er` nicht mit der Kasusendung verwechselst.",
+      "steps": [
+        {
+          "text": "Bilde den Komparativ",
+          "why": "Meist hängst du `-er` an. Bei manchen Adjektiven ändert sich der Vokal: `alt → älter`, `kurz → kürzer`. Lern die besonderen Formen: `gut → besser`, `viel → mehr`, `hoch → höher`."
+        },
+        {
+          "text": "Prüfe, ob das Adjektiv vor einem Nomen steht",
+          "why": "Nach `sein` steht der Komparativ allein. Vor dem Nomen kommt die passende Adjektivendung dazu: `günstiger + er` ergibt `günstigerer` nach `ein` mit Maskulinum im Nominativ."
+        },
+        {
+          "text": "Wähle die Endung nach Artikel, Kasus und Genus",
+          "why": "Alle Beispiele stehen im Akkusativ: Maskulinum nach `einen` → `-en`, Femininum nach `eine` → `-e`, Neutrum nach `ein` → `-es`."
+        },
+        {
+          "text": "Vergleiche mit Plural und Dativ",
+          "why": "Ohne Artikel bekommt der Plural im Akkusativ hier `-e`, nach `mit` im Dativ `-en`. In `mit einer besseren Mischung` trägt `einer` das Signal, das Adjektiv bekommt `-en`."
+        }
+      ],
+      "explain": [
+        "Nennst du die Vergleichsgröße, benutze `als`: `Die Suppe ist günstiger als der Salat`. Bei Gleichheit sagst du `so günstig wie`. Manche Komparative wie `mehr` und `weniger` bleiben meist ohne Endung, wenn sie eine Menge angeben: `mehr Wasser`, `weniger Salz`. Such in der Übung nach einem Nomen hinter dem Adjektiv und entscheide dann über die Deklination."
+      ],
+      "pitfall": "Die Form `gesünder` ist als Komparativ richtig. Vor einem maskulinen Nomen nach `einen` braucht sie aber zusätzlich `-en`.",
+      "recall": [
+        "Wie beschreibst du ein neutrales Gericht nach `ein` mit `besser` im Akkusativ?",
+        "`ein besseres Gericht`. Basis ist der Komparativ `besser`, dazu kommt die Endung `-es`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 5 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Adjektivdeklination · grammis"
+      ],
+      "table": [
+        [
+          "mit ein-",
+          "Maskulin",
+          "Feminin",
+          "Neutrum",
+          "Plural mit keine"
+        ],
+        [
+          "Nominativ",
+          "ein besserer Plan",
+          "eine bessere Idee",
+          "ein besseres Bild",
+          "keine besseren Ideen"
+        ],
+        [
+          "Akkusativ",
+          "einen besseren Plan",
+          "eine bessere Idee",
+          "ein besseres Bild",
+          "keine besseren Ideen"
+        ],
+        [
+          "Dativ",
+          "einem besseren Plan",
+          "einer besseren Idee",
+          "einem besseren Bild",
+          "keinen besseren Ideen"
+        ],
+        [
+          "Genitiv",
+          "eines besseren Plans",
+          "einer besseren Idee",
+          "eines besseren Bildes",
+          "keiner besseren Ideen"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "komparativ-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Diese Suppe ist {{1}}.",
+      "blanks": [
+        [
+          "besser"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب المقارنة من gut بعد sein.",
+          "explain": "المقارنة من gut هي besser وتأتي بلا نهاية تصريف هنا.",
+          "hints": [
+            "تذكّر أن هذه صيغة شاذة."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib den Komparativ von `gut` nach `sein`.",
+          "explain": "Der Komparativ von `gut` ist `besser`, hier ohne Deklinationsendung.",
+          "hints": [
+            "Denk daran: Das ist eine unregelmäßige Form."
+          ]
+        }
+      }
+    },
+    {
+      "id": "komparativ-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Ich kaufe eine {{1}} Tasche.",
+      "blanks": [
+        [
+          "billigere"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المقارنة من billig قبل الاسم.",
+          "explain": "تضيف -e للمؤنث في الأكوزاتيف بعد eine.",
+          "hints": [
+            "ابدأ بـ billiger ثم انظر إلى أداة المؤنث."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Komparativ von `billig` vor dem Nomen.",
+          "explain": "Für das Femininum im Akkusativ nach `eine` kommt `-e` dazu.",
+          "hints": [
+            "Beginne mit `billiger` und schau dann auf den femininen Artikel."
+          ]
+        }
+      }
+    },
+    {
+      "id": "komparativ-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "billiger als",
+        "billiger wie",
+        "so billiger als"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أيّ تركيب معياري يقارن وجبتين مختلفتين في السعر؟",
+          "explain": "بعد billiger نستخدم als. في التساوي نقول so billig wie.",
+          "hints": [
+            "استخدم الرابط الذي يأتي بعد المقارنة غير المتساوية."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Standardstruktur vergleicht zwei Gerichte mit verschiedenem Preis?",
+          "explain": "Nach `billiger` benutzen wir `als`. Bei Gleichheit sagen wir `so billig wie`.",
+          "hints": [
+            "Benutze das Wort, das nach einem ungleichen Vergleich folgt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "komparativ-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Ich esse einen {{1}} Salat mit {{2}} Zutaten.",
+      "blanks": [
+        [
+          "gesünderen"
+        ],
+        [
+          "frischeren"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب المقارنة المصرفة من gesund ثم frisch.",
+          "explain": "gesund تصبح gesünder ثم تأخذ -en بعد einen. frisch يضيف -er للمقارنة و-en للداتيف.",
+          "hints": [
+            "الأول مذكر في الأكوزاتيف، والثاني جمع في الداتيف."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib den deklinierten Komparativ von `gesund` und dann von `frisch`.",
+          "explain": "`gesund` wird zu `gesünder` und bekommt nach `einen` `-en`. `frisch` bekommt `-er` für den Komparativ und `-en` für den Dativ.",
+          "hints": [
+            "Das erste ist Maskulinum im Akkusativ, das zweite Plural im Dativ."
+          ]
+        }
+      }
+    },
+    {
+      "id": "komparativ-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "ein günstigeres Angebot",
+        "ein günstiger Angebot",
+        "einen günstigeren Angebot"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر المجموعة الصحيحة في Ich suche ….",
+          "explain": "المقارنة günstiger ثم النهاية -es مع المحايد في الأكوزاتيف.",
+          "hints": [
+            "Angebot محايد. انتبه إلى نهاية الصفة بعد ein."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle die richtige Gruppe in `Ich suche …`.",
+          "explain": "Der Komparativ `günstiger` plus Endung `-es` für das Neutrum im Akkusativ.",
+          "hints": [
+            "`Angebot` ist neutral. Achte auf die Adjektivendung nach `ein`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "komparativ-6",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "ein {{1}} Preis · {{2}} Wasser",
+      "blanks": [
+        [
+          "höherer"
+        ],
+        [
+          "mehr"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل صيغ المقارنة من hoch وviel.",
+          "explain": "hoch تصبح höher ثم تأخذ -er للمذكر في الرفع بعد ein. viel تصبح mehr هنا بلا نهاية.",
+          "hints": [
+            "احفظ صيغة hoch الشاذة. الماء هنا كمية."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Komparative von `hoch` und `viel`.",
+          "explain": "`hoch` wird zu `höher` und bekommt `-er` für Maskulinum im Nominativ nach `ein`. `viel` wird zu `mehr` – hier ohne Endung.",
+          "hints": [
+            "Merk dir die unregelmäßige Form von `hoch`. Das Wasser ist hier eine Menge."
+          ]
+        }
+      }
+    },
+    {
+      "id": "komparativ-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "mit einer besseren Variante",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Die Variante ist besser إلى مجموعة اسمية نكرة في الداتيف بعد mit.",
+          "explain": "mit يطلب الداتيف. أداة النكرة للمؤنث einer، وتتبعها besseren.",
+          "hints": [
+            "ابدأ بأداة الداتيف المؤنثة وأضف نهاية الصفة إلى besser."
+          ]
+        },
+        "de": {
+          "prompt": "Mach aus `Die Variante ist besser` eine unbestimmte Nominalgruppe im Dativ nach `mit`.",
+          "explain": "`mit` verlangt den Dativ. Der unbestimmte Artikel feminin ist `einer`, danach `besseren`.",
+          "hints": [
+            "Beginne mit dem femininen Dativartikel und häng die Adjektivendung an `besser`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "komparativ-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich nehme einen gesünderen Salat.",
+      "context": "Ich nehme einen gesünder Salat.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "الصيغة `gesünder` صحيحة للمقارنة. موقعها قبل اسم مذكر بعد `einen` يتطلب `-en` إضافية.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Die Form `gesünder` ist als Komparativ richtig. Vor einem maskulinen Nomen nach `einen` braucht sie aber zusätzlich `-en`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "komparativ-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`ein besseres Gericht`. أساس المقارنة `besser` ثم النهاية `-es`.",
+      "i18n": {
+        "ar": {
+          "prompt": "كيف تصف طبقًا محايدًا بعد `ein` باستعمال `besser` في الأكوزاتيف؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wie beschreibst du ein neutrales Gericht nach `ein` mit `besser` im Akkusativ?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

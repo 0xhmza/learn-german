@@ -1,0 +1,373 @@
+{
+  "id": "sonst",
+  "level": "B1.1",
+  "island": "konjunktiv-bedingung",
+  "order": 2,
+  "prereqs": [],
+  "emoji": "🚦",
+  "german": "Satzverbindendes Adverb andernfalls / sonst",
+  "source": {
+    "lektion": 6,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Aufforderung / Aussage",
+    ",",
+    "sonst + Verb + Subjekt …"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "v",
+          "Beeil"
+        ],
+        [
+          "mf",
+          "dich"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "sonst"
+        ],
+        [
+          "v",
+          "verpasst"
+        ],
+        [
+          "mf",
+          "du den Bus"
+        ]
+      ]
+    }
+  ],
+  "example": "Beeil dich, sonst verpasst du den Bus.",
+  "stepExamples": [
+    "Wenn du dich nicht beeilst, verpasst du den Bus.",
+    "…, sonst verpasst du den Bus.",
+    "Bitte zahlen Sie heute. Andernfalls wird die Bestellung storniert.",
+    "Du musst leise sein. Du weckst sonst das Kind."
+  ],
+  "pitfallPair": "Schick die Rechnung, sonst ich kann nicht zahlen. → Schick die Rechnung, sonst kann ich nicht zahlen.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/konnektoren/406877"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "وإلّا: نتيجة عدم فعل شيء",
+      "lead": "حين تحذّر من نتيجة قد تحصل إذا لم يُنفَّذ أمر، استعمل `sonst` أو `andernfalls`. معنى الربط هنا قريب من «وإلا» أو «في الحالة الأخرى».",
+      "translation": "أسرع، وإلّا فاتتك الحافلة.",
+      "steps": [
+        {
+          "text": "استخرج الشرط الضمني",
+          "why": "تفهم من التحذير أن الفوات مرتبط بعدم الإسراع. يحل الرابط محل إعادة ذكر الشرط المنفي. وقد تشير الجملة الأولى أيضًا إلى شرط كافٍ للنجاح، مثل `Du musst dich anmelden`."
+        },
+        {
+          "text": "ابدأ الرئيسية الثانية بالرابط ثم الفعل",
+          "why": "تحتل `sonst` الموقع الأول، و`verpasst` الثاني. هذا الترتيب مهم عند التحويل من جملة شرطية إلى رابط ظرفي."
+        },
+        {
+          "text": "استعمل andernfalls بنفس الوظيفة",
+          "why": "تشيع `andernfalls` في اللغة الرسمية. يمكن أن يبدأ الرابط جملةً مستقلة بعد نقطة، أو أن يفصل بين الجملتين بفاصلة في مثال مناسب."
+        },
+        {
+          "text": "تعرّف إلى موقع الظرف داخل الجملة",
+          "why": "قد يأتي الرابط وسط الجملة بعد الفعل المصرف. وانتبه إلى معنى `sonst` في `Was machst du sonst?`، حيث يقصد ما تفعله أيضًا أو عادةً بحسب السياق."
+        }
+      ],
+      "explain": [
+        "قارن `Nimm den Schirm, sonst wirst du nass` و`Es regnet, deshalb nehme ich den Schirm`. الأولى تحذّر مما يقع عند عدم أخذ المظلة. الثانية تستنتج أخذها من حالة قائمة هي المطر. استعمل `sonst` عندما تستطيع صياغة الشرط الخفي بـ `wenn nicht`."
+      ],
+      "pitfall": "إذا بدأت الجملة الثانية بـ `sonst` فضع الفعل المصرف `kann` مباشرة بعدها.",
+      "recall": [
+        "ما الشرط الضمني في `Ruf vorher an, andernfalls ist niemand da`؟",
+        "إذا لم تتصل مسبقًا، فلن يكون هناك أحد بحسب التحذير."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 6 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "معنى sonst · grammis"
+      ]
+    },
+    "de": {
+      "title": "sonst / andernfalls",
+      "lead": "Willst du vor einer Folge warnen, die eintritt, wenn etwas nicht getan wird, benutze `sonst` oder `andernfalls`. Die Bedeutung ist „wenn nicht“ bzw. „im anderen Fall“.",
+      "steps": [
+        {
+          "text": "Finde die versteckte Bedingung",
+          "why": "Aus der Warnung verstehst du: Den Bus verpasst man, wenn man sich nicht beeilt. Das Wort ersetzt die verneinte Bedingung. Der erste Satz kann auch eine Bedingung für den Erfolg nennen: `Du musst dich anmelden`."
+        },
+        {
+          "text": "Beginne den zweiten Hauptsatz mit dem Adverb, dann das Verb",
+          "why": "`sonst` steht auf Position 1, `verpasst` auf Position 2. Diese Reihenfolge ist wichtig, wenn du einen Bedingungssatz in ein verbindendes Adverb umformst."
+        },
+        {
+          "text": "Benutze andernfalls mit derselben Funktion",
+          "why": "`andernfalls` ist in formeller Sprache häufig. Es kann nach einem Punkt einen neuen Satz beginnen oder – im passenden Beispiel – die Sätze mit Komma verbinden."
+        },
+        {
+          "text": "Lerne die Position des Adverbs im Satz kennen",
+          "why": "Das Adverb kann auch im Mittelfeld nach dem konjugierten Verb stehen. Achte auf die Bedeutung von `sonst` in `Was machst du sonst?`: Hier heißt es je nach Kontext „außerdem“ oder „normalerweise“."
+        }
+      ],
+      "explain": [
+        "Vergleiche `Nimm den Schirm, sonst wirst du nass` und `Es regnet, deshalb nehme ich den Schirm`. Der erste Satz warnt vor der Folge, wenn man den Schirm nicht nimmt. Der zweite zieht eine Folgerung aus einer bestehenden Situation, dem Regen. Benutze `sonst`, wenn du die versteckte Bedingung mit `wenn nicht` formulieren kannst."
+      ],
+      "pitfall": "Beginnt der zweite Satz mit `sonst`, steht das konjugierte Verb `kann` direkt danach.",
+      "recall": [
+        "Welche Bedingung steckt in `Ruf vorher an, andernfalls ist niemand da`?",
+        "Wenn du nicht vorher anrufst, ist laut der Warnung niemand da."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 6 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Bedeutung von sonst · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "sonst-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Beeil dich, sonst {{1}} du den Bus.",
+      "blanks": [
+        [
+          "verpasst"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل المصرف verpassen.",
+          "explain": "بعد sonst يأتي الفعل المصرف، ثم du.",
+          "hints": [
+            "sonst تشغل الموقع الأول في الجزء الثاني."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die konjugierte Form von `verpassen`.",
+          "explain": "Nach `sonst` kommt das konjugierte Verb, dann `du`.",
+          "hints": [
+            "`sonst` besetzt im zweiten Teil Position 1."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sonst-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Bitte zahlen Sie heute. {{1}} wird der Auftrag storniert.",
+      "blanks": [
+        [
+          "Andernfalls"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بمرادف رسمي لـ sonst.",
+          "explain": "Andernfalls يؤدي المعنى نفسه ويستعمل كثيرًا في اللغة الرسمية.",
+          "hints": [
+            "ابحث عن ظرف رسمي يعني «وإلا»."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze ein formelles Synonym für `sonst`.",
+          "explain": "`Andernfalls` hat dieselbe Bedeutung und ist in formeller Sprache häufig.",
+          "hints": [
+            "Such ein formelles Adverb mit der Bedeutung „wenn nicht“."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sonst-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي شرط يختبئ في Ruf an, sonst weiß ich nichts؟",
+          "explain": "النتيجة متوقفة على عدم الاتصال، لذلك الشرط المنفي هو الصحيح.",
+          "hints": [
+            "أعد كتابة الرابط بمعنى wenn nicht."
+          ],
+          "options": [
+            "إذا لم تتصل.",
+            "إذا اتصلت.",
+            "لأنك اتصلت بالفعل."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Bedingung steckt in `Ruf an, sonst weiß ich nichts`?",
+          "explain": "Die Folge hängt davon ab, dass man nicht anruft – deshalb ist die verneinte Bedingung richtig.",
+          "hints": [
+            "Formuliere das Adverb als `wenn nicht`."
+          ],
+          "options": [
+            "Wenn du nicht anrufst.",
+            "Wenn du anrufst.",
+            "Weil du schon angerufen hast."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sonst-4",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "sonst",
+        "kann",
+        "ich",
+        "die Bestellung",
+        "nicht ändern."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجزء الثاني بعد الفاصلة. ابدأ بـ sonst ثم الفعل.",
+          "explain": "kann يأتي بعد sonst. ويظهر المصدر ändern في نهاية الجملة.",
+          "hints": [
+            "ضع المصرف بعد الرابط، والمصدر في الآخر."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den zweiten Teil nach dem Komma. Beginne mit `sonst`, dann das Verb.",
+          "explain": "`kann` steht nach `sonst`, der Infinitiv `ändern` am Satzende.",
+          "hints": [
+            "Setz das konjugierte Verb nach das Adverb und den Infinitiv ans Ende."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sonst-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "sonst",
+        "deshalb",
+        "denn"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي رابط يوضح نتيجة عدم ارتداء المعطف؟ Zieh den Mantel an, … frierst du.",
+          "explain": "sonst للتحذير الشرطي. deshalb نتيجة لسبب قائم، وdenn يذكر تفسيرًا.",
+          "hints": [
+            "أعد الصياغة بـ «إن لم ترتده…»."
+          ]
+        },
+        "de": {
+          "prompt": "Welches Wort zeigt die Folge, wenn man den Mantel nicht anzieht? `Zieh den Mantel an, … frierst du.`",
+          "explain": "`sonst` für eine Warnung mit Bedingung. `deshalb` nennt eine Folge aus einem bestehenden Grund, `denn` eine Erklärung.",
+          "hints": [
+            "Formuliere um: „Wenn du ihn nicht anziehst …“"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sonst-6",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Du musst leise sein. Du {{1}} sonst das Kind. (wecken)",
+      "blanks": [
+        [
+          "weckst"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل المصرف وحدد موقعه.",
+          "explain": "لما تقدم الفاعل Du، يتبعه الفعل weckst، ويأتي sonst بعده.",
+          "hints": [
+            "sonst هنا في وسط الجملة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das konjugierte Verb und bestimme seine Position.",
+          "explain": "Weil das Subjekt `Du` vorne steht, folgt das Verb `weckst`, und `sonst` steht danach.",
+          "hints": [
+            "`sonst` steht hier in der Satzmitte."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sonst-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Notier die Nummer, sonst vergisst du sie.",
+      "i18n": {
+        "ar": {
+          "prompt": "اختصر Wenn du die Nummer nicht notierst, vergisst du sie إلى تحذير يبدأ بـ Notier die Nummer ويستعمل sonst.",
+          "explain": "تدل sonst على نتيجة عدم اتباع الأمر. يأتي vergisst بعدها مباشرةً.",
+          "hints": [
+            "حوّل الشرط المنفي إلى أمر، وابدأ النتيجة بـ sonst."
+          ]
+        },
+        "de": {
+          "prompt": "Kürze `Wenn du die Nummer nicht notierst, vergisst du sie` zu einer Warnung, die mit `Notier die Nummer` beginnt und `sonst` benutzt.",
+          "explain": "`sonst` zeigt die Folge, wenn man der Aufforderung nicht folgt. `vergisst` steht direkt danach.",
+          "hints": [
+            "Mach aus der verneinten Bedingung einen Imperativ und beginne die Folge mit `sonst`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sonst-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Schick die Rechnung, sonst kann ich nicht zahlen.",
+      "context": "Schick die Rechnung, sonst ich kann nicht zahlen.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "إذا بدأت الجملة الثانية بـ `sonst` فضع الفعل المصرف `kann` مباشرة بعدها.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Beginnt der zweite Satz mit `sonst`, steht das konjugierte Verb `kann` direkt danach.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sonst-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "إذا لم تتصل مسبقًا، فلن يكون هناك أحد بحسب التحذير.",
+      "i18n": {
+        "ar": {
+          "prompt": "ما الشرط الضمني في `Ruf vorher an, andernfalls ist niemand da`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Bedingung steckt in `Ruf vorher an, andernfalls ist niemand da`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

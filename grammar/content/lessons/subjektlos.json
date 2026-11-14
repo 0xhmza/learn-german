@@ -1,0 +1,385 @@
+{
+  "id": "subjektlos",
+  "level": "B1.1",
+  "island": "passiv",
+  "order": 3,
+  "prereqs": [],
+  "emoji": "🎶",
+  "german": "Subjektloses Passiv",
+  "source": {
+    "lektion": 6,
+    "kind": "toc"
+  },
+  "pattern": [
+    "(Es / Adverb)",
+    "+",
+    "wird",
+    "…",
+    "Partizip II"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Hier"
+        ],
+        [
+          "v",
+          "wird"
+        ],
+        [
+          "ve",
+          "getanzt"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Den Gästen"
+        ],
+        [
+          "v",
+          "wird"
+        ],
+        [
+          "ve",
+          "geholfen"
+        ]
+      ]
+    }
+  ],
+  "example": "Hier tanzt man. → Hier wird getanzt.",
+  "stepExamples": [
+    "Man tanzt hier.",
+    "Hier wird getanzt.",
+    "Es wird hier getanzt. · Heute wird hier getanzt.",
+    "Man hilft den Gästen. → Den Gästen wird geholfen."
+  ],
+  "pitfallPair": "Den Kindern werden geholfen. → Den Kindern wird geholfen.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/929",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/1068"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "المبني للمجهول بلا فاعل نحوي",
+      "lead": "أحيانًا نريد وصف نشاط عام مثل العمل أو الرقص من دون ذكر من يقوم به. عندما لا يوجد مفعول مباشر قابل للتحويل، قد نحصل على مجهول من دون مسند إليه.",
+      "translation": "يرقص الناس هنا ← يجري الرقص هنا.",
+      "steps": [
+        {
+          "text": "افحص الجملة الأصلية",
+          "why": "يوجد فاعل عام هو `man` وظرف مكان هو `hier`. لا يوجد مفعول مباشر يصبح فاعلًا نحويًا. هذا النوع ممكن مع أنشطة مثل `tanzen` و`arbeiten`."
+        },
+        {
+          "text": "احذف الفاعل العام واستعمل المفرد",
+          "why": "عند عدم وجود مسند إليه صرّف `werden` بصيغة الغائب المفرد. وأبقِ الظرف ثم ضع اسم المفعول في النهاية."
+        },
+        {
+          "text": "املأ الموقع الأول بـ es إذا لم تقدّم شيئًا آخر",
+          "why": "تملأ `es` صدر الرئيسية. تختفي عندما يتصدر `heute` أو `hier`. وفي `…, weil hier getanzt wird` لا تحتاج إليها أيضًا."
+        },
+        {
+          "text": "أبقِ مفعول الداتيف إن وجد",
+          "why": "الضيوف في الداتيف لأن `helfen` يطلبه. حتى مع جمع `den Gästen` يبقى الفعل `wird` مفردًا. قارن `Die Gäste werden begrüßt` حيث صار المفعول المباشر فاعلًا نحويًا."
+        }
+      ],
+      "explain": [
+        "ليست كل الأفعال بلا مفعول مباشر صالحة لهذا التحويل. تدرب أولًا على الأفعال التي تصف نشاطًا يؤديه أحد مثل `arbeiten` و`lachen`، ومع أفعال مثل `helfen`. ويمكن وصف نشاط مكتمل بـ `Gestern ist hier getanzt worden`، أو ضرورة بـ `Hier muss gearbeitet werden`. تبقى صيغة الغائب المفرد في الحالتين."
+      ],
+      "pitfall": "تبقى `den Kindern` في الداتيف، فلا تُصرّف الفعل معها كجمع.",
+      "recall": [
+        "هل تبقى `es` في `Heute wird gearbeitet`؟",
+        "لا حاجة إليها. يشغل `Heute` الموقع الأول في الرئيسية بالفعل."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 6 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "أفعال المجهول · grammis",
+        "المجهول دون فاعل نحوي · grammis"
+      ]
+    },
+    "de": {
+      "title": "Subjektloses Passiv",
+      "lead": "Manchmal wollen wir eine allgemeine Tätigkeit wie Arbeiten oder Tanzen beschreiben, ohne zu sagen, wer sie macht. Gibt es kein Akkusativobjekt, das man umformen kann, entsteht ein Passiv ohne Subjekt.",
+      "steps": [
+        {
+          "text": "Prüfe den Ausgangssatz",
+          "why": "Es gibt ein allgemeines Subjekt `man` und eine Ortsangabe `hier`. Es gibt kein Akkusativobjekt, das Subjekt werden könnte. Das geht mit Tätigkeiten wie `tanzen` und `arbeiten`."
+        },
+        {
+          "text": "Lass das allgemeine Subjekt weg und benutze den Singular",
+          "why": "Gibt es kein Subjekt, konjugierst du `werden` in der 3. Person Singular. Behalte das Adverb und setz das Partizip II ans Ende."
+        },
+        {
+          "text": "Füll Position 1 mit es, wenn sonst nichts vorne steht",
+          "why": "`es` füllt die erste Position im Hauptsatz. Es verschwindet, wenn `heute` oder `hier` vorne steht. Auch in `…, weil hier getanzt wird` brauchst du es nicht."
+        },
+        {
+          "text": "Behalte ein Dativobjekt, wenn es eines gibt",
+          "why": "Die Gäste stehen im Dativ, weil `helfen` den Dativ verlangt. Auch mit dem Plural `den Gästen` bleibt `wird` im Singular. Vergleiche `Die Gäste werden begrüßt`: Hier ist das Akkusativobjekt zum Subjekt geworden."
+        }
+      ],
+      "explain": [
+        "Nicht jedes Verb ohne Akkusativobjekt eignet sich für diese Umformung. Üb zuerst mit Verben, die eine Tätigkeit von Menschen beschreiben, wie `arbeiten` und `lachen`, und mit Verben wie `helfen`. Eine abgeschlossene Tätigkeit beschreibst du mit `Gestern ist hier getanzt worden`, eine Notwendigkeit mit `Hier muss gearbeitet werden`. In beiden Fällen bleibt die 3. Person Singular."
+      ],
+      "pitfall": "`den Kindern` bleibt im Dativ – konjugiere das Verb deshalb nicht im Plural.",
+      "recall": [
+        "Bleibt `es` in `Heute wird gearbeitet`?",
+        "Nein. `Heute` besetzt schon Position 1 im Hauptsatz."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 6 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Passiv-Hilfsverben · grammis",
+        "Subjektloses Passiv · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "subjektlos-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Heute {{1}} hier gearbeitet.",
+      "blanks": [
+        [
+          "wird"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "صرّف werden للمجهول بلا فاعل.",
+          "explain": "لا يوجد فاعل نحوي في الجملة، فتبقى الصيغة مفرد الغائب wird.",
+          "hints": [
+            "هل يوجد مسند إليه يتحكم في العدد؟"
+          ]
+        },
+        "de": {
+          "prompt": "Konjugiere `werden` für das subjektlose Passiv.",
+          "explain": "Im Satz gibt es kein Subjekt, deshalb bleibt die 3. Person Singular `wird`.",
+          "hints": [
+            "Gibt es ein Subjekt, das den Numerus bestimmt?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "subjektlos-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "{{1}} wird im Saal getanzt.",
+      "blanks": [
+        [
+          "Es"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل العبارة المبدوءة من دون ظرف أول.",
+          "explain": "Es هنا تملأ الموضع الأول. ويمكن تقديم im Saal وحذفها.",
+          "hints": [
+            "املأ موقع الصدارة في الرئيسية."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Satz, der ohne Adverb am Anfang beginnt.",
+          "explain": "`Es` füllt hier Position 1. Stellst du `im Saal` nach vorn, fällt es weg.",
+          "hints": [
+            "Füll die erste Position im Hauptsatz."
+          ]
+        }
+      }
+    },
+    {
+      "id": "subjektlos-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Hier wird getanzt.",
+        "Die Gäste werden begrüßt.",
+        "Der Saal wird geöffnet."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة مجهول بلا فاعل نحوي؟",
+          "explain": "مع getanzt لا توجد مجموعة رفع. Gäste وSaal مسندان إليهما في الجملتين الأخريين.",
+          "hints": [
+            "هل توجد مجموعة في الرفع تتوافق مع werden؟"
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz ist ein Passiv ohne Subjekt?",
+          "explain": "Bei `getanzt` gibt es keine Gruppe im Nominativ. In den anderen beiden Sätzen sind `Gäste` und `Saal` Subjekte.",
+          "hints": [
+            "Gibt es eine Nominativgruppe, zu der `werden` passt?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "subjektlos-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Den Kindern {{1}} {{2}}.",
+      "blanks": [
+        [
+          "wird"
+        ],
+        [
+          "geholfen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Man hilft den Kindern إلى مجهول يبدأ بالداتيف.",
+          "explain": "Den Kindern لا تصبح فاعلًا، لذلك يبقى wird مفردًا ثم geholfen.",
+          "hints": [
+            "helfen يطلب الداتيف حتى بعد التحويل."
+          ]
+        },
+        "de": {
+          "prompt": "Forme `Man hilft den Kindern` in ein Passiv um, das mit dem Dativ beginnt.",
+          "explain": "`Den Kindern` wird nicht zum Subjekt, deshalb bleibt `wird` im Singular, dann `geholfen`.",
+          "hints": [
+            "`helfen` verlangt auch nach der Umformung den Dativ."
+          ]
+        }
+      }
+    },
+    {
+      "id": "subjektlos-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "weil",
+        "hier",
+        "leise",
+        "gearbeitet",
+        "wird"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب التابعة بلا فاعل. ضع hier قبل leise.",
+          "explain": "الترتيب هو Partizip II ثم wird في التابعة. لا تحتاج إلى es.",
+          "hints": [
+            "الفعل المصرف في الآخر. الصدارة مشغولة بـ weil."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Nebensatz ohne Subjekt. Setz `hier` vor `leise`.",
+          "explain": "Im Nebensatz steht zuerst das Partizip II, dann `wird`. Du brauchst kein `es`.",
+          "hints": [
+            "Das konjugierte Verb steht am Ende. Position 1 ist durch `weil` besetzt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "subjektlos-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "لماذا لا نكتب werden في Den Gästen wird geholfen؟",
+          "explain": "Den Gästen جمع في الداتيف، لكنه لا يتحكم في التصريف. غياب المسند إليه يقتضي wird.",
+          "hints": [
+            "انظر إلى حالة الضيوف."
+          ],
+          "options": [
+            "لأن الضيوف في الداتيف وليسوا مسندًا إليه في الرفع.",
+            "لأن كلمة Gästen في المفرد.",
+            "لأن helfen يُصرّف دائمًا في المفرد مهما كان الفاعل."
+          ]
+        },
+        "de": {
+          "prompt": "Warum schreiben wir in `Den Gästen wird geholfen` nicht `werden`?",
+          "explain": "`Den Gästen` ist Plural im Dativ, bestimmt aber nicht die Konjugation. Ohne Subjekt steht `wird`.",
+          "hints": [
+            "Schau auf den Kasus der Gäste."
+          ],
+          "options": [
+            "Weil die Gäste im Dativ stehen und nicht Subjekt im Nominativ sind.",
+            "Weil `Gästen` Singular ist.",
+            "Weil `helfen` immer im Singular konjugiert wird, egal welches Subjekt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "subjektlos-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Hier muss leise gesprochen werden.",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Man muss hier leise sprechen إلى مجهول بلا فاعل يبدأ بـ Hier.",
+          "explain": "muss في الموقع الثاني. في النهاية gesprochen werden. لا تحتاج إلى es مع Hier.",
+          "hints": [
+            "احتفظ بمعنى الوجوب وصرّف الفعل الناقص بالمفرد."
+          ]
+        },
+        "de": {
+          "prompt": "Forme `Man muss hier leise sprechen` in ein subjektloses Passiv um, das mit `Hier` beginnt.",
+          "explain": "`muss` steht auf Position 2, am Ende `gesprochen werden`. Mit `Hier` vorne brauchst du kein `es`.",
+          "hints": [
+            "Behalte die Bedeutung der Pflicht und konjugiere das Modalverb im Singular."
+          ]
+        }
+      }
+    },
+    {
+      "id": "subjektlos-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Den Kindern wird geholfen.",
+      "context": "Den Kindern werden geholfen.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "تبقى `den Kindern` في الداتيف، فلا تُصرّف الفعل معها كجمع.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "`den Kindern` bleibt im Dativ – konjugiere das Verb deshalb nicht im Plural.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "subjektlos-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "لا حاجة إليها. يشغل `Heute` الموقع الأول في الرئيسية بالفعل.",
+      "i18n": {
+        "ar": {
+          "prompt": "هل تبقى `es` في `Heute wird gearbeitet`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Bleibt `es` in `Heute wird gearbeitet`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

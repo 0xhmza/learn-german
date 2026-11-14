@@ -1,0 +1,376 @@
+{
+  "id": "falls",
+  "level": "B1.1",
+  "island": "konjunktiv-bedingung",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "☔",
+  "german": "Konditionale Nebensätze mit falls",
+  "source": {
+    "lektion": 3,
+    "kind": "sample"
+  },
+  "pattern": [
+    "Falls … Verb",
+    ",",
+    "Verb + Subjekt …"
+  ],
+  "frames": [
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "Falls"
+        ],
+        [
+          "mf",
+          "es morgen"
+        ],
+        [
+          "ve",
+          "regnet"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "(Falls-Satz)"
+        ],
+        [
+          "v",
+          "bleiben"
+        ],
+        [
+          "mf",
+          "wir zu Hause"
+        ]
+      ]
+    }
+  ],
+  "example": "Falls es morgen regnet, bleiben wir zu Hause.",
+  "stepExamples": [
+    "es regnet morgen",
+    "Falls es morgen regnet, …",
+    "Falls es morgen regnet, bleiben wir zu Hause.",
+    "Wir bleiben zu Hause, falls es morgen regnet."
+  ],
+  "pitfallPair": "Falls du brauchst Hilfe, ruf mich an. → Falls du Hilfe brauchst, ruf mich an.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=13",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/997"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الشرط المحتمل مع falls",
+      "lead": "حين تضع خطة لما قد يحدث، تساعدك `falls` على التعبير عن معنى «في حال». تعلّم كيف تقسم الجملة إلى شرط ونتيجة وتضع كل فعل في موضعه.",
+      "translation": "في حال هطل المطر غدًا، سنبقى في المنزل.",
+      "steps": [
+        {
+          "text": "حدّد الحدث غير المحسوم",
+          "why": "الشرط هو هطول المطر. قد يحصل وقد لا يحصل. استعمال `falls` يقدّمه بوصفه حالة محتملة، وكثيرًا ما تكون غير مرجحة في السياق."
+        },
+        {
+          "text": "اكتب الشرط كجملة تابعة",
+          "why": "ضع `falls` أولًا وانقل الفعل المصرف `regnet` إلى نهاية الجملة التابعة. مع فعل قابل للفصل تقول `falls sie morgen anruft` ببادئته المتصلة في النهاية."
+        },
+        {
+          "text": "ابدأ النتيجة بالفعل إذا قدمت الشرط",
+          "why": "يشغل الشرط كله الموقع الأول في الجملة الكلية، فيأتي `bleiben` بعد الفاصلة. ويمكن إبراز النتيجة بـ `dann`: `…, dann bleiben wir zu Hause`."
+        },
+        {
+          "text": "قدّم النتيجة عند الحاجة",
+          "why": "تبقى الجملة الرئيسية بترتيبها المعتاد. وتبقى الجملة التابعة منتهية بالفعل. إذا جاء الفعل مع مصدر فستجد المصرف آخرًا، مثل `falls du kommen kannst`."
+        }
+      ],
+      "explain": [
+        "تستطيع استعمال `wenn` أيضًا لشرط مفتوح، وهي أوسع استعمالًا وتشمل بعض العلاقات الزمنية. تميل `falls` إلى معنى الاحتياط وتأتي مع `doch` عندما تخالف الاحتمال المتوقع، مثل `Falls es doch regnet, nehmen wir Schirme mit`. راجع درس الشرط غير الواقعي إذا كان الشرط مناقضًا للواقع الحالي بدل أن يكون احتمالًا مفتوحًا."
+      ],
+      "pitfall": "ضع `brauchst` آخر الشرط. تبقى نتيجة الأمر `ruf mich an` في ترتيبها.",
+      "recall": [
+        "هل تقع `kannst` قبل `kommen` في `falls du morgen kommen kannst`؟",
+        "تأتي `kannst` أخيرًا لأنها الفعل المصرف في الجملة التابعة."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 3 · telc، ص 2",
+        "شرح القواعد، ص 35 من الكتاب · telc",
+        "الشرط · grammis"
+      ]
+    },
+    "de": {
+      "title": "Konditionalsätze mit falls",
+      "lead": "Wenn du planst, was passieren könnte, hilft dir `falls` mit der Bedeutung „für den Fall, dass“. Lern, den Satz in Bedingung und Folge zu teilen und jedes Verb an seine Position zu setzen.",
+      "steps": [
+        {
+          "text": "Bestimme das unsichere Ereignis",
+          "why": "Die Bedingung ist der Regen. Er kann kommen oder nicht. Mit `falls` stellst du ihn als mögliche – oft eher unwahrscheinliche – Situation dar."
+        },
+        {
+          "text": "Schreib die Bedingung als Nebensatz",
+          "why": "Setz `falls` an den Anfang und das konjugierte Verb `regnet` ans Ende. Bei trennbaren Verben sagst du `falls sie morgen anruft` – zusammengeschrieben am Ende."
+        },
+        {
+          "text": "Beginne die Folge mit dem Verb, wenn die Bedingung vorne steht",
+          "why": "Die ganze Bedingung besetzt Position 1 des Gesamtsatzes, deshalb kommt `bleiben` direkt nach dem Komma. Mit `dann` kannst du die Folge betonen: `…, dann bleiben wir zu Hause`."
+        },
+        {
+          "text": "Stell die Folge bei Bedarf nach vorn",
+          "why": "Der Hauptsatz behält seine normale Wortstellung, der Nebensatz endet weiter mit dem Verb. Mit einem Infinitiv steht das konjugierte Verb ganz am Ende: `falls du kommen kannst`."
+        }
+      ],
+      "explain": [
+        "Für eine offene Bedingung kannst du auch `wenn` benutzen; es ist allgemeiner und deckt auch zeitliche Beziehungen ab. `falls` betont eher die Vorsorge und steht mit `doch`, wenn etwas gegen die Erwartung eintritt: `Falls es doch regnet, nehmen wir Schirme mit`. Schau dir die Lektion zu irrealen Bedingungen an, wenn die Bedingung der Wirklichkeit widerspricht, statt offen zu sein."
+      ],
+      "pitfall": "Setz `brauchst` ans Ende der Bedingung. Die Folge im Imperativ `ruf mich an` behält ihre Wortstellung.",
+      "recall": [
+        "Steht `kannst` in `falls du morgen kommen kannst` vor `kommen`?",
+        "Nein, `kannst` steht zuletzt, weil es das konjugierte Verb im Nebensatz ist."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 3 · telc, S. 2",
+        "Grammatikerklärung, S. 35 im Buch · telc",
+        "Konditionalsätze · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "falls-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Falls sie morgen {{1}}, sag mir Bescheid.",
+      "blanks": [
+        [
+          "anruft"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "ضع الفعل anrufen في الفراغ.",
+          "explain": "ينتهي الشرط بالفعل المصرف المتصل anruft.",
+          "hints": [
+            "هل الفعل قابل للفصل في التابعة؟"
+          ]
+        },
+        "de": {
+          "prompt": "Setz das Verb `anrufen` in die Lücke.",
+          "explain": "Die Bedingung endet mit dem konjugierten, zusammengeschriebenen Verb `anruft`.",
+          "hints": [
+            "Ist das Verb im Nebensatz getrennt?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "falls-2",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "falls",
+        "weil",
+        "obwohl"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي رابط يعبّر عن «في حال»؟",
+          "explain": "falls للشرط، وweil للسبب، وobwohl للتنازل.",
+          "hints": [
+            "ابحث عن شرط ممكن."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Konjunktion bedeutet „für den Fall, dass“?",
+          "explain": "`falls` für eine Bedingung, `weil` für einen Grund, `obwohl` für einen Gegensatz.",
+          "hints": [
+            "Such eine mögliche Bedingung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "falls-3",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Falls es schneit, {{1}} wir zu Hause.",
+      "blanks": [
+        [
+          "bleiben"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل المصرف bleiben.",
+          "explain": "يأتي الفعل المصرف مباشرة بعد الفاصلة ما لم تستعمل dann.",
+          "hints": [
+            "الجملة التابعة الأولى تشغل موقعًا واحدًا."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die konjugierte Form von `bleiben`.",
+          "explain": "Das konjugierte Verb steht direkt nach dem Komma, außer du benutzt `dann`.",
+          "hints": [
+            "Der Nebensatz vorne besetzt genau eine Position."
+          ]
+        }
+      }
+    },
+    {
+      "id": "falls-4",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Falls",
+        "du",
+        "heute",
+        "Zeit hast,",
+        "besuchen",
+        "wir dich."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الشرط قبل النتيجة. اجعل du قبل heute.",
+          "explain": "hast يغلق التابعة. besuchen يفتتح النتيجة بعد الفاصلة.",
+          "hints": [
+            "ضع الفعل المصرف لكل جزء في موقعه."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne: Bedingung vor der Folge. Setz `du` vor `heute`.",
+          "explain": "`hast` schließt den Nebensatz. `besuchen` eröffnet die Folge nach dem Komma.",
+          "hints": [
+            "Setz das konjugierte Verb jedes Teils an seine Position."
+          ]
+        }
+      }
+    },
+    {
+      "id": "falls-5",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Ruf an, falls du nicht {{1}} {{2}}. (kommen / können)",
+      "blanks": [
+        [
+          "kommen"
+        ],
+        [
+          "kannst"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الشرط بالمصدر ثم الفعل الناقص المصرف.",
+          "explain": "المصدر kommen ثم kannst مع du.",
+          "hints": [
+            "يأتي المصرف أخيرًا في التابعة هنا."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Bedingung mit dem Infinitiv und dann dem konjugierten Modalverb.",
+          "explain": "Erst der Infinitiv `kommen`, dann `kannst` mit `du`.",
+          "hints": [
+            "Das konjugierte Verb steht hier im Nebensatz zuletzt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "falls-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Falls ich morgen Zeit habe, komme ich.",
+        "Wenn ich Zeit hätte, würde ich kommen.",
+        "Da ich morgen Zeit habe, komme ich."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر الجملة التي تعرض احتمالًا مفتوحًا بشأن الغد.",
+          "explain": "falls يعرض احتمالًا. hätte وwürde هنا يقدمان افتراضًا غير واقعي، وda يذكر سببًا.",
+          "hints": [
+            "هل الوقت احتمال، أو واقع مفترض، أو سبب معلوم؟"
+          ]
+        },
+        "de": {
+          "prompt": "Wähle den Satz, der eine offene Möglichkeit für morgen ausdrückt.",
+          "explain": "`falls` zeigt eine Möglichkeit. `hätte` und `würde` stellen hier eine irreale Annahme dar, `da` nennt einen Grund.",
+          "hints": [
+            "Ist die Zeit eine Möglichkeit, eine angenommene Wirklichkeit oder ein bekannter Grund?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "falls-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Falls ich Hilfe brauche, rufe ich dich an.",
+      "i18n": {
+        "ar": {
+          "prompt": "أعد ترتيب Ich rufe dich an, falls ich Hilfe brauche بحيث تبدأ بـ Falls وتحتفظ بالمعنى.",
+          "explain": "ينتهي التابع بـ brauche. يبدأ الجزء الرئيسي بـ rufe، وتبقى an في نهايته.",
+          "hints": [
+            "ضع الشرط في الموضع الأول واستعد تركيب anrufen."
+          ]
+        },
+        "de": {
+          "prompt": "Stell `Ich rufe dich an, falls ich Hilfe brauche` so um, dass der Satz mit `Falls` beginnt und die Bedeutung bleibt.",
+          "explain": "Der Nebensatz endet mit `brauche`. Der Hauptsatz beginnt mit `rufe`, und `an` bleibt an seinem Ende.",
+          "hints": [
+            "Setz die Bedingung auf Position 1 und bau `anrufen` wieder zusammen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "falls-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Falls du Hilfe brauchst, ruf mich an.",
+      "context": "Falls du brauchst Hilfe, ruf mich an.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "ضع `brauchst` آخر الشرط. تبقى نتيجة الأمر `ruf mich an` في ترتيبها.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Setz `brauchst` ans Ende der Bedingung. Die Folge im Imperativ `ruf mich an` behält ihre Wortstellung.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "falls-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "تأتي `kannst` أخيرًا لأنها الفعل المصرف في الجملة التابعة.",
+      "i18n": {
+        "ar": {
+          "prompt": "هل تقع `kannst` قبل `kommen` في `falls du morgen kommen kannst`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Steht `kannst` in `falls du morgen kommen kannst` vor `kommen`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

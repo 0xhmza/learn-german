@@ -1,0 +1,169 @@
+// Lesson page: rule at a glance, worked example, explanation, pitfall,
+// recall, table, sources and the "lesson learned" step.
+import { t, num, getLang } from '../i18n/index.js';
+import { localize, lessonTitle, islandName } from '../content.js';
+import { lessonStars, missingPrereqs, visitLesson } from '../engine/progress.js';
+import { esc, de, prose, germanLine, link, button, stars, levelChip, crumbs } from '../components/html.js';
+
+let stepCount = 1;
+let lastLesson = '';
+
+export function title(app, route) {
+  return lessonTitle(app.ctx.lessons.get(route.key), getLang());
+}
+
+function renderGlance(lesson) {
+  const roles = t('roles');
+  const pattern = `<div><span class="label">${t('formula')}</span><div class="pattern" lang="de">${lesson.pattern.map(token =>
+    ['+', ',', '·', '…', '→'].includes(token) ? `<span class="op" aria-hidden="true">${esc(token)}</span>` : `<span class="chip">${esc(token)}</span>`).join('')}</div></div>`;
+  const frames = `<div><span class="label">${t('structure')}</span><div class="frames">${lesson.frames.map(frame => `
+    <div class="frame"><span class="frame-kind">${t('kinds')[frame.k]}</span>
+      <div class="slots" lang="de">${frame.parts.map(([role, text]) => `<span class="slot ${role}"><b>${esc(text)}</b>${roles[role] ? `<i lang="${getLang()}">${roles[role]}</i>` : ''}</span>`).join('')}</div></div>`).join('')}
+    </div></div>
+    <p class="frames-hint">${t('framesHint')}</p>`;
+  return `<section class="panel glance" aria-labelledby="glance-title">
+    <div class="glance-head"><span class="badge" aria-hidden="true">✦</span><h2 id="glance-title">${t('glance')}</h2></div>
+    ${pattern}${frames}</section>`;
+}
+
+function wrongRight(pair) {
+  const [wrong, right] = String(pair).split(' → ');
+  return `<div class="wr" lang="de" dir="ltr">
+    <div class="no"><span class="mark" aria-hidden="true">✗</span><span class="sr-only">${t('wrong')}:</span><span>${esc(wrong)}</span></div>
+    <div class="yes"><span class="mark" aria-hidden="true">✓</span><span class="sr-only">${t('right')}:</span><span>${esc(right)}</span></div></div>`;
+}
+
+function renderTable([headers, ...rows]) {
+  return `<section class="panel table-panel"><h2>${t('tableTitle')}</h2><p class="table-help">${t('tableHelp')}</p><div class="table-wrap" tabindex="0" role="region" aria-label="${t('tableLabel')}">
+    <table><thead><tr>${headers.map(cell => `<th scope="col">${prose(cell)}</th>`).join('')}</tr></thead>
+    <tbody>${rows.map(([label, ...cells]) => `<tr><th scope="row">${prose(label)}</th>${cells.map(cell => `<td>${prose(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table>
+    </div></section>`;
+}
+
+function finishBar(app, lesson, total) {
+  const learned = Boolean(app.state.completed[lesson.id]);
+  const count = lessonStars(app.state, lesson.id);
+  if (learned) {
+    return `<section class="panel finish-bar done" id="finish">
+      <div><strong>${t('learnedDone')}</strong>${stars(count, 20)}</div>
+      <div class="actions">${button('run', t('lessonPractice', num(lesson.questions.length)), 'primary', `data-key="${lesson.id}"`)}</div></section>`;
+  }
+  const ready = stepCount >= total;
+  return `<section class="panel finish-bar" id="finish">
+    <p id="finish-hint" ${ready ? 'hidden' : ''}>${t('finishHint')}</p>
+    <div class="actions">${button('finish', t('finishLesson'), 'primary', ready ? '' : 'disabled')}${button('run', t('lessonPractice', num(lesson.questions.length)), 'secondary', `data-key="${lesson.id}"`)}</div></section>`;
+}
+
+export function render(app, route) {
+  const { ctx, state } = app;
+  const lang = getLang();
+  const lesson = ctx.lessons.get(route.key);
+  if (lastLesson !== lesson.id) {
+    stepCount = 1;
+    lastLesson = lesson.id;
+  }
+  if (!app.redrawing && (state.lastLesson !== lesson.id || state.player.at !== lesson.id)) app.store.update(s => visitLesson(s, lesson.id));
+  const view = localize(lesson, lang);
+  const island = ctx.islandById.get(lesson.island);
+  const siblings = ctx.islandLessons(island.id);
+  const position = ctx.route.indexOf(lesson);
+  const prev = ctx.route[position - 1];
+  const next = ctx.route[position + 1];
+  const level = ctx.levelById.get(lesson.level);
+  const missing = missingPrereqs(ctx, state, lesson);
+  const translation = lang === 'de'
+    ? `<span class="tr-label">${t('inArabic')}</span><p lang="ar" dir="rtl">${esc(view.translation)}</p>`
+    : `<p>${prose(view.translation)}</p>`;
+  const total = view.steps.length;
+  if (state.completed[lesson.id]) stepCount = Math.max(stepCount, total);
+
+  return `${crumbs([['home', t('home')], [`island/${island.id}`, esc(islandName(island, lang))], [null, prose(view.title)]])}
+    <section class="lesson-banner ${island.palette}">
+      <div class="unit-head"><span class="lesson-emoji" aria-hidden="true">${lesson.emoji}</span>
+      <div><span class="lesson-count">${t('lessonOnIsland', num(lesson.order), num(siblings.length))}</span><h1>${prose(view.title)}</h1>
+        <div class="lesson-sub">${lang === 'ar' ? de(lesson.german) : ''} ${levelChip(lesson.level)} ${stars(lessonStars(state, lesson.id))}</div></div></div>
+      ${missing.length ? `<p class="prereq-chip">${t('bestFirst')} ${missing.map(item => `<a href="#lesson/${item.id}">${prose(lessonTitle(item, lang))}</a>`).join('، ')}</p>` : ''}
+      <p class="lead">${prose(view.lead)}</p>
+      <div class="actions">${button('run', t('lessonPractice', num(lesson.questions.length)), 'primary', `data-key="${lesson.id}"`)}
+        ${state.completed[lesson.id] ? `<span class="learned-chip">${t('learnedDone')}</span>` : ''}</div>
+    </section>
+    ${renderGlance(lesson)}
+    <div class="lesson-body">
+      <section class="panel">
+        <div class="panel-head"><h2>${t('stepByStep')}</h2><span class="step-count" id="step-count">${t('stepOf', num(Math.min(stepCount, total)), num(total))}</span></div>
+        <div class="example">${germanLine(lesson.example)}${translation}</div>
+        <ol class="steps" id="lesson-steps">${view.steps.map((step, i) => `
+          <li class="step" ${i >= stepCount ? 'hidden' : ''}>
+            <span class="step-num" aria-hidden="true">${num(i + 1)}</span>
+            <div><h3>${prose(step.text)}</h3>${germanLine(step.example)}<p>${prose(step.why)}</p></div>
+          </li>`).join('')}</ol>
+        <div class="actions" id="step-controls" ${stepCount >= total ? 'hidden' : ''}>
+          ${button('step', t('nextStep'), 'primary', `title="${t('keyHint')}"`)}${button('all-steps', t('allSteps'))}
+        </div>
+        <p class="sr-only" id="step-status" aria-live="polite"></p>
+      </section>
+      <div class="lesson-side">
+        <section class="panel reading"><h2>${t('detail')}</h2>${view.explain.map(p => `<p>${prose(p)}</p>`).join('')}</section>
+        <section class="panel pitfall"><h2>⚠ ${t('pitfall')}</h2>${wrongRight(lesson.pitfallPair)}<p>${prose(view.pitfall)}</p></section>
+        <details class="panel recall"><summary>${t('recall')}</summary>
+          <p>${prose(view.recall[0])}</p><details><summary>${t('showAnswer')}</summary><p>${prose(view.recall[1])}</p></details>
+        </details>
+      </div>
+    </div>
+    ${view.table ? renderTable(view.table) : ''}
+    ${finishBar(app, lesson, total)}
+    <details class="panel sources"><summary>${t('sources')}</summary>
+      <p><strong lang="de" dir="ltr">${esc(t('sourceLine', level.book, num(lesson.source.lektion)))}</strong></p>
+      <p>${lesson.source.kind === 'sample' ? t('sourceSample') : t('sourceToc')} ${t('sourceOriginal')}</p>
+      <ul>${view.links.map(([label, url]) => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${prose(label)} ↗</a></li>`).join('')}</ul>
+    </details>
+    <nav class="lesson-nav" aria-label="${t('lessonNav')}">${prev ? link(`lesson/${prev.id}`, t('prevLesson')) : link(`island/${island.id}`, t('backToIsland'))}
+      ${next ? link(`lesson/${next.id}`, t('nextLesson'), 'primary') : link('practice', t('toPractice'), 'primary')}</nav>`;
+}
+
+function revealSteps(app, all, source) {
+  const steps = [...document.querySelectorAll('.step')];
+  const old = stepCount;
+  stepCount = Math.min(steps.length, all ? steps.length : stepCount + 1);
+  steps.slice(old, stepCount).forEach(element => {
+    element.hidden = false;
+    element.classList.add('enter');
+  });
+  const controls = document.querySelector('#step-controls');
+  controls.hidden = stepCount >= steps.length;
+  document.querySelector('#step-count').textContent = t('stepOf', num(stepCount), num(steps.length));
+  document.querySelector('#step-status').textContent = t('stepsShown', num(stepCount), num(steps.length));
+  if (stepCount >= steps.length) {
+    const finish = document.querySelector('[data-action="finish"]');
+    if (finish) finish.disabled = false;
+    const hint = document.querySelector('#finish-hint');
+    if (hint) hint.hidden = true;
+  }
+  if (!all) steps[stepCount - 1]?.scrollIntoView({ block: 'nearest', behavior: app.reduceMotion() ? 'auto' : 'smooth' });
+  if (controls.hidden && source) {
+    steps[old]?.setAttribute('tabindex', '-1');
+    steps[old]?.focus({ preventScroll: true });
+  }
+}
+
+export const actions = {
+  step: (app, target) => revealSteps(app, false, target),
+  'all-steps': (app, target) => revealSteps(app, true, target),
+  finish(app) {
+    const id = app.route.key;
+    app.apply([{ kind: 'lessonLearned', lesson: id }]);
+    app.rerender();
+    document.querySelector('#finish')?.scrollIntoView({ block: 'nearest' });
+    document.querySelector('#finish a')?.focus({ preventScroll: true });
+  }
+};
+
+export function onKey(app, event) {
+  const forward = getLang() === 'ar' ? 'ArrowLeft' : 'ArrowRight';
+  if (![forward, ' '].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (event.target.closest('a,button,input,textarea,select,summary,[tabindex="0"]')) return;
+  if (stepCount < document.querySelectorAll('.step').length) {
+    event.preventDefault();
+    revealSteps(app, false);
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "completed": {
+    "passiv-perfekt": true,
+    "relativ-dativ": false,
+    "no-such-lesson": true
+  },
+  "results": {
+    "passiv-perfekt-1": {
+      "correct": true,
+      "streak": 2,
+      "tries": 3,
+      "needsReview": false,
+      "topic": "passiv-perfekt"
+    },
+    "passiv-perfekt-2": {
+      "correct": false,
+      "streak": 0,
+      "tries": 1,
+      "needsReview": true,
+      "topic": "passiv-perfekt"
+    },
+    "je-desto-1": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "je-desto"
+    },
+    "je-desto-2": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "je-desto"
+    },
+    "je-desto-3": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "je-desto"
+    },
+    "je-desto-4": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "je-desto"
+    },
+    "je-desto-5": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "je-desto"
+    },
+    "je-desto-6": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "je-desto"
+    },
+    "je-desto-7": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "je-desto"
+    },
+    "je-desto-8": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "je-desto"
+    },
+    "je-desto-9": {
+      "correct": false,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": true,
+      "topic": "je-desto"
+    },
+    "ghost-1": {
+      "correct": true,
+      "streak": 1,
+      "tries": 1,
+      "needsReview": false,
+      "topic": "ghost"
+    }
+  },
+  "runs": {
+    "unit-1": {
+      "key": "unit-1",
+      "ids": [
+        "passiv-perfekt-1"
+      ],
+      "answers": {},
+      "grades": {},
+      "order": {},
+      "position": 0,
+      "finished": false
+    }
+  },
+  "lastRun": "unit-1",
+  "lastLesson": "je-desto"
+}

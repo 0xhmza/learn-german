@@ -1,0 +1,473 @@
+{
+  "id": "irreale-bedingung",
+  "level": "B1.1",
+  "island": "konjunktiv-bedingung",
+  "order": 3,
+  "prereqs": [],
+  "emoji": "💭",
+  "german": "Irreale Bedingungssätze",
+  "source": {
+    "lektion": 3,
+    "kind": "sample"
+  },
+  "pattern": [
+    "Wenn … hätte / wäre",
+    ",",
+    "würde … + Infinitiv"
+  ],
+  "frames": [
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "Wenn"
+        ],
+        [
+          "mf",
+          "ich mehr Zeit"
+        ],
+        [
+          "ve",
+          "hätte"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "(Wenn-Satz)"
+        ],
+        [
+          "v",
+          "würde"
+        ],
+        [
+          "mf",
+          "ich öfter"
+        ],
+        [
+          "ve",
+          "kochen"
+        ]
+      ]
+    }
+  ],
+  "example": "Wenn ich mehr Zeit hätte, würde ich öfter kochen.",
+  "stepExamples": [
+    "Ich habe wenig Zeit. Ich koche selten.",
+    "Wenn ich mehr Zeit hätte, …",
+    "…, würde ich öfter kochen.",
+    "Ich könnte hier arbeiten, wenn das Zimmer größer wäre."
+  ],
+  "pitfallPair": "Wenn ich mehr Zeit hätte, koche ich öfter. → Wenn ich mehr Zeit hätte, würde ich öfter kochen.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=13",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/997"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الشرط غير الواقعي",
+      "lead": "تبدأ من وضع تعرف أنه غير متحقق الآن، مثل عدم امتلاك وقت، ثم تتخيّل نتيجته لو تغيّر. يظهر هذا البعد الافتراضي في صيغتي الشرط والنتيجة.",
+      "translation": "لو كان عندي وقت أكثر، لطبخت أكثر.",
+      "steps": [
+        {
+          "text": "حدّد الواقع قبل صياغة عكسه",
+          "why": "ضع أمامك الشرط والنتيجة المتخيلين. هنا يمتلك المتكلم قليلًا من الوقت ويتخيل حالة يكون فيها الوقت أكثر."
+        },
+        {
+          "text": "اصنع الشرط بـ Konjunktiv II",
+          "why": "من `haben` تأتي `hätte`، ومن `sein` تأتي `wäre`. استخدمهما مباشرة. ويأتي الفعل المصرف في آخر الجزء الذي يبدأ بـ `wenn`."
+        },
+        {
+          "text": "اصنع النتيجة الافتراضية",
+          "why": "مع أفعال كثيرة تستعمل `würde` المصرف ثم مصدر الفعل في النهاية. وإذا كانت النتيجة قدرةً فقل `könnte ich öfter kochen`. الفعل المصرف يأتي بعد الفاصلة إذا تقدم الشرط."
+        },
+        {
+          "text": "راجع تصريف كل جزء عند تبديل ترتيبه",
+          "why": "يمكن تقديم النتيجة. حافظ على `könnte` في الموقع الثاني من الجملة الرئيسية و`wäre` في نهاية التابعة. وفي `wenn er hier arbeiten würde` تأتي `würde` بعد المصدر في هذا النمط."
+        }
+      ],
+      "explain": [
+        "احفظ الصيغ الشائعة بحسب الشخص: `ich hätte / du hättest / wir hätten`، `ich wäre / du wärst / wir wären`، `ich würde / du würdest / wir würden`، `ich könnte / du könntest / wir könnten`. وقارن `Falls ich morgen Zeit habe, komme ich` (احتمال مفتوح) مع `Wenn ich Zeit hätte, würde ich kommen` (يُفهم من السياق أن وقتي غير متاح)."
+      ],
+      "pitfall": "الشرط مبني على افتراض يخالف الواقع الحالي. يحمل `hätte` هذا المعنى في الشرط، ويحتاج فعل النتيجة أيضًا إلى `würde … kochen` في هذا النمط.",
+      "recall": [
+        "ماذا تفهم من `Wenn der Weg kürzer wäre, könnten wir laufen`؟",
+        "المسار طويل في الواقع بحسب المتكلم. إمكان المشي نتيجة افتراضية."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 3 · telc، ص 2",
+        "شرح القواعد، ص 35 من الكتاب · telc",
+        "الشرط · grammis"
+      ],
+      "table": [
+        [
+          "الضمير",
+          "sein",
+          "haben",
+          "können",
+          "würde + Infinitiv"
+        ],
+        [
+          "ich",
+          "wäre",
+          "hätte",
+          "könnte",
+          "würde"
+        ],
+        [
+          "du",
+          "wärst / wärest",
+          "hättest",
+          "könntest",
+          "würdest"
+        ],
+        [
+          "er / sie / es",
+          "wäre",
+          "hätte",
+          "könnte",
+          "würde"
+        ],
+        [
+          "wir / sie / Sie",
+          "wären",
+          "hätten",
+          "könnten",
+          "würden"
+        ],
+        [
+          "ihr",
+          "wärt / wäret",
+          "hättet",
+          "könntet",
+          "würdet"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Irreale Bedingungssätze",
+      "lead": "Du gehst von einer Situation aus, die jetzt nicht wahr ist – zum Beispiel, dass du keine Zeit hast – und stellst dir die Folge vor, wenn sie sich ändern würde. Dieses „Als-ob“ zeigt sich in Bedingung und Folge.",
+      "steps": [
+        {
+          "text": "Bestimme die Wirklichkeit, bevor du sie umdrehst",
+          "why": "Leg dir Bedingung und vorgestellte Folge zurecht. Hier hat die Person wenig Zeit und stellt sich vor, sie hätte mehr."
+        },
+        {
+          "text": "Bilde die Bedingung im Konjunktiv II",
+          "why": "Aus `haben` wird `hätte`, aus `sein` wird `wäre` – benutze sie direkt. Das konjugierte Verb steht am Ende des `wenn`-Teils."
+        },
+        {
+          "text": "Bilde die vorgestellte Folge",
+          "why": "Bei vielen Verben benutzt du konjugiertes `würde` und den Infinitiv am Ende. Geht es um eine Möglichkeit, sag `könnte ich öfter kochen`. Steht die Bedingung vorne, kommt das konjugierte Verb direkt nach dem Komma."
+        },
+        {
+          "text": "Prüfe die Formen, wenn du die Reihenfolge tauschst",
+          "why": "Die Folge kann auch vorne stehen. `könnte` bleibt auf Position 2 im Hauptsatz, `wäre` am Ende des Nebensatzes. In `wenn er hier arbeiten würde` steht `würde` nach dem Infinitiv."
+        }
+      ],
+      "explain": [
+        "Lern die häufigen Formen nach Person: `ich hätte / du hättest / wir hätten`, `ich wäre / du wärst / wir wären`, `ich würde / du würdest / wir würden`, `ich könnte / du könntest / wir könnten`. Vergleiche `Falls ich morgen Zeit habe, komme ich` (offene Möglichkeit) mit `Wenn ich Zeit hätte, würde ich kommen` (aus dem Kontext: Ich habe keine Zeit)."
+      ],
+      "pitfall": "Die Bedingung beruht auf einer Annahme gegen die Wirklichkeit. `hätte` trägt diese Bedeutung in der Bedingung – auch die Folge braucht in diesem Muster `würde … kochen`.",
+      "recall": [
+        "Was verstehst du aus `Wenn der Weg kürzer wäre, könnten wir laufen`?",
+        "In Wirklichkeit ist der Weg lang (laut Sprecher). Dass man laufen könnte, ist nur eine vorgestellte Folge."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 3 · telc, S. 2",
+        "Grammatikerklärung, S. 35 im Buch · telc",
+        "Konditionalsätze · grammis"
+      ],
+      "table": [
+        [
+          "Pronomen",
+          "sein",
+          "haben",
+          "können",
+          "würde + Infinitiv"
+        ],
+        [
+          "ich",
+          "wäre",
+          "hätte",
+          "könnte",
+          "würde"
+        ],
+        [
+          "du",
+          "wärst / wärest",
+          "hättest",
+          "könntest",
+          "würdest"
+        ],
+        [
+          "er / sie / es",
+          "wäre",
+          "hätte",
+          "könnte",
+          "würde"
+        ],
+        [
+          "wir / sie / Sie",
+          "wären",
+          "hätten",
+          "könnten",
+          "würden"
+        ],
+        [
+          "ihr",
+          "wärt / wäret",
+          "hättet",
+          "könntet",
+          "würdet"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "irreale-bedingung-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wenn ich genug Geld {{1}}, würde ich reisen.",
+      "blanks": [
+        [
+          "hätte"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "ضع haben في صيغة الافتراض.",
+          "explain": "hätte هي Konjunktiv II للمفرد الأول من haben.",
+          "hints": [
+            "استعمل الصيغة القصيرة الشائعة من haben."
+          ]
+        },
+        "de": {
+          "prompt": "Setz `haben` in die irreale Form.",
+          "explain": "`hätte` ist der Konjunktiv II von `haben` in der 1. Person Singular.",
+          "hints": [
+            "Benutze die kurze, häufige Form von `haben`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irreale-bedingung-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wenn das Büro näher {{1}}, würde ich laufen.",
+      "blanks": [
+        [
+          "wäre"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "ضع sein في صيغة الافتراض.",
+          "explain": "wäre هي الصيغة مع das Büro المفرد.",
+          "hints": [
+            "استعمل الصيغة الشائعة من sein."
+          ]
+        },
+        "de": {
+          "prompt": "Setz `sein` in die irreale Form.",
+          "explain": "`wäre` ist die Form mit dem Singular `das Büro`.",
+          "hints": [
+            "Benutze die häufige Form von `sein`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irreale-bedingung-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Wenn der Stadtteil ruhiger wäre, würde ich dort wohnen.",
+        "Falls der Stadtteil ruhig ist, ziehe ich dorthin.",
+        "Weil der Stadtteil ruhig ist, wohne ich dort."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة تعني أن الحي غير هادئ في الواقع؟",
+          "explain": "wäre وwürde يعرضان وضعًا متخيلًا. falls يترك الاحتمال مفتوحًا، وweil يقرّر سببًا.",
+          "hints": [
+            "ابحث عن الافتراض المضاد للواقع."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz bedeutet, dass das Viertel in Wirklichkeit nicht ruhig ist?",
+          "explain": "`wäre` und `würde` stellen eine vorgestellte Situation dar. `falls` lässt die Möglichkeit offen, `weil` nennt einen Grund.",
+          "hints": [
+            "Such die Annahme gegen die Wirklichkeit."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irreale-bedingung-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Wenn die Räume größer {{1}}, {{2}} wir dort üben.",
+      "blanks": [
+        [
+          "wären"
+        ],
+        [
+          "könnten"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب الصيغة من sein ثم können.",
+          "explain": "wären توافق die Räume، وkönnten توافق wir. يأتي könnte بصيغة الجمع بعد الفاصلة.",
+          "hints": [
+            "تحقق من الجمع في الجملتين."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib die Form von `sein` und dann von `können`.",
+          "explain": "`wären` passt zu `die Räume`, `könnten` zu `wir`. Nach dem Komma steht die Pluralform.",
+          "hints": [
+            "Prüf den Plural in beiden Sätzen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irreale-bedingung-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Wenn ich",
+        "mehr Zeit",
+        "hätte,",
+        "würde ich",
+        "jeden Tag",
+        "kochen."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الشرط قبل النتيجة.",
+          "explain": "hätte قبل الفاصلة، وبعدها würde ثم الفاعل، وينتهي الجزء بـ kochen.",
+          "hints": [
+            "حدّد أين ينتهي الشرط وأين يأتي المصدر."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne: Bedingung vor der Folge.",
+          "explain": "`hätte` steht vor dem Komma, danach `würde`, dann das Subjekt, und der Teil endet mit `kochen`.",
+          "hints": [
+            "Bestimme, wo die Bedingung endet und wo der Infinitiv steht."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irreale-bedingung-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أين الخطأ في Wenn sie länger hier bleiben würde, lernt sie mehr، إذا أردت افتراضًا في الجانبين؟",
+          "explain": "في الافتراض المتسق نقول …, würde sie mehr lernen. الجزء الأول فيه Konjunktiv II بالفعل.",
+          "hints": [
+            "أي فعل بقي في صيغة الواقع؟"
+          ],
+          "options": [
+            "حوّل lernt إلى würde … lernen.",
+            "حوّل würde إلى wird مع إبقاء lernt.",
+            "ضع bleiben قبل sie مباشرةً."
+          ]
+        },
+        "de": {
+          "prompt": "Wo ist der Fehler in `Wenn sie länger hier bleiben würde, lernt sie mehr`, wenn beide Teile irreal sein sollen?",
+          "explain": "Konsequent irreal heißt es: `…, würde sie mehr lernen`. Der erste Teil hat schon Konjunktiv II.",
+          "hints": [
+            "Welches Verb steht noch im Indikativ?"
+          ],
+          "options": [
+            "`lernt` muss zu `würde … lernen` werden.",
+            "`würde` muss zu `wird` werden, `lernt` bleibt.",
+            "`bleiben` muss direkt vor `sie` stehen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irreale-bedingung-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Wenn du hier wärst, könnten wir zusammen lernen.",
+      "i18n": {
+        "ar": {
+          "prompt": "عبّر عن العكس الافتراضي. Du bist nicht hier. Wir können nicht zusammen lernen. ابدأ بـ Wenn du.",
+          "explain": "wärst تتبع du وتنهي الشرط. könnten تتبع wir وتأتي مباشرة بعد الفاصلة.",
+          "hints": [
+            "استعمل Konjunktiv II لكل من sein وkönnen."
+          ]
+        },
+        "de": {
+          "prompt": "Drück das irreale Gegenteil aus: `Du bist nicht hier. Wir können nicht zusammen lernen.` Beginne mit `Wenn du`.",
+          "explain": "`wärst` passt zu `du` und beendet die Bedingung. `könnten` passt zu `wir` und steht direkt nach dem Komma.",
+          "hints": [
+            "Benutze den Konjunktiv II von `sein` und `können`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "irreale-bedingung-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Wenn ich mehr Zeit hätte, würde ich öfter kochen.",
+      "context": "Wenn ich mehr Zeit hätte, koche ich öfter.",
+      "i18n": {
+        "ar": {
+          "prompt": "اجعل الشرط والنتيجة غير واقعيين. صحّح الجملة واشرح سبب التعديل.",
+          "explain": "الشرط مبني على افتراض يخالف الواقع الحالي. يحمل `hätte` هذا المعنى في الشرط، ويحتاج فعل النتيجة أيضًا إلى `würde … kochen` في هذا النمط.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Mach Bedingung und Folge irreal. Korrigiere den Satz und erkläre die Änderung.",
+          "explain": "Die Bedingung beruht auf einer Annahme gegen die Wirklichkeit. `hätte` trägt diese Bedeutung in der Bedingung – auch die Folge braucht in diesem Muster `würde … kochen`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "irreale-bedingung-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "المسار طويل في الواقع بحسب المتكلم. إمكان المشي نتيجة افتراضية.",
+      "i18n": {
+        "ar": {
+          "prompt": "ماذا تفهم من `Wenn der Weg kürzer wäre, könnten wir laufen`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Was verstehst du aus `Wenn der Weg kürzer wäre, könnten wir laufen`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

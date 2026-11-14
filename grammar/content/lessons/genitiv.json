@@ -1,0 +1,432 @@
+{
+  "id": "genitiv",
+  "level": "B1.1",
+  "island": "nomen-kasus",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "🏷️",
+  "german": "Der Genitiv",
+  "source": {
+    "lektion": 4,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Nomen",
+    "+",
+    "des …(e)s / der …"
+  ],
+  "frames": [
+    {
+      "k": "np",
+      "parts": [
+        [
+          "n",
+          "der Eingang"
+        ],
+        [
+          "hl",
+          "des Gebäudes"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "sehe"
+        ],
+        [
+          "mf",
+          "den Eingang"
+        ],
+        [
+          "hl",
+          "des Gebäudes"
+        ]
+      ]
+    }
+  ],
+  "example": "der Eingang des Gebäudes",
+  "stepExamples": [
+    "der Eingang + das Gebäude",
+    "des Mannes · der Frau · des Kindes · der Kinder",
+    "des Tages · des Hauses · des Computers",
+    "des Studenten · Annas Schlüssel"
+  ],
+  "pitfallPair": "die Tür des Haus → die Tür des Hauses",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/korpusgrammatik/6941"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الإضافة وحالة Genitiv",
+      "lead": "تربط حالة الجينيتيف اسمًا باسم آخر لتبين صاحب الشيء أو ما ينتمي إليه. يمكنك تصورها على هيئة سؤال `Wessen?`، أي «لمن؟» أو «الخاص بمَن أو بماذا؟».",
+      "translation": "مدخل المبنى.",
+      "steps": [
+        {
+          "text": "حدّد الاسم الموصوف وصاحب الإضافة",
+          "why": "الاسم الرئيسي هو `Eingang`. تحدد وظيفته في الجملة أداته الخاصة. أما `Gebäude` فيحدّد إلى ماذا ينتمي المدخل."
+        },
+        {
+          "text": "صرّف أداة صاحب الإضافة",
+          "why": "تأتي `des` مع المذكر والمحايد المفرد، و`der` مع المؤنث المفرد والجمع. مع الأداة النكرة تقول `eines Mannes` و`einer Frau` و`eines Kindes`."
+        },
+        {
+          "text": "افحص نهاية الاسم",
+          "why": "يأخذ كثير من الأسماء المذكرة والمحايدة المفردة `-s` أو `-es`. في كلمات مثل `Haus` تظهر `-es`. يُحفظ الشكل مع الاسم عندما يختلف الاستعمال. لا تضف هذه النهاية إلى المؤنث أو الجمع."
+        },
+        {
+          "text": "راجع الاستثناء الشائع والأسماء العلم",
+          "why": "المذكر الضعيف مثل `Student` يأخذ `-en` في الجينيتيف. ومع اسم العلم يمكنك وضع المالك قبل الشيء وإضافة `-s` مثل `Annas`. وتظهر فاصلة عليا مع اسم ينتهي بصوت صفيري مثل `Max’ Schlüssel`."
+        }
+      ],
+      "explain": [
+        "في `Ich sehe den Eingang des Gebäudes` تغيّر `Eingang` إلى الأكوزاتيف لأنه مفعول `sehe`، وبقي `des Gebäudes` جينيتيف لأنه يصف المدخل. وفي المحادثة تسمع كثيرًا `der Eingang von dem Gebäude` أو `vom Gebäude`. استعمل الجينيتيف في التمرين حين يُطلب منك، وتدرّب على تمييزه في النصوص الرسمية."
+      ],
+      "pitfall": "أداة المالك المحايد `des` صحيحة. يحتاج اسم `Haus` أيضًا إلى `-es`.",
+      "recall": [
+        "في `die Fahrräder der Kinder` هل `Kinder` مفرد مؤنث؟",
+        "هو جمع. أداة الجينيتيف `der` مشتركة بين المؤنث المفرد والجمع."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 4 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "علامات الجينيتيف · grammis"
+      ],
+      "table": [
+        [
+          "الأداة",
+          "مذكر",
+          "مؤنث",
+          "محايد",
+          "جمع"
+        ],
+        [
+          "معرّفة",
+          "des Mannes",
+          "der Frau",
+          "des Kindes",
+          "der Kinder"
+        ],
+        [
+          "نكرة / ملكية",
+          "eines Mannes",
+          "einer Frau",
+          "eines Kindes",
+          "meiner Kinder"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Der Genitiv",
+      "lead": "Der Genitiv verbindet ein Nomen mit einem anderen und zeigt, wem etwas gehört oder wozu es gehört. Denk an die Frage `Wessen?`.",
+      "steps": [
+        {
+          "text": "Bestimme das Hauptnomen und den „Besitzer“",
+          "why": "Das Hauptnomen ist `Eingang`; seine Funktion im Satz bestimmt seinen Artikel. `Gebäude` zeigt, wozu der Eingang gehört."
+        },
+        {
+          "text": "Dekliniere den Artikel des Besitzers",
+          "why": "`des` steht bei Maskulinum und Neutrum im Singular, `der` bei Femininum und Plural. Mit unbestimmtem Artikel: `eines Mannes`, `einer Frau`, `eines Kindes`."
+        },
+        {
+          "text": "Prüfe die Endung des Nomens",
+          "why": "Viele maskuline und neutrale Nomen bekommen im Singular `-s` oder `-es`. Bei Wörtern wie `Haus` steht `-es`. Lern die Form mit dem Nomen, wenn es Varianten gibt. Feminine Nomen und Plural bekommen diese Endung nicht."
+        },
+        {
+          "text": "Merk dir die häufige Ausnahme und Eigennamen",
+          "why": "Schwache Maskulina wie `Student` bekommen im Genitiv `-en`. Bei Namen kannst du den Besitzer vorne nennen und `-s` anhängen: `Annas`. Endet der Name auf einen s-Laut, steht ein Apostroph: `Max’ Schlüssel`."
+        }
+      ],
+      "explain": [
+        "In `Ich sehe den Eingang des Gebäudes` steht `Eingang` im Akkusativ, weil es Objekt von `sehe` ist; `des Gebäudes` bleibt Genitiv, weil es den Eingang beschreibt. Im Gespräch hörst du oft `der Eingang von dem Gebäude` oder `vom Gebäude`. Benutze den Genitiv in der Übung, wenn er verlangt wird, und üb, ihn in formellen Texten zu erkennen."
+      ],
+      "pitfall": "Der Artikel `des` für den neutralen Besitzer ist richtig. Das Nomen `Haus` braucht aber zusätzlich `-es`.",
+      "recall": [
+        "Ist `Kinder` in `die Fahrräder der Kinder` ein femininer Singular?",
+        "Nein, es ist Plural. Der Genitivartikel `der` ist bei Femininum Singular und Plural gleich."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 4 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Genitivmarkierung · grammis"
+      ],
+      "table": [
+        [
+          "Artikel",
+          "Maskulin",
+          "Feminin",
+          "Neutrum",
+          "Plural"
+        ],
+        [
+          "bestimmt",
+          "des Mannes",
+          "der Frau",
+          "des Kindes",
+          "der Kinder"
+        ],
+        [
+          "unbestimmt / Possessiv",
+          "eines Mannes",
+          "einer Frau",
+          "eines Kindes",
+          "meiner Kinder"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "genitiv-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "der Schlüssel {{1}} {{2}}",
+      "blanks": [
+        [
+          "des"
+        ],
+        [
+          "Lehrers"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الإضافة من der Lehrer.",
+          "explain": "der Lehrer يصبح des Lehrers.",
+          "hints": [
+            "أداة المذكر ونهاية الاسم كلاهما مهم."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Genitiv von `der Lehrer`.",
+          "explain": "`der Lehrer` wird zu `des Lehrers`.",
+          "hints": [
+            "Artikel und Nomen-Endung sind beide wichtig."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "die Adresse {{1}} Schule",
+      "blanks": [
+        [
+          "der"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الأداة لاسم مؤنث.",
+          "explain": "أداة المؤنث في الجينيتيف der.",
+          "hints": [
+            "حدّد حالة مالك العنوان."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Artikel für ein feminines Nomen.",
+          "explain": "Der feminine Artikel im Genitiv ist `der`.",
+          "hints": [
+            "Bestimme den Kasus des „Besitzers“ der Adresse."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "die Spielsachen der Kinder",
+        "die Spielsachen den Kindern",
+        "die Spielsachen des Kinder"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي مجموعة تترجم «ألعاب الأطفال»؟",
+          "explain": "der Kinder جمع جينيتيف. den Kindern داتيف، وdes تخص المذكر أو المحايد المفرد.",
+          "hints": [
+            "أداة الجينيتيف للجمع كأداة المؤنث."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Gruppe heißt „das Spielzeug der Kinder“?",
+          "explain": "`der Kinder` ist Genitiv Plural. `den Kindern` ist Dativ, `des` gilt für Maskulinum oder Neutrum Singular.",
+          "hints": [
+            "Der Genitivartikel im Plural ist wie der feminine."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "das Dach {{1}} (das Haus) · die Tasche {{2}} (der Student)",
+      "blanks": [
+        [
+          "des Hauses"
+        ],
+        [
+          "des Studenten"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بإضافة الاسم المحايد والمذكر الضعيف.",
+          "explain": "Haus يأخذ -es. Student اسم مذكر ضعيف يأخذ -en.",
+          "hints": [
+            "أضف النهاية المناسبة لكل اسم بعد des."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Genitiv beim neutralen Nomen und beim schwachen Maskulinum.",
+          "explain": "`Haus` bekommt `-es`. `Student` ist ein schwaches Maskulinum und bekommt `-en`.",
+          "hints": [
+            "Häng nach `des` an jedes Nomen die passende Endung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي تحليل صحيح لـ Ich sehe den Garten des Nachbarn؟",
+          "explain": "الفعل يحدد حالة Garten. علاقة الإضافة تحدد حالة Nachbar.",
+          "hints": [
+            "اسأل ماذا أرى ثم لمن الحديقة."
+          ],
+          "options": [
+            "den Garten أكوزاتيف، وdes Nachbarn جينيتيف.",
+            "den Garten جينيتيف، وdes Nachbarn أكوزاتيف.",
+            "المجموعتان في الأكوزاتيف."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Analyse von `Ich sehe den Garten des Nachbarn` ist richtig?",
+          "explain": "Das Verb bestimmt den Kasus von `Garten`. Die Genitivbeziehung bestimmt den Kasus von `Nachbar`.",
+          "hints": [
+            "Frag: Was sehe ich? Und: Wessen Garten?"
+          ],
+          "options": [
+            "`den Garten` ist Akkusativ, `des Nachbarn` ist Genitiv.",
+            "`den Garten` ist Genitiv, `des Nachbarn` ist Akkusativ.",
+            "Beide Gruppen stehen im Akkusativ."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-6",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "{{1}} Tasche (Anna) · {{2}} Schlüssel (Max)",
+      "blanks": [
+        [
+          "Annas"
+        ],
+        [
+          "Max’",
+          "Max'"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب الإضافة مع اسم العلم أولًا.",
+          "explain": "تلحق s باسم Anna. مع Max تبيّن الفاصلة العليا الملكية بدل إضافة s جديدة.",
+          "hints": [
+            "انتبه إلى آخر صوت في Max."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib den Genitiv mit dem Namen vorne.",
+          "explain": "An `Anna` wird `s` angehängt. Bei `Max` zeigt der Apostroph den Besitz, statt eines weiteren `s`.",
+          "hints": [
+            "Achte auf den letzten Laut von `Max`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das ist der Eingang eines Gebäudes.",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Das ist der Eingang von einem Gebäude إلى جينيتيف نكرة.",
+          "explain": "يصبح einem هنا eines لأن الحالة تغيّرت. والاسم Gebäude يأخذ -s.",
+          "hints": [
+            "حوّل أداة النكرة المحايدة وأضف نهاية الاسم."
+          ]
+        },
+        "de": {
+          "prompt": "Forme `Das ist der Eingang von einem Gebäude` in einen unbestimmten Genitiv um.",
+          "explain": "`einem` wird hier zu `eines`, weil sich der Kasus ändert, und `Gebäude` bekommt `-s`.",
+          "hints": [
+            "Ändere den neutralen unbestimmten Artikel und häng die Endung ans Nomen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "die Tür des Hauses",
+      "context": "die Tür des Haus",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "أداة المالك المحايد `des` صحيحة. يحتاج اسم `Haus` أيضًا إلى `-es`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Der Artikel `des` für den neutralen Besitzer ist richtig. Das Nomen `Haus` braucht aber zusätzlich `-es`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "هو جمع. أداة الجينيتيف `der` مشتركة بين المؤنث المفرد والجمع.",
+      "i18n": {
+        "ar": {
+          "prompt": "في `die Fahrräder der Kinder` هل `Kinder` مفرد مؤنث؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Ist `Kinder` in `die Fahrräder der Kinder` ein femininer Singular?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

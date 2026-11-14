@@ -1,0 +1,376 @@
+{
+  "id": "ohne-zu",
+  "level": "B1.1",
+  "island": "infinitiv-verben",
+  "order": 3,
+  "prereqs": [
+    "infinitiv-zu"
+  ],
+  "emoji": "🍵",
+  "german": "Infinitivsätze mit ohne … zu",
+  "source": {
+    "lektion": 5,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Hauptsatz",
+    ",",
+    "ohne … zu + Infinitiv"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Sie"
+        ],
+        [
+          "v",
+          "ging"
+        ]
+      ]
+    },
+    {
+      "k": "inf",
+      "parts": [
+        [
+          "c",
+          "ohne"
+        ],
+        [
+          "mf",
+          "sich"
+        ],
+        [
+          "ve",
+          "zu verabschieden"
+        ]
+      ]
+    }
+  ],
+  "example": "Sie ging, ohne sich zu verabschieden.",
+  "stepExamples": [
+    "Sie ging. · Sie verabschiedete sich nicht.",
+    "…, ohne sich zu verabschieden.",
+    "Sie isst, ohne vorher aufzuwärmen.",
+    "Sie ging, ohne dass ich es bemerkte."
+  ],
+  "pitfallPair": "Sie ging ohne sich verabschieden. → Sie ging, ohne sich zu verabschieden.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/6852"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "فعل يحدث دون فعل آخر",
+      "lead": "يصف هذا التركيب فعلاً أساسيًا مع غياب فعل قد يصاحبه أو يُتوقع قبله. يساعدك تحديد صاحب الفعل على اختيار البنية.",
+      "translation": "غادرت دون أن تودّع.",
+      "steps": [
+        {
+          "text": "افصل ما حصل عما لم يحصل",
+          "why": "حدثت المغادرة وغاب الوداع. تحمل `ohne` معنى الغياب بالفعل، لذلك لا تحتاج إلى `nicht` للتعبير عن هذا المعنى هنا."
+        },
+        {
+          "text": "اربط الفعل المحذوف بالمصدر",
+          "why": "يشير `sich` إلى الشخص نفسه في المثال. إذا كان الفاعل `ich` تقول `ohne mich zu verabschieden`. أبقِ علامة الانعكاس مع الفعل الذي يتطلبها."
+        },
+        {
+          "text": "ضع الفعل القابل للفصل في صورة المصدر الصحيحة",
+          "why": "مع `aufwärmen` تصبح الصيغة `aufzuwärmen`. وإذا ذكرت الطعام صراحةً تستطيع القول `ohne das Essen vorher aufzuwärmen`."
+        },
+        {
+          "text": "اختر ohne dass عند التصريح بفاعل مختلف",
+          "why": "غادرت هي، وأنا الذي لم يلاحظ. بعد `ohne dass` توجد جملة تابعة بفاعل صريح وفعل مصرف في النهاية. ومع مجموعة المصدر توضع فاصلة كذلك."
+        }
+      ],
+      "explain": [
+        "في `Sie ging ohne Mantel` تأتي بعد `ohne` مجموعة اسمية في الأكوزاتيف. في `Sie ging, ohne den Mantel anzuziehen` يصف المصدر غياب فعل ارتداء المعطف. أما `statt den Mantel anzuziehen` فيبرز المعطف بوصفه بديلًا لسلوك آخر يذكره السياق. استعمل الرابط وفق العلاقة التي تريد التعبير عنها."
+      ],
+      "pitfall": "تبدأ المجموعة بـ `ohne` بعد فاصلة وتحتاج إلى `zu` قبل `verabschieden`.",
+      "recall": [
+        "من الذي لم يقرأ المكونات في `Er kauft den Saft, ohne die Zutaten zu lesen`؟",
+        "المشتري نفسه. وتوضح `ohne dass` أي فاعل مختلف إذا دعت الحاجة."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 5 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "المجموعات المصدرية · grammis"
+      ]
+    },
+    "de": {
+      "title": "ohne … zu",
+      "lead": "Diese Struktur beschreibt eine Haupthandlung, bei der eine andere Handlung fehlt, die man erwarten würde. Wer handelt, entscheidet über die passende Struktur.",
+      "steps": [
+        {
+          "text": "Trenne, was passiert ist, von dem, was nicht passiert ist",
+          "why": "Sie ist gegangen, aber der Abschied fehlte. `ohne` trägt die Bedeutung des Fehlens schon in sich – du brauchst hier kein `nicht`."
+        },
+        {
+          "text": "Verbinde die fehlende Handlung mit dem Infinitiv",
+          "why": "`sich` verweist im Beispiel auf dieselbe Person. Ist das Subjekt `ich`, sagst du `ohne mich zu verabschieden`. Das Reflexivpronomen bleibt beim Verb, das es braucht."
+        },
+        {
+          "text": "Bring trennbare Verben in die richtige Infinitivform",
+          "why": "Aus `aufwärmen` wird `aufzuwärmen`. Nennst du das Essen ausdrücklich, kannst du sagen: `ohne das Essen vorher aufzuwärmen`."
+        },
+        {
+          "text": "Wähle ohne dass für ein anderes Subjekt",
+          "why": "Sie ist gegangen, und ich habe es nicht bemerkt. Nach `ohne dass` folgt ein Nebensatz mit eigenem Subjekt und dem konjugierten Verb am Ende. Auch vor der Infinitivgruppe steht ein Komma."
+        }
+      ],
+      "explain": [
+        "In `Sie ging ohne Mantel` folgt nach `ohne` eine Nominalgruppe im Akkusativ. In `Sie ging, ohne den Mantel anzuziehen` beschreibt der Infinitiv, dass das Anziehen fehlt. `statt den Mantel anzuziehen` stellt das Anziehen dagegen als Alternative zu einem anderen Verhalten im Kontext dar. Wähle die Konjunktion nach der Beziehung, die du ausdrücken willst."
+      ],
+      "pitfall": "Die Gruppe beginnt nach einem Komma mit `ohne` und braucht `zu` vor `verabschieden`.",
+      "recall": [
+        "Wer hat in `Er kauft den Saft, ohne die Zutaten zu lesen` die Zutaten nicht gelesen?",
+        "Der Käufer selbst. Mit `ohne dass` könntest du bei Bedarf ein anderes Subjekt nennen."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 5 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Infinitivgruppen · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "ohne-zu-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Er nimmt das Brot, ohne vorher {{1}}.",
+      "blanks": [
+        [
+          "zu fragen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المصدر من fragen.",
+          "explain": "نكتب zu قبل fragen في المجموعة.",
+          "hints": [
+            "المصدر غير قابل للفصل."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Infinitiv von `fragen`.",
+          "explain": "In der Gruppe schreiben wir `zu` vor `fragen`.",
+          "hints": [
+            "Das Verb ist nicht trennbar."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ohne-zu-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Ich ging, ohne {{1}} zu verabschieden.",
+      "blanks": [
+        [
+          "mich"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل ضمير الانعكاس المناسب مع ich.",
+          "explain": "صاحب الفعل هو ich، فيلائمه ضمير الانعكاس mich.",
+          "hints": [
+            "من الذي كان يمكن أن يودّع؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das passende Reflexivpronomen für `ich`.",
+          "explain": "Wer handelt, ist `ich` – dazu passt das Reflexivpronomen `mich`.",
+          "hints": [
+            "Wer hätte sich verabschieden können?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ohne-zu-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "ما الذي لم يحصل في Sie ging, ohne zu bezahlen؟",
+          "explain": "حصلت المغادرة حسب ging. لم يحصل الدفع حسب ohne zu bezahlen.",
+          "hints": [
+            "المجموعة بعد ohne تصف الفعل الغائب."
+          ],
+          "options": [
+            "الدفع.",
+            "المغادرة.",
+            "الدفع والمغادرة."
+          ]
+        },
+        "de": {
+          "prompt": "Was ist in `Sie ging, ohne zu bezahlen` nicht passiert?",
+          "explain": "Laut `ging` ist sie gegangen. Laut `ohne zu bezahlen` hat sie nicht bezahlt.",
+          "hints": [
+            "Die Gruppe nach `ohne` beschreibt die fehlende Handlung."
+          ],
+          "options": [
+            "Das Bezahlen.",
+            "Das Gehen.",
+            "Das Bezahlen und das Gehen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ohne-zu-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Er isst das Essen, ohne es {{1}}.",
+      "blanks": [
+        [
+          "aufzuwärmen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المصدر المنفصل من aufwärmen.",
+          "explain": "auf + zu + wärmen تصبح كلمة واحدة.",
+          "hints": [
+            "احتفظ بالبادئة وأدخل zu داخل الكلمة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den trennbaren Infinitiv von `aufwärmen`.",
+          "explain": "`auf` + `zu` + `wärmen` wird ein Wort.",
+          "hints": [
+            "Behalte das Präfix und setz `zu` ins Wort."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ohne-zu-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Ich ging, ohne dass er mich bemerkte.",
+        "Ich ging, ohne ihn zu bemerken.",
+        "Ich ging, ohne mich zu bemerken."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "كيف تقول «غادرت دون أن يلاحظني هو»؟",
+          "explain": "ohne dass يتيح ذكر er فاعلًا. الصيغتان المصدريتان تجعلان ich صاحب فعل الملاحظة.",
+          "hints": [
+            "المغادر والملاحظ شخصان مختلفان."
+          ]
+        },
+        "de": {
+          "prompt": "Wie sagst du „Ich bin gegangen, ohne dass er mich bemerkt hat“?",
+          "explain": "Mit `ohne dass` kannst du `er` als Subjekt nennen. Die Infinitivformen machen `ich` zur Person, die bemerkt.",
+          "hints": [
+            "Wer geht und wer bemerkt, sind verschiedene Personen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ohne-zu-6",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Ohne",
+        "sich",
+        "zu verabschieden,",
+        "ging",
+        "sie",
+        "nach Hause."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب مع تقديم المجموعة المصدرية. ضع الفاعل بعد فعل الرئيسية.",
+          "explain": "zu verabschieden ينهي المصدرية. ging يبدأ الرئيسية لأن المصدرية تحتل الموقع الأول.",
+          "hints": [
+            "ابدأ بالمجموعة كلها ثم ضع الفعل المصرف بعد الفاصلة."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne und stell die Infinitivgruppe nach vorn. Setz das Subjekt nach das Verb des Hauptsatzes.",
+          "explain": "`zu verabschieden` beendet die Infinitivgruppe. `ging` eröffnet den Hauptsatz, weil die Gruppe Position 1 besetzt.",
+          "hints": [
+            "Beginne mit der ganzen Gruppe und setz das konjugierte Verb nach das Komma."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ohne-zu-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Er trinkt den Saft, ohne die Zutaten zu lesen.",
+      "i18n": {
+        "ar": {
+          "prompt": "ادمج Er trinkt den Saft وEr liest die Zutaten nicht مع ohne … zu.",
+          "explain": "اصنع المجموعة ohne die Zutaten zu lesen، وافصلها بفاصلة.",
+          "hints": [
+            "الفاعل واحد. معنى النفي يأتي من الرابط."
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde `Er trinkt den Saft` und `Er liest die Zutaten nicht` mit ohne … zu.",
+          "explain": "Bilde die Gruppe `ohne die Zutaten zu lesen` und trenne sie mit Komma ab.",
+          "hints": [
+            "Das Subjekt ist dasselbe. Die Verneinung kommt aus der Konjunktion."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ohne-zu-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Sie ging, ohne sich zu verabschieden.",
+      "context": "Sie ging ohne sich verabschieden.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "تبدأ المجموعة بـ `ohne` بعد فاصلة وتحتاج إلى `zu` قبل `verabschieden`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Die Gruppe beginnt nach einem Komma mit `ohne` und braucht `zu` vor `verabschieden`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ohne-zu-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "المشتري نفسه. وتوضح `ohne dass` أي فاعل مختلف إذا دعت الحاجة.",
+      "i18n": {
+        "ar": {
+          "prompt": "من الذي لم يقرأ المكونات في `Er kauft den Saft, ohne die Zutaten zu lesen`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wer hat in `Er kauft den Saft, ohne die Zutaten zu lesen` die Zutaten nicht gelesen?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "grammatikinseln",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gamified German grammar platform for B1.1 and B1.2 with Arabic and German explanations.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "validate": "node scripts/validate-content.js",
+    "test": "node --test",
+    "build": "node scripts/validate-content.js && node scripts/build.js",
+    "extract:legacy": "node scripts/extract-legacy.js",
+    "new:lesson": "node scripts/new-lesson.js",
+    "check:links": "node scripts/check-links.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

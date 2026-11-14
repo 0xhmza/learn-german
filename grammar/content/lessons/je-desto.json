@@ -1,0 +1,384 @@
+{
+  "id": "je-desto",
+  "level": "B1.1",
+  "island": "gegensatz-vergleich",
+  "order": 4,
+  "prereqs": [
+    "komparativ"
+  ],
+  "emoji": "📈",
+  "german": "je … desto / umso",
+  "source": {
+    "lektion": 1,
+    "kind": "toc"
+  },
+  "pattern": [
+    "je + Komparativ … Verb",
+    ",",
+    "desto / umso + Komparativ + Verb …"
+  ],
+  "frames": [
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "Je länger"
+        ],
+        [
+          "mf",
+          "ich hier"
+        ],
+        [
+          "ve",
+          "wohne"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "desto besser"
+        ],
+        [
+          "v",
+          "kenne"
+        ],
+        [
+          "mf",
+          "ich die Gegend"
+        ]
+      ]
+    }
+  ],
+  "example": "Je länger ich hier wohne, desto besser kenne ich die Gegend.",
+  "stepExamples": [
+    "lang → länger · gut → besser",
+    "Je länger ich hier wohne, …",
+    "…, desto besser kenne ich die Gegend.",
+    "Je höher die Miete ist, desto weniger Geld bleibt übrig."
+  ],
+  "pitfallPair": "Je länger wohne ich hier, desto besser ich kenne die Gegend. → Je länger ich hier wohne, desto besser kenne ich die Gegend.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/kontrastive-grammatik/3790"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "كلما… ازداد أو قلّ…",
+      "lead": "تستعمل هذا التركيب عندما يتغيّر شيء مع تغيّر شيء آخر. مثال ذلك أن تقلّ الحيرة كلما زادت معرفة المرء بالحي.",
+      "translation": "كلما سكنت هنا مدة أطول، عرفت المنطقة بصورة أفضل.",
+      "steps": [
+        {
+          "text": "كوّن درجتَي المقارنة",
+          "why": "العلاقة تقوم على درجتين. اختر مقدارًا لكل جزء، مثل طول المدة وجودة المعرفة. بعض درجات المقارنة شاذ، ومنها `gut → besser`."
+        },
+        {
+          "text": "ضع المقارنة مباشرة بعد je",
+          "why": "الجزء الأول جملة تابعة. تأتي مجموعة المقارنة في البداية والفعل المصرف `wohne` في آخر الجزء قبل الفاصلة."
+        },
+        {
+          "text": "ضع المقارنة الثانية في صدر النتيجة",
+          "why": "يمكنك استعمال `umso` مكان `desto`. تحتل مجموعة `desto besser` الموقع الأول بكاملها، لذلك يأتي `kenne` مباشرة بعدها ثم الفاعل."
+        },
+        {
+          "text": "جرّب المقارنة في اتجاهين مختلفين",
+          "why": "قد تزيد قيمة بينما تنقص الأخرى. يحدد اختيار `höher` و`weniger` اتجاه التغيّر. المجموعة الثانية كلها هي `desto weniger Geld` قبل الفعل `bleibt`."
+        }
+      ],
+      "explain": [
+        "إذا كانت المقارنة داخل مجموعة اسمية تبقى المجموعة معًا. في `Je mehr Zeit wir haben, desto …` يبدأ الجزء الأول كله بـ `je mehr Zeit`. يمكنك أيضًا سماع الصيغة المختصرة `Je früher, desto besser` حين يفهم السامع ما الذي سيحدث مبكرًا وما الذي سيصبح أفضل."
+      ],
+      "pitfall": "راجع كل جزء وحده. الأول تابع وينتهي بالفعل. الثاني رئيسي وتأتي مجموعة المقارنة قبل الفعل المصرف.",
+      "recall": [
+        "أين الفعل في `Je öfter sie übt, umso sicherer spricht sie`؟",
+        "تنتهي الجملة الأولى بـ `übt`. يبدأ الجزء الثاني بـ `umso sicherer` ثم يأتي `spricht`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 1 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "أدوات الربط والمقارنة · grammis"
+      ]
+    },
+    "de": {
+      "title": "je … desto / umso",
+      "lead": "Du benutzt diese Struktur, wenn sich etwas zusammen mit etwas anderem verändert – zum Beispiel: Je besser man das Viertel kennt, desto weniger verliert man sich.",
+      "steps": [
+        {
+          "text": "Bilde zwei Komparative",
+          "why": "Die Beziehung beruht auf zwei Steigerungen. Wähle für jeden Teil eine Größe, etwa die Dauer und wie gut man etwas kennt. Manche Komparative sind unregelmäßig, z. B. `gut → besser`."
+        },
+        {
+          "text": "Stell den Komparativ direkt nach je",
+          "why": "Der erste Teil ist ein Nebensatz. Die Komparativgruppe steht am Anfang, das konjugierte Verb `wohne` am Ende vor dem Komma."
+        },
+        {
+          "text": "Stell den zweiten Komparativ an den Anfang des Ergebnisses",
+          "why": "Statt `desto` kannst du auch `umso` sagen. Die ganze Gruppe `desto besser` besetzt Position 1, deshalb folgt direkt `kenne` und dann das Subjekt."
+        },
+        {
+          "text": "Probiere den Vergleich in zwei Richtungen",
+          "why": "Ein Wert kann steigen, während der andere sinkt. `höher` und `weniger` bestimmen die Richtung. Die zweite Gruppe ist komplett `desto weniger Geld` vor dem Verb `bleibt`."
+        }
+      ],
+      "explain": [
+        "Steht der Komparativ in einer Nominalgruppe, bleibt die Gruppe zusammen: In `Je mehr Zeit wir haben, desto …` beginnt der erste Teil mit `je mehr Zeit`. Du hörst auch die Kurzform `Je früher, desto besser`, wenn klar ist, was früher passieren und was besser werden soll."
+      ],
+      "pitfall": "Prüf jeden Teil einzeln: Der erste ist ein Nebensatz und endet mit dem Verb. Der zweite ist ein Hauptsatz – die Komparativgruppe steht vor dem konjugierten Verb.",
+      "recall": [
+        "Wo steht das Verb in `Je öfter sie übt, umso sicherer spricht sie`?",
+        "Der erste Teil endet mit `übt`. Der zweite beginnt mit `umso sicherer`, danach kommt `spricht`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 1 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Konnektoren und Vergleich · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "je-desto-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Je {{1}} du übst, desto leichter wird es.",
+      "blanks": [
+        [
+          "mehr"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الجزء الأول بدرجة المقارنة من viel.",
+          "explain": "صيغة المقارنة من viel هي mehr.",
+          "hints": [
+            "ابحث عن صيغة viel الشاذة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den ersten Teil mit dem Komparativ von `viel`.",
+          "explain": "Der Komparativ von `viel` ist `mehr`.",
+          "hints": [
+            "Such die unregelmäßige Form von `viel`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "je-desto-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Je früher wir starten, {{1}} schneller kommen wir an.",
+      "blanks": [
+        [
+          "desto",
+          "umso"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب أحد الرابطين الممكنين في الجزء الثاني.",
+          "explain": "desto وumso صالحان بعد الفاصلة في هذا التركيب.",
+          "hints": [
+            "الجزء الثاني له بديلان متكافئان هنا."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib eines der beiden möglichen Wörter für den zweiten Teil.",
+          "explain": "`desto` und `umso` passen beide nach dem Komma.",
+          "hints": [
+            "Für den zweiten Teil gibt es hier zwei gleichwertige Möglichkeiten."
+          ]
+        }
+      }
+    },
+    {
+      "id": "je-desto-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Je höher die Miete ist, desto weniger Geld bleibt übrig.",
+        "Je höher die Miete ist, desto mehr Geld bleibt übrig.",
+        "Je niedriger die Miete ist, desto weniger Geld bleibt übrig."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أيّ عبارة تعني «كلما ارتفع الإيجار، بقي مال أقل»؟",
+          "explain": "höher يعبر عن الارتفاع وweniger عن الانخفاض. كل مشتّت يغيّر اتجاه قيمة واحدة.",
+          "hints": [
+            "تتجه القيمتان في اتجاهين متعاكسين."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz bedeutet: „Je höher die Miete, desto weniger Geld bleibt übrig“?",
+          "explain": "`höher` drückt den Anstieg aus, `weniger` die Abnahme. Jede falsche Antwort ändert die Richtung eines Wertes.",
+          "hints": [
+            "Die beiden Werte bewegen sich in entgegengesetzte Richtungen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "je-desto-4",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Je öfter",
+        "du",
+        "fragst,",
+        "desto schneller",
+        "lernst",
+        "du."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة. أبقِ مجموعتَي المقارنة في الصدارة.",
+          "explain": "fragst في نهاية الجزء الأول. المجموعة desto schneller تسبق lernst مباشرةً.",
+          "hints": [
+            "ابحث عن آخر كلمة قبل الفاصلة، ثم عن الفعل بعدها."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz. Lass beide Komparativgruppen vorne stehen.",
+          "explain": "`fragst` steht am Ende des ersten Teils. Die Gruppe `desto schneller` steht direkt vor `lernst`.",
+          "hints": [
+            "Such das letzte Wort vor dem Komma und dann das Verb danach."
+          ]
+        }
+      }
+    },
+    {
+      "id": "je-desto-5",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Je {{1}} ich plane, desto {{2}} Zeit verliere ich.",
+      "blanks": [
+        [
+          "besser"
+        ],
+        [
+          "weniger"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب الصيغة المقارنة من gut ثم من wenig.",
+          "explain": "gut تصبح besser وwenig تصبح weniger.",
+          "hints": [
+            "تتغيّر كلمة gut كلها في المقارنة."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib den Komparativ von `gut` und dann von `wenig`.",
+          "explain": "`gut` wird zu `besser`, `wenig` zu `weniger`.",
+          "hints": [
+            "Beim Komparativ ändert sich `gut` komplett."
+          ]
+        }
+      }
+    },
+    {
+      "id": "je-desto-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أين وقع الخطأ في Je mehr Zeit haben wir, desto entspannter lernen wir؟",
+          "explain": "في جزء je يأتي الفعل في النهاية. جزء desto مكتوب بالفعل بترتيب الجملة الرئيسية.",
+          "hints": [
+            "حدّد أي جزء هو الجملة التابعة."
+          ],
+          "options": [
+            "haben يجب أن تأتي بعد wir في جزء je.",
+            "lernen يجب أن تأتي بعد wir في جزء desto.",
+            "desto يجب أن تستبدلها بـ je."
+          ]
+        },
+        "de": {
+          "prompt": "Wo ist der Fehler in `Je mehr Zeit haben wir, desto entspannter lernen wir`?",
+          "explain": "Im je-Teil steht das Verb am Ende. Der desto-Teil hat schon die richtige Hauptsatz-Wortstellung.",
+          "hints": [
+            "Bestimme, welcher Teil der Nebensatz ist."
+          ],
+          "options": [
+            "`haben` muss im je-Teil nach `wir` stehen.",
+            "`lernen` muss im desto-Teil nach `wir` stehen.",
+            "`desto` muss durch `je` ersetzt werden."
+          ]
+        }
+      }
+    },
+    {
+      "id": "je-desto-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Je länger der Weg ist, umso schwerer werden die Taschen.",
+      "i18n": {
+        "ar": {
+          "prompt": "اربط الجملتين بـ je … umso، مع المقارنة من lang وschwer. Der Weg ist lang. Die Taschen werden schwer.",
+          "explain": "أضيفت länger بعد je ثم جاء ist في نهاية التابع. في النتيجة جاء werden مباشرة بعد umso schwerer.",
+          "hints": [
+            "ابدأ كل جزء بعبارة المقارنة وحدّد موقع الفعلين."
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde die Sätze mit je … umso und den Komparativen von `lang` und `schwer`: `Der Weg ist lang. Die Taschen werden schwer.`",
+          "explain": "Nach `je` steht `länger`, `ist` steht am Ende des Nebensatzes. Im Ergebnis folgt `werden` direkt nach `umso schwerer`.",
+          "hints": [
+            "Beginne jeden Teil mit dem Komparativ und bestimme die Position der beiden Verben."
+          ]
+        }
+      }
+    },
+    {
+      "id": "je-desto-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Je länger ich hier wohne, desto besser kenne ich die Gegend.",
+      "context": "Je länger wohne ich hier, desto besser ich kenne die Gegend.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "راجع كل جزء وحده. الأول تابع وينتهي بالفعل. الثاني رئيسي وتأتي مجموعة المقارنة قبل الفعل المصرف.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Prüf jeden Teil einzeln: Der erste ist ein Nebensatz und endet mit dem Verb. Der zweite ist ein Hauptsatz – die Komparativgruppe steht vor dem konjugierten Verb.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "je-desto-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "تنتهي الجملة الأولى بـ `übt`. يبدأ الجزء الثاني بـ `umso sicherer` ثم يأتي `spricht`.",
+      "i18n": {
+        "ar": {
+          "prompt": "أين الفعل في `Je öfter sie übt, umso sicherer spricht sie`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wo steht das Verb in `Je öfter sie übt, umso sicherer spricht sie`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

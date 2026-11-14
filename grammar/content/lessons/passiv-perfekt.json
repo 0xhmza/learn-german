@@ -1,0 +1,389 @@
+{
+  "id": "passiv-perfekt",
+  "level": "B1.1",
+  "island": "passiv",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "🧰",
+  "german": "Passiv Perfekt",
+  "source": {
+    "lektion": 1,
+    "kind": "toc"
+  },
+  "pattern": [
+    "sein",
+    "+",
+    "Partizip II",
+    "+",
+    "worden"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Das Fenster"
+        ],
+        [
+          "v",
+          "ist"
+        ],
+        [
+          "mf",
+          "(von der Firma)"
+        ],
+        [
+          "ve",
+          "repariert worden"
+        ]
+      ]
+    },
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "weil"
+        ],
+        [
+          "mf",
+          "die Fenster"
+        ],
+        [
+          "ve",
+          "repariert worden sind"
+        ]
+      ]
+    }
+  ],
+  "example": "Die Firma hat das Fenster repariert. → Das Fenster ist repariert worden.",
+  "stepExamples": [
+    "Die Firma hat das Fenster repariert.",
+    "Das Fenster ist …",
+    "Das Fenster ist repariert worden.",
+    "…, weil die Fenster repariert worden sind."
+  ],
+  "pitfallPair": "Der Aufzug ist repariert geworden. → Der Aufzug ist repariert worden.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/929",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/1612"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "المبني للمجهول في الماضي",
+      "lead": "كيف تقول إن النافذة أُصلحت، حين تكون النتيجة أهم من اسم من أصلحها؟ نبدأ بالجملة المعلومة ثم ننقل التركيز إلى الشيء الذي وقع عليه الفعل.",
+      "translation": "أصلحت الشركة النافذة ← أُصلحت النافذة.",
+      "steps": [
+        {
+          "text": "حدّد المفعول المباشر",
+          "why": "اسأل عمّا أصلحته الشركة. الإجابة هي النافذة، وكانت مفعولًا في حالة `Akkusativ`. تصبح هي المسند إليه في صيغة المجهول."
+        },
+        {
+          "text": "انقل المفعول إلى حالة الفاعل",
+          "why": "قد لا تظهر الحركة في المحايد. مع المذكر تراها بوضوح: `den Aufzug` يصبح `der Aufzug`. صرّف `sein` مع الاسم الجديد، فتقول `ist` للمفرد و`sind` للجمع."
+        },
+        {
+          "text": "أغلق الجملة بصيغة الماضي للمجهول",
+          "why": "يبقى `repariert` اسم المفعول للفعل الأصلي، وتأتي بعده `worden` ثابتة. يمكنك إضافة `von der Firma` عند الحاجة إلى ذكر المنفّذ."
+        },
+        {
+          "text": "أعد بناء الجملة التابعة",
+          "why": "في الجملة التابعة يأتي الفعل المصرف `sind` بعد `repariert worden`. لاحظ كيف تغير موقعه وبقي اتفاقه مع الجمع."
+        }
+      ],
+      "explain": [
+        "صف الفعل الذي حدث باستعمال `ist repariert worden`. إذا وصفت حالة النافذة الآن فقل `ist repariert`. واستعمل `wird repariert` حين تعرض الإجراء في الحاضر. تساعدك هذه المقارنة على تحديد ما إذا كنت تتكلم عن حدث مكتمل أو حالة أو إجراء جارٍ.",
+        "إذا عبّرت عن التحول بفعل `werden` نفسه فصيغة الماضي هي `ist geworden`، مثل `Es ist kalt geworden`. أما في هذا النوع من المجهول فالصيغة الخاصة هي `worden`. راجع أيضًا درس المجهول بلا فاعل لمعرفة ما يحدث عندما لا يوجد مفعول مباشر أصلاً."
+      ],
+      "pitfall": "الجملة تصف إصلاحًا قام به أحدهم. الفعل `werden` هنا مساعد للمجهول، وصيغته `worden`.",
+      "recall": [
+        "لماذا نقول `sind` في `Die Türen sind geöffnet worden`؟",
+        "لأن `die Türen` جمع في حالة الفاعل بعد التحويل. عدد الأشخاص الذين فتحوا الأبواب لا يتحكم في التصريف."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 1 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "أفعال المجهول · grammis",
+        "الصيغة worden · grammis"
+      ]
+    },
+    "de": {
+      "title": "Passiv im Perfekt",
+      "lead": "Wie sagst du, dass das Fenster repariert wurde, wenn das Ergebnis wichtiger ist als die Person, die es repariert hat? Wir beginnen mit dem Aktivsatz und verschieben dann den Fokus auf die Sache, mit der etwas passiert.",
+      "steps": [
+        {
+          "text": "Finde das Akkusativobjekt",
+          "why": "Frag: Was hat die Firma repariert? Antwort: das Fenster. Es war das Objekt im `Akkusativ` – im Passiv wird es zum Subjekt."
+        },
+        {
+          "text": "Setze das Objekt in den Nominativ",
+          "why": "Beim Neutrum sieht man die Änderung oft nicht, beim Maskulinum sehr deutlich: `den Aufzug` wird zu `der Aufzug`. Konjugiere `sein` passend zum neuen Subjekt: `ist` im Singular, `sind` im Plural."
+        },
+        {
+          "text": "Schließe den Satz mit der Passiv-Perfekt-Form",
+          "why": "`repariert` bleibt das Partizip II des ursprünglichen Verbs, danach steht unverändert `worden`. Willst du den Täter nennen, ergänze `von der Firma`."
+        },
+        {
+          "text": "Baue den Nebensatz",
+          "why": "Im Nebensatz steht das konjugierte Verb `sind` nach `repariert worden`. Die Position ändert sich, aber `sind` passt weiterhin zum Plural."
+        }
+      ],
+      "explain": [
+        "Mit `ist repariert worden` beschreibst du einen Vorgang, der passiert ist. Beschreibst du den jetzigen Zustand des Fensters, sagst du `ist repariert`. Und `wird repariert` zeigt den Vorgang in der Gegenwart. Dieser Vergleich hilft dir zu entscheiden, ob du über einen abgeschlossenen Vorgang, einen Zustand oder eine laufende Handlung sprichst.",
+        "Drückst du eine Veränderung mit dem Vollverb `werden` aus, heißt das Perfekt `ist geworden`, z. B. `Es ist kalt geworden`. Im Passiv lautet die besondere Form dagegen `worden`. Schau dir auch die Lektion zum subjektlosen Passiv an: Dort geht es um Sätze ganz ohne Akkusativobjekt."
+      ],
+      "pitfall": "Der Satz beschreibt eine Reparatur, die jemand gemacht hat. `werden` ist hier ein Hilfsverb des Passivs – seine Perfektform lautet `worden`.",
+      "recall": [
+        "Warum sagt man `sind` in `Die Türen sind geöffnet worden`?",
+        "Weil `die Türen` nach der Umformung ein Plural im Nominativ ist. Wie viele Personen die Türen geöffnet haben, spielt für die Konjugation keine Rolle."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 1 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Passiv-Hilfsverben · grammis",
+        "Die Form worden · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "passiv-perfekt-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Der Balkon {{1}} gestrichen worden.",
+      "blanks": [
+        [
+          "ist"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بـ sein المصرف.",
+          "explain": "الشرفة مفردة. تصريف sein معها هو ist.",
+          "hints": [
+            "عدّ الاسم في صدر الجملة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die konjugierte Form von `sein`.",
+          "explain": "`Der Balkon` ist Singular. Die passende Form von `sein` ist `ist`.",
+          "hints": [
+            "Zähl das Nomen am Satzanfang."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-perfekt-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Die Fenster sind geputzt {{1}}.",
+      "blanks": [
+        [
+          "worden"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل صيغة الفعل المساعد للمجهول.",
+          "explain": "صيغة werden الخاصة في Passiv Perfekt هي worden.",
+          "hints": [
+            "الفعل الرئيسي قد أخذ صيغة Partizip II بالفعل."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Form des Passiv-Hilfsverbs.",
+          "explain": "Die besondere Form von `werden` im Passiv Perfekt ist `worden`.",
+          "hints": [
+            "Das Hauptverb steht schon im Partizip II."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-perfekt-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Die Bestellung ist storniert worden.",
+        "Die Bestellung wird storniert.",
+        "Die Bestellung ist storniert."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة تخبرنا بأن الطلب أُلغي بالفعل؟",
+          "explain": "wird storniert إجراء في الحاضر. ist storniert تصف الحالة. ist storniert worden تعرض الحدث المكتمل.",
+          "hints": [
+            "ابحث عن أثرين للماضي المركب للمجهول."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz sagt, dass die Bestellung schon storniert wurde?",
+          "explain": "`wird storniert` ist ein Vorgang in der Gegenwart. `ist storniert` beschreibt den Zustand. `ist storniert worden` zeigt den abgeschlossenen Vorgang.",
+          "hints": [
+            "Such nach zwei Merkmalen des Passiv Perfekt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-perfekt-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Der Aufzug {{1}} {{2}} {{3}}.",
+      "blanks": [
+        [
+          "ist"
+        ],
+        [
+          "geprüft"
+        ],
+        [
+          "worden"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل الفعل المعلوم إلى مجهول. Man hat den Aufzug geprüft.",
+          "explain": "المصعد مفرد في الرفع، فتستعمل ist. يبقى geprüft ثم تأتي worden.",
+          "hints": [
+            "حوّل المفعول إلى الرفع ثم اختر sein."
+          ]
+        },
+        "de": {
+          "prompt": "Forme den Aktivsatz ins Passiv um: `Man hat den Aufzug geprüft.`",
+          "explain": "`Der Aufzug` ist Singular im Nominativ, also `ist`. `geprüft` bleibt, danach kommt `worden`.",
+          "hints": [
+            "Setz das Objekt in den Nominativ und wähl dann die Form von `sein`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-perfekt-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "weil",
+        "die Lampen",
+        "ausgetauscht",
+        "worden",
+        "sind"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة التابعة. اجعل weil أولًا والفاعل بعده.",
+          "explain": "يأتي sind بعد ausgetauscht worden في ترتيب الجملة التابعة.",
+          "hints": [
+            "ابحث عن الفعل المصرف وضعه في الآخر."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Nebensatz. Setz `weil` an den Anfang und danach das Subjekt.",
+          "explain": "Im Nebensatz steht `sind` nach `ausgetauscht worden`.",
+          "hints": [
+            "Such das konjugierte Verb und stell es ans Ende."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-perfekt-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Es ist kälter geworden.",
+        "Es ist kälter worden.",
+        "Es ist kälter gemacht worden."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر العبارة التي تدل على تغيّر الطقس.",
+          "explain": "مع التحوّل الذاتي نستعمل geworden. كلمة worden تخص المجهول، وgemacht worden تصف جعل الشيء أبرد.",
+          "hints": [
+            "هل werden هنا فعل التحوّل أم مساعد مجهول؟"
+          ]
+        },
+        "de": {
+          "prompt": "Wähle den Satz, der eine Wetteränderung ausdrückt.",
+          "explain": "Bei einer Veränderung von selbst benutzt man `geworden`. `worden` gehört zum Passiv, und `gemacht worden` bedeutet, dass jemand etwas kälter gemacht hat.",
+          "hints": [
+            "Ist `werden` hier ein Vollverb der Veränderung oder ein Passiv-Hilfsverb?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-perfekt-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Die Aufzüge sind von der Hausverwaltung repariert worden.",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Die Hausverwaltung hat die Aufzüge repariert إلى Passiv Perfekt واذكر المنفّذ.",
+          "explain": "die Aufzüge جمع، لذا اختر sind. أدخل von der Hausverwaltung بين الفعل المصرف ونهاية الجملة.",
+          "hints": [
+            "ابدأ بالمصاعد. استخدم von مع الداتيف لذكر الجهة المنفذة."
+          ]
+        },
+        "de": {
+          "prompt": "Forme `Die Hausverwaltung hat die Aufzüge repariert` ins Passiv Perfekt um und nenne den Täter.",
+          "explain": "`die Aufzüge` ist Plural, also `sind`. Setz `von der Hausverwaltung` zwischen das konjugierte Verb und das Satzende.",
+          "hints": [
+            "Beginne mit den Aufzügen. Nenne die Verwaltung mit `von` + Dativ."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-perfekt-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Der Aufzug ist repariert worden.",
+      "context": "Der Aufzug ist repariert geworden.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "الجملة تصف إصلاحًا قام به أحدهم. الفعل `werden` هنا مساعد للمجهول، وصيغته `worden`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Der Satz beschreibt eine Reparatur, die jemand gemacht hat. `werden` ist hier ein Hilfsverb des Passivs – seine Perfektform lautet `worden`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-perfekt-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "لأن `die Türen` جمع في حالة الفاعل بعد التحويل. عدد الأشخاص الذين فتحوا الأبواب لا يتحكم في التصريف.",
+      "i18n": {
+        "ar": {
+          "prompt": "لماذا نقول `sind` في `Die Türen sind geöffnet worden`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Warum sagt man `sind` in `Die Türen sind geöffnet worden`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

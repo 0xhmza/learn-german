@@ -1,0 +1,376 @@
+{
+  "id": "relativ-genitiv",
+  "level": "B1.1",
+  "island": "relativsaetze",
+  "order": 4,
+  "prereqs": [
+    "relativ-dativ",
+    "genitiv"
+  ],
+  "emoji": "🔑",
+  "german": "Relativpronomen und Relativsätze im Genitiv",
+  "source": {
+    "lektion": 4,
+    "kind": "toc"
+  },
+  "pattern": [
+    "m / n → dessen",
+    "·",
+    "f / Pl → deren",
+    "+ Nomen ohne Artikel"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Das"
+        ],
+        [
+          "v",
+          "ist"
+        ],
+        [
+          "mf",
+          "die Frau, deren Sohn hier arbeitet"
+        ]
+      ]
+    },
+    {
+      "k": "rel",
+      "parts": [
+        [
+          "c",
+          "deren Sohn"
+        ],
+        [
+          "mf",
+          "hier"
+        ],
+        [
+          "ve",
+          "arbeitet"
+        ]
+      ]
+    }
+  ],
+  "example": "Das ist die Frau, deren Sohn hier arbeitet.",
+  "stepExamples": [
+    "die Frau",
+    "dessen: der Mann / das Kind · deren: die Frau / die Eltern",
+    "…, deren Sohn hier arbeitet.",
+    "das Kind, mit dessen Mutter ich gesprochen habe"
+  ],
+  "pitfallPair": "Das ist das Kind, deren Mutter hier arbeitet. → Das ist das Kind, dessen Mutter hier arbeitet.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/5272"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الملكية داخل جملة الوصل",
+      "lead": "قد تصف شخصًا أو مكانًا بشيء يرتبط به، مثل امرأة يعمل ابنها معنا. تستعمل `dessen` و`deren` كي تربط الشيء أو الشخص التابع بالاسم المرجعي.",
+      "translation": "هذه هي المرأة التي يعمل ابنها هنا.",
+      "steps": [
+        {
+          "text": "حدّد الاسم المرجعي",
+          "why": "صاحب العلاقة في المثال هو المرأة. اسأل لمن ينتمي الابن أو بمن يرتبط. الاسم الذي يجيب عن ذلك هو ما يحدد شكل ضمير الوصل."
+        },
+        {
+          "text": "اختر الضمير بحسب المالك",
+          "why": "المذكر والمحايد يأخذان `dessen`. المؤنث والجمع يأخذان `deren`. فكر في الاسم السابق حتى إذا كان الشيء الذي يملكه من جنس آخر."
+        },
+        {
+          "text": "ضمّ الاسم المملوك إلى الضمير",
+          "why": "تأتي المجموعة في أول الوصل. لا تضع أداة أخرى أمام `Sohn`. وهو فاعل `arbeitet` هنا، ويمكن أن يصبح مفعولًا في `deren Sohn ich kenne`. يظل `deren` ثابتًا."
+        },
+        {
+          "text": "قدّم حرف الجر مع المجموعة إذا احتجت إليه",
+          "why": "يتعلق `mit` بـ `Mutter` في جملة الوصل. `dessen` يعود إلى `Kind` المحايد، ويبقى كما هو مع أن `mit` يطلب الداتيف للمجموعة الاسمية."
+        }
+      ],
+      "explain": [
+        "قارِن `die Frau, der ich helfe` و`die Frau, deren Bruder ich helfe`. في الأولى أتحدث عن مساعدة المرأة نفسها. في الثانية أساعد أخاها. إذا أضفت صفة بعد `dessen` أو `deren` فتعامل معها كصفة بلا أداة تصرّفها، مثل `deren ältester Sohn hier arbeitet` و`mit dessen älterem Bruder`."
+      ],
+      "pitfall": "اختر `dessen` لأن المالك هو `das Kind`. جنس `Mutter` لا يحدد شكل الضمير.",
+      "recall": [
+        "ما الضمير في `die Leute, … Haus verkauft wurde`؟",
+        "`deren` لأن الاسم المرجعي `die Leute` جمع، حتى مع `Haus` المحايد."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 4 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "أدوات جمل الوصل · grammis"
+      ]
+    },
+    "de": {
+      "title": "Relativpronomen im Genitiv",
+      "lead": "Du beschreibst eine Person oder einen Ort durch etwas, das dazugehört – z. B. eine Frau, deren Sohn bei uns arbeitet. Mit `dessen` und `deren` verbindest du das Zugehörige mit dem Bezugswort.",
+      "steps": [
+        {
+          "text": "Bestimme das Bezugswort",
+          "why": "Die „Besitzerin“ im Beispiel ist die Frau. Frag: Zu wem gehört der Sohn? Das Nomen, das die Antwort gibt, bestimmt die Form des Relativpronomens."
+        },
+        {
+          "text": "Wähle das Pronomen nach dem Besitzer",
+          "why": "Maskulinum und Neutrum bekommen `dessen`, Femininum und Plural `deren`. Denk an das vorherige Nomen – auch wenn das Zugehörige ein anderes Genus hat."
+        },
+        {
+          "text": "Verbinde das Zugehörige mit dem Pronomen",
+          "why": "Die Gruppe steht am Anfang des Relativsatzes. Vor `Sohn` steht kein weiterer Artikel. Hier ist es Subjekt von `arbeitet`; in `deren Sohn ich kenne` wäre es Objekt. `deren` bleibt gleich."
+        },
+        {
+          "text": "Stell bei Bedarf die Präposition vor die Gruppe",
+          "why": "`mit` gehört zu `Mutter` im Relativsatz. `dessen` verweist auf das neutrale `Kind` und bleibt gleich, obwohl `mit` den Dativ für die Nominalgruppe verlangt."
+        }
+      ],
+      "explain": [
+        "Vergleiche `die Frau, der ich helfe` und `die Frau, deren Bruder ich helfe`. Im ersten Satz helfe ich der Frau selbst, im zweiten ihrem Bruder. Kommt nach `dessen` oder `deren` ein Adjektiv, behandle es wie ein Adjektiv ohne Artikel: `deren ältester Sohn hier arbeitet`, `mit dessen älterem Bruder`."
+      ],
+      "pitfall": "Wähle `dessen`, weil der Besitzer `das Kind` ist. Das Genus von `Mutter` bestimmt die Form des Pronomens nicht.",
+      "recall": [
+        "Welches Pronomen passt in `die Leute, … Haus verkauft wurde`?",
+        "`deren`, weil das Bezugswort `die Leute` Plural ist – auch mit dem neutralen `Haus`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 4 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Relativpronomen · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "relativ-genitiv-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Der Mann, {{1}} Tochter hier arbeitet, wohnt nebenan.",
+      "blanks": [
+        [
+          "dessen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الضمير للمالك المذكر.",
+          "explain": "Mann مذكر وهو المرجع، لذا dessen.",
+          "hints": [
+            "حدّد جنس المالك، لا اسم الابنة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Pronomen für einen maskulinen Besitzer.",
+          "explain": "`Mann` ist maskulin und das Bezugswort, also `dessen`.",
+          "hints": [
+            "Bestimme das Genus des Besitzers, nicht das der Tochter."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-genitiv-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Die Frau, {{1}} Sohn hier arbeitet, wohnt nebenan.",
+      "blanks": [
+        [
+          "deren"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الضمير للمالك المؤنث.",
+          "explain": "Frau هي المرجع المؤنث. Sohn لا يحدد شكل الضمير.",
+          "hints": [
+            "أي شخص يربطه الوصل بالابن؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Pronomen für eine feminine Besitzerin.",
+          "explain": "`Frau` ist das feminine Bezugswort. `Sohn` bestimmt die Form nicht.",
+          "hints": [
+            "Mit welcher Person verbindet der Relativsatz den Sohn?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-genitiv-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "deren",
+        "dessen",
+        "denen"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "ما الضمير المناسب لـ die Eltern في die Eltern, … Kind hier lernt؟",
+          "explain": "deren ضمير ملكية وصلي للجمع. dessen للمذكر أو المحايد، وdenen للداتيف.",
+          "hints": [
+            "علاقة الوصل ملكية والمرجع جمع."
+          ]
+        },
+        "de": {
+          "prompt": "Welches Pronomen passt zu `die Eltern` in `die Eltern, … Kind hier lernt`?",
+          "explain": "`deren` ist das Relativpronomen für Besitz im Plural. `dessen` gilt für Maskulinum oder Neutrum, `denen` für den Dativ.",
+          "hints": [
+            "Es geht um Besitz, und das Bezugswort ist Plural."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-genitiv-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Das ist das Kind, mit {{1}} Mutter ich gesprochen habe.",
+      "blanks": [
+        [
+          "dessen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الوصل بعد mit.",
+          "explain": "المرجع Kind محايد. يأتي mit أمام المجموعة dessen Mutter، ويبقى dessen ثابتًا.",
+          "hints": [
+            "فرّق بين جنس المالك والحالة التي يفرضها mit على Mutter."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Relativsatz nach `mit`.",
+          "explain": "Das Bezugswort `Kind` ist neutral. `mit` steht vor der Gruppe `dessen Mutter`, und `dessen` bleibt gleich.",
+          "hints": [
+            "Unterscheide das Genus des Besitzers vom Kasus, den `mit` für `Mutter` verlangt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-genitiv-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "deren Sohn",
+        "ich",
+        "gestern",
+        "besucht",
+        "habe"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الوصل بعد die Frau. اجعل ich قبل gestern.",
+          "explain": "deren Sohn مفعول داخل الوصل. ينتهي الوصل بالمساعد habe.",
+          "hints": [
+            "ابدأ بمجموعة الملكية كاملة."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Relativsatz nach `die Frau`. Setz `ich` vor `gestern`.",
+          "explain": "`deren Sohn` ist Objekt im Relativsatz. Der Relativsatz endet mit dem Hilfsverb `habe`.",
+          "hints": [
+            "Beginne mit der ganzen Besitzgruppe."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-genitiv-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "die Frau, deren Bruder ich helfe",
+        "die Frau, der ich helfe",
+        "die Frau, deren Bruder mir hilft"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر وصف المرأة التي تساعد أخاها أنت.",
+          "explain": "deren Bruder هو من أساعده في الأولى. الثانية تتعلق بالمرأة نفسها، والثالثة تجعل الأخ يساعدني.",
+          "hints": [
+            "حدّد المساعد والمستفيد في كل صيغة."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle die Beschreibung der Frau, deren Bruder du hilfst.",
+          "explain": "Im ersten Satz helfe ich `deren Bruder`. Der zweite handelt von der Frau selbst, im dritten hilft der Bruder mir.",
+          "hints": [
+            "Bestimme in jeder Variante, wer hilft und wem geholfen wird."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-genitiv-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das ist das Haus, dessen Dach neu ist.",
+      "i18n": {
+        "ar": {
+          "prompt": "اربط Das ist das Haus وSein Dach ist neu بجملة وصل ملكية.",
+          "explain": "dessen يعود إلى Haus. Dach فاعل جملة الوصل، ويأتي ist في آخرها.",
+          "hints": [
+            "Haus محايد. انقل فعل الوصل إلى النهاية."
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde `Das ist das Haus` und `Sein Dach ist neu` mit einem Relativsatz im Genitiv.",
+          "explain": "`dessen` verweist auf `Haus`. `Dach` ist Subjekt des Relativsatzes, `ist` steht am Ende.",
+          "hints": [
+            "`Haus` ist neutral. Setz das Verb des Relativsatzes ans Ende."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-genitiv-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das ist das Kind, dessen Mutter hier arbeitet.",
+      "context": "Das ist das Kind, deren Mutter hier arbeitet.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "اختر `dessen` لأن المالك هو `das Kind`. جنس `Mutter` لا يحدد شكل الضمير.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Wähle `dessen`, weil der Besitzer `das Kind` ist. Das Genus von `Mutter` bestimmt die Form des Pronomens nicht.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-genitiv-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`deren` لأن الاسم المرجعي `die Leute` جمع، حتى مع `Haus` المحايد.",
+      "i18n": {
+        "ar": {
+          "prompt": "ما الضمير في `die Leute, … Haus verkauft wurde`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Welches Pronomen passt in `die Leute, … Haus verkauft wurde`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

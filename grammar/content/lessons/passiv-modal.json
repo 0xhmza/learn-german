@@ -1,0 +1,381 @@
+{
+  "id": "passiv-modal",
+  "level": "B1.1",
+  "island": "passiv",
+  "order": 2,
+  "prereqs": [],
+  "emoji": "🛠️",
+  "german": "Passiv mit Modalverben",
+  "source": {
+    "lektion": 5,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Modalverb",
+    "…",
+    "Partizip II",
+    "+",
+    "werden"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Die Zutaten"
+        ],
+        [
+          "v",
+          "müssen"
+        ],
+        [
+          "ve",
+          "geprüft werden"
+        ]
+      ]
+    },
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "weil"
+        ],
+        [
+          "mf",
+          "die Zutaten"
+        ],
+        [
+          "ve",
+          "geprüft werden müssen"
+        ]
+      ]
+    }
+  ],
+  "example": "Man muss die Zutaten prüfen. → Die Zutaten müssen geprüft werden.",
+  "stepExamples": [
+    "die Zutaten → Die Zutaten",
+    "Die Zutaten müssen …",
+    "Die Zutaten müssen geprüft werden.",
+    "…, weil die Zutaten geprüft werden müssen. · Die Zutaten mussten geprüft werden."
+  ],
+  "pitfallPair": "Die Zutaten werden geprüft müssen. → Die Zutaten müssen geprüft werden.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/929"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "المبني للمجهول مع فعل ناقص",
+      "lead": "في تعليمات أو قواعد الصحة، كثيرًا ما يهمك ما يجب فعله أو ما يُسمح به. يحتفظ المجهول بالتركيز على الشيء، ويضيف الفعل الناقص معنى الوجوب أو السماح أو الإمكان.",
+      "translation": "يجب فحص المكوّنات.",
+      "steps": [
+        {
+          "text": "ارفع المفعول المباشر",
+          "why": "تصبح المكوّنات مسندًا إليه في المجهول. كانت في الأكوزاتيف مع `prüfen` وصارت في الرفع. لا يظهر الفرق في أداة الجمع."
+        },
+        {
+          "text": "صرّف الفعل الناقص مع المسند إليه",
+          "why": "كان `muss` يوافق `man`. أصبح `müssen` يوافق جمع `die Zutaten`. عند الحديث عن مكوّن واحد تقول `Die Zutat muss …`."
+        },
+        {
+          "text": "ضع Partizip II ثم المصدر werden",
+          "why": "فعل `prüfen` يعطي `geprüft`. يأتي بعده `werden` مصدرًا لأن الفعل الناقص هو المصرف. تنطبق البنية مع `können` و`dürfen` و`sollen`."
+        },
+        {
+          "text": "غيّر ترتيب التابع والزمن",
+          "why": "في الجملة التابعة يأتي `müssen` في النهاية بعد `geprüft werden`. وفي الماضي البسيط يُصرّف الفعل الناقص `mussten` ويبقى الطرف الأخير كما هو."
+        }
+      ],
+      "explain": [
+        "قارن `Die Zutaten werden geprüft` حيث نصف الإجراء، و`Die Zutaten müssen geprüft werden` حيث نضيف الوجوب، و`Die Zutaten sind geprüft worden` حيث نخبر عن فعل اكتمل. `Das darf nicht verkauft werden` يفيد المنع، و`Das muss nicht verkauft werden` يفيد أن البيع غير مطلوب."
+      ],
+      "pitfall": "في الرئيسية ضع الفعل الناقص المصرف في الموقع الثاني. تتكوّن النهاية من `geprüft werden`.",
+      "recall": [
+        "كيف تقول إن تناول الدواء مسموح؟",
+        "`Das Medikament darf eingenommen werden.` استعمل `darf` للسماح، ثم `eingenommen werden`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 5 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "أفعال المجهول · grammis"
+      ]
+    },
+    "de": {
+      "title": "Passiv mit Modalverben",
+      "lead": "In Anleitungen oder Gesundheitsregeln geht es oft darum, was getan werden muss oder darf. Das Passiv hält den Fokus auf der Sache, das Modalverb ergänzt Pflicht, Erlaubnis oder Möglichkeit.",
+      "steps": [
+        {
+          "text": "Mach das Akkusativobjekt zum Subjekt",
+          "why": "Die Zutaten werden im Passiv zum Subjekt. Mit `prüfen` standen sie im Akkusativ, jetzt im Nominativ. Am Pluralartikel sieht man den Unterschied nicht."
+        },
+        {
+          "text": "Konjugiere das Modalverb passend zum Subjekt",
+          "why": "`muss` passte zu `man`. Jetzt passt `müssen` zum Plural `die Zutaten`. Bei einer einzigen Zutat sagst du `Die Zutat muss …`."
+        },
+        {
+          "text": "Setz Partizip II und dann den Infinitiv werden",
+          "why": "`prüfen` ergibt `geprüft`. Danach steht `werden` im Infinitiv, weil das Modalverb konjugiert ist. Die Struktur funktioniert auch mit `können`, `dürfen` und `sollen`."
+        },
+        {
+          "text": "Ändere Nebensatz und Zeit",
+          "why": "Im Nebensatz steht `müssen` am Ende nach `geprüft werden`. Im Präteritum wird das Modalverb zu `mussten`, der Rest bleibt gleich."
+        }
+      ],
+      "explain": [
+        "Vergleiche: `Die Zutaten werden geprüft` beschreibt den Vorgang, `Die Zutaten müssen geprüft werden` ergänzt die Pflicht, `Die Zutaten sind geprüft worden` berichtet über einen abgeschlossenen Vorgang. `Das darf nicht verkauft werden` ist ein Verbot, `Das muss nicht verkauft werden` heißt, dass der Verkauf nicht nötig ist."
+      ],
+      "pitfall": "Im Hauptsatz steht das konjugierte Modalverb auf Position 2. Am Ende steht `geprüft werden`.",
+      "recall": [
+        "Wie sagst du, dass man das Medikament einnehmen darf?",
+        "`Das Medikament darf eingenommen werden.` `darf` für die Erlaubnis, dann `eingenommen werden`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 5 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Passiv-Hilfsverben · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "passiv-modal-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Die Regeln {{1}} erklärt werden.",
+      "blanks": [
+        [
+          "müssen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الفعل الناقص müssen في الحاضر.",
+          "explain": "Die Regeln جمع، فالتصريف müssen.",
+          "hints": [
+            "طابق الفعل مع جمع القواعد."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Modalverb `müssen` im Präsens.",
+          "explain": "`Die Regeln` ist Plural, also `müssen`.",
+          "hints": [
+            "Passe das Verb an den Plural `Regeln` an."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-modal-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Der Tisch kann repariert {{1}}.",
+      "blanks": [
+        [
+          "werden"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل مصدر المجهول.",
+          "explain": "بعد repariert يأتي مصدر المجهول werden.",
+          "hints": [
+            "الفعل الناقص هو المصرف بالفعل."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Passiv-Infinitiv.",
+          "explain": "Nach `repariert` kommt der Passiv-Infinitiv `werden`.",
+          "hints": [
+            "Das Modalverb ist schon konjugiert."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-modal-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Das darf nicht verkauft werden.",
+        "Das muss nicht verkauft werden.",
+        "Das kann verkauft werden."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي صيغة تمنع البيع؟",
+          "explain": "darf nicht يفيد المنع. muss nicht ينفي الوجوب. kann يفيد الإمكان.",
+          "hints": [
+            "المنع يخص السماح بالفعل."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Form verbietet den Verkauf?",
+          "explain": "`darf nicht` drückt ein Verbot aus. `muss nicht` verneint die Pflicht. `kann` drückt eine Möglichkeit aus.",
+          "hints": [
+            "Ein Verbot betrifft die Erlaubnis."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-modal-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Der Antrag {{1}} {{2}} {{3}}.",
+      "blanks": [
+        [
+          "muss"
+        ],
+        [
+          "geprüft"
+        ],
+        [
+          "werden"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Man muss den Antrag prüfen مع الحفاظ على المعنى.",
+          "explain": "الطلب مفرد فيأخذ muss. الجزء الأخير geprüft werden.",
+          "hints": [
+            "انقل الطلب إلى الرفع ثم ابنِ القوس الفعلي."
+          ]
+        },
+        "de": {
+          "prompt": "Forme `Man muss den Antrag prüfen` um und behalte die Bedeutung.",
+          "explain": "Der Antrag ist Singular, also `muss`. Am Ende steht `geprüft werden`.",
+          "hints": [
+            "Setz den Antrag in den Nominativ und bau dann die Verbklammer."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-modal-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "weil",
+        "die Medikamente",
+        "richtig",
+        "gelagert",
+        "werden",
+        "müssen"
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب التابعة وأبقِ الفاعل بعد weil.",
+          "explain": "يأتي müssen بعد gelagert werden. ظرف الكيفية richtig يسبق هذه المجموعة.",
+          "hints": [
+            "ينتهي التابع بالفعل الناقص المصرف."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Nebensatz und lass das Subjekt nach `weil` stehen.",
+          "explain": "`müssen` steht nach `gelagert werden`. Das Adverb `richtig` steht vor dieser Gruppe.",
+          "hints": [
+            "Der Nebensatz endet mit dem konjugierten Modalverb."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-modal-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Die Ware musste geprüft werden.",
+        "Die Ware muss geprüft werden.",
+        "Die Ware ist geprüft worden."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة تعبّر عن وجوب ماضٍ؟",
+          "explain": "musste صيغة Präteritum. muss للحاضر وist geprüft worden يذكر الإجراء المكتمل بلا وجوب.",
+          "hints": [
+            "انظر إلى زمن الفعل الناقص."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz drückt eine Pflicht in der Vergangenheit aus?",
+          "explain": "`musste` ist Präteritum. `muss` ist Präsens, und `ist geprüft worden` nennt den abgeschlossenen Vorgang ohne Pflicht.",
+          "hints": [
+            "Schau auf die Zeitform des Modalverbs."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-modal-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Die Formulare können online ausgefüllt werden.",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Man kann die Formulare online ausfüllen إلى المجهول وابدأ بـ Die Formulare.",
+          "explain": "استعمل können مع الجمع ثم ausgefüllt werden. ظرف online يبقى قبل نهاية الأفعال.",
+          "hints": [
+            "انتبه إلى جمع Formulare وإلى صيغة ausfüllen في Partizip II."
+          ]
+        },
+        "de": {
+          "prompt": "Forme `Man kann die Formulare online ausfüllen` ins Passiv um und beginne mit `Die Formulare`.",
+          "explain": "Benutze `können` mit dem Plural, dann `ausgefüllt werden`. `online` steht vor den Verben am Ende.",
+          "hints": [
+            "Achte auf den Plural `Formulare` und auf das Partizip II von `ausfüllen`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-modal-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Die Zutaten müssen geprüft werden.",
+      "context": "Die Zutaten werden geprüft müssen.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "في الرئيسية ضع الفعل الناقص المصرف في الموقع الثاني. تتكوّن النهاية من `geprüft werden`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Im Hauptsatz steht das konjugierte Modalverb auf Position 2. Am Ende steht `geprüft werden`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "passiv-modal-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`Das Medikament darf eingenommen werden.` استعمل `darf` للسماح، ثم `eingenommen werden`.",
+      "i18n": {
+        "ar": {
+          "prompt": "كيف تقول إن تناول الدواء مسموح؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wie sagst du, dass man das Medikament einnehmen darf?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

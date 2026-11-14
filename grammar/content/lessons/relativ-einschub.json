@@ -1,0 +1,381 @@
+{
+  "id": "relativ-einschub",
+  "level": "B1.1",
+  "island": "relativsaetze",
+  "order": 3,
+  "prereqs": [
+    "relativ-dativ"
+  ],
+  "emoji": "🪡",
+  "german": "Eingeschobene Relativsätze",
+  "source": {
+    "lektion": 1,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Nomen",
+    ", Relativsatz ,",
+    "Rest des Hauptsatzes"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Die Nachbarin, der ich geholfen habe,"
+        ],
+        [
+          "v",
+          "zieht"
+        ],
+        [
+          "mf",
+          "morgen"
+        ],
+        [
+          "ve",
+          "um"
+        ]
+      ]
+    },
+    {
+      "k": "rel",
+      "parts": [
+        [
+          "c",
+          "der"
+        ],
+        [
+          "mf",
+          "ich"
+        ],
+        [
+          "ve",
+          "geholfen habe"
+        ]
+      ]
+    }
+  ],
+  "example": "Die Nachbarin, der ich geholfen habe, zieht morgen um.",
+  "stepExamples": [
+    "Die Nachbarin zieht morgen um.",
+    "der ich geholfen habe",
+    "Die Nachbarin, der ich geholfen habe, zieht morgen um.",
+    "Ich habe den Schlüssel, den du suchst, gestern gefunden."
+  ],
+  "pitfallPair": "Die Bücher, die du suchst liegen hier. → Die Bücher, die du suchst, liegen hier.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/5272"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "جملة الوصل الاعتراضية",
+      "lead": "إذا جاء الاسم الموصوف قبل اكتمال الجملة الرئيسية، يمكنك إدراج جملة الوصل بعده مباشرة. استعمل الفاصلتين كي تعرف أين تتوقف الرئيسية وأين تستأنفها.",
+      "translation": "الجارَة التي ساعدتُها ستنتقل غدًا.",
+      "steps": [
+        {
+          "text": "اقرأ الهيكل قبل الإدراج",
+          "why": "هذا هو الهيكل الرئيسي. موقع `zieht` الثاني محسوب بالنسبة إلى الفاعل، وتأتي بادئة الفعل القابل للفصل `umziehen` في النهاية."
+        },
+        {
+          "text": "اكتب الوصل مستقلًا في ذهنك",
+          "why": "أخذت `der` صيغة المؤنث في الداتيف لأن `helfen` يطلبها. بقي `habe` في نهاية الجملة التابعة."
+        },
+        {
+          "text": "أدرج الوصل بين فاصلتين",
+          "why": "بعد الفاصلة الثانية تعود إلى `zieht`. يمكنك حذف الجزء بين الفاصلتين مؤقتًا للتأكد من أن الهيكل الرئيسي بقي سليمًا."
+        },
+        {
+          "text": "جرّب الإدراج بعد مفعول",
+          "why": "الاسم الموصوف هنا جزء من وسط الجملة. يأتي `suchst` قبل الفاصلة الثانية ثم تستأنف الرئيسية بـ `gestern gefunden`."
+        }
+      ],
+      "explain": [
+        "إذا جاء الوصل في آخر الجملة، تكفي فاصلة افتتاحية ثم علامة انتهاء الجملة. في `Ich besuche den Mann, dem ich helfe.` لا توجد بقية رئيسية بعد الوصل. وإذا قدّمت ظرفًا في الرئيسية فترتيبها يظل خاضعًا له كما في `Morgen besucht uns die Frau, die hier wohnt.` موقع الوصل يتبع الاسم الذي يصفه حتى عندما يتغير موقع الاسم نفسه."
+      ],
+      "pitfall": "الفاصلة الثانية تحدد بداية بقية الجملة الرئيسية عند `liegen`.",
+      "recall": [
+        "احذف الوصل من `Der Schlüssel, den du suchst, liegt auf dem Tisch`.",
+        "تبقى `Der Schlüssel liegt auf dem Tisch`. هذا اختبار سريع لمكان الفاصلتين."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 1 · telc، ص 2",
+        "حلول الكتاب الرسمية · telc",
+        "أدوات جمل الوصل · grammis"
+      ]
+    },
+    "de": {
+      "title": "Eingeschobene Relativsätze",
+      "lead": "Steht das Bezugswort, bevor der Hauptsatz fertig ist, kannst du den Relativsatz direkt danach einschieben. Die beiden Kommas zeigen dir, wo der Hauptsatz pausiert und wo er weitergeht.",
+      "steps": [
+        {
+          "text": "Lies das Gerüst vor dem Einschub",
+          "why": "Das ist der Hauptsatz. `zieht` steht auf Position 2 nach dem Subjekt, und das Präfix des trennbaren Verbs `umziehen` steht am Ende."
+        },
+        {
+          "text": "Bilde den Relativsatz zuerst im Kopf",
+          "why": "`der` ist feminin Dativ, weil `helfen` den Dativ verlangt. `habe` bleibt am Ende des Nebensatzes."
+        },
+        {
+          "text": "Schieb den Relativsatz zwischen zwei Kommas ein",
+          "why": "Nach dem zweiten Komma geht es mit `zieht` weiter. Lass den Teil zwischen den Kommas probeweise weg: Das Gerüst des Hauptsatzes muss intakt bleiben."
+        },
+        {
+          "text": "Probiere den Einschub nach einem Objekt",
+          "why": "Das Bezugswort steht hier im Mittelfeld. `suchst` steht vor dem zweiten Komma, dann geht der Hauptsatz mit `gestern gefunden` weiter."
+        }
+      ],
+      "explain": [
+        "Steht der Relativsatz am Satzende, reichen ein öffnendes Komma und das Satzzeichen am Schluss. In `Ich besuche den Mann, dem ich helfe.` folgt kein Rest des Hauptsatzes. Stellst du ein Adverb an den Anfang des Hauptsatzes, richtet sich die Wortstellung danach: `Morgen besucht uns die Frau, die hier wohnt.` Der Relativsatz folgt immer seinem Bezugswort – auch wenn sich dessen Position ändert."
+      ],
+      "pitfall": "Das zweite Komma markiert, wo der Rest des Hauptsatzes mit `liegen` beginnt.",
+      "recall": [
+        "Lass den Relativsatz in `Der Schlüssel, den du suchst, liegt auf dem Tisch` weg.",
+        "Es bleibt `Der Schlüssel liegt auf dem Tisch`. Das ist ein schneller Test für die Position der Kommas."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 1 · telc, S. 2",
+        "Offizielle Lösungen zum Buch · telc",
+        "Relativpronomen · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "relativ-einschub-1",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Die Frau, die hier arbeitet, ist nett.",
+        "Die Frau, die hier arbeitet ist nett.",
+        "Die Frau die hier arbeitet, ist nett."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر علامات الترقيم الصحيحة.",
+          "explain": "عند إدراج الوصل في الوسط نحتاج فاصلة قبله وفاصلة بعده.",
+          "hints": [
+            "حدّد بداية الوصل ونهايته."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle die richtige Zeichensetzung.",
+          "explain": "Steht der Relativsatz in der Mitte, brauchen wir ein Komma davor und eins danach.",
+          "hints": [
+            "Bestimme Anfang und Ende des Relativsatzes."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-einschub-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Das Buch, das du suchst, {{1}} im Regal.",
+      "blanks": [
+        [
+          "liegt"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل فعل الرئيسية بعد الوصل. استعمل liegt.",
+          "explain": "تتبقى Das Buch liegt im Regal، ولذلك يعود الفعل liegt بعد الفاصلة.",
+          "hints": [
+            "احذف الوصل ذهنيًا واقرأ الجملة."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Verb des Hauptsatzes nach dem Relativsatz. Benutze `liegt`.",
+          "explain": "Übrig bleibt `Das Buch liegt im Regal`, deshalb kommt `liegt` nach dem Komma zurück.",
+          "hints": [
+            "Lass den Relativsatz im Kopf weg und lies den Satz."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-einschub-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Der Nachbar zieht um.",
+        "Der Nachbar habe geholfen.",
+        "Der Nachbar hilft."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أيّ هيكل يبقى بعد حذف الوصل؟ Der Nachbar, dem ich geholfen habe, zieht um.",
+          "explain": "ينتمي habe إلى الوصل. الفعل القابل للفصل في الرئيسية هو zieht … um.",
+          "hints": [
+            "احذف كل ما بين الفاصلتين."
+          ]
+        },
+        "de": {
+          "prompt": "Welches Gerüst bleibt, wenn man den Relativsatz weglässt? `Der Nachbar, dem ich geholfen habe, zieht um.`",
+          "explain": "`habe` gehört zum Relativsatz. Das trennbare Verb des Hauptsatzes ist `zieht … um`.",
+          "hints": [
+            "Lass alles zwischen den Kommas weg."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-einschub-4",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Die Lampe,",
+        "die du",
+        "gekauft hast,",
+        "steht jetzt",
+        "am Fenster."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة بوضع الوصل مباشرة بعد die Lampe.",
+          "explain": "ينتهي الوصل بـ gekauft hast. بعد إغلاقه تعود الرئيسية إلى steht.",
+          "hints": [
+            "ابحث عن فعل كل جملة قبل ترتيبها."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz und setz den Relativsatz direkt nach `die Lampe`.",
+          "explain": "Der Relativsatz endet mit `gekauft hast`. Danach kehrt der Hauptsatz zu `steht` zurück.",
+          "hints": [
+            "Such das Verb jedes Satzes, bevor du ordnest."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-einschub-5",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Die Leute, denen du gestern geholfen {{1}}, {{2}} heute wieder. (haben / kommen)",
+      "blanks": [
+        [
+          "hast"
+        ],
+        [
+          "kommen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الفعل المصرف في كل جملة.",
+          "explain": "نصرّف haben مع du، وkommen مع الجمع. كل فعل تابع لفاعله الخاص.",
+          "hints": [
+            "فاعل الوصل du وفاعل الرئيسية die Leute."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das konjugierte Verb in jedem Satz.",
+          "explain": "`haben` wird mit `du` konjugiert, `kommen` mit dem Plural. Jedes Verb richtet sich nach seinem eigenen Subjekt.",
+          "hints": [
+            "Das Subjekt des Relativsatzes ist `du`, das des Hauptsatzes `die Leute`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-einschub-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Ich habe den Schlüssel, den du suchst, gestern gefunden.",
+        "Ich habe den Schlüssel, den du gestern suchst, gefunden.",
+        "Ich habe den Schlüssel den du suchst, gestern gefunden."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أيّ دمج يحافظ على موضع الظرف gestern داخل الرئيسية؟ Ich habe den Schlüssel gestern gefunden. Du suchst den Schlüssel.",
+          "explain": "المشتّت الأول يضع gestern في الوصل فيغيّر المعنى. المشتّت الآخر يحذف الفاصلة التي تفتح الوصل.",
+          "hints": [
+            "الظرف يخص العثور، والوصل يخص البحث."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Verbindung lässt `gestern` im Hauptsatz? `Ich habe den Schlüssel gestern gefunden. Du suchst den Schlüssel.`",
+          "explain": "Die erste falsche Antwort setzt `gestern` in den Relativsatz und ändert die Bedeutung. Die andere lässt das Komma vor dem Relativsatz weg.",
+          "hints": [
+            "Das Adverb gehört zum Finden, der Relativsatz zum Suchen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-einschub-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Die Kollegin, mit der ich arbeite, ruft morgen an.",
+      "i18n": {
+        "ar": {
+          "prompt": "ادمج Die Kollegin ruft morgen an وIch arbeite mit der Kollegin. ابدأ بـ Die Kollegin.",
+          "explain": "mit der داتيف المؤنث. بعد فاصلة الإغلاق تستأنف الرئيسية بالفعل المنفصل ruft … an.",
+          "hints": [
+            "ضع mit der في بداية الوصل واحتفظ ببادئة an للرئيسية."
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde `Die Kollegin ruft morgen an` und `Ich arbeite mit der Kollegin`. Beginne mit `Die Kollegin`.",
+          "explain": "`mit der` ist Dativ feminin. Nach dem schließenden Komma geht der Hauptsatz mit dem trennbaren Verb `ruft … an` weiter.",
+          "hints": [
+            "Setz `mit der` an den Anfang des Relativsatzes und lass `an` im Hauptsatz."
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-einschub-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Die Bücher, die du suchst, liegen hier.",
+      "context": "Die Bücher, die du suchst liegen hier.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "الفاصلة الثانية تحدد بداية بقية الجملة الرئيسية عند `liegen`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Das zweite Komma markiert, wo der Rest des Hauptsatzes mit `liegen` beginnt.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "relativ-einschub-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "تبقى `Der Schlüssel liegt auf dem Tisch`. هذا اختبار سريع لمكان الفاصلتين.",
+      "i18n": {
+        "ar": {
+          "prompt": "احذف الوصل من `Der Schlüssel, den du suchst, liegt auf dem Tisch`.",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Lass den Relativsatz in `Der Schlüssel, den du suchst, liegt auf dem Tisch` weg.",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

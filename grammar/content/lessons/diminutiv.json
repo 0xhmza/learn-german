@@ -1,0 +1,372 @@
+{
+  "id": "diminutiv",
+  "level": "B1.1",
+  "island": "nomen-kasus",
+  "order": 5,
+  "prereqs": [],
+  "emoji": "🐣",
+  "german": "Diminutiv",
+  "source": {
+    "lektion": 3,
+    "kind": "sample"
+  },
+  "pattern": [
+    "Nomen",
+    "+ Umlaut?",
+    "+ -chen / -lein",
+    "→ immer das"
+  ],
+  "frames": [
+    {
+      "k": "np",
+      "parts": [
+        [
+          "n",
+          "die Kanne"
+        ],
+        [
+          "hl",
+          "→"
+        ],
+        [
+          "n",
+          "das Kännchen"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Das Häuschen"
+        ],
+        [
+          "v",
+          "ist"
+        ],
+        [
+          "mf",
+          "hübsch"
+        ]
+      ]
+    }
+  ],
+  "example": "die Kanne → das Kännchen",
+  "stepExamples": [
+    "der Tisch → das Tischchen",
+    "der Schrank → das Schränkchen · das Haus → das Häuschen",
+    "die Kanne → das Kännchen",
+    "das kleine Schränkchen · mit dem kleinen Schränkchen"
+  ],
+  "pitfallPair": "Die Häuschen ist hübsch. → Das Häuschen ist hübsch.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=13"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "تصغير الأسماء",
+      "lead": "يمكن أن تدل صيغة التصغير على الحجم أو التحبّب. ابدأ بتحديد الاسم الذي تغيّر معناه، ثم افحص ثلاثة أشياء في الصيغة الجديدة: النهاية والصوت والجنس.",
+      "translation": "الإبريق ← الإبريق الصغير.",
+      "steps": [
+        {
+          "text": "ألحق نهاية التصغير",
+          "why": "النهاية `-chen` شائعة، وتجد أيضًا `-lein` مثل `das Büchlein`. تختار الصيغة المتداولة للكلمة، ويفيدك القاموس عندما تشك فيها."
+        },
+        {
+          "text": "راقب تغيّر الحركة",
+          "why": "كثيرًا ما تتحول `a/o/u` إلى `ä/ö/ü` أو `au` إلى `äu` في التصغير. هذا نمط شائع، وتوجد كلمات لا يظهر فيها تغير مثل `Tischchen`."
+        },
+        {
+          "text": "احذف e النهائية حيث يلزم",
+          "why": "احذف `e` النهائية هنا. يبقى الجذر `Kann-`، وتتحول الحركة إلى `ä` قبل إضافة `-chen`."
+        },
+        {
+          "text": "صرّف المجموعة حسب جنسها الجديد",
+          "why": "الأسماء التي تصغّرها بـ `-chen` أو `-lein` محايدة مهما كان جنس الاسم الأصلي. تظهر الصيغة `das` في الرفع والأكوزاتيف و`dem` في الداتيف بعد `mit`."
+        }
+      ],
+      "explain": [
+        "يبقى شكل الاسم في الجمع عادة كما هو مع هاتين النهايتين، مثل `das Häuschen → die Häuschen`. وتوجد نهايات إقليمية مثل `-le` و`-erl`. قد يصبح الاسم المصغّر كلمة مستقلة شائعة، وقد يدل السياق على المودة أو السخرية. عند بناء الجملة اتبع الجنس النحوي الجديد مع الأداة والصفة وضمير الوصل."
+      ],
+      "pitfall": "للمفرد قل `Das Häuschen ist hübsch.` وللجمع `Die Häuschen sind hübsch.`. يحدّد العدد الأداة وتصريف الفعل.",
+      "recall": [
+        "كيف تصف كرسيًا صغيرًا مع `mit` إذا اخترت `Stühlchen`؟",
+        "`mit einem kleinen Stühlchen`. حرف `mit` يطلب الداتيف، والاسم المصغّر محايد."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 3 · telc، ص 2",
+        "شرح القواعد، ص 35 من الكتاب · telc"
+      ]
+    },
+    "de": {
+      "title": "Diminutiv (Verkleinerung)",
+      "lead": "Eine Verkleinerungsform kann Größe oder Zuneigung ausdrücken. Bestimme zuerst das Nomen, dessen Bedeutung sich ändert, und prüfe dann drei Dinge an der neuen Form: Endung, Vokal und Genus.",
+      "steps": [
+        {
+          "text": "Häng die Verkleinerungsendung an",
+          "why": "Die Endung `-chen` ist häufig, du findest aber auch `-lein`, z. B. `das Büchlein`. Nimm die übliche Form des Wortes – im Zweifel hilft das Wörterbuch."
+        },
+        {
+          "text": "Achte auf den Umlaut",
+          "why": "Oft wird `a/o/u` zu `ä/ö/ü` oder `au` zu `äu`. Das ist ein häufiges Muster, aber es gibt auch Wörter ohne Änderung, z. B. `Tischchen`."
+        },
+        {
+          "text": "Streich das End-e, wo nötig",
+          "why": "Hier fällt das `e` am Ende weg. Es bleibt der Stamm `Kann-`, der Vokal wird zu `ä`, dann kommt `-chen`."
+        },
+        {
+          "text": "Dekliniere nach dem neuen Genus",
+          "why": "Nomen mit `-chen` oder `-lein` sind immer neutral – egal, welches Genus das ursprüngliche Nomen hatte. Du siehst `das` im Nominativ und Akkusativ und `dem` im Dativ nach `mit`."
+        }
+      ],
+      "explain": [
+        "Im Plural bleibt die Form mit diesen Endungen meist gleich: `das Häuschen → die Häuschen`. Es gibt auch regionale Endungen wie `-le` und `-erl`. Manche Verkleinerungen sind eigene, gängige Wörter geworden, und je nach Kontext klingen sie liebevoll oder ironisch. Im Satz richtest du Artikel, Adjektiv und Relativpronomen nach dem neuen grammatischen Genus."
+      ],
+      "pitfall": "Im Singular sagst du `Das Häuschen ist hübsch.`, im Plural `Die Häuschen sind hübsch.` Der Numerus bestimmt Artikel und Verbform.",
+      "recall": [
+        "Wie beschreibst du mit `mit` einen kleinen Stuhl, wenn du `Stühlchen` wählst?",
+        "`mit einem kleinen Stühlchen`. `mit` verlangt den Dativ, und das verkleinerte Nomen ist neutral."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 3 · telc, S. 2",
+        "Grammatikerklärung, S. 35 im Buch · telc"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "diminutiv-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "der Schrank → das {{1}}",
+      "blanks": [
+        [
+          "Schränkchen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "صغّر الاسم باستعمال -chen.",
+          "explain": "تتحول a إلى ä ثم تضيف -chen.",
+          "hints": [
+            "راقب حركة a في الجذر."
+          ]
+        },
+        "de": {
+          "prompt": "Verkleinere das Nomen mit `-chen`.",
+          "explain": "`a` wird zu `ä`, dann kommt `-chen`.",
+          "hints": [
+            "Achte auf das `a` im Stamm."
+          ]
+        }
+      }
+    },
+    {
+      "id": "diminutiv-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "{{1}} Häuschen ist alt.",
+      "blanks": [
+        [
+          "Das"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل أداة الاسم المصغّر في الرفع.",
+          "explain": "Häuschen محايد لأنه مصغّر بـ -chen.",
+          "hints": [
+            "انظر إلى جنس الاسم بعد التصغير."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Artikel des verkleinerten Nomens im Nominativ.",
+          "explain": "`Häuschen` ist neutral, weil es mit `-chen` verkleinert ist.",
+          "hints": [
+            "Schau auf das Genus nach der Verkleinerung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "diminutiv-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "das Kännchen",
+        "die Kännchen",
+        "das Kannechen"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي صيغة تنتج من die Kanne؟",
+          "explain": "Kanne تصبح Kännchen بعد حذف e وتغيير الحركة. للمفرد استعمل das.",
+          "hints": [
+            "احذف e النهائية وراقب حركة الجذر."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Form entsteht aus `die Kanne`?",
+          "explain": "`Kanne` wird zu `Kännchen`: `e` fällt weg und der Vokal ändert sich. Im Singular steht `das`.",
+          "hints": [
+            "Streich das End-e und achte auf den Vokal im Stamm."
+          ]
+        }
+      }
+    },
+    {
+      "id": "diminutiv-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Die {{1}} sind klein. · mit {{2}} Häuschen",
+      "blanks": [
+        [
+          "Häuschen"
+        ],
+        [
+          "dem"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب الجمع من Häuschen ثم صرّف الأداة مع mit للمفرد.",
+          "explain": "شكل الاسم ثابت في الجمع. بعد mit تأخذ الأداة المحددة في المحايد dem.",
+          "hints": [
+            "قارن شكل اسم الجمع وشكل أداة المحايد في الداتيف."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib den Plural von `Häuschen` und dann den Artikel mit `mit` im Singular.",
+          "explain": "Die Pluralform bleibt gleich. Nach `mit` heißt der bestimmte Artikel im Neutrum `dem`.",
+          "hints": [
+            "Vergleiche die Pluralform des Nomens und den Dativartikel im Neutrum."
+          ]
+        }
+      }
+    },
+    {
+      "id": "diminutiv-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "ein kleines Tischchen",
+        "einen kleinen Tischchen",
+        "ein kleiner Tischchen"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر المجموعة الصحيحة في Ich kaufe ….",
+          "explain": "Tischchen محايد في الأكوزاتيف بعد kaufen. اختر ein ونهاية الصفة -es.",
+          "hints": [
+            "أعد تحديد الجنس بعد إضافة -chen."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle die richtige Gruppe in `Ich kaufe …`.",
+          "explain": "`Tischchen` ist neutral und steht nach `kaufen` im Akkusativ. Wähle `ein` und die Adjektivendung `-es`.",
+          "hints": [
+            "Bestimme das Genus nach dem Anhängen von `-chen` neu."
+          ]
+        }
+      }
+    },
+    {
+      "id": "diminutiv-6",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "das {{1}}",
+      "blanks": [
+        [
+          "Büchlein"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب اسمًا مصغّرًا من das Buch مستعملًا -lein.",
+          "explain": "Buch تصبح Büchlein بتغير u إلى ü قبل -lein.",
+          "hints": [
+            "استعمل الحركة الأمامية المناسبة لـ u."
+          ]
+        },
+        "de": {
+          "prompt": "Bilde aus `das Buch` eine Verkleinerung mit `-lein`.",
+          "explain": "`Buch` wird zu `Büchlein`: `u` wird vor `-lein` zu `ü`.",
+          "hints": [
+            "Benutze den passenden Umlaut für `u`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "diminutiv-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich spiele mit dem kleinen Kätzchen.",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Ich spiele mit der kleinen Katze إلى جملة فيها Kätzchen، واحتفظ بالصفة.",
+          "explain": "Kätzchen محايد، لذلك تحل dem محل der. تبقى نهاية kleinen هي -en.",
+          "hints": [
+            "mit يتطلب الداتيف. حدّد جنس الاسم الجديد."
+          ]
+        },
+        "de": {
+          "prompt": "Forme `Ich spiele mit der kleinen Katze` in einen Satz mit `Kätzchen` um und behalte das Adjektiv.",
+          "explain": "`Kätzchen` ist neutral, deshalb ersetzt `dem` das `der`. Die Endung von `kleinen` bleibt `-en`.",
+          "hints": [
+            "`mit` verlangt den Dativ. Bestimme das Genus des neuen Nomens."
+          ]
+        }
+      }
+    },
+    {
+      "id": "diminutiv-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Das Häuschen ist hübsch.",
+      "context": "Die Häuschen ist hübsch.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الجملة لتصف منزلًا صغيرًا واحدًا. واشرح اختيار الأداة.",
+          "explain": "للمفرد قل `Das Häuschen ist hübsch.` وللجمع `Die Häuschen sind hübsch.`. يحدّد العدد الأداة وتصريف الفعل.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Satz, sodass er ein einzelnes kleines Haus beschreibt, und erkläre die Wahl des Artikels.",
+          "explain": "Im Singular sagst du `Das Häuschen ist hübsch.`, im Plural `Die Häuschen sind hübsch.` Der Numerus bestimmt Artikel und Verbform.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "diminutiv-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`mit einem kleinen Stühlchen`. حرف `mit` يطلب الداتيف، والاسم المصغّر محايد.",
+      "i18n": {
+        "ar": {
+          "prompt": "كيف تصف كرسيًا صغيرًا مع `mit` إذا اخترت `Stühlchen`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wie beschreibst du mit `mit` einen kleinen Stuhl, wenn du `Stühlchen` wählst?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

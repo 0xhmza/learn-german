@@ -1,0 +1,448 @@
+{
+  "id": "pronominaladverbien",
+  "level": "B1.1",
+  "island": "pronomen",
+  "order": 4,
+  "prereqs": [],
+  "emoji": "💬",
+  "german": "Präpositionaladverbien",
+  "source": {
+    "lektion": 6,
+    "kind": "toc"
+  },
+  "pattern": [
+    "da(r) + Präposition = Verweis",
+    "·",
+    "wo(r) + Präposition = Frage"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Worauf"
+        ],
+        [
+          "v",
+          "wartest"
+        ],
+        [
+          "mf",
+          "du"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "warte"
+        ],
+        [
+          "hl",
+          "darauf"
+        ]
+      ]
+    }
+  ],
+  "example": "Worauf wartest du? – Ich warte darauf.",
+  "stepExamples": [
+    "warten auf · sprechen über · rechnen mit",
+    "da + mit → damit · wo + mit → womit",
+    "Worauf wartest du? · Auf wen wartest du?",
+    "Ich freue mich darauf, dass du kommst."
+  ],
+  "pitfallPair": "Woüber sprecht ihr? → Worüber sprecht ihr?",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/kontrastive-grammatik/3885"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الإحالة إلى شيء أو فكرة بـ da- وwo-",
+      "lead": "إذا كان الفعل مرتبطًا بحرف جر، يمكنك الرجوع إلى شيء ذكرته أو السؤال عنه بصيغة قصيرة مثل `darüber` أو `worauf`. حافظ على حرف الجر الأصلي حتى بعد دمجه.",
+      "translation": "ماذا تنتظر؟ – أنتظر ذلك.",
+      "steps": [
+        {
+          "text": "ابدأ من الفعل مع حرف الجر",
+          "why": "لكل تعبير حرف ينبغي حفظه. تستعمل `auf` مع `warten`، ولذلك يبقى `auf` ظاهرًا في `darauf` و`worauf`."
+        },
+        {
+          "text": "ابنِ صيغة الإشارة أو السؤال",
+          "why": "تعود `da-` إلى شيء أو فكرة، وتستعمل `wo-` للسؤال عنه. قبل حرف جر يبدأ بحركة أضف `r`، مثل `darüber / worüber` و`darauf / worauf`."
+        },
+        {
+          "text": "ميّز الشخص عن الشيء",
+          "why": "اسأل `worauf` عندما تقصد الحافلة مثلًا، و`auf wen` عندما تقصد شخصًا. وفي الجواب عن شخص تقول `Ich warte auf ihn` أو `auf sie`."
+        },
+        {
+          "text": "مهّد لمعلومة تأتي في جملة",
+          "why": "تشير `darauf` إلى محتوى جملة `dass`. وتستطيع أن تمهّد لمجموعة مصدرية كما في `Sie denkt daran, die Bestellung zurückzuschicken`."
+        }
+      ],
+      "explain": [
+        "احفظ أيضًا `dafür / wofür` مع `für`، و`davon / wovon` مع `von`، و`daran / woran` مع `an`. قارن `Ich freue mich darauf` لأمر منتظر و`Ich freue mich darüber` للتعبير عن الفرح بأمر حاصل أو معلوم. وإذا تقدمت الصيغة إلى الموقع الأول في الرئيسية جاء الفعل بعدها، مثل `Darüber sprechen wir morgen`."
+      ],
+      "pitfall": "تحتاج `r` لأن `über` يبدأ بصوت علّة. وإذا سألت عن شخص فقل `Über wen sprecht ihr?`.",
+      "recall": [
+        "كيف تشير إلى خطة السفر في `Wir sprechen über die Reise`؟",
+        "`Wir sprechen darüber.` أبقِ `über` بعد `dar-`."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 6 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "ظروف حروف الجر · grammis"
+      ],
+      "table": [
+        [
+          "حرف الجر",
+          "السؤال عن شيء",
+          "الإحالة إلى شيء"
+        ],
+        [
+          "mit",
+          "womit",
+          "damit"
+        ],
+        [
+          "für",
+          "wofür",
+          "dafür"
+        ],
+        [
+          "von",
+          "wovon",
+          "davon"
+        ],
+        [
+          "auf",
+          "worauf",
+          "darauf"
+        ],
+        [
+          "über",
+          "worüber",
+          "darüber"
+        ],
+        [
+          "an",
+          "woran",
+          "daran"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Präpositionaladverbien mit da- und wo-",
+      "lead": "Gehört zum Verb eine Präposition, kannst du mit einer kurzen Form wie `darüber` oder `worauf` auf etwas Genanntes verweisen oder danach fragen. Die ursprüngliche Präposition bleibt dabei erhalten.",
+      "steps": [
+        {
+          "text": "Beginne mit Verb + Präposition",
+          "why": "Jeder Ausdruck hat eine Präposition, die man lernen muss. Zu `warten` gehört `auf`, deshalb bleibt `auf` in `darauf` und `worauf` sichtbar."
+        },
+        {
+          "text": "Bilde die Verweis- oder Frageform",
+          "why": "`da-` verweist auf eine Sache oder Idee, mit `wo-` fragst du danach. Vor einer Präposition, die mit einem Vokal beginnt, kommt ein `r` dazu: `darüber / worüber`, `darauf / worauf`."
+        },
+        {
+          "text": "Unterscheide Person und Sache",
+          "why": "Frag `worauf`, wenn du z. B. den Bus meinst, und `auf wen`, wenn du eine Person meinst. In der Antwort über eine Person sagst du `Ich warte auf ihn` oder `auf sie`."
+        },
+        {
+          "text": "Kündige eine Information in einem Satz an",
+          "why": "`darauf` verweist auf den Inhalt eines `dass`-Satzes. Es kann auch eine Infinitivgruppe ankündigen: `Sie denkt daran, die Bestellung zurückzuschicken`."
+        }
+      ],
+      "explain": [
+        "Lern auch `dafür / wofür` mit `für`, `davon / wovon` mit `von` und `daran / woran` mit `an`. Vergleiche `Ich freue mich darauf` (etwas Kommendes) mit `Ich freue mich darüber` (Freude über etwas, das schon da oder bekannt ist). Steht die Form auf Position 1 im Hauptsatz, folgt danach das Verb: `Darüber sprechen wir morgen`."
+      ],
+      "pitfall": "Du brauchst ein `r`, weil `über` mit einem Vokal beginnt. Fragst du nach einer Person, sag `Über wen sprecht ihr?`.",
+      "recall": [
+        "Wie verweist du auf die Reise in `Wir sprechen über die Reise`?",
+        "`Wir sprechen darüber.` Behalte `über` nach `dar-`."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 6 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Präpositionaladverbien · grammis"
+      ],
+      "table": [
+        [
+          "Präposition",
+          "Frage nach einer Sache",
+          "Verweis auf eine Sache"
+        ],
+        [
+          "mit",
+          "womit",
+          "damit"
+        ],
+        [
+          "für",
+          "wofür",
+          "dafür"
+        ],
+        [
+          "von",
+          "wovon",
+          "davon"
+        ],
+        [
+          "auf",
+          "worauf",
+          "darauf"
+        ],
+        [
+          "über",
+          "worüber",
+          "darüber"
+        ],
+        [
+          "an",
+          "woran",
+          "daran"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "pronominaladverbien-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Worauf wartest du? – Ich warte {{1}}.",
+      "blanks": [
+        [
+          "darauf"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل جواب السؤال عن الحافلة.",
+          "explain": "dar + auf يعطي darauf.",
+          "hints": [
+            "حوّل wo- إلى صيغة إحالة واحتفظ بـ auf."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Antwort auf die Frage nach dem Bus.",
+          "explain": "`dar` + `auf` ergibt `darauf`.",
+          "hints": [
+            "Mach aus `wo-` eine Verweisform und behalte `auf`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pronominaladverbien-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "{{1}} sprecht ihr? (über)",
+      "blanks": [
+        [
+          "Worüber"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "اسأل عمّا يتحدثون عنه.",
+          "explain": "wo + r + über يعطي Worüber.",
+          "hints": [
+            "أضف r قبل حرف الجر المبدوء بحركة."
+          ]
+        },
+        "de": {
+          "prompt": "Frag, worüber sie sprechen.",
+          "explain": "`wo` + `r` + `über` ergibt `Worüber`.",
+          "hints": [
+            "Setz ein `r` vor eine Präposition, die mit einem Vokal beginnt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pronominaladverbien-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Auf wen wartet ihr?",
+        "Worauf wartet ihr?",
+        "Womit wartet ihr?"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي سؤال تسأله عن شخص ينتظرونه؟",
+          "explain": "auf wen للسؤال عن شخص. worauf عن شيء، وwomit يسأل بحرف mit.",
+          "hints": [
+            "للسؤال عن شخص استعمل ضمير استفهام مع الحرف."
+          ]
+        },
+        "de": {
+          "prompt": "Mit welcher Frage fragst du nach einer Person, auf die sie warten?",
+          "explain": "`auf wen` fragt nach einer Person, `worauf` nach einer Sache; `womit` benutzt die Präposition `mit`.",
+          "hints": [
+            "Für Personen: Präposition + Fragepronomen."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pronominaladverbien-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Wir rechnen {{1}}, dass es regnet. · Sie denkt {{2}}, das Paket zurückzuschicken. (mit / an)",
+      "blanks": [
+        [
+          "damit"
+        ],
+        [
+          "daran"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل صيغتي الإحالة.",
+          "explain": "mit يبدأ بصامت، لذا damit. an يبدأ بحركة، لذا daran.",
+          "hints": [
+            "مع الحرف الذي يبدأ بحركة أضف r."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze beide Verweisformen.",
+          "explain": "`mit` beginnt mit einem Konsonanten, also `damit`. `an` beginnt mit einem Vokal, also `daran`.",
+          "hints": [
+            "Bei einer Präposition mit Vokal am Anfang kommt ein `r` dazu."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pronominaladverbien-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Ich freue mich darüber.",
+        "Ich freue mich darauf.",
+        "Ich freue mich damit."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "اختر الصيغة التي ترجع إلى خبر أسعدك بالفعل.",
+          "explain": "sich über etwas freuen يعطي darüber. darauf يعبّر عادةً عن التطلّع، وdamit يحافظ على حرف غير مناسب هنا.",
+          "hints": [
+            "ميّز السرور بحدث قائم عن ترقّب أمر آتٍ."
+          ]
+        },
+        "de": {
+          "prompt": "Wähle die Form, die auf eine Nachricht verweist, über die du dich schon gefreut hast.",
+          "explain": "`sich über etwas freuen` ergibt `darüber`. `darauf` drückt meist Vorfreude aus, und `damit` hat hier die falsche Präposition.",
+          "hints": [
+            "Unterscheide Freude über etwas Bestehendes und Vorfreude auf etwas Kommendes."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pronominaladverbien-6",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Darüber",
+        "sprechen",
+        "wir",
+        "morgen."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجواب وابدأ بالإحالة إلى موضوع الحديث، ثم الفعل.",
+          "explain": "Darüber تأتي قبل الفعل في الرئيسية، لذلك يأتي sprechen قبل wir.",
+          "hints": [
+            "إذا تقدمت عبارة الإحالة فإنها تشغل الموقع الأول."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne die Antwort und beginne mit dem Verweis auf das Gesprächsthema, dann das Verb.",
+          "explain": "`Darüber` steht vor dem Verb im Hauptsatz, deshalb kommt `sprechen` vor `wir`.",
+          "hints": [
+            "Steht der Verweis vorne, besetzt er Position 1."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pronominaladverbien-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich interessiere mich dafür. Wofür interessierst du dich?",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل Ich interessiere mich für den Kurs إلى إحالة على شيء مذكور، ثم اكتب سؤالًا عن الشيء.",
+          "explain": "für يبدأ بصامت، لذلك نكتب dafür وwofür بلا r إضافية. يتغير الضمير الانعكاسي مع المخاطب.",
+          "hints": [
+            "حافظ على für في الإشارة والسؤال."
+          ]
+        },
+        "de": {
+          "prompt": "Mach aus `Ich interessiere mich für den Kurs` einen Verweis auf eine genannte Sache und schreib dann eine Frage nach der Sache.",
+          "explain": "`für` beginnt mit einem Konsonanten, deshalb schreiben wir `dafür` und `wofür` ohne zusätzliches `r`. Das Reflexivpronomen ändert sich mit der angesprochenen Person.",
+          "hints": [
+            "Behalte `für` im Verweis und in der Frage."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pronominaladverbien-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Worüber sprecht ihr?",
+      "context": "Woüber sprecht ihr?",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "تحتاج `r` لأن `über` يبدأ بصوت علّة. وإذا سألت عن شخص فقل `Über wen sprecht ihr?`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Du brauchst ein `r`, weil `über` mit einem Vokal beginnt. Fragst du nach einer Person, sag `Über wen sprecht ihr?`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pronominaladverbien-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`Wir sprechen darüber.` أبقِ `über` بعد `dar-`.",
+      "i18n": {
+        "ar": {
+          "prompt": "كيف تشير إلى خطة السفر في `Wir sprechen über die Reise`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Wie verweist du auf die Reise in `Wir sprechen über die Reise`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

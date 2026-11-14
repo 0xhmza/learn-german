@@ -1,0 +1,180 @@
+// State defaults, sanitizing of saved data, backups and the one-time
+// import of progress from the original B1.1 file.
+import { isDay } from '../dates.js';
+import { nextLesson, runStars } from './progress.js';
+import { checkBadges, QUESTION_XP, XP, DAILY_GOALS } from './gamification.js';
+import { isRunValid } from './runs.js';
+
+export const STATE_VERSION = 1;
+export const APP_ID = 'grammatikinseln';
+export const LEGACY_KEYS = { state: 'deutsch-b11-ar-2026-1', lang: 'deutsch-b11-lang', theme: 'deutsch-b11-theme' };
+
+export function defaultState(day) {
+  return {
+    v: STATE_VERSION,
+    createdAt: day,
+    settings: { levelFilter: 'all', dailyGoal: 30, reduceMotion: false },
+    completed: {},
+    stars: {},
+    lessonBonus: {},
+    results: {},
+    runs: {},
+    lastRun: null,
+    lastLesson: null,
+    islands: {},
+    xp: { total: 0, byDay: {}, goalBonusDay: null, testDay: null },
+    streak: { current: 0, best: 0, lastGoalDay: null },
+    badges: {},
+    stats: { mistakesCleared: 0, reviewsDone: 0, flawlessExams: 0, timedAce: 0 },
+    player: { at: null, from: null, animate: false }
+  };
+}
+
+const plain = value => value && typeof value === 'object' && !Array.isArray(value);
+const count = value => (Number.isFinite(value) && value >= 0 ? Math.floor(value) : 0);
+const dayOr = (value, fallback) => (isDay(value) ? value : fallback);
+
+export function normalizeState(raw, ctx, day) {
+  const state = defaultState(day);
+  if (!plain(raw) || raw.v !== STATE_VERSION) {
+    state.player.at = nextLesson(ctx, state)?.id ?? null;
+    return state;
+  }
+  state.createdAt = dayOr(raw.createdAt, day);
+  const settings = plain(raw.settings) ? raw.settings : {};
+  if (['all', ...ctx.levels.map(level => level.id)].includes(settings.levelFilter)) state.settings.levelFilter = settings.levelFilter;
+  if (DAILY_GOALS.includes(settings.dailyGoal)) state.settings.dailyGoal = settings.dailyGoal;
+  state.settings.reduceMotion = settings.reduceMotion === true;
+
+  for (const [id, value] of Object.entries(plain(raw.completed) ? raw.completed : {})) {
+    if (ctx.lessons.has(id) && value) state.completed[id] = dayOr(value, day);
+  }
+  for (const [id, value] of Object.entries(plain(raw.stars) ? raw.stars : {})) {
+    if (ctx.lessons.has(id) && [1, 2, 3].includes(value)) state.stars[id] = value;
+  }
+  for (const [id, value] of Object.entries(plain(raw.lessonBonus) ? raw.lessonBonus : {})) {
+    if (ctx.lessons.has(id) && plain(value)) state.lessonBonus[id] = { runDay: isDay(value.runDay) ? value.runDay : undefined, perfect: value.perfect === true };
+  }
+  for (const [id, value] of Object.entries(plain(raw.results) ? raw.results : {})) {
+    if (!ctx.questions.has(id) || !plain(value)) continue;
+    state.results[id] = {
+      correct: value.correct === true,
+      streak: count(value.streak),
+      tries: count(value.tries),
+      needsReview: value.needsReview === true,
+      box: Math.min(5, Math.max(1, count(value.box) || 1)),
+      due: dayOr(value.due, day),
+      last: dayOr(value.last, day),
+      xpDone: value.xpDone === true,
+      ...(isDay(value.xpDay) ? { xpDay: value.xpDay } : {})
+    };
+  }
+  for (const [key, run] of Object.entries(plain(raw.runs) ? raw.runs : {})) {
+    if (plain(run) && run.key === key && isRunValid(ctx, run)) {
+      state.runs[key] = { answers: {}, grades: {}, order: {}, hinted: {}, position: 0, finished: false, summary: null, ...run };
+      state.runs[key].position = Math.min(count(run.position), run.ids.length - 1);
+    }
+  }
+  if (state.runs[raw.lastRun]) state.lastRun = raw.lastRun;
+  if (ctx.lessons.has(raw.lastLesson)) state.lastLesson = raw.lastLesson;
+  for (const [id, value] of Object.entries(plain(raw.islands) ? raw.islands : {})) {
+    if (ctx.islandById.has(id) && plain(value)) {
+      state.islands[id] = { conquered: isDay(value.conquered) ? value.conquered : null, examBest: count(value.examBest), examTries: count(value.examTries) };
+    }
+  }
+  const xp = plain(raw.xp) ? raw.xp : {};
+  state.xp.total = count(xp.total);
+  for (const [key, value] of Object.entries(plain(xp.byDay) ? xp.byDay : {})) if (isDay(key)) state.xp.byDay[key] = count(value);
+  state.xp.goalBonusDay = isDay(xp.goalBonusDay) ? xp.goalBonusDay : null;
+  state.xp.testDay = isDay(xp.testDay) ? xp.testDay : null;
+  const streak = plain(raw.streak) ? raw.streak : {};
+  state.streak = { current: count(streak.current), best: count(streak.best), lastGoalDay: isDay(streak.lastGoalDay) ? streak.lastGoalDay : null };
+  for (const [id, value] of Object.entries(plain(raw.badges) ? raw.badges : {})) {
+    if (ctx.badgeById.has(id)) state.badges[id] = dayOr(value, day);
+  }
+  const stats = plain(raw.stats) ? raw.stats : {};
+  for (const key of Object.keys(state.stats)) state.stats[key] = count(stats[key]);
+  const player = plain(raw.player) ? raw.player : {};
+  state.player.at = ctx.lessons.has(player.at) ? player.at : nextLesson(ctx, state)?.id ?? null;
+  state.player.from = ctx.lessons.has(player.from) ? player.from : null;
+  state.player.animate = player.animate === true && Boolean(state.player.from);
+  return state;
+}
+
+// Shared by the automatic migration and the import of an exported results
+// file: copies answer records and rebuilds stars and XP from them.
+function applyLegacyResults(ctx, state, entries, day) {
+  let imported = 0;
+  for (const [id, value] of entries) {
+    const q = ctx.questions.get(id);
+    if (!q || !plain(value)) continue;
+    const correct = value.correct === true;
+    const streak = count(value.streak);
+    const previous = state.results[id];
+    state.results[id] = {
+      correct,
+      streak,
+      tries: Math.max(count(value.tries), 1) + (previous?.tries || 0),
+      needsReview: value.needsReview === true,
+      box: correct ? Math.min(Math.max(streak, 1), 2) : 1,
+      due: day,
+      last: day,
+      xpDone: correct || previous?.xpDone === true
+    };
+    if (correct && !previous?.xpDone) state.xp.total += QUESTION_XP[q.difficulty] || QUESTION_XP[1];
+    imported++;
+  }
+  return imported;
+}
+
+function finishLegacyImport(ctx, state, day, inferCompleted) {
+  for (const lesson of ctx.lessons.values()) {
+    const results = lesson.questions.map(q => state.results[q.id]);
+    const allTried = results.every(Boolean);
+    if (inferCompleted && allTried) state.completed[lesson.id] ||= day;
+    const stars = allTried ? runStars(results.filter(result => result.correct).length, results.length) : 0;
+    if (stars >= 2) state.completed[lesson.id] ||= day;
+    if (state.completed[lesson.id]) state.stars[lesson.id] = Math.max(state.stars[lesson.id] || 0, stars, 1);
+  }
+  state.player.at = nextLesson(ctx, state)?.id ?? null;
+  state.player.from = null;
+  state.player.animate = false;
+}
+
+export function migrateLegacy(legacy, ctx, day) {
+  const state = defaultState(day);
+  if (!plain(legacy)) return normalizeState(state, ctx, day);
+  for (const [id, done] of Object.entries(plain(legacy.completed) ? legacy.completed : {})) {
+    if (done === true && ctx.lessons.has(id)) {
+      state.completed[id] = day;
+      state.xp.total += XP.lesson;
+    }
+  }
+  const before = new Set(Object.keys(state.completed));
+  applyLegacyResults(ctx, state, Object.entries(plain(legacy.results) ? legacy.results : {}), day);
+  finishLegacyImport(ctx, state, day, false);
+  for (const id of Object.keys(state.completed)) if (!before.has(id)) state.xp.total += XP.lesson;
+  for (const id of checkBadges(ctx, state)) state.badges[id] = day;
+  if (ctx.lessons.has(legacy.lastLesson)) state.lastLesson = legacy.lastLesson;
+  return state;
+}
+
+// Accepts the "Download results · JSON" file of the original page.
+export function importLegacyExport(json, ctx, state, day) {
+  if (!plain(json) || json.kind !== 'results' || !Array.isArray(json.items)) throw new Error('not-legacy');
+  const before = new Set(Object.keys(state.completed));
+  const imported = applyLegacyResults(ctx, state, json.items.filter(plain).map(item => [item.id, item]), day);
+  finishLegacyImport(ctx, state, day, true);
+  for (const id of Object.keys(state.completed)) if (!before.has(id)) state.xp.total += XP.lesson;
+  for (const id of checkBadges(ctx, state)) state.badges[id] = day;
+  return imported;
+}
+
+export function exportBackup(state, ctx, exportedAt = new Date().toISOString()) {
+  return { app: APP_ID, kind: 'backup', v: STATE_VERSION, exported: exportedAt, contentVersion: ctx.version, state };
+}
+
+export function importBackup(json, ctx, day) {
+  if (!plain(json) || json.app !== APP_ID || json.kind !== 'backup' || !plain(json.state)) throw new Error('not-backup');
+  return normalizeState(json.state, ctx, day);
+}

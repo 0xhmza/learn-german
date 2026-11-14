@@ -1,0 +1,72 @@
+[
+  {
+    "id": "nomen-kasus", "order": 1, "emoji": "🏷️", "palette": "blue",
+    "name": { "de": "Nomen & Kasus", "ar": "الأسماء والحالات الإعرابية" },
+    "nickname": { "de": "Kasus-Kap", "ar": "رأس الحالات" },
+    "blurb": { "de": "Genitiv, Präpositionen, N-Deklination und Nomen aus Verben und Adjektiven.", "ar": "حالة Genitiv وحروف الجر وتصريف الأسماء وتكوين أسماء من الأفعال والصفات." },
+    "pos": { "wide": [150, 160], "tall": [190, 150] }
+  },
+  {
+    "id": "adjektive", "order": 2, "emoji": "🎨", "palette": "pink",
+    "name": { "de": "Adjektive & Partizipien", "ar": "الصفات واسما الفاعل والمفعول" },
+    "nickname": { "de": "Adjektiv-Atoll", "ar": "جزيرة الصفات" },
+    "blurb": { "de": "Komparativ und Superlativ, Endungen im Genitiv, Partizipien als Adjektiv und Gradpartikeln.", "ar": "المقارنة والتفضيل ونهايات الصفة والوصف باسم الفاعل والمفعول وتقوية الصفة وتخفيفها." },
+    "pos": { "wide": [420, 120], "tall": [410, 310] }
+  },
+  {
+    "id": "pronomen", "order": 3, "emoji": "🎲", "palette": "yellow",
+    "name": { "de": "Pronomen & Verweiswörter", "ar": "الضمائر وكلمات الإحالة" },
+    "nickname": { "de": "Pronomen-Riff", "ar": "شِعاب الضمائر" },
+    "blurb": { "de": "Unbestimmte Pronomen, irgend- und Wörter wie darauf und worauf.", "ar": "الضمائر غير المحددة وكلمات irgend- والإحالة بـ da- وwo-." },
+    "pos": { "wide": [690, 170], "tall": [190, 470] }
+  },
+  {
+    "id": "relativsaetze", "order": 4, "emoji": "🔗", "palette": "lilac",
+    "name": { "de": "Relativsätze", "ar": "جمل الوصل" },
+    "nickname": { "de": "Relativ-Insel", "ar": "جزيرة الوصل" },
+    "blurb": { "de": "Relativpronomen im Dativ und Genitiv, mit Präposition, eingeschoben und mit wo und was.", "ar": "ضمائر الوصل في الداتيف وGenitiv ومع حروف الجر والجمل الاعتراضية والوصل بـ wo وwas." },
+    "pos": { "wide": [980, 130], "tall": [410, 630] }
+  },
+  {
+    "id": "infinitiv-verben", "order": 5, "emoji": "✍️", "palette": "peach",
+    "name": { "de": "Infinitiv & besondere Verben", "ar": "المصدر وأفعال خاصة" },
+    "nickname": { "de": "Infinitiv-Bucht", "ar": "خليج المصدر" },
+    "blurb": { "de": "Infinitiv mit zu, statt und ohne … zu, dazu die Verben brauchen und lassen.", "ar": "المصدر مع zu وstatt وohne، والفعلان brauchen وlassen." },
+    "pos": { "wide": [1040, 390], "tall": [190, 790] }
+  },
+  {
+    "id": "passiv", "order": 6, "emoji": "🧰", "palette": "mint",
+    "name": { "de": "Passiv", "ar": "المبني للمجهول" },
+    "nickname": { "de": "Passiv-Hafen", "ar": "ميناء المجهول" },
+    "blurb": { "de": "Passiv im Perfekt, mit Modalverben, ohne Subjekt und das es am Satzanfang.", "ar": "المجهول في الماضي ومع الأفعال الناقصة وبلا فاعل، وes في أول الجملة." },
+    "pos": { "wide": [770, 420], "tall": [410, 950] }
+  },
+  {
+    "id": "zeiten", "order": 7, "emoji": "⏳", "palette": "sky",
+    "name": { "de": "Zeiten & Zeitsätze", "ar": "الأزمنة والجمل الزمنية" },
+    "nickname": { "de": "Zeit-Archipel", "ar": "أرخبيل الزمن" },
+    "blurb": { "de": "Plusquamperfekt, Futur I und Nebensätze mit nachdem, bevor, bis, seit und während.", "ar": "الماضي الأسبق والمستقبل والجمل الزمنية بـ nachdem وbevor وbis وseit وwährend." },
+    "pos": { "wide": [500, 380], "tall": [190, 1110] }
+  },
+  {
+    "id": "grund-folge", "order": 8, "emoji": "🧭", "palette": "sand",
+    "name": { "de": "Grund, Folge & Mittel", "ar": "السبب والنتيجة والوسيلة" },
+    "nickname": { "de": "Insel der Gründe", "ar": "جزيرة الأسباب" },
+    "blurb": { "de": "weil und da, deshalb und daher, sodass und indem.", "ar": "السبب بـ weil وda، والنتيجة بـ deshalb وsodass، والوسيلة بـ indem." },
+    "pos": { "wide": [220, 420], "tall": [410, 1270] }
+  },
+  {
+    "id": "gegensatz-vergleich", "order": 9, "emoji": "⚖️", "palette": "coral",
+    "name": { "de": "Gegensatz & Vergleich", "ar": "التضاد والمقارنة" },
+    "nickname": { "de": "Kontrast-Klippen", "ar": "صخور التضاد" },
+    "blurb": { "de": "obwohl und trotzdem, adversatives während, je … desto und zweiteilige Konjunktionen.", "ar": "obwohl وtrotzdem وwährend للمقابلة وje … desto وأدوات الربط ذات الجزأين." },
+    "pos": { "wide": [330, 640], "tall": [190, 1430] }
+  },
+  {
+    "id": "konjunktiv-bedingung", "order": 10, "emoji": "💭", "palette": "teal",
+    "name": { "de": "Bedingungen & Konjunktiv II", "ar": "الشرط والتمنّي" },
+    "nickname": { "de": "Konjunktiv-Vulkan", "ar": "بركان التمنّي" },
+    "blurb": { "de": "falls und sonst, irreale Bedingungen in Gegenwart und Vergangenheit.", "ar": "falls وsonst والشرط غير الواقعي في الحاضر والماضي." },
+    "pos": { "wide": [620, 640], "tall": [410, 1590] }
+  }
+]

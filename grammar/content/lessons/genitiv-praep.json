@@ -1,0 +1,369 @@
+{
+  "id": "genitiv-praep",
+  "level": "B1.1",
+  "island": "nomen-kasus",
+  "order": 2,
+  "prereqs": [
+    "genitiv"
+  ],
+  "emoji": "🧭",
+  "german": "Präpositionen mit Genitiv",
+  "source": {
+    "lektion": 4,
+    "kind": "toc"
+  },
+  "pattern": [
+    "wegen · trotz · während · innerhalb · statt",
+    "+",
+    "Genitiv"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Wegen des Umzugs"
+        ],
+        [
+          "v",
+          "bleibt"
+        ],
+        [
+          "mf",
+          "das Büro"
+        ],
+        [
+          "ve",
+          "geschlossen"
+        ]
+      ]
+    }
+  ],
+  "example": "Wegen des Umzugs bleibt das Büro geschlossen.",
+  "stepExamples": [
+    "wegen · trotz · während",
+    "innerhalb einer Woche · außerhalb der Stadt · statt eines Briefes",
+    "wegen des Regens · trotz der Kälte",
+    "während des Kurses · während der Kurs läuft"
+  ],
+  "pitfallPair": "wegen dem Umzug → wegen des Umzugs",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/korpusgrammatik/6941"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "حروف الجر التي تطلب Genitiv",
+      "lead": "قد يحدد حرف الجر حالة الاسم حتى عندما لا توجد علاقة ملكية. تعلّم المعنى مع الحالة لتختار الحرف المناسب وتبني المجموعة التي تأتي بعده.",
+      "translation": "بسبب الانتقال يبقى المكتب مغلقًا.",
+      "steps": [
+        {
+          "text": "اختر حرف الجر من المعنى",
+          "why": "تعني `wegen` «بسبب»، و`trotz` «رغم»، و`während` «أثناء» حين تسبق اسمًا. يُدرَّب هنا على الصيغة المعيارية بالجينيتيف."
+        },
+        {
+          "text": "ميّز المكان والوقت والاستبدال",
+          "why": "تدل `innerhalb` على ما يقع داخل نطاق، و`außerhalb` خارجه، و`statt/anstatt` على بديل. وانظر إلى الأداة والاسم بعد الحرف معًا."
+        },
+        {
+          "text": "ابنِ المجموعة حسب الجنس",
+          "why": "في المذكر يتغير شكل الأداة ويأخذ الاسم نهايته هنا. في المؤنث تظهر الحالة على الأداة `der` ويبقى الاسم `Kälte` كما هو."
+        },
+        {
+          "text": "حدّد هل بعد الحرف اسم أم جملة",
+          "why": "في الأولى `während` حرف جر مع مجموعة اسمية. في الثانية رابط لجملة تابعة، و`der Kurs` فاعل في الرفع، والفعل `läuft` في آخرها."
+        }
+      ],
+      "explain": [
+        "قد تسمع الداتيف مع بعض هذه الحروف، وخصوصًا `wegen` في المحادثة. في هذه التمارين تدرب على الجينيتيف بعد الحروف المذكورة. إذا قدمت المجموعة في الرئيسية فستشغل موضعًا واحدًا، مثل `Trotz des Regens gehen wir hinaus`، لذلك يأتي الفعل المصرف بعدها مباشرة."
+      ],
+      "pitfall": "في الصيغة المعيارية المستهدفة، اختر `des` وأضف `-s` إلى `Umzug`.",
+      "recall": [
+        "أي تركيب يدل على الزمن داخل مدة شهر؟",
+        "`innerhalb eines Monats`. الحرف يطلب الجينيتيف، و`Monat` مذكر."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 4 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "علامات الجينيتيف · grammis"
+      ]
+    },
+    "de": {
+      "title": "Präpositionen mit Genitiv",
+      "lead": "Eine Präposition kann den Kasus eines Nomens bestimmen, auch wenn es um keinen Besitz geht. Lern die Bedeutung zusammen mit dem Kasus, damit du die richtige Präposition wählst und die Gruppe danach richtig baust.",
+      "steps": [
+        {
+          "text": "Wähle die Präposition nach der Bedeutung",
+          "why": "`wegen` nennt einen Grund, `trotz` einen Gegensatz, `während` eine Zeitspanne, wenn ein Nomen folgt. Geübt wird hier die Standardform mit Genitiv."
+        },
+        {
+          "text": "Unterscheide Ort, Zeit und Ersatz",
+          "why": "`innerhalb` heißt „im Rahmen von“, `außerhalb` „nicht im Rahmen von“, `statt/anstatt` nennt eine Alternative. Schau dir Artikel und Nomen nach der Präposition zusammen an."
+        },
+        {
+          "text": "Bau die Gruppe nach dem Genus",
+          "why": "Beim Maskulinum ändert sich der Artikel, und das Nomen bekommt hier eine Endung. Beim Femininum zeigt nur der Artikel `der` den Kasus; `Kälte` bleibt gleich."
+        },
+        {
+          "text": "Prüfe, ob danach ein Nomen oder ein Satz kommt",
+          "why": "Im ersten Beispiel ist `während` eine Präposition mit Nominalgruppe. Im zweiten leitet es einen Nebensatz ein: `der Kurs` ist Subjekt im Nominativ, und `läuft` steht am Ende."
+        }
+      ],
+      "explain": [
+        "Bei manchen dieser Präpositionen hörst du auch den Dativ, besonders bei `wegen` in der gesprochenen Sprache. In diesen Übungen trainierst du den Genitiv. Steht die Gruppe vorne im Hauptsatz, besetzt sie eine Position: `Trotz des Regens gehen wir hinaus` – deshalb folgt das konjugierte Verb direkt danach."
+      ],
+      "pitfall": "In der Standardform, die wir hier üben, wählst du `des` und hängst `-s` an `Umzug` an.",
+      "recall": [
+        "Welche Struktur bedeutet „im Zeitraum eines Monats“?",
+        "`innerhalb eines Monats`. Die Präposition verlangt den Genitiv, und `Monat` ist maskulin."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 4 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Genitivmarkierung · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "genitiv-praep-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wegen {{1}} bleibt der Laden zu.",
+      "blanks": [
+        [
+          "des Umzugs"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بسبب الانتقال، مع der Umzug.",
+          "explain": "الأداة des ويأخذ Umzug النهاية -s.",
+          "hints": [
+            "استعمل جينيتيف المذكر."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze „wegen des Umzugs“ mit `der Umzug`.",
+          "explain": "Der Artikel ist `des`, und `Umzug` bekommt die Endung `-s`.",
+          "hints": [
+            "Benutze den Genitiv maskulin."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-praep-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Trotz {{1}} gehen wir spazieren.",
+      "blanks": [
+        [
+          "der Kälte"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل برغم البرد، مع die Kälte.",
+          "explain": "تتحول die إلى der في الجينيتيف.",
+          "hints": [
+            "الاسم مؤنث."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze „trotz der Kälte“ mit `die Kälte`.",
+          "explain": "`die` wird im Genitiv zu `der`.",
+          "hints": [
+            "Das Nomen ist feminin."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-praep-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "innerhalb einer Woche",
+        "außerhalb einer Woche",
+        "trotz einer Woche"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي حرف يناسب «خلال مدة أسبوع واحد»؟",
+          "explain": "innerhalb تدل على داخل النطاق. außerhalb خارجه، وtrotz تعطي معنى التنازل.",
+          "hints": [
+            "المطلوب مدة يقع الحدث داخلها."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Präposition passt zu „im Zeitraum einer Woche“?",
+          "explain": "`innerhalb` bedeutet „im Rahmen von“, `außerhalb` „außerhalb davon“, `trotz` drückt einen Gegensatz aus.",
+          "hints": [
+            "Gesucht ist ein Zeitraum, in dem etwas passiert."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-praep-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "während {{1}} (der Kurs) · außerhalb {{2}} (die Stadt)",
+      "blanks": [
+        [
+          "des Kurses"
+        ],
+        [
+          "der Stadt"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل جينيتيف الزمن والمكان.",
+          "explain": "نكتب des Kurses بالمذكر وder Stadt بالمؤنث.",
+          "hints": [
+            "راجع العلامة على الاسم المذكر وحده."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Genitiv für Zeit und Ort.",
+          "explain": "Wir schreiben `des Kurses` (maskulin) und `der Stadt` (feminin).",
+          "hints": [
+            "Nur das maskuline Nomen bekommt eine Endung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-praep-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "ما نوع während في während der Kurs läuft؟",
+          "explain": "بعد während هنا جملة بفاعل der Kurs وفعل läuft. مع الاسم وحده تقول während des Kurses.",
+          "hints": [
+            "انظر إلى الفعل المصرف آخر التركيب."
+          ],
+          "options": [
+            "رابط يبدأ جملة تابعة.",
+            "حرف جر يطلب جينيتيف المذكر.",
+            "ظرف يشغل الموقع الثاني."
+          ]
+        },
+        "de": {
+          "prompt": "Was für ein Wort ist `während` in `während der Kurs läuft`?",
+          "explain": "Nach `während` folgt hier ein Satz mit dem Subjekt `der Kurs` und dem Verb `läuft`. Nur mit Nomen sagst du `während des Kurses`.",
+          "hints": [
+            "Schau auf das konjugierte Verb am Ende."
+          ],
+          "options": [
+            "Eine Konjunktion, die einen Nebensatz einleitet.",
+            "Eine Präposition mit Genitiv maskulin.",
+            "Ein Adverb auf Position 2."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-praep-6",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Trotz",
+        "des Regens",
+        "spielen",
+        "wir",
+        "draußen."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة واجعل المجموعة المبدوءة بـ Trotz أولًا.",
+          "explain": "بعد Trotz des Regens يأتي الفعل spielen ثم الفاعل wir.",
+          "hints": [
+            "تحتل مجموعة الجر الأولى موقعًا واحدًا."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz und stell die Gruppe mit `Trotz` an den Anfang.",
+          "explain": "Nach `Trotz des Regens` kommt das Verb `spielen`, dann das Subjekt `wir`.",
+          "hints": [
+            "Die Präpositionalgruppe vorne besetzt eine Position."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-praep-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Statt eines Briefes schicke ich eine E-Mail.",
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب «بدلًا من رسالة، أرسل بريدًا إلكترونيًا» وابدأ بـ Statt. استعمل der Brief.",
+          "explain": "eines Briefes مجموعة جينيتيف للمذكر. يأتي schicke بعد المجموعة مباشرة.",
+          "hints": [
+            "استعمل جينيتيف النكرة بعد Statt."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib „Statt eines Briefes schicke ich eine E-Mail“ – beginne mit `Statt` und benutze `der Brief`.",
+          "explain": "`eines Briefes` ist eine Genitivgruppe maskulin. `schicke` folgt direkt nach der Gruppe.",
+          "hints": [
+            "Benutze nach `Statt` den unbestimmten Genitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-praep-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "wegen des Umzugs",
+      "context": "wegen dem Umzug",
+      "i18n": {
+        "ar": {
+          "prompt": "أعد الكتابة بالجينيتيف وبيّن كيف تغيّرت الأداة والاسم.",
+          "explain": "في الصيغة المعيارية المستهدفة، اختر `des` وأضف `-s` إلى `Umzug`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib den Ausdruck im Genitiv und zeig, wie sich Artikel und Nomen ändern.",
+          "explain": "In der Standardform, die wir hier üben, wählst du `des` und hängst `-s` an `Umzug` an.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "genitiv-praep-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "`innerhalb eines Monats`. الحرف يطلب الجينيتيف، و`Monat` مذكر.",
+      "i18n": {
+        "ar": {
+          "prompt": "أي تركيب يدل على الزمن داخل مدة شهر؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Struktur bedeutet „im Zeitraum eines Monats“?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

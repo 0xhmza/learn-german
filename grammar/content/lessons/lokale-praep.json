@@ -1,0 +1,393 @@
+{
+  "id": "lokale-praep",
+  "level": "B1.1",
+  "island": "nomen-kasus",
+  "order": 3,
+  "prereqs": [],
+  "emoji": "🗺️",
+  "german": "um … herum · an … entlang",
+  "source": {
+    "lektion": 3,
+    "kind": "sample"
+  },
+  "pattern": [
+    "um + Akkusativ + herum",
+    "·",
+    "an + Dativ + entlang"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Wir"
+        ],
+        [
+          "v",
+          "gehen"
+        ],
+        [
+          "c",
+          "um"
+        ],
+        [
+          "mf",
+          "die Kirche"
+        ],
+        [
+          "c",
+          "herum"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Wir"
+        ],
+        [
+          "v",
+          "gehen"
+        ],
+        [
+          "c",
+          "am"
+        ],
+        [
+          "mf",
+          "Fluss"
+        ],
+        [
+          "c",
+          "entlang"
+        ]
+      ]
+    }
+  ],
+  "example": "Wir gehen um die Kirche herum. · Wir gehen am Fluss entlang.",
+  "stepExamples": [
+    "um … herum",
+    "um den Park herum · um das Haus herum",
+    "an der Mauer entlang · an dem Fluss entlang",
+    "Wir radeln am Kanal entlang."
+  ],
+  "pitfallPair": "Wir gehen an den Fluss entlang. → Wir gehen am Fluss entlang.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=2",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=13"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الحركة حول مكان أو بمحاذاته",
+      "lead": "تخيّل خط سيرك على خريطة. إذا كان المسار يلتف حول شيء فلك تركيب، وإذا تابع امتداد جدار أو نهر فلك تركيب آخر.",
+      "translation": "نمشي حول الكنيسة · نمشي بمحاذاة النهر.",
+      "steps": [
+        {
+          "text": "اختر العلاقة المكانية أولًا",
+          "why": "تأتي `um` قبل الاسم و`herum` بعده. تخيّل خط سير يمر حول المعلم، مثل `um den Park herum`."
+        },
+        {
+          "text": "ضع الاسم بعد um في الأكوزاتيف",
+          "why": "في المذكر يتحول `der Park` إلى `den Park`. في المحايد تبقى `das` ظاهريًا كما هي، لكنها هنا في حالة الأكوزاتيف."
+        },
+        {
+          "text": "استعمل an … entlang للمحاذاة",
+          "why": "هنا نضع المجموعة في الداتيف. تظهر `der` مع `Mauer` المؤنث و`dem` مع `Fluss` المذكر. يُختصر `an dem` غالبًا إلى `am`."
+        },
+        {
+          "text": "افحص التركيب كله قبل تخمين الحالة",
+          "why": "في الجملة حركة فعلية، ومع ذلك يستعمل هذا التركيب الداتيف. إذا استعملت `entlang` وحدها بعد الاسم ترى تركيبًا آخر مثل `den Kanal entlang` بالأكوزاتيف. في تمارين هذا الدرس استعمل التركيب المزدوج المطلوب."
+        }
+      ],
+      "explain": [
+        "جرّب أن تصف خطّين مختلفين حول المعلم نفسه. في `um das Gebäude herum` تلتف حول المبنى. في `an dem Gebäude entlang` تسير بمحاذاته. عندما تدخل صفةً تستمر قاعدة الحالة، فتقول `um den alten Park herum` و`an der alten Mauer entlang`."
+      ],
+      "pitfall": "مع تركيب `an … entlang` تحتاج داتيف المذكر `an dem Fluss`، أي `am Fluss`.",
+      "recall": [
+        "ما حالة الاسم في `um die Bäume herum`؟",
+        "الأكوزاتيف. أداة الجمع `die` تظهر بالشكل نفسه في الرفع والأكوزاتيف."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 3 · telc، ص 2",
+        "شرح القواعد، ص 35 من الكتاب · telc"
+      ]
+    },
+    "de": {
+      "title": "um … herum · an … entlang",
+      "lead": "Stell dir deinen Weg auf einer Karte vor. Führt der Weg um etwas herum, gibt es eine Struktur dafür – folgt er einer Mauer oder einem Fluss, eine andere.",
+      "steps": [
+        {
+          "text": "Wähle zuerst die räumliche Beziehung",
+          "why": "`um` steht vor dem Nomen, `herum` danach. Stell dir einen Weg vor, der um den Ort herumführt, z. B. `um den Park herum`."
+        },
+        {
+          "text": "Setz das Nomen nach um in den Akkusativ",
+          "why": "Beim Maskulinum wird `der Park` zu `den Park`. Beim Neutrum sieht `das` gleich aus, steht hier aber im Akkusativ."
+        },
+        {
+          "text": "Benutze an … entlang für „parallel daneben“",
+          "why": "Hier steht die Gruppe im Dativ: `der` bei `Mauer` (feminin), `dem` bei `Fluss` (maskulin). `an dem` wird oft zu `am` verkürzt."
+        },
+        {
+          "text": "Prüfe die ganze Struktur, bevor du den Kasus rätst",
+          "why": "Der Satz beschreibt eine Bewegung – trotzdem verlangt diese Struktur den Dativ. Steht `entlang` allein nach dem Nomen, ist es eine andere Struktur, z. B. `den Kanal entlang` mit Akkusativ. In dieser Lektion übst du die Doppelstruktur."
+        }
+      ],
+      "explain": [
+        "Beschreib zwei verschiedene Wege am selben Ort: Mit `um das Gebäude herum` gehst du um das Gebäude, mit `an dem Gebäude entlang` gehst du daran vorbei. Kommt ein Adjektiv dazu, bleibt die Kasusregel gleich: `um den alten Park herum` und `an der alten Mauer entlang`."
+      ],
+      "pitfall": "Bei `an … entlang` brauchst du den Dativ maskulin `an dem Fluss`, also `am Fluss`.",
+      "recall": [
+        "In welchem Kasus steht das Nomen in `um die Bäume herum`?",
+        "Im Akkusativ. Der Pluralartikel `die` sieht im Nominativ und Akkusativ gleich aus."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 3 · telc, S. 2",
+        "Grammatikerklärung, S. 35 im Buch · telc"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "lokale-praep-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wir gehen um {{1}} Park herum.",
+      "blanks": [
+        [
+          "den"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل مسارًا يلتف حول الحديقة.",
+          "explain": "um … herum يأخذ الأكوزاتيف، والمذكر المحدد فيه den.",
+          "hints": [
+            "انظر إلى الأداة للمذكر بعد um."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze einen Weg, der um den Park herumführt.",
+          "explain": "`um … herum` verlangt den Akkusativ, der bestimmte Artikel maskulin ist dort `den`.",
+          "hints": [
+            "Schau auf den maskulinen Artikel nach `um`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lokale-praep-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wir gehen an {{1}} Mauer entlang.",
+      "blanks": [
+        [
+          "der"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بمحاذاة الجدار.",
+          "explain": "تأخذ المجموعة الداتيف. أداة المؤنث في الداتيف der.",
+          "hints": [
+            "Mauer مؤنث. حدّد الحالة مع an … entlang."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze: an der Mauer entlang.",
+          "explain": "Die Gruppe steht im Dativ. Der feminine Artikel im Dativ ist `der`.",
+          "hints": [
+            "`Mauer` ist feminin. Bestimme den Kasus bei `an … entlang`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lokale-praep-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "am Fluss entlang",
+        "um den Fluss herum",
+        "vom Fluss weg"
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي تركيب يعني السير بمحاذاة النهر؟",
+          "explain": "an … entlang يدل على المحاذاة. um … herum يدل على الالتفاف، وvon … weg على الابتعاد.",
+          "hints": [
+            "تخيّل السير على خط موازٍ للنهر."
+          ]
+        },
+        "de": {
+          "prompt": "Welche Struktur bedeutet, am Fluss entlangzugehen?",
+          "explain": "`an … entlang` bedeutet „parallel daneben“. `um … herum` heißt „rundherum“, `von … weg` „weg von“.",
+          "hints": [
+            "Stell dir einen Weg parallel zum Fluss vor."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lokale-praep-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "um {{1}} alte Brücke herum · an {{2}} alten Gebäude entlang",
+      "blanks": [
+        [
+          "die"
+        ],
+        [
+          "dem"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل أداة الجسر ثم أداة المبنى.",
+          "explain": "Brücke مؤنث في الأكوزاتيف فتأخذ die. Gebäude محايد في الداتيف فيأخذ dem.",
+          "hints": [
+            "افصل حكم um عن حكم an … entlang."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den Artikel für die Brücke und dann für das Gebäude.",
+          "explain": "`Brücke` ist feminin im Akkusativ, also `die`. `Gebäude` ist neutral im Dativ, also `dem`.",
+          "hints": [
+            "Trenne die Regel für `um` von der Regel für `an … entlang`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lokale-praep-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Wir",
+        "gehen",
+        "um",
+        "das Haus",
+        "herum."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة وابدأ بـ Wir ثم الفعل. المسار حول المنزل.",
+          "explain": "تأتي um قبل الاسم وherum بعده. Haus في الأكوزاتيف.",
+          "hints": [
+            "ضع كل جزء من حرف الجر في جهة من المجموعة."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz und beginne mit `Wir` und dem Verb. Der Weg führt um das Haus.",
+          "explain": "`um` steht vor dem Nomen, `herum` danach. `Haus` steht im Akkusativ.",
+          "hints": [
+            "Setz jeden Teil der Präposition auf eine Seite der Gruppe."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lokale-praep-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "في am Kanal entlang لماذا جاءت am رغم وجود حركة؟",
+          "explain": "am تساوي an dem. الداتيف تحدده الصيغة المزدوجة.",
+          "hints": [
+            "فكّ الاختصار am."
+          ],
+          "options": [
+            "التركيب an … entlang يطلب الداتيف.",
+            "الحركة هنا تتطلب الأكوزاتيف، وam هو أكوزاتيف.",
+            "Kanal محايد ولذلك لا تتغير الأداة."
+          ]
+        },
+        "de": {
+          "prompt": "Warum steht in `am Kanal entlang` `am`, obwohl es eine Bewegung gibt?",
+          "explain": "`am` = `an dem`. Den Dativ bestimmt die Doppelstruktur.",
+          "hints": [
+            "Löse die Kurzform `am` auf."
+          ],
+          "options": [
+            "Die Struktur `an … entlang` verlangt den Dativ.",
+            "Die Bewegung verlangt hier den Akkusativ, und `am` ist Akkusativ.",
+            "`Kanal` ist neutral, deshalb ändert sich der Artikel nicht."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lokale-praep-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Wir radeln um den Park herum. Wir radeln am Fluss entlang.",
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب جملتين تبدأان بـ Wir radeln. في الأولى حول الحديقة der Park، وفي الثانية بمحاذاة النهر der Fluss.",
+          "explain": "den Park مع um … herum. وam Fluss اختصار an dem Fluss مع an … entlang.",
+          "hints": [
+            "استعمل الأكوزاتيف مع الالتفاف والداتيف مع المحاذاة."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib zwei Sätze, die mit `Wir radeln` beginnen: im ersten um den Park (`der Park`), im zweiten am Fluss entlang (`der Fluss`).",
+          "explain": "`den Park` mit `um … herum`, und `am Fluss` als Kurzform von `an dem Fluss` mit `an … entlang`.",
+          "hints": [
+            "Akkusativ für „rundherum“, Dativ für „entlang“."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lokale-praep-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Wir gehen am Fluss entlang.",
+      "context": "Wir gehen an den Fluss entlang.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "مع تركيب `an … entlang` تحتاج داتيف المذكر `an dem Fluss`، أي `am Fluss`.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Bei `an … entlang` brauchst du den Dativ maskulin `an dem Fluss`, also `am Fluss`.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lokale-praep-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "الأكوزاتيف. أداة الجمع `die` تظهر بالشكل نفسه في الرفع والأكوزاتيف.",
+      "i18n": {
+        "ar": {
+          "prompt": "ما حالة الاسم في `um die Bäume herum`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "In welchem Kasus steht das Nomen in `um die Bäume herum`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}

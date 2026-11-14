@@ -1,0 +1,383 @@
+{
+  "id": "statt-zu",
+  "level": "B1.1",
+  "island": "infinitiv-verben",
+  "order": 2,
+  "prereqs": [
+    "infinitiv-zu"
+  ],
+  "emoji": "🔀",
+  "german": "Infinitivsätze mit (an)statt … zu",
+  "source": {
+    "lektion": 5,
+    "kind": "toc"
+  },
+  "pattern": [
+    "Hauptsatz",
+    ",",
+    "(an)statt … zu + Infinitiv"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "koche"
+        ],
+        [
+          "mf",
+          "zu Hause"
+        ]
+      ]
+    },
+    {
+      "k": "inf",
+      "parts": [
+        [
+          "c",
+          "statt"
+        ],
+        [
+          "mf",
+          "Essen"
+        ],
+        [
+          "ve",
+          "zu bestellen"
+        ]
+      ]
+    }
+  ],
+  "example": "Ich koche zu Hause, statt Essen zu bestellen.",
+  "stepExamples": [
+    "Ich koche zu Hause. · Ich bestelle kein Essen.",
+    "Ich koche …, statt … zu bestellen.",
+    "…, statt Fertiggerichte einzukaufen.",
+    "Statt Essen zu bestellen, koche ich zu Hause."
+  ],
+  "pitfallPair": "Statt Essen bestellen, ich koche zu Hause. → Statt Essen zu bestellen, koche ich zu Hause.",
+  "links": [
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Probekapitel/V01-4011-WPK-BAE00_Auf_jeden_Fall_B1.1_Probekapitel_Web.pdf#page=3",
+    "https://www.telc.net/fileadmin/user_upload/Downloads_Verlag/Auf_jeden_Fall/Loesungen_Hoertexte/Auf_jeden_Fall_B1.1_Loesungen_KB_AB.pdf",
+    "https://grammis.ids-mannheim.de/progr%40mm/6852"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "البديل مع statt أو anstatt … zu",
+      "lead": "عندما يفعل شخص شيئًا بدلًا من شيء متوقَّع أو مقترح، تستطيع ذكر البديل الذي عدل عنه في مجموعة مصدرية.",
+      "translation": "أطبخ في المنزل بدلًا من طلب الطعام.",
+      "steps": [
+        {
+          "text": "ميّز الفعل الفعلي عن البديل",
+          "why": "تخبر الرئيسية عمّا أفعله. وتبين مجموعة `statt` الفعل الذي يحلّ الطبخ مكانه. في هذا السياق تعني `anstatt` الشيء نفسه."
+        },
+        {
+          "text": "حدّد صاحب الفعلين",
+          "why": "في هذا النمط يكون فاعل الفعل المصدر مفهومًا من الرئيسية، وهنا هو `ich`. إذا أردت التصريح بفاعل آخر تستطيع استعمال `statt dass`، كما في `Ich koche, statt dass du Essen bestellst`."
+        },
+        {
+          "text": "ضع الفاصلة والمصدر",
+          "why": "تجب الفاصلة مع هذا الرابط. إذا كان الفعل قابلًا للفصل فأدخل `zu` بعد البادئة. لذلك نحصل على `einzukaufen` من `einkaufen`."
+        },
+        {
+          "text": "قدّم مجموعة البديل إذا أردت إبرازها",
+          "why": "تشغل المجموعة المصدرية الموقع الأول للجملة. بعد الفاصلة يأتي `koche` ثم الفاعل `ich`."
+        }
+      ],
+      "explain": [
+        "في `statt eines Fertiggerichts` تأتي مجموعة اسمية مباشرةً بعد `statt`. وفي `statt ein Fertiggericht zu kaufen` تأتي مجموعة مصدرية فيها اسم هو مفعول `kaufen`. لهذا قد ترى جينيتيفًا في المثال الأول وأكوزاتيفًا داخل المجموعة في الثاني."
+      ],
+      "pitfall": "تحتاج مجموعة المصدر إلى `zu`، ويأتي الفعل المصرف `koche` بعد الفاصلة.",
+      "recall": [
+        "ما الفعل الذي يحصل في `Sie radelt zur Arbeit, statt den Bus zu nehmen`؟",
+        "تذهب بالدرّاجة. ركوب الحافلة هو البديل الذي عدلت عنه."
+      ],
+      "linkTitles": [
+        "فهرس قواعد الوحدة 5 · telc، ص 3",
+        "حلول الكتاب الرسمية · telc",
+        "المجموعات المصدرية · grammis"
+      ]
+    },
+    "de": {
+      "title": "(an)statt … zu",
+      "lead": "Wenn jemand etwas anderes tut als das, was erwartet oder vorgeschlagen wurde, kannst du die Alternative, auf die er verzichtet, in einer Infinitivgruppe nennen.",
+      "steps": [
+        {
+          "text": "Unterscheide die echte Handlung von der Alternative",
+          "why": "Der Hauptsatz sagt, was ich tue. Die `statt`-Gruppe zeigt, welche Handlung das Kochen ersetzt. `anstatt` bedeutet hier dasselbe."
+        },
+        {
+          "text": "Bestimme, wer beide Handlungen macht",
+          "why": "In diesem Muster ergibt sich das Subjekt des Infinitivs aus dem Hauptsatz – hier `ich`. Willst du ein anderes Subjekt nennen, benutze `statt dass`: `Ich koche, statt dass du Essen bestellst`."
+        },
+        {
+          "text": "Setz Komma und Infinitiv",
+          "why": "Bei dieser Konjunktion steht ein Komma. Ist das Verb trennbar, kommt `zu` nach dem Präfix: aus `einkaufen` wird `einzukaufen`."
+        },
+        {
+          "text": "Stell die Alternative nach vorn, wenn du sie betonen willst",
+          "why": "Die Infinitivgruppe besetzt Position 1. Nach dem Komma kommt `koche`, dann das Subjekt `ich`."
+        }
+      ],
+      "explain": [
+        "In `statt eines Fertiggerichts` folgt nach `statt` direkt eine Nominalgruppe. In `statt ein Fertiggericht zu kaufen` folgt eine Infinitivgruppe, in der das Nomen Objekt von `kaufen` ist. Deshalb siehst du im ersten Beispiel einen Genitiv und im zweiten einen Akkusativ in der Gruppe."
+      ],
+      "pitfall": "Die Infinitivgruppe braucht `zu`, und das konjugierte Verb `koche` steht nach dem Komma.",
+      "recall": [
+        "Was passiert tatsächlich in `Sie radelt zur Arbeit, statt den Bus zu nehmen`?",
+        "Sie fährt mit dem Rad. Den Bus zu nehmen ist die Alternative, auf die sie verzichtet."
+      ],
+      "linkTitles": [
+        "Grammatikübersicht Lektion 5 · telc, S. 3",
+        "Offizielle Lösungen zum Buch · telc",
+        "Infinitivgruppen · grammis"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "statt-zu-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Sie kocht, statt Essen {{1}}. (bestellen)",
+      "blanks": [
+        [
+          "zu bestellen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المصدر البسيط مع zu.",
+          "explain": "الفعل bestellen غير قابل للفصل. تكتب zu منفصلة.",
+          "hints": [
+            "ضع zu قبل المصدر البسيط."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den einfachen Infinitiv mit `zu`.",
+          "explain": "`bestellen` ist nicht trennbar. Du schreibst `zu` getrennt.",
+          "hints": [
+            "Setz `zu` vor den einfachen Infinitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "statt-zu-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wir kochen frisch, anstatt Tiefkühlpizza {{1}}. (aufwärmen)",
+      "blanks": [
+        [
+          "aufzuwärmen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المصدر المنفصل.",
+          "explain": "البادئة auf تسبق zu داخل الكلمة.",
+          "hints": [
+            "أدخل zu بين جزأي aufwärmen."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze den trennbaren Infinitiv.",
+          "explain": "Das Präfix `auf` steht vor `zu` im Wort.",
+          "hints": [
+            "Setz `zu` zwischen die beiden Teile von `aufwärmen`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "statt-zu-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي نشاط يحدث فعلًا في Er läuft zur Arbeit, statt den Bus zu nehmen؟",
+          "explain": "läuft يحدد الفعل الفعلي. ركوب الحافلة هو البديل المتروك.",
+          "hints": [
+            "ابحث عن الفعل المصرف في الرئيسية."
+          ],
+          "options": [
+            "يمشي إلى العمل.",
+            "يستقل الحافلة.",
+            "يمشي ويستقل الحافلة في الوقت نفسه."
+          ]
+        },
+        "de": {
+          "prompt": "Was macht er tatsächlich in `Er läuft zur Arbeit, statt den Bus zu nehmen`?",
+          "explain": "`läuft` nennt die echte Handlung. Den Bus zu nehmen ist die verworfene Alternative.",
+          "hints": [
+            "Such das konjugierte Verb im Hauptsatz."
+          ],
+          "options": [
+            "Er geht zu Fuß zur Arbeit.",
+            "Er nimmt den Bus.",
+            "Er geht zu Fuß und nimmt gleichzeitig den Bus."
+          ]
+        }
+      }
+    },
+    {
+      "id": "statt-zu-4",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Statt",
+        "Essen",
+        "zu bestellen,",
+        "koche",
+        "ich",
+        "heute."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب بدءًا من Statt. اجعل ich فاعل الجزء الرئيسي.",
+          "explain": "بعد الفاصلة يأتي koche ثم ich. الفعل المصدر في الجزء الأول هو zu bestellen.",
+          "hints": [
+            "مجموعة البديل تتصدر الجملة كاملة."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz und beginne mit `Statt`. `ich` ist das Subjekt des Hauptsatzes.",
+          "explain": "Nach dem Komma kommt `koche`, dann `ich`. Der Infinitiv im ersten Teil ist `zu bestellen`.",
+          "hints": [
+            "Die Alternativgruppe steht komplett am Anfang."
+          ]
+        }
+      }
+    },
+    {
+      "id": "statt-zu-5",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Ich koche, statt dass du Essen bestellst.",
+        "Ich koche, statt Essen zu bestellen.",
+        "Ich koche, statt eines Fertiggerichts."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة تصرّح بفاعل مختلف في البديل؟",
+          "explain": "statt dass du تُظهر du في الجملة التابعة، أما مجموعة المصدر فلا تذكر فاعلًا صريحًا.",
+          "hints": [
+            "ابحث عن فاعل ظاهر بعد الرابط."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz nennt in der Alternative ein anderes Subjekt?",
+          "explain": "`statt dass du` zeigt `du` im Nebensatz. Die Infinitivgruppe nennt kein eigenes Subjekt.",
+          "hints": [
+            "Such ein sichtbares Subjekt nach der Konjunktion."
+          ]
+        }
+      }
+    },
+    {
+      "id": "statt-zu-6",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Er radelt, statt den Bus {{1}}. · Er radelt, statt dass ihn jemand {{2}}. (nehmen / fahren)",
+      "blanks": [
+        [
+          "zu nehmen"
+        ],
+        [
+          "fährt"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل شكل الفعل في تركيبَي المصدر والتابع.",
+          "explain": "في المجموعة المصدرية نكتب zu nehmen. في التابعة يتصرف fahren مع jemand ويأتي fährt أخيرًا.",
+          "hints": [
+            "قارن المصدر مع فعل يتصرف بحسب jemand."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Verbform in der Infinitivgruppe und im Nebensatz.",
+          "explain": "In der Infinitivgruppe schreiben wir `zu nehmen`. Im Nebensatz wird `fahren` mit `jemand` konjugiert, und `fährt` steht am Ende.",
+          "hints": [
+            "Vergleiche den Infinitiv mit einem Verb, das sich nach `jemand` richtet."
+          ]
+        }
+      }
+    },
+    {
+      "id": "statt-zu-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Sie nimmt die Treppe, anstatt mit dem Aufzug zu fahren.",
+      "i18n": {
+        "ar": {
+          "prompt": "ادمج Sie nimmt die Treppe وSie fährt nicht mit dem Aufzug مع anstatt في نهاية الجملة.",
+          "explain": "المجموعة anstatt … zu تعرض البديل المتروك، وصاحب الفعل مفهوم من Sie.",
+          "hints": [
+            "الفعل المتروك هو fahren. ضع الفاصلة قبل anstatt."
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde `Sie nimmt die Treppe` und `Sie fährt nicht mit dem Aufzug` mit `anstatt` am Satzende.",
+          "explain": "Die Gruppe `anstatt … zu` zeigt die verworfene Alternative; wer handelt, ergibt sich aus `Sie`.",
+          "hints": [
+            "Die verworfene Handlung ist `fahren`. Setz das Komma vor `anstatt`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "statt-zu-8",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Statt Essen zu bestellen, koche ich zu Hause.",
+      "context": "Statt Essen bestellen, ich koche zu Hause.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "تحتاج مجموعة المصدر إلى `zu`، ويأتي الفعل المصرف `koche` بعد الفاصلة.",
+          "hints": [
+            "راجع العلاقة بين عناصر الجملة. حدّد أي جزء من القاعدة ينطبق على هذا المثال."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Die Infinitivgruppe braucht `zu`, und das konjugierte Verb `koche` steht nach dem Komma.",
+          "hints": [
+            "Prüf die Beziehung zwischen den Satzteilen. Welcher Teil der Regel gilt für dieses Beispiel?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "statt-zu-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "تذهب بالدرّاجة. ركوب الحافلة هو البديل الذي عدلت عنه.",
+      "i18n": {
+        "ar": {
+          "prompt": "ما الفعل الذي يحصل في `Sie radelt zur Arbeit, statt den Bus zu nehmen`؟",
+          "explain": "قارن سبب اختيارك بما ورد في الحل، وانتبه إلى الحالة أو المعنى أو ترتيب الفعل بحسب السؤال.",
+          "hints": [
+            "سمِّ أولًا القاعدة التي تختبرها الجملة، ثم طبّقها على العنصر المطلوب."
+          ]
+        },
+        "de": {
+          "prompt": "Was passiert tatsächlich in `Sie radelt zur Arbeit, statt den Bus zu nehmen`?",
+          "explain": "Vergleiche deine Begründung mit der Lösung und achte – je nach Frage – auf Kasus, Bedeutung oder Verbstellung.",
+          "hints": [
+            "Nenne zuerst die Regel, die der Satz prüft, und wende sie dann auf das gesuchte Element an."
+          ]
+        }
+      }
+    }
+  ]
+}
