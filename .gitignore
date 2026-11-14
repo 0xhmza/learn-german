@@ -13,7 +13,10 @@ artifacts/
 dist/
 encrypted-library/
 .keys/
+/deploy/
+/private/
 *.szc
+*.szi
 *.pem
 *.key
 graphify-out/

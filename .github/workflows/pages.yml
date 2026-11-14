@@ -25,9 +25,11 @@ jobs:
           node-version: '22'
       - uses: actions/configure-pages@v5
       - run: npm run build:pages
+        env:
+          PAGES_UNLOCK_KEY: ${{ secrets.PAGES_UNLOCK_KEY }}
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: deploy/pages
   deploy:
     runs-on: ubuntu-latest
     needs: build

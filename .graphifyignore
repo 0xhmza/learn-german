@@ -5,6 +5,8 @@ encrypted-library/
 .venv*/
 artifacts/
 dist/
+deploy/
+private/
 node_modules/
 public/vendor/
 graphify-out/
@@ -13,6 +15,7 @@ graphify-out/
 *.key
 *.pem
 *.szc
+*.szi
 *.mp4
 *.srt
 *.vtt

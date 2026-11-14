@@ -2,7 +2,25 @@
 
 A local German learning platform: watch your own German videos with German and mother-language subtitles, replay individual sentences, and collect useful expressions.
 
-The `github-pages-sftp` branch also supports a [static GitHub Pages frontend with encrypted SFTP media and progress](docs/github-pages.md).
+The `github-pages-sftp` branch also supports [encrypted media and progress on GitHub Pages](docs/github-pages.md), with a direct Storage Box connection through a Chrome or Edge extension.
+
+## Project layout
+
+| Location | Purpose |
+| --- | --- |
+| `deploy/sftp-upload-short/` | Upload bundle with short, opaque filenames and encrypted media and catalog |
+| `private/media-decryption.key` | Key shared by the media pack, Pages build, and access code |
+| `private/access-code.txt` | Single login code generated locally from the connection details and key |
+| `deploy/pages/` | Neutral access screen and encrypted app for a separate public Pages repository |
+| `extension/`, `deploy/storage-box-extension/` | Storage Box extension source and the generated extension configured for your Pages URL |
+| `media/` | Local videos, subtitles, and processing records |
+| `public/`, `lib/` | Player assets and shared code |
+| `server.js`, `gateway.js` | Local player server and HTTPS-to-SFTP bridge |
+| `scripts/`, `requirements/` | Media processing and build tools, plus Python dependencies |
+| `docs/`, `examples/`, `test/` | Setup guides, practice subtitles, and tests |
+| `artifacts/`, `graphify-out/` | Local processing evidence, previews, and code graph |
+
+Git ignores the generated deployment folders and the private key. See the [SFTP upload instructions](docs/github-pages.md#pack-and-upload-the-library) for the upload order and remote directory settings.
 
 ## Start
 
@@ -77,7 +95,7 @@ Verified MP4 files are skipped. The default is **two concurrent episodes**, with
 
 `scripts/download-subtitles.py` retrieves [German episode subtitles](https://subf2m.co/subtitles/the-simpsons-sixth-season/german) and an [Arabic season pack](https://subf2m.co/subtitles/the-simpsons-sixth-season/arabic). The downloaded DSNP subtitle release runs at 24000/1001 fps; the German videos run at 25 fps. The script applies the corresponding timestamp conversion, validates each SRT with the player's parser, and keeps unmodified copies in `media/subtitles-original/`. Download provenance and timing details are recorded in `media/subtitle-provenance.json`. Existing root-level subtitle files are preserved on reruns.
 
-The two download helpers use the Python packages listed in `requirements-media.txt`. These packages are not required to run the player once the files are present.
+The two download helpers use the Python packages listed in `requirements/media.txt`. These packages are not required to run the player once the files are present.
 
 If the source introduces a browser verification challenge, the downloader marks affected episodes as `verification_required` and leaves their downloads pending. It does not solve challenges. Files already downloaded remain usable. Run `node scripts/verify-media.js` to check available videos, MP4 fast-start layout, and both subtitle tracks; it saves the actual inventory and any timing errors in `media/media-validation.json`.
 
@@ -111,11 +129,11 @@ These are **AI-generated audio transcripts**, not fully human-verified verbatim 
 
 The old installed German tracks are preserved in `media/dub-transcripts/previous-subtitles/`. Arabic subtitle files are retained. A completed, validated German track replaces the root-level `simpsons.s06eXX.de.srt` atomically. The library checks its hash against the transcription manifest, gives it a versioned URL, and prefers it over old cached folder copies or legacy restored copies. Obsolete German subtitle delays are reset when the new audio-based timing is first selected; Arabic delays and later adjustments are preserved. A new German subtitle file that you explicitly import remains your chosen override.
 
-The local transcription runtime is isolated in `.venv-transcribe`. Setup requires Python 3.11+, ffmpeg/ffprobe, and a compatible NVIDIA GPU. The current Windows setup uses the pinned packages in `requirements-transcribe.txt` and model files in `.models/whisper-large-v3/`:
+The local transcription runtime is isolated in `.venv-transcribe`. Setup requires Python 3.11+, ffmpeg/ffprobe, and a compatible NVIDIA GPU. The current Windows setup uses the pinned packages in `requirements/transcribe.txt` and model files in `.models/whisper-large-v3/`:
 
 ```powershell
 python -m venv .venv-transcribe
-.\.venv-transcribe\Scripts\python.exe -m pip install -r requirements-transcribe.txt
+.\.venv-transcribe\Scripts\python.exe -m pip install -r requirements/transcribe.txt
 .\.venv-transcribe\Scripts\python.exe -c "from huggingface_hub import snapshot_download; snapshot_download('Systran/faster-whisper-large-v3', revision='edaa852ec7e145841d8ffdb056a99866b5f0a478', local_dir='.models/whisper-large-v3', allow_patterns=['config.json','model.bin','preprocessor_config.json','tokenizer.json','vocabulary.json'])"
 .\.venv-transcribe\Scripts\python.exe scripts/transcribe-dub.py --batch-size 4
 ```

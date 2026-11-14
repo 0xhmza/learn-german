@@ -7,10 +7,11 @@ const {parseArgs} = require('node:util');
 const {scanLibrary,safeFile} = require('../lib/library');
 const format = require('../public/secure-format');
 const catalog = require('../public/catalog');
+const locations = require('../lib/project-paths');
 
 const MIME = {mp4:'video/mp4',m4v:'video/mp4',webm:'video/webm',srt:'text/plain',vtt:'text/plain'};
 
-async function encryptAsset(source,output,key) {
+async function encryptAsset(source,name,output,key) {
   const id = randomBytes(16).toString('hex');
   const input = await fs.open(source,'r');
   try {
@@ -27,8 +28,13 @@ async function encryptAsset(source,output,key) {
         await target.writeFile(encrypted);
       }
     } finally {await target.close();}
-    return {id,size,type:MIME[path.extname(source).slice(1).toLowerCase()]};
+    return {id,size,name,type:MIME[path.extname(source).slice(1).toLowerCase()]};
   } finally {await input.close();}
+}
+
+function contains(directory,file) {
+  const relative = path.relative(directory,file);
+  return relative === '' || (relative !== '..' && !relative.startsWith('..'+path.sep) && !path.isAbsolute(relative));
 }
 
 async function pack({source,output,keyFile,collections = [],log = console.log}) {
@@ -40,11 +46,10 @@ async function pack({source,output,keyFile,collections = [],log = console.log}) 
   if (!episodes.length) throw new Error('The source folder has no recognized episode videos.');
   const absoluteOutput = path.resolve(output);
   const keyPath = path.resolve(keyFile);
-  if (keyPath === absoluteOutput || keyPath.startsWith(absoluteOutput+path.sep)) throw new Error('Keep the key file outside the upload directory.');
-  const publicPath = path.resolve(__dirname,'../public');
-  const distPath = path.resolve(__dirname,'../dist');
-  for (const served of [publicPath,distPath]) {
-    if ([absoluteOutput,keyPath].some(target => target === served || target.startsWith(served+path.sep))) throw new Error('Keep media and keys outside the static site.');
+  const uploadBoundary = contains(locations.uploadRoot,absoluteOutput) ? locations.uploadRoot : absoluteOutput;
+  if (contains(uploadBoundary,keyPath)) throw new Error('Keep the key file outside the upload directory.');
+  for (const served of [locations.publicDirectory,locations.pagesOutput,path.join(locations.root,'dist')]) {
+    if ([absoluteOutput,keyPath].some(target => contains(served,target))) throw new Error('Keep media and keys outside the static site.');
   }
   let keyText;
   try {keyText = (await fs.readFile(keyFile,'utf8')).trim();}
@@ -56,16 +61,19 @@ async function pack({source,output,keyFile,collections = [],log = console.log}) 
   }
   const key = await format.importKey(keyText);
   await fs.mkdir(output,{recursive:true});
+  const entries = await fs.readdir(output);
+  const catalogs = entries.filter(name => format.catalogFilename.test(name));
+  if (catalogs.length > 1) throw new Error('The upload folder contains more than one encrypted catalog.');
+  if (entries.includes('library.szc')) throw new Error('Pack into a fresh folder to upgrade a legacy encrypted library.');
+  const catalogName = catalogs[0] || `${randomBytes(16).toString('hex')}.szi`;
   const result = [];
-  if (selected.size) {
-    const previous = await fs.readFile(path.join(output,'library.szc')).catch(error => {
-      if (error.code !== 'ENOENT') throw error;
+  if (catalogs.length) {
+    const previous = await fs.readFile(path.join(output,catalogName));
+    const index = await format.openJSON(key,'library',previous).catch(() => {
+      throw new Error('The key does not unlock the existing library index.');
     });
-    if (previous) {
-      const index = await format.openJSON(key,'library',previous).catch(() => {
-        throw new Error('The key does not unlock the existing library index.');
-      });
-      if (index.version !== 1 || !Array.isArray(index.episodes)) throw new Error('Unsupported existing encrypted library index.');
+    if (index.version !== 1 || !Array.isArray(index.episodes)) throw new Error('Unsupported existing encrypted library index.');
+    if (selected.size) {
       const replacing = new Set(episodes.map(episode => episode.id));
       result.push(...index.episodes.filter(episode => !replacing.has(episode.id)));
     }
@@ -74,7 +82,7 @@ async function pack({source,output,keyFile,collections = [],log = console.log}) 
     const name = decodeURIComponent(url.split('?')[0].slice('/media/'.length));
     const file = await safeFile(source,name);
     if (!file) throw new Error(`Media file is missing: ${name}`);
-    return encryptAsset(file,output,key);
+    return encryptAsset(file,name,output,key);
   }
   for (const episode of episodes) {
     const video = await asset(episode.video);
@@ -87,16 +95,24 @@ async function pack({source,output,keyFile,collections = [],log = console.log}) 
   result.sort((a,b) => (order.get(a.id) ?? Infinity) - (order.get(b.id) ?? Infinity));
   const index = await format.sealJSON(key,'library', {version:1,episodes:result});
   if (index.length > format.chunkBytes) throw new Error('Encrypted library index is too large.');
-  const temporary = path.join(output,`library.${randomBytes(8).toString('hex')}.tmp`);
+  const temporary = path.join(output,`${randomBytes(16).toString('hex')}.tmp`);
   await fs.writeFile(temporary,index,{flag:'wx',mode:0o600});
-  await fs.rename(temporary,path.join(output,'library.szc'));
+  await fs.rename(temporary,path.join(output,catalogName));
   return result;
 }
 
 if (require.main === module) {
-  const {values} = parseArgs({options:{source:{type:'string',default:'media'},output:{type:'string',default:'encrypted-library'},'key-file':{type:'string',default:'.keys/media.key'},collections:{type:'string',default:''}}});
+  const {values} = parseArgs({options:{
+    source:{type:'string',default:locations.mediaDirectory},
+    output:{type:'string',default:locations.uploadLibrary},
+    'key-file':{type:'string',default:locations.keyFile},
+    collections:{type:'string',default:''}
+  }});
   const collections = values.collections.split(',').map(id => id.trim()).filter(Boolean);
-  pack({source:values.source,output:values.output,keyFile:values['key-file'],collections}).then(episodes => {
+  pack({source:values.source,output:values.output,keyFile:values['key-file'],collections}).then(async episodes => {
+    if (path.relative(locations.uploadLibrary,path.resolve(values.output)) === '') {
+      await fs.mkdir(path.join(locations.uploadRoot,'progress'),{recursive:true});
+    }
     console.log(`Encrypted index has ${episodes.length} episodes. Upload ${path.resolve(values.output)}. Keep ${path.resolve(values['key-file'])} private.`);
   }).catch(error => {console.error(error.message);process.exitCode = 1;});
 }

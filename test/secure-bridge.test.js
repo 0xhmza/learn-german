@@ -7,9 +7,21 @@ const path = require('node:path');
 const os = require('node:os');
 const {randomBytes} = require('node:crypto');
 const format = require('../public/secure-format');
+const codec = require('../public/lock-codec');
 const {createGateway} = require('../gateway');
 const {pack} = require('../scripts/pack-encrypted-media');
 const {executable,credentials,sftpPath,serveSftp} = require('./support/sftp.cjs');
+
+test('one access code carries the key and authenticates the connection profile',async () => {
+  const secret = randomBytes(32).toString('hex');
+  const profile = {mode:'storage-box',root:'https://test.your-storagebox.de/',username:'test',password:'with spaces',
+    catalogFile:`${randomBytes(16).toString('hex')}.szi`};
+  const code = await codec.makeCode(secret,profile);
+  assert.doesNotMatch(code,/\s/);
+  assert.deepEqual(await codec.readCode(code),{secret,profile});
+  const [version,,payload] = code.split('.');
+  await assert.rejects(codec.readCode([version,randomBytes(32).toString('base64url'),payload].join('.')));
+});
 
 test('media blocks authenticate their content, file identity and position',async () => {
   const key = await format.importKey(randomBytes(32).toString('hex'));
@@ -33,6 +45,12 @@ test('bridge reads encrypted ranges and atomically syncs progress over OpenSSH S
   await fs.writeFile(path.join(source,'spongebob.s03e01.mp4'),sourceBytes);
   const packed = await pack({source,output:library,keyFile,log:() => {}});
   const key = await format.importKey((await fs.readFile(keyFile,'utf8')).trim());
+  const catalogName = (await fs.readdir(library)).find(name => format.catalogFilename.test(name));
+  assert.ok(catalogName);
+  assert.match(catalogName,/^[a-f0-9]{32}\.szi$/);
+  assert.match(packed[0].video.id,/^[a-f0-9]{32}$/);
+  assert.equal(packed[0].video.name,'spongebob.s03e01.mp4');
+  assert.deepEqual((await fs.readdir(library)).sort(),[catalogName,`${packed[0].video.id}.szc`].sort());
   const sftp = await serveSftp();
   const origin = 'https://studio.example.test';
   const config = {sftp:format.sftpAddress(sftp.address),hostKey:sftp.hostKey,origins:new Set([origin]),library:sftpPath(library),progress:sftpPath(progress)};

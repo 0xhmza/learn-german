@@ -3,43 +3,18 @@
 (() => {
   const format = window.SecureFormat;
   const catalog = window.StoryCatalog;
-  const workerURL = new URL('secure-worker.js',document.baseURI);
-  let active, workerReady, onConnection, onOpen, onSync;
+  const storageBox = window.StorageBox;
+  const runtime = window.PrivateRuntime;
+  let active, onConnection, onOpen, onSync;
   let busy = false;
   const $ = id => document.getElementById(id);
 
-  function openVault() {
-    return new Promise((resolve,reject) => {
-      const request = indexedDB.open('sprechzimmer-credentials',1);
-      request.onupgradeneeded = () => request.result.createObjectStore('vault');
-      request.onsuccess = () => resolve(request.result);
-      request.onerror = () => reject(request.error);
-    });
-  }
-
-  async function vault(action,value) {
-    const db = await openVault();
-    try {
-      return await new Promise((resolve,reject) => {
-        const tx = db.transaction('vault',action === 'get' ? 'readonly' : 'readwrite');
-        const store = tx.objectStore('vault');
-        let request;
-        if (action === 'get') request = store.get('profile');
-        else if (action === 'put') request = store.put(value,'profile');
-        else request = store.delete('profile');
-        tx.oncomplete = () => resolve(request.result);
-        tx.onabort = () => reject(tx.error);
-      });
-    } finally {db.close();}
-  }
-
-  async function remember(profile) {
-    const key = await crypto.subtle.generateKey({name:'AES-GCM',length:256},false,['encrypt','decrypt']);
-    await vault('put',{key,encrypted:await format.sealJSON(key,'browser-profile',profile)});
-  }
-
   function gatewayURL(value) {
     const url = new URL(value);
+    const hostname = url.hostname.replace(/\.$/,'');
+    if (hostname.endsWith('.your-storagebox.de')) {
+      throw new Error('That address opens Hetzner Storage Box WebDAV. This field needs the URL of a running Sprechzimmer bridge.');
+    }
     const local = ['localhost','127.0.0.1','[::1]'];
     const localPreview = local.includes(location.hostname) && local.includes(url.hostname) && url.protocol === 'http:';
     if ((url.protocol !== 'https:' && !localPreview) || url.username || url.password || url.search || url.hash) {
@@ -49,29 +24,11 @@
     return url.href;
   }
 
-  async function startWorker() {
-    if (!navigator.serviceWorker || !crypto.subtle) throw new Error('Encrypted playback requires HTTPS and service worker support.');
-    if (!workerReady) workerReady = (async () => {
-      await navigator.serviceWorker.register(workerURL);
-      if (navigator.serviceWorker.controller?.scriptURL === workerURL.href) return;
-      await new Promise((resolve,reject) => {
-        const listener = () => {
-          if (navigator.serviceWorker.controller?.scriptURL !== workerURL.href) return;
-          cleanup();resolve();
-        };
-        const cleanup = () => {clearTimeout(timer);navigator.serviceWorker.removeEventListener('controllerchange',listener);};
-        const timer = setTimeout(() => {cleanup();reject(new Error('The secure player could not start. Reload this page and try again.'));},12000);
-        navigator.serviceWorker.addEventListener('controllerchange',listener);
-        listener();
-      });
-    })().catch(error => {workerReady = null;throw error;});
-    await workerReady;
-  }
-
   function bridge(session,path,options = {}) {
+    const timeout = AbortSignal.timeout(options.signal ? 30000 : 15000);
     return fetch(new URL(path,session.profile.gateway),{
       ...options,cache:'no-store',credentials:'omit',redirect:'error',referrerPolicy:'no-referrer',
-      signal:AbortSignal.timeout(15000)
+      signal:options.signal ? AbortSignal.any([options.signal,timeout]) : timeout
     });
   }
 
@@ -92,6 +49,9 @@
   }
 
   async function request(session,path,options = {}) {
+    if (session.profile.mode === 'storage-box') {
+      return path === 'v1/assets/library' ? storageBox.library(session.profile) : storageBox.progress(session.profile,options);
+    }
     let token = await authorize(session);
     const get = () => bridge(session,path,{...options,headers:{...options.headers,Authorization:`Bearer ${token}`}});
     let response = await get();
@@ -105,7 +65,7 @@
 
   async function loadIndex(session) {
     const response = await request(session,'v1/assets/library');
-    if (!response.ok) throw new Error('The encrypted library index is missing or inaccessible.');
+    if (!response.ok) throw new Error('The encrypted library index is missing or inaccessible. Check that the library folder contains the uploaded catalog.');
     const encrypted = await response.arrayBuffer();
     if (encrypted.byteLength > format.chunkBytes) throw new Error('The encrypted library index is too large.');
     let index;
@@ -117,7 +77,7 @@
       if (!asset || !format.assetID.test(asset.id) || !Number.isSafeInteger(asset.size) || asset.size < 1 ||
           asset.size > 64 * 1024**3 || !types.includes(asset.type) || assets.has(asset.id)) throw new Error('Invalid encrypted media entry.');
       assets.set(asset.id,asset);
-      return new URL(`secure-media/${asset.id}`,document.baseURI).href;
+      return runtime.url(`secure-media/${asset.id}`);
     }
     const episodes = index.episodes.map(episode => {
       const entry = catalog.get(episode?.id);
@@ -158,6 +118,10 @@
     try {localStorage.setItem(session.storageKey,JSON.stringify(session.progress));} catch {}
   }
 
+  function progressSynced(session) {
+    return session.profile.mode === 'storage-box' ? 'Progress synced to Storage Box' : 'Progress synced to SFTP';
+  }
+
   async function remoteProgress(session) {
     const response = await request(session,'v1/progress');
     const etag = response.headers.get('ETag');
@@ -192,11 +156,15 @@
             method:'PUT',headers:{'Content-Type':'application/octet-stream','If-Match':remote.etag},body:encrypted
           });
           if (response.status === 412) continue;
+          if (session.profile.mode === 'storage-box' && response.status === 405) {
+            syncStatus(session,'Progress saved on this device. Storage Box refused writes.');
+            return;
+          }
           if (!response.ok) throw new Error('Could not save progress to SFTP.');
         }
         session.progress = mergeProgress(progress,session.progress);
         session.dirty = revision !== session.revision;
-        cacheProgress(session);syncStatus(session,'Progress synced to SFTP');
+        cacheProgress(session);syncStatus(session,progressSynced(session));
         return;
       }
       throw new Error('Progress changed on another device.');
@@ -236,12 +204,18 @@
     $('secure-status').textContent = 'Unlocking your library…';
     let session;
     try {
-      profile = {...profile,address:format.sftpAddress(profile.address).address,gateway:gatewayURL(profile.gateway)};
+      const direct = profile.mode === 'storage-box';
+      if (direct) {
+        const url = storageBox.rootURL(profile.root);
+        profile = {...profile,root:url.href,address:`sftp://${url.hostname}:22`};
+      } else {
+        profile = {...profile,address:format.sftpAddress(profile.address).address,gateway:gatewayURL(profile.gateway)};
+      }
+      if (!runtime.accepts(profile.mediaKey)) throw new Error('Use the media key in the access code that unlocked this page.');
       const key = await format.importKey(profile.mediaKey);
       const identity = new TextEncoder().encode(`${profile.address}\0${profile.username}`);
       const id = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',identity)),b => b.toString(16).padStart(2,'0')).join('');
       session = {profile,key,progressID:`progress-${id}`,storageKey:`sprechzimmer.remote.progress.${id}`,revision:0,dirty:false};
-      await startWorker();
       await loadIndex(session);
       session.progress = localProgress(session);
       session.status = 'Progress connected';
@@ -249,31 +223,51 @@
         const remote = await remoteProgress(session);
         session.progress = mergeProgress(remote.progress,session.progress);
         session.dirty = Object.entries(session.progress).some(([episode,value]) => !remote.progress[episode] || remote.progress[episode].updated < value.updated);
-        session.status = session.dirty ? 'Syncing progress…' : 'Progress synced to SFTP';
+        session.status = session.dirty ? 'Syncing progress…' : progressSynced(session);
       } catch {session.status = 'Progress waiting to sync';}
       cacheProgress(session);
       let persistenceMessage = '';
-      try {if (save) await remember(profile);else await vault('delete');}
+      try {if (save) await runtime.save(profile);else await runtime.forget();}
       catch {persistenceMessage = 'Browser storage is unavailable. This connection will last until you close the tab.';}
       if (active) await closeSession(active);
       active = session;
       $('secure-password').value = '';$('secure-key').value = '';
       $('secure-dialog').close();
-      $('secure-state').textContent = 'SFTP connected';
+      $('secure-state').textContent = direct ? 'Storage Box connected' : 'SFTP connected';
       syncStatus(session,session.status);
       await onConnection(session.progress,persistenceMessage);
       if (session.dirty) void flush(session);
     } catch (error) {
       if (session !== active) void closeSession(session);
-      $('secure-status').textContent = error.name === 'TypeError' || error.name === 'TimeoutError' ? 'Could not reach the bridge. Check its HTTPS URL and allowed site origin.' : error.message;
+      $('secure-status').textContent = profile.mode !== 'storage-box' && (error.name === 'TypeError' || error.name === 'TimeoutError')
+        ? 'Could not reach the bridge. Check its HTTPS URL and allowed site origin.' : error.message;
       if (!$('secure-dialog').open) $('secure-dialog').showModal();
     } finally {busy = false;$('secure-connect').disabled = false;$('secure-forget').disabled = false;}
   }
 
+  function updateMode() {
+    const direct = $('secure-mode').value === 'storage-box';
+    $('secure-storage-box-fields').hidden = !direct;
+    $('secure-root').disabled = !direct;
+    $('secure-catalog').disabled = !direct;
+    $('secure-bridge-fields').hidden = direct;
+    $('secure-address').disabled = direct;
+    $('secure-bridge').disabled = direct;
+  }
+
   function show(profile) {
     if (profile) {
-      $('secure-address').value = profile.address;$('secure-bridge').value = profile.gateway;$('secure-user').value = profile.username;
+      const direct = profile.mode === 'storage-box';
+      let root = profile.root || '';
+      if (!direct) {
+        try {root = storageBox.rootURL(profile.gateway).href;} catch {}
+      }
+      $('secure-mode').value = direct || root ? 'storage-box' : 'bridge';
+      $('secure-root').value = root;
+      $('secure-catalog').value = profile.catalogFile || '';
+      $('secure-address').value = profile.address || '';$('secure-bridge').value = profile.gateway || '';$('secure-user').value = profile.username;
     }
+    updateMode();
     $('secure-password').value = '';$('secure-key').value = '';
     $('secure-status').textContent = '';
     if (!$('secure-dialog').open) $('secure-dialog').showModal();
@@ -281,43 +275,48 @@
 
   async function start(callbacks) {
     ({onConnection,onOpen,onSync} = callbacks);
-    navigator.serviceWorker?.addEventListener('message',async event => {
-      const {type,id,rejectedToken} = event.data || {};
-      if (type !== 'secure-media-context' || event.source?.scriptURL !== workerURL.href || !event.ports[0]) return;
-      const session = active, port = event.ports[0];
-      try {
-        const asset = session?.assets.get(id);
-        if (!asset) throw new Error('Unknown asset.');
-        const token = await authorize(session,rejectedToken);
+    runtime.respond = mediaRequest => {
+      const id = /^secure-media\/(.+)$/.exec(mediaRequest.path)?.[1];
+      const session = active;
+      const asset = session?.assets.get(id);
+      if (!asset) return new Response(null,{status:404});
+      return window.SecureMedia.serve(mediaRequest,asset,session.key,async (range,signal) => {
         if (session !== active) throw new Error('Session changed.');
-        port.postMessage({asset,token,key:session.key,gateway:session.profile.gateway});
-      } catch {port.postMessage(null);}
-      finally {port.close();}
-    });
+        if (session.profile.mode === 'storage-box') return storageBox.range(session.profile,id,range);
+        const response = await request(session,`v1/assets/${id}`,{headers:{Range:range},signal});
+        const contentRange = response.headers.get('Content-Range');
+        if (response.status !== 206) {
+          await response.body?.cancel();
+          return {status:response.status};
+        }
+        return {status:response.status,range:contentRange,bytes:await response.arrayBuffer()};
+      });
+    };
     $('secure-open').onclick = () => {onOpen();show(active?.profile);};
+    $('secure-mode').onchange = () => {updateMode();$('secure-status').textContent = '';};
     $('secure-form').onsubmit = event => {
       event.preventDefault();
-      connect({address:$('secure-address').value.trim(),gateway:$('secure-bridge').value.trim(),username:$('secure-user').value.trim(),password:$('secure-password').value,mediaKey:$('secure-key').value.trim()},$('secure-remember').checked);
+      const mode = $('secure-mode').value;
+      const endpoint = mode === 'storage-box' ? {root:$('secure-root').value.trim(),catalogFile:$('secure-catalog').value.trim()} :
+        {address:$('secure-address').value.trim(),gateway:$('secure-bridge').value.trim()};
+      connect({mode,...endpoint,username:$('secure-user').value.trim(),password:$('secure-password').value,mediaKey:$('secure-key').value.trim() || secret},$('secure-remember').checked);
     };
     $('secure-forget').onclick = async () => {
       if (busy) return;
-      try {await vault('delete');}
+      try {await runtime.forget();}
       catch {$('secure-status').textContent = 'Could not clear browser credentials. Clear this site’s data in your browser.';return;}
       const previous = active;active = null;
-      $('secure-state').textContent = 'Connect SFTP';$('secure-sync-status').textContent = '';
+      $('secure-state').textContent = 'Connect library';$('secure-sync-status').textContent = '';
       await onConnection({});
-      void closeSession(previous);
-      show();$('secure-status').textContent = 'Disconnected. Saved credentials cleared.';
+      await closeSession(previous);
+      location.reload();
     };
     window.addEventListener('online',() => void flush(active));
     document.addEventListener('visibilitychange',() => {if (document.hidden) void flush(active);});
-    let profile;
-    try {
-      const saved = await vault('get');
-      if (saved) profile = await format.openJSON(saved.key,'browser-profile',saved.encrypted);
-    } catch {}
+    const {profile:initial,secret} = runtime.consume();
+    const profile = {...initial,mediaKey:secret};
     show(profile);
-    if (profile) void connect(profile,true);
+    if (profile && $('secure-mode').value === (profile.mode || 'bridge')) void connect(profile,true);
   }
 
   async function list(refresh) {

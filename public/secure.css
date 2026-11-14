@@ -4,6 +4,7 @@
 #secure-dialog p{margin:12px 0}
 #secure-dialog label{margin-top:12px}
 #secure-dialog input{margin-top:5px}
+#secure-mode{width:100%;margin-top:5px;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
 #secure-dialog input::placeholder{color:var(--subtle)}
 #secure-dialog .secure-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 #secure-dialog .secure-remember{display:flex;gap:8px;align-items:center;letter-spacing:0;font-size:12px}

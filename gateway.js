@@ -162,7 +162,14 @@ function createGateway(config,{connect = openSftp,tls} = {}) {
   }
 
   async function assets(req,res,session,id) {
-    const file = path.join(config.library,`${id}.szc`);
+    let filename = `${id}.szc`;
+    if (id === 'library') {
+      const entries = await call(session.sftp,'readdir',config.library);
+      const catalogs = entries.map(entry => entry.filename).filter(name => format.catalogFilename.test(name));
+      if (catalogs.length > 1) throw failure(409,'The SFTP library contains more than one encrypted catalog.');
+      if (catalogs.length === 1) filename = catalogs[0];
+    }
+    const file = path.join(config.library,filename);
     const result = await withFile(session.sftp,file,async (handle,size) => {
       const range = format.byteRange(req.headers.range,size);
       if (!range || (!range.partial && id !== 'library') || range.end-range.start+1 > maxAssetRead) return {size};
@@ -218,8 +225,8 @@ function createGateway(config,{connect = openSftp,tls} = {}) {
       if (session.inflight >= 8) throw failure(429,'Too many concurrent SFTP reads.');
       session.inflight++;
       try {
-        const asset = /^\/v1\/assets\/(library|[a-f0-9]{32})$/.exec(req.url)?.[1];
-        if (asset && req.method === 'GET') return await assets(req,res,session,asset);
+        const asset = /^\/v1\/assets\/([^/]+)$/.exec(req.url)?.[1];
+        if (req.method === 'GET' && (asset === 'library' || format.assetID.test(asset))) return await assets(req,res,session,asset);
         if (req.url === '/v1/progress' && ['GET','PUT'].includes(req.method)) return await progress(req,res,session);
         throw failure(404,'Unknown bridge endpoint.');
       } finally {session.inflight--;}

@@ -22,7 +22,7 @@
     ['Kein Problem. Ich wünsche dir einen schönen Tag.','لا مشكلة. أتمنى لك يومًا جميلًا.'],
     ['Jeden Tag ein bisschen. So wird es leichter.','قليلٌ كل يوم. هكذا يصبح الأمر أسهل.']
   ];
-  const demo = {id:'demo',title:'A little German, every day',de:SAMPLE.map((pair,i) => ({start:i*4+0.2,end:i*4+3.7,text:pair[0]})),tracks:{ar:{code:'ar',name:'Arabic',source:'Original sample · translated',cues:SAMPLE.map((pair,i) => ({start:i*4+0.2,end:i*4+3.7,text:pair[1]}))}},video:'./practice.mp4'};
+  const demo = {id:'demo',title:'A little German, every day',de:SAMPLE.map((pair,i) => ({start:i*4+0.2,end:i*4+3.7,text:pair[0]})),tracks:{ar:{code:'ar',name:'Arabic',source:'Original sample · translated',cues:SAMPLE.map((pair,i) => ({start:i*4+0.2,end:i*4+3.7,text:pair[1]}))}},video:window.PrivateRuntime?.blob('practice.mp4') || './practice.mp4'};
   const defaults = {last:'demo',saved:[],progress:{},settings:{mother:'ar',speed:1,captionMode:'dual',showSecond:true,autoPause:false,autoFollow:true,theme:'system',volume:1,muted:false,collection:'simpsons-s06',captions:CS.defaults},timing:{},reviews:0,welcomed:false};
   let state = structuredClone(defaults), storageWarning = false;
   try {

@@ -3,7 +3,10 @@
 ((root) => {
   const chunkBytes = 1024 * 1024;
   const overhead = 12 + 16; // AES-GCM nonce followed by ciphertext and authentication tag.
-  const assetID = /^[a-f0-9]{32}$/;
+  const filenameBytes = 48;
+  const encryptedNameLength = 2 * (filenameBytes + overhead);
+  const assetID = new RegExp(`^(?:[a-f0-9]{32}|[a-f0-9]{${encryptedNameLength}})$`);
+  const catalogFilename = new RegExp(`^(?:[a-f0-9]{32}|[a-f0-9]{${encryptedNameLength}})\\.szi$`);
   const encoder = new TextEncoder();
   const decoder = new TextDecoder('utf-8', {fatal:true});
 
@@ -69,7 +72,7 @@
     return {start,end:start+length+overhead-1,length,total:size+Math.ceil(size/chunkBytes)*overhead};
   }
 
-  const api = {chunkBytes,overhead,assetID,sftpAddress,importKey,seal,open,sealJSON,openJSON,byteRange,chunkRange};
+  const api = {chunkBytes,overhead,filenameBytes,assetID,catalogFilename,sftpAddress,importKey,seal,open,sealJSON,openJSON,byteRange,chunkRange};
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.SecureFormat = api;
 })(globalThis);
