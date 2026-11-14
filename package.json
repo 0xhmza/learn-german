@@ -1,0 +1,13 @@
+{
+  "name": "learn-german",
+  "private": true,
+  "description": "Two German learning projects: the Grammatikinseln grammar platform and the Sprechzimmer media player.",
+  "scripts": {
+    "grammar": "npm --prefix grammar start",
+    "grammar:build": "npm --prefix grammar run build",
+    "grammar:test": "npm --prefix grammar test",
+    "media": "npm --prefix media-series start",
+    "media:test": "npm --prefix media-series test",
+    "test": "npm run grammar:test && npm run media:test"
+  }
+}
