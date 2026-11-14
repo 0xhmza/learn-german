@@ -1,5 +1,7 @@
 # Sprechzimmer
 
+Part of the [learn-german](../README.md) repository. Run every command below from this `media-series/` folder. The grammar platform lives in [`../grammar`](../grammar/README.md).
+
 A local German learning platform: watch your own German videos with German and mother-language subtitles, replay individual sentences, and collect useful expressions.
 
 The `github-pages-sftp` branch also supports [encrypted media and progress on GitHub Pages](docs/github-pages.md), with a direct Storage Box connection through a Chrome or Edge extension.
@@ -18,7 +20,7 @@ The `github-pages-sftp` branch also supports [encrypted media and progress on Gi
 | `server.js`, `gateway.js` | Local player server and HTTPS-to-SFTP bridge |
 | `scripts/`, `requirements/` | Media processing and build tools, plus Python dependencies |
 | `docs/`, `examples/`, `test/` | Setup guides, practice subtitles, and tests |
-| `artifacts/`, `graphify-out/` | Local processing evidence, previews, and code graph |
+| `artifacts/` | Local processing evidence and previews |
 
 Git ignores the generated deployment folders and the private key. See the [SFTP upload instructions](docs/github-pages.md#pack-and-upload-the-library) for the upload order and remote directory settings.
 
