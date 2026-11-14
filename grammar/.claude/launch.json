@@ -4,13 +4,13 @@
     {
       "name": "grammar",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["grammar/server.js"],
+      "runtimeArgs": ["server.js"],
       "port": 4180
     },
     {
       "name": "grammar-dist",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["grammar/server.js", "--dist"],
+      "runtimeArgs": ["server.js", "--dist"],
       "port": 4181
     }
   ]

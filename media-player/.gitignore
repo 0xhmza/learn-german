@@ -4,6 +4,11 @@ media/*
 !media/.gitkeep
 .env
 *.log
+*.pdf
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
 test-results/
 __pycache__/
 *.pyc
@@ -15,6 +20,10 @@ encrypted-library/
 .keys/
 /deploy/
 /private/
+/public/vendor/*
+!/public/vendor/media-chrome.LICENSE
+!/public/vendor/media-chrome.js
+!/public/vendor/media-chrome.version.json
 *.szc
 *.szi
 *.pem

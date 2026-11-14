@@ -20,7 +20,7 @@ When updating an existing bundle, the packer reuses its catalog filename. Upload
 ## Connect a Hetzner Storage Box
 
 1. In Hetzner Console, enable **WebDAV** and **External Reachability** for the Storage Box. Enable WebDAV for your subaccount if applicable. Use a subaccount that can read `library/` and write to `progress/`. [Hetzner WebDAV guide](https://docs.hetzner.com/storage/storage-box/access/access-webdav/)
-2. Publish the updated Pages build, then run `npm run build:storage-box -- https://your-account.github.io/learn-german/` with the exact URL you open in your browser. This builds the extension in `deploy/storage-box-extension/` and authorizes only the specified site page. A loopback URL such as `http://127.0.0.1:4173/` also works for a local Pages preview.
+2. Publish the updated Pages build, then run `npm run build:storage-box -- https://your-account.github.io/learn-german/media-player/` with the exact player URL you open in your browser. This builds the extension in `deploy/storage-box-extension/` and authorizes only the specified site page. A loopback URL such as `http://127.0.0.1:4173/media-player/` also works for a local Pages preview.
 3. Open the extensions page in Chrome or Edge, enable **Developer mode**, choose **Load unpacked**, and select `deploy/storage-box-extension/`. Use version 140 or newer. Reload the extension after changing its authorized site, then reload the site tab. [Chrome extension installation guide](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
 4. Run `npm run create:access-code` from the private source checkout. Enter the HTTPS WebDAV URL, exact `.szi` filename, username and password. Press Enter at the filename prompt to use the latest short-name pack's catalog. If you uploaded both directories under `sprechzimmer/`, use `https://u123456-sub1.your-storagebox.de/sprechzimmer/`. Copy the single line from `private/access-code.txt` into **Access code** on the site.
 
@@ -49,11 +49,20 @@ Obtain the host fingerprint from the SFTP administrator or directly on the SFTP 
 
 Start it with `node --env-file=.env gateway.js`. Serve it behind your HTTPS reverse proxy at a URL such as `https://bridge.example.com/`. Forward the `/v1/` routes and preserve the request headers. Alternatively, set `GATEWAY_TLS_KEY` and `GATEWAY_TLS_CERT` to the PEM key and full certificate chain to let the bridge terminate TLS itself. The bridge permits cleartext HTTP only on loopback. Use one bridge instance for the progress directory so conditional updates are serialized.
 
-## Publish the encrypted site
+## Publish the combined site
 
-`npm run build:pages` prepares `deploy/pages/`. It encrypts the app HTML, JavaScript, styles, icons and sample clip into `data.bin` using the same key as the media. The other files implement a generic access screen. The build uses `private/media-decryption.key` or the `PAGES_UNLOCK_KEY` environment variable.
+From the source repository root, run these commands with Node.js 22 or later.
 
-Keep this source repository private. Use a fresh, neutrally named public repository and copy only the contents of `deploy/pages/` into its publishing branch. Set **Settings → Pages → Source** to **Deploy from a branch** and choose that branch. Publishing a new branch in the existing public source repository would still expose its source and history. The optional Actions workflow is for a private source repository with a `PAGES_UNLOCK_KEY` Actions secret. [GitHub Pages publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+```sh
+npm --prefix grammar ci
+node media-player/scripts/build-site.mjs
+```
+
+The build uses `media-player/private/media-decryption.key` or the `PAGES_UNLOCK_KEY` environment variable. It writes the landing page, the grammar site at `grammar/`, and the encrypted player at `media-player/` inside `grammar/dist/pages/`. The player build encrypts the app HTML, JavaScript, styles, icons and sample clip into `data.bin` using the same key as the media.
+
+Keep this source repository private. Copy the **contents** of `grammar/dist/pages/`, including `.nojekyll`, into the root of the publishing branch in a separate Pages repository. In **Settings → Pages**, choose **Deploy from a branch**, select that branch and choose **/(root)**. [GitHub Pages publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+For a local preview, serve the combined output with `python -m http.server 4173 --bind 127.0.0.1 --directory grammar/dist/pages` from the source repository root. To build just the encrypted player, run `npm run build:pages` from `media-player/`. Its standalone output is `deploy/pages/`.
 
 For SFTP with a bridge, run `npm run create:access-code -- --bridge` and enter the SFTP address, bridge URL and SFTP credentials. Treat `private/access-code.txt` like a password. It contains the key as well as the encrypted connection details, so anyone with the whole code can unlock both. The app remembers a successful login in IndexedDB, wrapped by a browser-held key. Use **Forget and disconnect** in the app to clear it and return to the access screen.
 

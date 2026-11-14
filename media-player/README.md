@@ -1,10 +1,10 @@
 # Sprechzimmer
 
-Part of the [learn-german](../README.md) repository. Run every command below from this `media-series/` folder. The grammar platform lives in [`../grammar`](../grammar/README.md).
+Part of the [learn-german](../grammar/docs/repository.md) repository. Run every command below from this `media-player/` folder. The grammar platform lives in [`../grammar`](../grammar/README.md).
 
 A local German learning platform: watch your own German videos with German and mother-language subtitles, replay individual sentences, and collect useful expressions.
 
-The `github-pages-sftp` branch also supports [encrypted media and progress on GitHub Pages](docs/github-pages.md), with a direct Storage Box connection through a Chrome or Edge extension.
+The [static GitHub Pages build](docs/github-pages.md) also supports encrypted media and progress, with a direct Storage Box connection through a Chrome or Edge extension.
 
 ## Project layout
 

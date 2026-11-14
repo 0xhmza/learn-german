@@ -1,3 +1,10 @@
 node_modules/
 dist/
-content/sources/*.pdf
+.env
+*.log
+*.pdf
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+graphify-out/

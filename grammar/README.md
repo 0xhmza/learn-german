@@ -9,7 +9,7 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **Gamification**: one to three stars per lesson, XP and nine ranks, daily goal and streak, 16 badges, an exam per island to conquer it, and spaced review of answered questions.
 - Arabic (right to left) and German interface, light and dark theme, keyboard and screen-reader friendly, works offline.
 
-Part of the [learn-german](../README.md) repository. Requires Node.js 22 or later.
+Part of the [learn-german](docs/repository.md) repository. Requires Node.js 22 or later.
 
 ## Use it
 
@@ -58,4 +58,4 @@ Progress is stored in the browser (`localStorage`). Back it up under **Settings 
 2. Replace every `TODO` in `content/lessons/my-topic.json`. German terms inside Arabic text go between backticks. Question 8 corrects the lesson's `pitfallPair`.
 3. `npm run validate`, then check the lesson at http://127.0.0.1:4180/#lesson/my-topic in both languages.
 
-`docs/grammar-platform-plan.md` in the repository root describes the content model, routes, gamification rules and map geometry in detail.
+The [grammar platform plan](docs/grammar-platform-plan.md) describes the content model, routes, gamification rules and map geometry in detail.
