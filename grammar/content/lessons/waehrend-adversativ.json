@@ -1,0 +1,145 @@
+{
+  "id": "waehrend-adversativ",
+  "level": "B1.2",
+  "island": "gegensatz-vergleich",
+  "order": 3,
+  "prereqs": ["seit-waehrend"],
+  "emoji": "↔️",
+  "german": "Adversative Nebensätze mit während",
+  "source": { "lektion": 11, "kind": "toc" },
+  "pattern": ["während", "…", "Verb am Ende", ",", "Verb", "+", "Subjekt"],
+  "frames": [
+    { "k": "sub", "parts": [["c", "Während"], ["mf", "mein Bruder gern Sport"], ["ve", "macht"]] },
+    { "k": "main", "parts": [["vf", "Während mein Bruder gern Sport macht,"], ["v", "lese"], ["mf", "ich lieber"]] },
+    { "k": "main", "parts": [["vf", "Mein Bruder"], ["v", "macht"], ["mf", "gern Sport, ich dagegen lese lieber"]] }
+  ],
+  "example": "Während mein Bruder gern Sport macht, lese ich lieber.",
+  "stepExamples": [
+    "Mein Bruder macht gern Sport. Ich lese lieber.",
+    "Während mein Bruder gern Sport macht, lese ich lieber.",
+    "Ich lese lieber, während mein Bruder gern Sport macht.",
+    "Während ich koche, höre ich Radio. ↔ Während ich gern koche, isst er lieber im Restaurant."
+  ],
+  "pitfallPair": "Während mein Bruder macht gern Sport, ich lese lieber. → Während mein Bruder gern Sport macht, lese ich lieber.",
+  "links": [
+    "https://www.dwds.de/wb/w%C3%A4hrend",
+    "https://grammis.ids-mannheim.de/kontrastive-grammatik/3789"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "في حين أنّ: während للمقابلة",
+      "lead": "تعرف `während` بمعنى «بينما» للوقت. لكن لها معنى ثانيًا: المقابلة بين شخصين أو أمرين مختلفين، كما في العربية «في حين أنّ». البناء واحد، والسياق يحدد المعنى.",
+      "translation": "في حين أن أخي يحب الرياضة، أفضّل أنا القراءة.",
+      "steps": [
+        { "text": "ابدأ بأمرين متقابلين", "why": "الأخ يحب الرياضة، وأنا أفضل القراءة. لا علاقة زمنية بينهما، بل مقابلة." },
+        { "text": "اربط بـ während والفعل في الآخر", "why": "`während` أداة ربط تابعة، فيقف الفعل المصرف `macht` في آخر جملتها. ثم يبدأ ما بعد الفاصلة بالفعل `lese`." },
+        { "text": "يمكن أن تأتي جملة während في الآخر", "why": "`Ich lese lieber, während mein Bruder gern Sport macht.` المعنى نفسه." },
+        { "text": "فرّق بين المعنيين", "why": "الزمني: أمران في الوقت نفسه ولشخص واحد غالبًا. المقابل: أمران مختلفان لشخصين أو شيئين، وغالبًا مع كلمات مثل `lieber` أو `gern` أو مقارنة." }
+      ],
+      "explain": [
+        "في المعنى المقابل يمكن استبدال `während` بـ `aber` أو `dagegen` أو `wohingegen` (الأخيرة رسمية). مثلًا: `Mein Bruder macht gern Sport, ich dagegen lese lieber.`",
+        "كثيرًا ما يظهر في الجملتين فاعلان مختلفان يتقابلان: `mein Bruder` ↔ `ich`، و`im Norden` ↔ `im Süden`."
+      ],
+      "pitfall": "`während` ترسل الفعل إلى آخر جملتها، والجملة الرئيسية بعدها تبدأ بالفعل.",
+      "recall": ["هل `während` هنا زمنية أم للمقابلة؟ `Während es im Norden regnet, scheint im Süden die Sonne.`", "للمقابلة: مكانان مختلفان وطقسان متقابلان."],
+      "linkTitles": ["während في معجم DWDS", "أدوات الربط · grammis"]
+    },
+    "de": {
+      "title": "Adversative Nebensätze mit während",
+      "lead": "Du kennst `während` als Zeitwort für Gleichzeitigkeit. Es hat aber eine zweite Bedeutung: den Gegensatz zwischen zwei Personen oder Dingen. Der Satzbau ist gleich, der Kontext entscheidet.",
+      "steps": [
+        { "text": "Beginne mit zwei Gegensätzen", "why": "Der Bruder macht gern Sport, ich lese lieber. Es gibt keine zeitliche Beziehung, sondern einen Kontrast." },
+        { "text": "Verbinde mit während, das Verb am Ende", "why": "`während` ist ein Subjunktor: `macht` steht am Ende des Nebensatzes. Nach dem Komma beginnt der Hauptsatz mit `lese`." },
+        { "text": "Der während-Satz kann auch hinten stehen", "why": "`Ich lese lieber, während mein Bruder gern Sport macht.` Gleiche Bedeutung." },
+        { "text": "Unterscheide die zwei Bedeutungen", "why": "Temporal: zwei Dinge gleichzeitig, oft bei derselben Person. Adversativ: zwei verschiedene Personen oder Dinge im Gegensatz, oft mit `lieber`, `gern` oder einem Vergleich." }
+      ],
+      "explain": [
+        "Im adversativen Sinn kannst du `während` durch `aber`, `dagegen` oder `wohingegen` (formell) ersetzen: `Mein Bruder macht gern Sport, ich dagegen lese lieber.`",
+        "Typisch sind zwei verschiedene Subjekte, die sich gegenüberstehen: `mein Bruder` ↔ `ich`, `im Norden` ↔ `im Süden`."
+      ],
+      "pitfall": "`während` schickt das Verb ans Ende. Der Hauptsatz danach beginnt mit dem Verb.",
+      "recall": ["Temporal oder adversativ? `Während es im Norden regnet, scheint im Süden die Sonne.`", "Adversativ: zwei verschiedene Orte mit gegensätzlichem Wetter."],
+      "linkTitles": ["während im DWDS", "Konnektoren · grammis"]
+    }
+  },
+  "questions": [
+    {
+      "id": "waehrend-adversativ-1", "type": "cloze", "difficulty": 1,
+      "text": "Während meine Schwester Fleisch {{1}}, ist mein Vater Vegetarier.",
+      "blanks": [["isst", "mag", "liebt"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل في مكانه.", "explain": "الفعل المصرف في آخر جملة `während`: `Fleisch isst`.", "hints": ["الفاعل `meine Schwester`."] },
+        "de": { "prompt": "Ergänze das Verb.", "explain": "Am Ende des während-Satzes: `Fleisch isst`.", "hints": ["Das Subjekt ist `meine Schwester`."] }
+      }
+    },
+    {
+      "id": "waehrend-adversativ-2", "type": "cloze", "difficulty": 1,
+      "text": "Während ich früh aufstehe, {{1}} mein Mann gern lange.",
+      "blanks": [["schläft"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل `schlafen`.", "explain": "بعد الجملة التابعة يأتي الفعل `schläft` ثم الفاعل.", "hints": ["`schlafen` يتغير حرفه مع `er`."] },
+        "de": { "prompt": "Ergänze `schlafen`.", "explain": "Nach dem Nebensatz kommt das Verb `schläft`, dann das Subjekt.", "hints": ["`schlafen` hat bei `er` einen Umlaut."] }
+      }
+    },
+    {
+      "id": "waehrend-adversativ-3", "type": "mcq", "difficulty": 1,
+      "options": ["Gegensatz", "Gleichzeitigkeit", "Grund"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "ما معنى `während` في `Während Tom sehr ordentlich ist, ist sein Zimmernachbar chaotisch.`؟", "explain": "شخصان مختلفان وصفتان متقابلتان: هذه مقابلة.", "hints": ["هل يحدث شيء في الوقت نفسه؟"] },
+        "de": { "prompt": "Was bedeutet `während` in `Während Tom sehr ordentlich ist, ist sein Zimmernachbar chaotisch.`?", "explain": "Zwei Personen mit gegensätzlichen Eigenschaften: ein Gegensatz.", "hints": ["Passiert hier etwas gleichzeitig?"] }
+      }
+    },
+    {
+      "id": "waehrend-adversativ-4", "type": "cloze", "difficulty": 2,
+      "text": "In der Stadt sind die Mieten hoch, auf dem Land {{1}} sind sie günstig. = {{2}} die Mieten in der Stadt hoch sind, sind sie auf dem Land günstig.",
+      "blanks": [["dagegen"], ["Während"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل الجملتين بالمعنى نفسه.", "explain": "في الجملة الأولى `dagegen` في وسط الجملة الرئيسية، وفي الثانية `Während` مع الفعل في الآخر.", "hints": ["الفراغ الأول يعني «بالمقابل»."] },
+        "de": { "prompt": "Ergänze beide Sätze mit derselben Bedeutung.", "explain": "Im ersten Satz `dagegen` im Hauptsatz, im zweiten `Während` mit Verb am Ende.", "hints": ["Die erste Lücke heißt „im Gegensatz dazu“."] }
+      }
+    },
+    {
+      "id": "waehrend-adversativ-5", "type": "order", "difficulty": 2,
+      "items": ["Während", "Anna", "Tee", "trinkt,", "bevorzugt", "Paul", "Kaffee."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة. ابدأ بـ `Während`.", "explain": "الجملة التابعة أولًا مع `trinkt` في آخرها، ثم `bevorzugt Paul Kaffee`.", "hints": ["بعد الفاصلة: الفعل ثم الفاعل."] },
+        "de": { "prompt": "Ordne den Satz. Beginne mit `Während`.", "explain": "Erst der Nebensatz mit `trinkt` am Ende, dann `bevorzugt Paul Kaffee`.", "hints": ["Nach dem Komma: Verb, dann Subjekt."] }
+      }
+    },
+    {
+      "id": "waehrend-adversativ-6", "type": "mcq", "difficulty": 2,
+      "options": ["Während ich telefoniere, mache ich Notizen.", "Während Berlin groß ist, ist Weimar klein.", "Während mein Vater Fußball liebt, interessiert sich meine Mutter für Kunst."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "في أي جملة تدل `während` على الوقت؟", "explain": "شخص واحد يقوم بأمرين في الوقت نفسه: هذا هو المعنى الزمني. الجملتان الأخريان مقابلة.", "hints": ["ابحث عن شخص واحد وفعلين معًا."] },
+        "de": { "prompt": "In welchem Satz ist `während` temporal?", "explain": "Eine Person tut zwei Dinge gleichzeitig: temporal. Die anderen Sätze sind Gegensätze.", "hints": ["Such eine Person mit zwei gleichzeitigen Handlungen."] }
+      }
+    },
+    {
+      "id": "waehrend-adversativ-7", "type": "text", "difficulty": 3,
+      "answer": "Während Lisa gern ans Meer fährt, wandert Max lieber in den Bergen.",
+      "i18n": {
+        "ar": { "prompt": "اربط بـ `während` للمقابلة: `Lisa fährt gern ans Meer. Max wandert lieber in den Bergen.`", "explain": "`Während Lisa gern ans Meer fährt, wandert Max lieber in den Bergen.`", "hints": ["`fährt` في آخر الجملة التابعة."] },
+        "de": { "prompt": "Verbinde adversativ mit `während`: `Lisa fährt gern ans Meer. Max wandert lieber in den Bergen.`", "explain": "`Während Lisa gern ans Meer fährt, wandert Max lieber in den Bergen.`", "hints": ["`fährt` steht am Ende des Nebensatzes."] }
+      }
+    },
+    {
+      "id": "waehrend-adversativ-8", "type": "text", "difficulty": 3,
+      "context": "Während mein Bruder macht gern Sport, ich lese lieber.",
+      "answer": "Während mein Bruder gern Sport macht, lese ich lieber.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأين في المثال واشرح سبب التصحيح.", "explain": "الفعل `macht` يذهب إلى آخر جملة `während`، والجملة الرئيسية بعدها تبدأ بالفعل `lese`.", "hints": ["في المثال خطآن في موقع الفعل."] },
+        "de": { "prompt": "Korrigiere die zwei Fehler im Beispiel und erkläre, warum.", "explain": "`macht` gehört ans Ende des während-Satzes, und der Hauptsatz beginnt danach mit `lese`.", "hints": ["Es gibt zwei Fehler bei der Verbstellung."] }
+      }
+    },
+    {
+      "id": "waehrend-adversativ-9", "type": "text", "difficulty": 2,
+      "answer": "Während man in meiner Heimat spät zu Abend isst, essen die Deutschen oft schon um sechs.",
+      "i18n": {
+        "ar": { "prompt": "قارن بين عادة في بلدك وعادة في ألمانيا مع `während`.", "explain": "مثال: `Während man in meiner Heimat spät zu Abend isst, essen die Deutschen oft schon um sechs.`", "hints": ["فاعلان متقابلان."] },
+        "de": { "prompt": "Vergleiche eine Gewohnheit in deiner Heimat mit Deutschland. Benutze `während`.", "explain": "Zum Beispiel: `Während man in meiner Heimat spät zu Abend isst, essen die Deutschen oft schon um sechs.`", "hints": ["Zwei Subjekte im Gegensatz."] }
+      }
+    }
+  ]
+}

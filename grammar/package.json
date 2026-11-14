@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node server.js",
+    "preview": "node server.js --dist",
     "validate": "node scripts/validate-content.js",
     "test": "node --test",
     "build": "node scripts/validate-content.js && node scripts/build.js",

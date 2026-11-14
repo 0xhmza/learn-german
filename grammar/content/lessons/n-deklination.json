@@ -1,0 +1,163 @@
+{
+  "id": "n-deklination",
+  "level": "B1.2",
+  "island": "nomen-kasus",
+  "order": 4,
+  "prereqs": ["genitiv"],
+  "emoji": "🧑‍💼",
+  "german": "N-Deklination",
+  "source": { "lektion": 9, "kind": "toc" },
+  "pattern": ["der Kunde", "→", "den / dem / des Kunden"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Der Kunde"], ["v", "wartet"]] },
+    { "k": "main", "parts": [["vf", "Ich"], ["v", "rufe"], ["hl", "den Kunden"], ["ve", "an"]] },
+    { "k": "np", "parts": [["n", "das Auto"], ["hl", "des Nachbarn"]] }
+  ],
+  "example": "Der Kunde wartet. → Ich rufe den Kunden an.",
+  "stepExamples": [
+    "Der Kunde wartet schon lange.",
+    "Ich rufe den Kunden an. · Ich helfe dem Kunden.",
+    "der Kollege · der Student · der Polizist · der Praktikant",
+    "der Mensch · der Herr · der Nachbar",
+    "Wir haben mit vielen Kunden gesprochen."
+  ],
+  "pitfallPair": "Ich kenne den Student. → Ich kenne den Studenten.",
+  "links": [
+    "https://grammis.ids-mannheim.de/progr%40mm/4064",
+    "https://grammis.ids-mannheim.de/fragen/28"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "أسماء مذكرة تأخذ ‎-n",
+      "lead": "معظم الأسماء لا تتغير بعد `den` و`dem`. لكن مجموعة من الأسماء المذكرة، أغلبها للأشخاص، تأخذ `-n` أو `-en` في كل الحالات إلا الفاعل المفرد. ستتعلم كيف تعرفها.",
+      "translation": "الزبون ينتظر ← أتصل بالزبون.",
+      "steps": [
+        { "text": "في حالة الفاعل لا يتغير الاسم", "why": "`der Kunde` فاعل في حالة `Nominativ`، فيبقى كما هو في المعجم." },
+        { "text": "في الحالات الأخرى أضف ‎-n أو ‎-en", "why": "في `Akkusativ` و`Dativ` و`Genitiv` يصير `den Kunden` و`dem Kunden` و`des Kunden`. هذه هي علامة هذا التصريف، ومنها جاء اسمه." },
+        { "text": "اعرف المجموعة من نهاية الكلمة", "why": "الأسماء المذكرة المنتهية بـ `-e` للأشخاص والحيوانات (`der Kollege` و`der Junge` و`der Löwe`)، والمنتهية بـ `-ent` و`-ant` و`-ist` و`-at` و`-oge` (`der Student` و`der Praktikant` و`der Polizist`)." },
+        { "text": "احفظ بعض الكلمات الخاصة", "why": "`der Mensch` و`der Herr` و`der Nachbar` و`der Bauer` تتبع هذا التصريف أيضًا رغم نهاياتها. و`Herr` يأخذ `-n` في المفرد: `Herrn Müller`." },
+        { "text": "في الجمع تبقى النهاية في كل الحالات", "why": "الجمع `die Kunden` لا يتغير: `mit vielen Kunden`. فلا تضيف `-n` أخرى في `Dativ` الجمع." }
+      ],
+      "explain": [
+        "يُسمى هذا التصريف `N-Deklination`. لا يأخذ الاسم فيه `-s` في `Genitiv`، بل `-n` أو `-en`: `des Kollegen` وليس `des Kolleges`.",
+        "بعض الكلمات تختلف قليلًا: `der Name` يصير `des Namens`، وكذلك `der Gedanke` و`der Buchstabe`. وفي الكلام اليومي يُسمع أحيانًا `dem Student`، لكن الصيغة الصحيحة في الكتابة `dem Studenten`."
+      ],
+      "pitfall": "`Student` من هذه المجموعة، فيأخذ `-en` بعد `den`.",
+      "recall": ["لماذا نقول `Ich frage den Nachbarn`؟", "لأن `der Nachbar` من أسماء `N-Deklination`، فيأخذ `-n` في `Akkusativ`."],
+      "linkTitles": ["أصناف تصريف الأسماء · grammis", "حالات خاصة في التصريف · grammis"],
+      "table": [
+        ["الحالة", "مفرد", "جمع"],
+        ["Nominativ", "der Kunde", "die Kunden"],
+        ["Akkusativ", "den Kunden", "die Kunden"],
+        ["Dativ", "dem Kunden", "den Kunden"],
+        ["Genitiv", "des Kunden", "der Kunden"]
+      ]
+    },
+    "de": {
+      "title": "Die N-Deklination",
+      "lead": "Die meisten Nomen ändern sich nach `den` und `dem` nicht. Eine Gruppe maskuliner Nomen, meist Personen, bekommt aber in allen Fällen außer dem Nominativ Singular ein `-n` oder `-en`. Du lernst, wie du sie erkennst.",
+      "steps": [
+        { "text": "Im Nominativ bleibt das Nomen gleich", "why": "`der Kunde` ist Subjekt im Nominativ und steht in der Wörterbuchform." },
+        { "text": "In den anderen Fällen kommt -n oder -en dazu", "why": "Akkusativ, Dativ und Genitiv: `den Kunden`, `dem Kunden`, `des Kunden`. Dieses `-n` gibt der Deklination ihren Namen." },
+        { "text": "Erkenne die Gruppe an der Endung", "why": "Maskuline Nomen auf `-e` für Personen und Tiere (`der Kollege`, `der Junge`, `der Löwe`) und Nomen auf `-ent`, `-ant`, `-ist`, `-at`, `-oge` (`der Student`, `der Praktikant`, `der Polizist`)." },
+        { "text": "Lerne einige Sonderfälle", "why": "`der Mensch`, `der Herr`, `der Nachbar`, `der Bauer` gehören auch dazu. `Herr` hat im Singular `-n`: `Herrn Müller`." },
+        { "text": "Im Plural bleibt die Endung überall gleich", "why": "Der Plural `die Kunden` ändert sich nicht: `mit vielen Kunden`. Im Dativ Plural kommt kein zusätzliches `-n` dazu." }
+      ],
+      "explain": [
+        "Im Genitiv bekommen diese Nomen kein `-s`, sondern `-n` oder `-en`: `des Kollegen`, nicht `des Kolleges`.",
+        "Einige Wörter haben eine Mischform: `der Name`, `des Namens`; ebenso `der Gedanke`, `der Buchstabe`. Umgangssprachlich hört man manchmal `dem Student`, geschrieben ist `dem Studenten` richtig."
+      ],
+      "pitfall": "`Student` gehört zur N-Deklination und bekommt nach `den` ein `-en`.",
+      "recall": ["Warum heißt es `Ich frage den Nachbarn`?", "`der Nachbar` gehört zur N-Deklination und bekommt im Akkusativ ein `-n`."],
+      "linkTitles": ["Flexionsklassen der Nomina · grammis", "Problemfälle der Flexion · grammis"],
+      "table": [
+        ["Kasus", "Singular", "Plural"],
+        ["Nominativ", "der Kunde", "die Kunden"],
+        ["Akkusativ", "den Kunden", "die Kunden"],
+        ["Dativ", "dem Kunden", "den Kunden"],
+        ["Genitiv", "des Kunden", "der Kunden"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "n-deklination-1", "type": "cloze", "difficulty": 1,
+      "text": "Kannst du bitte deinen {{1}} fragen? (der Kollege)",
+      "blanks": [["Kollegen"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالصيغة الصحيحة للاسم.", "explain": "`fragen` يطلب `Akkusativ`، و`Kollege` يأخذ `-n`: `deinen Kollegen`.", "hints": ["الاسم مذكر وينتهي بـ `-e`."] },
+        "de": { "prompt": "Ergänze die richtige Form des Nomens.", "explain": "`fragen` verlangt den Akkusativ, `Kollege` bekommt `-n`: `deinen Kollegen`.", "hints": ["Das Nomen ist maskulin und endet auf `-e`."] }
+      }
+    },
+    {
+      "id": "n-deklination-2", "type": "cloze", "difficulty": 1,
+      "text": "Der Arzt gibt dem {{1}} ein Rezept. (der Patient)",
+      "blanks": [["Patienten"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالصيغة الصحيحة.", "explain": "`Patient` ينتهي بـ `-ent`، فيأخذ `-en` في `Dativ`: `dem Patienten`.", "hints": ["لاحظ النهاية `-ent`."] },
+        "de": { "prompt": "Ergänze die richtige Form.", "explain": "`Patient` endet auf `-ent` und bekommt im Dativ `-en`: `dem Patienten`.", "hints": ["Achte auf die Endung `-ent`."] }
+      }
+    },
+    {
+      "id": "n-deklination-3", "type": "mcq", "difficulty": 1,
+      "options": ["der Tisch", "der Junge", "der Polizist"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي اسم لا يتبع `N-Deklination`؟", "explain": "`der Tisch` اسم عادي: `den Tisch`. أما `Junge` و`Polizist` فيأخذان `-n` و`-en`.", "hints": ["أغلب أسماء هذه المجموعة لأشخاص."] },
+        "de": { "prompt": "Welches Nomen gehört nicht zur N-Deklination?", "explain": "`der Tisch` ist normal: `den Tisch`. `Junge` und `Polizist` bekommen `-n` bzw. `-en`.", "hints": ["Die meisten dieser Nomen bezeichnen Personen."] }
+      }
+    },
+    {
+      "id": "n-deklination-4", "type": "cloze", "difficulty": 2,
+      "text": "Das ist das Fahrrad des {{1}}. Ich habe es von {{2}} Meier gekauft. (der Nachbar · Herr)",
+      "blanks": [["Nachbarn"], ["Herrn"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالصيغتين الصحيحتين.", "explain": "`des Nachbarn` في `Genitiv` بلا `-s`، و`von Herrn Meier` في `Dativ`.", "hints": ["الكلمتان من الأسماء الخاصة في هذه المجموعة."] },
+        "de": { "prompt": "Ergänze beide Formen.", "explain": "`des Nachbarn` im Genitiv ohne `-s`, `von Herrn Meier` im Dativ.", "hints": ["Beide Wörter sind Sonderfälle der Gruppe."] }
+      }
+    },
+    {
+      "id": "n-deklination-5", "type": "cloze", "difficulty": 2,
+      "text": "Der {{1}} hat mit dem {{2}} gesprochen. (Praktikant · Kunde)",
+      "blanks": [["Praktikant"], ["Kunden"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل. انتبه: أحد الاسمين فاعل.", "explain": "`Der Praktikant` فاعل فيبقى بلا نهاية. و`mit dem Kunden` في `Dativ` يأخذ `-n`.", "hints": ["الفاعل في `Nominativ` لا يتغير."] },
+        "de": { "prompt": "Ergänze. Achtung: Ein Nomen ist Subjekt.", "explain": "`Der Praktikant` ist Subjekt und bleibt ohne Endung. `mit dem Kunden` im Dativ bekommt `-n`.", "hints": ["Im Nominativ ändert sich das Nomen nicht."] }
+      }
+    },
+    {
+      "id": "n-deklination-6", "type": "mcq", "difficulty": 2,
+      "options": ["Wir haben einen neuen Kollegen.", "Wir haben einen neuen Kollege.", "Wir haben einen neue Kollegen."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "الصفة تأخذ `-en` بعد `einen`، والاسم يأخذ `-n`: `einen neuen Kollegen`.", "hints": ["انتبه إلى الصفة وإلى الاسم معًا."] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Das Adjektiv bekommt nach `einen` die Endung `-en`, das Nomen ein `-n`: `einen neuen Kollegen`.", "hints": ["Achte auf Adjektiv und Nomen."] }
+      }
+    },
+    {
+      "id": "n-deklination-7", "type": "text", "difficulty": 3,
+      "answer": "Ich habe dem Studenten den Weg erklärt.",
+      "i18n": {
+        "ar": { "prompt": "ترجم: «شرحت للطالب الطريق.» استعمل `erklären` في الماضي المركب.", "explain": "`dem Studenten` في `Dativ` مع `-en`، و`den Weg` في `Akkusativ`.", "hints": ["`der Student` يأخذ `-en`."] },
+        "de": { "prompt": "Schreib: Du hast dem Studenten den Weg erklärt. Benutze das Perfekt.", "explain": "`dem Studenten` im Dativ mit `-en`, `den Weg` im Akkusativ.", "hints": ["`der Student` bekommt `-en`."] }
+      }
+    },
+    {
+      "id": "n-deklination-8", "type": "text", "difficulty": 3,
+      "context": "Ich kenne den Student.",
+      "answer": "Ich kenne den Studenten.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`Student` ينتهي بـ `-ent`، فيأخذ `-en` في `Akkusativ`.", "hints": ["ما نهاية الكلمة `Student`؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`Student` endet auf `-ent` und bekommt im Akkusativ `-en`.", "hints": ["Wie endet das Wort `Student`?"] }
+      }
+    },
+    {
+      "id": "n-deklination-9", "type": "text", "difficulty": 2,
+      "answer": "Ich treffe morgen meinen Nachbarn.",
+      "i18n": {
+        "ar": { "prompt": "اكتب جملة فيها `der Nachbar` كمفعول به.", "explain": "مثال: `Ich treffe morgen meinen Nachbarn.`", "hints": ["المفعول به في `Akkusativ` يأخذ `-n`."] },
+        "de": { "prompt": "Schreib einen Satz mit `der Nachbar` als Akkusativobjekt.", "explain": "Zum Beispiel: `Ich treffe morgen meinen Nachbarn.`", "hints": ["Im Akkusativ kommt `-n` dazu."] }
+      }
+    }
+  ]
+}

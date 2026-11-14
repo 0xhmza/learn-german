@@ -1,0 +1,161 @@
+{
+  "id": "indefinitpronomen",
+  "level": "B1.2",
+  "island": "pronomen",
+  "order": 2,
+  "prereqs": [],
+  "emoji": "👥",
+  "german": "Indefinitpronomen: einer, keiner, welche",
+  "source": { "lektion": 7, "kind": "toc" },
+  "pattern": ["ein- / kein-", "+", "Endung", "→", "einer · eine · eins · welche"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Ich"], ["v", "habe"], ["hl", "einen"], ["mf", "im Rucksack"]] },
+    { "k": "main", "parts": [["vf", "Hier"], ["v", "ist"], ["hl", "keiner"], ["mf", "frei"]] },
+    { "k": "main", "parts": [["vf", "Ich"], ["v", "brauche"], ["hl", "welche"]] }
+  ],
+  "example": "Hast du einen Stift? – Ja, ich habe einen.",
+  "stepExamples": [
+    "Ich suche einen Parkplatz.",
+    "Dort ist einer frei.",
+    "Hier ist keiner frei.",
+    "Brauchst du Briefmarken? – Ja, ich brauche welche.",
+    "Hast du jemanden gefragt? – Nein, niemanden."
+  ],
+  "pitfallPair": "Das ist ein von meinen Kollegen. → Das ist einer von meinen Kollegen.",
+  "links": [
+    "https://grammis.ids-mannheim.de/progr%40mm/5310",
+    "https://grammis.ids-mannheim.de/fragen/4332"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "ضمائر غير محددة تحلّ محل الاسم",
+      "lead": "حين يسألك أحد «هل عندك قلم؟» لا تحتاج إلى تكرار كلمة القلم في الجواب. تكفي كلمة واحدة تحمل نهاية الأداة. ستتعلّم كيف تختار هذه الكلمة بحسب الجنس والعدد والحالة.",
+      "translation": "هل عندك قلم؟ – نعم، عندي واحد.",
+      "steps": [
+        { "text": "حدّد الاسم الذي لا تريد تكراره", "why": "الاسم هو `Parkplatz`، وهو مذكر ومفعول به في حالة `Akkusativ`، لذلك جاءت الأداة `einen`. هذه المعلومات الثلاث هي ما ستحمله الكلمة البديلة." },
+        { "text": "احذف الاسم واترك الأداة وحدها بنهاية كاملة", "why": "إذا وقف الضمير وحده أخذ نهاية الأداة المعرفة: `der` تصير `einer` و`das` تصير `eins`. هنا صار الضمير فاعلًا، فجاء في حالة `Nominativ`: `einer`." },
+        { "text": "للنفي استعمل keiner وأخواتها", "why": "تتصرف `kein-` كما تتصرف `ein-` تمامًا: `keiner` و`keine` و`keins` و`keinen` و`keinem`." },
+        { "text": "في الجمع استعمل welche", "why": "لا جمع لكلمة `ein`، لذلك نقول `welche` في الإثبات و`keine` في النفي. وفي حالة `Dativ` نقول `welchen` و`keinen`." },
+        { "text": "للأشخاص: jemand و niemand", "why": "حين تتكلم عن شخص غير معروف استعمل `jemand`، ونفيه `niemand`. في حالة `Akkusativ` تقول `jemanden` وفي `Dativ` تقول `jemandem`. وفي الكلام اليومي تُسمع أحيانًا الصيغة بلا نهاية." }
+      ],
+      "explain": [
+        "يشبه الضمير غير المحدد أداة النكرة، لكنه يقف وحده. لذلك تظهر عليه نهاية تدل على الجنس والحالة حتى حيث تكون الأداة بلا نهاية: نقول `ein Stift` لكن `einer`، ونقول `ein Heft` لكن `eins` (وفي الكتابة الرسمية `eines`).",
+        "الكلمة `man` لا تتغيّر في حالة `Nominativ`، لكنها تصير `einen` في `Akkusativ` و`einem` في `Dativ`: `Das freut einen.` و`Das kann einem passieren.`"
+      ],
+      "pitfall": "حين يقف الضمير دون اسم بعده يحتاج إلى نهاية كاملة. الكلمة `ein` وحدها لا تكفي للمذكر في حالة `Nominativ`.",
+      "recall": ["لماذا نقول `Ich habe keins` حين نتكلم عن `das Auto`؟", "لأن `das Auto` محايد، والضمير المحايد في `Nominativ` و`Akkusativ` هو `eins` أو `keins`."],
+      "linkTitles": ["الضمائر غير المحددة · grammis", "jemand أم jemanden؟ · grammis"],
+      "table": [
+        ["الحالة", "مذكر", "مؤنث", "محايد", "جمع"],
+        ["Nominativ", "einer / keiner", "eine / keine", "eins / keins", "welche / keine"],
+        ["Akkusativ", "einen / keinen", "eine / keine", "eins / keins", "welche / keine"],
+        ["Dativ", "einem / keinem", "einer / keiner", "einem / keinem", "welchen / keinen"]
+      ]
+    },
+    "de": {
+      "title": "Indefinitpronomen im Nominativ, Akkusativ und Dativ",
+      "lead": "Auf die Frage „Hast du einen Stift?“ musst du das Nomen nicht wiederholen. Ein Wort mit der passenden Endung reicht. Du lernst, wie du dieses Wort nach Genus, Zahl und Kasus wählst.",
+      "steps": [
+        { "text": "Finde das Nomen, das du nicht wiederholen willst", "why": "Das Nomen ist `Parkplatz`: maskulin und Akkusativ, deshalb `einen`. Genau diese drei Informationen trägt später das Pronomen." },
+        { "text": "Lass das Nomen weg und gib dem Artikelwort die volle Endung", "why": "Ohne Nomen bekommt das Pronomen die Endung des bestimmten Artikels: aus `der` wird `einer`, aus `das` wird `eins`. Hier ist es Subjekt, also Nominativ: `einer`." },
+        { "text": "Für die Verneinung nimmst du keiner und seine Formen", "why": "`kein-` funktioniert genauso wie `ein-`: `keiner`, `keine`, `keins`, `keinen`, `keinem`." },
+        { "text": "Im Plural heißt es welche", "why": "Von `ein` gibt es keinen Plural. Deshalb sagst du `welche`, verneint `keine`, im Dativ `welchen` und `keinen`." },
+        { "text": "Für Personen: jemand und niemand", "why": "Für eine unbekannte Person nimmst du `jemand`, verneint `niemand`. Akkusativ: `jemanden`, Dativ: `jemandem`. In der gesprochenen Sprache hört man oft auch die Form ohne Endung." }
+      ],
+      "explain": [
+        "Das Indefinitpronomen sieht aus wie der unbestimmte Artikel, steht aber allein. Deshalb zeigt es Genus und Kasus auch dort, wo der Artikel keine Endung hat: `ein Stift`, aber `einer`; `ein Heft`, aber `eins` (geschrieben auch `eines`).",
+        "`man` bleibt im Nominativ unverändert, wird aber im Akkusativ zu `einen` und im Dativ zu `einem`: `Das freut einen.`, `Das kann einem passieren.`"
+      ],
+      "pitfall": "Ohne Nomen braucht das Pronomen die volle Endung. Für maskulin im Nominativ reicht `ein` nicht.",
+      "recall": ["Warum heißt es `Ich habe keins`, wenn es um `das Auto` geht?", "Weil `das Auto` ein Neutrum ist. Im Nominativ und Akkusativ heißt das Pronomen dann `eins` bzw. `keins`."],
+      "linkTitles": ["Indefinit-Pronomen · grammis", "jemand oder jemanden? · grammis"],
+      "table": [
+        ["Kasus", "maskulin", "feminin", "neutral", "Plural"],
+        ["Nominativ", "einer / keiner", "eine / keine", "eins / keins", "welche / keine"],
+        ["Akkusativ", "einen / keinen", "eine / keine", "eins / keins", "welche / keine"],
+        ["Dativ", "einem / keinem", "einer / keiner", "einem / keinem", "welchen / keinen"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "indefinitpronomen-1", "type": "cloze", "difficulty": 1,
+      "text": "Hast du ein Fahrrad? – Ja, ich habe {{1}}.",
+      "blanks": [["eins", "eines"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالضمير المناسب.", "explain": "`das Fahrrad` محايد ومفعول به، لذلك نقول `eins`.", "hints": ["ما جنس كلمة `Fahrrad`؟"] },
+        "de": { "prompt": "Ergänze das passende Pronomen.", "explain": "`das Fahrrad` ist neutral und steht im Akkusativ: `eins`.", "hints": ["Welches Genus hat `Fahrrad`?"] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-2", "type": "cloze", "difficulty": 1,
+      "text": "Gibt es hier noch Stühle? – Nein, hier gibt es {{1}} mehr.",
+      "blanks": [["keine"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالنفي.", "explain": "`Stühle` جمع، ونفي الجمع هو `keine`.", "hints": ["هل الكلمة مفرد أم جمع؟"] },
+        "de": { "prompt": "Ergänze die Verneinung.", "explain": "`Stühle` ist Plural. Verneint heißt es `keine`.", "hints": ["Singular oder Plural?"] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-3", "type": "mcq", "difficulty": 1,
+      "options": ["Ja, ich brauche eine.", "Ja, ich brauche einen.", "Ja, ich brauche eins."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "اختر الجواب الصحيح عن السؤال `Brauchst du eine Tasche?`", "explain": "`die Tasche` مؤنث، فالضمير هو `eine`.", "hints": ["انظر إلى الأداة في السؤال."] },
+        "de": { "prompt": "Wähle die richtige Antwort auf `Brauchst du eine Tasche?`", "explain": "`die Tasche` ist feminin, also `eine`.", "hints": ["Schau auf den Artikel in der Frage."] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-4", "type": "cloze", "difficulty": 2,
+      "text": "Ich habe keinen Kuli. Kannst du mir {{1}} leihen? – Tut mir leid, ich habe auch {{2}}.",
+      "blanks": [["einen"], ["keinen"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل الحوار بضميرين.", "explain": "`der Kuli` مذكر ومفعول به في الجملتين، لذلك نقول `einen` ثم `keinen`.", "hints": ["الأداة في الجملة الأولى تكشف الجنس والحالة."] },
+        "de": { "prompt": "Ergänze den Dialog mit zwei Pronomen.", "explain": "`der Kuli` ist maskulin und in beiden Sätzen Akkusativ: `einen`, dann `keinen`.", "hints": ["Der Artikel im ersten Satz verrät Genus und Kasus."] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-5", "type": "cloze", "difficulty": 2,
+      "text": "Kennst du hier {{1}}? – Nein, ich kenne {{2}}.",
+      "blanks": [["jemanden", "jemand"], ["niemanden", "niemand"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بضميرين للأشخاص.", "explain": "الفعل `kennen` يطلب `Akkusativ`: `jemanden` و`niemanden`. والصيغة بلا نهاية مقبولة في الكلام اليومي.", "hints": ["السؤال عن شخص غير معروف."] },
+        "de": { "prompt": "Ergänze zwei Pronomen für Personen.", "explain": "`kennen` verlangt den Akkusativ: `jemanden`, `niemanden`. Die Form ohne Endung ist umgangssprachlich auch üblich.", "hints": ["Es geht um eine unbekannte Person."] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-6", "type": "mcq", "difficulty": 2,
+      "options": ["Ich habe mit einem aus dem Kurs gesprochen.", "Ich habe mit einen aus dem Kurs gesprochen.", "Ich habe mit ein aus dem Kurs gesprochen."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟ المقصود: «تكلمت مع واحد من الدورة».", "explain": "حرف الجر `mit` يطلب `Dativ`، والمذكر في `Dativ` هو `einem`.", "hints": ["أي حالة يطلبها `mit`؟"] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "`mit` verlangt den Dativ. Maskulin im Dativ heißt `einem`.", "hints": ["Welchen Kasus verlangt `mit`?"] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-7", "type": "text", "difficulty": 3,
+      "answer": "Nein, ich habe keine.",
+      "i18n": {
+        "ar": { "prompt": "أجب بالنفي دون أن تكرر الاسم: `Hast du Geschwister?`", "explain": "`Geschwister` جمع، ونفي الجمع `keine`.", "hints": ["في الجمع لا نستعمل `keins`."] },
+        "de": { "prompt": "Antworte verneint, ohne das Nomen zu wiederholen: `Hast du Geschwister?`", "explain": "`Geschwister` ist Plural. Verneint: `keine`.", "hints": ["Im Plural gibt es kein `keins`."] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-8", "type": "text", "difficulty": 3,
+      "context": "Das ist ein von meinen Kollegen.",
+      "answer": "Das ist einer von meinen Kollegen.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "الضمير يقف وحده دون اسم، فيحتاج إلى النهاية الكاملة للمذكر في `Nominativ`: `einer`.", "hints": ["هل يأتي بعد الضمير اسم؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Das Pronomen steht ohne Nomen und braucht die volle Endung für maskulin im Nominativ: `einer`.", "hints": ["Folgt dem Pronomen ein Nomen?"] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-9", "type": "text", "difficulty": 2,
+      "answer": "Ja, hier in der Nähe gibt es eine.",
+      "i18n": {
+        "ar": { "prompt": "أجب بالإثبات دون تكرار الاسم: `Gibt es hier in der Nähe eine Apotheke?`", "explain": "`die Apotheke` مؤنث، فالضمير هو `eine`.", "hints": ["انقل الأداة من السؤال إلى الجواب."] },
+        "de": { "prompt": "Antworte bejahend, ohne das Nomen zu wiederholen: `Gibt es hier in der Nähe eine Apotheke?`", "explain": "`die Apotheke` ist feminin, also `eine`.", "hints": ["Übernimm das Artikelwort aus der Frage."] }
+      }
+    }
+  ]
+}

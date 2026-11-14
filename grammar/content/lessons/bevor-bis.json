@@ -1,0 +1,155 @@
+{
+  "id": "bevor-bis",
+  "level": "B1.2",
+  "island": "zeiten",
+  "order": 3,
+  "prereqs": [],
+  "emoji": "⏱️",
+  "german": "Temporale Nebensätze mit bevor / bis",
+  "source": { "lektion": 10, "kind": "toc" },
+  "pattern": ["bevor / bis", "…", "Verb am Ende"],
+  "frames": [
+    { "k": "sub", "parts": [["c", "Bevor"], ["mf", "ich"], ["ve", "frühstücke"]] },
+    { "k": "main", "parts": [["vf", "Bevor ich frühstücke,"], ["v", "dusche"], ["mf", "ich"]] },
+    { "k": "sub", "parts": [["c", "bis"], ["mf", "du"], ["ve", "kommst"]] }
+  ],
+  "example": "Bevor ich frühstücke, dusche ich.",
+  "stepExamples": [
+    "Ich dusche. Danach frühstücke ich.",
+    "Bevor ich frühstücke, dusche ich.",
+    "Ich warte hier, bis du kommst.",
+    "Vor dem Frühstück dusche ich."
+  ],
+  "pitfallPair": "Vor ich esse, wasche ich mir die Hände. → Bevor ich esse, wasche ich mir die Hände.",
+  "links": [
+    "https://grammis.ids-mannheim.de/systematische-grammatik/2104",
+    "https://www.dwds.de/wb/bevor"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "قبل أن وإلى أن: bevor و bis",
+      "lead": "`bevor` تقول إن شيئًا يحدث قبل شيء آخر، و`bis` تحدد نقطة النهاية: إلى متى يستمر الأمر. كلتاهما أداة ربط تابعة، فيذهب الفعل إلى آخر جملتها.",
+      "translation": "قبل أن أفطر أستحم.",
+      "steps": [
+        { "text": "رتّب الحدثين", "why": "الاستحمام أولًا ثم الفطور. الكلمة `bevor` تقف أمام الحدث الذي يأتي لاحقًا، أي الفطور." },
+        { "text": "اربط بـ bevor والفعل في الآخر", "why": "`Bevor ich frühstücke` جملة تابعة، فيأتي بعدها الفعل `dusche` ثم الفاعل. والزمنان في الجملتين متماثلان عادة." },
+        { "text": "bis تعني «إلى أن»", "why": "الانتظار يستمر حتى لحظة مجيئك ثم ينتهي. الفعل `kommst` في آخر جملة `bis`." },
+        { "text": "مع الاسم استعمل vor أو bis zu", "why": "`bevor` تأتي قبل جملة، و`vor` قبل اسم: `vor dem Frühstück`. وكذلك `bis` قبل جملة، و`bis zum Abend` قبل اسم." }
+      ],
+      "explain": [
+        "مع `bevor` يكون الحدث في الجملة الرئيسية أسبق، ومع `bis` تستمر الجملة الرئيسية حتى يبدأ ما في جملة `bis`.",
+        "لاحظ أن `bis` تأتي كثيرًا مع النفي: `Ich gehe nicht, bis du fertig bist` تعني أنني لن أذهب قبل أن تنتهي."
+      ],
+      "pitfall": "`vor` حرف جر يحتاج إلى اسم. قبل الجملة الكاملة نحتاج إلى `bevor`.",
+      "recall": ["أكمل: `Ich bleibe im Büro, ___ die Arbeit fertig ist.`", "`bis`: البقاء يستمر حتى ينتهي العمل."],
+      "linkTitles": ["الجمل الزمنية · grammis", "bevor في معجم DWDS"],
+      "table": [
+        ["مع جملة", "مع اسم", "المعنى"],
+        ["bevor ich esse", "vor dem Essen", "قبل"],
+        ["bis du kommst", "bis zum Abend", "إلى أن، حتى"]
+      ]
+    },
+    "de": {
+      "title": "Temporale Nebensätze mit bevor und bis",
+      "lead": "`bevor` sagt, dass etwas vor etwas anderem passiert. `bis` nennt den Endpunkt: wie lange etwas dauert. Beide sind Subjunktoren, das Verb steht am Ende ihres Satzes.",
+      "steps": [
+        { "text": "Ordne die Ereignisse", "why": "Erst duschen, dann frühstücken. `bevor` steht vor dem späteren Ereignis, dem Frühstück." },
+        { "text": "Verbinde mit bevor, das Verb am Ende", "why": "`Bevor ich frühstücke` ist ein Nebensatz. Danach folgen `dusche` und das Subjekt. Beide Sätze stehen meist in derselben Zeit." },
+        { "text": "bis nennt den Endpunkt", "why": "Das Warten dauert bis zu dem Moment, in dem du kommst. `kommst` steht am Ende des bis-Satzes." },
+        { "text": "Mit Nomen: vor und bis zu", "why": "`bevor` steht vor einem Satz, `vor` vor einem Nomen: `vor dem Frühstück`. Ebenso `bis` vor einem Satz, `bis zum Abend` vor einem Nomen." }
+      ],
+      "explain": [
+        "Bei `bevor` passiert der Hauptsatz früher. Bei `bis` dauert der Hauptsatz an, bis das Ereignis im bis-Satz beginnt.",
+        "`bis` steht oft mit Verneinung: `Ich gehe nicht, bis du fertig bist` heißt: Ich gehe erst, wenn du fertig bist."
+      ],
+      "pitfall": "`vor` ist eine Präposition und braucht ein Nomen. Vor einem ganzen Satz steht `bevor`.",
+      "recall": ["Ergänze: `Ich bleibe im Büro, ___ die Arbeit fertig ist.`", "`bis`: Ich bleibe so lange, bis die Arbeit fertig ist."],
+      "linkTitles": ["Temporalsätze · grammis", "bevor im DWDS"],
+      "table": [
+        ["mit Satz", "mit Nomen", "Bedeutung"],
+        ["bevor ich esse", "vor dem Essen", "früher als"],
+        ["bis du kommst", "bis zum Abend", "Endpunkt"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "bevor-bis-1", "type": "cloze", "difficulty": 1,
+      "text": "{{1}} du gehst, mach bitte das Fenster zu.",
+      "blanks": [["Bevor"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بأداة تعني «قبل أن».", "explain": "إغلاق النافذة يحدث قبل الذهاب: `Bevor du gehst`.", "hints": ["بعد الفراغ جملة كاملة."] },
+        "de": { "prompt": "Ergänze das Wort für „früher als“.", "explain": "Das Fenster schließt du vor dem Gehen: `Bevor du gehst`.", "hints": ["Nach der Lücke steht ein ganzer Satz."] }
+      }
+    },
+    {
+      "id": "bevor-bis-2", "type": "cloze", "difficulty": 1,
+      "text": "Wir warten, {{1}} der Regen aufhört.",
+      "blanks": [["bis"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بأداة تعني «إلى أن».", "explain": "الانتظار يستمر حتى يتوقف المطر: `bis`.", "hints": ["متى ينتهي الانتظار؟"] },
+        "de": { "prompt": "Ergänze das Wort für den Endpunkt.", "explain": "Das Warten dauert, bis der Regen aufhört: `bis`.", "hints": ["Wann endet das Warten?"] }
+      }
+    },
+    {
+      "id": "bevor-bis-3", "type": "mcq", "difficulty": 1,
+      "options": ["Vor dem Essen", "Bevor dem Essen", "Bis dem Essen"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي عبارة تكمل الجملة؟ `___ wasche ich mir die Hände.`", "explain": "قبل الاسم `dem Essen` نحتاج إلى حرف الجر `vor`.", "hints": ["بعد الفراغ اسم، لا جملة."] },
+        "de": { "prompt": "Was passt? `___ wasche ich mir die Hände.`", "explain": "Vor dem Nomen `dem Essen` steht die Präposition `vor`.", "hints": ["Nach der Lücke steht ein Nomen, kein Satz."] }
+      }
+    },
+    {
+      "id": "bevor-bis-4", "type": "cloze", "difficulty": 2,
+      "text": "Bevor er nach Deutschland {{1}}, hat er einen Sprachkurs {{2}}.",
+      "blanks": [["kam", "gekommen ist"], ["gemacht", "besucht"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بفعل `kommen` في الماضي وبـ `Partizip II` مناسب.", "explain": "الفعل في آخر جملة `bevor`: `kam`. والجملة الرئيسية في `Perfekt`: `hat … gemacht`.", "hints": ["الفراغ الأول في آخر الجملة التابعة."] },
+        "de": { "prompt": "Ergänze `kommen` in der Vergangenheit und ein passendes Partizip II.", "explain": "Am Ende des bevor-Satzes: `kam`. Der Hauptsatz steht im Perfekt: `hat … gemacht`.", "hints": ["Die erste Lücke steht am Ende des Nebensatzes."] }
+      }
+    },
+    {
+      "id": "bevor-bis-5", "type": "order", "difficulty": 2,
+      "items": ["Ich", "bleibe", "im Bett,", "bis", "das Fieber", "weg", "ist."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة.", "explain": "الجملة الرئيسية أولًا، ثم `bis das Fieber weg ist` والفعل `ist` في الآخر.", "hints": ["ابدأ بـ `Ich bleibe`."] },
+        "de": { "prompt": "Ordne den Satz.", "explain": "Erst der Hauptsatz, dann `bis das Fieber weg ist` mit `ist` am Ende.", "hints": ["Beginne mit `Ich bleibe`."] }
+      }
+    },
+    {
+      "id": "bevor-bis-6", "type": "mcq", "difficulty": 2,
+      "options": ["Wir essen zuerst, dann sehen wir fern.", "Wir sehen zuerst fern, dann essen wir.", "Wir essen und sehen gleichzeitig fern."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "ما معنى `Bevor wir fernsehen, essen wir`؟", "explain": "`bevor` تقف أمام الحدث اللاحق، أي مشاهدة التلفاز. الأكل يأتي أولًا.", "hints": ["أمام أي حدث تقف `bevor`؟"] },
+        "de": { "prompt": "Was bedeutet `Bevor wir fernsehen, essen wir`?", "explain": "`bevor` steht vor dem späteren Ereignis, dem Fernsehen. Gegessen wird zuerst.", "hints": ["Vor welchem Ereignis steht `bevor`?"] }
+      }
+    },
+    {
+      "id": "bevor-bis-7", "type": "text", "difficulty": 3,
+      "answer": "Bevor ich ins Bett gehe, lese ich ein bisschen.",
+      "i18n": {
+        "ar": { "prompt": "اربط بـ `bevor` وابدأ بها: `Ich lese ein bisschen. Dann gehe ich ins Bett.`", "explain": "`bevor` أمام الحدث اللاحق: `Bevor ich ins Bett gehe, lese ich ein bisschen.`", "hints": ["أي حدث يأتي لاحقًا؟"] },
+        "de": { "prompt": "Verbinde mit `bevor` am Anfang: `Ich lese ein bisschen. Dann gehe ich ins Bett.`", "explain": "`bevor` steht vor dem späteren Ereignis: `Bevor ich ins Bett gehe, lese ich ein bisschen.`", "hints": ["Welches Ereignis kommt später?"] }
+      }
+    },
+    {
+      "id": "bevor-bis-8", "type": "text", "difficulty": 3,
+      "context": "Vor ich esse, wasche ich mir die Hände.",
+      "answer": "Bevor ich esse, wasche ich mir die Hände.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد الكلمة جملة كاملة فيها فعل، فنحتاج إلى أداة الربط `Bevor`. أما `vor` فتأتي قبل اسم.", "hints": ["هل يأتي بعدها اسم أم جملة؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Danach folgt ein ganzer Satz mit Verb, also brauchst du den Subjunktor `Bevor`. `vor` steht vor einem Nomen.", "hints": ["Folgt ein Nomen oder ein Satz?"] }
+      }
+    },
+    {
+      "id": "bevor-bis-9", "type": "text", "difficulty": 2,
+      "answer": "Ich lerne jeden Tag, bis ich die Prüfung bestanden habe.",
+      "i18n": {
+        "ar": { "prompt": "اكتب ما ستفعله حتى تنجح في الامتحان. استعمل `bis`.", "explain": "مثال: `Ich lerne jeden Tag, bis ich die Prüfung bestanden habe.`", "hints": ["الفعل المصرف في آخر جملة `bis`."] },
+        "de": { "prompt": "Schreib, was du tust, bis du die Prüfung bestanden hast. Benutze `bis`.", "explain": "Zum Beispiel: `Ich lerne jeden Tag, bis ich die Prüfung bestanden habe.`", "hints": ["Das konjugierte Verb steht am Ende des bis-Satzes."] }
+      }
+    }
+  ]
+}

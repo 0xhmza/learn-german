@@ -1,0 +1,167 @@
+{
+  "id": "gradpartikeln",
+  "level": "B1.2",
+  "island": "adjektive",
+  "order": 6,
+  "prereqs": [],
+  "emoji": "🎚️",
+  "german": "Gradpartikeln",
+  "source": { "lektion": 8, "kind": "toc" },
+  "pattern": ["Gradpartikel", "+", "Adjektiv / Adverb"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Der Film"], ["v", "war"], ["mf", "ziemlich"], ["hl", "spannend"]] },
+    { "k": "main", "parts": [["vf", "Das neue Handy"], ["v", "ist"], ["mf", "viel"], ["hl", "besser"]] },
+    { "k": "np", "parts": [["n", "ein"], ["mf", "besonders"], ["hl", "schönes"], ["n", "Foto"]] }
+  ],
+  "example": "Der Film war ziemlich spannend.",
+  "stepExamples": [
+    "Der Film war spannend.",
+    "Der Film war sehr spannend. · Der Film war etwas langweilig.",
+    "Der Film war ziemlich spannend.",
+    "Die Jacke ist zu teuer.",
+    "Das neue Handy ist viel besser."
+  ],
+  "pitfallPair": "Das neue Handy ist sehr besser. → Das neue Handy ist viel besser.",
+  "links": [
+    "https://www.dwds.de/wb/Gradpartikel",
+    "https://www.dwds.de/wb/ziemlich"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "تقوية الصفة وتخفيفها",
+      "lead": "هل كان الفيلم مشوّقًا قليلًا أم كثيرًا أم إلى حد ما؟ الكلمات الصغيرة قبل الصفة تحدد الدرجة بدقة. ستتعلم ترتيبها من الأضعف إلى الأقوى، ومتى تقول `zu` ومتى تقول `viel`.",
+      "translation": "كان الفيلم مشوّقًا إلى حد كبير.",
+      "steps": [
+        { "text": "ابدأ بالصفة وحدها", "why": "الصفة `spannend` تصف الفيلم، لكنها لا تقول إلى أي درجة كان مشوّقًا." },
+        { "text": "ضع كلمة الدرجة مباشرة قبل الصفة", "why": "`sehr` تقوّي و`etwas` أو `ein bisschen` تخفّف. كلمة الدرجة لا تتغير أبدًا ولا تأخذ نهايات." },
+        { "text": "اختر الدرجة المتوسطة بدقة", "why": "`ziemlich` و`recht` تعنيان «إلى حد كبير». أما `ganz` فمعناها في الغالب «لا بأس، بشكل مقبول» حين لا تُنطق بقوة: `Das Essen war ganz gut.`" },
+        { "text": "zu تعني «أكثر من اللازم»", "why": "`zu teuer` لا تعني «غالية جدًا» فقط، بل أنها غالية إلى درجة لا تناسبك. غالبًا لن تشتريها." },
+        { "text": "مع صيغة المقارنة استعمل viel أو etwas", "why": "`sehr` لا تقف قبل صيغة المقارنة. تقول `viel besser` و`etwas billiger` و`noch schneller`." }
+      ],
+      "explain": [
+        "تُسمّى هذه الكلمات في كتب الألمانية للأجانب `Gradpartikeln`، وبعض كتب القواعد تسمّيها كلمات الشدة. تقف قبل الصفة أو الظرف مباشرة، وإذا جاءت الصفة قبل اسم بقيت كلمة الدرجة بلا نهاية: `ein besonders schönes Foto`.",
+        "في الكلام اليومي تسمع أيضًا `echt` و`total` و`voll` للتقوية، و`gar nicht` و`überhaupt nicht` للنفي القوي."
+      ],
+      "pitfall": "قبل صيغة المقارنة لا تأتي `sehr`. استعمل `viel` أو `etwas` أو `noch`.",
+      "recall": ["ما الفرق بين `Die Jacke ist sehr teuer` و`Die Jacke ist zu teuer`؟", "الأولى تقول إن السعر مرتفع. والثانية تقول إن السعر أعلى مما يناسبك، فالأرجح أنك لن تشتريها."],
+      "linkTitles": ["Gradpartikel في معجم DWDS", "ziemlich في معجم DWDS"],
+      "table": [
+        ["الدرجة", "الكلمات", "مثال"],
+        ["لا شيء", "gar nicht · überhaupt nicht", "Das ist gar nicht schwer."],
+        ["قليلًا", "etwas · ein bisschen · kaum", "Ich bin ein bisschen müde."],
+        ["متوسط", "ganz · ziemlich · recht", "Der Kurs ist ziemlich gut."],
+        ["كثيرًا", "sehr · besonders · wirklich · total", "Das ist wirklich toll."],
+        ["أكثر من اللازم", "zu", "Der Kaffee ist zu heiß."],
+        ["مع المقارنة", "viel · etwas · noch", "Heute ist es viel wärmer."]
+      ]
+    },
+    "de": {
+      "title": "Gradpartikeln",
+      "lead": "War der Film ein bisschen, ziemlich oder sehr spannend? Kleine Wörter vor dem Adjektiv bestimmen den Grad genau. Du lernst ihre Reihenfolge von schwach bis stark und wann du `zu` und wann `viel` brauchst.",
+      "steps": [
+        { "text": "Beginne mit dem Adjektiv allein", "why": "`spannend` beschreibt den Film, sagt aber nicht, wie stark." },
+        { "text": "Stell das Gradwort direkt vor das Adjektiv", "why": "`sehr` verstärkt, `etwas` oder `ein bisschen` schwächt ab. Das Gradwort ändert sich nie und bekommt keine Endung." },
+        { "text": "Wähle die Mitte genau", "why": "`ziemlich` und `recht` heißen „mehr als erwartet“. `ganz` bedeutet unbetont meist „okay, nicht schlecht“: `Das Essen war ganz gut.`" },
+        { "text": "zu heißt „mehr als passend“", "why": "`zu teuer` heißt nicht nur „sehr teuer“, sondern: so teuer, dass es nicht passt. Du kaufst es wahrscheinlich nicht." },
+        { "text": "Beim Komparativ nimmst du viel oder etwas", "why": "Vor einem Komparativ steht kein `sehr`. Du sagst `viel besser`, `etwas billiger`, `noch schneller`." }
+      ],
+      "explain": [
+        "In Lehrwerken heißen diese Wörter Gradpartikeln, manche Grammatiken sprechen von Intensitätspartikeln. Sie stehen direkt vor dem Adjektiv oder Adverb. Vor einem Nomen bleibt das Gradwort ohne Endung: `ein besonders schönes Foto`.",
+        "Umgangssprachlich verstärkst du auch mit `echt`, `total` oder `voll`. Stark verneint wird mit `gar nicht` und `überhaupt nicht`."
+      ],
+      "pitfall": "Vor einem Komparativ steht kein `sehr`. Nimm `viel`, `etwas` oder `noch`.",
+      "recall": ["Was ist der Unterschied zwischen `Die Jacke ist sehr teuer` und `Die Jacke ist zu teuer`?", "Der erste Satz sagt: Der Preis ist hoch. Der zweite: Der Preis ist höher, als es für dich passt – du kaufst sie wohl nicht."],
+      "linkTitles": ["Gradpartikel im DWDS", "ziemlich im DWDS"],
+      "table": [
+        ["Grad", "Wörter", "Beispiel"],
+        ["gar nicht", "gar nicht · überhaupt nicht", "Das ist gar nicht schwer."],
+        ["wenig", "etwas · ein bisschen · kaum", "Ich bin ein bisschen müde."],
+        ["mittel", "ganz · ziemlich · recht", "Der Kurs ist ziemlich gut."],
+        ["stark", "sehr · besonders · wirklich · total", "Das ist wirklich toll."],
+        ["zu stark", "zu", "Der Kaffee ist zu heiß."],
+        ["beim Komparativ", "viel · etwas · noch", "Heute ist es viel wärmer."]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "gradpartikeln-1", "type": "cloze", "difficulty": 1,
+      "text": "Ich kann den Tee nicht trinken, er ist {{1}} heiß.",
+      "blanks": [["zu"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالكلمة التي تعني «أكثر من اللازم».", "explain": "الشاي ساخن إلى درجة لا تسمح بشربه: `zu heiß`.", "hints": ["النتيجة: لا أستطيع الشرب."] },
+        "de": { "prompt": "Ergänze das Wort für „mehr als passend“.", "explain": "Der Tee ist so heiß, dass man ihn nicht trinken kann: `zu heiß`.", "hints": ["Die Folge: Ich kann nicht trinken."] }
+      }
+    },
+    {
+      "id": "gradpartikeln-2", "type": "cloze", "difficulty": 1,
+      "text": "Mit dem Zug bist du {{1}} schneller als mit dem Bus.",
+      "blanks": [["viel", "noch", "etwas"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمة درجة قبل صيغة المقارنة.", "explain": "قبل `schneller` نستعمل `viel` أو `etwas` أو `noch`، لا `sehr`.", "hints": ["`schneller` صيغة مقارنة."] },
+        "de": { "prompt": "Ergänze ein Gradwort vor dem Komparativ.", "explain": "Vor `schneller` passt `viel`, `etwas` oder `noch`, aber nicht `sehr`.", "hints": ["`schneller` ist ein Komparativ."] }
+      }
+    },
+    {
+      "id": "gradpartikeln-3", "type": "mcq", "difficulty": 1,
+      "options": ["ein bisschen", "sehr", "total"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي كلمة تخفّف المعنى؟ `Ich bin ___ müde, aber ich komme mit.`", "explain": "`ein bisschen` تعني «قليلًا». الشخص متعب قليلًا فقط، لذلك يأتي معنا.", "hints": ["الشخص سيأتي رغم التعب."] },
+        "de": { "prompt": "Welches Wort schwächt ab? `Ich bin ___ müde, aber ich komme mit.`", "explain": "`ein bisschen` heißt „nur wenig“. Die Person ist nur wenig müde und kommt deshalb mit.", "hints": ["Die Person kommt trotz Müdigkeit mit."] }
+      }
+    },
+    {
+      "id": "gradpartikeln-4", "type": "cloze", "difficulty": 2,
+      "text": "Das war ein {{1}} schöner Abend, und das Essen war {{2}} nicht teuer.",
+      "blanks": [["besonders", "sehr", "wirklich"], ["gar", "überhaupt"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمة تقوية ثم بكلمة نفي قوي.", "explain": "قبل الصفة مع الاسم تبقى كلمة الدرجة بلا نهاية: `ein besonders schöner Abend`. والنفي القوي `gar nicht` أو `überhaupt nicht`.", "hints": ["الفراغ الثاني يقف قبل `nicht`."] },
+        "de": { "prompt": "Ergänze ein verstärkendes Wort und eine starke Verneinung.", "explain": "Vor dem Adjektiv bleibt das Gradwort ohne Endung: `ein besonders schöner Abend`. Stark verneint: `gar nicht` oder `überhaupt nicht`.", "hints": ["Die zweite Lücke steht vor `nicht`."] }
+      }
+    },
+    {
+      "id": "gradpartikeln-5", "type": "cloze", "difficulty": 2,
+      "text": "Die Prüfung war nicht leicht, aber auch nicht sehr schwer. Sie war {{1}} schwer.",
+      "blanks": [["ziemlich", "recht", "etwas", "ein bisschen"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمة درجة متوسطة.", "explain": "بين «سهل» و«صعب جدًا» تصلح `ziemlich` أو `recht` أو `etwas`.", "hints": ["ابحث عن الوسط."] },
+        "de": { "prompt": "Ergänze ein Gradwort für die Mitte.", "explain": "Zwischen „leicht“ und „sehr schwer“ passen `ziemlich`, `recht` oder `etwas`.", "hints": ["Such die Mitte."] }
+      }
+    },
+    {
+      "id": "gradpartikeln-6", "type": "mcq", "difficulty": 2,
+      "options": ["Die Hose ist zu klein.", "Die Hose ist sehr klein.", "Die Hose ist ziemlich klein."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "تجرّب سروالًا ولا يناسبك لأنه صغير. ماذا تقول للبائع؟", "explain": "`zu klein` تعني أنه أصغر مما يناسبك. الجملتان الأخريان لا تقولان إنه لا يناسب.", "hints": ["المشكلة أنه لا يناسب."] },
+        "de": { "prompt": "Du probierst eine Hose an, sie passt nicht, weil sie klein ist. Was sagst du?", "explain": "`zu klein` heißt: kleiner, als es passt. Die anderen Sätze sagen nicht, dass sie nicht passt.", "hints": ["Das Problem: Sie passt nicht."] }
+      }
+    },
+    {
+      "id": "gradpartikeln-7", "type": "text", "difficulty": 3,
+      "answer": "Die neue Wohnung ist viel größer als die alte.",
+      "i18n": {
+        "ar": { "prompt": "اكتب أن الشقة الجديدة أكبر بكثير من القديمة. استعمل `größer`.", "explain": "قبل صيغة المقارنة نقول `viel`: `viel größer als die alte`.", "hints": ["لا تستعمل `sehr`."] },
+        "de": { "prompt": "Schreib, dass die neue Wohnung deutlich größer als die alte ist. Benutze `größer`.", "explain": "Vor dem Komparativ steht `viel`: `viel größer als die alte`.", "hints": ["Nicht `sehr` benutzen."] }
+      }
+    },
+    {
+      "id": "gradpartikeln-8", "type": "text", "difficulty": 3,
+      "context": "Das neue Handy ist sehr besser.",
+      "answer": "Das neue Handy ist viel besser.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`besser` صيغة مقارنة، وقبلها نقول `viel` أو `etwas` أو `noch`، لا `sehr`.", "hints": ["ما نوع الصفة `besser`؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`besser` ist ein Komparativ. Davor steht `viel`, `etwas` oder `noch`, nicht `sehr`.", "hints": ["Was für eine Form ist `besser`?"] }
+      }
+    },
+    {
+      "id": "gradpartikeln-9", "type": "text", "difficulty": 2,
+      "answer": "Mein Deutschkurs ist ziemlich gut, aber ein bisschen zu früh am Morgen.",
+      "i18n": {
+        "ar": { "prompt": "صف دورة الألمانية بجملة فيها كلمتا درجة مختلفتان.", "explain": "مثال: `Mein Deutschkurs ist ziemlich gut, aber ein bisschen zu früh am Morgen.`", "hints": ["كلمة درجة تقف مباشرة قبل الصفة."] },
+        "de": { "prompt": "Beschreib deinen Deutschkurs mit zwei verschiedenen Gradwörtern.", "explain": "Zum Beispiel: `Mein Deutschkurs ist ziemlich gut, aber ein bisschen zu früh am Morgen.`", "hints": ["Das Gradwort steht direkt vor dem Adjektiv."] }
+      }
+    }
+  ]
+}

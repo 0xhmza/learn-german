@@ -1,0 +1,145 @@
+{
+  "id": "sodass",
+  "level": "B1.2",
+  "island": "grund-folge",
+  "order": 3,
+  "prereqs": [],
+  "emoji": "🌊",
+  "german": "Konsekutive Nebensätze mit sodass / so … dass",
+  "source": { "lektion": 9, "kind": "toc" },
+  "pattern": ["Hauptsatz", ",", "sodass", "…", "Verb am Ende"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Es"], ["v", "hat"], ["mf", "stark"], ["ve", "geregnet"]] },
+    { "k": "sub", "parts": [["c", "sodass"], ["mf", "wir zu Hause"], ["ve", "geblieben sind"]] },
+    { "k": "main", "parts": [["vf", "Es"], ["v", "war"], ["hl", "so kalt,"], ["c", "dass"], ["mf", "der See"], ["ve", "gefroren ist"]] }
+  ],
+  "example": "Es hat stark geregnet, sodass wir zu Hause geblieben sind.",
+  "stepExamples": [
+    "Es hat stark geregnet. Wir sind zu Hause geblieben.",
+    "Es hat stark geregnet, sodass wir zu Hause geblieben sind.",
+    "Es hat so stark geregnet, dass wir zu Hause geblieben sind.",
+    "Er sprach so leise, dass niemand ihn verstand."
+  ],
+  "pitfallPair": "Es war so kalt, sodass wir gefroren haben. → Es war so kalt, dass wir gefroren haben.",
+  "links": [
+    "https://grammis.ids-mannheim.de/konnektoren/406996",
+    "https://grammis.ids-mannheim.de/systematische-grammatik/2103"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "النتيجة بـ sodass و so … dass",
+      "lead": "مع `deshalb` تذكر النتيجة في جملة رئيسية. ومع `sodass` تذكرها في جملة تابعة تأتي بعد السبب مباشرة، فيذهب الفعل إلى آخرها. وإذا أردت التركيز على شدة الأمر استعملت `so … dass`.",
+      "translation": "أمطرت بغزارة، فبقينا في البيت.",
+      "steps": [
+        { "text": "ابدأ بسبب ونتيجة", "why": "المطر الغزير هو السبب، والبقاء في البيت هو النتيجة. الترتيب ثابت: السبب أولًا ثم النتيجة." },
+        { "text": "اربط النتيجة بـ sodass", "why": "`sodass` أداة ربط تابعة، فيقف الفعل المصرف `sind` في الآخر. وجملة `sodass` تأتي دائمًا بعد الجملة الرئيسية." },
+        { "text": "للتركيز على الشدة ضع so قبل الصفة", "why": "`so stark` في الجملة الرئيسية تقول «بغزارة شديدة إلى حد أن…». ثم تبدأ النتيجة بـ `dass` وحدها." },
+        { "text": "استعمل so … dass مع الصفات والظروف", "why": "`so leise` و`so müde` و`so viel`: كلمة `so` تقف قبل الصفة أو الظرف، والفعل في جملة `dass` في الآخر." }
+      ],
+      "explain": [
+        "`sodass` تُكتب أيضًا `so dass` بكلمتين، والصيغتان صحيحتان. أما في `so … dass` فتنفصل `so` عن `dass` وتقف قبل الصفة.",
+        "لا تبدأ الجملة بـ `sodass`: النتيجة لا تأتي قبل سببها. وإذا أردت أن تبدأ بالنتيجة فاستعمل `weil` للسبب."
+      ],
+      "pitfall": "إذا كانت `so` قبل الصفة فلا تكررها: تأتي بعدها `dass` وحدها.",
+      "recall": ["ما الفرق بين `Er war krank, sodass er nicht kam` و`Er war so krank, dass er nicht kam`؟", "المعنى متقارب، لكن الثانية تركز على شدة المرض: كان مريضًا إلى درجة أنه لم يأتِ."],
+      "linkTitles": ["معجم أدوات الربط: sodass · grammis", "جمل النتيجة · grammis"]
+    },
+    "de": {
+      "title": "Konsekutive Nebensätze mit sodass und so … dass",
+      "lead": "Mit `deshalb` steht die Folge in einem Hauptsatz. Mit `sodass` steht sie in einem Nebensatz direkt nach dem Grund, und das Verb geht ans Ende. Willst du betonen, wie stark etwas war, nimmst du `so … dass`.",
+      "steps": [
+        { "text": "Beginne mit Grund und Folge", "why": "Der starke Regen ist der Grund, das Zuhausebleiben die Folge. Die Reihenfolge ist fest: erst Grund, dann Folge." },
+        { "text": "Schließ die Folge mit sodass an", "why": "`sodass` ist ein Subjunktor: Das konjugierte Verb `sind` steht am Ende. Der sodass-Satz steht immer nach dem Hauptsatz." },
+        { "text": "Für die Intensität steht so vor dem Adjektiv", "why": "`so stark` im Hauptsatz heißt „so stark, dass es eine Folge hat“. Die Folge beginnt dann nur mit `dass`." },
+        { "text": "so … dass funktioniert mit Adjektiven und Adverbien", "why": "`so leise`, `so müde`, `so viel`: `so` steht vor dem Adjektiv oder Adverb, im dass-Satz steht das Verb am Ende." }
+      ],
+      "explain": [
+        "`sodass` kann man auch getrennt `so dass` schreiben, beides ist richtig. Bei `so … dass` sind die Teile getrennt, und `so` steht vor dem Adjektiv.",
+        "Ein sodass-Satz steht nie am Satzanfang, denn die Folge kommt nicht vor dem Grund. Willst du mit der Folge beginnen, nennst du den Grund mit `weil`."
+      ],
+      "pitfall": "Steht `so` schon vor dem Adjektiv, wiederholst du es nicht. Danach kommt nur `dass`.",
+      "recall": ["Was ist der Unterschied zwischen `Er war krank, sodass er nicht kam` und `Er war so krank, dass er nicht kam`?", "Die Bedeutung ist ähnlich, der zweite Satz betont aber, wie krank er war."],
+      "linkTitles": ["Konnektoren-Wörterbuch: sodass · grammis", "Konsekutivsätze · grammis"]
+    }
+  },
+  "questions": [
+    {
+      "id": "sodass-1", "type": "cloze", "difficulty": 1,
+      "text": "Der Akku war leer, sodass ich nicht telefonieren {{1}}.",
+      "blanks": [["konnte"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل `können` في الماضي.", "explain": "بعد `sodass` يقف الفعل المصرف في الآخر: `telefonieren konnte`.", "hints": ["المصدر أولًا ثم الفعل الناقص."] },
+        "de": { "prompt": "Ergänze `können` im Präteritum.", "explain": "Nach `sodass` steht das konjugierte Verb am Ende: `telefonieren konnte`.", "hints": ["Erst der Infinitiv, dann das Modalverb."] }
+      }
+    },
+    {
+      "id": "sodass-2", "type": "cloze", "difficulty": 1,
+      "text": "Die Musik war {{1}} laut, {{2}} ich nicht schlafen konnte.",
+      "blanks": [["so"], ["dass"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالجزأين `so … dass`.", "explain": "`so` قبل الصفة `laut`، ثم `dass` في بداية جملة النتيجة.", "hints": ["الكلمة الأولى تقف قبل الصفة."] },
+        "de": { "prompt": "Ergänze die zwei Teile `so … dass`.", "explain": "`so` steht vor dem Adjektiv `laut`, `dass` am Anfang des Folgesatzes.", "hints": ["Das erste Wort steht vor dem Adjektiv."] }
+      }
+    },
+    {
+      "id": "sodass-3", "type": "mcq", "difficulty": 1,
+      "options": ["Der Zug hatte Verspätung, sodass ich den Anschluss verpasst habe.", "Der Zug hatte Verspätung, sodass ich habe den Anschluss verpasst.", "Sodass ich den Anschluss verpasst habe, hatte der Zug Verspätung."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "جملة `sodass` تأتي بعد السبب، والفعل المساعد `habe` في آخرها.", "hints": ["النتيجة بعد السبب دائمًا."] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Der sodass-Satz steht nach dem Grund, `habe` am Ende.", "hints": ["Die Folge steht immer nach dem Grund."] }
+      }
+    },
+    {
+      "id": "sodass-4", "type": "cloze", "difficulty": 2,
+      "text": "Ich hatte {{1}} viel Arbeit, dass ich das Mittagessen {{2}} habe.",
+      "blanks": [["so"], ["vergessen"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمة الشدة وبالتصريف الثالث للفعل `vergessen`.", "explain": "`so viel` تركز على الكمية، و`vergessen habe` في آخر جملة `dass`.", "hints": ["`Partizip II` من `vergessen` لا يأخذ `ge-`."] },
+        "de": { "prompt": "Ergänze das Intensitätswort und das Partizip II von `vergessen`.", "explain": "`so viel` betont die Menge, `vergessen habe` steht am Ende des dass-Satzes.", "hints": ["Das Partizip II von `vergessen` hat kein `ge-`."] }
+      }
+    },
+    {
+      "id": "sodass-5", "type": "order", "difficulty": 2,
+      "items": ["Ich", "habe", "verschlafen,", "sodass", "ich", "zu spät", "gekommen bin."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة: السبب ثم النتيجة.", "explain": "الجملة الرئيسية أولًا، ثم `sodass` والفاعل، والفعل `gekommen bin` في الآخر.", "hints": ["ابدأ بـ `Ich habe`."] },
+        "de": { "prompt": "Ordne den Satz: erst der Grund, dann die Folge.", "explain": "Erst der Hauptsatz, dann `sodass`, das Subjekt und `gekommen bin` am Ende.", "hints": ["Beginne mit `Ich habe`."] }
+      }
+    },
+    {
+      "id": "sodass-6", "type": "mcq", "difficulty": 2,
+      "options": ["Der Koffer ist so schwer, dass ich ihn nicht tragen kann.", "Der Koffer ist schwer, dass ich ihn nicht tragen kann.", "Der Koffer ist so schwer, sodass ich ihn nicht tragen kann."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "مع `so` قبل الصفة تأتي `dass` وحدها. بدون `so` لا يكفي `dass` هنا، ومع `so` لا نقول `sodass`.", "hints": ["`so` لا تتكرر."] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Mit `so` vor dem Adjektiv folgt nur `dass`. Ohne `so` reicht `dass` hier nicht, und mit `so` heißt es nicht `sodass`.", "hints": ["`so` steht nur einmal."] }
+      }
+    },
+    {
+      "id": "sodass-7", "type": "text", "difficulty": 3,
+      "answer": "Der Film war so langweilig, dass ich eingeschlafen bin.",
+      "i18n": {
+        "ar": { "prompt": "اربط بـ `so … dass`: `Der Film war langweilig. Ich bin eingeschlafen.`", "explain": "`so` قبل `langweilig`، و`dass ich eingeschlafen bin` بالفعل المساعد في الآخر.", "hints": ["`eingeschlafen bin` في الآخر."] },
+        "de": { "prompt": "Verbinde mit `so … dass`: `Der Film war langweilig. Ich bin eingeschlafen.`", "explain": "`so` vor `langweilig`, dann `dass ich eingeschlafen bin` mit dem Hilfsverb am Ende.", "hints": ["`eingeschlafen bin` steht am Ende."] }
+      }
+    },
+    {
+      "id": "sodass-8", "type": "text", "difficulty": 3,
+      "context": "Es war so kalt, sodass wir gefroren haben.",
+      "answer": "Es war so kalt, dass wir gefroren haben.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`so` موجودة قبل `kalt`، فتبدأ النتيجة بـ `dass` وحدها.", "hints": ["كم مرة تظهر `so`؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`so` steht schon vor `kalt`. Die Folge beginnt nur mit `dass`.", "hints": ["Wie oft steht `so` im Satz?"] }
+      }
+    },
+    {
+      "id": "sodass-9", "type": "text", "difficulty": 2,
+      "answer": "Ich war so müde, dass ich früh ins Bett gegangen bin.",
+      "i18n": {
+        "ar": { "prompt": "اكتب جملة عن التعب ونتيجته مع `so … dass`.", "explain": "مثال: `Ich war so müde, dass ich früh ins Bett gegangen bin.`", "hints": ["`so` قبل الصفة."] },
+        "de": { "prompt": "Schreib einen Satz über Müdigkeit und ihre Folge mit `so … dass`.", "explain": "Zum Beispiel: `Ich war so müde, dass ich früh ins Bett gegangen bin.`", "hints": ["`so` steht vor dem Adjektiv."] }
+      }
+    }
+  ]
+}

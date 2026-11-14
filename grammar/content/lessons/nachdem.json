@@ -1,0 +1,155 @@
+{
+  "id": "nachdem",
+  "level": "B1.2",
+  "island": "zeiten",
+  "order": 2,
+  "prereqs": ["plusquamperfekt"],
+  "emoji": "🔁",
+  "german": "Temporale Nebensätze mit nachdem",
+  "source": { "lektion": 10, "kind": "toc" },
+  "pattern": ["nachdem", "+", "Plusquamperfekt", ",", "Präteritum / Perfekt"],
+  "frames": [
+    { "k": "sub", "parts": [["c", "Nachdem"], ["mf", "ich"], ["ve", "gegessen hatte"]] },
+    { "k": "main", "parts": [["vf", "Nachdem ich gegessen hatte,"], ["v", "ging"], ["mf", "ich spazieren"]] },
+    { "k": "main", "parts": [["vf", "Nachdem ich gegessen habe,"], ["v", "gehe"], ["mf", "ich spazieren"]] }
+  ],
+  "example": "Nachdem ich gegessen hatte, ging ich spazieren.",
+  "stepExamples": [
+    "Ich aß. Danach ging ich spazieren.",
+    "Nachdem ich gegessen hatte, ging ich spazieren.",
+    "Ich ging spazieren, nachdem ich gegessen hatte.",
+    "Nachdem ich gegessen habe, gehe ich spazieren."
+  ],
+  "pitfallPair": "Nachdem ich aß, ging ich spazieren. → Nachdem ich gegessen hatte, ging ich spazieren.",
+  "links": [
+    "https://grammis.ids-mannheim.de/systematische-grammatik/2104",
+    "https://www.dwds.de/wb/nachdem"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "بعد أن: nachdem وتتابع الأزمنة",
+      "lead": "`nachdem` تعني «بعد أن». لها قاعدة خاصة: الجملة التي تبدأ بها تكون في زمن أقدم بدرجة من الجملة الرئيسية. ستتعلم الزوجين المعتادين من الأزمنة.",
+      "translation": "بعد أن أكلتُ خرجتُ للنزهة.",
+      "steps": [
+        { "text": "رتّب الحدثين", "why": "الأكل أولًا، ثم النزهة. `nachdem` تقف أمام الحدث الأول." },
+        { "text": "ضع الحدث الأول في Plusquamperfekt", "why": "الجملة الرئيسية في `Präteritum` (`ging`)، فجملة `nachdem` تكون أقدم بدرجة: `gegessen hatte`. والفعل المساعد في آخرها." },
+        { "text": "الجملة الرئيسية يمكن أن تأتي أولًا", "why": "يبقى الزمنان كما هما وتنتقل الجملة التابعة إلى الآخر: `…, nachdem ich gegessen hatte.`" },
+        { "text": "في الحاضر: Perfekt ثم Präsens", "why": "إذا كانت الجملة الرئيسية في `Präsens` فجملة `nachdem` في `Perfekt`: `Nachdem ich gegessen habe, gehe ich spazieren.`" }
+      ],
+      "explain": [
+        "قاعدة التتابع: `nachdem` + `Plusquamperfekt` مع `Präteritum` أو `Perfekt` في الجملة الرئيسية، و`nachdem` + `Perfekt` مع `Präsens` أو `Futur`.",
+        "لا تخلط بين `nachdem` و`nach`: الأولى أداة ربط تتبعها جملة كاملة، والثانية حرف جر يتبعه اسم: `nach dem Essen`."
+      ],
+      "pitfall": "إذا كان الحدثان في `Präteritum` معًا ضاع الترتيب. الحدث الذي بعد `nachdem` يكون أقدم بدرجة.",
+      "recall": ["كيف تقول بـ `nachdem`: `Er duschte. Dann frühstückte er.`؟", "`Nachdem er geduscht hatte, frühstückte er.` الحدث الأول في `Plusquamperfekt`."],
+      "linkTitles": ["الجمل الزمنية · grammis", "nachdem في معجم DWDS"],
+      "table": [
+        ["جملة nachdem", "الجملة الرئيسية", "مثال"],
+        ["Plusquamperfekt", "Präteritum / Perfekt", "Nachdem er angerufen hatte, kam er."],
+        ["Perfekt", "Präsens / Futur", "Nachdem er angerufen hat, kommt er."]
+      ]
+    },
+    "de": {
+      "title": "Temporale Nebensätze mit nachdem",
+      "lead": "`nachdem` nennt, was vorher passiert ist. Es hat eine besondere Regel: Der nachdem-Satz steht eine Zeitstufe früher als der Hauptsatz. Du lernst die üblichen Zeitpaare.",
+      "steps": [
+        { "text": "Ordne die Ereignisse", "why": "Erst essen, dann spazieren gehen. `nachdem` steht vor dem ersten Ereignis." },
+        { "text": "Setz das erste Ereignis ins Plusquamperfekt", "why": "Der Hauptsatz steht im Präteritum (`ging`), der nachdem-Satz eine Stufe früher: `gegessen hatte`. Das Hilfsverb steht am Ende." },
+        { "text": "Der Hauptsatz kann vorn stehen", "why": "Die Zeiten bleiben gleich, nur der Nebensatz rückt nach hinten: `…, nachdem ich gegessen hatte.`" },
+        { "text": "In der Gegenwart: Perfekt und Präsens", "why": "Steht der Hauptsatz im Präsens, steht der nachdem-Satz im Perfekt: `Nachdem ich gegessen habe, gehe ich spazieren.`" }
+      ],
+      "explain": [
+        "Die Zeitenfolge: `nachdem` + Plusquamperfekt zu Präteritum oder Perfekt im Hauptsatz; `nachdem` + Perfekt zu Präsens oder Futur.",
+        "Verwechsle `nachdem` nicht mit `nach`: `nachdem` leitet einen ganzen Satz ein, `nach` ist eine Präposition mit Nomen: `nach dem Essen`."
+      ],
+      "pitfall": "Stehen beide Ereignisse im Präteritum, fehlt die Reihenfolge. Der nachdem-Satz steht eine Stufe früher.",
+      "recall": ["Wie verbindest du mit `nachdem`: `Er duschte. Dann frühstückte er.`?", "`Nachdem er geduscht hatte, frühstückte er.` Das erste Ereignis steht im Plusquamperfekt."],
+      "linkTitles": ["Temporalsätze · grammis", "nachdem im DWDS"],
+      "table": [
+        ["nachdem-Satz", "Hauptsatz", "Beispiel"],
+        ["Plusquamperfekt", "Präteritum / Perfekt", "Nachdem er angerufen hatte, kam er."],
+        ["Perfekt", "Präsens / Futur", "Nachdem er angerufen hat, kommt er."]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "nachdem-1", "type": "cloze", "difficulty": 1,
+      "text": "Nachdem wir die Wohnung {{1}} hatten, zogen wir ein.",
+      "blanks": [["gestrichen", "renoviert", "geputzt"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بـ `Partizip II` من فعل مثل `streichen`.", "explain": "الحدث الأول في `Plusquamperfekt`: `gestrichen hatten`.", "hints": ["`Partizip II` يأتي قبل `hatten`."] },
+        "de": { "prompt": "Ergänze das Partizip II, zum Beispiel von `streichen`.", "explain": "Das erste Ereignis steht im Plusquamperfekt: `gestrichen hatten`.", "hints": ["Das Partizip II steht vor `hatten`."] }
+      }
+    },
+    {
+      "id": "nachdem-2", "type": "cloze", "difficulty": 1,
+      "text": "Nachdem sie angekommen {{1}}, rief sie ihre Eltern an.",
+      "blanks": [["war"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل المساعد المناسب.", "explain": "`ankommen` يأخذ `sein`، فيصير `angekommen war`.", "hints": ["`Sie ist angekommen.`"] },
+        "de": { "prompt": "Ergänze das passende Hilfsverb.", "explain": "`ankommen` bildet das Perfekt mit `sein`: `angekommen war`.", "hints": ["`Sie ist angekommen.`"] }
+      }
+    },
+    {
+      "id": "nachdem-3", "type": "mcq", "difficulty": 1,
+      "options": ["Nachdem er die Prüfung bestanden hatte, feierte er.", "Nachdem er die Prüfung bestand, feierte er.", "Nachdem er die Prüfung bestanden hatte, feiert er."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة في تتابع الأزمنة؟", "explain": "`Plusquamperfekt` بعد `nachdem` يتناسب مع `Präteritum` في الجملة الرئيسية.", "hints": ["جملة `nachdem` أقدم بدرجة."] },
+        "de": { "prompt": "Welcher Satz hat die richtige Zeitenfolge?", "explain": "Plusquamperfekt im nachdem-Satz passt zu Präteritum im Hauptsatz.", "hints": ["Der nachdem-Satz steht eine Stufe früher."] }
+      }
+    },
+    {
+      "id": "nachdem-4", "type": "cloze", "difficulty": 2,
+      "text": "Nachdem du die Datei gespeichert {{1}}, kannst du den Computer ausschalten.",
+      "blanks": [["hast"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل. الجملة الرئيسية في `Präsens`.", "explain": "مع `Präsens` في الجملة الرئيسية تكون جملة `nachdem` في `Perfekt`: `gespeichert hast`.", "hints": ["`kannst` في الحاضر."] },
+        "de": { "prompt": "Ergänze. Der Hauptsatz steht im Präsens.", "explain": "Zum Präsens im Hauptsatz passt Perfekt im nachdem-Satz: `gespeichert hast`.", "hints": ["`kannst` steht im Präsens."] }
+      }
+    },
+    {
+      "id": "nachdem-5", "type": "order", "difficulty": 2,
+      "items": ["Nachdem", "der Film", "zu Ende", "war,", "gingen", "wir", "nach Hause."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة. ابدأ بـ `Nachdem`.", "explain": "الجملة التابعة أولًا، ثم الفعل `gingen` ثم الفاعل `wir`.", "hints": ["بعد الفاصلة: الفعل ثم الفاعل."] },
+        "de": { "prompt": "Ordne den Satz. Beginne mit `Nachdem`.", "explain": "Erst der Nebensatz, dann `gingen`, dann `wir`.", "hints": ["Nach dem Komma: Verb, dann Subjekt."] }
+      }
+    },
+    {
+      "id": "nachdem-6", "type": "mcq", "difficulty": 2,
+      "options": ["nach dem", "nachdem", "danach"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي كلمة تكمل الجملة؟ `___ Unterricht gehe ich in die Bibliothek.`", "explain": "بعد الفراغ اسم وليس جملة، فنحتاج إلى حرف الجر `nach` مع الأداة `dem`.", "hints": ["هل تأتي بعد الفراغ جملة كاملة؟"] },
+        "de": { "prompt": "Welches Wort passt? `___ Unterricht gehe ich in die Bibliothek.`", "explain": "Nach der Lücke steht ein Nomen, kein Satz. Deshalb Präposition + Artikel: `nach dem`.", "hints": ["Folgt ein ganzer Satz?"] }
+      }
+    },
+    {
+      "id": "nachdem-7", "type": "text", "difficulty": 3,
+      "answer": "Nachdem sie das Abitur gemacht hatte, studierte sie Medizin.",
+      "i18n": {
+        "ar": { "prompt": "اربط بـ `nachdem`: `Sie machte das Abitur. Dann studierte sie Medizin.`", "explain": "الحدث الأول في `Plusquamperfekt`: `gemacht hatte`، ثم `studierte sie`.", "hints": ["`machen` يأخذ `haben`."] },
+        "de": { "prompt": "Verbinde mit `nachdem`: `Sie machte das Abitur. Dann studierte sie Medizin.`", "explain": "Das erste Ereignis im Plusquamperfekt: `gemacht hatte`, dann `studierte sie`.", "hints": ["`machen` bildet das Perfekt mit `haben`."] }
+      }
+    },
+    {
+      "id": "nachdem-8", "type": "text", "difficulty": 3,
+      "context": "Nachdem ich aß, ging ich spazieren.",
+      "answer": "Nachdem ich gegessen hatte, ging ich spazieren.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "الجملة الرئيسية في `Präteritum`، فجملة `nachdem` تكون أقدم بدرجة: `Plusquamperfekt`.", "hints": ["ما الزمن الأقدم من `Präteritum`؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Der Hauptsatz steht im Präteritum, also braucht der nachdem-Satz das Plusquamperfekt.", "hints": ["Welche Zeit liegt vor dem Präteritum?"] }
+      }
+    },
+    {
+      "id": "nachdem-9", "type": "text", "difficulty": 2,
+      "answer": "Nachdem ich aufgestanden bin, trinke ich einen Kaffee.",
+      "i18n": {
+        "ar": { "prompt": "صف عادتك الصباحية بجملة مع `nachdem` في الحاضر.", "explain": "مثال: `Nachdem ich aufgestanden bin, trinke ich einen Kaffee.` `Perfekt` مع `Präsens`.", "hints": ["جملة `nachdem` في `Perfekt`."] },
+        "de": { "prompt": "Beschreib deine Morgenroutine mit einem nachdem-Satz in der Gegenwart.", "explain": "Zum Beispiel: `Nachdem ich aufgestanden bin, trinke ich einen Kaffee.` Perfekt + Präsens.", "hints": ["Der nachdem-Satz steht im Perfekt."] }
+      }
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "nominalisierte-adjektive",
+  "level": "B1.2",
+  "island": "nomen-kasus",
+  "order": 7,
+  "prereqs": ["genitiv-adjektiv", "partizip-adjektiv"],
+  "emoji": "🧍",
+  "german": "Nominalisierte Adjektive und Partizipien",
+  "source": { "lektion": 11, "kind": "toc" },
+  "pattern": ["Artikel", "+", "Adjektiv mit Endung (großgeschrieben)"],
+  "frames": [
+    { "k": "np", "parts": [["n", "ein"], ["hl", "Bekannter"], ["n", "von mir"]] },
+    { "k": "np", "parts": [["n", "der"], ["hl", "Bekannte"]] },
+    { "k": "np", "parts": [["n", "etwas"], ["hl", "Neues"]] }
+  ],
+  "example": "Ein Bekannter von mir arbeitet hier.",
+  "stepExamples": [
+    "Ein bekannter Mann arbeitet hier.",
+    "Ein Bekannter arbeitet hier.",
+    "Der Bekannte arbeitet hier. · Die Bekannte arbeitet hier.",
+    "Die Angestellten · die Reisenden · der Verletzte",
+    "Ich habe etwas Neues gelernt."
+  ],
+  "pitfallPair": "Ein Deutsche wohnt neben mir. → Ein Deutscher wohnt neben mir.",
+  "links": [
+    "https://grammis.ids-mannheim.de/rechtschreibung/6194",
+    "https://grammis.ids-mannheim.de/fragen/46"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "صفات تصير أسماء",
+      "lead": "في العربية نقول «المريض» و«الموظفون» دون كلمة «رجل» أو «أشخاص». والألمانية تفعل الشيء نفسه: تحذف الاسم وتكتب الصفة بحرف كبير. لكن الصفة تحتفظ بنهايتها كأن الاسم ما زال موجودًا.",
+      "translation": "أحد معارفي يعمل هنا.",
+      "steps": [
+        { "text": "ابدأ بصفة قبل اسم", "why": "`ein bekannter Mann`: الصفة `bekannt` تأخذ `-er` بعد `ein` مع المذكر في `Nominativ`." },
+        { "text": "احذف الاسم واكتب الصفة بحرف كبير", "why": "`ein Bekannter`: صارت الصفة اسمًا، لكن نهايتها `-er` بقيت كما هي. فكّر كأن كلمة `Mann` ما زالت موجودة." },
+        { "text": "النهاية تتغير بحسب الأداة", "why": "بعد `der` تقول `der Bekannte`، وبعد `ein` تقول `ein Bekannter`. وللمؤنث: `die Bekannte` و`eine Bekannte`. هذه هي نهايات الصفة المعروفة." },
+        { "text": "اسما الفاعل والمفعول يعملان بالطريقة نفسها", "why": "`angestellt` تصير `der Angestellte` و`die Angestellten`، و`reisend` تصير `die Reisenden`. وفي الجمع يشمل الاسم كل الأجناس." },
+        { "text": "بعد etwas و nichts و viel: صيغة المحايد", "why": "`etwas Neues` و`nichts Besonderes` و`viel Gutes`: الصفة تأخذ `-es` وتُكتب بحرف كبير." }
+      ],
+      "explain": [
+        "أهم كلمات هذه المجموعة: `der/die Deutsche` و`der/die Erwachsene` و`der/die Jugendliche` و`der/die Kranke` و`der/die Angestellte` و`der/die Verwandte` و`der/die Bekannte` و`der/die Arbeitslose`. استثناء: `der Beamte` لكن `die Beamtin`.",
+        "في `Dativ` و`Genitiv` تأخذ هذه الكلمات `-en` كأي صفة: `mit dem Angestellten` و`die Wohnung des Verletzten`."
+      ],
+      "pitfall": "بعد `ein` يحتاج المذكر في `Nominativ` إلى `-er`: `ein Deutscher`. أما `ein Deutsche` فخطأ.",
+      "recall": ["لماذا نقول `die Deutschen` في الجمع ولكن `Deutsche` بدون أداة؟", "بعد `die` تأخذ الصفة `-en`، وبدون أداة تأخذ الصفة في الجمع `-e`، تمامًا كالصفة قبل الاسم."],
+      "linkTitles": ["تحويل الكلمات إلى أسماء · القواعد الإملائية الرسمية", "الصفات بلا اسم · grammis"],
+      "table": [
+        ["الحالة", "مع der / die", "مع ein / eine", "جمع"],
+        ["Nominativ", "der / die Bekannte", "ein Bekannter / eine Bekannte", "die Bekannten · Bekannte"],
+        ["Akkusativ", "den Bekannten / die Bekannte", "einen Bekannten / eine Bekannte", "die Bekannten · Bekannte"],
+        ["Dativ", "dem / der Bekannten", "einem / einer Bekannten", "den Bekannten · Bekannten"]
+      ]
+    },
+    "de": {
+      "title": "Nominalisierte Adjektive und Partizipien",
+      "lead": "Statt „der kranke Mensch“ sagst du oft einfach „der Kranke“. Das Nomen fällt weg, das Adjektiv wird großgeschrieben. Es behält aber seine Endung, als ob das Nomen noch da wäre.",
+      "steps": [
+        { "text": "Beginne mit Adjektiv + Nomen", "why": "`ein bekannter Mann`: Das Adjektiv `bekannt` bekommt nach `ein` im Nominativ maskulin `-er`." },
+        { "text": "Lass das Nomen weg und schreib das Adjektiv groß", "why": "`ein Bekannter`: Das Adjektiv ist jetzt ein Nomen, behält aber die Endung `-er`. Denk dir das Wort `Mann` dazu." },
+        { "text": "Die Endung hängt vom Artikel ab", "why": "Nach `der`: `der Bekannte`. Nach `ein`: `ein Bekannter`. Feminin: `die Bekannte`, `eine Bekannte`. Es sind die bekannten Adjektivendungen." },
+        { "text": "Partizipien funktionieren genauso", "why": "Aus `angestellt` wird `der Angestellte`, `die Angestellten`. Aus `reisend` wird `die Reisenden`. Im Plural sind alle Geschlechter gemeint." },
+        { "text": "Nach etwas, nichts, viel: neutrale Form", "why": "`etwas Neues`, `nichts Besonderes`, `viel Gutes`: Das Adjektiv bekommt `-es` und wird großgeschrieben." }
+      ],
+      "explain": [
+        "Wichtige Wörter dieser Gruppe: `der/die Deutsche`, `Erwachsene`, `Jugendliche`, `Kranke`, `Angestellte`, `Verwandte`, `Bekannte`, `Arbeitslose`. Ausnahme: `der Beamte`, aber `die Beamtin`.",
+        "Im Dativ und Genitiv haben sie `-en` wie jedes Adjektiv: `mit dem Angestellten`, `die Wohnung des Verletzten`."
+      ],
+      "pitfall": "Nach `ein` braucht maskulin im Nominativ `-er`: `ein Deutscher`. `ein Deutsche` ist falsch.",
+      "recall": ["Warum heißt es `die Deutschen`, aber ohne Artikel `Deutsche`?", "Nach `die` hat das Adjektiv `-en`, ohne Artikel im Plural `-e` – wie bei einem Adjektiv vor einem Nomen."],
+      "linkTitles": ["Substantivierungen · Amtliches Regelwerk", "Adjektive in elliptischen Nominalphrasen · grammis"],
+      "table": [
+        ["Kasus", "mit der / die", "mit ein / eine", "Plural"],
+        ["Nominativ", "der / die Bekannte", "ein Bekannter / eine Bekannte", "die Bekannten · Bekannte"],
+        ["Akkusativ", "den Bekannten / die Bekannte", "einen Bekannten / eine Bekannte", "die Bekannten · Bekannte"],
+        ["Dativ", "dem / der Bekannten", "einem / einer Bekannten", "den Bekannten · Bekannten"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "nominalisierte-adjektive-1", "type": "cloze", "difficulty": 1,
+      "text": "Die {{1}} müssen draußen warten. (krank)",
+      "blanks": [["Kranken"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالصفة كاسم في الجمع.", "explain": "بعد `die` في الجمع تأخذ الصفة `-en`، وتُكتب بحرف كبير: `die Kranken`.", "hints": ["الفعل `müssen` جمع."] },
+        "de": { "prompt": "Ergänze das Adjektiv als Nomen im Plural.", "explain": "Nach `die` im Plural: `-en`, großgeschrieben: `die Kranken`.", "hints": ["Das Verb `müssen` steht im Plural."] }
+      }
+    },
+    {
+      "id": "nominalisierte-adjektive-2", "type": "cloze", "difficulty": 1,
+      "text": "Hast du am Wochenende etwas {{1}} erlebt? (spannend)",
+      "blanks": [["Spannendes"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالصفة بعد `etwas`.", "explain": "بعد `etwas` تأخذ الصفة `-es` وتُكتب بحرف كبير.", "hints": ["فكّر في `etwas Neues`."] },
+        "de": { "prompt": "Ergänze das Adjektiv nach `etwas`.", "explain": "Nach `etwas` bekommt das Adjektiv `-es` und wird großgeschrieben.", "hints": ["Denk an `etwas Neues`."] }
+      }
+    },
+    {
+      "id": "nominalisierte-adjektive-3", "type": "mcq", "difficulty": 1,
+      "options": ["Mein Kollege ist ein Deutscher.", "Mein Kollege ist ein Deutsche.", "Mein Kollege ist ein deutscher."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "بعد `ein` مع المذكر: `-er`، والاسم بحرف كبير: `ein Deutscher`.", "hints": ["انتبه إلى النهاية وإلى الحرف الكبير."] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Nach `ein` maskulin: `-er`, als Nomen großgeschrieben: `ein Deutscher`.", "hints": ["Achte auf Endung und Großschreibung."] }
+      }
+    },
+    {
+      "id": "nominalisierte-adjektive-4", "type": "cloze", "difficulty": 2,
+      "text": "Der Chef hat mit allen {{1}} gesprochen. Eine {{2}} hat dann Fragen gestellt. (angestellt)",
+      "blanks": [["Angestellten"], ["Angestellte"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالكلمة `angestellt` كاسم مرتين.", "explain": "بعد `allen` في `Dativ` الجمع: `Angestellten`. وبعد `eine` في المؤنث: `Angestellte`.", "hints": ["الأولى جمع في `Dativ`، والثانية مفرد مؤنث."] },
+        "de": { "prompt": "Ergänze zweimal `angestellt` als Nomen.", "explain": "Nach `allen` im Dativ Plural: `Angestellten`. Nach `eine` feminin: `Angestellte`.", "hints": ["Erst Dativ Plural, dann feminin Singular."] }
+      }
+    },
+    {
+      "id": "nominalisierte-adjektive-5", "type": "cloze", "difficulty": 2,
+      "text": "Gestern habe ich einen {{1}} getroffen. Sie ist eine {{2}} von mir. (bekannt · verwandt)",
+      "blanks": [["Bekannten"], ["Verwandte"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالكلمتين كاسمين.", "explain": "`einen Bekannten` مذكر في `Akkusativ` مع `-en`. و`eine Verwandte` مؤنث مع `-e`.", "hints": ["لاحظ الأداة قبل كل فراغ."] },
+        "de": { "prompt": "Ergänze beide Wörter als Nomen.", "explain": "`einen Bekannten`: maskulin Akkusativ mit `-en`. `eine Verwandte`: feminin mit `-e`.", "hints": ["Achte auf den Artikel vor jeder Lücke."] }
+      }
+    },
+    {
+      "id": "nominalisierte-adjektive-6", "type": "mcq", "difficulty": 2,
+      "options": ["Ich habe nichts Neues gehört.", "Ich habe nichts neues gehört.", "Ich habe nichts Neue gehört."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "بعد `nichts` تأخذ الصفة `-es` وتُكتب بحرف كبير: `nichts Neues`.", "hints": ["مثل `etwas Neues`."] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Nach `nichts`: `-es` und großgeschrieben: `nichts Neues`.", "hints": ["Wie `etwas Neues`."] }
+      }
+    },
+    {
+      "id": "nominalisierte-adjektive-7", "type": "text", "difficulty": 3,
+      "answer": "Die Jugendlichen treffen sich jeden Freitag.",
+      "i18n": {
+        "ar": { "prompt": "اختصر بصفة كاسم: `Die jugendlichen Leute treffen sich jeden Freitag.`", "explain": "احذف `Leute` واكتب الصفة بحرف كبير مع `-en`: `Die Jugendlichen`.", "hints": ["النهاية تبقى كما هي."] },
+        "de": { "prompt": "Kürze mit einem nominalisierten Adjektiv: `Die jugendlichen Leute treffen sich jeden Freitag.`", "explain": "Lass `Leute` weg und schreib groß mit `-en`: `Die Jugendlichen`.", "hints": ["Die Endung bleibt gleich."] }
+      }
+    },
+    {
+      "id": "nominalisierte-adjektive-8", "type": "text", "difficulty": 3,
+      "context": "Ein Deutsche wohnt neben mir.",
+      "answer": "Ein Deutscher wohnt neben mir.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد `ein` مع المذكر في `Nominativ` تأخذ الصفة `-er`: `ein Deutscher`. أما المؤنث فـ `eine Deutsche`.", "hints": ["ما نهاية الصفة بعد `ein` مع المذكر؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Nach `ein` maskulin im Nominativ: `-er`, also `ein Deutscher`. Feminin hieße es `eine Deutsche`.", "hints": ["Welche Endung hat das Adjektiv nach `ein` maskulin?"] }
+      }
+    },
+    {
+      "id": "nominalisierte-adjektive-9", "type": "text", "difficulty": 2,
+      "answer": "In meinem Kurs sind viele Erwachsene, aber auch zwei Jugendliche.",
+      "i18n": {
+        "ar": { "prompt": "صف الناس في دورتك بصفتين كاسمين في الجمع.", "explain": "مثال: `In meinem Kurs sind viele Erwachsene, aber auch zwei Jugendliche.` بدون أداة: `-e`.", "hints": ["بعد `viele` بلا أداة تأخذ الصفة `-e`."] },
+        "de": { "prompt": "Beschreib die Leute in deinem Kurs mit zwei nominalisierten Adjektiven im Plural.", "explain": "Zum Beispiel: `In meinem Kurs sind viele Erwachsene, aber auch zwei Jugendliche.` Ohne Artikel: `-e`.", "hints": ["Nach `viele` ohne Artikel: `-e`."] }
+      }
+    }
+  ]
+}

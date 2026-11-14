@@ -1,0 +1,145 @@
+{
+  "id": "obwohl",
+  "level": "B1.2",
+  "island": "gegensatz-vergleich",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "🌦️",
+  "german": "Nebensätze mit obwohl",
+  "source": { "lektion": 7, "kind": "toc" },
+  "pattern": ["obwohl", "…", "Verb am Ende", ",", "Verb", "+", "Subjekt"],
+  "frames": [
+    { "k": "sub", "parts": [["c", "Obwohl"], ["mf", "es"], ["ve", "regnet"]] },
+    { "k": "main", "parts": [["vf", "Obwohl es regnet,"], ["v", "gehe"], ["mf", "ich spazieren"]] },
+    { "k": "sub", "parts": [["c", "obwohl"], ["mf", "sie müde"], ["ve", "war"]] }
+  ],
+  "example": "Obwohl es regnet, gehe ich spazieren.",
+  "stepExamples": [
+    "Es regnet. Ich gehe spazieren.",
+    "Ich gehe spazieren, obwohl es regnet.",
+    "Obwohl es regnet, gehe ich spazieren.",
+    "Sie hat weitergearbeitet, obwohl sie müde war."
+  ],
+  "pitfallPair": "Obwohl es regnet, ich gehe spazieren. → Obwohl es regnet, gehe ich spazieren.",
+  "links": [
+    "https://grammis.ids-mannheim.de/systematische-grammatik/2109",
+    "https://www.dwds.de/wb/obwohl"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "مع أنّ: التناقض بـ obwohl",
+      "lead": "عادةً لا نخرج للنزهة حين يمطر. فإذا فعلنا ذلك رغم المطر فالنتيجة غير متوقعة. هذا التناقض تعبّر عنه `obwohl`، وهي ترسل الفعل إلى آخر جملتها.",
+      "translation": "مع أنها تمطر أخرج للنزهة.",
+      "steps": [
+        { "text": "لاحظ التناقض بين الجملتين", "why": "المطر يجعلنا نتوقع البقاء في البيت، لكن الشخص يخرج. حين لا تتفق النتيجة مع المتوقع نستعمل `obwohl`." },
+        { "text": "ضع obwohl قبل الأمر الذي كان يجب أن يمنع الفعل", "why": "`obwohl` تبدأ جملة تابعة، فيقف الفعل المصرف `regnet` في آخرها. وبين الجملتين فاصلة." },
+        { "text": "يمكن أن تبدأ الجملة كلها بـ obwohl", "why": "حين تأتي الجملة التابعة أولًا تشغل الموقع الأول، فيبدأ ما بعد الفاصلة بالفعل المصرف `gehe` ثم الفاعل." },
+        { "text": "في الماضي يبقى الفعل المصرف في الآخر أيضًا", "why": "مع الأزمنة المركبة يأتي `Partizip II` ثم الفعل المساعد: `obwohl sie lange gearbeitet hatte`. ومع `war` وحدها تقف `war` في الآخر." }
+      ],
+      "explain": [
+        "تذكر `obwohl` السبب الذي كان من المفترض أن يمنع شيئًا، لكنه لم يمنعه. فالجملة الرئيسية تحمل ما حدث رغم ذلك.",
+        "`obwohl` أداة ربط تابعة مثل `weil`، لكن معناها عكسه: `weil` سبب ينتج عنه الفعل، و`obwohl` سبب لم يمنع الفعل."
+      ],
+      "pitfall": "إذا بدأت بالجملة التابعة فهي تشغل الموقع الأول كله، فيأتي الفعل المصرف بعد الفاصلة مباشرة ثم الفاعل.",
+      "recall": ["ما الفرق بين `Ich gehe raus, weil es regnet` و`Ich gehe raus, obwohl es regnet`؟", "الأولى تجعل المطر سبب الخروج، والثانية تقول إن المطر لم يمنع الخروج."],
+      "linkTitles": ["جمل التنازل · grammis", "obwohl في معجم DWDS"]
+    },
+    "de": {
+      "title": "Nebensätze mit obwohl",
+      "lead": "Bei Regen geht man normalerweise nicht spazieren. Wer es trotzdem tut, macht etwas Unerwartetes. Diesen Gegensatz drückt `obwohl` aus – und schickt das Verb ans Ende seines Satzes.",
+      "steps": [
+        { "text": "Erkenne den Widerspruch", "why": "Bei Regen erwartet man, dass jemand zu Hause bleibt. Die Person geht aber raus. Wenn die Folge der Erwartung widerspricht, nimmst du `obwohl`." },
+        { "text": "Setz obwohl vor das, was die Handlung eigentlich verhindern müsste", "why": "`obwohl` leitet einen Nebensatz ein. Das konjugierte Verb `regnet` steht am Ende. Dazwischen steht ein Komma." },
+        { "text": "Der obwohl-Satz kann vorn stehen", "why": "Steht der Nebensatz am Anfang, besetzt er Position 1. Nach dem Komma kommt sofort das Verb `gehe`, dann das Subjekt." },
+        { "text": "Auch in der Vergangenheit steht das konjugierte Verb am Ende", "why": "Bei zusammengesetzten Zeiten kommt erst das Partizip II, dann das Hilfsverb: `obwohl sie lange gearbeitet hatte`. Mit `war` allein steht `war` am Ende." }
+      ],
+      "explain": [
+        "`obwohl` nennt einen Umstand, der eigentlich etwas verhindern müsste, es aber nicht tut. Der Hauptsatz sagt, was trotzdem passiert.",
+        "`obwohl` ist ein Subjunktor wie `weil`, aber mit der umgekehrten Logik: `weil` nennt den Grund für die Handlung, `obwohl` einen Grund, der sie nicht verhindert."
+      ],
+      "pitfall": "Steht der Nebensatz vorn, besetzt er die ganze Position 1. Nach dem Komma folgt sofort das konjugierte Verb, dann das Subjekt.",
+      "recall": ["Was ist der Unterschied zwischen `Ich gehe raus, weil es regnet` und `Ich gehe raus, obwohl es regnet`?", "Im ersten Satz ist der Regen der Grund fürs Rausgehen. Im zweiten verhindert der Regen das Rausgehen nicht."],
+      "linkTitles": ["Konzessivsätze · grammis", "obwohl im DWDS"]
+    }
+  },
+  "questions": [
+    {
+      "id": "obwohl-1", "type": "cloze", "difficulty": 1,
+      "text": "Er trinkt Kaffee, obwohl es schon spät {{1}}.",
+      "blanks": [["ist"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل `sein` في المكان الصحيح.", "explain": "بعد `obwohl` يقف الفعل المصرف في آخر الجملة: `spät ist`.", "hints": ["الفاعل هو `es`."] },
+        "de": { "prompt": "Ergänze die Form von `sein`.", "explain": "Nach `obwohl` steht das konjugierte Verb am Ende: `spät ist`.", "hints": ["Das Subjekt ist `es`."] }
+      }
+    },
+    {
+      "id": "obwohl-2", "type": "cloze", "difficulty": 1,
+      "text": "{{1}} die Wohnung klein ist, {{2}} wir sehr gern dort.",
+      "blanks": [["Obwohl"], ["wohnen"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بأداة التنازل ثم بالفعل `wohnen`.", "explain": "الشقة صغيرة، لكنهم يحبون السكن فيها: هذا تناقض. وبعد الجملة التابعة يأتي الفعل `wohnen` ثم `wir`.", "hints": ["هل يتفق الصِّغَر مع الرضا؟"] },
+        "de": { "prompt": "Ergänze das konzessive Wort und das Verb `wohnen`.", "explain": "Die Wohnung ist klein, trotzdem wohnen sie gern dort. Nach dem Nebensatz kommt `wohnen`, dann `wir`.", "hints": ["Passt „klein“ zu „gern“?"] }
+      }
+    },
+    {
+      "id": "obwohl-3", "type": "mcq", "difficulty": 1,
+      "options": ["Sie ging zur Arbeit, obwohl sie Fieber hatte.", "Sie ging zur Arbeit, weil sie Fieber hatte.", "Sie ging zur Arbeit, obwohl sie hatte Fieber."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة ومنطقية؟", "explain": "الحمى لا تكون سببًا للذهاب إلى العمل، بل أمرًا كان يجب أن يمنعه. والفعل `hatte` في الآخر.", "hints": ["انتبه إلى المعنى وإلى موقع الفعل."] },
+        "de": { "prompt": "Welcher Satz ist richtig und logisch?", "explain": "Fieber ist kein Grund, zur Arbeit zu gehen, sondern ein Gegengrund. `hatte` steht am Ende.", "hints": ["Achte auf Logik und Verbstellung."] }
+      }
+    },
+    {
+      "id": "obwohl-4", "type": "cloze", "difficulty": 2,
+      "text": "Ich bin nicht zur Party gegangen, obwohl Tom mich {{1}} {{2}}.",
+      "blanks": [["eingeladen"], ["hatte", "hat"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالماضي من `einladen`.", "explain": "في الجملة التابعة يأتي `eingeladen` ثم الفعل المساعد المصرف `hatte` أو `hat`.", "hints": ["المساعد هو الكلمة الأخيرة."] },
+        "de": { "prompt": "Ergänze die Vergangenheit von `einladen`.", "explain": "Im Nebensatz kommt `eingeladen`, dann das Hilfsverb `hatte` oder `hat`.", "hints": ["Das Hilfsverb steht ganz am Ende."] }
+      }
+    },
+    {
+      "id": "obwohl-5", "type": "order", "difficulty": 2,
+      "items": ["Obwohl", "das Essen", "teuer", "war,", "hat", "es", "uns nicht geschmeckt."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة. ابدأ بـ `Obwohl`.", "explain": "الجملة التابعة أولًا مع `war` في آخرها، ثم الفعل المساعد `hat` ثم الفاعل `es`.", "hints": ["بعد الفاصلة: الفعل ثم الفاعل."] },
+        "de": { "prompt": "Ordne den Satz. Beginne mit `Obwohl`.", "explain": "Erst der Nebensatz mit `war` am Ende, dann `hat`, dann das Subjekt `es`.", "hints": ["Nach dem Komma: Verb, dann Subjekt."] }
+      }
+    },
+    {
+      "id": "obwohl-6", "type": "mcq", "difficulty": 2,
+      "options": ["obwohl", "weil", "denn"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي كلمة تكمل الجملة؟ `Er hat die Prüfung bestanden, ___ er wenig gelernt hat.`", "explain": "القليل من الدراسة لا يكون سببًا للنجاح، بل أمرًا لم يمنعه. والفعل في الآخر، فلا تصلح `denn`.", "hints": ["هل الدراسة القليلة سبب للنجاح؟"] },
+        "de": { "prompt": "Welches Wort passt? `Er hat die Prüfung bestanden, ___ er wenig gelernt hat.`", "explain": "Wenig lernen ist kein Grund zu bestehen. Und das Verb steht am Ende, deshalb passt `denn` nicht.", "hints": ["Ist wenig Lernen ein Grund zu bestehen?"] }
+      }
+    },
+    {
+      "id": "obwohl-7", "type": "text", "difficulty": 3,
+      "answer": "Obwohl ich wenig Zeit habe, mache ich jeden Tag Sport.",
+      "i18n": {
+        "ar": { "prompt": "اربط بـ `obwohl` وابدأ بها: `Ich habe wenig Zeit. Ich mache jeden Tag Sport.`", "explain": "`Obwohl ich wenig Zeit habe, mache ich jeden Tag Sport.` الفعل `habe` في الآخر، ثم `mache ich`.", "hints": ["أي الجملتين كان يجب أن يمنع الأخرى؟"] },
+        "de": { "prompt": "Verbinde mit `obwohl` am Satzanfang: `Ich habe wenig Zeit. Ich mache jeden Tag Sport.`", "explain": "`Obwohl ich wenig Zeit habe, mache ich jeden Tag Sport.` `habe` steht am Ende, danach `mache ich`.", "hints": ["Welcher Satz müsste den anderen eigentlich verhindern?"] }
+      }
+    },
+    {
+      "id": "obwohl-8", "type": "text", "difficulty": 3,
+      "context": "Obwohl es regnet, ich gehe spazieren.",
+      "answer": "Obwohl es regnet, gehe ich spazieren.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "الجملة التابعة تشغل الموقع الأول، فيأتي الفعل `gehe` بعد الفاصلة مباشرة ثم `ich`.", "hints": ["ماذا يأتي بعد الفاصلة؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Der Nebensatz besetzt Position 1. Nach dem Komma folgt `gehe`, dann `ich`.", "hints": ["Was steht nach dem Komma?"] }
+      }
+    },
+    {
+      "id": "obwohl-9", "type": "text", "difficulty": 2,
+      "answer": "Ich lerne Deutsch, obwohl die Grammatik schwer ist.",
+      "i18n": {
+        "ar": { "prompt": "اكتب جملة عن تعلم الألمانية مع `obwohl`.", "explain": "مثال: `Ich lerne Deutsch, obwohl die Grammatik schwer ist.`", "hints": ["الفعل المصرف في آخر جملة `obwohl`."] },
+        "de": { "prompt": "Schreib einen Satz über dein Deutschlernen mit `obwohl`.", "explain": "Zum Beispiel: `Ich lerne Deutsch, obwohl die Grammatik schwer ist.`", "hints": ["Im obwohl-Satz steht das konjugierte Verb am Ende."] }
+      }
+    }
+  ]
+}

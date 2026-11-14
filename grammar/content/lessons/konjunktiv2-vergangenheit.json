@@ -1,0 +1,458 @@
+{
+  "id": "konjunktiv2-vergangenheit",
+  "level": "B1.2",
+  "island": "konjunktiv-bedingung",
+  "order": 4,
+  "prereqs": [
+    "irreale-bedingung",
+    "plusquamperfekt"
+  ],
+  "emoji": "🕳️",
+  "german": "Irreale Bedingungssätze mit Konjunktiv II der Vergangenheit",
+  "source": {
+    "lektion": 11,
+    "kind": "toc"
+  },
+  "pattern": [
+    "wenn",
+    "…",
+    "Partizip II",
+    "+",
+    "hätte / wäre",
+    ",",
+    "hätte / wäre",
+    "…",
+    "Partizip II"
+  ],
+  "frames": [
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "Wenn"
+        ],
+        [
+          "mf",
+          "ich das"
+        ],
+        [
+          "ve",
+          "gewusst hätte"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Wenn ich das gewusst hätte,"
+        ],
+        [
+          "v",
+          "wäre"
+        ],
+        [
+          "mf",
+          "ich früher"
+        ],
+        [
+          "ve",
+          "gekommen"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "v",
+          "Hätte"
+        ],
+        [
+          "mf",
+          "ich das"
+        ],
+        [
+          "ve",
+          "gewusst"
+        ]
+      ]
+    }
+  ],
+  "example": "Wenn ich das gewusst hätte, wäre ich früher gekommen.",
+  "stepExamples": [
+    "Ich wusste es nicht. Ich bin nicht früher gekommen.",
+    "Wenn ich das gewusst hätte, …",
+    "…, wäre ich früher gekommen.",
+    "Hätte ich das gewusst, wäre ich früher gekommen.",
+    "Wenn ich Zeit hätte, würde ich kommen. ↔ Wenn ich Zeit gehabt hätte, wäre ich gekommen."
+  ],
+  "pitfallPair": "Wenn ich Zeit gehabt hätte, würde ich gekommen. → Wenn ich Zeit gehabt hätte, wäre ich gekommen.",
+  "links": [
+    "https://grammis.ids-mannheim.de/systematische-grammatik/997",
+    "https://grammis.ids-mannheim.de/terminologie/401"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "لو أنّ… في الماضي",
+      "lead": "لم تعرف بالخبر، فلم تأتِ مبكرًا. الماضي لا يتغير، لكنك تستطيع أن تتخيل كيف كان يمكن أن يكون: «لو عرفتُ لجئتُ». لهذا تستعمل `hätte` أو `wäre` مع `Partizip II` في الجملتين.",
+      "translation": "لو عرفتُ ذلك لجئتُ مبكرًا.",
+      "steps": [
+        {
+          "text": "ابدأ بالواقع",
+          "why": "الواقع: لم أعرف ولم آتِ مبكرًا. الجملة الشرطية ستقلب هذا الواقع في الخيال."
+        },
+        {
+          "text": "الشرط: wenn + Partizip II + hätte أو wäre",
+          "why": "الصيغة مثل `Plusquamperfekt`، لكن المساعد في صيغة التمني: `hatte` تصير `hätte` و`war` تصير `wäre`. والمساعد في آخر جملة `wenn`."
+        },
+        {
+          "text": "النتيجة: hätte أو wäre + Partizip II",
+          "why": "بعد الفاصلة يبدأ الفعل المساعد `wäre` ثم الفاعل، و`gekommen` في الآخر. `kommen` يأخذ `sein`، فنقول `wäre`."
+        },
+        {
+          "text": "بدون wenn يبدأ الشرط بالفعل",
+          "why": "`Hätte ich das gewusst, …` لها المعنى نفسه. الفعل المساعد ينتقل إلى أول الجملة، وهي صيغة شائعة في الكلام."
+        },
+        {
+          "text": "قارن مع الحاضر",
+          "why": "للحاضر: `hätte` و`würde` + مصدر. وللماضي: `hätte` أو `wäre` + `Partizip II`، ولا تأتي `würde` هنا."
+        }
+      ],
+      "explain": [
+        "في الماضي توجد صيغة واحدة للتمني: `hätte` أو `wäre` مع `Partizip II`. اختيار المساعد هو نفسه في `Perfekt`: `haben` يصير `hätte`، و`sein` يصير `wäre`.",
+        "تستعمل الصيغة نفسها للندم والتمني: `Ich hätte mehr lernen sollen.` و`Wenn ich doch nur angerufen hätte!`"
+      ],
+      "pitfall": "في الماضي لا تأتي `würde` مع `Partizip II`. النتيجة تحتاج إلى `hätte` أو `wäre`.",
+      "recall": [
+        "ما الواقع وراء `Wenn der Bus pünktlich gewesen wäre, hätte ich den Zug erreicht`؟",
+        "الحافلة تأخرت، ولم ألحق بالقطار."
+      ],
+      "linkTitles": [
+        "الجملة الشرطية · grammis",
+        "صيغة التمني Konjunktiv II · grammis"
+      ],
+      "table": [
+        [
+          "الزمن",
+          "الشرط",
+          "النتيجة"
+        ],
+        [
+          "الحاضر",
+          "Wenn ich Zeit hätte,",
+          "würde ich kommen."
+        ],
+        [
+          "الماضي مع haben",
+          "Wenn ich Zeit gehabt hätte,",
+          "hätte ich dich besucht."
+        ],
+        [
+          "الماضي مع sein",
+          "Wenn ich früher losgefahren wäre,",
+          "wäre ich pünktlich gewesen."
+        ]
+      ]
+    },
+    "de": {
+      "title": "Irreale Bedingungssätze mit Konjunktiv II der Vergangenheit",
+      "lead": "Du wusstest es nicht und bist nicht früher gekommen. Die Vergangenheit lässt sich nicht ändern, aber du kannst dir vorstellen, wie es hätte sein können. Dafür nimmst du in beiden Satzteilen `hätte` oder `wäre` + Partizip II.",
+      "steps": [
+        {
+          "text": "Beginne mit der Realität",
+          "why": "Real: Ich wusste es nicht und kam nicht früher. Der Bedingungssatz dreht diese Realität in der Vorstellung um."
+        },
+        {
+          "text": "Die Bedingung: wenn + Partizip II + hätte oder wäre",
+          "why": "Die Form ist wie das Plusquamperfekt, nur steht das Hilfsverb im Konjunktiv II: `hatte` wird `hätte`, `war` wird `wäre`. Das Hilfsverb steht am Ende des wenn-Satzes."
+        },
+        {
+          "text": "Die Folge: hätte oder wäre + Partizip II",
+          "why": "Nach dem Komma steht zuerst `wäre`, dann das Subjekt, `gekommen` am Ende. `kommen` bildet das Perfekt mit `sein`, also `wäre`."
+        },
+        {
+          "text": "Ohne wenn steht das Verb vorn",
+          "why": "`Hätte ich das gewusst, …` bedeutet dasselbe. Das Hilfsverb rückt an den Satzanfang. Das ist sehr häufig."
+        },
+        {
+          "text": "Vergleiche mit der Gegenwart",
+          "why": "Gegenwart: `hätte` und `würde` + Infinitiv. Vergangenheit: `hätte` oder `wäre` + Partizip II, hier steht kein `würde`."
+        }
+      ],
+      "explain": [
+        "Für die Vergangenheit gibt es im Konjunktiv II nur eine Form: `hätte` oder `wäre` + Partizip II. Das Hilfsverb wählst du wie im Perfekt.",
+        "Dieselbe Form drückt Bedauern und unerfüllte Wünsche aus: `Ich hätte mehr lernen sollen.`, `Wenn ich doch nur angerufen hätte!`"
+      ],
+      "pitfall": "In der Vergangenheit steht kein `würde` mit Partizip II. Die Folge braucht `hätte` oder `wäre`.",
+      "recall": [
+        "Was ist die Realität hinter `Wenn der Bus pünktlich gewesen wäre, hätte ich den Zug erreicht`?",
+        "Der Bus war unpünktlich, und ich habe den Zug verpasst."
+      ],
+      "linkTitles": [
+        "Konditionalgefüge · grammis",
+        "Konjunktiv II · grammis"
+      ],
+      "table": [
+        [
+          "Zeit",
+          "Bedingung",
+          "Folge"
+        ],
+        [
+          "Gegenwart",
+          "Wenn ich Zeit hätte,",
+          "würde ich kommen."
+        ],
+        [
+          "Vergangenheit mit haben",
+          "Wenn ich Zeit gehabt hätte,",
+          "hätte ich dich besucht."
+        ],
+        [
+          "Vergangenheit mit sein",
+          "Wenn ich früher losgefahren wäre,",
+          "wäre ich pünktlich gewesen."
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "konjunktiv2-vergangenheit-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wenn du mich gefragt {{1}}, hätte ich dir geholfen.",
+      "blanks": [
+        [
+          "hättest"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل المساعد في صيغة التمني.",
+          "explain": "`fragen` يأخذ `haben`، ومع `du`: `hättest`.",
+          "hints": [
+            "المساعد في آخر جملة `wenn`."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Hilfsverb im Konjunktiv II.",
+          "explain": "`fragen` bildet das Perfekt mit `haben`. Mit `du`: `hättest`.",
+          "hints": [
+            "Das Hilfsverb steht am Ende des wenn-Satzes."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Wenn wir den Bus nicht verpasst hätten, {{1}} wir pünktlich angekommen.",
+      "blanks": [
+        [
+          "wären"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل المساعد للنتيجة.",
+          "explain": "`ankommen` يأخذ `sein`، ومع `wir`: `wären`.",
+          "hints": [
+            "`Wir sind angekommen.`"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Hilfsverb in der Folge.",
+          "explain": "`ankommen` bildet das Perfekt mit `sein`. Mit `wir`: `wären`.",
+          "hints": [
+            "`Wir sind angekommen.`"
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Sie hat nicht gelernt und hat die Prüfung nicht bestanden.",
+        "Sie hat gelernt und die Prüfung bestanden.",
+        "Sie lernt jetzt für die Prüfung."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "ما الواقع وراء `Wenn sie gelernt hätte, hätte sie die Prüfung bestanden`؟",
+          "explain": "الجملة تتخيل عكس الواقع: في الحقيقة لم تدرس ولم تنجح.",
+          "hints": [
+            "الجملة غير واقعية."
+          ]
+        },
+        "de": {
+          "prompt": "Was ist die Realität hinter `Wenn sie gelernt hätte, hätte sie die Prüfung bestanden`?",
+          "explain": "Der Satz stellt sich das Gegenteil vor: In Wirklichkeit hat sie nicht gelernt und nicht bestanden.",
+          "hints": [
+            "Der Satz ist irreal."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Wenn es nicht {{1}} {{2}}, wären wir an den See gefahren.",
+      "blanks": [
+        [
+          "geregnet"
+        ],
+        [
+          "hätte"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الشرط من الفعل `regnen`.",
+          "explain": "`regnen` يأخذ `haben`: `geregnet hätte`، و`Partizip II` قبل المساعد.",
+          "hints": [
+            "`Es hat geregnet.`"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze die Bedingung mit `regnen`.",
+          "explain": "`regnen` bildet das Perfekt mit `haben`: `geregnet hätte`. Das Partizip steht vor dem Hilfsverb.",
+          "hints": [
+            "`Es hat geregnet.`"
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Hätte",
+        "ich den Wecker",
+        "gehört,",
+        "wäre",
+        "ich",
+        "nicht zu spät gekommen."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة بدون `wenn`. ابدأ بالفعل المساعد.",
+          "explain": "الشرط يبدأ بـ `Hätte`، ثم النتيجة تبدأ بـ `wäre`.",
+          "hints": [
+            "ابدأ بـ `Hätte`."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz ohne `wenn`. Beginne mit dem Hilfsverb.",
+          "explain": "Die Bedingung beginnt mit `Hätte`, die Folge mit `wäre`.",
+          "hints": [
+            "Beginne mit `Hätte`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Wenn ich mehr Geld gehabt hätte, hätte ich die Wohnung gekauft.",
+        "Wenn ich mehr Geld gehabt hätte, würde ich die Wohnung gekauft.",
+        "Wenn ich mehr Geld hatte, hätte ich die Wohnung gekauft."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة صحيحة للحديث عن الماضي؟",
+          "explain": "الجملتان تحتاجان إلى `hätte` + `Partizip II`. لا تأتي `würde` مع `Partizip II`، ولا يكفي `hatte` في الشرط.",
+          "hints": [
+            "في الجملتين صيغة التمني."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz über die Vergangenheit ist richtig?",
+          "explain": "Beide Teile brauchen `hätte` + Partizip II. `würde` steht nicht mit Partizip II, und `hatte` ist kein Konjunktiv.",
+          "hints": [
+            "Beide Teile stehen im Konjunktiv II."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Wenn ich nicht krank gewesen wäre, wäre ich zur Party gegangen.",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل الواقع إلى جملة غير واقعية مع `wenn`: `Ich war krank. Deshalb bin ich nicht zur Party gegangen.`",
+          "explain": "اقلب الواقع: `Wenn ich nicht krank gewesen wäre, wäre ich zur Party gegangen.` الفعلان `sein` و`gehen` يأخذان `wäre`.",
+          "hints": [
+            "`sein` و`gehen` يأخذان `sein` في `Perfekt`."
+          ]
+        },
+        "de": {
+          "prompt": "Mach daraus einen irrealen wenn-Satz: `Ich war krank. Deshalb bin ich nicht zur Party gegangen.`",
+          "explain": "Dreh die Realität um: `Wenn ich nicht krank gewesen wäre, wäre ich zur Party gegangen.` `sein` und `gehen` bilden das Perfekt mit `sein`.",
+          "hints": [
+            "`sein` und `gehen` bilden das Perfekt mit `sein`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-8",
+      "type": "text",
+      "difficulty": 3,
+      "context": "Wenn ich Zeit gehabt hätte, würde ich gekommen.",
+      "answer": "Wenn ich Zeit gehabt hätte, wäre ich gekommen.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "في الماضي تكون النتيجة `hätte` أو `wäre` مع `Partizip II`. `kommen` يأخذ `sein`، فنقول `wäre ich gekommen`.",
+          "hints": [
+            "هل تأتي `würde` مع `Partizip II`؟"
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "In der Vergangenheit heißt die Folge `hätte` oder `wäre` + Partizip II. `kommen` hat `sein`: `wäre ich gekommen`.",
+          "hints": [
+            "Steht `würde` mit Partizip II?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "Wenn ich früher Deutsch gelernt hätte, hätte ich schneller eine Arbeit gefunden.",
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب جملة عن شيء تتمنى لو فعلته في الماضي. ابدأ بـ `Wenn ich früher …`",
+          "explain": "مثال: `Wenn ich früher Deutsch gelernt hätte, hätte ich schneller eine Arbeit gefunden.`",
+          "hints": [
+            "`hätte` في آخر الشرط وفي بداية النتيجة."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib einen Satz über etwas, das du früher gern anders gemacht hättest. Beginne mit `Wenn ich früher …`",
+          "explain": "Zum Beispiel: `Wenn ich früher Deutsch gelernt hätte, hätte ich schneller eine Arbeit gefunden.`",
+          "hints": [
+            "`hätte` steht am Ende der Bedingung und am Anfang der Folge."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "id": "irgend-pronomen",
+  "level": "B1.2",
+  "island": "pronomen",
+  "order": 3,
+  "prereqs": ["irgendein"],
+  "emoji": "🌫️",
+  "german": "Indefinitpronomen mit irgend-",
+  "source": { "lektion": 12, "kind": "sample" },
+  "pattern": ["irgend", "+", "wann / wo / wie / wer / was"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Ich"], ["v", "habe"], ["mf", "das"], ["hl", "irgendwo"], ["ve", "gelesen"]] },
+    { "k": "main", "parts": [["hl", "Irgendwann"], ["v", "mache"], ["mf", "ich eine Weltreise"]] },
+    { "k": "main", "parts": [["hl", "Irgendjemand"], ["v", "hat"], ["mf", "angerufen"]] }
+  ],
+  "example": "Ich habe das irgendwo gelesen.",
+  "stepExamples": [
+    "Wo hast du das gelesen? – Ich weiß es nicht mehr genau.",
+    "Ich habe das irgendwo gelesen.",
+    "Irgendwann mache ich eine Weltreise.",
+    "Irgendjemand hat angerufen. · Irgendwas stimmt hier nicht.",
+    "Das finde ich irgendwie komisch."
+  ],
+  "pitfallPair": "Ich habe das irgendwie im Internet gelesen. → Ich habe das irgendwo im Internet gelesen.",
+  "links": [
+    "https://grammis.ids-mannheim.de/progr%40mm/5310",
+    "https://www.dwds.de/wb/irgendwo"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "irgendwo و irgendwann وأخواتهما",
+      "lead": "تذكر أنك قرأت شيئًا، لكن لا تذكر أين. في الألمانية تضع `irgend-` قبل كلمة السؤال: `irgendwo` «في مكان ما»، و`irgendwann` «في وقت ما». هذه الكلمات شائعة جدًا في الكلام اليومي.",
+      "translation": "قرأتُ ذلك في مكان ما.",
+      "steps": [
+        { "text": "ابدأ بشيء لا تعرفه بدقة", "why": "السؤال `Wo?` ينتظر مكانًا، لكنك لا تعرفه. الكلمة `irgend-` تقول «لا أعرف بالضبط، ولا يهم كثيرًا»." },
+        { "text": "irgend + wo = في مكان ما", "why": "`irgendwo` تقف مكان ظرف المكان، فلا تغيّر ترتيب الجملة: `Ich habe das irgendwo gelesen.`" },
+        { "text": "irgend + wann = في وقت ما", "why": "`irgendwann` ظرف زمان. وفي أول الجملة يأتي الفعل بعدها مباشرة: `Irgendwann mache ich …`." },
+        { "text": "للشخص والشيء: irgendwer و irgendwas", "why": "`irgendwer` أو `irgendjemand` تعني «شخص ما»، و`irgendwas` أو `irgendetwas` تعني «شيء ما». وفي الكتابة الرسمية يُفضَّل `irgendjemand` و`irgendetwas`." },
+        { "text": "irgendwie = بطريقة ما", "why": "`irgendwie` تصف الطريقة، وفي الكلام تعني أيضًا «نوعًا ما»: `Das ist irgendwie seltsam.`" }
+      ],
+      "explain": [
+        "كلمات `irgend-` لا تأخذ نهايات، إلا `irgendjemand` التي تُصرّف مثل `jemand`: `irgendjemanden` و`irgendjemandem`، وفي الكلام تبقى غالبًا بلا نهاية.",
+        "لا تخلط بين هذه الكلمات و`irgendein`: الأخيرة تقف قبل اسم وتأخذ نهايات الأداة (`irgendein Buch`)، أما `irgendwas` فتقف وحدها."
+      ],
+      "pitfall": "`irgendwie` تصف الطريقة، و`irgendwo` تصف المكان. القراءة في الإنترنت مكان، فالصحيح `irgendwo`.",
+      "recall": ["أي كلمة تكمل: `Ich habe meinen Schlüssel ___ verloren, aber ich weiß nicht, wo.`؟", "`irgendwo`، لأن ما لا نعرفه هو المكان."],
+      "linkTitles": ["الضمائر غير المحددة · grammis", "irgendwo في معجم DWDS"],
+      "table": [
+        ["الكلمة", "ماذا يبقى مجهولًا؟", "مثال"],
+        ["irgendwann", "الوقت", "Ich rufe dich irgendwann an."],
+        ["irgendwo", "المكان", "Mein Handy ist irgendwo hier."],
+        ["irgendwie", "الطريقة", "Wir schaffen das irgendwie."],
+        ["irgendwer / irgendjemand", "الشخص", "Irgendjemand hat geklopft."],
+        ["irgendwas / irgendetwas", "الشيء", "Iss doch irgendwas!"]
+      ]
+    },
+    "de": {
+      "title": "Indefinitpronomen mit irgend-",
+      "lead": "Du weißt, dass du etwas gelesen hast, aber nicht mehr, wo. Im Deutschen setzt du `irgend-` vor das Fragewort: `irgendwo`, `irgendwann`. Diese Wörter sind in der Umgangssprache sehr häufig.",
+      "steps": [
+        { "text": "Beginne mit etwas Unbekanntem", "why": "Die Frage `Wo?` erwartet einen Ort, aber du kennst ihn nicht. `irgend-` sagt: Ich weiß es nicht genau, und es ist nicht so wichtig." },
+        { "text": "irgend + wo = an einem unbestimmten Ort", "why": "`irgendwo` steht wie eine Ortsangabe und ändert die Wortstellung nicht: `Ich habe das irgendwo gelesen.`" },
+        { "text": "irgend + wann = zu einer unbestimmten Zeit", "why": "`irgendwann` ist eine Zeitangabe. Am Satzanfang folgt direkt das Verb: `Irgendwann mache ich …`." },
+        { "text": "Für Person und Sache: irgendwer und irgendwas", "why": "`irgendwer` oder `irgendjemand` heißt „eine unbestimmte Person“, `irgendwas` oder `irgendetwas` „eine unbestimmte Sache“. Geschrieben sind `irgendjemand` und `irgendetwas` üblicher." },
+        { "text": "irgendwie = auf eine unbestimmte Art", "why": "`irgendwie` beschreibt die Art und Weise und heißt umgangssprachlich auch „ein bisschen“: `Das ist irgendwie seltsam.`" }
+      ],
+      "explain": [
+        "Die irgend-Wörter haben keine Endungen. Nur `irgendjemand` wird wie `jemand` dekliniert: `irgendjemanden`, `irgendjemandem` – gesprochen oft ohne Endung.",
+        "Verwechsle sie nicht mit `irgendein`: Es steht vor einem Nomen und hat Artikelendungen (`irgendein Buch`). `irgendwas` steht allein."
+      ],
+      "pitfall": "`irgendwie` beschreibt die Art und Weise, `irgendwo` den Ort. Im Internet ist ein Ort, also `irgendwo`.",
+      "recall": ["Was passt? `Ich habe meinen Schlüssel ___ verloren, aber ich weiß nicht, wo.`", "`irgendwo`, denn unbekannt ist der Ort."],
+      "linkTitles": ["Indefinit-Pronomen · grammis", "irgendwo im DWDS"],
+      "table": [
+        ["Wort", "Was ist unbestimmt?", "Beispiel"],
+        ["irgendwann", "die Zeit", "Ich rufe dich irgendwann an."],
+        ["irgendwo", "der Ort", "Mein Handy ist irgendwo hier."],
+        ["irgendwie", "die Art und Weise", "Wir schaffen das irgendwie."],
+        ["irgendwer / irgendjemand", "die Person", "Irgendjemand hat geklopft."],
+        ["irgendwas / irgendetwas", "die Sache", "Iss doch irgendwas!"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "irgend-pronomen-1", "type": "cloze", "difficulty": 1,
+      "text": "Ich möchte {{1}} in Japan leben – vielleicht in zehn Jahren.",
+      "blanks": [["irgendwann"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمة تعني «في وقت ما».", "explain": "الوقت غير محدد: `irgendwann`.", "hints": ["`vielleicht in zehn Jahren` يتحدث عن الوقت."] },
+        "de": { "prompt": "Ergänze das Wort für „zu einer unbestimmten Zeit“.", "explain": "Die Zeit ist unbestimmt: `irgendwann`.", "hints": ["`vielleicht in zehn Jahren` nennt eine Zeit."] }
+      }
+    },
+    {
+      "id": "irgend-pronomen-2", "type": "cloze", "difficulty": 1,
+      "text": "Hat {{1}} meine Brille gesehen?",
+      "blanks": [["irgendjemand", "irgendwer", "jemand"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمة تعني «أحد ما».", "explain": "الشخص غير معروف: `irgendjemand` أو `irgendwer`.", "hints": ["السؤال عن شخص."] },
+        "de": { "prompt": "Ergänze das Wort für „eine unbestimmte Person“.", "explain": "Die Person ist unbekannt: `irgendjemand` oder `irgendwer`.", "hints": ["Gefragt wird nach einer Person."] }
+      }
+    },
+    {
+      "id": "irgend-pronomen-3", "type": "mcq", "difficulty": 1,
+      "options": ["irgendwie", "irgendwo", "irgendwann"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي كلمة تكمل؟ `Ich weiß nicht wie, aber wir schaffen das ___.`", "explain": "المجهول هو الطريقة: `irgendwie`.", "hints": ["`wie` = الطريقة."] },
+        "de": { "prompt": "Was passt? `Ich weiß nicht wie, aber wir schaffen das ___.`", "explain": "Unbekannt ist die Art und Weise: `irgendwie`.", "hints": ["`wie` = Art und Weise."] }
+      }
+    },
+    {
+      "id": "irgend-pronomen-4", "type": "cloze", "difficulty": 2,
+      "text": "Ich habe Hunger. Gibt es {{1}} zu essen? – Ja, {{2}} im Kühlschrank ist noch Käse.",
+      "blanks": [["irgendwas", "irgendetwas", "etwas"], ["irgendwo"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمتين من `irgend-`.", "explain": "الأولى شيء غير محدد: `irgendwas`. والثانية مكان غير محدد داخل الثلاجة: `irgendwo`.", "hints": ["شيء ثم مكان."] },
+        "de": { "prompt": "Ergänze zwei irgend-Wörter.", "explain": "Erst eine unbestimmte Sache: `irgendwas`. Dann ein unbestimmter Ort: `irgendwo`.", "hints": ["Erst eine Sache, dann ein Ort."] }
+      }
+    },
+    {
+      "id": "irgend-pronomen-5", "type": "order", "difficulty": 2,
+      "items": ["Irgendwann", "werde", "ich", "das", "verstehen."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة. ابدأ بـ `Irgendwann`.", "explain": "`Irgendwann` في الموقع الأول، ثم الفعل `werde` ثم الفاعل، و`verstehen` في الآخر.", "hints": ["بعد الظرف يأتي الفعل."] },
+        "de": { "prompt": "Ordne den Satz. Beginne mit `Irgendwann`.", "explain": "`Irgendwann` auf Position 1, dann `werde`, dann das Subjekt, `verstehen` am Ende.", "hints": ["Nach der Zeitangabe kommt das Verb."] }
+      }
+    },
+    {
+      "id": "irgend-pronomen-6", "type": "mcq", "difficulty": 2,
+      "options": ["Ich brauche irgendein Ladekabel.", "Ich brauche irgendwas Ladekabel.", "Ich brauche irgendwer Ladekabel."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟ تحتاج إلى أي سلك شحن، لا يهم أيّه.", "explain": "قبل اسم نستعمل `irgendein` مع نهاية الأداة. أما `irgendwas` و`irgendwer` فتقفان وحدهما.", "hints": ["هل يأتي بعد الكلمة اسم؟"] },
+        "de": { "prompt": "Welcher Satz ist richtig? Dir ist egal, welches Ladekabel.", "explain": "Vor einem Nomen steht `irgendein` mit Artikelendung. `irgendwas` und `irgendwer` stehen allein.", "hints": ["Folgt ein Nomen?"] }
+      }
+    },
+    {
+      "id": "irgend-pronomen-7", "type": "text", "difficulty": 3,
+      "answer": "Irgendjemand hat mir das erzählt, aber ich weiß nicht mehr, wer.",
+      "i18n": {
+        "ar": { "prompt": "اكتب أن شخصًا ما أخبرك بشيء، لكنك لا تذكر من هو. ابدأ بـ `Irgendjemand`.", "explain": "مثال: `Irgendjemand hat mir das erzählt, aber ich weiß nicht mehr, wer.`", "hints": ["`Irgendjemand` فاعل مفرد."] },
+        "de": { "prompt": "Schreib, dass dir jemand etwas erzählt hat, du aber nicht mehr weißt, wer. Beginne mit `Irgendjemand`.", "explain": "Zum Beispiel: `Irgendjemand hat mir das erzählt, aber ich weiß nicht mehr, wer.`", "hints": ["`Irgendjemand` ist ein Subjekt im Singular."] }
+      }
+    },
+    {
+      "id": "irgend-pronomen-8", "type": "text", "difficulty": 3,
+      "context": "Ich habe das irgendwie im Internet gelesen.",
+      "answer": "Ich habe das irgendwo im Internet gelesen.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "المجهول هو المكان في الإنترنت، لا الطريقة. فالصحيح `irgendwo`.", "hints": ["مكان أم طريقة؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Unbekannt ist der Ort im Internet, nicht die Art und Weise. Richtig ist `irgendwo`.", "hints": ["Ort oder Art und Weise?"] }
+      }
+    },
+    {
+      "id": "irgend-pronomen-9", "type": "text", "difficulty": 2,
+      "answer": "Irgendwann möchte ich in einem Haus am Meer wohnen.",
+      "i18n": {
+        "ar": { "prompt": "اكتب حلمًا تريد تحقيقه يومًا ما. ابدأ بـ `Irgendwann`.", "explain": "مثال: `Irgendwann möchte ich in einem Haus am Meer wohnen.`", "hints": ["بعد `Irgendwann` الفعل ثم الفاعل."] },
+        "de": { "prompt": "Schreib einen Traum, den du irgendwann verwirklichen willst. Beginne mit `Irgendwann`.", "explain": "Zum Beispiel: `Irgendwann möchte ich in einem Haus am Meer wohnen.`", "hints": ["Nach `Irgendwann`: Verb, dann Subjekt."] }
+      }
+    }
+  ]
+}

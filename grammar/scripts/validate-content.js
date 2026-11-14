@@ -60,8 +60,17 @@ export function validateContent(content) {
 
   const lessons = new Map();
   const questionIds = new Set();
+  const placeholders = (value, at, where) => {
+    if (typeof value === 'string') {
+      if (/\bTODO\b|example\.org/.test(value)) fail(where, `unfinished placeholder at ${at}`);
+    } else if (value && typeof value === 'object') {
+      for (const [key, item] of Object.entries(value)) placeholders(item, at ? `${at}.${key}` : key, where);
+    }
+  };
+
   for (const lesson of content.lessons || []) {
     const where = `lesson ${lesson.id}`;
+    placeholders(lesson, '', where);
     if (!ID.test(lesson.id || '')) fail(where, 'invalid id');
     if (lesson.file && lesson.file !== `${lesson.id}.json`) fail(where, `file name ${lesson.file} does not match the id`);
     if (lessons.has(lesson.id)) fail(where, 'duplicate id');

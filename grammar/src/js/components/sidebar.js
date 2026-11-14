@@ -4,7 +4,12 @@ import { inFilter, lessonTitle, islandName } from '../content.js';
 import { lessonStars } from '../engine/progress.js';
 import { esc, prose } from './html.js';
 
-export const searchKey = value => String(value).normalize('NFD').replace(/\p{M}/gu, '').replace(/[أإآٱ]/g, 'ا').replace(/ـ/g, '').toLowerCase();
+// Search ignores accents, Arabic short vowels, letter variants and the
+// article: «المجهول» also finds «للمجهول».
+export const searchKey = value => String(value).normalize('NFD').replace(/\p{M}/gu, '')
+  .replace(/[أإآٱ]/g, 'ا').replace(/ـ/g, '').replace(/ة/g, 'ه').replace(/ى/g, 'ي')
+  .replace(/(^|[\s·،,(])(?:وال|بال|كال|فال|لل|ال)(?=\p{Script=Arabic}{2})/gu, '$1')
+  .toLowerCase();
 
 export function renderIndex({ ctx, state, query, current, open }) {
   const lang = getLang();

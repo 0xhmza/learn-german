@@ -1,0 +1,163 @@
+{
+  "id": "plusquamperfekt",
+  "level": "B1.2",
+  "island": "zeiten",
+  "order": 1,
+  "prereqs": [],
+  "emoji": "⏪",
+  "german": "Das Plusquamperfekt",
+  "source": { "lektion": 10, "kind": "toc" },
+  "pattern": ["hatte / war", "+", "Partizip II"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Der Zug"], ["v", "war"], ["mf", "schon"], ["ve", "abgefahren"]] },
+    { "k": "main", "parts": [["vf", "Ich"], ["v", "hatte"], ["mf", "mein Ticket zu Hause"], ["ve", "vergessen"]] },
+    { "k": "sub", "parts": [["c", "weil"], ["mf", "ich den Wecker nicht"], ["ve", "gehört hatte"]] }
+  ],
+  "example": "Als ich am Bahnhof ankam, war der Zug schon abgefahren.",
+  "stepExamples": [
+    "Ich kam am Bahnhof an. Der Zug fuhr ab.",
+    "Als ich ankam, war der Zug schon abgefahren.",
+    "Ich hatte mein Ticket zu Hause vergessen.",
+    "Ich bin zu spät gekommen, weil ich den Wecker nicht gehört hatte."
+  ],
+  "pitfallPair": "Ich hatte schon nach Hause gegangen. → Ich war schon nach Hause gegangen.",
+  "links": [
+    "https://grammis.ids-mannheim.de/vggf/2228",
+    "https://grammis.ids-mannheim.de/fragen/6706"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الماضي الأسبق: Plusquamperfekt",
+      "lead": "حين تحكي عن الماضي يحدث أن يكون أمر قد وقع قبل أمر آخر. وصلتَ إلى المحطة، لكن القطار كان قد غادر قبل ذلك. لهذا «الماضي قبل الماضي» تحتاج إلى `Plusquamperfekt`.",
+      "translation": "حين وصلتُ إلى المحطة كان القطار قد غادر.",
+      "steps": [
+        { "text": "رتّب الحدثين على خط الزمن", "why": "كلا الحدثين في الماضي، لكن مغادرة القطار وقعت أولًا. الحدث الأقدم هو الذي يأخذ `Plusquamperfekt`." },
+        { "text": "كوّن الصيغة من hatte أو war مع Partizip II", "why": "هي مثل `Perfekt`، لكن الفعل المساعد في الماضي: `ist abgefahren` تصير `war abgefahren`. ويبقى `Partizip II` في آخر الجملة." },
+        { "text": "اختر المساعد كما في Perfekt", "why": "الأفعال التي تأخذ `haben` في `Perfekt` تأخذ `hatte`، والتي تأخذ `sein` تأخذ `war`: `hatte vergessen` و`war gegangen`." },
+        { "text": "في الجملة التابعة يذهب المساعد إلى الآخر", "why": "بعد `weil` أو `nachdem` يقف `Partizip II` ثم المساعد المصرف: `gehört hatte`." }
+      ],
+      "explain": [
+        "يُستعمل `Plusquamperfekt` غالبًا مع `Präteritum` في الحكاية: الأحداث الأساسية في `Präteritum`، وما وقع قبلها في `Plusquamperfekt`.",
+        "إذا كان الترتيب واضحًا من السياق فلا حاجة دائمًا إليه في الكلام اليومي. لكن بعد `nachdem` وفي النصوص المكتوبة ستراه كثيرًا."
+      ],
+      "pitfall": "الأفعال التي تدل على حركة أو تغيّر حال تأخذ `war`، لا `hatte`، كما تأخذ `ist` في `Perfekt`.",
+      "recall": ["ما صيغة `Plusquamperfekt` من `Wir sind umgezogen`؟", "`Wir waren umgezogen.` الفعل المساعد `sein` يصير `waren`."],
+      "linkTitles": ["الماضي الأسبق · grammis", "هل ما زال Plusquamperfekt مستعملًا؟ · grammis"],
+      "table": [
+        ["الضمير", "haben", "sein"],
+        ["ich", "hatte gemacht", "war gegangen"],
+        ["du", "hattest gemacht", "warst gegangen"],
+        ["er / sie / es", "hatte gemacht", "war gegangen"],
+        ["wir", "hatten gemacht", "waren gegangen"],
+        ["ihr", "hattet gemacht", "wart gegangen"],
+        ["sie / Sie", "hatten gemacht", "waren gegangen"]
+      ]
+    },
+    "de": {
+      "title": "Das Plusquamperfekt",
+      "lead": "Wenn du von der Vergangenheit erzählst, ist manchmal etwas noch früher passiert. Du kamst am Bahnhof an, aber der Zug war schon vorher abgefahren. Für diese „Vorvergangenheit“ brauchst du das Plusquamperfekt.",
+      "steps": [
+        { "text": "Ordne die zwei Ereignisse auf der Zeitachse", "why": "Beide liegen in der Vergangenheit, aber der Zug fuhr zuerst ab. Das frühere Ereignis steht im Plusquamperfekt." },
+        { "text": "Bilde hatte oder war + Partizip II", "why": "Es ist wie das Perfekt, nur steht das Hilfsverb im Präteritum: aus `ist abgefahren` wird `war abgefahren`. Das Partizip II steht am Satzende." },
+        { "text": "Wähle das Hilfsverb wie im Perfekt", "why": "Verben mit `haben` im Perfekt bekommen `hatte`, Verben mit `sein` bekommen `war`: `hatte vergessen`, `war gegangen`." },
+        { "text": "Im Nebensatz steht das Hilfsverb am Ende", "why": "Nach `weil` oder `nachdem` kommen erst das Partizip II, dann das konjugierte Hilfsverb: `gehört hatte`." }
+      ],
+      "explain": [
+        "Beim Erzählen steht das Plusquamperfekt oft zusammen mit dem Präteritum: Die Haupthandlung steht im Präteritum, was vorher passiert war, im Plusquamperfekt.",
+        "Wenn die Reihenfolge aus dem Kontext klar ist, verzichtet man in der gesprochenen Sprache oft darauf. Nach `nachdem` und in geschriebenen Texten siehst du es aber häufig."
+      ],
+      "pitfall": "Verben der Bewegung oder Zustandsveränderung bilden das Plusquamperfekt mit `war`, nicht mit `hatte` – wie mit `ist` im Perfekt.",
+      "recall": ["Wie heißt `Wir sind umgezogen` im Plusquamperfekt?", "`Wir waren umgezogen.` Das Hilfsverb `sein` wird zu `waren`."],
+      "linkTitles": ["Plusquamperfekt · grammis", "Wird das Plusquamperfekt noch benutzt? · grammis"],
+      "table": [
+        ["Person", "haben", "sein"],
+        ["ich", "hatte gemacht", "war gegangen"],
+        ["du", "hattest gemacht", "warst gegangen"],
+        ["er / sie / es", "hatte gemacht", "war gegangen"],
+        ["wir", "hatten gemacht", "waren gegangen"],
+        ["ihr", "hattet gemacht", "wart gegangen"],
+        ["sie / Sie", "hatten gemacht", "waren gegangen"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "plusquamperfekt-1", "type": "cloze", "difficulty": 1,
+      "text": "Als wir ins Kino kamen, {{1}} der Film schon angefangen.",
+      "blanks": [["hatte"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل المساعد المناسب.", "explain": "`anfangen` يأخذ `haben` في `Perfekt`، فيصير `hatte angefangen`.", "hints": ["الفيلم بدأ قبل وصولنا."] },
+        "de": { "prompt": "Ergänze das passende Hilfsverb.", "explain": "`anfangen` bildet das Perfekt mit `haben`, also `hatte angefangen`.", "hints": ["Der Film begann vor unserer Ankunft."] }
+      }
+    },
+    {
+      "id": "plusquamperfekt-2", "type": "cloze", "difficulty": 1,
+      "text": "Sie war müde, weil sie den ganzen Tag gearbeitet {{1}}.",
+      "blanks": [["hatte"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل المساعد في الآخر.", "explain": "العمل وقع قبل التعب، و`arbeiten` يأخذ `haben`: `gearbeitet hatte`.", "hints": ["الفعل المساعد في آخر جملة `weil`."] },
+        "de": { "prompt": "Ergänze das Hilfsverb am Ende.", "explain": "Die Arbeit war vor der Müdigkeit, `arbeiten` bildet das Perfekt mit `haben`: `gearbeitet hatte`.", "hints": ["Im weil-Satz steht das Hilfsverb am Ende."] }
+      }
+    },
+    {
+      "id": "plusquamperfekt-3", "type": "mcq", "difficulty": 1,
+      "options": ["Er war schon nach Hause gefahren.", "Er hatte schon nach Hause gefahren.", "Er war schon nach Hause fahren."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة في `Plusquamperfekt`؟", "explain": "`fahren` فعل حركة يأخذ `sein`، فالصيغة `war … gefahren`.", "hints": ["هل `fahren` يأخذ `haben` أم `sein`؟"] },
+        "de": { "prompt": "Welcher Satz steht richtig im Plusquamperfekt?", "explain": "`fahren` ist ein Bewegungsverb mit `sein`: `war … gefahren`.", "hints": ["Bildet `fahren` das Perfekt mit `haben` oder `sein`?"] }
+      }
+    },
+    {
+      "id": "plusquamperfekt-4", "type": "cloze", "difficulty": 2,
+      "text": "Ich konnte nicht bezahlen, denn ich {{1}} mein Portemonnaie {{2}}.",
+      "blanks": [["hatte"], ["verloren", "vergessen"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بـ `Plusquamperfekt` من `verlieren`.", "explain": "بعد `denn` يبقى الترتيب رئيسيًا: `hatte` في الموقع الثاني و`verloren` في الآخر.", "hints": ["`denn` لا ترسل الفعل إلى الآخر."] },
+        "de": { "prompt": "Ergänze das Plusquamperfekt von `verlieren`.", "explain": "Nach `denn` bleibt die Hauptsatzstellung: `hatte` auf Position 2, `verloren` am Ende.", "hints": ["`denn` schickt das Verb nicht ans Ende."] }
+      }
+    },
+    {
+      "id": "plusquamperfekt-5", "type": "order", "difficulty": 2,
+      "items": ["Wir", "waren", "noch nie", "in Berlin", "gewesen."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة: «لم نكن قد زرنا برلين من قبل».", "explain": "`waren` في الموقع الثاني و`gewesen` في الآخر. الفعل `sein` يأخذ `sein` كمساعد.", "hints": ["ابدأ بـ `Wir`."] },
+        "de": { "prompt": "Ordne den Satz.", "explain": "`waren` auf Position 2, `gewesen` am Ende. `sein` bildet das Perfekt mit `sein`.", "hints": ["Beginne mit `Wir`."] }
+      }
+    },
+    {
+      "id": "plusquamperfekt-6", "type": "mcq", "difficulty": 2,
+      "options": ["Er hat die Tür abgeschlossen.", "Er ist losgegangen.", "Beide Handlungen passierten gleichzeitig."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "في الجملة `Er ging los. Er hatte die Tür abgeschlossen.` ما الذي حدث أولًا؟", "explain": "الحدث الذي في `Plusquamperfekt` وقع قبل الحدث الذي في `Präteritum`: أقفل الباب أولًا.", "hints": ["أي فعل جاء في `Plusquamperfekt`؟"] },
+        "de": { "prompt": "In `Er ging los. Er hatte die Tür abgeschlossen.` – was passierte zuerst?", "explain": "Was im Plusquamperfekt steht, passierte vor dem Ereignis im Präteritum: Er schloss zuerst ab.", "hints": ["Welches Verb steht im Plusquamperfekt?"] }
+      }
+    },
+    {
+      "id": "plusquamperfekt-7", "type": "text", "difficulty": 3,
+      "answer": "Ich hatte das Buch schon gelesen.",
+      "i18n": {
+        "ar": { "prompt": "حوّل إلى `Plusquamperfekt`: `Ich habe das Buch schon gelesen.`", "explain": "`habe` تصير `hatte`، ويبقى `gelesen` في الآخر.", "hints": ["غيّر الفعل المساعد فقط."] },
+        "de": { "prompt": "Setz ins Plusquamperfekt: `Ich habe das Buch schon gelesen.`", "explain": "Aus `habe` wird `hatte`, `gelesen` bleibt am Ende.", "hints": ["Ändere nur das Hilfsverb."] }
+      }
+    },
+    {
+      "id": "plusquamperfekt-8", "type": "text", "difficulty": 3,
+      "context": "Ich hatte schon nach Hause gegangen.",
+      "answer": "Ich war schon nach Hause gegangen.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`gehen` فعل حركة يأخذ `sein` في `Perfekt`، فيصير المساعد `war` في `Plusquamperfekt`.", "hints": ["`Ich bin gegangen` أم `Ich habe gegangen`؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`gehen` ist ein Bewegungsverb mit `sein`. Im Plusquamperfekt heißt das Hilfsverb deshalb `war`.", "hints": ["`Ich bin gegangen` oder `Ich habe gegangen`?"] }
+      }
+    },
+    {
+      "id": "plusquamperfekt-9", "type": "text", "difficulty": 2,
+      "answer": "Als ich nach Hause kam, hatte meine Mutter schon gekocht.",
+      "i18n": {
+        "ar": { "prompt": "اكتب جملة تبدأ بـ `Als ich nach Hause kam,` وأكملها بحدث وقع قبل ذلك.", "explain": "مثال: `Als ich nach Hause kam, hatte meine Mutter schon gekocht.`", "hints": ["بعد الفاصلة: الفعل المساعد ثم الفاعل."] },
+        "de": { "prompt": "Schreib einen Satz, der mit `Als ich nach Hause kam,` beginnt, und ergänze etwas, das vorher passiert war.", "explain": "Zum Beispiel: `Als ich nach Hause kam, hatte meine Mutter schon gekocht.`", "hints": ["Nach dem Komma: Hilfsverb, dann Subjekt."] }
+      }
+    }
+  ]
+}

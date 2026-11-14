@@ -1,0 +1,468 @@
+{
+  "id": "brauchen",
+  "level": "B1.2",
+  "island": "infinitiv-verben",
+  "order": 4,
+  "prereqs": [
+    "infinitiv-zu"
+  ],
+  "emoji": "🧺",
+  "german": "Das Verb brauchen",
+  "source": {
+    "lektion": 9,
+    "kind": "toc"
+  },
+  "pattern": [
+    "nicht / nur",
+    "+",
+    "brauchen",
+    "+",
+    "zu",
+    "+",
+    "Infinitiv"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "brauche"
+        ],
+        [
+          "mf",
+          "einen neuen Laptop"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Du"
+        ],
+        [
+          "v",
+          "brauchst"
+        ],
+        [
+          "mf",
+          "nicht"
+        ],
+        [
+          "ve",
+          "zu warten"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Sie"
+        ],
+        [
+          "v",
+          "brauchen"
+        ],
+        [
+          "mf",
+          "nur"
+        ],
+        [
+          "ve",
+          "anzurufen"
+        ]
+      ]
+    }
+  ],
+  "example": "Du musst nicht warten. → Du brauchst nicht zu warten.",
+  "stepExamples": [
+    "Ich brauche einen neuen Laptop.",
+    "Du musst heute nicht kommen.",
+    "Du brauchst heute nicht zu kommen.",
+    "Sie brauchen nur anzurufen.",
+    "Du musst morgen kommen."
+  ],
+  "pitfallPair": "Du brauchst morgen zu kommen. → Du musst morgen kommen.",
+  "links": [
+    "https://grammis.ids-mannheim.de/systematische-grammatik/1558",
+    "https://grammis.ids-mannheim.de/fragen/98"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الفعل brauchen بمعنييه",
+      "lead": "تعرف `brauchen` بمعنى «يحتاج إلى شيء». لكن مع النفي و`zu` يصير معناه «لا يلزم»، ويحل محل `nicht müssen`. ستتعلم متى يصح هذا الاستعمال ومتى لا يصح.",
+      "translation": "لا يلزمك أن تنتظر.",
+      "steps": [
+        {
+          "text": "brauchen + مفعول به: يحتاج إلى",
+          "why": "هذا هو المعنى المعروف: `brauchen` مع اسم في حالة `Akkusativ`."
+        },
+        {
+          "text": "انطلق من nicht müssen",
+          "why": "`Du musst nicht kommen` تعني أن المجيء غير ضروري. لا تعني أنه ممنوع."
+        },
+        {
+          "text": "استبدل nicht müssen بـ nicht brauchen zu",
+          "why": "المعنى نفسه: `Du brauchst nicht zu kommen`. الفعل `brauchen` في الموقع الثاني، والمصدر مع `zu` في آخر الجملة."
+        },
+        {
+          "text": "مع nur يعني «يكفي أن»",
+          "why": "`Sie brauchen nur anzurufen` تعني «كل ما عليك أن تتصل». ومع الأفعال المنفصلة تقف `zu` في وسطها: `anzurufen`."
+        },
+        {
+          "text": "للإلزام المثبت استعمل müssen",
+          "why": "`brauchen zu` لا يأتي إلا مع `nicht` أو `kein` أو `nur` أو `erst`. حين يكون الأمر لازمًا فعلًا تقول `müssen`."
+        }
+      ],
+      "explain": [
+        "`brauchen + zu + مصدر` ينفي الضرورة أو يقلّلها. والكلمات التي تفتحه هي: `nicht` و`kein` و`nur` و`erst` و`kaum`.",
+        "في الكلام اليومي تسقط `zu` كثيرًا: `Du brauchst nicht warten`. يفهمها الجميع، لكن الصيغة مع `zu` أفضل في الكتابة وفي الامتحان."
+      ],
+      "pitfall": "`brauchen zu` لا تأتي في جملة مثبتة بمعنى «يجب». هنا الصحيح `müssen`.",
+      "recall": [
+        "حوّل إلى `brauchen`: `Ihr müsst keine Angst haben.`",
+        "`Ihr braucht keine Angst zu haben.` النفي `keine` يسمح باستعمال `brauchen zu`."
+      ],
+      "linkTitles": [
+        "brauchen ضمن الأفعال الناقصة · grammis",
+        "مع zu أو بدونها؟ · grammis"
+      ],
+      "table": [
+        [
+          "الصيغة",
+          "المعنى",
+          "مثال"
+        ],
+        [
+          "brauchen + Akkusativ",
+          "يحتاج إلى",
+          "Ich brauche Hilfe."
+        ],
+        [
+          "nicht / kein … brauchen zu",
+          "لا يلزم",
+          "Du brauchst nicht zu warten."
+        ],
+        [
+          "nur … brauchen zu",
+          "يكفي أن",
+          "Du brauchst nur zu klingeln."
+        ],
+        [
+          "müssen",
+          "يجب",
+          "Du musst morgen kommen."
+        ]
+      ]
+    },
+    "de": {
+      "title": "Das Verb brauchen",
+      "lead": "Du kennst `brauchen` als „etwas nötig haben“. Mit Verneinung und `zu` bedeutet es aber „nicht müssen“. Du lernst, wann diese Konstruktion passt und wann nicht.",
+      "steps": [
+        {
+          "text": "brauchen + Akkusativ: etwas nötig haben",
+          "why": "Das ist die bekannte Bedeutung: `brauchen` mit einem Akkusativobjekt."
+        },
+        {
+          "text": "Geh von nicht müssen aus",
+          "why": "`Du musst nicht kommen` heißt: Es ist nicht nötig. Es ist nicht verboten."
+        },
+        {
+          "text": "Ersetze nicht müssen durch nicht brauchen zu",
+          "why": "Gleiche Bedeutung: `Du brauchst nicht zu kommen`. `brauchen` steht auf Position 2, der Infinitiv mit `zu` am Ende."
+        },
+        {
+          "text": "Mit nur heißt es „es reicht, wenn“",
+          "why": "`Sie brauchen nur anzurufen` heißt: Mehr müssen Sie nicht tun. Bei trennbaren Verben steht `zu` in der Mitte: `anzurufen`."
+        },
+        {
+          "text": "Für eine echte Pflicht nimmst du müssen",
+          "why": "`brauchen zu` steht nur mit `nicht`, `kein`, `nur`, `erst`. Ist etwas wirklich nötig, heißt es `müssen`."
+        }
+      ],
+      "explain": [
+        "`brauchen + zu + Infinitiv` verneint oder begrenzt eine Notwendigkeit. Typische Begleiter sind `nicht`, `kein`, `nur`, `erst`, `kaum`.",
+        "In der gesprochenen Sprache fällt `zu` oft weg: `Du brauchst nicht warten`. Das versteht jeder, schriftlich und in Prüfungen ist die Form mit `zu` sicherer."
+      ],
+      "pitfall": "`brauchen zu` steht nicht in einem bejahten Satz im Sinn von „müssen“. Dann heißt es `müssen`.",
+      "recall": [
+        "Forme um mit `brauchen`: `Ihr müsst keine Angst haben.`",
+        "`Ihr braucht keine Angst zu haben.` Die Verneinung mit `keine` erlaubt `brauchen zu`."
+      ],
+      "linkTitles": [
+        "brauchen im System der Modalverben · grammis",
+        "Infinitiv mit oder ohne zu? · grammis"
+      ],
+      "table": [
+        [
+          "Form",
+          "Bedeutung",
+          "Beispiel"
+        ],
+        [
+          "brauchen + Akkusativ",
+          "nötig haben",
+          "Ich brauche Hilfe."
+        ],
+        [
+          "nicht / kein … brauchen zu",
+          "nicht müssen",
+          "Du brauchst nicht zu warten."
+        ],
+        [
+          "nur … brauchen zu",
+          "es reicht",
+          "Du brauchst nur zu klingeln."
+        ],
+        [
+          "müssen",
+          "Pflicht",
+          "Du musst morgen kommen."
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "brauchen-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Morgen ist Sonntag. Du brauchst nicht früh {{1}}.",
+      "blanks": [
+        [
+          "aufzustehen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل `aufstehen` مع `zu`. انتبه: الفعل منفصل.",
+          "explain": "مع الفعل المنفصل تدخل `zu` في وسطه وتُكتب كلمة واحدة: `aufzustehen`.",
+          "hints": [
+            "أين تقف `zu` في الأفعال المنفصلة؟"
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze `aufstehen` mit `zu`. Achtung: Das Verb ist trennbar.",
+          "explain": "Bei trennbaren Verben steht `zu` in der Mitte, alles in einem Wort: `aufzustehen`.",
+          "hints": [
+            "Wo steht `zu` bei trennbaren Verben?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "brauchen-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Sie {{1}} keinen Termin zu machen, Sie können einfach kommen.",
+      "blanks": [
+        [
+          "brauchen"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل `brauchen` مع `Sie` (صيغة الاحترام).",
+          "explain": "`Sie brauchen keinen Termin zu machen` = لا يلزمك موعد.",
+          "hints": [
+            "`Sie` بصيغة الاحترام يصرّف كالجمع."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze `brauchen` in der Höflichkeitsform.",
+          "explain": "`Sie brauchen keinen Termin zu machen` = Sie müssen keinen Termin machen.",
+          "hints": [
+            "Die Höflichkeitsform hat die Form der 3. Person Plural."
+          ]
+        }
+      }
+    },
+    {
+      "id": "brauchen-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Du musst nicht kochen.",
+        "Du darfst nicht kochen.",
+        "Du sollst kochen."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "ما معنى `Du brauchst nicht zu kochen`؟",
+          "explain": "`nicht brauchen zu` = `nicht müssen`: الطبخ غير ضروري، لكنه ليس ممنوعًا.",
+          "hints": [
+            "هل هو منع أم عدم لزوم؟"
+          ]
+        },
+        "de": {
+          "prompt": "Was bedeutet `Du brauchst nicht zu kochen`?",
+          "explain": "`nicht brauchen zu` = `nicht müssen`: Es ist nicht nötig, aber nicht verboten.",
+          "hints": [
+            "Verbot oder keine Notwendigkeit?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "brauchen-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Das Formular ist fast fertig. Sie brauchen {{1}} noch zu {{2}}.",
+      "blanks": [
+        [
+          "nur"
+        ],
+        [
+          "unterschreiben"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل: «كل ما عليك الآن أن توقّع».",
+          "explain": "`nur … brauchen zu` = يكفي أن. و`unterschreiben` فعل غير منفصل، فتأتي `zu` قبله.",
+          "hints": [
+            "`unterschreiben` لا ينفصل."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze: Es reicht, wenn Sie noch unterschreiben.",
+          "explain": "`nur … brauchen zu` = es reicht. `unterschreiben` ist nicht trennbar, `zu` steht davor.",
+          "hints": [
+            "`unterschreiben` ist untrennbar."
+          ]
+        }
+      }
+    },
+    {
+      "id": "brauchen-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Ihr",
+        "braucht",
+        "keine Angst",
+        "zu",
+        "haben."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة.",
+          "explain": "`braucht` في الموقع الثاني، و`zu haben` في الآخر.",
+          "hints": [
+            "ابدأ بـ `Ihr`."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz.",
+          "explain": "`braucht` auf Position 2, `zu haben` am Ende.",
+          "hints": [
+            "Beginne mit `Ihr`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "brauchen-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Wir müssen morgen früh aufstehen.",
+        "Wir brauchen morgen früh aufzustehen.",
+        "Wir brauchen morgen früh aufstehen."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة صحيحة للتعبير عن الإلزام؟",
+          "explain": "في الجملة المثبتة بمعنى «يجب» نستعمل `müssen`، لا `brauchen zu`.",
+          "hints": [
+            "هل في الجملة نفي أو `nur`؟"
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz drückt die Pflicht richtig aus?",
+          "explain": "In einem bejahten Satz mit der Bedeutung „Pflicht“ steht `müssen`, nicht `brauchen zu`.",
+          "hints": [
+            "Gibt es eine Verneinung oder `nur`?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "brauchen-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Du brauchst mich nicht abzuholen.",
+      "i18n": {
+        "ar": {
+          "prompt": "حوّل الجملة إلى `brauchen`: `Du musst mich nicht abholen.`",
+          "explain": "`Du brauchst mich nicht abzuholen.` ومع الفعل المنفصل تدخل `zu` في وسطه.",
+          "hints": [
+            "`abholen` فعل منفصل."
+          ]
+        },
+        "de": {
+          "prompt": "Forme um mit `brauchen`: `Du musst mich nicht abholen.`",
+          "explain": "`Du brauchst mich nicht abzuholen.` Bei trennbaren Verben steht `zu` in der Mitte.",
+          "hints": [
+            "`abholen` ist trennbar."
+          ]
+        }
+      }
+    },
+    {
+      "id": "brauchen-8",
+      "type": "text",
+      "difficulty": 3,
+      "context": "Du brauchst morgen zu kommen.",
+      "answer": "Du musst morgen kommen.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "الجملة مثبتة وتعبّر عن إلزام، فالصحيح `müssen`. أما `brauchen zu` فلا تأتي إلا مع `nicht` أو `kein` أو `nur`.",
+          "hints": [
+            "هل في الجملة نفي؟"
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Der Satz ist bejaht und drückt eine Pflicht aus. Richtig ist `müssen`. `brauchen zu` steht nur mit `nicht`, `kein` oder `nur`.",
+          "hints": [
+            "Gibt es eine Verneinung?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "brauchen-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "Am Wochenende brauche ich nicht zu arbeiten.",
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب ما لا يلزمك فعله في عطلة نهاية الأسبوع. استعمل `nicht … zu`.",
+          "explain": "مثال: `Am Wochenende brauche ich nicht zu arbeiten.`",
+          "hints": [
+            "`brauche` في الموقع الثاني."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib, was du am Wochenende nicht tun musst. Benutze `brauchen` mit `nicht … zu`.",
+          "explain": "Zum Beispiel: `Am Wochenende brauche ich nicht zu arbeiten.`",
+          "hints": [
+            "`brauche` steht auf Position 2."
+          ]
+        }
+      }
+    }
+  ]
+}

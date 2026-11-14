@@ -87,9 +87,6 @@ main { min-width: 0; padding: clamp(18px, 3vw, 40px); outline: none; }
   .brand small { font-size: 11px; }
   .seg button { min-width: 34px; padding: 0 7px; }
   main { padding: 14px 14px; }
-  .hero { grid-template-columns: 1fr; gap: 0; }
-  .hero-art { display: none; }
-  .hero-copy p { font-size: 15.5px; }
   .units, .lesson-side, .launcher { grid-template-columns: 1fr; }
   .table-help { display: block; }
   .stats { gap: 6px; }

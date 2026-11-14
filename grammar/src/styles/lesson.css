@@ -31,9 +31,6 @@
 .slot.hl { background: var(--g-hl-bg); color: var(--g-hl); border-color: var(--g-hl-line); }
 .slot.n { background: transparent; border-color: transparent; color: var(--ink-2); padding-inline: 3px; }
 .frames-hint { font-size: 13px; color: var(--muted); }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); }
-.legend span { display: inline-flex; align-items: center; gap: 6px; }
-.legend span::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--sw); border: 1px solid var(--swl); }
 .lesson-body { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); gap: 15px; margin-top: 15px; align-items: start; }
 .lesson-side { display: grid; gap: 15px; min-width: 0; }
 .panel, .quiz-box { padding: clamp(16px, 2.3vw, 26px); }

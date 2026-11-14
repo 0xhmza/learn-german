@@ -204,7 +204,7 @@ export default {
   finishFirst: 'Beantworte die Frage zuerst oder geh zur nächsten.',
   xpEarned: n => `+${n} XP in dieser Runde`,
   starsEarned: n => `Sterne der Lektion jetzt: ${n} von 3`,
-  examPassed: 'Bestanden! Die Insel gehört dir 🚩',
+  examPassed: 'Bestanden! Die Insel gehört dir',
   examFailed: (a, p) => `${a} richtig, nötig sind ${p}. Wiederhole die Lektionen und versuch es noch einmal.`,
   runStarsHint: 'Zwei Sterne gibt es ab sechs von neun richtigen Antworten, drei Sterne ab acht.',
 

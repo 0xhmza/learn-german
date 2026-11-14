@@ -1,0 +1,463 @@
+{
+  "id": "konjunktiv2-vergangenheit-modal",
+  "level": "B1.2",
+  "island": "konjunktiv-bedingung",
+  "order": 5,
+  "prereqs": [
+    "konjunktiv2-vergangenheit",
+    "passiv-modal"
+  ],
+  "emoji": "🧪",
+  "german": "Irreale Bedingungen in der Vergangenheit: Modalverb und Passiv",
+  "source": {
+    "lektion": 12,
+    "kind": "sample"
+  },
+  "pattern": [
+    "hätte",
+    "+",
+    "Infinitiv",
+    "+",
+    "können / müssen / sollen"
+  ],
+  "frames": [
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Ich"
+        ],
+        [
+          "v",
+          "hätte"
+        ],
+        [
+          "mf",
+          "dir"
+        ],
+        [
+          "ve",
+          "helfen können"
+        ]
+      ]
+    },
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "wenn"
+        ],
+        [
+          "mf",
+          "ich"
+        ],
+        [
+          "v",
+          "hätte"
+        ],
+        [
+          "ve",
+          "kommen dürfen"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Der Fehler"
+        ],
+        [
+          "v",
+          "wäre"
+        ],
+        [
+          "mf",
+          "fast"
+        ],
+        [
+          "ve",
+          "übersehen worden"
+        ]
+      ]
+    }
+  ],
+  "example": "Ohne dein Handy hätten wir den Weg nicht finden können.",
+  "stepExamples": [
+    "Ich konnte dir nicht helfen.",
+    "Ich hätte dir helfen können.",
+    "Wenn ich mehr Zeit gehabt hätte, hätte ich dir helfen können.",
+    "…, weil ich nicht hätte kommen dürfen.",
+    "Der Fehler wäre fast übersehen worden."
+  ],
+  "pitfallPair": "Ich hätte kommen gekonnt. → Ich hätte kommen können.",
+  "links": [
+    "https://grammis.ids-mannheim.de/fragen/101",
+    "https://grammis.ids-mannheim.de/fragen/162"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الشرط غير الواقعي في الماضي مع الأفعال الناقصة والمجهول",
+      "lead": "«كان بإمكاني أن أساعدك» و«كان يجب أن أتصل». حين تتكلم عن إمكانية أو واجب في الماضي لم يتحقق تستعمل `hätte` مع مصدرين. وللمجهول في الماضي غير الواقعي تستعمل `wäre … worden`.",
+      "translation": "لولا هاتفك لما استطعنا أن نجد الطريق.",
+      "steps": [
+        {
+          "text": "ابدأ بالواقع في الماضي",
+          "why": "`Ich konnte dir nicht helfen`: هذا ما حدث فعلًا."
+        },
+        {
+          "text": "hätte + مصدر الفعل + مصدر الفعل الناقص",
+          "why": "في الماضي غير الواقعي يقف الفعل الناقص في صيغة المصدر بدل `Partizip II`: `hätte helfen können`، لا `gekonnt`. وتسمى هذه الظاهرة «المصدر البديل»."
+        },
+        {
+          "text": "الصيغة نفسها في جملة الشرط",
+          "why": "يمكن أن تأتي الصيغة في النتيجة بعد شرط: `…, hätte ich dir helfen können.` الفعل المساعد `hätte` بعد الفاصلة ثم الفاعل، والمصدران في الآخر."
+        },
+        {
+          "text": "في الجملة التابعة يتقدم hätte على المصدرين",
+          "why": "هذا استثناء مهم: لا يقف `hätte` في الآخر، بل قبل المصدرين: `weil ich nicht hätte kommen dürfen`."
+        },
+        {
+          "text": "المجهول: wäre + Partizip II + worden",
+          "why": "`Der Fehler wäre fast übersehen worden` تعني «كاد الخطأ أن يُغفَل» لكنه لم يُغفل. `worden` هي صيغة `werden` في المجهول."
+        }
+      ],
+      "explain": [
+        "تستعمل هذه الصيغة كثيرًا للندم أو اللوم: `Du hättest mich anrufen sollen` أي «كان يجب أن تتصل بي». و`Wir hätten früher losfahren müssen` أي «كان علينا أن ننطلق أبكر».",
+        "مع `wäre … worden` تقول إن شيئًا كاد يحدث للشيء أو كان سيحدث له: `Ohne Hilfe wäre das Haus nicht fertig gebaut worden.`"
+      ],
+      "pitfall": "مع مصدر آخر يبقى الفعل الناقص في صيغة المصدر: `hätte kommen können`، لا `gekonnt`.",
+      "recall": [
+        "ماذا تعني `Du hättest mir das sagen sollen`؟",
+        "كان يجب أن تخبرني بذلك، لكنك لم تفعل. فيها عتاب على الماضي."
+      ],
+      "linkTitles": [
+        "المصدر البديل وترتيب الأفعال · grammis",
+        "صيغة التمني و würde · grammis"
+      ],
+      "table": [
+        [
+          "الحالة",
+          "الصيغة",
+          "مثال"
+        ],
+        [
+          "جملة رئيسية",
+          "hätte … + مصدر + مصدر الفعل الناقص",
+          "Ich hätte früher kommen müssen."
+        ],
+        [
+          "جملة تابعة",
+          "hätte + مصدر + مصدر الفعل الناقص في الآخر",
+          "…, dass ich früher hätte kommen müssen."
+        ],
+        [
+          "المجهول",
+          "wäre … + Partizip II + worden",
+          "Das Haus wäre fast verkauft worden."
+        ]
+      ]
+    },
+    "de": {
+      "title": "Irreale Bedingungen in der Vergangenheit mit Modalverb und Passiv",
+      "lead": "„Ich hätte dir helfen können“, „Ich hätte anrufen sollen“: Für eine Möglichkeit oder Pflicht in der Vergangenheit, die nicht real wurde, nimmst du `hätte` mit zwei Infinitiven. Für das irreale Passiv der Vergangenheit `wäre … worden`.",
+      "steps": [
+        {
+          "text": "Beginne mit der Realität in der Vergangenheit",
+          "why": "`Ich konnte dir nicht helfen`: So war es wirklich."
+        },
+        {
+          "text": "hätte + Infinitiv + Modalverb im Infinitiv",
+          "why": "Im irrealen Perfekt steht das Modalverb im Infinitiv statt im Partizip II: `hätte helfen können`, nicht `gekonnt`. Das nennt man Ersatzinfinitiv."
+        },
+        {
+          "text": "Dieselbe Form steht in der Folge eines wenn-Satzes",
+          "why": "`…, hätte ich dir helfen können.` Nach dem Komma kommt `hätte`, dann das Subjekt, die zwei Infinitive am Ende."
+        },
+        {
+          "text": "Im Nebensatz steht hätte vor den zwei Infinitiven",
+          "why": "Wichtige Ausnahme: `hätte` steht nicht am Ende, sondern vor den Infinitiven: `weil ich nicht hätte kommen dürfen`."
+        },
+        {
+          "text": "Das Passiv: wäre + Partizip II + worden",
+          "why": "`Der Fehler wäre fast übersehen worden` heißt: Es hätte fast passiert, ist aber nicht passiert. `worden` ist die Passivform von `werden`."
+        }
+      ],
+      "explain": [
+        "Diese Form drückt oft Bedauern oder Vorwurf aus: `Du hättest mich anrufen sollen.`, `Wir hätten früher losfahren müssen.`",
+        "Mit `wäre … worden` sagst du, was mit einer Sache beinahe passiert wäre oder passiert wäre: `Ohne Hilfe wäre das Haus nicht fertig gebaut worden.`"
+      ],
+      "pitfall": "Mit einem zweiten Infinitiv bleibt das Modalverb im Infinitiv: `hätte kommen können`, nicht `gekonnt`.",
+      "recall": [
+        "Was bedeutet `Du hättest mir das sagen sollen`?",
+        "Es wäre richtig gewesen, es mir zu sagen, aber du hast es nicht getan – ein Vorwurf."
+      ],
+      "linkTitles": [
+        "Ersatzinfinitiv und Verbstellung · grammis",
+        "Konjunktiv und würde-Form · grammis"
+      ],
+      "table": [
+        [
+          "Satz",
+          "Form",
+          "Beispiel"
+        ],
+        [
+          "Hauptsatz",
+          "hätte … + Infinitiv + Modalverb",
+          "Ich hätte früher kommen müssen."
+        ],
+        [
+          "Nebensatz",
+          "hätte + Infinitiv + Modalverb am Ende",
+          "…, dass ich früher hätte kommen müssen."
+        ],
+        [
+          "Passiv",
+          "wäre … + Partizip II + worden",
+          "Das Haus wäre fast verkauft worden."
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "konjunktiv2-vergangenheit-modal-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Mit dem Auto hätten wir schneller fahren {{1}}.",
+      "blanks": [
+        [
+          "können"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل الناقص `können` في الصيغة الصحيحة.",
+          "explain": "مع مصدر آخر يبقى الفعل الناقص مصدرًا: `fahren können`.",
+          "hints": [
+            "ليس `gekonnt`."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze `können` in der richtigen Form.",
+          "explain": "Mit einem zweiten Infinitiv bleibt das Modalverb im Infinitiv: `fahren können`.",
+          "hints": [
+            "Nicht `gekonnt`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-modal-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Du {{1}} eine Jacke mitnehmen sollen, jetzt frierst du.",
+      "blanks": [
+        [
+          "hättest"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل المساعد في صيغة التمني.",
+          "explain": "مع `du`: `hättest … mitnehmen sollen` = كان يجب أن تأخذ.",
+          "hints": [
+            "لوم على الماضي."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Hilfsverb im Konjunktiv II.",
+          "explain": "Mit `du`: `hättest … mitnehmen sollen` – ein Vorwurf.",
+          "hints": [
+            "Ein Vorwurf über die Vergangenheit."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-modal-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Ich hätte das Problem lösen können.",
+        "Ich hätte das Problem lösen gekonnt.",
+        "Ich würde das Problem lösen gekonnt."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة صحيحة؟",
+          "explain": "`hätte` + `lösen` + `können`: مصدران في الآخر.",
+          "hints": [
+            "الفعل الناقص مصدر."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz ist richtig?",
+          "explain": "`hätte` + `lösen` + `können`: zwei Infinitive am Ende.",
+          "hints": [
+            "Das Modalverb steht im Infinitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-modal-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "Wenn der Arzt nicht so schnell gekommen wäre, {{1}} der Patient nicht gerettet {{2}}.",
+      "blanks": [
+        [
+          "wäre"
+        ],
+        [
+          "worden"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل المجهول في الماضي غير الواقعي.",
+          "explain": "`wäre … gerettet worden`: المجهول بـ `wäre` و`worden`.",
+          "hints": [
+            "`werden` في المجهول تصير `worden`."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das irreale Passiv der Vergangenheit.",
+          "explain": "`wäre … gerettet worden`: Passiv mit `wäre` und `worden`.",
+          "hints": [
+            "`werden` heißt im Passiv-Perfekt `worden`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-modal-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Ich",
+        "weiß,",
+        "dass",
+        "ich",
+        "früher",
+        "hätte",
+        "anrufen sollen."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة: «أعرف أنه كان يجب أن أتصل أبكر». انتبه إلى موقع `hätte` في الجملة التابعة.",
+          "explain": "في الجملة التابعة يتقدم `hätte` على المصدرين: `früher hätte anrufen sollen`.",
+          "hints": [
+            "`hätte` ليس الكلمة الأخيرة."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz. Achte auf `hätte` im Nebensatz.",
+          "explain": "Im Nebensatz steht `hätte` vor den zwei Infinitiven: `früher hätte anrufen sollen`.",
+          "hints": [
+            "`hätte` ist nicht das letzte Wort."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-modal-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Wir sind zu spät losgefahren und haben den Zug verpasst.",
+        "Wir sind früh losgefahren und haben den Zug erreicht.",
+        "Wir müssen morgen früher losfahren."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "ما الواقع وراء `Wir hätten früher losfahren müssen, dann hätten wir den Zug erreicht.`؟",
+          "explain": "الجملة تعبر عن ندم: انطلقنا متأخرين وفاتنا القطار.",
+          "hints": [
+            "الجملة غير واقعية."
+          ]
+        },
+        "de": {
+          "prompt": "Was ist die Realität hinter `Wir hätten früher losfahren müssen, dann hätten wir den Zug erreicht.`?",
+          "explain": "Der Satz drückt Bedauern aus: Wir sind zu spät losgefahren und haben den Zug verpasst.",
+          "hints": [
+            "Der Satz ist irreal."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-modal-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Ich hätte mehr für die Prüfung lernen sollen.",
+      "i18n": {
+        "ar": {
+          "prompt": "عبّر عن ندمك: لم تدرس كثيرًا للامتحان. استعمل `sollen`.",
+          "explain": "`Ich hätte mehr für die Prüfung lernen sollen.` المصدران في الآخر.",
+          "hints": [
+            "`hätte` + `lernen` + `sollen`."
+          ]
+        },
+        "de": {
+          "prompt": "Drück Bedauern aus: Du hast nicht genug für die Prüfung gelernt. Benutze `sollen`.",
+          "explain": "`Ich hätte mehr für die Prüfung lernen sollen.` Die zwei Infinitive stehen am Ende.",
+          "hints": [
+            "`hätte` + `lernen` + `sollen`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-modal-8",
+      "type": "text",
+      "difficulty": 3,
+      "context": "Ich hätte kommen gekonnt.",
+      "answer": "Ich hätte kommen können.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "مع مصدر آخر يقف الفعل الناقص في صيغة المصدر لا في `Partizip II`: `kommen können`.",
+          "hints": [
+            "المصدر البديل."
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "Mit einem zweiten Infinitiv steht das Modalverb im Infinitiv, nicht im Partizip II: `kommen können`.",
+          "hints": [
+            "Ersatzinfinitiv."
+          ]
+        }
+      }
+    },
+    {
+      "id": "konjunktiv2-vergangenheit-modal-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "Ohne meine Freunde hätte ich den Umzug nicht schaffen können.",
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب جملة تبدأ بـ `Ohne …` عن شيء ما كان بإمكانك فعله بدون مساعدة.",
+          "explain": "مثال: `Ohne meine Freunde hätte ich den Umzug nicht schaffen können.`",
+          "hints": [
+            "`Ohne …` في الموقع الأول، ثم `hätte`."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib einen Satz mit `Ohne …` über etwas, das du ohne Hilfe nicht geschafft hättest.",
+          "explain": "Zum Beispiel: `Ohne meine Freunde hätte ich den Umzug nicht schaffen können.`",
+          "hints": [
+            "`Ohne …` auf Position 1, dann `hätte`."
+          ]
+        }
+      }
+    }
+  ]
+}

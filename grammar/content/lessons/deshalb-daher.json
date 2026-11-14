@@ -1,0 +1,157 @@
+{
+  "id": "deshalb-daher",
+  "level": "B1.2",
+  "island": "grund-folge",
+  "order": 2,
+  "prereqs": ["kausal-da-weil"],
+  "emoji": "➡️",
+  "german": "Konsekutive Verbindungsadverbien deshalb / daher / darum / deswegen",
+  "source": { "lektion": 7, "kind": "toc" },
+  "pattern": ["Grund", ".", "deshalb", "+", "Verb", "+", "Subjekt"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Ich"], ["v", "bin"], ["mf", "krank"]] },
+    { "k": "main", "parts": [["vf", "Deshalb"], ["v", "bleibe"], ["mf", "ich zu Hause"]] },
+    { "k": "main", "parts": [["vf", "Ich"], ["v", "bleibe"], ["mf", "deshalb zu Hause"]] }
+  ],
+  "example": "Ich bin krank. Deshalb bleibe ich zu Hause.",
+  "stepExamples": [
+    "Ich bleibe zu Hause, weil ich krank bin.",
+    "Ich bin krank. Deshalb bleibe ich zu Hause.",
+    "Ich bin krank. Ich bleibe deshalb zu Hause.",
+    "Ich bin krank, daher bleibe ich zu Hause."
+  ],
+  "pitfallPair": "Ich bin krank, deshalb ich bleibe zu Hause. → Ich bin krank, deshalb bleibe ich zu Hause.",
+  "links": [
+    "https://grammis.ids-mannheim.de/progr%40mm/6770",
+    "https://www.dwds.de/wb/deshalb"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "ذكر النتيجة بـ deshalb وأخواتها",
+      "lead": "مع `weil` تبدأ بالسبب في جملة تابعة. أما مع `deshalb` فتذكر السبب أولًا في جملة كاملة، ثم تقول «لذلك» وتذكر النتيجة. هنا يبقى الفعل في الموقع الثاني.",
+      "translation": "أنا مريض. لذلك أبقى في البيت.",
+      "steps": [
+        { "text": "انطلق من جملة مع weil", "why": "في هذه الجملة تأتي النتيجة أولًا، ثم السبب في جملة تابعة. الآن نعكس الترتيب: السبب أولًا ثم النتيجة." },
+        { "text": "اذكر السبب، ثم ابدأ الجملة التالية بـ deshalb", "why": "`deshalb` ظرف يشغل الموقع الأول وحده، فيأتي الفعل المصرف `bleibe` بعده مباشرة ثم الفاعل `ich`." },
+        { "text": "يمكن أن يقف deshalb في وسط الجملة", "why": "إذا بدأت بالفاعل وضعت `deshalb` بعد الفعل: `Ich bleibe deshalb zu Hause.` المعنى لا يتغير." },
+        { "text": "daher و darum و deswegen لها المعنى نفسه", "why": "الكلمات الأربع تعني «لذلك». `daher` أكثر رسمية، و`darum` و`deswegen` شائعتان في الكلام. ويجوز أن تربطها بالجملة الأولى بفاصلة." }
+      ],
+      "explain": [
+        "`deshalb` وأخواتها ليست أدوات ربط تابعة، بل ظروف تشير إلى السبب المذكور قبلها. لذلك تبقى الجملة رئيسية ويقف الفعل المصرف في الموقع الثاني.",
+        "تذكّر الفرق: `weil` تحمل السبب وترسل الفعل إلى الآخر، و`deshalb` تحمل النتيجة ويبقى الفعل بعدها مباشرة."
+      ],
+      "pitfall": "`deshalb` تشغل الموقع الأول، فلا مكان للفاعل قبل الفعل. الترتيب الصحيح: `deshalb bleibe ich`.",
+      "recall": ["أين يقف الفعل في `Es regnet, darum nehme ich den Schirm`؟", "بعد `darum` مباشرة، لأن `darum` تشغل الموقع الأول وحدها، ثم يأتي الفاعل `ich`."],
+      "linkTitles": ["التعبير عن النتيجة · grammis", "deshalb في معجم DWDS"],
+      "table": [
+        ["الكلمة", "ماذا تحمل؟", "نوع الجملة", "موقع الفعل"],
+        ["weil / da", "السبب", "تابعة", "في الآخر"],
+        ["denn", "السبب", "رئيسية (الموقع 0)", "الموقع الثاني"],
+        ["deshalb / daher / darum / deswegen", "النتيجة", "رئيسية", "الموقع الثاني"]
+      ]
+    },
+    "de": {
+      "title": "Konsekutive Verbindungsadverbien deshalb, daher, darum, deswegen",
+      "lead": "Mit `weil` steht der Grund im Nebensatz. Mit `deshalb` nennst du zuerst den Grund in einem ganzen Satz und dann die Folge. Das Verb bleibt dabei auf Position 2.",
+      "steps": [
+        { "text": "Geh von einem weil-Satz aus", "why": "Hier steht zuerst die Folge, dann der Grund im Nebensatz. Jetzt drehen wir die Reihenfolge um: erst der Grund, dann die Folge." },
+        { "text": "Nenne den Grund und beginne den nächsten Satz mit deshalb", "why": "`deshalb` ist ein Adverb und besetzt allein Position 1. Danach kommt sofort das konjugierte Verb `bleibe`, dann das Subjekt `ich`." },
+        { "text": "deshalb kann auch im Mittelfeld stehen", "why": "Wenn du mit dem Subjekt beginnst, steht `deshalb` nach dem Verb: `Ich bleibe deshalb zu Hause.` Die Bedeutung bleibt gleich." },
+        { "text": "daher, darum und deswegen bedeuten dasselbe", "why": "Alle vier heißen „aus diesem Grund“. `daher` klingt formeller, `darum` und `deswegen` sind im Gespräch häufig. Du kannst den Satz auch mit Komma anschließen." }
+      ],
+      "explain": [
+        "`deshalb` und seine Partner sind keine Subjunktoren, sondern Adverbien, die auf den vorher genannten Grund zeigen. Der Satz bleibt ein Hauptsatz, das konjugierte Verb steht auf Position 2.",
+        "Merke den Unterschied: `weil` trägt den Grund und schickt das Verb ans Ende. `deshalb` trägt die Folge, das Verb folgt direkt danach."
+      ],
+      "pitfall": "`deshalb` besetzt Position 1. Für das Subjekt ist davor kein Platz: `deshalb bleibe ich`.",
+      "recall": ["Wo steht das Verb in `Es regnet, darum nehme ich den Schirm`?", "Direkt nach `darum`, denn `darum` besetzt allein Position 1. Danach kommt das Subjekt `ich`."],
+      "linkTitles": ["Die Folgen von etwas ausdrücken · grammis", "deshalb im DWDS"],
+      "table": [
+        ["Wort", "trägt", "Satzart", "Verbstellung"],
+        ["weil / da", "den Grund", "Nebensatz", "am Ende"],
+        ["denn", "den Grund", "Hauptsatz (Position 0)", "Position 2"],
+        ["deshalb / daher / darum / deswegen", "die Folge", "Hauptsatz", "Position 2"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "deshalb-daher-1", "type": "cloze", "difficulty": 1,
+      "text": "Mein Handy ist kaputt. Deshalb {{1}} ich dich nicht anrufen.",
+      "blanks": [["kann", "konnte"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل `können` المصرف.", "explain": "بعد `Deshalb` يأتي الفعل المصرف مباشرة: `kann ich`.", "hints": ["`deshalb` تشغل الموقع الأول."] },
+        "de": { "prompt": "Ergänze die konjugierte Form von `können`.", "explain": "Nach `Deshalb` folgt sofort das konjugierte Verb: `kann ich`.", "hints": ["`deshalb` besetzt Position 1."] }
+      }
+    },
+    {
+      "id": "deshalb-daher-2", "type": "cloze", "difficulty": 1,
+      "text": "Es ist schon spät, {{1}} gehen wir jetzt nach Hause.",
+      "blanks": [["deshalb", "daher", "darum", "deswegen"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمة تعني «لذلك».", "explain": "تصلح `deshalb` و`daher` و`darum` و`deswegen`، والفعل `gehen` يأتي بعدها مباشرة.", "hints": ["الجملة الأولى سبب والثانية نتيجة."] },
+        "de": { "prompt": "Ergänze ein Wort für „aus diesem Grund“.", "explain": "`deshalb`, `daher`, `darum` oder `deswegen` passen. Danach folgt direkt `gehen`.", "hints": ["Der erste Satz ist der Grund, der zweite die Folge."] }
+      }
+    },
+    {
+      "id": "deshalb-daher-3", "type": "mcq", "difficulty": 1,
+      "options": ["Der Laden war zu, darum habe ich nichts gekauft.", "Der Laden war zu, darum ich habe nichts gekauft.", "Der Laden war zu, darum ich nichts gekauft habe."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "بعد `darum` يأتي الفعل المصرف `habe` ثم الفاعل.", "hints": ["`darum` ليست أداة تابعة."] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Nach `darum` steht das konjugierte Verb `habe`, dann das Subjekt.", "hints": ["`darum` ist kein Subjunktor."] }
+      }
+    },
+    {
+      "id": "deshalb-daher-4", "type": "cloze", "difficulty": 2,
+      "text": "Ich habe den Bus verpasst. Ich {{1}} {{2}} zu spät gekommen.",
+      "blanks": [["bin"], ["deshalb", "daher", "darum", "deswegen"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل الجملة الثانية. الفاعل في البداية، وكلمة «لذلك» في الوسط.", "explain": "`Ich bin deshalb zu spät gekommen.` الفعل المساعد في الموقع الثاني، و`deshalb` في وسط الجملة.", "hints": ["`kommen` يصرّف مع `sein` في الماضي المركب."] },
+        "de": { "prompt": "Ergänze den zweiten Satz. Das Subjekt steht vorn, „aus diesem Grund“ im Mittelfeld.", "explain": "`Ich bin deshalb zu spät gekommen.` Das Hilfsverb steht auf Position 2, `deshalb` im Mittelfeld.", "hints": ["`kommen` bildet das Perfekt mit `sein`."] }
+      }
+    },
+    {
+      "id": "deshalb-daher-5", "type": "order", "difficulty": 2,
+      "items": ["Die Miete", "ist", "gestiegen.", "Deswegen", "suchen", "wir", "eine neue Wohnung."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملتين: السبب ثم النتيجة.", "explain": "بعد `Deswegen` يأتي الفعل `suchen` ثم الفاعل `wir`.", "hints": ["ابدأ بالسبب: `Die Miete`."] },
+        "de": { "prompt": "Ordne die zwei Sätze: zuerst der Grund, dann die Folge.", "explain": "Nach `Deswegen` folgt das Verb `suchen`, dann das Subjekt `wir`.", "hints": ["Beginne mit dem Grund: `Die Miete`."] }
+      }
+    },
+    {
+      "id": "deshalb-daher-6", "type": "mcq", "difficulty": 2,
+      "options": ["Ich hatte Hunger. Deshalb habe ich gekocht.", "Ich habe gekocht. Deshalb hatte ich Hunger.", "Deshalb ich hatte Hunger und habe gekocht."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة تساوي في المعنى `Ich habe gekocht, weil ich Hunger hatte`؟", "explain": "السبب هو الجوع، والنتيجة هي الطبخ. لذلك تأتي `deshalb` قبل النتيجة.", "hints": ["ما السبب وما النتيجة؟"] },
+        "de": { "prompt": "Welcher Satz bedeutet dasselbe wie `Ich habe gekocht, weil ich Hunger hatte`?", "explain": "Der Hunger ist der Grund, das Kochen die Folge. `Deshalb` steht vor der Folge.", "hints": ["Was ist Grund, was ist Folge?"] }
+      }
+    },
+    {
+      "id": "deshalb-daher-7", "type": "text", "difficulty": 3,
+      "answer": "Ich spreche gut Deutsch. Deshalb habe ich die Stelle bekommen.",
+      "i18n": {
+        "ar": { "prompt": "حوّل الجملة إلى جملتين مع `deshalb`: `Ich habe die Stelle bekommen, weil ich gut Deutsch spreche.`", "explain": "السبب أولًا كجملة رئيسية، ثم `Deshalb habe ich …`.", "hints": ["اقلب الترتيب: السبب ثم النتيجة."] },
+        "de": { "prompt": "Mach daraus zwei Sätze mit `deshalb`: `Ich habe die Stelle bekommen, weil ich gut Deutsch spreche.`", "explain": "Zuerst der Grund als Hauptsatz, dann `Deshalb habe ich …`.", "hints": ["Dreh die Reihenfolge um: erst Grund, dann Folge."] }
+      }
+    },
+    {
+      "id": "deshalb-daher-8", "type": "text", "difficulty": 3,
+      "context": "Ich bin krank, deshalb ich bleibe zu Hause.",
+      "answer": "Ich bin krank, deshalb bleibe ich zu Hause.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`deshalb` تشغل الموقع الأول، فيأتي الفعل `bleibe` بعدها ثم الفاعل `ich`.", "hints": ["كم كلمة تقف قبل الفعل؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`deshalb` besetzt Position 1. Danach kommen `bleibe` und dann `ich`.", "hints": ["Was steht vor dem Verb?"] }
+      }
+    },
+    {
+      "id": "deshalb-daher-9", "type": "text", "difficulty": 2,
+      "answer": "Morgen habe ich eine Prüfung. Darum lerne ich heute Abend.",
+      "i18n": {
+        "ar": { "prompt": "اكتب سببًا ونتيجته. استعمل `darum` في بداية الجملة الثانية.", "explain": "مثال: `Morgen habe ich eine Prüfung. Darum lerne ich heute Abend.`", "hints": ["بعد `Darum` الفعل ثم الفاعل."] },
+        "de": { "prompt": "Schreib einen Grund und seine Folge. Beginne den zweiten Satz mit `Darum`.", "explain": "Zum Beispiel: `Morgen habe ich eine Prüfung. Darum lerne ich heute Abend.`", "hints": ["Nach `Darum`: Verb, dann Subjekt."] }
+      }
+    }
+  ]
+}

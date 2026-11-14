@@ -2,8 +2,8 @@
 
 Plan for turning `Deutsch-B1.1-Arabic.html` into a complete, gamified, grammar-only learning platform covering B1.1 and B1.2, and for splitting this repository into two self-contained projects.
 
-Status: plan only. Nothing described here is implemented yet.
-Written: 2026-11-14. Branch at time of writing: `github-pages-sftp` (29 uncommitted changes).
+Status: **implemented** on branch `grammar-platform` (2026-11-14). §18 lists where the implementation differs from the original plan.
+Written: 2026-11-14.
 
 ---
 
@@ -764,7 +764,7 @@ One inline SVG, two layouts chosen by container width (`ResizeObserver`): **wide
 
 | Layout | viewBox | Island scale |
 |---|---|---|
-| wide | `0 0 1200 760` | 1 |
+| wide | `0 0 1200 800` | 1 |
 | tall | `0 0 600 1800` | 0.85 |
 
 Island centres (route order 1–10) and the treasure goal:
@@ -780,8 +780,8 @@ Island centres (route order 1–10) and the treasure goal:
 | 7 | zeiten | 500, 380 | 190, 1110 |
 | 8 | grund-folge | 220, 420 | 410, 1270 |
 | 9 | gegensatz-vergleich | 330, 640 | 190, 1430 |
-| 10 | konjunktiv-bedingung | 640, 620 | 410, 1590 |
-| — | treasure 🏆 | 930, 640 | 190, 1735 |
+| 10 | konjunktiv-bedingung | 620, 640 | 410, 1590 |
+| — | treasure 🏆 | 940, 650 | 190, 1735 |
 
 Layers, back to front:
 
@@ -1105,7 +1105,7 @@ Suggested order for one implementer: 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7
 | R5 | Progress migration across origins | Automatic only for the same origin; otherwise import of the legacy export. Announce this in the release notes | — |
 | R6 | Content quality | Two-person review per batch (German correctness, Arabic wording). The validator catches structure, not grammar mistakes | author |
 | R7 | Scope creep in gamification | No sound, no accounts, no leaderboards, no streak freezes, no new question types in v1 | — |
-| R8 | `.venv-transcribe` after the move | Recreate, do not move | implementer |
+| R8 | `.venv-transcribe` after the move | Moved (2.3 GB of CUDA libraries); the absolute paths in `pyvenv.cfg` and the activate scripts were rewritten. `Scripts\python.exe` works; console entry points such as `pip.exe` still point to the old path, so use `python -m pip` | — |
 
 ---
 
@@ -1118,3 +1118,23 @@ Suggested order for one implementer: 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7
 - The dashboard lists every topic with its progress, the map shows the player token moving along the route, and stars, XP, ranks, streak, badges, island exams and spaced review work as specified in §7.
 - Legacy progress can be brought over.
 - `npm test` is green in both projects.
+
+---
+
+## 18. Implementation notes
+
+What was built differs from the sections above in these points:
+
+| Area | Implemented |
+| --- | --- |
+| Map geometry (§8.1) | Wide viewBox is `0 0 1200 800`; name plates sit at (0, 118) below the dock so the boat never covers them; island 10 moved to (620, 640) and the treasure to (940, 650) to avoid overlaps. Land colour is a mix of the island palette and a green base (`--isle-green`), the fog is lighter |
+| Map accessibility | No hidden duplicate list: the SVG is a labelled group and each island is a real link with an `aria-label`, reachable with Tab |
+| Token movement | The archipelago consumes `player.animate` when the trip changes island; the island trail consumes it when both lessons are on that island. Re-rendering a lesson in place never counts as a visit |
+| Starting runs | All "start" buttons (lesson exercises, exams, review, mistakes) use one `run` action that restarts a finished run instead of reopening its results |
+| Stats in state | `stats` also counts `flawlessExams` and `timedAce` for the badges |
+| Arabic search | Search ignores short vowels, letter variants (ة/ه, ى/ي, أ/ا) and the article in all its prefixed forms, so «المجهول» finds «للمجهول» |
+| Counted nouns | `streakDays`, `hudStreak` and `lessonsN` get raw numbers and apply Arabic number agreement (1 / 2 / 3–10 / 11+) and German singular |
+| B1.2 references | 2 per lesson from grammis (IDS Mannheim) and the DWDS dictionary; all 59 links of the platform are checked by `npm run check:links` |
+| Lesson sources | `irgend-pronomen`, `konjunktiv2-vergangenheit-modal` and `futur1` have `source.kind: "sample"` (book page 71); the other B1.2 lessons are `toc` |
+| Tooling | Added `npm run preview` (serves `dist/` on port 4181) and `.claude/launch.json` entries; the validator also rejects `TODO` placeholders left by `new:lesson` |
+| Tests | 50 tests: engine, migration, router, content coverage, string parity, every page rendered in both languages, server path safety |

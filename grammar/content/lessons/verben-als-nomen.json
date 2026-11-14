@@ -1,0 +1,160 @@
+{
+  "id": "verben-als-nomen",
+  "level": "B1.2",
+  "island": "nomen-kasus",
+  "order": 6,
+  "prereqs": [],
+  "emoji": "🔤",
+  "german": "Verben als Nomen",
+  "source": { "lektion": 7, "kind": "toc" },
+  "pattern": ["das", "+", "Infinitiv (großgeschrieben)"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Das Lernen"], ["v", "macht"], ["mf", "mir Spaß"]] },
+    { "k": "main", "parts": [["vf", "Beim Kochen"], ["v", "höre"], ["mf", "ich Musik"]] },
+    { "k": "np", "parts": [["hl", "zum"], ["n", "Schreiben"]] }
+  ],
+  "example": "Ich lerne gern. → Das Lernen macht mir Spaß.",
+  "stepExamples": [
+    "Ich lerne jeden Abend.",
+    "Das Lernen am Abend fällt mir leicht.",
+    "Beim Lernen höre ich keine Musik.",
+    "Ich brauche einen Tisch zum Lernen."
+  ],
+  "pitfallPair": "Beim lernen höre ich Musik. → Beim Lernen höre ich Musik.",
+  "links": [
+    "https://grammis.ids-mannheim.de/rechtschreibung/6194",
+    "https://grammis.ids-mannheim.de/terminologie/107"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "تحويل الفعل إلى اسم",
+      "lead": "في الألمانية تستطيع أن تجعل أي فعل اسمًا: تكتب المصدر بحرف كبير وتضع قبله `das`. ستتعلم كيف تتحدث عن النشاط نفسه، وكيف تقول «أثناء الطبخ» و«من أجل الكتابة».",
+      "translation": "أحب التعلم ← التعلم يمتعني.",
+      "steps": [
+        { "text": "ابدأ بجملة فيها فعل", "why": "الفعل `lernen` هنا يصف ما يفعله الشخص. نريد الآن أن نتكلم عن النشاط نفسه كشيء." },
+        { "text": "اكتب المصدر بحرف كبير وضع قبله das", "why": "كل مصدر يصبح اسمًا محايدًا: `das Lernen` و`das Kochen` و`das Warten`. لا جمع له، ويمكن أن تأتي بعده إضافات مثل `am Abend`." },
+        { "text": "استعمل beim للتعبير عن «أثناء»", "why": "`beim` اختصار `bei dem`. تقول `beim Lernen` بمعنى «أثناء التعلم» أو «حين أتعلم»." },
+        { "text": "استعمل zum للتعبير عن الغرض", "why": "`zum` اختصار `zu dem`. تقول `zum Lernen` بمعنى «من أجل التعلم». هذا التعبير قصير وشائع جدًا في الكلام اليومي." }
+      ],
+      "explain": [
+        "الاسم المصنوع من الفعل محايد دائمًا، لذلك تأتي معه `das` و`dem` و`des` (`des Lernens`). الحرف الكبير إلزامي لأنه صار اسمًا.",
+        "التعابير المختصرة الأكثر استعمالًا: `beim` (أثناء)، و`zum` (من أجل)، و`vom` (من كثرة)، مثل `Ich bin müde vom Laufen`."
+      ],
+      "pitfall": "بعد `beim` و`zum` و`vom` صار الفعل اسمًا، فيجب أن يُكتب بحرف كبير.",
+      "recall": ["ماذا تعني `Ich brauche Ruhe zum Schlafen`؟", "أحتاج إلى الهدوء من أجل النوم. `zum` + مصدر يعبر عن الغرض."],
+      "linkTitles": ["تحويل الكلمات إلى أسماء · القواعد الإملائية الرسمية", "المصدر · grammis"],
+      "table": [
+        ["التعبير", "المعنى", "مثال"],
+        ["das + Infinitiv", "النشاط نفسه", "Das Warten nervt mich."],
+        ["beim + Infinitiv", "أثناء", "Beim Essen spricht man nicht."],
+        ["zum + Infinitiv", "من أجل", "Das Wasser ist zum Trinken."],
+        ["vom + Infinitiv", "بسبب كثرة", "Ich bin müde vom Laufen."]
+      ]
+    },
+    "de": {
+      "title": "Verben als Nomen",
+      "lead": "Im Deutschen kannst du fast jedes Verb zum Nomen machen: Du schreibst den Infinitiv groß und setzt `das` davor. Du lernst, wie du über die Tätigkeit selbst sprichst und wie du „während des Kochens“ oder „um zu schreiben“ kurz ausdrückst.",
+      "steps": [
+        { "text": "Beginne mit einem Satz mit Verb", "why": "Das Verb `lernen` beschreibt, was die Person tut. Jetzt wollen wir über die Tätigkeit selbst sprechen." },
+        { "text": "Schreib den Infinitiv groß und setz das davor", "why": "Jeder Infinitiv wird zu einem neutralen Nomen: `das Lernen`, `das Kochen`, `das Warten`. Es hat keinen Plural und kann Ergänzungen wie `am Abend` haben." },
+        { "text": "beim drückt „während“ aus", "why": "`beim` ist `bei dem`. `beim Lernen` heißt: während ich lerne." },
+        { "text": "zum drückt den Zweck aus", "why": "`zum` ist `zu dem`. `zum Lernen` heißt: um zu lernen. Diese Kurzform ist im Alltag sehr häufig." }
+      ],
+      "explain": [
+        "Das Nomen aus einem Infinitiv ist immer neutral: `das`, `dem`, `des Lernens`. Die Großschreibung ist Pflicht, weil es jetzt ein Nomen ist.",
+        "Die häufigsten Kurzformen: `beim` (während), `zum` (Zweck), `vom` (Ursache), zum Beispiel `Ich bin müde vom Laufen`."
+      ],
+      "pitfall": "Nach `beim`, `zum` und `vom` ist das Verb ein Nomen und wird großgeschrieben.",
+      "recall": ["Was bedeutet `Ich brauche Ruhe zum Schlafen`?", "Ich brauche Ruhe, um zu schlafen. `zum` + Infinitiv nennt den Zweck."],
+      "linkTitles": ["Substantivierungen · Amtliches Regelwerk", "Infinitiv · grammis"],
+      "table": [
+        ["Ausdruck", "Bedeutung", "Beispiel"],
+        ["das + Infinitiv", "die Tätigkeit", "Das Warten nervt mich."],
+        ["beim + Infinitiv", "während", "Beim Essen spricht man nicht."],
+        ["zum + Infinitiv", "Zweck", "Das Wasser ist zum Trinken."],
+        ["vom + Infinitiv", "Ursache", "Ich bin müde vom Laufen."]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "verben-als-nomen-1", "type": "cloze", "difficulty": 1,
+      "text": "{{1}} Schwimmen ist gut für den Rücken.",
+      "blanks": [["Das"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالأداة المناسبة.", "explain": "الاسم المصنوع من فعل محايد دائمًا: `das Schwimmen`.", "hints": ["ما جنس الأفعال حين تصير أسماء؟"] },
+        "de": { "prompt": "Ergänze den Artikel.", "explain": "Nominalisierte Infinitive sind immer neutral: `das Schwimmen`.", "hints": ["Welches Genus haben Verben als Nomen?"] }
+      }
+    },
+    {
+      "id": "verben-als-nomen-2", "type": "cloze", "difficulty": 1,
+      "text": "{{1}} Autofahren telefoniere ich nie.",
+      "blanks": [["Beim"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالكلمة التي تعني «أثناء».", "explain": "`beim` = `bei dem` وتعني «أثناء». وفي أول الجملة تُكتب بحرف كبير.", "hints": ["الكلمة اختصار لحرف جر وأداة."] },
+        "de": { "prompt": "Ergänze das Wort für „während“.", "explain": "`beim` = `bei dem` und bedeutet „während“. Am Satzanfang groß: `Beim`.", "hints": ["Das Wort ist aus Präposition und Artikel verschmolzen."] }
+      }
+    },
+    {
+      "id": "verben-als-nomen-3", "type": "mcq", "difficulty": 1,
+      "options": ["Ich brauche eine Brille zum Lesen.", "Ich brauche eine Brille zum lesen.", "Ich brauche eine Brille zu Lesen."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة مكتوبة بشكل صحيح؟", "explain": "بعد `zum` صار الفعل اسمًا ويُكتب بحرف كبير. و`zu` وحدها لا تكفي، فنحتاج إلى `zum` (`zu dem`).", "hints": ["انتبه إلى الحرف الكبير وإلى الأداة."] },
+        "de": { "prompt": "Welcher Satz ist richtig geschrieben?", "explain": "Nach `zum` ist das Verb ein Nomen und wird großgeschrieben. Mit `zu` allein fehlt der Artikel.", "hints": ["Achte auf Großschreibung und Artikel."] }
+      }
+    },
+    {
+      "id": "verben-als-nomen-4", "type": "cloze", "difficulty": 2,
+      "text": "Nach dem langen {{1}} am Bahnhof war ich müde {{2}} Stehen.",
+      "blanks": [["Warten"], ["vom"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل باسم من الفعل `warten` وبحرف الجر المدمج المناسب.", "explain": "`das Warten` اسم محايد، و`vom Stehen` تعني «بسبب الوقوف الطويل».", "hints": ["الفراغ الثاني يعبر عن السبب."] },
+        "de": { "prompt": "Ergänze ein Nomen aus `warten` und die passende Kurzform.", "explain": "`das Warten` ist ein Nomen. `vom Stehen` nennt die Ursache der Müdigkeit.", "hints": ["Die zweite Lücke nennt eine Ursache."] }
+      }
+    },
+    {
+      "id": "verben-als-nomen-5", "type": "cloze", "difficulty": 2,
+      "text": "Hast du Papier {{1}} {{2}}?",
+      "blanks": [["zum"], ["Schreiben"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل: «هل عندك ورق للكتابة؟»", "explain": "الغرض يُعبَّر عنه بـ `zum` + مصدر بحرف كبير: `zum Schreiben`.", "hints": ["فكّر في `zu dem`."] },
+        "de": { "prompt": "Ergänze: Du fragst nach Papier, um etwas zu schreiben.", "explain": "Den Zweck drückst du mit `zum` + großgeschriebenem Infinitiv aus: `zum Schreiben`.", "hints": ["Denk an `zu dem`."] }
+      }
+    },
+    {
+      "id": "verben-als-nomen-6", "type": "mcq", "difficulty": 2,
+      "options": ["Während ich lese, schlafe ich oft ein.", "Um zu lesen, schlafe ich oft ein.", "Weil ich viel lese, schlafe ich oft ein."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "ما معنى `Beim Lesen schlafe ich oft ein`؟", "explain": "`beim` تعني «أثناء»، فالجملة المساوية تبدأ بـ `während`.", "hints": ["`beim` تدل على وقت."] },
+        "de": { "prompt": "Was bedeutet `Beim Lesen schlafe ich oft ein`?", "explain": "`beim` bedeutet „während“. Der passende Satz beginnt mit `während`.", "hints": ["`beim` drückt Zeit aus."] }
+      }
+    },
+    {
+      "id": "verben-als-nomen-7", "type": "text", "difficulty": 3,
+      "answer": "Das Aufräumen dauert immer lange.",
+      "i18n": {
+        "ar": { "prompt": "حوّل `Ich räume auf. Das dauert immer lange.` إلى جملة واحدة يكون فاعلها اسمًا من الفعل `aufräumen`.", "explain": "`aufräumen` يصير `das Aufräumen` ويصبح فاعل الجملة.", "hints": ["ابدأ بـ `Das`."] },
+        "de": { "prompt": "Mach aus `Ich räume auf. Das dauert immer lange.` einen Satz mit dem Nomen aus `aufräumen` als Subjekt.", "explain": "Aus `aufräumen` wird `das Aufräumen`, das Subjekt des Satzes.", "hints": ["Beginne mit `Das`."] }
+      }
+    },
+    {
+      "id": "verben-als-nomen-8", "type": "text", "difficulty": 3,
+      "context": "Beim lernen höre ich Musik.",
+      "answer": "Beim Lernen höre ich Musik.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد `beim` صار الفعل اسمًا، والأسماء تُكتب بحرف كبير: `Lernen`.", "hints": ["هل `lernen` هنا فعل أم اسم؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Nach `beim` ist `Lernen` ein Nomen und wird großgeschrieben.", "hints": ["Ist `lernen` hier Verb oder Nomen?"] }
+      }
+    },
+    {
+      "id": "verben-als-nomen-9", "type": "text", "difficulty": 2,
+      "answer": "Beim Kochen höre ich gern Radio.",
+      "i18n": {
+        "ar": { "prompt": "اكتب جملة تقول فيها إنك تحب الاستماع إلى الراديو أثناء الطبخ. ابدأ بـ `Beim`.", "explain": "`beim Kochen` في أول الجملة، ثم الفعل في الموقع الثاني: `höre ich`.", "hints": ["بعد التعبير الزمني يأتي الفعل مباشرة."] },
+        "de": { "prompt": "Schreib, dass du beim Kochen gern Radio hörst. Beginne mit `Beim`.", "explain": "`Beim Kochen` steht im Vorfeld, danach kommt das Verb: `höre ich`.", "hints": ["Nach dem Vorfeld folgt sofort das Verb."] }
+      }
+    }
+  ]
+}

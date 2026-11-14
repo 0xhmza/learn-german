@@ -1,0 +1,164 @@
+{
+  "id": "relativ-was",
+  "level": "B1.2",
+  "island": "relativsaetze",
+  "order": 6,
+  "prereqs": ["relativ-dativ"],
+  "emoji": "❔",
+  "german": "Relativsätze mit was",
+  "source": { "lektion": 8, "kind": "toc" },
+  "pattern": ["alles / nichts / etwas / das", ",", "was", "…", "Verb am Ende"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Das"], ["v", "ist"], ["mf", "alles"]] },
+    { "k": "rel", "parts": [["c", "was"], ["mf", "ich"], ["ve", "weiß"]] },
+    { "k": "rel", "parts": [["c", "worüber"], ["mf", "wir lange"], ["ve", "gesprochen haben"]] }
+  ],
+  "example": "Das ist alles, was ich weiß.",
+  "stepExamples": [
+    "Das ist der Film, den ich gesehen habe.",
+    "Das ist alles, was ich weiß.",
+    "Das ist das Beste, was mir passiert ist.",
+    "Sie hat die Prüfung bestanden, was mich sehr freut.",
+    "Es gibt etwas, worüber ich mit dir sprechen möchte."
+  ],
+  "pitfallPair": "Das ist alles, das ich weiß. → Das ist alles, was ich weiß.",
+  "links": [
+    "https://grammis.ids-mannheim.de/progr%40mm/6869",
+    "https://grammis.ids-mannheim.de/fragen/131"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "جملة الوصل بـ was",
+      "lead": "بعد اسم محدد مثل `der Film` تقول `den`. لكن بعد كلمات مثل `alles` و`nichts` و`etwas`، أو حين تشير إلى جملة كاملة، تحتاج إلى `was`. ستتعلم متى تختار `was` بدل `das`.",
+      "translation": "هذا كل ما أعرفه.",
+      "steps": [
+        { "text": "تذكّر جملة الوصل العادية", "why": "حين تشير إلى اسم له جنس واضح تختار `der` أو `die` أو `das` بحسب جنسه وحالته. هنا `den Film` مفعول به مذكر." },
+        { "text": "بعد alles و nichts و etwas استعمل was", "why": "هذه الكلمات لا تشير إلى شيء محدد له جنس، لذلك نقول `was`. والفعل المصرف `weiß` يقف في آخر الجملة كما في كل جملة وصل." },
+        { "text": "بعد صيغة التفضيل المحايدة استعمل was أيضًا", "why": "`das Beste` و`das Schönste` و`das Einzige` تشير إلى شيء عام غير محدد، فتأتي بعدها `was`." },
+        { "text": "حين تشير إلى الجملة كلها استعمل was", "why": "هنا لا يفرح الشخص بالامتحان نفسه، بل بخبر النجاح كله. `was` تشير إلى الجملة الرئيسية كاملة، وتأتي بعدها دائمًا." },
+        { "text": "مع حرف جر تصبح was كلمة تبدأ بـ wo", "why": "الفعل `sprechen über` يحتاج إلى حرف جر، فتصير `was` كلمة واحدة: `worüber`. وبالمثل `wofür` و`womit`، ومع حرف علة تضاف `r`: `woran` و`worauf`." }
+      ],
+      "explain": [
+        "استعمل `was` بعد: `alles` و`nichts` و`etwas` و`vieles` و`einiges` و`das`، وبعد صيغة التفضيل المحايدة (`das Beste`)، وحين تشير إلى جملة كاملة.",
+        "في الكلام يُسمع أحيانًا `etwas, das`، وهو مقبول. لكن بعد `alles` و`nichts` وبعد الإشارة إلى الجملة كلها تكون `was` هي الصيغة الصحيحة."
+      ],
+      "pitfall": "بعد `alles` لا يوجد اسم له جنس، لذلك لا تصلح `das`. الصحيح `was`.",
+      "recall": ["لماذا نقول `Er kommt immer zu spät, was mich ärgert`؟", "لأن ما يزعجني هو الحدث كله، أي أنه يتأخر دائمًا. `was` تشير إلى الجملة الرئيسية كاملة."],
+      "linkTitles": ["جمل الوصل بـ was · grammis", "das أم was؟ · grammis"],
+      "table": [
+        ["تشير إلى", "الأداة", "مثال"],
+        ["اسم له جنس", "der / die / das …", "der Film, den ich kenne"],
+        ["alles · nichts · etwas · vieles", "was", "alles, was ich brauche"],
+        ["صيغة التفضيل المحايدة", "was", "das Beste, was es gibt"],
+        ["الجملة كلها", "was", "…, was mich freut"],
+        ["مع حرف جر", "wo(r) + حرف الجر", "nichts, worauf ich warte"]
+      ]
+    },
+    "de": {
+      "title": "Relativsätze mit was",
+      "lead": "Nach einem Nomen wie `der Film` heißt es `den`. Nach Wörtern wie `alles`, `nichts`, `etwas` oder wenn du dich auf einen ganzen Satz beziehst, brauchst du `was`. Du lernst, wann `was` statt `das` steht.",
+      "steps": [
+        { "text": "Erinnere dich an den normalen Relativsatz", "why": "Bei einem Nomen mit klarem Genus wählst du `der`, `die` oder `das` nach Genus und Kasus. Hier: `den Film`, maskulin, Akkusativ." },
+        { "text": "Nach alles, nichts und etwas steht was", "why": "Diese Wörter zeigen auf nichts Bestimmtes mit Genus. Deshalb heißt es `was`. Das Verb `weiß` steht wie in jedem Relativsatz am Ende." },
+        { "text": "Auch nach einem neutralen Superlativ steht was", "why": "`das Beste`, `das Schönste`, `das Einzige` meinen etwas Allgemeines. Danach folgt `was`." },
+        { "text": "Bezieht sich der Satz auf den ganzen Hauptsatz, steht was", "why": "Die Person freut sich nicht über die Prüfung, sondern über die ganze Nachricht. `was` zeigt auf den ganzen Hauptsatz und steht immer danach." },
+        { "text": "Mit Präposition wird was zu wo(r)-", "why": "`sprechen über` braucht eine Präposition, also `worüber`. Ebenso `wofür`, `womit`. Vor Vokal kommt ein `r` dazu: `woran`, `worauf`." }
+      ],
+      "explain": [
+        "`was` steht nach `alles`, `nichts`, `etwas`, `vieles`, `einiges`, `das`, nach einem neutralen Superlativ (`das Beste`) und wenn sich der Relativsatz auf einen ganzen Satz bezieht.",
+        "Nach `etwas` hört man auch `das`, das ist akzeptiert. Nach `alles`, `nichts` und beim Bezug auf einen ganzen Satz ist `was` richtig."
+      ],
+      "pitfall": "Nach `alles` gibt es kein Nomen mit Genus, deshalb passt `das` nicht. Richtig ist `was`.",
+      "recall": ["Warum heißt es `Er kommt immer zu spät, was mich ärgert`?", "Mich ärgert die ganze Tatsache, dass er immer zu spät kommt. `was` bezieht sich auf den ganzen Hauptsatz."],
+      "linkTitles": ["Relativsätze mit was · grammis", "das oder was? · grammis"],
+      "table": [
+        ["Bezug", "Relativwort", "Beispiel"],
+        ["Nomen mit Genus", "der / die / das …", "der Film, den ich kenne"],
+        ["alles · nichts · etwas · vieles", "was", "alles, was ich brauche"],
+        ["neutraler Superlativ", "was", "das Beste, was es gibt"],
+        ["ganzer Satz", "was", "…, was mich freut"],
+        ["mit Präposition", "wo(r) + Präposition", "nichts, worauf ich warte"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "relativ-was-1", "type": "cloze", "difficulty": 1,
+      "text": "Ich habe nichts gekauft, {{1}} ich nicht brauche.",
+      "blanks": [["was"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بأداة الوصل.", "explain": "بعد `nichts` نستعمل `was`.", "hints": ["هل قبل الفراغ اسم له جنس؟"] },
+        "de": { "prompt": "Ergänze das Relativwort.", "explain": "Nach `nichts` steht `was`.", "hints": ["Steht vor der Lücke ein Nomen mit Genus?"] }
+      }
+    },
+    {
+      "id": "relativ-was-2", "type": "cloze", "difficulty": 1,
+      "text": "Das ist das Schönste, {{1}} ich je gesehen {{2}}.",
+      "blanks": [["was"], ["habe"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بأداة الوصل وبالفعل المساعد.", "explain": "بعد صيغة التفضيل المحايدة `das Schönste` نقول `was`، والفعل المساعد `habe` في الآخر.", "hints": ["أين يقف الفعل في جملة الوصل؟"] },
+        "de": { "prompt": "Ergänze Relativwort und Hilfsverb.", "explain": "Nach dem neutralen Superlativ `das Schönste` steht `was`, das Hilfsverb `habe` am Ende.", "hints": ["Wo steht das Verb im Relativsatz?"] }
+      }
+    },
+    {
+      "id": "relativ-was-3", "type": "mcq", "difficulty": 1,
+      "options": ["Er hat mir geholfen, was sehr nett war.", "Er hat mir geholfen, das sehr nett war.", "Er hat mir geholfen, der sehr nett war."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟ المعنى: كانت مساعدته لطيفة جدًا.", "explain": "اللطيف هو الأمر كله، أي أنه ساعدني. لذلك تشير `was` إلى الجملة كاملة.", "hints": ["إلى ماذا تشير جملة الوصل؟"] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Nett war die ganze Handlung, also bezieht sich `was` auf den ganzen Satz.", "hints": ["Worauf bezieht sich der Relativsatz?"] }
+      }
+    },
+    {
+      "id": "relativ-was-4", "type": "cloze", "difficulty": 2,
+      "text": "Gibt es etwas, {{1}} du dich besonders freust? – Ja, auf den Urlaub, {{2}} ich schon lange warte.",
+      "blanks": [["worauf"], ["auf den"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل. الفعلان `sich freuen auf` و`warten auf`.", "explain": "بعد `etwas` مع حرف الجر نقول `worauf`. أما بعد الاسم `der Urlaub` فنقول `auf den` لأن له جنسًا.", "hints": ["الفراغ الأول بعد `etwas`، والثاني بعد اسم مذكر."] },
+        "de": { "prompt": "Ergänze. Die Verben sind `sich freuen auf` und `warten auf`.", "explain": "Nach `etwas` mit Präposition: `worauf`. Nach dem Nomen `der Urlaub`: `auf den`.", "hints": ["Die erste Lücke steht nach `etwas`, die zweite nach einem maskulinen Nomen."] }
+      }
+    },
+    {
+      "id": "relativ-was-5", "type": "order", "difficulty": 2,
+      "items": ["Ich", "verstehe", "alles,", "was", "der Lehrer", "sagt."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة.", "explain": "الجملة الرئيسية أولًا، ثم `was` والفاعل، والفعل `sagt` في الآخر.", "hints": ["ابدأ بـ `Ich`."] },
+        "de": { "prompt": "Ordne den Satz.", "explain": "Erst der Hauptsatz, dann `was`, das Subjekt und `sagt` am Ende.", "hints": ["Beginne mit `Ich`."] }
+      }
+    },
+    {
+      "id": "relativ-was-6", "type": "mcq", "difficulty": 2,
+      "options": ["das", "was", "dem"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي كلمة تكمل الجملة؟ `Das ist das Buch, ___ ich dir empfohlen habe.`", "explain": "`das Buch` اسم محايد محدد، فنقول `das`. `was` تأتي بعد كلمات غير محددة مثل `alles`.", "hints": ["هل يوجد اسم له جنس قبل الفراغ؟"] },
+        "de": { "prompt": "Welches Wort passt? `Das ist das Buch, ___ ich dir empfohlen habe.`", "explain": "`das Buch` ist ein konkretes neutrales Nomen, also `das`. `was` steht nach unbestimmten Wörtern wie `alles`.", "hints": ["Steht vor der Lücke ein Nomen mit Genus?"] }
+      }
+    },
+    {
+      "id": "relativ-was-7", "type": "text", "difficulty": 3,
+      "answer": "Der Zug hatte Verspätung, was uns viel Zeit gekostet hat.",
+      "i18n": {
+        "ar": { "prompt": "اربط بجملة وصل بـ `was`: `Der Zug hatte Verspätung. Das hat uns viel Zeit gekostet.`", "explain": "`was` تشير إلى الجملة الأولى كلها، والفعل المساعد `hat` في الآخر.", "hints": ["`Das` في الجملة الثانية تشير إلى الجملة الأولى كلها."] },
+        "de": { "prompt": "Verbinde mit einem was-Relativsatz: `Der Zug hatte Verspätung. Das hat uns viel Zeit gekostet.`", "explain": "`was` bezieht sich auf den ganzen ersten Satz. Das Hilfsverb `hat` steht am Ende.", "hints": ["`Das` im zweiten Satz meint den ganzen ersten Satz."] }
+      }
+    },
+    {
+      "id": "relativ-was-8", "type": "text", "difficulty": 3,
+      "context": "Das ist alles, das ich weiß.",
+      "answer": "Das ist alles, was ich weiß.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد `alles` لا يوجد اسم له جنس، فنستعمل `was`.", "hints": ["إلى أي اسم تشير جملة الوصل؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Nach `alles` gibt es kein Nomen mit Genus. Deshalb steht `was`.", "hints": ["Auf welches Nomen bezieht sich der Relativsatz?"] }
+      }
+    },
+    {
+      "id": "relativ-was-9", "type": "text", "difficulty": 2,
+      "answer": "Das Beste, was ich in Deutschland erlebt habe, war das Oktoberfest.",
+      "i18n": {
+        "ar": { "prompt": "اكتب جملة تبدأ بـ `Das Beste, was …`", "explain": "مثال: `Das Beste, was ich in Deutschland erlebt habe, war das Oktoberfest.`", "hints": ["بعد جملة الوصل يأتي الفعل الرئيسي `war`."] },
+        "de": { "prompt": "Schreib einen Satz, der mit `Das Beste, was …` beginnt.", "explain": "Zum Beispiel: `Das Beste, was ich in Deutschland erlebt habe, war das Oktoberfest.`", "hints": ["Nach dem Relativsatz kommt das Hauptverb `war`."] }
+      }
+    }
+  ]
+}

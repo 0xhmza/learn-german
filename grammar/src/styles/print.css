@@ -1,12 +1,14 @@
 /* Printing a lesson. */
 @media print {
   :root, body { background: #fff; color: #000; }
-  .topbar, .sidebar, .page-foot, .actions, .lesson-nav, .quiz-controls, .shade, .bottom-nav { display: none !important; }
+  .topbar, .sidebar, .page-foot, .actions, .lesson-nav, .quiz-controls, .shade, .bottom-nav, .toasts, #notice-slot, .finish-bar, .map-panel, .walker, .trail-line { display: none !important; }
   .layout { display: block; }
   main { padding: 0; }
   body { padding: 0; }
   .lesson-body, .lesson-side { display: block; }
   .panel { margin: 10px 0; box-shadow: none; }
   .step[hidden] { display: grid !important; }
+  details.sources, details.recall { display: block; }
+  .lesson-banner, .panel { border-color: #ccc; background: #fff; }
   .step, .pitfall, .glance { break-inside: avoid; }
 }

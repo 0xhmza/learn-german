@@ -1,5 +1,6 @@
 // Development server for the grammar platform. Serves src/ and builds
 // content.json from content/ on every request, so edits show on reload.
+// With --dist it serves the built dist/ folder instead (npm run preview).
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -31,7 +32,9 @@ export function safePath(base, requestPath) {
   return file === base || file.startsWith(base + path.sep) ? file : null;
 }
 
-export function createApp() {
+export function createApp({ dist = false } = {}) {
+  const base = dist ? path.join(root, 'dist') : srcRoot;
+  const home = dist ? '/Deutsch-Grammatik-B1.html' : '/index.html';
   return createServer(async (req, res) => {
     const send = (status, body, type = 'text/plain; charset=utf-8') => {
       res.writeHead(status, { 'Content-Type': type, 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
@@ -40,8 +43,8 @@ export function createApp() {
     try {
       if (req.method !== 'GET' && req.method !== 'HEAD') return send(405, 'Method not allowed');
       const { pathname } = new URL(req.url, 'http://localhost');
-      if (pathname === '/content.json') return send(200, JSON.stringify(await assembleContent()), types['.json']);
-      const file = safePath(srcRoot, pathname === '/' ? '/index.html' : pathname);
+      if (!dist && pathname === '/content.json') return send(200, JSON.stringify(await assembleContent()), types['.json']);
+      const file = safePath(base, pathname === '/' ? home : pathname);
       if (!file) return send(404, 'Not found');
       const info = await stat(file).catch(() => null);
       if (!info?.isFile()) return send(404, 'Not found');
@@ -54,6 +57,7 @@ export function createApp() {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const port = Number(process.env.PORT || 4180);
-  createApp().listen(port, '127.0.0.1', () => console.log(`Grammatikinseln: http://127.0.0.1:${port}`));
+  const dist = process.argv.includes('--dist');
+  const port = Number(process.env.PORT || (dist ? 4181 : 4180));
+  createApp({ dist }).listen(port, '127.0.0.1', () => console.log(`Grammatikinseln${dist ? ' (dist)' : ''}: http://127.0.0.1:${port}`));
 }

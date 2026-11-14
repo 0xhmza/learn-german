@@ -1,0 +1,155 @@
+{
+  "id": "trotzdem",
+  "level": "B1.2",
+  "island": "gegensatz-vergleich",
+  "order": 2,
+  "prereqs": ["obwohl"],
+  "emoji": "💪",
+  "german": "Konzessives Verbindungsadverb trotzdem",
+  "source": { "lektion": 7, "kind": "toc" },
+  "pattern": ["Tatsache", ".", "trotzdem", "+", "Verb", "+", "Subjekt"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Es"], ["v", "regnet"]] },
+    { "k": "main", "parts": [["vf", "Trotzdem"], ["v", "gehe"], ["mf", "ich spazieren"]] },
+    { "k": "main", "parts": [["vf", "Ich"], ["v", "gehe"], ["mf", "trotzdem spazieren"]] }
+  ],
+  "example": "Es regnet. Trotzdem gehe ich spazieren.",
+  "stepExamples": [
+    "Obwohl es regnet, gehe ich spazieren.",
+    "Es regnet. Trotzdem gehe ich spazieren.",
+    "Es regnet. Ich gehe trotzdem spazieren.",
+    "Es regnet, aber ich gehe trotzdem spazieren."
+  ],
+  "pitfallPair": "Trotzdem es regnet, gehe ich spazieren. → Obwohl es regnet, gehe ich spazieren.",
+  "links": [
+    "https://grammis.ids-mannheim.de/terminologie/1874",
+    "https://www.dwds.de/wb/trotzdem"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "ومع ذلك: trotzdem",
+      "lead": "`trotzdem` تقول المعنى نفسه الذي تقوله `obwohl`، لكن من الجهة الأخرى: تذكر الأمر المعيق أولًا في جملة كاملة، ثم تقول «ومع ذلك» وتذكر ما فعلته. والفعل هنا يبقى في الموقع الثاني.",
+      "translation": "إنها تمطر. ومع ذلك أخرج للنزهة.",
+      "steps": [
+        { "text": "انطلق من جملة مع obwohl", "why": "`obwohl` تقف أمام الأمر المعيق، أي المطر. أما `trotzdem` فتقف أمام النتيجة غير المتوقعة، أي النزهة." },
+        { "text": "اجعل المعيق جملة رئيسية، وابدأ النتيجة بـ trotzdem", "why": "`trotzdem` ظرف يشغل الموقع الأول وحده، فيأتي الفعل المصرف `gehe` بعده مباشرة ثم الفاعل." },
+        { "text": "أو ضع trotzdem في وسط الجملة", "why": "إذا بدأت بالفاعل يقف `trotzdem` بعد الفعل: `Ich gehe trotzdem spazieren.`" },
+        { "text": "يمكنك الجمع بين aber و trotzdem", "why": "`aber` تقف في الموقع صفر ولا تغير ترتيب الجملة، و`trotzdem` في الوسط تقوّي المعنى: `…, aber ich gehe trotzdem spazieren.`" }
+      ],
+      "explain": [
+        "`trotzdem` تعني «رغم ذلك» وتشير إلى الجملة السابقة. لهذا لا تأتي إلا بعد أن تذكر الأمر المعيق.",
+        "القاعدة السهلة: `obwohl` + المعيق والفعل في الآخر. `trotzdem` + النتيجة والفعل في الموقع الثاني. المعنى واحد، والبناء مختلف."
+      ],
+      "pitfall": "`trotzdem` ليست أداة ربط تابعة. لا تضعها أمام الأمر المعيق، بل أمام النتيجة، أو استعمل `obwohl`.",
+      "recall": ["أكمل بـ `trotzdem`: `Der Film war lang. …`", "مثلًا `Trotzdem war er spannend.` الفعل `war` بعد `Trotzdem` مباشرة."],
+      "linkTitles": ["أدوات التنازل · grammis", "trotzdem في معجم DWDS"],
+      "table": [
+        ["الكلمة", "تقف أمام", "موقع الفعل", "مثال"],
+        ["obwohl", "الأمر المعيق", "في الآخر", "Obwohl es regnet, gehe ich raus."],
+        ["trotzdem", "النتيجة غير المتوقعة", "الموقع الثاني", "Es regnet. Trotzdem gehe ich raus."]
+      ]
+    },
+    "de": {
+      "title": "Das konzessive Verbindungsadverb trotzdem",
+      "lead": "`trotzdem` sagt dasselbe wie `obwohl`, nur von der anderen Seite: Du nennst zuerst das Hindernis in einem ganzen Satz und dann, was du „trotzdem“ tust. Das Verb bleibt dabei auf Position 2.",
+      "steps": [
+        { "text": "Geh von einem obwohl-Satz aus", "why": "`obwohl` steht vor dem Hindernis, dem Regen. `trotzdem` steht vor der unerwarteten Folge, dem Spaziergang." },
+        { "text": "Mach das Hindernis zum Hauptsatz und beginne die Folge mit trotzdem", "why": "`trotzdem` ist ein Adverb und besetzt allein Position 1. Danach kommen das konjugierte Verb `gehe` und das Subjekt." },
+        { "text": "Oder stell trotzdem ins Mittelfeld", "why": "Beginnst du mit dem Subjekt, steht `trotzdem` nach dem Verb: `Ich gehe trotzdem spazieren.`" },
+        { "text": "aber und trotzdem kannst du kombinieren", "why": "`aber` steht auf Position 0 und ändert die Wortstellung nicht. `trotzdem` im Mittelfeld verstärkt: `…, aber ich gehe trotzdem spazieren.`" }
+      ],
+      "explain": [
+        "`trotzdem` heißt „obwohl das so ist“ und zeigt auf den vorigen Satz. Deshalb steht es erst, nachdem das Hindernis genannt wurde.",
+        "Eine einfache Regel: `obwohl` + Hindernis, Verb am Ende. `trotzdem` + Folge, Verb auf Position 2. Gleiche Bedeutung, anderer Satzbau."
+      ],
+      "pitfall": "`trotzdem` ist kein Subjunktor. Es steht nicht vor dem Hindernis, sondern vor der Folge – oder du nimmst `obwohl`.",
+      "recall": ["Ergänze mit `trotzdem`: `Der Film war lang. …`", "Zum Beispiel `Trotzdem war er spannend.` `war` folgt direkt auf `Trotzdem`."],
+      "linkTitles": ["Konzessive Konnektoren · grammis", "trotzdem im DWDS"],
+      "table": [
+        ["Wort", "steht vor", "Verbstellung", "Beispiel"],
+        ["obwohl", "dem Hindernis", "am Ende", "Obwohl es regnet, gehe ich raus."],
+        ["trotzdem", "der unerwarteten Folge", "Position 2", "Es regnet. Trotzdem gehe ich raus."]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "trotzdem-1", "type": "cloze", "difficulty": 1,
+      "text": "Das Hotel war teuer. Trotzdem {{1}} wir dort übernachtet.",
+      "blanks": [["haben"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل المساعد المناسب.", "explain": "بعد `Trotzdem` يأتي الفعل المصرف مباشرة: `haben wir`.", "hints": ["`übernachten` يصرّف مع `haben`."] },
+        "de": { "prompt": "Ergänze das passende Hilfsverb.", "explain": "Nach `Trotzdem` folgt sofort das konjugierte Verb: `haben wir`.", "hints": ["`übernachten` bildet das Perfekt mit `haben`."] }
+      }
+    },
+    {
+      "id": "trotzdem-2", "type": "cloze", "difficulty": 1,
+      "text": "Ich bin müde, aber ich gehe {{1}} ins Kino.",
+      "blanks": [["trotzdem"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بكلمة تعني «ومع ذلك».", "explain": "`trotzdem` في وسط الجملة بعد الفعل، وتقوّي معنى `aber`.", "hints": ["الكلمة تبدأ بـ `trotz`."] },
+        "de": { "prompt": "Ergänze das Wort für „obwohl das so ist“.", "explain": "`trotzdem` steht im Mittelfeld nach dem Verb und verstärkt `aber`.", "hints": ["Das Wort beginnt mit `trotz`."] }
+      }
+    },
+    {
+      "id": "trotzdem-3", "type": "mcq", "difficulty": 1,
+      "options": ["Er war krank. Trotzdem ist er zur Arbeit gegangen.", "Er war krank. Trotzdem er ist zur Arbeit gegangen.", "Trotzdem er krank war, ist er zur Arbeit gegangen."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "`Trotzdem` تقف أمام النتيجة ويأتي الفعل بعدها مباشرة. ولا تعمل كأداة ربط تابعة.", "hints": ["أين يقف الفعل بعد `Trotzdem`؟"] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "`Trotzdem` steht vor der Folge, das Verb folgt direkt. Als Subjunktor funktioniert es nicht.", "hints": ["Wo steht das Verb nach `Trotzdem`?"] }
+      }
+    },
+    {
+      "id": "trotzdem-4", "type": "cloze", "difficulty": 2,
+      "text": "{{1}} der Test schwer war, habe ich bestanden. = Der Test war schwer. {{2}} habe ich bestanden.",
+      "blanks": [["Obwohl"], ["Trotzdem"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل الجملتين بالمعنى نفسه.", "explain": "مع الفعل في الآخر نستعمل `Obwohl`، ومع الفعل في الموقع الثاني نستعمل `Trotzdem`.", "hints": ["انظر إلى موقع الفعل بعد كل فراغ."] },
+        "de": { "prompt": "Ergänze beide Sätze mit derselben Bedeutung.", "explain": "Mit Verb am Ende: `Obwohl`. Mit Verb auf Position 2: `Trotzdem`.", "hints": ["Schau, wo das Verb nach jeder Lücke steht."] }
+      }
+    },
+    {
+      "id": "trotzdem-5", "type": "order", "difficulty": 2,
+      "items": ["Der Bus", "war", "voll.", "Trotzdem", "sind", "wir", "eingestiegen."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملتين: المعيق ثم النتيجة.", "explain": "بعد `Trotzdem` يأتي الفعل المساعد `sind` ثم الفاعل `wir` ثم `eingestiegen`.", "hints": ["ابدأ بـ `Der Bus`."] },
+        "de": { "prompt": "Ordne die zwei Sätze: erst das Hindernis, dann die Folge.", "explain": "Nach `Trotzdem` kommen `sind`, dann `wir`, dann `eingestiegen`.", "hints": ["Beginne mit `Der Bus`."] }
+      }
+    },
+    {
+      "id": "trotzdem-6", "type": "mcq", "difficulty": 2,
+      "options": ["Die Wohnung ist laut. Trotzdem fühle ich mich dort wohl.", "Die Wohnung ist laut. Deshalb fühle ich mich dort wohl.", "Die Wohnung ist laut. Trotzdem ich fühle mich dort wohl."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة تساوي `Obwohl die Wohnung laut ist, fühle ich mich dort wohl`؟", "explain": "التناقض يعبَّر عنه بـ `Trotzdem` لا بـ `Deshalb`، والفعل يأتي بعده مباشرة.", "hints": ["هل الضجيج سبب للراحة؟"] },
+        "de": { "prompt": "Welcher Satz bedeutet `Obwohl die Wohnung laut ist, fühle ich mich dort wohl`?", "explain": "Den Gegensatz drückt `Trotzdem` aus, nicht `Deshalb`. Das Verb folgt direkt.", "hints": ["Ist Lärm ein Grund, sich wohlzufühlen?"] }
+      }
+    },
+    {
+      "id": "trotzdem-7", "type": "text", "difficulty": 3,
+      "answer": "Ich hatte keine Lust. Trotzdem habe ich die Hausaufgaben gemacht.",
+      "i18n": {
+        "ar": { "prompt": "حوّل إلى جملتين مع `Trotzdem`: `Obwohl ich keine Lust hatte, habe ich die Hausaufgaben gemacht.`", "explain": "المعيق جملة رئيسية أولًا، ثم `Trotzdem habe ich …`.", "hints": ["الجملة الأولى: `Ich hatte keine Lust.`"] },
+        "de": { "prompt": "Mach zwei Sätze mit `Trotzdem`: `Obwohl ich keine Lust hatte, habe ich die Hausaufgaben gemacht.`", "explain": "Erst das Hindernis als Hauptsatz, dann `Trotzdem habe ich …`.", "hints": ["Erster Satz: `Ich hatte keine Lust.`"] }
+      }
+    },
+    {
+      "id": "trotzdem-8", "type": "text", "difficulty": 3,
+      "context": "Trotzdem es regnet, gehe ich spazieren.",
+      "answer": "Obwohl es regnet, gehe ich spazieren.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "أمام المعيق مع الفعل في الآخر نحتاج إلى `Obwohl`. أو نكتب: `Es regnet. Trotzdem gehe ich spazieren.`", "hints": ["هل `trotzdem` أداة ربط تابعة؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Vor dem Hindernis mit Verb am Ende brauchst du `Obwohl`. Oder: `Es regnet. Trotzdem gehe ich spazieren.`", "hints": ["Ist `trotzdem` ein Subjunktor?"] }
+      }
+    },
+    {
+      "id": "trotzdem-9", "type": "text", "difficulty": 2,
+      "answer": "Das Wetter war schlecht. Trotzdem waren wir am Strand.",
+      "i18n": {
+        "ar": { "prompt": "اكتب جملتين عن عطلة: أمر معيق، ثم ما فعلته رغم ذلك مع `Trotzdem`.", "explain": "مثال: `Das Wetter war schlecht. Trotzdem waren wir am Strand.`", "hints": ["بعد `Trotzdem` الفعل ثم الفاعل."] },
+        "de": { "prompt": "Schreib zwei Sätze über einen Urlaub: ein Hindernis und was du `trotzdem` gemacht hast.", "explain": "Zum Beispiel: `Das Wetter war schlecht. Trotzdem waren wir am Strand.`", "hints": ["Nach `Trotzdem`: Verb, dann Subjekt."] }
+      }
+    }
+  ]
+}

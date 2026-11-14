@@ -1,0 +1,145 @@
+{
+  "id": "indem",
+  "level": "B1.2",
+  "island": "grund-folge",
+  "order": 4,
+  "prereqs": [],
+  "emoji": "🛠️",
+  "german": "Modale Nebensätze mit indem",
+  "source": { "lektion": 9, "kind": "toc" },
+  "pattern": ["Ziel", ",", "indem", "…", "Verb am Ende"],
+  "frames": [
+    { "k": "main", "parts": [["vf", "Man"], ["v", "spart"], ["mf", "Strom"]] },
+    { "k": "sub", "parts": [["c", "indem"], ["mf", "man das Licht"], ["ve", "ausschaltet"]] },
+    { "k": "main", "parts": [["vf", "Durch das Ausschalten des Lichts"], ["v", "spart"], ["mf", "man Strom"]] }
+  ],
+  "example": "Man spart Strom, indem man das Licht ausschaltet.",
+  "stepExamples": [
+    "Wie spart man Strom?",
+    "Man spart Strom, indem man das Licht ausschaltet.",
+    "Indem man das Licht ausschaltet, spart man Strom.",
+    "Man spart Strom durch das Ausschalten des Lichts."
+  ],
+  "pitfallPair": "Das ist das Haus, indem ich wohne. → Das ist das Haus, in dem ich wohne.",
+  "links": [
+    "https://grammis.ids-mannheim.de/konnektoren/407023",
+    "https://grammis.ids-mannheim.de/progr%40mm/6823"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "الوسيلة والطريقة بـ indem",
+      "lead": "كيف توفّر الكهرباء؟ بأن تطفئ الضوء. حين تذكر الوسيلة التي تصل بها إلى هدف تستعمل `indem`، وهي تجيب عن السؤالين `Wie?` و`Wodurch?`.",
+      "translation": "يوفّر المرء الكهرباء بأن يطفئ الضوء.",
+      "steps": [
+        { "text": "ابدأ بسؤال عن الطريقة", "why": "السؤال `Wie spart man Strom?` يبحث عن وسيلة، لا عن سبب ولا عن وقت." },
+        { "text": "اذكر الهدف، ثم الوسيلة بعد indem", "why": "`indem` أداة ربط تابعة، فيقف الفعل المصرف `ausschaltet` في آخرها، ويلتصق الجزء المنفصل `aus` بالفعل من جديد." },
+        { "text": "يمكن أن تبدأ بالوسيلة", "why": "حين تأتي جملة `indem` أولًا يبدأ ما بعد الفاصلة بالفعل المصرف: `spart man`." },
+        { "text": "البديل الاسمي: durch + اسم", "why": "في الكتابة الرسمية تُقال الوسيلة أحيانًا باسم: `durch das Ausschalten des Lichts`. المعنى نفسه، لكن الأسلوب أثقل." }
+      ],
+      "explain": [
+        "في الغالب يكون الفاعل واحدًا في الجملتين: الشخص الذي يحقق الهدف هو نفسه من يقوم بالوسيلة.",
+        "لا تخلط بين `indem` كلمة واحدة و`in dem` كلمتين. الثانية حرف جر مع ضمير وصل: `das Haus, in dem ich wohne` أي «البيت الذي أسكن فيه»."
+      ],
+      "pitfall": "`in dem` بكلمتين تعني «الذي … فيه». أما `indem` كلمة واحدة فتعني «بأن، عن طريق».",
+      "recall": ["أجب بـ `indem`: `Wie kann man gesund bleiben?`", "مثلًا `Man bleibt gesund, indem man sich viel bewegt.` الفعل المصرف `bewegt` في الآخر."],
+      "linkTitles": ["معجم أدوات الربط: indem · grammis", "التعبير عن الوسيلة والهدف · grammis"]
+    },
+    "de": {
+      "title": "Modale Nebensätze mit indem",
+      "lead": "Wie spart man Strom? Indem man das Licht ausschaltet. Wenn du das Mittel nennst, mit dem du ein Ziel erreichst, nimmst du `indem`. Es antwortet auf `Wie?` und `Wodurch?`.",
+      "steps": [
+        { "text": "Beginne mit einer Frage nach dem Wie", "why": "`Wie spart man Strom?` fragt nach einem Mittel, nicht nach einem Grund oder einer Zeit." },
+        { "text": "Nenne das Ziel, dann das Mittel mit indem", "why": "`indem` ist ein Subjunktor: Das konjugierte Verb `ausschaltet` steht am Ende, und das Präfix `aus` ist wieder mit dem Verb verbunden." },
+        { "text": "Du kannst auch mit dem Mittel beginnen", "why": "Steht der indem-Satz vorn, beginnt der Hauptsatz mit dem Verb: `spart man`." },
+        { "text": "Die nominale Variante: durch + Nomen", "why": "In formellen Texten steht das Mittel oft als Nomen: `durch das Ausschalten des Lichts`. Gleiche Bedeutung, schwererer Stil." }
+      ],
+      "explain": [
+        "Meist ist das Subjekt in beiden Sätzen gleich: Wer das Ziel erreicht, tut auch das Mittel.",
+        "Verwechsle `indem` nicht mit `in dem`. Getrennt geschrieben ist es Präposition + Relativpronomen: `das Haus, in dem ich wohne`."
+      ],
+      "pitfall": "`in dem` getrennt heißt „in dem Haus“. `indem` zusammen nennt das Mittel.",
+      "recall": ["Antworte mit `indem`: `Wie kann man gesund bleiben?`", "Zum Beispiel `Man bleibt gesund, indem man sich viel bewegt.` `bewegt` steht am Ende."],
+      "linkTitles": ["Konnektoren-Wörterbuch: indem · grammis", "Das Mittel für einen Zweck ausdrücken · grammis"]
+    }
+  },
+  "questions": [
+    {
+      "id": "indem-1", "type": "cloze", "difficulty": 1,
+      "text": "Ich lerne neue Wörter, indem ich Karteikarten {{1}}.",
+      "blanks": [["schreibe", "benutze"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بفعل مناسب في المكان الصحيح.", "explain": "بعد `indem` يأتي الفعل المصرف في الآخر، مثل `schreibe` أو `benutze`.", "hints": ["الفاعل `ich`."] },
+        "de": { "prompt": "Ergänze ein passendes Verb.", "explain": "Nach `indem` steht das konjugierte Verb am Ende, zum Beispiel `schreibe` oder `benutze`.", "hints": ["Das Subjekt ist `ich`."] }
+      }
+    },
+    {
+      "id": "indem-2", "type": "cloze", "difficulty": 1,
+      "text": "Sie hat ihr Deutsch verbessert, {{1}} sie jeden Tag Nachrichten gehört hat.",
+      "blanks": [["indem"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالأداة التي تدل على الوسيلة.", "explain": "سماع الأخبار هو الطريقة التي حسّنت بها لغتها: `indem`.", "hints": ["الجملة تجيب عن `Wie?`."] },
+        "de": { "prompt": "Ergänze das Wort für das Mittel.", "explain": "Nachrichten hören ist das Mittel, mit dem sie ihr Deutsch verbessert hat: `indem`.", "hints": ["Der Satz antwortet auf `Wie?`."] }
+      }
+    },
+    {
+      "id": "indem-3", "type": "mcq", "difficulty": 1,
+      "options": ["Wie hast du das Problem gelöst?", "Warum hast du das Problem gelöst?", "Wann hast du das Problem gelöst?"],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي سؤال يُجاب عنه بـ `Indem ich den Computer neu gestartet habe.`؟", "explain": "`indem` تذكر الطريقة، فهي تجيب عن `Wie?`.", "hints": ["`indem` = بأن، عن طريق."] },
+        "de": { "prompt": "Auf welche Frage antwortet `Indem ich den Computer neu gestartet habe.`?", "explain": "`indem` nennt die Art und Weise und antwortet auf `Wie?`.", "hints": ["`indem` nennt ein Mittel."] }
+      }
+    },
+    {
+      "id": "indem-4", "type": "cloze", "difficulty": 2,
+      "text": "Wir sparen Wasser, indem wir kürzer {{1}}. {{2}} wir das Fahrrad nehmen, schützen wir die Umwelt.",
+      "blanks": [["duschen"], ["Indem"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل `duschen` ثم بالأداة في بداية الجملة الثانية.", "explain": "`duschen` في آخر جملة `indem`. وفي الجملة الثانية تأتي الوسيلة أولًا: `Indem … nehmen, schützen wir …`.", "hints": ["لاحظ `schützen wir` بعد الفاصلة."] },
+        "de": { "prompt": "Ergänze `duschen` und das Wort am Anfang des zweiten Satzes.", "explain": "`duschen` steht am Ende des indem-Satzes. Im zweiten Satz steht das Mittel vorn: `Indem … nehmen, schützen wir …`.", "hints": ["Achte auf `schützen wir` nach dem Komma."] }
+      }
+    },
+    {
+      "id": "indem-5", "type": "order", "difficulty": 2,
+      "items": ["Man", "kann", "Geld sparen,", "indem", "man", "selbst", "kocht."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة: الهدف ثم الوسيلة.", "explain": "الجملة الرئيسية أولًا، ثم `indem man selbst kocht` والفعل في الآخر.", "hints": ["ابدأ بـ `Man kann`."] },
+        "de": { "prompt": "Ordne den Satz: erst das Ziel, dann das Mittel.", "explain": "Erst der Hauptsatz, dann `indem man selbst kocht` mit dem Verb am Ende.", "hints": ["Beginne mit `Man kann`."] }
+      }
+    },
+    {
+      "id": "indem-6", "type": "mcq", "difficulty": 2,
+      "options": ["Das ist die Firma, in der ich arbeite.", "Das ist die Firma, indem ich arbeite.", "Das ist die Firma, indem ich arbeite in."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "أي جملة صحيحة؟ المعنى: «هذه الشركة التي أعمل فيها».", "explain": "هنا نحتاج إلى حرف جر مع ضمير وصل: `in der` لأن `die Firma` مؤنثة. `indem` تعني الوسيلة.", "hints": ["هل الجملة تذكر وسيلة أم مكانًا؟"] },
+        "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Hier brauchst du Präposition + Relativpronomen: `in der`, weil `die Firma` feminin ist. `indem` nennt ein Mittel.", "hints": ["Geht es um ein Mittel oder einen Ort?"] }
+      }
+    },
+    {
+      "id": "indem-7", "type": "text", "difficulty": 3,
+      "answer": "Man kann Müll vermeiden, indem man Mehrwegflaschen kauft.",
+      "i18n": {
+        "ar": { "prompt": "اربط بـ `indem`: `Man kann Müll vermeiden. Man kauft Mehrwegflaschen.`", "explain": "الهدف أولًا، ثم `indem man Mehrwegflaschen kauft` مع `kauft` في الآخر.", "hints": ["الجملة الثانية هي الوسيلة."] },
+        "de": { "prompt": "Verbinde mit `indem`: `Man kann Müll vermeiden. Man kauft Mehrwegflaschen.`", "explain": "Erst das Ziel, dann `indem man Mehrwegflaschen kauft` mit `kauft` am Ende.", "hints": ["Der zweite Satz ist das Mittel."] }
+      }
+    },
+    {
+      "id": "indem-8", "type": "text", "difficulty": 3,
+      "context": "Das ist das Haus, indem ich wohne.",
+      "answer": "Das ist das Haus, in dem ich wohne.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "المقصود «البيت الذي أسكن فيه»، فنحتاج إلى `in dem` بكلمتين: حرف جر وضمير وصل.", "hints": ["هل الجملة تذكر وسيلة؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Gemeint ist das Haus als Ort. Dafür brauchst du `in dem`: Präposition + Relativpronomen.", "hints": ["Nennt der Satz ein Mittel?"] }
+      }
+    },
+    {
+      "id": "indem-9", "type": "text", "difficulty": 2,
+      "answer": "Ich entspanne mich, indem ich im Park spazieren gehe.",
+      "i18n": {
+        "ar": { "prompt": "اكتب كيف ترتاح بعد يوم متعب. استعمل `indem`.", "explain": "مثال: `Ich entspanne mich, indem ich im Park spazieren gehe.`", "hints": ["الفعل المصرف في آخر جملة `indem`."] },
+        "de": { "prompt": "Schreib, wie du dich nach einem anstrengenden Tag entspannst. Benutze `indem`.", "explain": "Zum Beispiel: `Ich entspanne mich, indem ich im Park spazieren gehe.`", "hints": ["Das konjugierte Verb steht am Ende des indem-Satzes."] }
+      }
+    }
+  ]
+}

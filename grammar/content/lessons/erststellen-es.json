@@ -1,0 +1,162 @@
+{
+  "id": "erststellen-es",
+  "level": "B1.2",
+  "island": "passiv",
+  "order": 4,
+  "prereqs": ["subjektlos"],
+  "emoji": "🪑",
+  "german": "Das Erststellen-es",
+  "source": { "lektion": 11, "kind": "toc" },
+  "pattern": ["Es", "+", "Verb", "+", "Subjekt", "…"],
+  "frames": [
+    { "k": "main", "parts": [["hl", "Es"], ["v", "kamen"], ["mf", "viele Gäste"]] },
+    { "k": "main", "parts": [["vf", "Viele Gäste"], ["v", "kamen"]] },
+    { "k": "main", "parts": [["vf", "Gestern"], ["v", "wurde"], ["mf", "viel"], ["ve", "gelacht"]] }
+  ],
+  "example": "Es kamen viele Gäste. → Viele Gäste kamen.",
+  "stepExamples": [
+    "Viele Gäste kamen zur Feier.",
+    "Es kamen viele Gäste zur Feier.",
+    "Es wurde viel gelacht.",
+    "Gestern wurde viel gelacht.",
+    "Es ist ein Unfall passiert. → Ist ein Unfall passiert?"
+  ],
+  "pitfallPair": "Gestern wurde es viel gelacht. → Gestern wurde viel gelacht.",
+  "links": [
+    "https://grammis.ids-mannheim.de/systematische-grammatik/395",
+    "https://grammis.ids-mannheim.de/terminologie/1206"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "es يملأ الموقع الأول",
+      "lead": "أحيانًا تبدأ الجملة الألمانية بـ `es` دون أن تعني شيئًا. وظيفتها الوحيدة أن تملأ الموقع الأول حتى يأتي الفاعل الحقيقي متأخرًا، كما في بدايات الأخبار والحكايات. ستتعلم متى تبقى `es` ومتى تختفي.",
+      "translation": "جاء ضيوف كثيرون.",
+      "steps": [
+        { "text": "ابدأ بجملة عادية", "why": "الفاعل `viele Gäste` في الموقع الأول، والفعل `kamen` في الموقع الثاني." },
+        { "text": "ضع es في الموقع الأول وأخّر الفاعل", "why": "`Es kamen viele Gäste`: صار الفاعل بعد الفعل، فيبدو كمعلومة جديدة. و`es` لا معنى لها هنا، والفعل `kamen` بالجمع لأنه يتفق مع `Gäste` لا مع `es`." },
+        { "text": "تكثر es في المجهول بلا فاعل", "why": "في `Es wurde viel gelacht` لا يوجد فاعل نحوي، فتملأ `es` الموقع الأول فقط." },
+        { "text": "إذا وقف شيء آخر في الموقع الأول تختفي es", "why": "`Gestern wurde viel gelacht`: الكلمة `gestern` تملأ الموقع الأول، فلم يبقَ لـ `es` مكان." },
+        { "text": "في السؤال والجملة التابعة تختفي es أيضًا", "why": "في السؤال يبدأ الفعل: `Ist ein Unfall passiert?`. وفي الجملة التابعة: `…, dass ein Unfall passiert ist.` لا توجد `es` لأنه لا يوجد موقع أول يجب ملؤه." }
+      ],
+      "explain": [
+        "هذه `es` غير `es` في `Es regnet` و`Es gibt`. هناك تبقى `es` في كل ترتيب: `Heute regnet es` و`Gibt es Kaffee?`. أما `es` الموقع الأول فتختفي فور تغيّر الترتيب.",
+        "الاختبار السهل: ضع كلمة أخرى في البداية. إذا اختفت `es` فهي `es` الموقع الأول، وإذا بقيت فهي فاعل شكلي ثابت."
+      ],
+      "pitfall": "حين تقف `gestern` في الموقع الأول لم يبقَ لـ `es` مكان، فتُحذف.",
+      "recall": ["لماذا نقول `Es warten drei Leute` وليس `Es wartet drei Leute`؟", "لأن الفعل يتفق مع الفاعل الحقيقي `drei Leute`، وهو جمع، لا مع `es`."],
+      "linkTitles": ["الكلمة es واستعمالاتها · grammis", "الكلمة الشكلية · grammis"],
+      "table": [
+        ["نوع es", "مثال", "بعد تغيير الترتيب"],
+        ["es في الموقع الأول", "Es kamen viele Gäste.", "Gestern kamen viele Gäste."],
+        ["المجهول بلا فاعل", "Es wird hier gearbeitet.", "Hier wird gearbeitet."],
+        ["فاعل شكلي ثابت", "Es regnet.", "Heute regnet es."],
+        ["es gibt", "Es gibt Kaffee.", "Gibt es Kaffee?"]
+      ]
+    },
+    "de": {
+      "title": "Das Erststellen-es (Vorfeld-es)",
+      "lead": "Manchmal beginnt ein deutscher Satz mit `es`, das nichts bedeutet. Es füllt nur die erste Position, damit das eigentliche Subjekt später kommen kann – typisch für Nachrichten und Erzählungen. Du lernst, wann `es` bleibt und wann es verschwindet.",
+      "steps": [
+        { "text": "Beginne mit einem normalen Satz", "why": "Das Subjekt `viele Gäste` steht auf Position 1, das Verb `kamen` auf Position 2." },
+        { "text": "Setz es auf Position 1 und stell das Subjekt nach hinten", "why": "`Es kamen viele Gäste`: Das Subjekt steht jetzt nach dem Verb und wirkt wie eine neue Information. `es` bedeutet nichts. `kamen` steht im Plural, weil es zu `Gäste` passt, nicht zu `es`." },
+        { "text": "Häufig im subjektlosen Passiv", "why": "In `Es wurde viel gelacht` gibt es kein Subjekt. `es` füllt nur Position 1." },
+        { "text": "Steht etwas anderes vorn, fällt es weg", "why": "`Gestern wurde viel gelacht`: `gestern` besetzt Position 1, für `es` ist kein Platz mehr." },
+        { "text": "Auch in Fragen und Nebensätzen fällt es weg", "why": "In der Frage steht das Verb vorn: `Ist ein Unfall passiert?`. Im Nebensatz: `…, dass ein Unfall passiert ist.` Es gibt keine Position 1 zu füllen." }
+      ],
+      "explain": [
+        "Dieses `es` ist ein anderes als in `Es regnet` oder `Es gibt`. Dort bleibt `es` in jeder Stellung: `Heute regnet es`, `Gibt es Kaffee?`. Das Vorfeld-es verschwindet, sobald sich die Wortstellung ändert.",
+        "Der einfache Test: Stell ein anderes Satzglied an den Anfang. Fällt `es` weg, ist es ein Vorfeld-es. Bleibt es, ist es ein festes formales Subjekt."
+      ],
+      "pitfall": "Steht `gestern` auf Position 1, ist für `es` kein Platz mehr. Es fällt weg.",
+      "recall": ["Warum heißt es `Es warten drei Leute` und nicht `Es wartet drei Leute`?", "Das Verb richtet sich nach dem eigentlichen Subjekt `drei Leute` (Plural), nicht nach `es`."],
+      "linkTitles": ["Die Form es und ihre Verwendungen · grammis", "Expletivum · grammis"],
+      "table": [
+        ["Art von es", "Beispiel", "nach Umstellung"],
+        ["Vorfeld-es", "Es kamen viele Gäste.", "Gestern kamen viele Gäste."],
+        ["subjektloses Passiv", "Es wird hier gearbeitet.", "Hier wird gearbeitet."],
+        ["festes formales Subjekt", "Es regnet.", "Heute regnet es."],
+        ["es gibt", "Es gibt Kaffee.", "Gibt es Kaffee?"]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "erststellen-es-1", "type": "cloze", "difficulty": 1,
+      "text": "{{1}} haben sich zwanzig Personen für den Kurs angemeldet.",
+      "blanks": [["Es"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل الموقع الأول بالكلمة المناسبة.", "explain": "الفاعل `zwanzig Personen` جاء بعد الفعل، فتملأ `Es` الموقع الأول.", "hints": ["الكلمة لا معنى لها هنا."] },
+        "de": { "prompt": "Füll die erste Position.", "explain": "Das Subjekt `zwanzig Personen` steht nach dem Verb, deshalb füllt `Es` Position 1.", "hints": ["Das Wort hat hier keine Bedeutung."] }
+      }
+    },
+    {
+      "id": "erststellen-es-2", "type": "cloze", "difficulty": 1,
+      "text": "Es {{1}} heute zwei Pakete für dich gekommen.",
+      "blanks": [["sind"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل بالفعل المساعد `sein`.", "explain": "الفعل يتفق مع الفاعل الحقيقي `zwei Pakete`، وهو جمع: `sind`.", "hints": ["مع ماذا يتفق الفعل؟"] },
+        "de": { "prompt": "Ergänze das Hilfsverb `sein`.", "explain": "Das Verb richtet sich nach dem Subjekt `zwei Pakete` (Plural): `sind`.", "hints": ["Wonach richtet sich das Verb?"] }
+      }
+    },
+    {
+      "id": "erststellen-es-3", "type": "mcq", "difficulty": 1,
+      "options": ["Heute wird nicht gearbeitet.", "Heute wird es nicht gearbeitet.", "Heute es wird nicht gearbeitet."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "حوّل `Es wird heute nicht gearbeitet.` بحيث تبدأ بـ `Heute`. أي جملة صحيحة؟", "explain": "`Heute` يملأ الموقع الأول، فتختفي `es`.", "hints": ["هل بقي لـ `es` مكان؟"] },
+        "de": { "prompt": "Beginne `Es wird heute nicht gearbeitet.` mit `Heute`. Welcher Satz ist richtig?", "explain": "`Heute` besetzt Position 1, `es` fällt weg.", "hints": ["Ist noch Platz für `es`?"] }
+      }
+    },
+    {
+      "id": "erststellen-es-4", "type": "cloze", "difficulty": 2,
+      "text": "Es {{1}} ein Fehler passiert. Leider {{2}} ein Fehler passiert.",
+      "blanks": [["ist"], ["ist"]],
+      "i18n": {
+        "ar": { "prompt": "أكمل الجملتين بالفعل المساعد.", "explain": "في الجملتين `ist`. في الثانية `Leider` في الموقع الأول، فلا توجد `es`.", "hints": ["`passieren` يأخذ `sein`."] },
+        "de": { "prompt": "Ergänze in beiden Sätzen das Hilfsverb.", "explain": "Beide Male `ist`. Im zweiten Satz steht `Leider` vorn, deshalb kein `es`.", "hints": ["`passieren` bildet das Perfekt mit `sein`."] }
+      }
+    },
+    {
+      "id": "erststellen-es-5", "type": "order", "difficulty": 2,
+      "items": ["Am Wochenende", "wird", "im Garten", "gegrillt."],
+      "i18n": {
+        "ar": { "prompt": "رتّب الجملة: «في عطلة نهاية الأسبوع يُشوى اللحم في الحديقة».", "explain": "`Am Wochenende` في الموقع الأول، فلا حاجة إلى `es`. والفعل `wird` في الموقع الثاني.", "hints": ["ابدأ بالظرف الزمني."] },
+        "de": { "prompt": "Ordne den Satz.", "explain": "`Am Wochenende` steht vorn, deshalb kein `es`. `wird` auf Position 2.", "hints": ["Beginne mit der Zeitangabe."] }
+      }
+    },
+    {
+      "id": "erststellen-es-6", "type": "mcq", "difficulty": 2,
+      "options": ["Heute regnet es.", "Heute kamen es viele Leute.", "Gestern wurde es getanzt."],
+      "answer": 0,
+      "i18n": {
+        "ar": { "prompt": "في أي جملة تبقى `es` بحق بعد تغيير الترتيب؟", "explain": "`es` في `regnen` فاعل شكلي ثابت يبقى دائمًا. أما في الجملتين الأخريين فهي `es` الموقع الأول ويجب حذفها.", "hints": ["فكّر في `Es regnet`."] },
+        "de": { "prompt": "In welchem Satz bleibt `es` zu Recht nach der Umstellung?", "explain": "Bei `regnen` ist `es` ein festes formales Subjekt und bleibt. In den anderen Sätzen ist es ein Vorfeld-es und fällt weg.", "hints": ["Denk an `Es regnet`."] }
+      }
+    },
+    {
+      "id": "erststellen-es-7", "type": "text", "difficulty": 3,
+      "answer": "Es stehen viele Fahrräder vor dem Haus.",
+      "i18n": {
+        "ar": { "prompt": "ابدأ الجملة بـ `Es`: `Viele Fahrräder stehen vor dem Haus.`", "explain": "`Es stehen viele Fahrräder vor dem Haus.` الفعل بالجمع لأنه يتفق مع `Fahrräder`.", "hints": ["هل يتغير الفعل؟"] },
+        "de": { "prompt": "Beginne mit `Es`: `Viele Fahrräder stehen vor dem Haus.`", "explain": "`Es stehen viele Fahrräder vor dem Haus.` Das Verb bleibt im Plural, weil es zu `Fahrräder` passt.", "hints": ["Ändert sich das Verb?"] }
+      }
+    },
+    {
+      "id": "erststellen-es-8", "type": "text", "difficulty": 3,
+      "context": "Gestern wurde es viel gelacht.",
+      "answer": "Gestern wurde viel gelacht.",
+      "i18n": {
+        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`Gestern` يملأ الموقع الأول، فلا حاجة إلى `es`.", "hints": ["ما الذي يقف في الموقع الأول؟"] },
+        "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`Gestern` besetzt Position 1. `es` wird nicht gebraucht.", "hints": ["Was steht auf Position 1?"] }
+      }
+    },
+    {
+      "id": "erststellen-es-9", "type": "text", "difficulty": 2,
+      "answer": "Es gab einmal einen König, der drei Töchter hatte.",
+      "i18n": {
+        "ar": { "prompt": "اكتب بداية حكاية تبدأ بـ `Es`.", "explain": "مثال: `Es war einmal ein König …` أو `Es gab einmal einen König, der drei Töchter hatte.`", "hints": ["بدايات الحكايات الألمانية تبدأ كثيرًا بـ `Es`."] },
+        "de": { "prompt": "Schreib den Anfang einer Geschichte, der mit `Es` beginnt.", "explain": "Zum Beispiel: `Es war einmal ein König …` oder `Es gab einmal einen König, der drei Töchter hatte.`", "hints": ["Märchen beginnen oft mit `Es`."] }
+      }
+    }
+  ]
+}

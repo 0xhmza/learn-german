@@ -1,0 +1,443 @@
+{
+  "id": "seit-waehrend",
+  "level": "B1.2",
+  "island": "zeiten",
+  "order": 4,
+  "prereqs": [],
+  "emoji": "🕰️",
+  "german": "Temporale Nebensätze mit seit(dem) / während",
+  "source": {
+    "lektion": 10,
+    "kind": "toc"
+  },
+  "pattern": [
+    "seit(dem) / während",
+    "…",
+    "Verb am Ende"
+  ],
+  "frames": [
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "Seit"
+        ],
+        [
+          "mf",
+          "ich in Berlin"
+        ],
+        [
+          "ve",
+          "wohne"
+        ]
+      ]
+    },
+    {
+      "k": "main",
+      "parts": [
+        [
+          "vf",
+          "Seit ich in Berlin wohne,"
+        ],
+        [
+          "v",
+          "lerne"
+        ],
+        [
+          "mf",
+          "ich Deutsch"
+        ]
+      ]
+    },
+    {
+      "k": "sub",
+      "parts": [
+        [
+          "c",
+          "während"
+        ],
+        [
+          "mf",
+          "ich"
+        ],
+        [
+          "ve",
+          "koche"
+        ]
+      ]
+    }
+  ],
+  "example": "Seit ich in Berlin wohne, lerne ich Deutsch.",
+  "stepExamples": [
+    "Ich wohne seit zwei Jahren in Berlin.",
+    "Seit ich in Berlin wohne, lerne ich Deutsch.",
+    "Seitdem sie Rad fährt, ist sie fitter.",
+    "Während ich koche, höre ich Radio.",
+    "Während des Essens telefoniert er nie."
+  ],
+  "pitfallPair": "Seit ich bin in Berlin, lerne ich Deutsch. → Seit ich in Berlin bin, lerne ich Deutsch.",
+  "links": [
+    "https://grammis.ids-mannheim.de/systematische-grammatik/2104",
+    "https://www.dwds.de/wb/seitdem"
+  ],
+  "i18n": {
+    "ar": {
+      "title": "منذ أن وبينما: seit(dem) و während",
+      "lead": "`seit` أو `seitdem` تحدد بداية أمر ما زال مستمرًا حتى الآن. و`während` تقول إن أمرين يحدثان في الوقت نفسه. ستتعلم كيف تربط بهما جملتين.",
+      "translation": "منذ أن أسكن في برلين أتعلم الألمانية.",
+      "steps": [
+        {
+          "text": "تذكّر seit مع الاسم",
+          "why": "`seit zwei Jahren` حرف جر مع `Dativ`. السكن بدأ قبل سنتين وما زال مستمرًا، لذلك الفعل في `Präsens`."
+        },
+        {
+          "text": "مع جملة كاملة: seit أو seitdem",
+          "why": "الأداتان بمعنى واحد. الفعل `wohne` في آخر الجملة التابعة، ثم `lerne ich`. وكلا الأمرين مستمر حتى الآن، فيبقى الفعلان في `Präsens`."
+        },
+        {
+          "text": "seitdem تذكر سبب تغيّر بدأ في الماضي",
+          "why": "`Seitdem sie Rad fährt, ist sie fitter`: منذ أن بدأت ركوب الدراجة صارت لياقتها أفضل، وما زالت كذلك."
+        },
+        {
+          "text": "während: أمران في الوقت نفسه",
+          "why": "`Während ich koche, höre ich Radio`: الطبخ والاستماع يحدثان معًا. والفعل `koche` في آخر الجملة التابعة."
+        },
+        {
+          "text": "während مع الاسم تأخذ Genitiv",
+          "why": "`während` حرف جر أيضًا: `während des Essens`. أما قبل جملة كاملة فهي أداة ربط والفعل في الآخر."
+        }
+      ],
+      "explain": [
+        "مع `seit` يقع الحدث في الماضي ويستمر حتى الآن، لذلك يكون الفعل غالبًا في `Präsens` لا في `Perfekt`: `Ich wohne seit 2020 hier.`",
+        "لـ `während` معنى ثانٍ هو المقابلة بين أمرين («في حين أنّ»). ستتعلمه في درس خاص في جزيرة التضاد."
+      ],
+      "pitfall": "`seit` تبدأ جملة تابعة، فيقف الفعل المصرف `bin` في آخرها.",
+      "recall": [
+        "لماذا نقول `Seit ich hier arbeite, bin ich zufrieden` وليس `war ich`؟",
+        "لأن العمل والرضا مستمران حتى الآن، والحالة الحاضرة تُذكر في `Präsens`."
+      ],
+      "linkTitles": [
+        "الجمل الزمنية · grammis",
+        "seitdem في معجم DWDS"
+      ],
+      "table": [
+        [
+          "الأداة",
+          "المعنى",
+          "مع اسم",
+          "مع جملة"
+        ],
+        [
+          "seit / seitdem",
+          "منذ (والأمر مستمر)",
+          "seit dem Umzug",
+          "seit ich umgezogen bin"
+        ],
+        [
+          "während",
+          "في الوقت نفسه",
+          "während des Essens",
+          "während ich esse"
+        ]
+      ]
+    },
+    "de": {
+      "title": "Temporale Nebensätze mit seit(dem) und während",
+      "lead": "`seit` oder `seitdem` nennt den Beginn von etwas, das bis heute andauert. `während` sagt, dass zwei Dinge gleichzeitig passieren. Du lernst, wie du damit zwei Sätze verbindest.",
+      "steps": [
+        {
+          "text": "Erinnere dich an seit mit Nomen",
+          "why": "`seit zwei Jahren` ist eine Präposition mit Dativ. Das Wohnen begann vor zwei Jahren und dauert an, deshalb steht das Verb im Präsens."
+        },
+        {
+          "text": "Mit einem ganzen Satz: seit oder seitdem",
+          "why": "Beide bedeuten dasselbe. `wohne` steht am Ende des Nebensatzes, dann folgt `lerne ich`. Beides dauert bis heute, deshalb Präsens."
+        },
+        {
+          "text": "seitdem nennt den Beginn einer Veränderung",
+          "why": "`Seitdem sie Rad fährt, ist sie fitter`: Sie fing an, Rad zu fahren, und ist seitdem fitter – bis heute."
+        },
+        {
+          "text": "während: zwei Dinge gleichzeitig",
+          "why": "`Während ich koche, höre ich Radio`: Kochen und Radiohören passieren zur selben Zeit. `koche` steht am Ende des Nebensatzes."
+        },
+        {
+          "text": "während mit Nomen verlangt den Genitiv",
+          "why": "`während` ist auch eine Präposition: `während des Essens`. Vor einem Satz ist es ein Subjunktor mit Verb am Ende."
+        }
+      ],
+      "explain": [
+        "Bei `seit` beginnt etwas in der Vergangenheit und dauert bis jetzt. Deshalb steht das Verb meist im Präsens, nicht im Perfekt: `Ich wohne seit 2020 hier.`",
+        "`während` hat noch eine zweite Bedeutung, den Gegensatz („wohingegen“). Den lernst du in einer eigenen Lektion auf den Kontrast-Klippen."
+      ],
+      "pitfall": "`seit` leitet einen Nebensatz ein, das konjugierte Verb `bin` steht am Ende.",
+      "recall": [
+        "Warum heißt es `Seit ich hier arbeite, bin ich zufrieden` und nicht `war ich`?",
+        "Die Arbeit und die Zufriedenheit dauern bis jetzt. Den heutigen Zustand drückt das Präsens aus."
+      ],
+      "linkTitles": [
+        "Temporalsätze · grammis",
+        "seitdem im DWDS"
+      ],
+      "table": [
+        [
+          "Wort",
+          "Bedeutung",
+          "mit Nomen",
+          "mit Satz"
+        ],
+        [
+          "seit / seitdem",
+          "Beginn, dauert an",
+          "seit dem Umzug",
+          "seit ich umgezogen bin"
+        ],
+        [
+          "während",
+          "gleichzeitig",
+          "während des Essens",
+          "während ich esse"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "seit-waehrend-1",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "Seit er Sport {{1}}, schläft er besser.",
+      "blanks": [
+        [
+          "macht",
+          "treibt"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بالفعل في المكان الصحيح.",
+          "explain": "الفعل المصرف في آخر جملة `seit`: `Sport macht`. والزمن `Präsens` لأن الأمر مستمر.",
+          "hints": [
+            "الفاعل `er`."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Verb.",
+          "explain": "Am Ende des seit-Satzes: `Sport macht`. Präsens, weil es andauert.",
+          "hints": [
+            "Das Subjekt ist `er`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "seit-waehrend-2",
+      "type": "cloze",
+      "difficulty": 1,
+      "text": "{{1}} ich auf den Bus warte, lese ich meine Nachrichten.",
+      "blanks": [
+        [
+          "Während"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل بأداة تعني «بينما».",
+          "explain": "الانتظار والقراءة في الوقت نفسه: `Während`.",
+          "hints": [
+            "أمران يحدثان معًا."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze das Wort für „gleichzeitig“.",
+          "explain": "Warten und Lesen passieren gleichzeitig: `Während`.",
+          "hints": [
+            "Zwei Dinge zur selben Zeit."
+          ]
+        }
+      }
+    },
+    {
+      "id": "seit-waehrend-3",
+      "type": "mcq",
+      "difficulty": 1,
+      "options": [
+        "Ich lerne seit drei Monaten Deutsch.",
+        "Ich habe seit drei Monaten Deutsch gelernt.",
+        "Ich lerne vor drei Monaten Deutsch."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة تقول إنك بدأت قبل ثلاثة أشهر وما زلت تتعلم؟",
+          "explain": "مع `seit` والأمر مستمر نستعمل `Präsens`: `Ich lerne seit …`.",
+          "hints": [
+            "هل التعلم مستمر الآن؟"
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz sagt: Du hast vor drei Monaten angefangen und lernst immer noch?",
+          "explain": "Mit `seit` und andauernder Handlung steht das Präsens: `Ich lerne seit …`.",
+          "hints": [
+            "Dauert das Lernen noch an?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "seit-waehrend-4",
+      "type": "cloze",
+      "difficulty": 2,
+      "text": "{{1}} des Fluges darf man nicht rauchen. {{2}} das Flugzeug landet, bleiben alle sitzen.",
+      "blanks": [
+        [
+          "Während"
+        ],
+        [
+          "Während",
+          "Bis"
+        ]
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل الفراغين.",
+          "explain": "الأول حرف جر مع `Genitiv`: `Während des Fluges`. والثاني أداة ربط والفعل `landet` في الآخر.",
+          "hints": [
+            "الكلمة نفسها تصلح في الموضعين."
+          ]
+        },
+        "de": {
+          "prompt": "Ergänze beide Lücken.",
+          "explain": "Zuerst Präposition mit Genitiv: `Während des Fluges`. Dann Subjunktor mit `landet` am Ende.",
+          "hints": [
+            "Dasselbe Wort passt zweimal."
+          ]
+        }
+      }
+    },
+    {
+      "id": "seit-waehrend-5",
+      "type": "order",
+      "difficulty": 2,
+      "items": [
+        "Seitdem",
+        "wir einen Hund",
+        "haben,",
+        "gehen",
+        "wir",
+        "jeden Tag spazieren."
+      ],
+      "i18n": {
+        "ar": {
+          "prompt": "رتّب الجملة. ابدأ بـ `Seitdem`.",
+          "explain": "الجملة التابعة أولًا مع `haben` في آخرها، ثم `gehen wir`.",
+          "hints": [
+            "بعد الفاصلة: الفعل ثم الفاعل."
+          ]
+        },
+        "de": {
+          "prompt": "Ordne den Satz. Beginne mit `Seitdem`.",
+          "explain": "Erst der Nebensatz mit `haben` am Ende, dann `gehen wir`.",
+          "hints": [
+            "Nach dem Komma: Verb, dann Subjekt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "seit-waehrend-6",
+      "type": "mcq",
+      "difficulty": 2,
+      "options": [
+        "Seit ich in der Stadt wohne, fahre ich mit der U-Bahn.",
+        "Seit ich in der Stadt wohne, bin ich mit der U-Bahn gefahren.",
+        "Seit ich wohne in der Stadt, fahre ich mit der U-Bahn."
+      ],
+      "answer": 0,
+      "i18n": {
+        "ar": {
+          "prompt": "أي جملة صحيحة؟",
+          "explain": "الأمران مستمران فالفعلان في `Präsens`، والفعل `wohne` في آخر الجملة التابعة.",
+          "hints": [
+            "انتبه إلى الزمن وإلى موقع الفعل."
+          ]
+        },
+        "de": {
+          "prompt": "Welcher Satz ist richtig?",
+          "explain": "Beides dauert an, also Präsens. `wohne` steht am Ende des Nebensatzes.",
+          "hints": [
+            "Achte auf Zeit und Verbstellung."
+          ]
+        }
+      }
+    },
+    {
+      "id": "seit-waehrend-7",
+      "type": "text",
+      "difficulty": 3,
+      "answer": "Während meine Frau arbeitet, kümmere ich mich um die Kinder.",
+      "i18n": {
+        "ar": {
+          "prompt": "اربط بـ `während` وابدأ بها: `Meine Frau arbeitet. Gleichzeitig kümmere ich mich um die Kinder.`",
+          "explain": "`Während meine Frau arbeitet, kümmere ich mich um die Kinder.` الكلمة `gleichzeitig` لم تعد لازمة.",
+          "hints": [
+            "`während` تحل محل `gleichzeitig`."
+          ]
+        },
+        "de": {
+          "prompt": "Verbinde mit `während` am Anfang: `Meine Frau arbeitet. Gleichzeitig kümmere ich mich um die Kinder.`",
+          "explain": "`Während meine Frau arbeitet, kümmere ich mich um die Kinder.` `gleichzeitig` brauchst du nicht mehr.",
+          "hints": [
+            "`während` ersetzt `gleichzeitig`."
+          ]
+        }
+      }
+    },
+    {
+      "id": "seit-waehrend-8",
+      "type": "text",
+      "difficulty": 3,
+      "context": "Seit ich bin in Berlin, lerne ich Deutsch.",
+      "answer": "Seit ich in Berlin bin, lerne ich Deutsch.",
+      "i18n": {
+        "ar": {
+          "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.",
+          "explain": "`seit` تبدأ جملة تابعة، فيقف الفعل `bin` في آخرها.",
+          "hints": [
+            "أين الفعل بعد `seit`؟"
+          ]
+        },
+        "de": {
+          "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.",
+          "explain": "`seit` leitet einen Nebensatz ein, `bin` steht am Ende.",
+          "hints": [
+            "Wo steht das Verb nach `seit`?"
+          ]
+        }
+      }
+    },
+    {
+      "id": "seit-waehrend-9",
+      "type": "text",
+      "difficulty": 2,
+      "answer": "Seitdem ich Deutsch lerne, verstehe ich die Nachrichten besser.",
+      "i18n": {
+        "ar": {
+          "prompt": "اكتب ماذا تغيّر منذ أن بدأت تعلم الألمانية. استعمل `Seitdem`.",
+          "explain": "مثال: `Seitdem ich Deutsch lerne, verstehe ich die Nachrichten besser.`",
+          "hints": [
+            "الفعلان في `Präsens`."
+          ]
+        },
+        "de": {
+          "prompt": "Schreib, was sich verändert hat, seit du Deutsch lernst. Benutze `Seitdem`.",
+          "explain": "Zum Beispiel: `Seitdem ich Deutsch lerne, verstehe ich die Nachrichten besser.`",
+          "hints": [
+            "Beide Verben stehen im Präsens."
+          ]
+        }
+      }
+    }
+  ]
+}
