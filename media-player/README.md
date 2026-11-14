@@ -26,6 +26,10 @@ Git ignores the generated deployment folders and the private key. See the [SFTP 
 
 ## Start
 
+Open the [media player website](https://0xhmza.github.io/learn-german/media-player/) and enter your access code. See the [GitHub Pages guide](docs/github-pages.md) for connecting your library.
+
+### Local development
+
 Install Node.js 22 or later. On Windows, double-click `Start-Sprechzimmer.cmd`, or run from this folder:
 
 ```powershell

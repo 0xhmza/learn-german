@@ -49,20 +49,20 @@ Obtain the host fingerprint from the SFTP administrator or directly on the SFTP 
 
 Start it with `node --env-file=.env gateway.js`. Serve it behind your HTTPS reverse proxy at a URL such as `https://bridge.example.com/`. Forward the `/v1/` routes and preserve the request headers. Alternatively, set `GATEWAY_TLS_KEY` and `GATEWAY_TLS_CERT` to the PEM key and full certificate chain to let the bridge terminate TLS itself. The bridge permits cleartext HTTP only on loopback. Use one bridge instance for the progress directory so conditional updates are serialized.
 
-## Publish the combined site
+## Publish the static site
 
-From the source repository root, run these commands with Node.js 22 or later.
+The site is published from `main` and `/(root)` in **Settings → Pages → Deploy from a branch**. The committed `index.html` files are ready to serve directly. Visitors can open the [landing page](https://0xhmza.github.io/learn-german/) in their browser. [GitHub Pages publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+After editing either app's source, refresh the committed static files. From the repository root, run these commands with Node.js 22 or later.
 
 ```sh
 npm --prefix grammar ci
 node media-player/scripts/build-site.mjs
 ```
 
-The build uses `media-player/private/media-decryption.key` or the `PAGES_UNLOCK_KEY` environment variable. It writes the landing page, the grammar site at `grammar/`, and the encrypted player at `media-player/` inside `grammar/dist/pages/`. The player build encrypts the app HTML, JavaScript, styles, icons and sample clip into `data.bin` using the same key as the media.
+The build updates `grammar/index.html` and the static entry point and assets in `media-player/`. It uses `media-player/private/media-decryption.key` or the `PAGES_UNLOCK_KEY` environment variable to encrypt the player into `data.bin`. Keep your key, access code and media library in their ignored local folders. Commit the refreshed static files and push to `main` to publish them.
 
-Keep this source repository private. Copy the **contents** of `grammar/dist/pages/`, including `.nojekyll`, into the root of the publishing branch in a separate Pages repository. In **Settings → Pages**, choose **Deploy from a branch**, select that branch and choose **/(root)**. [GitHub Pages publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-
-For a local preview, serve the combined output with `python -m http.server 4173 --bind 127.0.0.1 --directory grammar/dist/pages` from the source repository root. To build just the encrypted player, run `npm run build:pages` from `media-player/`. Its standalone output is `deploy/pages/`.
+For a local preview, serve the repository root with `python -m http.server 4173 --bind 127.0.0.1`. To build just the encrypted player, run `npm run build:pages` from `media-player/`. Its standalone output is `deploy/pages/`.
 
 For SFTP with a bridge, run `npm run create:access-code -- --bridge` and enter the SFTP address, bridge URL and SFTP credentials. Treat `private/access-code.txt` like a password. It contains the key as well as the encrypted connection details, so anyone with the whole code can unlock both. The app remembers a successful login in IndexedDB, wrapped by a browser-held key. Use **Forget and disconnect** in the app to clear it and return to the access screen.
 

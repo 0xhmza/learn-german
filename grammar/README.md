@@ -9,9 +9,15 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **Gamification**: one to three stars per lesson, XP and nine ranks, daily goal and streak, 16 badges, an exam per island to conquer it, and spaced review of answered questions.
 - Arabic (right to left) and German interface, light and dark theme, keyboard and screen-reader friendly, works offline.
 
-Part of the [learn-german](docs/repository.md) repository. Requires Node.js 22 or later.
+Part of the [learn-german](docs/repository.md) repository.
 
 ## Use it
+
+Open the [grammar website](https://0xhmza.github.io/learn-german/grammar/) or double-click `index.html` in this folder to use it offline.
+
+## Develop it
+
+The development commands require Node.js 22 or later.
 
 Development server (reads the content files directly, no build needed):
 
