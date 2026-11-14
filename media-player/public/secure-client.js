@@ -5,7 +5,7 @@
   const catalog = window.StoryCatalog;
   const storageBox = window.StorageBox;
   const runtime = window.PrivateRuntime;
-  let active, onConnection, onOpen, onSync;
+  let active, onConnection, onOpen, onSync, onStatus;
   let busy = false;
   const $ = id => document.getElementById(id);
 
@@ -196,12 +196,13 @@
     if (session.token) await bridge(session,'v1/session',{method:'DELETE',headers:{Authorization:`Bearer ${session.token}`}}).catch(() => {});
   }
 
-  async function connect(profile,save) {
+  async function connect(profile,save,{automatic = false} = {}) {
     if (busy) return;
     busy = true;
     $('secure-connect').disabled = true;
     $('secure-forget').disabled = true;
-    $('secure-status').textContent = 'Unlocking your library…';
+    const report = automatic ? onStatus : message => {$('secure-status').textContent = message;};
+    report('Unlocking your library…');
     let session;
     try {
       const direct = profile.mode === 'storage-box';
@@ -239,10 +240,14 @@
       if (session.dirty) void flush(session);
     } catch (error) {
       if (session !== active) void closeSession(session);
-      $('secure-status').textContent = profile.mode !== 'storage-box' && (error.name === 'TypeError' || error.name === 'TimeoutError')
-        ? 'Could not reach the bridge. Check its HTTPS URL and allowed site origin.' : error.message;
-      if (!$('secure-dialog').open) $('secure-dialog').showModal();
-    } finally {busy = false;$('secure-connect').disabled = false;$('secure-forget').disabled = false;}
+      report(profile.mode !== 'storage-box' && (error.name === 'TypeError' || error.name === 'TimeoutError')
+        ? 'Could not reach the bridge. Check its HTTPS URL and allowed site origin.' : error.message);
+    } finally {
+      busy = false;
+      $('secure-open').disabled = false;
+      $('secure-connect').disabled = false;
+      $('secure-forget').disabled = false;
+    }
   }
 
   function updateMode() {
@@ -274,7 +279,7 @@
   }
 
   async function start(callbacks) {
-    ({onConnection,onOpen,onSync} = callbacks);
+    ({onConnection,onOpen,onSync,onStatus} = callbacks);
     runtime.respond = mediaRequest => {
       const id = /^secure-media\/(.+)$/.exec(mediaRequest.path)?.[1];
       const session = active;
@@ -292,7 +297,9 @@
         return {status:response.status,range:contentRange,bytes:await response.arrayBuffer()};
       });
     };
-    $('secure-open').onclick = () => {onOpen();show(active?.profile);};
+    const {profile:initial,secret} = runtime.consume();
+    const profile = {...initial,mediaKey:secret};
+    $('secure-open').onclick = () => {onOpen();show(active?.profile || profile);};
     $('secure-mode').onchange = () => {updateMode();$('secure-status').textContent = '';};
     $('secure-form').onsubmit = event => {
       event.preventDefault();
@@ -313,10 +320,12 @@
     };
     window.addEventListener('online',() => void flush(active));
     document.addEventListener('visibilitychange',() => {if (document.hidden) void flush(active);});
-    const {profile:initial,secret} = runtime.consume();
-    const profile = {...initial,mediaKey:secret};
-    show(profile);
-    if (profile && $('secure-mode').value === (profile.mode || 'bridge')) void connect(profile,true);
+    if (profile.username && profile.password && (profile.mode === 'storage-box' ? profile.root : profile.address && profile.gateway)) {
+      $('secure-open').disabled = true;
+      void connect(profile,true,{automatic:true});
+    } else {
+      onStatus('Use an access code with your library connection details to connect automatically.');
+    }
   }
 
   async function list(refresh) {

@@ -593,6 +593,7 @@
       await loadEpisode('demo');
       await remote.start({
         onOpen:() => video.pause(),
+        onStatus:notice,
         onSync:message => {$('secure-open').title = message;},
         async onConnection(progress,message = '') {
           loadedVideo = false;
