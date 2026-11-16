@@ -28,11 +28,11 @@
   "i18n": {
     "ar": {
       "title": "النتيجة بـ sodass و so … dass",
-      "lead": "مع `deshalb` تذكر النتيجة في جملة رئيسية. ومع `sodass` تذكرها في جملة تابعة تأتي بعد السبب مباشرة، فيذهب الفعل إلى آخرها. وإذا أردت التركيز على شدة الأمر استعملت `so … dass`.",
+      "lead": "تضيف `sodass` نتيجةً تترتّب على ما قبلها في جملة تابعة. واستعمل `so … dass` إذا أردت إبراز الدرجة التي أدّت إلى تلك النتيجة.",
       "translation": "أمطرت بغزارة، فبقينا في البيت.",
       "steps": [
         { "text": "ابدأ بسبب ونتيجة", "why": "المطر الغزير هو السبب، والبقاء في البيت هو النتيجة. الترتيب ثابت: السبب أولًا ثم النتيجة." },
-        { "text": "اربط النتيجة بـ sodass", "why": "`sodass` أداة ربط تابعة، فيقف الفعل المصرف `sind` في الآخر. وجملة `sodass` تأتي دائمًا بعد الجملة الرئيسية." },
+        { "text": "اربط النتيجة بـ sodass", "why": "`sodass` أداة ربط تابعة، فيقف الفعل المصرّف `sind` في الآخر. وجملة `sodass` تأتي دائمًا بعد الجملة الرئيسية." },
         { "text": "للتركيز على الشدة ضع so قبل الصفة", "why": "`so stark` في الجملة الرئيسية تقول «بغزارة شديدة إلى حد أن…». ثم تبدأ النتيجة بـ `dass` وحدها." },
         { "text": "استعمل so … dass مع الصفات والظروف", "why": "`so leise` و`so müde` و`so viel`: كلمة `so` تقف قبل الصفة أو الظرف، والفعل في جملة `dass` في الآخر." }
       ],
@@ -68,7 +68,7 @@
       "text": "Der Akku war leer, sodass ich nicht telefonieren {{1}}.",
       "blanks": [["konnte"]],
       "i18n": {
-        "ar": { "prompt": "أكمل بالفعل `können` في الماضي.", "explain": "بعد `sodass` يقف الفعل المصرف في الآخر: `telefonieren konnte`.", "hints": ["المصدر أولًا ثم الفعل الناقص."] },
+        "ar": { "prompt": "أكمل بالفعل `können` في الماضي.", "explain": "بعد `sodass` يقف الفعل المصرّف في الآخر: `telefonieren konnte`.", "hints": ["المصدر أولًا ثم الفعل الناقص."] },
         "de": { "prompt": "Ergänze `können` im Präteritum.", "explain": "Nach `sodass` steht das konjugierte Verb am Ende: `telefonieren konnte`.", "hints": ["Erst der Infinitiv, dann das Modalverb."] }
       }
     },
@@ -86,7 +86,7 @@
       "options": ["Der Zug hatte Verspätung, sodass ich den Anschluss verpasst habe.", "Der Zug hatte Verspätung, sodass ich habe den Anschluss verpasst.", "Sodass ich den Anschluss verpasst habe, hatte der Zug Verspätung."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "جملة `sodass` تأتي بعد السبب، والفعل المساعد `habe` في آخرها.", "hints": ["النتيجة بعد السبب دائمًا."] },
+        "ar": { "prompt": "اختر الجملة الصحيحة.", "explain": "جملة `sodass` تأتي بعد السبب، والفعل المساعد `habe` في آخرها.", "hints": ["النتيجة بعد السبب دائمًا."] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Der sodass-Satz steht nach dem Grund, `habe` am Ende.", "hints": ["Die Folge steht immer nach dem Grund."] }
       }
     },
@@ -112,7 +112,7 @@
       "options": ["Der Koffer ist so schwer, dass ich ihn nicht tragen kann.", "Der Koffer ist schwer, dass ich ihn nicht tragen kann.", "Der Koffer ist so schwer, sodass ich ihn nicht tragen kann."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "مع `so` قبل الصفة تأتي `dass` وحدها. بدون `so` لا يكفي `dass` هنا، ومع `so` لا نقول `sodass`.", "hints": ["`so` لا تتكرر."] },
+        "ar": { "prompt": "اختر الجملة الصحيحة.", "explain": "مع `so` قبل الصفة تأتي `dass` وحدها. بدون `so` لا يكفي `dass` هنا، ومع `so` لا نقول `sodass`.", "hints": ["`so` لا تتكرر."] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Mit `so` vor dem Adjektiv folgt nur `dass`. Ohne `so` reicht `dass` hier nicht, und mit `so` heißt es nicht `sodass`.", "hints": ["`so` steht nur einmal."] }
       }
     },
@@ -129,7 +129,7 @@
       "context": "Es war so kalt, sodass wir gefroren haben.",
       "answer": "Es war so kalt, dass wir gefroren haben.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`so` موجودة قبل `kalt`، فتبدأ النتيجة بـ `dass` وحدها.", "hints": ["كم مرة تظهر `so`؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "`so` موجودة قبل `kalt`، فتبدأ النتيجة بـ `dass` وحدها.", "hints": ["كم مرة تظهر `so`؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`so` steht schon vor `kalt`. Die Folge beginnt nur mit `dass`.", "hints": ["Wie oft steht `so` im Satz?"] }
       }
     },

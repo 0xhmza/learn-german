@@ -4,7 +4,7 @@ import { t, num, getLang } from '../i18n/index.js';
 import { lessonTitle, islandName } from '../content.js';
 import { DAILY_GOALS } from '../engine/gamification.js';
 import { defaultState, normalizeState, exportBackup, importBackup, importLegacyExport } from '../engine/migrate.js';
-import { esc, button } from '../components/html.js';
+import { esc, button, plainText, prose } from '../components/html.js';
 
 export const title = () => t('settings');
 
@@ -28,7 +28,7 @@ export function render(app) {
   const theme = app.themeMode();
   const option = (value, label, current) => `<option value="${value}" ${String(current) === String(value) ? 'selected' : ''}>${esc(label)}</option>`;
   const lessons = ctx.islands.map(island => `<optgroup label="${esc(islandName(island, lang))}">${ctx.islandLessons(island.id)
-    .map(lesson => option(lesson.id, lessonTitle(lesson, lang), '')).join('')}</optgroup>`).join('');
+    .map(lesson => option(lesson.id, plainText(lessonTitle(lesson, lang)), '')).join('')}</optgroup>`).join('');
   const shown = message;
   message = '';
   return `
@@ -52,8 +52,8 @@ export function render(app) {
     </div>
     <div class="section-heading"><h2>${t('dataTitle')}</h2></div>
     <div class="settings-grid">
-      <section class="panel"><h3>${t('backup')}</h3><p class="muted">${t('backupText')}</p><div class="actions">${button('backup', t('backup'), 'primary')}</div></section>
-      <section class="panel"><h3>${t('restore')}</h3><p class="muted">${t('restoreText')}</p>
+      <section class="panel"><h3>${t('backup')}</h3><p class="muted">${prose(t('backupText'))}</p><div class="actions">${button('backup', t('backup'), 'primary')}</div></section>
+      <section class="panel"><h3>${t('restore')}</h3><p class="muted">${prose(t('restoreText'))}</p>
         <label class="btn secondary file-btn">${t('restore')}<input type="file" accept="application/json,.json" data-setting="restore" class="sr-only"></label></section>
       <section class="panel"><h3>${t('resetLesson')}</h3><p class="muted">${t('resetLessonText')}</p>
         <div class="form-row"><label for="reset-lesson">${t('chooseLesson')}<select id="reset-lesson">${lessons}</select></label>${button('reset-lesson', t('resetLessonBtn'))}</div></section>
@@ -80,7 +80,11 @@ export const actions = {
       delete state.stars[id];
       delete state.lessonBonus[id];
       delete state.runs[id];
+      delete state.runs[`apply-${id}`];
+      delete state.results[`apply-${id}`];
       for (const q of lesson.questions) delete state.results[q.id];
+      for (const card of app.ctx.cards.values()) if (card.lesson === id) delete state.cards[card.id];
+      if (!state.runs[state.lastRun]) state.lastRun = null;
     });
     say(app, t('resetLessonDone'));
   },

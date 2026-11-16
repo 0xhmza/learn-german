@@ -29,7 +29,7 @@
   "i18n": {
     "ar": {
       "title": "المستقبل والتوقّع بـ werden",
-      "lead": "كيف سيكون العالم بعد عشر سنوات؟ للتوقعات والتخمينات تستعمل `werden` مع المصدر في آخر الجملة. أما خطتك المؤكدة للأسبوع القادم فيكفيها المضارع مع كلمة زمن.",
+      "lead": "استعمل `werden` مع المصدر حين تعلن ما ستفعله أو تعبّر عن توقّع. ويمكن أن يكفي الحاضر مع ظرف زمن عندما تكون الخطة واضحة، مثل `Morgen fahre ich nach Bonn`.",
       "translation": "بعد عشر سنوات سيعمل كثير من الناس من البيت.",
       "steps": [
         { "text": "ابدأ بجملة في الحاضر", "why": "`arbeiten` في الموقع الثاني. نريد الآن أن نتوقع ما سيحدث في المستقبل." },
@@ -150,7 +150,7 @@
       "context": "Morgen werde ich gehe zum Arzt.",
       "answer": "Morgen werde ich zum Arzt gehen.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد `werden` لا يأتي فعل مصرف ثانٍ. `gehen` يبقى مصدرًا في آخر الجملة.", "hints": ["كم فعلًا مصرفًا في الجملة؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "بعد `werden` لا يأتي فعل مصرف ثانٍ. `gehen` يبقى مصدرًا في آخر الجملة.", "hints": ["كم فعلًا مصرفًا في الجملة؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Nach `werden` kommt kein zweites konjugiertes Verb. `gehen` steht als Infinitiv am Satzende.", "hints": ["Wie viele konjugierte Verben hat der Satz?"] }
       }
     },

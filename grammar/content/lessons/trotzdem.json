@@ -28,11 +28,11 @@
   "i18n": {
     "ar": {
       "title": "ومع ذلك: trotzdem",
-      "lead": "`trotzdem` تقول المعنى نفسه الذي تقوله `obwohl`، لكن من الجهة الأخرى: تذكر الأمر المعيق أولًا في جملة كاملة، ثم تقول «ومع ذلك» وتذكر ما فعلته. والفعل هنا يبقى في الموقع الثاني.",
+      "lead": "ابدأ بذكر العائق في جملة، ثم استخدم `trotzdem` لتقدّم ما حدث رغم ذلك. إذا وضعتها أولًا في الجملة الثانية، ضع الفعل المصرّف بعدها.",
       "translation": "إنها تمطر. ومع ذلك أخرج للنزهة.",
       "steps": [
         { "text": "انطلق من جملة مع obwohl", "why": "`obwohl` تقف أمام الأمر المعيق، أي المطر. أما `trotzdem` فتقف أمام النتيجة غير المتوقعة، أي النزهة." },
-        { "text": "اجعل المعيق جملة رئيسية، وابدأ النتيجة بـ trotzdem", "why": "`trotzdem` ظرف يشغل الموقع الأول وحده، فيأتي الفعل المصرف `gehe` بعده مباشرة ثم الفاعل." },
+        { "text": "اجعل المعيق جملة رئيسية، وابدأ النتيجة بـ trotzdem", "why": "`trotzdem` ظرف يشغل الموقع الأول وحده، فيأتي الفعل المصرّف `gehe` بعده مباشرة ثم الفاعل." },
         { "text": "أو ضع trotzdem في وسط الجملة", "why": "إذا بدأت بالفاعل يقف `trotzdem` بعد الفعل: `Ich gehe trotzdem spazieren.`" },
         { "text": "يمكنك الجمع بين aber و trotzdem", "why": "`aber` تقف في الموقع صفر ولا تغير ترتيب الجملة، و`trotzdem` في الوسط تقوّي المعنى: `…, aber ich gehe trotzdem spazieren.`" }
       ],
@@ -78,7 +78,7 @@
       "text": "Das Hotel war teuer. Trotzdem {{1}} wir dort übernachtet.",
       "blanks": [["haben"]],
       "i18n": {
-        "ar": { "prompt": "أكمل بالفعل المساعد المناسب.", "explain": "بعد `Trotzdem` يأتي الفعل المصرف مباشرة: `haben wir`.", "hints": ["`übernachten` يصرّف مع `haben`."] },
+        "ar": { "prompt": "أكمل بالفعل المساعد المناسب.", "explain": "بعد `Trotzdem` يأتي الفعل المصرّف مباشرة: `haben wir`.", "hints": ["`übernachten` يصرّف مع `haben`."] },
         "de": { "prompt": "Ergänze das passende Hilfsverb.", "explain": "Nach `Trotzdem` folgt sofort das konjugierte Verb: `haben wir`.", "hints": ["`übernachten` bildet das Perfekt mit `haben`."] }
       }
     },
@@ -96,7 +96,7 @@
       "options": ["Er war krank. Trotzdem ist er zur Arbeit gegangen.", "Er war krank. Trotzdem er ist zur Arbeit gegangen.", "Trotzdem er krank war, ist er zur Arbeit gegangen."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "`Trotzdem` تقف أمام النتيجة ويأتي الفعل بعدها مباشرة. ولا تعمل كأداة ربط تابعة.", "hints": ["أين يقف الفعل بعد `Trotzdem`؟"] },
+        "ar": { "prompt": "اختر الجملة الصحيحة.", "explain": "`Trotzdem` تقف أمام النتيجة ويأتي الفعل بعدها مباشرة. ولا تعمل كأداة ربط تابعة.", "hints": ["أين يقف الفعل بعد `Trotzdem`؟"] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "`Trotzdem` steht vor der Folge, das Verb folgt direkt. Als Subjunktor funktioniert es nicht.", "hints": ["Wo steht das Verb nach `Trotzdem`?"] }
       }
     },
@@ -139,7 +139,7 @@
       "context": "Trotzdem es regnet, gehe ich spazieren.",
       "answer": "Obwohl es regnet, gehe ich spazieren.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "أمام المعيق مع الفعل في الآخر نحتاج إلى `Obwohl`. أو نكتب: `Es regnet. Trotzdem gehe ich spazieren.`", "hints": ["هل `trotzdem` أداة ربط تابعة؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "أمام المعيق مع الفعل في الآخر نحتاج إلى `Obwohl`. أو نكتب: `Es regnet. Trotzdem gehe ich spazieren.`", "hints": ["هل `trotzdem` أداة ربط تابعة؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Vor dem Hindernis mit Verb am Ende brauchst du `Obwohl`. Oder: `Es regnet. Trotzdem gehe ich spazieren.`", "hints": ["Ist `trotzdem` ein Subjunktor?"] }
       }
     },

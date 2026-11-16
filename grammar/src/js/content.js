@@ -5,6 +5,8 @@ export function indexContent(raw) {
   const islandById = new Map(islands.map(island => [island.id, island]));
   const lessons = new Map();
   const questions = new Map();
+  const cards = new Map();
+  const lessonStudy = new Map(Object.entries(raw.lessonStudy || {}));
   const byIsland = new Map(islands.map(island => [island.id, []]));
   for (const lesson of raw.lessons) {
     lessons.set(lesson.id, lesson);
@@ -13,6 +15,19 @@ export function indexContent(raw) {
       q.lesson = lesson.id;
       questions.set(q.id, q);
     }
+    const study = lessonStudy.get(lesson.id);
+    if (!study) continue;
+    const id = `apply-${lesson.id}`;
+    questions.set(id, {
+      id, lesson: lesson.id, type: 'mcq', difficulty: 2, answer: 0,
+      options: [study.correct, study.alternative],
+      i18n: {
+        ar: { prompt: study.task.ar, explain: study.ar, hints: [study.hint.ar] },
+        de: { prompt: study.task.de, explain: study.de, hints: [study.hint.de] }
+      }
+    });
+    cards.set(`${lesson.id}-recall`, { id: `${lesson.id}-recall`, lesson: lesson.id, kind: 'recall' });
+    cards.set(`${lesson.id}-apply`, { id: `${lesson.id}-apply`, lesson: lesson.id, kind: 'apply' });
   }
   for (const list of byIsland.values()) list.sort((a, b) => a.order - b.order);
   const route = islands.flatMap(island => byIsland.get(island.id));
@@ -26,6 +41,12 @@ export function indexContent(raw) {
     badgeById: new Map(raw.badges.map(badge => [badge.id, badge])),
     lessons,
     questions,
+    cards,
+    lessonStudy,
+    practiceSets: new Map((raw.practiceSets || []).map(set => [set.id, set])),
+    readings: new Map((raw.readings?.texts || []).map(reading => [reading.id, reading])),
+    glossary: new Map(Object.entries(raw.readings?.glossary || {})),
+    sprachbausteine: new Map((raw.sprachbausteine || []).map(set => [set.id, set])),
     route,
     islandLessons: id => byIsland.get(id) || []
   };

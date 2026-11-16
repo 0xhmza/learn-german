@@ -28,16 +28,16 @@
   "i18n": {
     "ar": {
       "title": "ذكر النتيجة بـ deshalb وأخواتها",
-      "lead": "مع `weil` تبدأ بالسبب في جملة تابعة. أما مع `deshalb` فتذكر السبب أولًا في جملة كاملة، ثم تقول «لذلك» وتذكر النتيجة. هنا يبقى الفعل في الموقع الثاني.",
+      "lead": "تعود `deshalb` على سبب سبق ذكره وتقدّم النتيجة، كما في «تعطّلت الحافلة، لذلك تأخّرنا». إذا بدأت بها الجملة الرئيسية، جاء الفعل المصرّف بعدها مباشرةً.",
       "translation": "أنا مريض. لذلك أبقى في البيت.",
       "steps": [
         { "text": "انطلق من جملة مع weil", "why": "في هذه الجملة تأتي النتيجة أولًا، ثم السبب في جملة تابعة. الآن نعكس الترتيب: السبب أولًا ثم النتيجة." },
-        { "text": "اذكر السبب، ثم ابدأ الجملة التالية بـ deshalb", "why": "`deshalb` ظرف يشغل الموقع الأول وحده، فيأتي الفعل المصرف `bleibe` بعده مباشرة ثم الفاعل `ich`." },
+        { "text": "اذكر السبب، ثم ابدأ الجملة التالية بـ deshalb", "why": "`deshalb` ظرف يشغل الموقع الأول وحده، فيأتي الفعل المصرّف `bleibe` بعده مباشرة ثم الفاعل `ich`." },
         { "text": "يمكن أن يقف deshalb في وسط الجملة", "why": "إذا بدأت بالفاعل وضعت `deshalb` بعد الفعل: `Ich bleibe deshalb zu Hause.` المعنى لا يتغير." },
         { "text": "daher و darum و deswegen لها المعنى نفسه", "why": "الكلمات الأربع تعني «لذلك». `daher` أكثر رسمية، و`darum` و`deswegen` شائعتان في الكلام. ويجوز أن تربطها بالجملة الأولى بفاصلة." }
       ],
       "explain": [
-        "`deshalb` وأخواتها ليست أدوات ربط تابعة، بل ظروف تشير إلى السبب المذكور قبلها. لذلك تبقى الجملة رئيسية ويقف الفعل المصرف في الموقع الثاني.",
+        "`deshalb` وأخواتها ليست أدوات ربط تابعة، بل ظروف تشير إلى السبب المذكور قبلها. لذلك تبقى الجملة رئيسية ويقف الفعل المصرّف في الموقع الثاني.",
         "تذكّر الفرق: `weil` تحمل السبب وترسل الفعل إلى الآخر، و`deshalb` تحمل النتيجة ويبقى الفعل بعدها مباشرة."
       ],
       "pitfall": "`deshalb` تشغل الموقع الأول، فلا مكان للفاعل قبل الفعل. الترتيب الصحيح: `deshalb bleibe ich`.",
@@ -80,7 +80,7 @@
       "text": "Mein Handy ist kaputt. Deshalb {{1}} ich dich nicht anrufen.",
       "blanks": [["kann", "konnte"]],
       "i18n": {
-        "ar": { "prompt": "أكمل بالفعل `können` المصرف.", "explain": "بعد `Deshalb` يأتي الفعل المصرف مباشرة: `kann ich`.", "hints": ["`deshalb` تشغل الموقع الأول."] },
+        "ar": { "prompt": "أكمل بالفعل `können` المصرف.", "explain": "بعد `Deshalb` يأتي الفعل المصرّف مباشرة: `kann ich`.", "hints": ["`deshalb` تشغل الموقع الأول."] },
         "de": { "prompt": "Ergänze die konjugierte Form von `können`.", "explain": "Nach `Deshalb` folgt sofort das konjugierte Verb: `kann ich`.", "hints": ["`deshalb` besetzt Position 1."] }
       }
     },
@@ -98,7 +98,7 @@
       "options": ["Der Laden war zu, darum habe ich nichts gekauft.", "Der Laden war zu, darum ich habe nichts gekauft.", "Der Laden war zu, darum ich nichts gekauft habe."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "بعد `darum` يأتي الفعل المصرف `habe` ثم الفاعل.", "hints": ["`darum` ليست أداة تابعة."] },
+        "ar": { "prompt": "اختر الجملة الصحيحة.", "explain": "بعد `darum` يأتي الفعل المصرّف `habe` ثم الفاعل.", "hints": ["`darum` ليست أداة تابعة."] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Nach `darum` steht das konjugierte Verb `habe`, dann das Subjekt.", "hints": ["`darum` ist kein Subjunktor."] }
       }
     },
@@ -141,7 +141,7 @@
       "context": "Ich bin krank, deshalb ich bleibe zu Hause.",
       "answer": "Ich bin krank, deshalb bleibe ich zu Hause.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`deshalb` تشغل الموقع الأول، فيأتي الفعل `bleibe` بعدها ثم الفاعل `ich`.", "hints": ["كم كلمة تقف قبل الفعل؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "`deshalb` تشغل الموقع الأول، فيأتي الفعل `bleibe` بعدها ثم الفاعل `ich`.", "hints": ["كم كلمة تقف قبل الفعل؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`deshalb` besetzt Position 1. Danach kommen `bleibe` und dann `ich`.", "hints": ["Was steht vor dem Verb?"] }
       }
     },

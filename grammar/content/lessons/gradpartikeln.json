@@ -29,7 +29,7 @@
   "i18n": {
     "ar": {
       "title": "تقوية الصفة وتخفيفها",
-      "lead": "هل كان الفيلم مشوّقًا قليلًا أم كثيرًا أم إلى حد ما؟ الكلمات الصغيرة قبل الصفة تحدد الدرجة بدقة. ستتعلم ترتيبها من الأضعف إلى الأقوى، ومتى تقول `zu` ومتى تقول `viel`.",
+      "lead": "تبيّن كلمات مثل `ziemlich` و`besonders` درجة الصفة. ويمكن لـ `zu` أن تدلّ على تجاوز الحدّ المناسب، بينما تقوّي `viel` درجة المقارنة في تعبير مثل `viel besser`.",
       "translation": "كان الفيلم مشوّقًا إلى حد كبير.",
       "steps": [
         { "text": "ابدأ بالصفة وحدها", "why": "الصفة `spannend` تصف الفيلم، لكنها لا تقول إلى أي درجة كان مشوّقًا." },
@@ -151,7 +151,7 @@
       "context": "Das neue Handy ist sehr besser.",
       "answer": "Das neue Handy ist viel besser.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`besser` صيغة مقارنة، وقبلها نقول `viel` أو `etwas` أو `noch`، لا `sehr`.", "hints": ["ما نوع الصفة `besser`؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "`besser` صيغة مقارنة، وقبلها نقول `viel` أو `etwas` أو `noch`، لا `sehr`.", "hints": ["ما نوع الصفة `besser`؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`besser` ist ein Komparativ. Davor steht `viel`, `etwas` oder `noch`, nicht `sehr`.", "hints": ["Was für eine Form ist `besser`?"] }
       }
     },

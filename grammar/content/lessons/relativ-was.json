@@ -28,12 +28,12 @@
   ],
   "i18n": {
     "ar": {
-      "title": "جملة الوصل بـ was",
-      "lead": "بعد اسم محدد مثل `der Film` تقول `den`. لكن بعد كلمات مثل `alles` و`nichts` و`etwas`، أو حين تشير إلى جملة كاملة، تحتاج إلى `was`. ستتعلم متى تختار `was` بدل `das`.",
+      "title": "جمل الوصل مع `was`",
+      "lead": "تربط `was` جملة الوصل بعبارة مثل `alles`، أو تحيل إلى ما حدث في الجملة السابقة بأكملها. إذا وصفت اسمًا محدّدًا مثل `der Film`، فاختر ضمير الوصل وفق جنسه ودوره داخل الجملة التابعة.",
       "translation": "هذا كل ما أعرفه.",
       "steps": [
         { "text": "تذكّر جملة الوصل العادية", "why": "حين تشير إلى اسم له جنس واضح تختار `der` أو `die` أو `das` بحسب جنسه وحالته. هنا `den Film` مفعول به مذكر." },
-        { "text": "بعد alles و nichts و etwas استعمل was", "why": "هذه الكلمات لا تشير إلى شيء محدد له جنس، لذلك نقول `was`. والفعل المصرف `weiß` يقف في آخر الجملة كما في كل جملة وصل." },
+        { "text": "بعد alles و nichts و etwas استعمل was", "why": "هذه الكلمات لا تشير إلى شيء محدد له جنس، لذلك نقول `was`. والفعل المصرّف `weiß` يقف في آخر الجملة كما في كل جملة وصل." },
         { "text": "بعد صيغة التفضيل المحايدة استعمل was أيضًا", "why": "`das Beste` و`das Schönste` و`das Einzige` تشير إلى شيء عام غير محدد، فتأتي بعدها `was`." },
         { "text": "حين تشير إلى الجملة كلها استعمل was", "why": "هنا لا يفرح الشخص بالامتحان نفسه، بل بخبر النجاح كله. `was` تشير إلى الجملة الرئيسية كاملة، وتأتي بعدها دائمًا." },
         { "text": "مع حرف جر تصبح was كلمة تبدأ بـ wo", "why": "الفعل `sprechen über` يحتاج إلى حرف جر، فتصير `was` كلمة واحدة: `worüber`. وبالمثل `wofür` و`womit`، ومع حرف علة تضاف `r`: `woran` و`worauf`." }
@@ -105,7 +105,7 @@
       "options": ["Er hat mir geholfen, was sehr nett war.", "Er hat mir geholfen, das sehr nett war.", "Er hat mir geholfen, der sehr nett war."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟ المعنى: كانت مساعدته لطيفة جدًا.", "explain": "اللطيف هو الأمر كله، أي أنه ساعدني. لذلك تشير `was` إلى الجملة كاملة.", "hints": ["إلى ماذا تشير جملة الوصل؟"] },
+        "ar": { "prompt": "اختر الجملة الصحيحة. المعنى: كانت مساعدته لطيفة جدًا.", "explain": "اللطيف هو الأمر كله، أي أنه ساعدني. لذلك تشير `was` إلى الجملة كاملة.", "hints": ["إلى ماذا تشير جملة الوصل؟"] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Nett war die ganze Handlung, also bezieht sich `was` auf den ganzen Satz.", "hints": ["Worauf bezieht sich der Relativsatz?"] }
       }
     },
@@ -148,7 +148,7 @@
       "context": "Das ist alles, das ich weiß.",
       "answer": "Das ist alles, was ich weiß.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد `alles` لا يوجد اسم له جنس، فنستعمل `was`.", "hints": ["إلى أي اسم تشير جملة الوصل؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "بعد `alles` لا يوجد اسم له جنس، فنستعمل `was`.", "hints": ["إلى أي اسم تشير جملة الوصل؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Nach `alles` gibt es kein Nomen mit Genus. Deshalb steht `was`.", "hints": ["Auf welches Nomen bezieht sich der Relativsatz?"] }
       }
     },

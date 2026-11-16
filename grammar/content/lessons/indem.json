@@ -28,12 +28,12 @@
   "i18n": {
     "ar": {
       "title": "الوسيلة والطريقة بـ indem",
-      "lead": "كيف توفّر الكهرباء؟ بأن تطفئ الضوء. حين تذكر الوسيلة التي تصل بها إلى هدف تستعمل `indem`، وهي تجيب عن السؤالين `Wie?` و`Wodurch?`.",
+      "lead": "تجيب جملة `indem` عن سؤال «كيف تحقّق ذلك؟» بذكر الوسيلة أو الخطوة العملية. فمثلًا يمكنك توفير الكهرباء بإطفاء الضوء مبكرًا.",
       "translation": "يوفّر المرء الكهرباء بأن يطفئ الضوء.",
       "steps": [
         { "text": "ابدأ بسؤال عن الطريقة", "why": "السؤال `Wie spart man Strom?` يبحث عن وسيلة، لا عن سبب ولا عن وقت." },
-        { "text": "اذكر الهدف، ثم الوسيلة بعد indem", "why": "`indem` أداة ربط تابعة، فيقف الفعل المصرف `ausschaltet` في آخرها، ويلتصق الجزء المنفصل `aus` بالفعل من جديد." },
-        { "text": "يمكن أن تبدأ بالوسيلة", "why": "حين تأتي جملة `indem` أولًا يبدأ ما بعد الفاصلة بالفعل المصرف: `spart man`." },
+        { "text": "اذكر الهدف، ثم الوسيلة بعد indem", "why": "`indem` أداة ربط تابعة، فيقف الفعل المصرّف `ausschaltet` في آخرها، ويلتصق الجزء المنفصل `aus` بالفعل من جديد." },
+        { "text": "يمكن أن تبدأ بالوسيلة", "why": "حين تأتي جملة `indem` أولًا يبدأ ما بعد الفاصلة بالفعل المصرّف: `spart man`." },
         { "text": "البديل الاسمي: durch + اسم", "why": "في الكتابة الرسمية تُقال الوسيلة أحيانًا باسم: `durch das Ausschalten des Lichts`. المعنى نفسه، لكن الأسلوب أثقل." }
       ],
       "explain": [
@@ -41,7 +41,7 @@
         "لا تخلط بين `indem` كلمة واحدة و`in dem` كلمتين. الثانية حرف جر مع ضمير وصل: `das Haus, in dem ich wohne` أي «البيت الذي أسكن فيه»."
       ],
       "pitfall": "`in dem` بكلمتين تعني «الذي … فيه». أما `indem` كلمة واحدة فتعني «بأن، عن طريق».",
-      "recall": ["أجب بـ `indem`: `Wie kann man gesund bleiben?`", "مثلًا `Man bleibt gesund, indem man sich viel bewegt.` الفعل المصرف `bewegt` في الآخر."],
+      "recall": ["أجب بـ `indem`: `Wie kann man gesund bleiben?`", "مثلًا `Man bleibt gesund, indem man sich viel bewegt.` الفعل المصرّف `bewegt` في الآخر."],
       "linkTitles": ["معجم أدوات الربط: indem · grammis", "التعبير عن الوسيلة والهدف · grammis"]
     },
     "de": {
@@ -68,7 +68,7 @@
       "text": "Ich lerne neue Wörter, indem ich Karteikarten {{1}}.",
       "blanks": [["schreibe", "benutze"]],
       "i18n": {
-        "ar": { "prompt": "أكمل بفعل مناسب في المكان الصحيح.", "explain": "بعد `indem` يأتي الفعل المصرف في الآخر، مثل `schreibe` أو `benutze`.", "hints": ["الفاعل `ich`."] },
+        "ar": { "prompt": "أكمل بفعل مناسب في المكان الصحيح.", "explain": "بعد `indem` يأتي الفعل المصرّف في الآخر، مثل `schreibe` أو `benutze`.", "hints": ["الفاعل `ich`."] },
         "de": { "prompt": "Ergänze ein passendes Verb.", "explain": "Nach `indem` steht das konjugierte Verb am Ende, zum Beispiel `schreibe` oder `benutze`.", "hints": ["Das Subjekt ist `ich`."] }
       }
     },
@@ -112,7 +112,7 @@
       "options": ["Das ist die Firma, in der ich arbeite.", "Das ist die Firma, indem ich arbeite.", "Das ist die Firma, indem ich arbeite in."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟ المعنى: «هذه الشركة التي أعمل فيها».", "explain": "هنا نحتاج إلى حرف جر مع ضمير وصل: `in der` لأن `die Firma` مؤنثة. `indem` تعني الوسيلة.", "hints": ["هل الجملة تذكر وسيلة أم مكانًا؟"] },
+        "ar": { "prompt": "اختر الجملة الصحيحة. المعنى: «هذه الشركة التي أعمل فيها».", "explain": "هنا نحتاج إلى حرف جر مع ضمير وصل: `in der` لأن `die Firma` مؤنثة. `indem` تعني الوسيلة.", "hints": ["هل الجملة تذكر وسيلة أم مكانًا؟"] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Hier brauchst du Präposition + Relativpronomen: `in der`, weil `die Firma` feminin ist. `indem` nennt ein Mittel.", "hints": ["Geht es um ein Mittel oder einen Ort?"] }
       }
     },
@@ -129,7 +129,7 @@
       "context": "Das ist das Haus, indem ich wohne.",
       "answer": "Das ist das Haus, in dem ich wohne.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "المقصود «البيت الذي أسكن فيه»، فنحتاج إلى `in dem` بكلمتين: حرف جر وضمير وصل.", "hints": ["هل الجملة تذكر وسيلة؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "المقصود «البيت الذي أسكن فيه»، فنحتاج إلى `in dem` بكلمتين: حرف جر وضمير وصل.", "hints": ["هل الجملة تذكر وسيلة؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Gemeint ist das Haus als Ort. Dafür brauchst du `in dem`: Präposition + Relativpronomen.", "hints": ["Nennt der Satz ein Mittel?"] }
       }
     },
@@ -137,7 +137,7 @@
       "id": "indem-9", "type": "text", "difficulty": 2,
       "answer": "Ich entspanne mich, indem ich im Park spazieren gehe.",
       "i18n": {
-        "ar": { "prompt": "اكتب كيف ترتاح بعد يوم متعب. استعمل `indem`.", "explain": "مثال: `Ich entspanne mich, indem ich im Park spazieren gehe.`", "hints": ["الفعل المصرف في آخر جملة `indem`."] },
+        "ar": { "prompt": "اكتب كيف ترتاح بعد يوم متعب. استعمل `indem`.", "explain": "مثال: `Ich entspanne mich, indem ich im Park spazieren gehe.`", "hints": ["الفعل المصرّف في آخر جملة `indem`."] },
         "de": { "prompt": "Schreib, wie du dich nach einem anstrengenden Tag entspannst. Benutze `indem`.", "explain": "Zum Beispiel: `Ich entspanne mich, indem ich im Park spazieren gehe.`", "hints": ["Das konjugierte Verb steht am Ende des indem-Satzes."] }
       }
     }

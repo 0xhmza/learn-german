@@ -3,7 +3,7 @@
 import { t, num, getLang } from '../i18n/index.js';
 import { localize, lessonTitle, islandName } from '../content.js';
 import { lessonStars, missingPrereqs, visitLesson } from '../engine/progress.js';
-import { esc, de, prose, germanLine, link, button, stars, levelChip, crumbs } from '../components/html.js';
+import { esc, prose, germanLine, link, button, stars, levelChip, crumbs } from '../components/html.js';
 
 let stepCount = 1;
 let lastLesson = '';
@@ -14,11 +14,11 @@ export function title(app, route) {
 
 function renderGlance(lesson) {
   const roles = t('roles');
-  const pattern = `<div><span class="label">${t('formula')}</span><div class="pattern" lang="de">${lesson.pattern.map(token =>
+  const pattern = `<div><span class="label">${t('formula')}</span><div class="pattern" lang="de" dir="ltr">${lesson.pattern.map(token =>
     ['+', ',', '·', '…', '→'].includes(token) ? `<span class="op" aria-hidden="true">${esc(token)}</span>` : `<span class="chip">${esc(token)}</span>`).join('')}</div></div>`;
   const frames = `<div><span class="label">${t('structure')}</span><div class="frames">${lesson.frames.map(frame => `
     <div class="frame"><span class="frame-kind">${t('kinds')[frame.k]}</span>
-      <div class="slots" lang="de">${frame.parts.map(([role, text]) => `<span class="slot ${role}"><b>${esc(text)}</b>${roles[role] ? `<i lang="${getLang()}">${roles[role]}</i>` : ''}</span>`).join('')}</div></div>`).join('')}
+      <div class="slots" lang="de" dir="ltr">${frame.parts.map(([role, text]) => `<span class="slot ${role}"><b>${esc(text)}</b>${roles[role] ? `<i lang="${getLang()}" dir="${getLang() === 'ar' ? 'rtl' : 'ltr'}">${roles[role]}</i>` : ''}</span>`).join('')}</div></div>`).join('')}
     </div></div>
     <p class="frames-hint">${t('framesHint')}</p>`;
   return `<section class="panel glance" aria-labelledby="glance-title">
@@ -29,8 +29,8 @@ function renderGlance(lesson) {
 function wrongRight(pair) {
   const [wrong, right] = String(pair).split(' → ');
   return `<div class="wr" lang="de" dir="ltr">
-    <div class="no"><span class="mark" aria-hidden="true">✗</span><span class="sr-only">${t('wrong')}:</span><span>${esc(wrong)}</span></div>
-    <div class="yes"><span class="mark" aria-hidden="true">✓</span><span class="sr-only">${t('right')}:</span><span>${esc(right)}</span></div></div>`;
+    <div class="no"><span class="mark" aria-hidden="true">✗</span><span class="sr-only" lang="${getLang()}">${t('wrong')}</span><span>${esc(wrong)}</span></div>
+    <div class="yes"><span class="mark" aria-hidden="true">✓</span><span class="sr-only" lang="${getLang()}">${t('right')}</span><span>${esc(right)}</span></div></div>`;
 }
 
 function renderTable([headers, ...rows]) {
@@ -64,6 +64,7 @@ export function render(app, route) {
   }
   if (!app.redrawing && (state.lastLesson !== lesson.id || state.player.at !== lesson.id)) app.store.update(s => visitLesson(s, lesson.id));
   const view = localize(lesson, lang);
+  const study = ctx.lessonStudy.get(lesson.id);
   const island = ctx.islandById.get(lesson.island);
   const siblings = ctx.islandLessons(island.id);
   const position = ctx.route.indexOf(lesson);
@@ -71,6 +72,7 @@ export function render(app, route) {
   const next = ctx.route[position + 1];
   const level = ctx.levelById.get(lesson.level);
   const missing = missingPrereqs(ctx, state, lesson);
+  const sourceTitle = t('sourceLine', '`' + level.book + '`', num(lesson.source.lektion));
   const translation = lang === 'de'
     ? `<span class="tr-label">${t('inArabic')}</span><p lang="ar" dir="rtl">${esc(view.translation)}</p>`
     : `<p>${prose(view.translation)}</p>`;
@@ -81,10 +83,12 @@ export function render(app, route) {
     <section class="lesson-banner ${island.palette}">
       <div class="unit-head"><span class="lesson-emoji" aria-hidden="true">${lesson.emoji}</span>
       <div><span class="lesson-count">${t('lessonOnIsland', num(lesson.order), num(siblings.length))}</span><h1>${prose(view.title)}</h1>
-        <div class="lesson-sub">${lang === 'ar' ? de(lesson.german) : ''} ${levelChip(lesson.level)} ${stars(lessonStars(state, lesson.id))}</div></div></div>
-      ${missing.length ? `<p class="prereq-chip">${t('bestFirst')} ${missing.map(item => `<a href="#lesson/${item.id}">${prose(lessonTitle(item, lang))}</a>`).join('، ')}</p>` : ''}
+        ${lang === 'ar' ? `<p class="lesson-german" lang="de" dir="ltr">${esc(lesson.german)}</p>` : ''}
+        <div class="lesson-sub">${levelChip(lesson.level)} ${stars(lessonStars(state, lesson.id))}</div></div></div>
+      ${missing.length ? `<p class="prereq-chip">${t('bestFirst')} ${missing.map(item => `<a href="#lesson/${item.id}">${prose(lessonTitle(item, lang))}</a>`).join(lang === 'ar' ? '، ' : ', ')}</p>` : ''}
       <p class="lead">${prose(view.lead)}</p>
       <div class="actions">${button('run', t('lessonPractice', num(lesson.questions.length)), 'primary', `data-key="${lesson.id}"`)}
+        ${study ? link(`cards/${lesson.id}`, t('cardsTitle')) : ''}
         ${state.completed[lesson.id] ? `<span class="learned-chip">${t('learnedDone')}</span>` : ''}</div>
     </section>
     ${renderGlance(lesson)}
@@ -111,9 +115,14 @@ export function render(app, route) {
       </div>
     </div>
     ${view.table ? renderTable(view.table) : ''}
+    ${study ? `<section class="panel lesson-depth" aria-labelledby="depth-title">
+      <div><h2 id="depth-title">${t('lessonDepth')}</h2><p>${prose(study[lang])}</p></div>
+      <div><h3>${t('lessonWorked')}</h3>${germanLine(study.correct)}
+        <div class="actions study-actions">${button('run', t('lessonApply'), 'secondary', `data-key="apply-${lesson.id}"`)}</div></div>
+    </section>` : ''}
     ${finishBar(app, lesson, total)}
     <details class="panel sources"><summary>${t('sources')}</summary>
-      <p><strong lang="de" dir="ltr">${esc(t('sourceLine', level.book, num(lesson.source.lektion)))}</strong></p>
+      <p><strong>${prose(sourceTitle)}</strong></p>
       <p>${lesson.source.kind === 'sample' ? t('sourceSample') : t('sourceToc')} ${t('sourceOriginal')}</p>
       <ul>${view.links.map(([label, url]) => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${prose(label)} ↗</a></li>`).join('')}</ul>
     </details>
@@ -154,7 +163,7 @@ export const actions = {
     app.apply([{ kind: 'lessonLearned', lesson: id }]);
     app.rerender();
     document.querySelector('#finish')?.scrollIntoView({ block: 'nearest' });
-    document.querySelector('#finish a')?.focus({ preventScroll: true });
+    document.querySelector('#finish button')?.focus({ preventScroll: true });
   }
 };
 

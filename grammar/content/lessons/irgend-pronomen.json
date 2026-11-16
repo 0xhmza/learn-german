@@ -28,8 +28,8 @@
   ],
   "i18n": {
     "ar": {
-      "title": "irgendwo و irgendwann وأخواتهما",
-      "lead": "تذكر أنك قرأت شيئًا، لكن لا تذكر أين. في الألمانية تضع `irgend-` قبل كلمة السؤال: `irgendwo` «في مكان ما»، و`irgendwann` «في وقت ما». هذه الكلمات شائعة جدًا في الكلام اليومي.",
+      "title": "التعبير عن مكان أو وقت أو شخص غير محدّد",
+      "lead": "استعمل `irgendwo` لمكان غير محدّد، و`irgendwann` لوقت غير محدّد. تساعدك كلمة السؤال (`Wo?` أو `Wann?`) على تذكّر ما تشير إليه كل صيغة.",
       "translation": "قرأتُ ذلك في مكان ما.",
       "steps": [
         { "text": "ابدأ بشيء لا تعرفه بدقة", "why": "السؤال `Wo?` ينتظر مكانًا، لكنك لا تعرفه. الكلمة `irgend-` تقول «لا أعرف بالضبط، ولا يهم كثيرًا»." },
@@ -131,7 +131,7 @@
       "options": ["Ich brauche irgendein Ladekabel.", "Ich brauche irgendwas Ladekabel.", "Ich brauche irgendwer Ladekabel."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟ تحتاج إلى أي سلك شحن، لا يهم أيّه.", "explain": "قبل اسم نستعمل `irgendein` مع نهاية الأداة. أما `irgendwas` و`irgendwer` فتقفان وحدهما.", "hints": ["هل يأتي بعد الكلمة اسم؟"] },
+        "ar": { "prompt": "اختر الجملة الصحيحة. تحتاج إلى أي سلك شحن، لا يهم أيّه.", "explain": "قبل اسم نستعمل `irgendein` مع نهاية الأداة. أما `irgendwas` و`irgendwer` فتقفان وحدهما.", "hints": ["هل يأتي بعد الكلمة اسم؟"] },
         "de": { "prompt": "Welcher Satz ist richtig? Dir ist egal, welches Ladekabel.", "explain": "Vor einem Nomen steht `irgendein` mit Artikelendung. `irgendwas` und `irgendwer` stehen allein.", "hints": ["Folgt ein Nomen?"] }
       }
     },
@@ -148,7 +148,7 @@
       "context": "Ich habe das irgendwie im Internet gelesen.",
       "answer": "Ich habe das irgendwo im Internet gelesen.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "المجهول هو المكان في الإنترنت، لا الطريقة. فالصحيح `irgendwo`.", "hints": ["مكان أم طريقة؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "المجهول هو المكان في الإنترنت، لا الطريقة. فالصحيح `irgendwo`.", "hints": ["مكان أم طريقة؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Unbekannt ist der Ort im Internet, nicht die Art und Weise. Richtig ist `irgendwo`.", "hints": ["Ort oder Art und Weise?"] }
       }
     },

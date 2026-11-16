@@ -3,7 +3,7 @@
 import { t, num, getLang } from '../i18n/index.js';
 import { lessonTitle, islandName } from '../content.js';
 import { RANKS } from '../engine/gamification.js';
-import { esc } from './html.js';
+import { esc, prose } from './html.js';
 
 const MAX_VISIBLE = 3;
 const VISIBLE_MS = 4000;
@@ -34,7 +34,7 @@ export function createToaster(region) {
       const { icon, text, kind } = queue.shift();
       const item = document.createElement('div');
       item.className = `toast ${kind}`;
-      item.innerHTML = `<span class="toast-icon" aria-hidden="true">${esc(icon)}</span><span class="toast-text">${esc(text)}</span>
+      item.innerHTML = `<span class="toast-icon" aria-hidden="true">${esc(icon)}</span><span class="toast-text">${prose(text)}</span>
         <button type="button" class="toast-close" aria-label="${esc(t('dismiss'))}">×</button>`;
       const remove = () => {
         clearTimeout(timer);

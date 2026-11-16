@@ -63,7 +63,8 @@ export function nextLesson(ctx, state, filter = state.settings?.levelFilter || '
 export function pendingErrors(ctx, state, filter = 'all') {
   return ctx.route
     .filter(lesson => inFilter(lesson, filter))
-    .flatMap(lesson => lesson.questions.filter(q => state.results[q.id]?.needsReview).map(q => q.id));
+    .flatMap(lesson => [...lesson.questions.map(q => q.id), `apply-${lesson.id}`])
+    .filter(id => state.results[id]?.needsReview);
 }
 
 export function missingPrereqs(ctx, state, lesson) {

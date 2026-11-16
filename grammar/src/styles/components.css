@@ -41,3 +41,8 @@
 .sand { background: var(--t-sand); }
 .coral { background: var(--t-coral); }
 .teal { background: var(--t-teal); }
+
+@media (max-width: 560px) {
+  .units { grid-template-columns: 1fr; }
+  .lesson-emoji { width: 42px; height: 42px; }
+}

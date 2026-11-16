@@ -9,7 +9,7 @@ import { overall } from './engine/progress.js';
 import { renderHud } from './components/hud.js';
 import { renderIndex } from './components/sidebar.js';
 import { createToaster, describeNotes } from './components/toast.js';
-import { esc } from './components/html.js';
+import { esc, plainText, prose } from './components/html.js';
 import * as home from './views/home.js';
 import * as island from './views/island.js';
 import * as lesson from './views/lesson.js';
@@ -17,9 +17,12 @@ import * as practice from './views/practice.js';
 import * as quiz from './views/quiz.js';
 import * as progress from './views/progress.js';
 import * as settings from './views/settings.js';
+import * as readings from './views/readings.js';
+import * as sprachbausteine from './views/sprachbausteine.js';
+import * as cards from './views/cards.js';
 import { goToRun } from './views/practice.js';
 
-const views = { home, island, lesson, practice, quiz, progress, settings };
+const views = { home, island, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards };
 // Actions available on every page.
 const globalActions = {
   run: (app, target) => goToRun(app, target.dataset.key)
@@ -60,6 +63,7 @@ function applyChrome() {
   root.lang = lang;
   root.dir = lang === 'ar' ? 'rtl' : 'ltr';
   for (const el of document.querySelectorAll('[data-t]')) el.textContent = t(el.dataset.t);
+  for (const el of document.querySelectorAll('[data-t-prose]')) el.innerHTML = prose(t(el.dataset.tProse));
   for (const el of document.querySelectorAll('[data-t-aria]')) el.setAttribute('aria-label', t(el.dataset.tAria));
   for (const el of document.querySelectorAll('[data-t-ph]')) el.placeholder = t(el.dataset.tPh);
   for (const el of document.querySelectorAll('[data-t-title]')) el.title = t(el.dataset.tTitle);
@@ -82,7 +86,8 @@ async function boot() {
   try {
     raw = await loadContent();
   } catch (error) {
-    content.innerHTML = `<section class="panel"><h1>Grammatikinseln</h1><p>Die Inhalte konnten nicht geladen werden. Starte den Server mit <code>npm start</code> im Ordner <code>grammar</code> oder öffne die gebaute Datei <code>dist/Deutsch-Grammatik-B1.html</code>.</p><p lang="ar" dir="rtl">تعذّر تحميل المحتوى. شغّل الخادم بالأمر npm start داخل مجلد grammar أو افتح الملف dist/Deutsch-Grammatik-B1.html.</p><p><small>${esc(error.message)}</small></p></section>`;
+    applyChrome();
+    content.innerHTML = `<section class="panel"><h1>${t('loadErrorTitle')}</h1><p>${prose(t('loadErrorHelp'))}</p><p><small dir="auto">${esc(error.message)}</small></p></section>`;
     return;
   }
   const ctx = indexContent(raw);
@@ -168,7 +173,7 @@ async function boot() {
     if (route.tab === 'settings') $('#settings-link').setAttribute('aria-current', 'page');
     else $('#settings-link').removeAttribute('aria-current');
     content.innerHTML = view.render(app, route);
-    document.title = view.title ? `${view.title(app, route)} · ${t('brand')}` : t('docTitle');
+    document.title = view.title ? `${plainText(view.title(app, route))} · ${t('brand')}` : t('docTitle');
     cleanup = view.mount?.(app, content, route) || null;
     drawChrome();
     if (!initial) {
@@ -183,7 +188,7 @@ async function boot() {
   if (!store.available) notice.push(t('storageOff'));
   if (store.migrated) notice.push(t('migrated'));
   if (notice.length) {
-    $('#notice-slot').innerHTML = notice.map(text => `<p class="notice dismissible">${esc(text)} <button type="button" class="btn quiet" data-dismiss>${esc(t('dismiss'))}</button></p>`).join('');
+    $('#notice-slot').innerHTML = notice.map(text => `<p class="notice dismissible">${prose(text)} <button type="button" class="btn quiet" data-dismiss>${esc(t('dismiss'))}</button></p>`).join('');
     $('#notice-slot').addEventListener('click', event => event.target.closest('[data-dismiss]')?.parentElement.remove());
   }
 

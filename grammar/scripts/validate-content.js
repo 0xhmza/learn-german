@@ -3,6 +3,7 @@
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { assembleContent } from './assemble-content.js';
+import { readingWords } from '../src/js/reading-words.js';
 
 const LANGS = ['ar', 'de'];
 const FRAME_KINDS = new Set(['main', 'sub', 'rel', 'inf', 'np']);
@@ -25,6 +26,7 @@ export function validateContent(content) {
     if (!Array.isArray(list) || list.length < min || list.length > max) return fail(where, `needs ${min}–${max} entries`);
     list.forEach((value, i) => text(`${where}[${i}]`, value));
   };
+  const bilingual = (where, value) => LANGS.forEach(lang => text(`${where}.${lang}`, value?.[lang]));
   const table = (where, rows) => {
     if (rows === undefined || rows === null) return;
     if (!Array.isArray(rows) || rows.length < 2) return fail(where, 'table needs a header and at least one row');
@@ -185,6 +187,109 @@ export function validateContent(content) {
     state.set(id, 'done');
   };
   for (const id of lessons.keys()) visit(id, []);
+
+  const study = content.lessonStudy || {};
+  for (const id of Object.keys(study)) if (!lessons.has(id)) fail('lessonStudy', `unknown lesson ${id}`);
+  for (const id of lessons.keys()) {
+    const where = `lessonStudy.${id}`;
+    const entry = study[id];
+    if (!entry) { fail(where, 'missing'); continue; }
+    bilingual(where, entry);
+    bilingual(`${where}.task`, entry.task);
+    bilingual(`${where}.hint`, entry.hint);
+    text(`${where}.correct`, entry.correct);
+    text(`${where}.alternative`, entry.alternative);
+    if (entry.correct === entry.alternative) fail(where, 'examples must be distinct');
+  }
+
+  const validateItem = (where, item, ids) => {
+    if (!ID.test(item.id || '') || ids.has(item.id)) fail(where, 'invalid or duplicate id');
+    ids.add(item.id);
+    bilingual(`${where}.title`, item.title);
+    bilingual(`${where}.summary`, item.summary);
+  };
+  const lessonRefs = (where, ids, min) => {
+    if (!Array.isArray(ids) || ids.length < min || new Set(ids).size !== ids.length || ids.some(id => !lessons.has(id))) {
+      fail(where, `needs at least ${min} distinct lesson ids`);
+    }
+  };
+
+  const practiceSetIds = new Set();
+  const setCoverage = new Set();
+  for (const set of content.practiceSets || []) {
+    const where = `practice set ${set.id}`;
+    validateItem(where, set, practiceSetIds);
+    if (!set.id?.startsWith('set-')) fail(where, 'id must start with set-');
+    lessonRefs(`${where}.lessons`, set.lessons, 2);
+    if (Array.isArray(set.lessons)) for (const id of set.lessons) setCoverage.add(id);
+    if (!Array.isArray(set.additionalQuestions) || new Set(set.additionalQuestions).size !== set.additionalQuestions.length) {
+      fail(where, 'additional questions must be a list of distinct ids');
+    } else {
+      for (const id of set.additionalQuestions) if (!questionIds.has(id)) fail(where, `unknown question ${id}`);
+    }
+  }
+  for (const id of lessons.keys()) if (!setCoverage.has(id)) fail('practice sets', `no set covers ${id}`);
+
+  const readingIds = new Set();
+  const glossary = new Map(Object.entries(content.readings?.glossary || {}));
+  for (const [word, gloss] of glossary) text(`glossary.${word}`, gloss);
+  for (const reading of content.readings?.texts || []) {
+    const where = `reading ${reading.id}`;
+    validateItem(where, reading, readingIds);
+    lessonRefs(`${where}.lessons`, reading.lessons, 2);
+    let words = 0;
+    const paragraphs = Array.isArray(reading.paragraphs) ? reading.paragraphs : [];
+    for (const [i, paragraph] of paragraphs.entries()) {
+      bilingual(`${where}.paragraphs[${i}]`, paragraph);
+      if (!isText(paragraph.de)) continue;
+      for (const part of readingWords(paragraph.de, glossary)) {
+        if (part.gloss !== undefined) {
+          words++;
+          text(`${where} gloss for ${part.text}`, part.gloss);
+          if (!/\p{Script=Arabic}/u.test(part.gloss)) fail(where, `missing Arabic meaning for ${part.text}`);
+        } else if (/[{}]/.test(part.text)) fail(where, 'malformed word annotation');
+      }
+    }
+    if (words < 190) fail(where, 'needs at least 190 German words');
+    const checks = Array.isArray(reading.checks) ? reading.checks : [];
+    if (checks.length < 2) fail(where, 'needs at least two comprehension checks');
+    for (const [i, check] of checks.entries()) {
+      bilingual(`${where}.checks[${i}].prompt`, check.prompt);
+      bilingual(`${where}.checks[${i}].answer`, check.answer);
+    }
+  }
+  if (readingIds.size < 3) fail('readings', 'needs at least three B1 texts');
+
+  const sprachIds = new Set();
+  const formats = new Map([[1, new Set()], [2, new Set()]]);
+  for (const set of content.sprachbausteine || []) {
+    const where = `Sprachbausteine ${set.id}`;
+    validateItem(where, set, sprachIds);
+    if (![1, 2, 3].includes(set.difficulty)) fail(where, 'unknown difficulty');
+    formats.get(set.bank ? 2 : 1).add(set.difficulty);
+    textList(`${where}.paragraphs`, set.paragraphs, 2);
+    const paragraphs = Array.isArray(set.paragraphs) ? set.paragraphs : [];
+    const marks = [...paragraphs.join('\n').matchAll(/\{(\d+)\}/g)].map(match => Number(match[1]));
+    if (marks.join() !== '1,2,3,4,5,6,7,8,9,10') fail(where, 'must use {1} through {10} once, in order');
+    if (!Array.isArray(set.gaps) || set.gaps.length !== 10) { fail(where, 'needs exactly ten gaps'); continue; }
+    if (set.bank) {
+      textList(`${where}.bank`, set.bank, 15, 15);
+      if (!Array.isArray(set.bank) || new Set(set.bank).size !== 15 || new Set(set.gaps.map(gap => gap.answer)).size !== 10) fail(where, 'bank entries and answers must be distinct');
+    }
+    for (const [i, gap] of set.gaps.entries()) {
+      const at = `${where}.gaps[${i}]`;
+      text(`${at}.answer`, gap.answer);
+      bilingual(`${at}.explain`, gap.explain);
+      if (gap.lesson && !lessons.has(gap.lesson)) fail(at, `unknown lesson ${gap.lesson}`);
+      const options = set.bank || gap.options;
+      if (!set.bank) {
+        textList(`${at}.options`, options, 3, 3);
+        if (Array.isArray(options) && new Set(options).size !== 3) fail(at, 'choices must be distinct');
+      }
+      if (!Array.isArray(options) || !options.includes(gap.answer)) fail(at, 'answer is missing from choices');
+    }
+  }
+  for (const [part, difficulties] of formats) if (difficulties.size < 2) fail('Sprachbausteine', `part ${part} needs multiple difficulties`);
   return errors;
 }
 
@@ -197,6 +302,6 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     console.error(`\n${errors.length} problem(s) in ${content.lessons.length} lessons.`);
     process.exitCode = 1;
   } else {
-    console.log(`✓ ${content.islands.length} islands, ${content.lessons.length} lessons, ${questionCount} questions. Content version ${content.version}.`);
+    console.log(`✓ ${content.islands.length} islands, ${content.lessons.length} lessons, ${questionCount} core questions and ${Object.keys(content.lessonStudy).length} extra questions, ${content.practiceSets.length} practice sets, ${content.readings.texts.length} readings, ${content.sprachbausteine.length} Sprachbausteine sets. Content version ${content.version}.`);
   }
 }

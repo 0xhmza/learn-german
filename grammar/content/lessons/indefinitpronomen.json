@@ -29,7 +29,7 @@
   "i18n": {
     "ar": {
       "title": "ضمائر غير محددة تحلّ محل الاسم",
-      "lead": "حين يسألك أحد «هل عندك قلم؟» لا تحتاج إلى تكرار كلمة القلم في الجواب. تكفي كلمة واحدة تحمل نهاية الأداة. ستتعلّم كيف تختار هذه الكلمة بحسب الجنس والعدد والحالة.",
+      "lead": "إذا سُئلت عمّا إذا كان لديك قلم، يمكنك أن تجيب بـ `Ja, ich habe einen`. يحلّ `einen` محل الاسم ويعبّر وحده عن جنسه وحالته النحوية.",
       "translation": "هل عندك قلم؟ – نعم، عندي واحد.",
       "steps": [
         { "text": "حدّد الاسم الذي لا تريد تكراره", "why": "الاسم هو `Parkplatz`، وهو مذكر ومفعول به في حالة `Akkusativ`، لذلك جاءت الأداة `einen`. هذه المعلومات الثلاث هي ما ستحمله الكلمة البديلة." },
@@ -128,7 +128,7 @@
       "options": ["Ich habe mit einem aus dem Kurs gesprochen.", "Ich habe mit einen aus dem Kurs gesprochen.", "Ich habe mit ein aus dem Kurs gesprochen."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟ المقصود: «تكلمت مع واحد من الدورة».", "explain": "حرف الجر `mit` يطلب `Dativ`، والمذكر في `Dativ` هو `einem`.", "hints": ["أي حالة يطلبها `mit`؟"] },
+        "ar": { "prompt": "اختر الجملة الصحيحة. المقصود: «تكلمت مع واحد من الدورة».", "explain": "حرف الجر `mit` يطلب `Dativ`، والمذكر في `Dativ` هو `einem`.", "hints": ["أي حالة يطلبها `mit`؟"] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "`mit` verlangt den Dativ. Maskulin im Dativ heißt `einem`.", "hints": ["Welchen Kasus verlangt `mit`?"] }
       }
     },
@@ -145,7 +145,7 @@
       "context": "Das ist ein von meinen Kollegen.",
       "answer": "Das ist einer von meinen Kollegen.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "الضمير يقف وحده دون اسم، فيحتاج إلى النهاية الكاملة للمذكر في `Nominativ`: `einer`.", "hints": ["هل يأتي بعد الضمير اسم؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "الضمير يقف وحده دون اسم، فيحتاج إلى النهاية الكاملة للمذكر في `Nominativ`: `einer`.", "hints": ["هل يأتي بعد الضمير اسم؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Das Pronomen steht ohne Nomen und braucht die volle Endung für maskulin im Nominativ: `einer`.", "hints": ["Folgt dem Pronomen ein Nomen?"] }
       }
     },

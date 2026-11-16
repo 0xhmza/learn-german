@@ -22,7 +22,7 @@ export function renderTrail({ ctx, state }, island) {
           <strong>${prose(lessonTitle(lesson, lang))}</strong>
           <span class="node-meta"><span class="de-name" lang="de" dir="ltr">${esc(lesson.german)}</span>${levelChip(lesson.level)}</span>
           ${stars(count)}
-          ${missing.length ? `<span class="prereq-chip">${t('bestFirst')} ${missing.map(item => prose(lessonTitle(item, lang))).join('، ')}</span>` : ''}
+          ${missing.length ? `<span class="prereq-chip">${t('bestFirst')} ${missing.map(item => prose(lessonTitle(item, lang))).join(lang === 'ar' ? '، ' : ', ')}</span>` : ''}
         </span>
       </a>
     </li>`;

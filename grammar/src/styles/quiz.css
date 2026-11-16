@@ -12,7 +12,8 @@ select { width: 100%; min-height: 44px; }
 .quiz-type { display: inline-block; border-radius: 99px; background: var(--brand-soft); color: var(--brand-ink); padding: 3px 12px; font-size: 12px; font-weight: 700; margin: 13px 0 8px; }
 .quiz-prompt { font-size: clamp(19px, 2.1vw, 23px); line-height: 1.6; text-wrap: pretty; margin-bottom: 16px; }
 .quiz-controls { margin-top: 16px; }
-.choices { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
+.choices { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; min-inline-size: 0; }
+.option > span { min-inline-size: 0; overflow-wrap: anywhere; }
 .option { display: flex; align-items: baseline; gap: 10px; padding: 11px 13px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; transition: border-color .15s, background-color .15s; }
 .option:hover { border-color: var(--line-strong); }
 .option:has(input:checked) { border-color: var(--brand); background: var(--brand-soft); }
@@ -53,3 +54,10 @@ textarea { width: 100%; display: block; min-height: 110px; resize: vertical; lin
 .result-row p { margin-top: 4px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .noscript { padding: 20px; background: var(--surface); }
+
+@media (max-width: 560px) {
+  .launcher { grid-template-columns: minmax(0, 1fr); }
+  .stats { gap: 6px; }
+  .stat { padding: 9px 10px; }
+  .stat strong { font-size: 20px; }
+}

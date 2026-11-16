@@ -1,0 +1,353 @@
+{
+  "glossary": {
+    "ich": "أنا",
+    "du": "أنت",
+    "er": "هو",
+    "sie": "هي أو هم بحسب الفعل",
+    "wir": "نحن",
+    "ihr": "أنتم",
+    "man": "المرء، وتُستخدم للتعميم",
+    "mich": "إيّاي أو نفسي بحسب الفعل",
+    "mir": "لي أو إليّ",
+    "uns": "لنا أو إيّانا بحسب الفعل",
+    "sich": "ضمير انعكاسي يعود على الفاعل",
+    "ihm": "له أو إليه",
+    "ihnen": "لهم أو إليهم",
+    "ihre": "لها أو لهم بحسب السياق",
+    "der": "أداة تعريف؛ وقد تأتي ضمير وصل",
+    "den": "أداة تعريف في النصب أو في جمع الداتيف",
+    "dem": "أداة تعريف في حالة الداتيف",
+    "des": "أداة تعريف في حالة المضاف إليه",
+    "die": "أداة تعريف للمؤنث أو الجمع؛ وقد تأتي ضمير وصل",
+    "das": "أداة تعريف للمحايد؛ وقد تأتي اسم إشارة أو ضميرًا",
+    "ein": "أداة نكرة للمذكر أو المحايد",
+    "eine": "أداة نكرة للمؤنث",
+    "einer": "أداة نكرة مؤنثة هنا بحسب الحالة",
+    "einem": "أداة نكرة للمذكر أو المحايد في حالة الداتيف",
+    "einen": "أداة نكرة للمذكر في حالة النصب",
+    "eines": "أداة نكرة للمذكر أو المحايد في حالة المضاف إليه",
+    "mein": "لي، وتدلّ على الملكية",
+    "meine": "لي، وتدلّ على الملكية",
+    "meiner": "لي، صيغة المؤنث في الداتيف أو المضاف إليه",
+    "sein": "يكون، أو أداة ملكية بمعنى له",
+    "ist": "يكون أو يكون عليه الحال",
+    "sind": "يكونون، أو فعل مساعد في الماضي المركّب",
+    "war": "كان",
+    "kann": "يستطيع أو يمكنه",
+    "waren": "كانوا، أو فعل مساعد في الماضي الأسبق",
+    "hat": "لديه، أو فعل مساعد في الماضي المركّب",
+    "habe": "لديّ، أو فعل مساعد في الماضي المركّب",
+    "haben": "لديهم، أو فعل مساعد في الماضي المركّب",
+    "hatte": "كان لديه، أو فعل مساعد في الماضي الأسبق",
+    "hatten": "كان لديهم، أو فعل مساعد في الماضي الأسبق",
+    "wird": "فعل مساعد في المبني للمجهول أو المستقبل، وقد يعني يصبح",
+    "wurde": "فعل مساعد للمبني للمجهول في الماضي هنا",
+    "wurden": "فعل مساعد للمبني للمجهول في الماضي مع الجمع",
+    "werden": "يصبحون، أو فعل مساعد في المجهول أو المستقبل",
+    "und": "و",
+    "oder": "أو",
+    "aber": "لكن",
+    "weil": "لأنّ",
+    "dass": "أنّ",
+    "ob": "ما إذا",
+    "als": "عندما في سياق حادثة ماضية، أو من في المقارنة",
+    "nachdem": "بعد أن",
+    "bevor": "قبل أن",
+    "bis": "إلى أن، أو حتى",
+    "seit": "منذ",
+    "seitdem": "منذ أن",
+    "obwohl": "مع أنّ",
+    "trotzdem": "ومع ذلك",
+    "deshalb": "لذلك",
+    "damit": "لكي",
+    "indem": "عن طريق، أو بأنْ",
+    "wenn": "إذا، أو عندما",
+    "falls": "في حال",
+    "sonst": "وإلّا",
+    "auch": "أيضًا",
+    "noch": "ما زال أو بعد",
+    "nur": "فقط",
+    "nicht": "أداة نفي بمعنى لا أو لم",
+    "kein": "أداة نفي للاسم بمعنى لا يوجد أو ليس هناك",
+    "keine": "أداة نفي للمؤنث أو الجمع",
+    "keinen": "أداة نفي للمذكر في حالة النصب",
+    "schon": "بالفعل أو من قبل",
+    "erst": "ليس قبل، أو للتوّ بحسب السياق",
+    "jetzt": "الآن",
+    "heute": "اليوم",
+    "gestern": "أمس",
+    "morgen": "غدًا",
+    "dann": "ثمّ أو حينئذٍ",
+    "danach": "بعد ذلك",
+    "dort": "هناك",
+    "hier": "هنا",
+    "immer": "دائمًا",
+    "oft": "غالبًا",
+    "sehr": "جدًّا",
+    "viele": "كثيرون أو كثيرة",
+    "etwas": "شيء ما أو قليلًا",
+    "nichts": "لا شيء",
+    "mehr": "أكثر",
+    "wieder": "مجدّدًا",
+    "zusammen": "معًا",
+    "zurück": "إلى الخلف أو عودةً",
+    "an": "عند أو على",
+    "auf": "على أو إلى",
+    "aus": "من، أي من الداخل إلى الخارج",
+    "bei": "عند أو لدى",
+    "für": "لأجل أو لـ",
+    "gegen": "ضدّ أو نحو وقت تقريبي",
+    "in": "في أو إلى",
+    "im": "في، اختصار حرف الجر in وأداة التعريف dem",
+    "am": "عند أو في، اختصار حرف الجر an وأداة التعريف dem",
+    "mit": "مع أو بواسطة",
+    "nach": "بعد أو إلى في سياق وجهة",
+    "neben": "بجانب",
+    "ohne": "من دون",
+    "über": "عن أو فوق",
+    "unter": "تحت أو بين",
+    "vor": "قبل أو أمام",
+    "von": "من أو عن",
+    "zum": "إلى، اختصار حرف الجر zu وأداة التعريف dem",
+    "zur": "إلى، اختصار حرف الجر zu وأداة التعريف der",
+    "zu": "إلى، أو علامة تسبق المصدر",
+    "es": "هو للمحايد، أو ضمير شكلي بحسب الجملة",
+    "so": "هكذا أو إلى هذا الحدّ",
+    "was": "ماذا، أو ضمير وصل يحيل إلى فكرة أو جملة",
+    "wie": "كيف أو مثل",
+    "wo": "أين أو حيث",
+    "wer": "مَن",
+    "ja": "نعم",
+    "viel": "كثيرًا",
+    "fast": "تقريبًا أو كاد",
+    "etwa": "نحو أو حوالي",
+    "also": "إذًا",
+    "dabei": "أثناء ذلك، أو معه بحسب السياق",
+    "alle": "الجميع أو كلّ",
+    "alles": "كلّ شيء",
+    "andere": "آخرون أو أشياء أخرى",
+    "beide": "كلاهما",
+    "manche": "بعضهم",
+    "jeden": "كلّ، مع الاسم المذكر في النصب",
+    "jedes": "كلّ، مع الاسم المحايد",
+    "einige": "بعض",
+    "euer": "لكم",
+    "unser": "لنا",
+    "unsere": "لنا",
+    "unserem": "لنا، صيغة المذكر أو المحايد في الداتيف",
+    "dein": "لكَ أو لكِ",
+    "deine": "لكَ أو لكِ"
+  },
+  "texts": [
+    {
+      "id": "reparaturcafe",
+      "title": {
+        "ar": "أشياء تجد حياةً ثانية",
+        "de": "Eine zweite Chance für alte Dinge"
+      },
+      "summary": {
+        "ar": "قصة زيارة إلى ورشةٍ في الحي تساعد الناس على إصلاح أغراضهم.",
+        "de": "Ein Besuch in einer Nachbarschaftswerkstatt, in der alte Dinge repariert werden."
+      },
+      "paragraphs": [
+        {
+          "de": "Am Samstag{السبت} wollte{أرادت} Aylin{أيلين، اسم علم} ihren{الخاص بها} kaputten{المعطّل} Toaster{محمّصة الخبز} wegwerfen{ترمي}. Ihre{الخاصة بها} Nachbarin{جارة} erzählte{أخبرت} ihr{إيّاها} jedoch{لكن} von einem Reparaturcafé{لقاء تطوّعي لإصلاح الأغراض}, das einmal{مرة واحدة} im Monat{الشهر} in der alten{القديمة} Schule{المدرسة} stattfindet{يُقام}. Dort helfen{يساعد} Freiwillige{متطوّعون} den Besuchern{الزوّار} dabei, Geräte{أجهزة} selbst{بأنفسهم} zu reparieren{يصلحوا}. Aylin{أيلين} war neugierig{فضولية}, obwohl sie noch nie{قطّ مع النفي} ein Gerät{جهازًا} geöffnet{فتحت} hatte.",
+          "ar": "أرادت أيلين يوم السبت أن ترمي محمّصة الخبز المعطّلة، لكن جارتها أخبرتها عن لقاء تطوّعي للإصلاح يُقام مرة في الشهر في المدرسة القديمة. يساعد المتطوّعون الزوّار هناك على إصلاح أجهزتهم بأنفسهم. أثار هذا فضول أيلين مع أنها لم تفتح جهازًا من قبل."
+        },
+        {
+          "de": "Nachdem sie den Toaster{المحمّصة} in eine Tasche{حقيبة} gepackt{وضعت} hatte, ging{ذهبت} sie zur Schule{المدرسة}. Vor dem Eingang{المدخل} standen{وقف} bereits{بالفعل} mehrere{عدّة} Leute{أشخاص}, die auf einen freien{شاغر} Platz{مكان} warteten{انتظروا}. Ein Mann{رجل}, dessen{الذي يملك، ضمير وصل للملكية} Lampe{مصباح} nicht mehr leuchtete{كان يضيء}, bot{عرض} ihr{عليها} einen Kaffee{قهوة} an{عرض · الجزء المنفصل من anbieten}. Sie unterhielten{تحدّثا} sich, bis sie an der Reihe{الدور · في عبارة an der Reihe sein} waren.",
+          "ar": "بعدما وضعت أيلين المحمّصة في حقيبة، ذهبت إلى المدرسة. كان عدّة أشخاص ينتظرون مكانًا شاغرًا أمام المدخل. عرض عليها رجل تعطّل مصباحه قهوةً. تحدّثا إلى أن حان دورهما."
+        },
+        {
+          "de": "In der Werkstatt{الورشة} wurde ihr{لها} zuerst{أولًا} erklärt{شُرح}, wie man das Gehäuse{الغلاف الخارجي للجهاز} sicher{بأمان} öffnet{يفتح}. Aylin{أيلين} fand{وجدت} den Fehler{العطل}, indem sie mit einer Helferin{متطوّعة تساعدها} jedes Kabel{سلك} prüfte{فحصت}. Ein kleines{صغير} Teil{جزء} musste{كان لا بدّ أن} ausgetauscht{يُستبدل} werden{يكمل صيغة المبني للمجهول}. Glücklicherweise{لحسن الحظّ} hatte die Helferin{المتطوّعة} ein passendes{ملائم} Ersatzteil{قطعة غيار} in ihrer{الخاصة بها} Kiste{صندوق}. Als der Toaster{المحمّصة} wieder funktionierte{اشتغلت}, freute{فرحت} sich Aylin{أيلين} so sehr, dass sie für alle Kuchen{كعكًا} holen{تحضر} wollte{أرادت}.",
+          "ar": "في الورشة شُرح لها أولًا كيف تفتح غلاف الجهاز بأمان. اكتشفت العطل بفحص كل سلك بمساعدة متطوّعة. كان لا بدّ من استبدال قطعة صغيرة. ولحسن الحظّ، كانت لدى المتطوّعة قطعة غيار مناسبة في صندوقها. وحين عادت المحمّصة إلى العمل، فرحت أيلين إلى درجة أنها أرادت إحضار كعك للجميع."
+        },
+        {
+          "de": "Auf dem Heimweg{طريق العودة إلى المنزل} dachte{فكّرت} sie darüber{في ذلك} nach{الجزء المنفصل من nachdenken: يفكّر}, wie viel sie an diesem{هذا} Nachmittag{بعد الظهر} gelernt{تعلّمت} hatte. Statt{بدلًا من} sofort{فورًا} etwas Neues{شيئًا جديدًا} zu kaufen{تشتري}, will{تنوي} sie künftig{مستقبلًا} genauer{بدقّة أكبر} ansehen{تفحص}, was sich noch retten{تنقذ أو تصلح} lässt{يمكن، في تركيب sich lassen}. Beim{أثناء، اختصار bei dem} nächsten{المقبل} Treffen{لقاء} möchte{تودّ} sie selbst{بنفسها} mithelfen{تشارك في المساعدة}. Sie kann{تستطيع} zwar{صحيح أنّ … لكن} keine Lampen{مصابيح} reparieren{تصلح}, aber sie kann gut{جيّدًا} organisieren{تنظّم} und neue{جديدة} Besucher{زوّار} begrüßen{ترحّب بهم}.",
+          "ar": "في طريق العودة إلى المنزل، فكّرت في مقدار ما تعلّمته ذلك اليوم. قرّرت أن تفحص مستقبلًا ما يمكن إنقاذه قبل أن تشتري شيئًا جديدًا. وتودّ أن تشارك في المساعدة في اللقاء القادم. صحيح أنها لا تُصلح المصابيح، لكنها تجيد التنظيم ويمكنها الترحيب بالزوّار الجدد."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": {
+            "ar": "لماذا تراجعت أيلين عن رمي المحمّصة؟",
+            "de": "Warum warf Aylin den Toaster nicht weg?"
+          },
+          "answer": {
+            "ar": "أخبرتها جارتها عن لقاء للإصلاح، وتمكّنت أيلين هناك من إعادة المحمّصة إلى العمل بمساعدة متطوّعة.",
+            "de": "Ihre Nachbarin erzählte ihr vom Reparaturcafé. Dort machte Aylin den Toaster mit Hilfe einer Freiwilligen wieder funktionsfähig."
+          }
+        },
+        {
+          "prompt": {
+            "ar": "كيف عثرت على العطل؟ أجب بجملة تبدأ بـ `indem`.",
+            "de": "Wie fand sie den Fehler? Antworte mit einem `indem`-Satz."
+          },
+          "answer": {
+            "ar": "`Indem sie mit einer Helferin jedes Kabel prüfte, fand sie den Fehler.` تأتي `prüfte` في آخر الجملة التابعة.",
+            "de": "`Indem sie mit einer Helferin jedes Kabel prüfte, fand sie den Fehler.` Das finite Verb `prüfte` steht im Nebensatz am Ende."
+          }
+        },
+        {
+          "prompt": {
+            "ar": "ما الذي تستطيع أيلين تقديمه في اللقاء المقبل؟",
+            "de": "Was kann Aylin beim nächsten Treffen beitragen?"
+          },
+          "answer": {
+            "ar": "تستطيع التنظيم والترحيب بالزوّار الجدد.",
+            "de": "Sie kann organisieren und neue Besucher begrüßen."
+          }
+        }
+      ],
+      "lessons": [
+        "nachdem",
+        "relativ-genitiv",
+        "indem",
+        "passiv-modal",
+        "statt-zu",
+        "obwohl"
+      ]
+    },
+    {
+      "id": "rad-zur-arbeit",
+      "title": {
+        "ar": "أسبوع من الذهاب إلى العمل بالدراجة",
+        "de": "Eine Woche mit dem Rad zur Arbeit"
+      },
+      "summary": {
+        "ar": "موظّف يجرّب طريقًا جديدًا ويوازن بين الوقت والراحة.",
+        "de": "Ein Berufstätiger probiert einen neuen Arbeitsweg aus und vergleicht Zeit und Komfort."
+      },
+      "paragraphs": [
+        {
+          "de": "Seitdem Omar{عمر، اسم علم} in einem anderen{آخر} Stadtteil{حيّ من المدينة} wohnt{يسكن}, braucht{يحتاج} er für den Weg{الطريق} zur Arbeit{العمل} fast eine Stunde{ساعة}. Normalerweise{عادةً} fährt{يذهب بمركبة} er mit dem Bus{الحافلة}. Anfang{في بداية} Mai{مايو} schlug{اقترحت} ihm eine Kollegin{زميلة} vor{الجزء المنفصل من vorschlagen: يقترح}, eine Woche{أسبوعًا} lang{طوال هذه المدّة} das Fahrrad{الدراجة} zu nehmen{يستخدم}. Omar{عمر} war unsicher{متردّدًا}, weil es auf dem direkten{المباشر} Weg{الطريق} viel Verkehr{ازدحام مروري} gibt{يوجد · مع es}. Die Kollegin{الزميلة} zeigte{أرت} ihm deshalb eine ruhigere{أهدأ} Strecke{مسارًا}, die{التي، ضمير وصل مؤنث} am Fluss{النهر} entlangführt{تمتدّ بمحاذاته}.",
+          "ar": "منذ أن انتقل عمر إلى حيّ آخر، صار يحتاج إلى نحو ساعة للوصول إلى عمله. وهو يذهب عادةً بالحافلة. وفي أوائل مايو اقترحت عليه زميلة أن يجرّب الدراجة لمدة أسبوع. تردّد عمر لكثافة حركة المرور على الطريق المباشر، فأرته الزميلة مسارًا أهدأ بمحاذاة النهر."
+        },
+        {
+          "de": "Am ersten{الأوّل} Morgen{صباح} fuhr{انطلق بالدراجة} er früher{أبكر من المعتاد} los{الجزء المنفصل من losfahren: ينطلق}, damit er Zeit{وقتًا} für eine Pause{استراحة} hatte. Die ersten{الأولى} Kilometer{كيلومترات} waren anstrengender{أشدّ إرهاقًا} als gedacht{مما توقّع · في als gedacht}, denn{لأنّ} es ging{كان الطريق يتّجه} bergauf{صعودًا}. Danach wurde{أصبح} es leichter{أسهل}. An der Brücke{الجسر} hielt{توقّف} er kurz{قليلًا} an{الجزء المنفصل من anhalten: يتوقّف} und sah{رأى} zwei{اثنين} Enten{بطّتين} auf dem Wasser{الماء}. Obwohl er langsam{ببطء} gefahren{سار بالدراجة} war, kam{وصل} er zehn{عشر} Minuten{دقائق} vor Beginn{بدء} der Arbeitszeit{الدوام} an{الجزء المنفصل من ankommen: يصل}.",
+          "ar": "في صباح اليوم الأول، انطلق أبكر من المعتاد ليترك لنفسه وقتًا للاستراحة. كانت الكيلومترات الأولى أشقّ مما توقّع لأن الطريق كان صاعدًا، ثم صار أسهل. توقّف قليلًا عند الجسر ورأى بطّتين في الماء. وعلى الرغم من بطء سيره، وصل قبل بدء الدوام بعشر دقائق."
+        },
+        {
+          "de": "Am Mittwoch{الأربعاء} regnete{هطل المطر} es stark{بغزارة}. Omar{عمر} hatte keine passende{ملائمة} Jacke{سترة} dabei{معه} und wurde{أصبح} auf dem letzten{الأخير} Stück{جزء من الطريق} nass{مبتلًّا}. Trotzdem wollte{أراد} er den Versuch{التجربة} nicht abbrechen{يوقف}. Er lieh{استعار} sich von seinem{الخاص به} Bruder{أخ} eine Regenjacke{سترة واقية من المطر}. Falls das Wetter{الطقس} noch schlechter{أسوأ} werden{يصبح} sollte{في حال حدث ذلك}, konnte{كان بوسعه} er das Rad{الدراجة} am Bahnhof{محطة القطار} stehen{تظلّ في مكانها} lassen{يترك} und mit der Bahn{القطار} weiterfahren{يواصل رحلته}. Zum Glück{لحسن الحظّ، في عبارة zum Glück} brauchte{احتاج} er das nicht zu tun{يفعل}.",
+          "ar": "هطل المطر بغزارة يوم الأربعاء. لم تكن مع عمر سترة مناسبة فابتلّ في الجزء الأخير من الطريق. ومع ذلك أراد مواصلة التجربة، فاستعار سترة واقية من المطر من أخيه. وإذا ساء الطقس أكثر، كان يمكنه ترك الدراجة عند محطة القطار ومواصلة الرحلة بالقطار. ولحسن الحظّ لم يحتج إلى ذلك."
+        },
+        {
+          "de": "Am Ende{النهاية} der Woche{الأسبوع} verglich{قارن} Omar{عمر} seine{الخاصة به} Fahrzeiten{أوقات التنقّل}. Mit dem Rad{الدراجة} war er meistens{في معظم الأحيان} schneller{أسرع} unterwegs{في الطريق}. Außerdem{إضافةً إلى ذلك} fühlte{شعر} er sich nach der Fahrt{الرحلة} wacher{أكثر يقظةً}. Im Winter{الشتاء} wird er wahrscheinlich{على الأرجح} wieder öfter{أكثر تكرارًا} den Bus{الحافلة} nehmen{يستقلّ}, aber solange{ما دام} es morgens{في الصباح} hell{مضيئًا} ist, möchte{يرغب} er mindestens{على الأقل} dreimal{ثلاث مرّات} pro{في كلّ} Woche{أسبوع} mit dem Rad{الدراجة} fahren{يذهب}.",
+          "ar": "في نهاية الأسبوع، قارن عمر أوقات تنقّله. كانت الدراجة أسرع في معظم الأحيان، وكان يشعر بعد الرحلة بأنه أكثر يقظة. وفي الشتاء سيعود إلى ركوب الحافلة غالبًا، لكنه يرغب في الذهاب بالدراجة ثلاث مرات أسبوعيًا على الأقل ما دام الصباح مضيئًا."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": {
+            "ar": "لماذا اختار عمر المسار المحاذي للنهر؟",
+            "de": "Warum wählte Omar den Weg am Fluss?"
+          },
+          "answer": {
+            "ar": "أراد تجنّب حركة المرور الكثيفة على الطريق المباشر. وكان مسار النهر أهدأ.",
+            "de": "Auf dem direkten Weg gab es viel Verkehr. Der Weg am Fluss war ruhiger."
+          }
+        },
+        {
+          "prompt": {
+            "ar": "حوّل جملة `Obwohl er langsam gefahren war, kam er früh an` إلى جملتين باستعمال `trotzdem`.",
+            "de": "Formuliere `Obwohl er langsam gefahren war, kam er früh an` mit `trotzdem` als zwei Hauptsätze."
+          },
+          "answer": {
+            "ar": "`Er war langsam gefahren. Trotzdem kam er früh an.` يأتي `kam` مباشرة بعد `Trotzdem`.",
+            "de": "`Er war langsam gefahren. Trotzdem kam er früh an.` Das finite Verb `kam` folgt direkt auf `Trotzdem`."
+          }
+        },
+        {
+          "prompt": {
+            "ar": "ماذا كان سيفعل عند محطة القطار لو ساء الطقس؟",
+            "de": "Was war sein Plan bei noch schlechterem Wetter?"
+          },
+          "answer": {
+            "ar": "كان بوسعه ترك الدراجة عند المحطة ومواصلة الرحلة بالقطار.",
+            "de": "Er konnte das Rad am Bahnhof stehen lassen und mit der Bahn weiterfahren."
+          }
+        }
+      ],
+      "lessons": [
+        "seit-waehrend",
+        "komparativ",
+        "lokale-praep",
+        "obwohl",
+        "trotzdem",
+        "falls",
+        "lassen",
+        "futur1"
+      ]
+    },
+    {
+      "id": "nachbarschaft",
+      "title": {
+        "ar": "مائدة تجمع الجيران",
+        "de": "Ein Abendessen für die Nachbarschaft"
+      },
+      "summary": {
+        "ar": "سكّان بناية يتشاركون الطعام ويتعلّمون تنظيم لقاء يناسب الجميع.",
+        "de": "Die Menschen eines Hauses teilen Essen und lernen, ein Treffen für alle zu organisieren."
+      },
+      "paragraphs": [
+        {
+          "de": "In unserem Haus{البناية التي نسكنها} wohnen{يسكن} zwölf{اثنتا عشرة} Familien{عائلة}. Lange{لفترة طويلة} kannten{كانوا يعرفون} sich die meisten{الأغلبية} nur vom{من، اختصار von dem} Sehen{الرؤية · في vom Sehen kennen: يعرفه شكلًا}. Das hat sich geändert{تغيّر}, seit eine Familie{عائلة} aus dem dritten{الثالث} Stock{طابق} alle Nachbarn{الجيران} zum Essen{تناول الطعام} eingeladen{دعت} hat. Statt{بدلًا من} einen großen{كبيرًا} Tisch{طاولة} in ihrer{الخاصة بها} Wohnung{الشقة} aufzustellen{تنصب}, schlug{اقترحت} sie vor{الجزء المنفصل من vorschlagen: يقترح}, im Hof{الفناء} zu essen{يأكلوا}. Dort gab{كان هناك · مع es} es genug{ما يكفي} Platz{مساحة} für Tische{طاولات} und Stühle{كراسٍ}.",
+          "ar": "في بنايتنا اثنتا عشرة عائلة. ولم يكن معظم السكّان يعرف بعضهم بعضًا إلا بالشكل. تغيّر ذلك منذ أن دعت عائلة من الطابق الثالث جميع الجيران إلى الطعام. وبدلًا من وضع طاولة كبيرة في شقّتها، اقترحت أن يأكلوا في الفناء، حيث توجد مساحة كافية للطاولات والكراسي."
+        },
+        {
+          "de": "Bevor das Treffen{اللقاء} angekündigt{أُعلن عنه} wurde, fragten{سأل} die Organisatoren{المنظّمون} die Nachbarn{الجيران}, wann{متى} sie Zeit{وقتًا} hätten{يتوفّر لديهم · في سؤال غير مباشر}. Eine ältere{أكبر سنًّا} Bewohnerin{إحدى ساكنات البناية}, der{التي · ضمير وصل في الداتيف} Treppen{السلالم} schwerfallen{تشقّ عليها}, wollte{أرادت} auch dabei{حاضرة} sein{تكون}. Deshalb wurde ein Tisch{طاولة} direkt{مباشرةً} neben den Eingang{المدخل} gestellt{وُضعت}. Auf dem Zettel{الورقة} im Flur{الممرّ} stand{كان مكتوبًا}, dass man etwas mitbringen{يحضر معه} kann{يستطيع}, aber nicht muss{عليه · فعل يدلّ على الوجوب}. So konnten{تمكّن} auch Leute{أشخاص} ohne Zeit{وقت} zum Kochen{الطبخ} teilnehmen{يشاركوا}.",
+          "ar": "قبل الإعلان عن اللقاء، سأل المنظّمون الجيران عن الوقت المناسب لهم. أرادت إحدى الساكنات الأكبر سنًّا المشاركة أيضًا، وكان صعود السلالم يشقّ عليها. لذلك وُضعت طاولة بجانب المدخل مباشرةً. وكُتب على الورقة في الممرّ أن بإمكان المشاركين إحضار شيء معهم إن أرادوا. وهكذا أمكن لمن لا وقت لديهم للطبخ أن يشاركوا أيضًا."
+        },
+        {
+          "de": "Am Abend{المساء} standen{كانت موضوعة} nicht nur Salate{سلطات} und Brot{خبز} auf dem Tisch{الطاولة}, sondern{بل · مع nicht nur} auch warme{ساخنة} Gerichte{أطباق}. Weil manche Kinder{أطفال} bestimmte{محدّدة} Lebensmittel{مواد غذائية} nicht vertragen{لا يتحمّلونها عند الأكل}, wurden die wichtigsten{الأهمّ} Zutaten{المكوّنات} auf kleine{صغيرة} Karten{بطاقات} geschrieben{كُتبت}. Jelena{يلينا، اسم علم} brachte{أحضرت} eine Suppe{حساءً} mit{الجزء المنفصل من mitbringen: يحضر معه}, deren{الذي تعود إليه، ضمير وصل للملكية} Rezept{وصفة} sie von ihrem{الخاص بها} Vater{أبيها} gelernt{تعلّمت} hatte. Je{كلّما، مع desto} später{أكثر تأخّرًا} es wurde{أصبح الوقت}, desto{ازداد، الجزء الثاني من je … desto} lebhafter{أكثر حيويةً} wurden{أصبحت} die Gespräche{الأحاديث}. Sogar{حتى} Nachbarn{جيران}, die sich vorher{سابقًا} kaum{بالكاد} gegrüßt{سلّموا على بعضهم} hatten, unterhielten{تحدّثوا} sich eine ganze{كاملة} Stunde{ساعة}.",
+          "ar": "في المساء، كانت على الطاولة سلطات وخبز وأطباق ساخنة أيضًا. ولأن بعض الأطفال لا يتحمّلون أطعمة معيّنة، كُتبت أهمّ المكوّنات على بطاقات صغيرة. أحضرت يلينا حساءً تعلّمت وصفته من أبيها. وكلّما تأخّر الوقت، ازدادت الأحاديث حيويةً. وتحاور ساعةً كاملةً حتى الجيران الذين كانوا يتبادلون التحية بالكاد من قبل."
+        },
+        {
+          "de": "Wenn das Wetter{الطقس} schlechter{أسوأ} gewesen{كان، اسم المفعول من sein} wäre{لكان، فعل مساعد لافتراض مخالف للماضي}, hätten{لكان لديهم، أو فعل مساعد لافتراض مخالف للماضي} alle in den Keller{القبو} gehen{يذهبوا} müssen{يضطرّوا}. Zum Glück{لحسن الحظّ، في عبارة zum Glück} blieb{ظلّ} es trocken{من دون مطر}. Nach dem Aufräumen{الترتيب والتنظيف} beschlossen{قرّر} die Nachbarn{الجيران}, sich einmal{مرّة واحدة} im Monat{الشهر} zu treffen{يلتقوا}. Beim{في أثناء، اختصار bei dem} nächsten{القادم} Mal{مرّة} soll{من المقرّر أن} es eine Tauschbörse{لقاء لتبادل الأغراض} geben{يكون · مع es}. Wer alte{قديمة} Bücher{كتبًا}, Kleidung{ملابس} oder Spielsachen{ألعابًا} hat, kann sie mitbringen{يحضرها معه} und gegen etwas anderes{آخر} tauschen{يقايض}.",
+          "ar": "لو كان الطقس أسوأ، لاضطرّ الجميع إلى النزول إلى القبو. ولحسن الحظّ، لم تمطر. وبعد الترتيب والتنظيف، قرّر الجيران أن يجتمعوا مرّةً في الشهر. ومن المقرّر أن يقيموا المرّة القادمة لقاءً لتبادل الأغراض. فمن لديه كتب قديمة أو ملابس أو ألعاب يمكنه إحضارها ومبادلتها بشيء آخر."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": {
+            "ar": "لماذا وُضعت طاولة بجانب المدخل؟",
+            "de": "Warum stand ein Tisch neben dem Eingang?"
+          },
+          "answer": {
+            "ar": "لتسهيل المشاركة على إحدى الساكنات التي يشقّ عليها صعود السلالم.",
+            "de": "Damit eine Bewohnerin, der Treppen schwerfallen, leichter teilnehmen konnte."
+          }
+        },
+        {
+          "prompt": {
+            "ar": "ما الفرق بين `der` في `der Treppen schwerfallen` و`deren` في `deren Rezept`؟",
+            "de": "Worin unterscheiden sich `der` in `der Treppen schwerfallen` und `deren` in `deren Rezept`?"
+          },
+          "answer": {
+            "ar": "`der` تعود على الساكنة في حالة `Dativ` لأن الفعل يتعدّى بهذه الحالة. و`deren` تدلّ على أنّ الوصفة تخصّ الحساء المذكور.",
+            "de": "`der` bezieht sich im Dativ auf die Bewohnerin, weil `schwerfallen` ein Dativobjekt verlangt. `deren` zeigt, dass es um das Rezept der Suppe geht."
+          }
+        },
+        {
+          "prompt": {
+            "ar": "ماذا كان سيحدث لو ساء الطقس؟ وما الخطة للّقاء القادم؟",
+            "de": "Was wäre bei schlechtem Wetter passiert, und was ist für das nächste Treffen geplant?"
+          },
+          "answer": {
+            "ar": "كان الجميع سيضطرّون إلى النزول إلى القبو. وفي اللقاء القادم يتبادل الجيران أغراضهم.",
+            "de": "Alle hätten in den Keller gehen müssen. Für das nächste Treffen ist eine Tauschbörse geplant."
+          }
+        }
+      ],
+      "lessons": [
+        "statt-zu",
+        "relativ-dativ",
+        "relativ-genitiv",
+        "doppelkonjunktionen",
+        "je-desto",
+        "konjunktiv2-vergangenheit-modal",
+        "verben-als-nomen"
+      ]
+    }
+  ]
+}

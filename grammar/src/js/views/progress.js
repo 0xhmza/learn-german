@@ -4,7 +4,7 @@ import { lessonTitle, islandName } from '../content.js';
 import { overall, pendingErrors, islandProgress, lessonStars } from '../engine/progress.js';
 import { levelFor } from '../engine/gamification.js';
 import { addDays, diffDays } from '../dates.js';
-import { esc, prose, link, button, stars, meter, formatDay } from '../components/html.js';
+import { esc, plainText, prose, link, button, stars, meter, formatDay } from '../components/html.js';
 import { downloadBackup } from './settings.js';
 
 export const title = () => t('tabProgress');
@@ -23,7 +23,7 @@ function calendar(state, day) {
     return `<span class="cal-cell l${level(xp)}" role="img" aria-label="${esc(label)}" title="${esc(label)}"></span>`;
   }).join('');
   return `<section class="panel"><h2>${t('calendar')}</h2>
-    <div class="calendar" dir="ltr">${cells}</div>
+    <div class="calendar">${cells}</div>
     <div class="cal-legend" aria-hidden="true"><span>${t('less')}</span>${[0, 1, 2, 3, 4].map(n => `<span class="cal-cell l${n}"></span>`).join('')}<span>${t('more')}</span></div></section>`;
 }
 
@@ -46,7 +46,7 @@ export function render(app) {
       <ul class="stat-list">${ctx.islandLessons(island.id).map(lesson => {
         const known = lesson.questions.filter(q => state.results[q.id]?.correct).length;
         return `<li class="row-between"><a href="#lesson/${lesson.id}">${prose(lessonTitle(lesson, lang))}</a>${stars(lessonStars(state, lesson.id), 14)}
-          <span>${t('of', num(known), num(lesson.questions.length))}</span>${meter(known, lesson.questions.length, t('rightIn', lessonTitle(lesson, lang)))}</li>`;
+          <span>${t('of', num(known), num(lesson.questions.length))}</span>${meter(known, lesson.questions.length, t('rightIn', plainText(lessonTitle(lesson, lang))))}</li>`;
       }).join('')}</ul></details>`;
   }).join('');
   return `

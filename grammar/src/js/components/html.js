@@ -3,6 +3,7 @@
 import { getLang, t, num } from '../i18n/index.js';
 
 export const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+export const plainText = value => value.replaceAll('`', '');
 export const de = value => `<bdi lang="de" dir="ltr">${esc(value)}</bdi>`;
 export const ar = value => `<span lang="ar" dir="rtl">${esc(value)}</span>`;
 export const germanLine = value => `<div class="de" lang="de" dir="ltr">${esc(value)}</div>`;
@@ -42,4 +43,4 @@ export function formatDay(day, options = { day: 'numeric', month: 'long', year: 
 }
 
 export const crumbs = items => `<nav class="crumb" aria-label="${t('crumbLabel')}">${items.map(([href, label], i) =>
-  (i ? `<span aria-hidden="true">${t('sep')}</span>` : '') + (href ? `<a href="#${href}">${label}</a>` : `<span>${label}</span>`)).join('')}</nav>`;
+  (i ? `<span dir="ltr" aria-hidden="true">${t('sep')}</span>` : '') + (href ? `<a href="#${href}">${label}</a>` : `<span>${label}</span>`)).join('')}</nav>`;

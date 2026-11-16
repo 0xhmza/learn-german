@@ -5,7 +5,7 @@ import { inFilter, lessonTitle, islandName } from '../content.js';
 import { islandProgress, pendingErrors } from '../engine/progress.js';
 import { newRun, examSize, TEST_MINUTES } from '../engine/runs.js';
 import { dueIds } from '../engine/srs.js';
-import { esc, link, button } from '../components/html.js';
+import { esc, link, button, plainText, prose } from '../components/html.js';
 
 export const title = () => t('practice');
 
@@ -37,7 +37,7 @@ export function render(app) {
     const count = lessons.reduce((sum, lesson) => sum + lesson.questions.length, 0);
     return `<optgroup label="${esc(`${island.emoji} ${islandName(island, lang)}`)}">
       <option value="island-${island.id}">${esc(t('islandOpt', num(count)))}</option>
-      ${lessons.map(lesson => `<option value="${lesson.id}">${esc(lessonTitle(lesson, lang))} · ${num(lesson.questions.length)}</option>`).join('')}</optgroup>`;
+      ${lessons.map(lesson => `<option value="${lesson.id}">${esc(plainText(lessonTitle(lesson, lang)))} · ${num(lesson.questions.length)}</option>`).join('')}</optgroup>`;
   }).join('');
   const exams = ctx.islands.map(island => {
     const p = islandProgress(ctx, state, island.id);
@@ -53,6 +53,9 @@ export function render(app) {
   }).join('');
   return `
     <section class="simple-banner practice-head"><h1>${t('practiceTitle')}</h1><p>${t('practiceText')}</p></section>
+    <nav class="study-grid study-entry" aria-label="${t('studyTools')}">
+      ${[['sprachbausteine', 'sprachTitle', 'sprachSummary'], ['readings', 'readingsTitle', 'readingsIntro'], ['cards', 'cardsTitle', 'cardsIntro']].map(([route, heading, description]) => `<a class="panel study-tile" href="#${route}"><h2>${prose(t(heading))}</h2><p>${prose(t(description))}</p></a>`).join('')}
+    </nav>
     <div class="launcher">
       <section class="panel"><h2>${t('byTopic')}</h2>
         <p>${t('byTopicText')}</p>
@@ -72,8 +75,12 @@ export function render(app) {
       <section class="panel"><h2>${t('mistakes')}</h2><p>${mistakes ? t('mistakesN', num(mistakes)) : t('mistakesNone')}</p>
         ${mistakes ? button('run', t('practiceMistakes'), 'secondary', 'data-key="mistakes"') : ''}
       </section>
-      <section class="panel exams-panel"><h2>${t('examsTitle')}</h2><p>${t('examsText')}</p><ul class="exam-list">${exams}</ul></section>
-    </div>`;
+    </div>
+    <div class="section-heading" id="practice-sets"><h2>${t('crossPractice')}</h2><p>${t('crossPracticeIntro')}</p></div>
+    <div class="study-grid">${[...ctx.practiceSets.values()].map(set => `<article class="panel study-tile">
+      <h3>${prose(set.title[lang])}</h3><p>${prose(set.summary[lang])}</p><p class="study-meta">${t('lessonsN', set.lessons.length)}</p>
+      ${button('run', t(state.runs[set.id] && !state.runs[set.id].finished ? 'resumeRun' : 'launch'), 'secondary', `data-key="${set.id}"`)}</article>`).join('')}</div>
+    <section class="panel exams-panel study-followup"><h2>${t('examsTitle')}</h2><p>${t('examsText')}</p><ul class="exam-list">${exams}</ul></section>`;
 }
 
 export const actions = {

@@ -28,7 +28,7 @@
   "i18n": {
     "ar": {
       "title": "بعد أن: nachdem وتتابع الأزمنة",
-      "lead": "`nachdem` تعني «بعد أن». لها قاعدة خاصة: الجملة التي تبدأ بها تكون في زمن أقدم بدرجة من الجملة الرئيسية. ستتعلم الزوجين المعتادين من الأزمنة.",
+      "lead": "تقدّم `nachdem` الحدث الذي حصل أولًا. وفي سياق ماضٍ، نستخدم غالبًا الماضي الأسبق في الجملة التابعة لتوضيح ترتيب الحدثين.",
       "translation": "بعد أن أكلتُ خرجتُ للنزهة.",
       "steps": [
         { "text": "رتّب الحدثين", "why": "الأكل أولًا، ثم النزهة. `nachdem` تقف أمام الحدث الأول." },
@@ -139,7 +139,7 @@
       "context": "Nachdem ich aß, ging ich spazieren.",
       "answer": "Nachdem ich gegessen hatte, ging ich spazieren.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "الجملة الرئيسية في `Präteritum`، فجملة `nachdem` تكون أقدم بدرجة: `Plusquamperfekt`.", "hints": ["ما الزمن الأقدم من `Präteritum`؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "الجملة الرئيسية في `Präteritum`، فجملة `nachdem` تكون أقدم بدرجة: `Plusquamperfekt`.", "hints": ["ما الزمن الأقدم من `Präteritum`؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Der Hauptsatz steht im Präteritum, also braucht der nachdem-Satz das Plusquamperfekt.", "hints": ["Welche Zeit liegt vor dem Präteritum?"] }
       }
     },

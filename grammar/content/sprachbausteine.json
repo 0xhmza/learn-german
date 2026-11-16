@@ -1,0 +1,535 @@
+[
+  {
+    "id": "bibliothek",
+    "difficulty": 1,
+    "title": {
+      "ar": "رسالة عن اشتراك المكتبة",
+      "de": "Ein Ausweis für die Bibliothek"
+    },
+    "summary": {
+      "ar": "رسالة إلى صديق عن التسجيل في المكتبة. تدرّب على أدوات الربط وترتيب الأفعال والضمائر.",
+      "de": "Eine Nachricht über die Anmeldung in der Bibliothek. Übe Konnektoren, Verbformen und Pronomen."
+    },
+    "paragraphs": [
+      "Lieber Ben,",
+      "am Samstag bin ich in die Stadtbibliothek gegangen, {1} ich einen Ausweis brauchte. Der Eingang, {2} sich neben der Bushaltestelle befindet, wurde gerade renoviert. {3} mussten alle Besucher den Seiteneingang benutzen.",
+      "Am Schalter erklärte mir eine Mitarbeiterin, dass ich das Anmeldeformular zuerst {4} muss. Danach {5} mein Ausweis sofort gedruckt. Ich brauchte zum Glück kein Passfoto {6}. Im zweiten Stock fand ich einen ruhigen Platz, an {7} man auch mit dem Laptop arbeiten kann.",
+      "Die Bibliothek ist {8} größer als früher, aber ich habe mich schnell zurechtgefunden. Ich habe drei Bücher ausgeliehen, {9} ich in den Ferien lesen möchte. Wenn du am Samstag Zeit hast, {10} wir zusammen hingehen. Ich zeige dir dann auch den kleinen Garten hinter dem Gebäude.",
+      "Viele Grüße\nJan"
+    ],
+    "gaps": [
+      {
+        "answer": "weil",
+        "options": [
+          "weil",
+          "deshalb",
+          "denn"
+        ],
+        "explain": {
+          "ar": "`weil` تقدّم سبب الزيارة، والفعل `brauchte` في آخر الجملة التابعة.",
+          "de": "`weil` nennt den Grund, und `brauchte` steht am Ende des Nebensatzes."
+        },
+        "lesson": "kausal-da-weil"
+      },
+      {
+        "answer": "der",
+        "options": [
+          "den",
+          "dem",
+          "der"
+        ],
+        "explain": {
+          "ar": "المدخل مذكّر وهو فاعل `sich befindet`، لذا نستخدم `der`.",
+          "de": "`Eingang` ist maskulin, das Relativpronomen ist Subjekt zu `sich befindet`."
+        }
+      },
+      {
+        "answer": "Deshalb",
+        "options": [
+          "Obwohl",
+          "Deshalb",
+          "Weil"
+        ],
+        "explain": {
+          "ar": "يذكر الإصلاح سبب استخدام المدخل الجانبي. وبعد `Deshalb` يأتي الفعل `mussten` في الموقع الثاني.",
+          "de": "Die Renovierung ist der Grund. Nach `Deshalb` steht `mussten` an Position zwei."
+        },
+        "lesson": "deshalb-daher"
+      },
+      {
+        "answer": "ausfüllen",
+        "options": [
+          "ausfüllen",
+          "ausgefüllt",
+          "fülle aus"
+        ],
+        "explain": {
+          "ar": "يأتي المصدر من دون `zu` مع الفعل الناقص `muss`.",
+          "de": "Nach dem Modalverb steht der Infinitiv ohne `zu`."
+        },
+        "lesson": "infinitiv-zu"
+      },
+      {
+        "answer": "wurde",
+        "options": [
+          "hat",
+          "wird",
+          "wurde"
+        ],
+        "explain": {
+          "ar": "`wurde gedruckt` يصف إجراءً وقع في الماضي بصيغة المبني للمجهول.",
+          "de": "`wurde gedruckt` ist Vorgangspassiv im Präteritum."
+        },
+        "lesson": "passiv-perfekt"
+      },
+      {
+        "answer": "mitzubringen",
+        "options": [
+          "zu mitbringen",
+          "mitzubringen",
+          "mitgebracht"
+        ],
+        "explain": {
+          "ar": "في مصدر `mitbringen` القابل للانفصال تُوضع `zu` بين `mit` و`bringen` وتُكتب الصيغة كاملةً `mitzubringen`.",
+          "de": "Beim trennbaren `mitbringen` steht `zu` zwischen Vorsilbe und Stamm: `mitzubringen`."
+        },
+        "lesson": "brauchen"
+      },
+      {
+        "answer": "dem",
+        "options": [
+          "dem",
+          "den",
+          "der"
+        ],
+        "explain": {
+          "ar": "العمل يحصل في المكان دون حركة نحوه، فنقول `an dem Platz` بصيغة `Dativ`.",
+          "de": "Es geht um einen Ort, also Dativ: `an dem Platz`."
+        },
+        "lesson": "relativ-praep"
+      },
+      {
+        "answer": "viel",
+        "options": [
+          "viele",
+          "viel",
+          "vieles"
+        ],
+        "explain": {
+          "ar": "`viel` تقوّي المقارنة `größer` وتبقى بلا نهاية.",
+          "de": "`viel` verstärkt den Komparativ `größer` und bleibt ungebeugt."
+        },
+        "lesson": "gradpartikeln"
+      },
+      {
+        "answer": "die",
+        "options": [
+          "denen",
+          "der",
+          "die"
+        ],
+        "explain": {
+          "ar": "الضمير يعود على كتب بصيغة الجمع وهو مفعول مباشر لـ `lesen`، لذا نستخدم `die`.",
+          "de": "Das Bezugswort `Bücher` steht im Plural. Das Relativpronomen ist Akkusativobjekt zu `lesen`."
+        }
+      },
+      {
+        "answer": "können",
+        "options": [
+          "können",
+          "kann",
+          "könnt"
+        ],
+        "explain": {
+          "ar": "الفاعل `wir` يتطلّب `können`، ويأتي الفعل مباشرة بعد جملة الشرط الأولى.",
+          "de": "Zu `wir` gehört `können`. Das Verb folgt direkt auf den vorangestellten Nebensatz."
+        },
+        "lesson": "falls"
+      }
+    ]
+  },
+  {
+    "id": "zugreise",
+    "difficulty": 3,
+    "title": {
+      "ar": "رحلة بالقطار تغيّرت خططها",
+      "de": "Eine Zugreise mit Planänderung"
+    },
+    "summary": {
+      "ar": "رسالة عن تعطل رحلة إلى مؤتمر. تدرّب على الماضي الأسبق، والشرط غير الواقعي، والمبني للمجهول.",
+      "de": "Ein Brief über eine Reise mit Zugausfall. Übe Vorzeitigkeit, irreale Bedingungen und Passiv."
+    },
+    "paragraphs": [
+      "Liebe Selin,",
+      "unsere Reise zur Tagung war ziemlich chaotisch. Nachdem wir am Bahnhof angekommen {1}, erfuhren wir, dass unser Zug wegen {2} Sturms ausfiel. Eine Frau, {3} Reisetasche noch im Zug lag, musste mit dem Personal sprechen.",
+      "Wenn wir die Nachricht früher gelesen {4}, wären wir direkt zum Busbahnhof gefahren. Dort mussten aber erst alle Koffer kontrolliert {5}. {6} es draußen inzwischen kalt war, blieben viele Reisende am Bahnsteig.",
+      "Unsere neue Verbindung war sogar {7} als die ursprüngliche. Allerdings kamen wir so spät an, {8} wir den ersten Vortrag verpassten. Zum Glück war der nächste Vortrag verschoben {9}. Ohne diese Änderung hätten wir bis zum Nachmittag auf den nächsten Programmpunkt warten {10}.",
+      "Am Ende hat sich die Reise doch gelohnt. Zwei Vorträge waren besonders interessant, und für die Rückfahrt konnten wir einen Platz im direkten Zug buchen.",
+      "Liebe Grüße\nEmil"
+    ],
+    "gaps": [
+      {
+        "answer": "waren",
+        "options": [
+          "hatten",
+          "sind",
+          "waren"
+        ],
+        "explain": {
+          "ar": "الوصول حدث قبل سماع الخبر. الماضي الأسبق من `ankommen` هو `waren angekommen`.",
+          "de": "Die Ankunft liegt vor der Nachricht. Das Plusquamperfekt von `ankommen` lautet `waren angekommen`."
+        },
+        "lesson": "nachdem"
+      },
+      {
+        "answer": "des",
+        "options": [
+          "des",
+          "dem",
+          "den"
+        ],
+        "explain": {
+          "ar": "الاسم المذكر `Sturm` في حالة المضاف إليه بعد `wegen` في هذه الرسالة. تتوافق `des` مع `Sturms`.",
+          "de": "`Sturms` zeigt den Genitiv Singular an. Dazu passt `des`."
+        },
+        "lesson": "genitiv-praep"
+      },
+      {
+        "answer": "deren",
+        "options": [
+          "der",
+          "deren",
+          "dessen"
+        ],
+        "explain": {
+          "ar": "الحقيبة للمرأة، فنختار ضمير الملكية المؤنث `deren`.",
+          "de": "Die Besitzerin ist `eine Frau`, deshalb `deren`."
+        },
+        "lesson": "relativ-genitiv"
+      },
+      {
+        "answer": "hätten",
+        "options": [
+          "wären",
+          "hätten",
+          "haben"
+        ],
+        "explain": {
+          "ar": "الشرط غير متحقّق في الماضي. الماضي المركّب من `lesen` يأخذ `haben`، فتكون الصيغة هنا `gelesen hätten`.",
+          "de": "Irreale Vergangenheit. Das Perfekt von `lesen` hat `haben`, daraus wird im Nebensatz `gelesen hätten`."
+        },
+        "lesson": "konjunktiv2-vergangenheit"
+      },
+      {
+        "answer": "werden",
+        "options": [
+          "worden",
+          "wurden",
+          "werden"
+        ],
+        "explain": {
+          "ar": "بعد الفعل الناقص `mussten` يأتي المصدر المبني للمجهول `kontrolliert werden`.",
+          "de": "Das Modalverb `mussten` verlangt den Passivinfinitiv `kontrolliert werden`."
+        },
+        "lesson": "passiv-modal"
+      },
+      {
+        "answer": "Obwohl",
+        "options": [
+          "Sodass",
+          "Trotzdem",
+          "Obwohl"
+        ],
+        "explain": {
+          "ar": "برد الجو عامل يُتوقّع أن يدفع الناس إلى المغادرة. ومع ذلك بقوا. `Obwohl` تناسب التناقض وترتيب الفعل التابع.",
+          "de": "Die Kälte ist ein Hindernis, trotzdem bleiben die Leute. `Obwohl` passt zur Bedeutung und zur Verbendstellung."
+        },
+        "lesson": "obwohl"
+      },
+      {
+        "answer": "günstiger",
+        "options": [
+          "günstiger",
+          "günstigeren",
+          "günstigsten"
+        ],
+        "explain": {
+          "ar": "وجود `als` يدل على المقارنة، وبعد `war` لا نضيف نهاية تصريف كما نفعل قبل الاسم.",
+          "de": "`als` zeigt den Komparativ an. Nach `war` folgt keine zusätzliche Adjektivendung."
+        },
+        "lesson": "komparativ"
+      },
+      {
+        "answer": "dass",
+        "options": [
+          "weil",
+          "dass",
+          "denn"
+        ],
+        "explain": {
+          "ar": "`so spät …, dass` يربط درجة التأخّر بالنتيجة.",
+          "de": "`so spät …, dass` verbindet den Grad der Verspätung mit ihrer Folge."
+        },
+        "lesson": "sodass"
+      },
+      {
+        "answer": "worden",
+        "options": [
+          "worden",
+          "geworden",
+          "werden"
+        ],
+        "explain": {
+          "ar": "كان التأجيل قد وقع بالفعل. في الماضي الأسبق للمبني للمجهول نقول `war verschoben worden`.",
+          "de": "Der Vorgang lag schon zurück. Das Plusquamperfekt im Passiv lautet `war verschoben worden`."
+        },
+        "lesson": "passiv-perfekt"
+      },
+      {
+        "answer": "müssen",
+        "options": [
+          "gemusst",
+          "müssen",
+          "mussten"
+        ],
+        "explain": {
+          "ar": "بعد `hätten` يأتي المصدران `warten müssen` في صيغة الضرورة المفترضة في الماضي.",
+          "de": "Nach `hätten` stehen in der irrealen Vergangenheit beide Infinitive: `warten müssen`."
+        },
+        "lesson": "konjunktiv2-vergangenheit-modal"
+      }
+    ]
+  },
+  {
+    "id": "gartenverein",
+    "difficulty": 2,
+    "title": {
+      "ar": "طلب المشاركة في حديقة الحي",
+      "de": "Anfrage zum Nachbarschaftsgarten"
+    },
+    "summary": {
+      "ar": "رسالة إلى جمعية محلّية. اختَر كلمات من قائمة مشتركة لربط فقرات الرسالة وعباراتها.",
+      "de": "Eine Anfrage an einen Verein. Ergänze Verbindungen und feste Wendungen aus einer gemeinsamen Wortliste."
+    },
+    "paragraphs": [
+      "Sehr geehrte Frau Roth,",
+      "ich interessiere mich {1} Ihren Nachbarschaftsgarten und möchte im Frühjahr gern mitmachen. Ich wohne erst seit September hier. {2} ich in dieses Viertel gezogen bin, suche ich einen Ort, an dem ich andere Menschen kennenlernen kann.",
+      "Ich habe bisher nur auf dem Balkon Gemüse angebaut. Können Sie mir sagen, {3} man schon Erfahrung braucht? Ich würde gern wissen, {4} ich erkennen kann, welche Pflanzen für unser Klima geeignet sind. Über eine kurze Einführung würde ich mich freuen. Können wir beim ersten Treffen {5} sprechen?",
+      "Ich arbeite samstags {6} zwölf Uhr und könnte erst danach kommen. Muss ich mich anmelden, {7} ich zum ersten Treffen komme? Ich kann auch eine kleine Schaufel mitbringen, {8} genug Werkzeug für alle da ist.",
+      "Mein eigener Balkon ist sehr klein. {9} möchte ich im Garten gern auch Kartoffeln pflanzen. In Ihrer Anzeige steht, dass man die Beete regelmäßig gießen muss. Ist es möglich, sich diese Aufgabe {10} anderen Mitgliedern zu teilen?",
+      "Vielen Dank für Ihre Hilfe.\nMit freundlichen Grüßen\nMina Hassan"
+    ],
+    "bank": [
+      "bevor",
+      "bis",
+      "damit",
+      "darüber",
+      "deshalb",
+      "für",
+      "gegen",
+      "mit",
+      "während",
+      "ob",
+      "seitdem",
+      "sonst",
+      "statt",
+      "trotzdem",
+      "woran"
+    ],
+    "gaps": [
+      {
+        "answer": "für",
+        "explain": {
+          "ar": "في `sich für etwas interessieren` يأتي حرف الجر `für` للدلالة على موضوع الاهتمام.",
+          "de": "`sich für etwas interessieren` verlangt `für`."
+        }
+      },
+      {
+        "answer": "seitdem",
+        "explain": {
+          "ar": "بدأ البحث عند الانتقال وما زال جاريًا. `Seitdem` تحدّد بداية هذا الاستمرار.",
+          "de": "`Seitdem` markiert den Beginn der noch andauernden Suche."
+        },
+        "lesson": "seit-waehrend"
+      },
+      {
+        "answer": "ob",
+        "explain": {
+          "ar": "السؤال غير المباشر يقبل نعم أو لا، لذا نبدأه بـ `ob`.",
+          "de": "`ob` leitet hier eine indirekte Ja-Nein-Frage ein."
+        }
+      },
+      {
+        "answer": "woran",
+        "explain": {
+          "ar": "نقول `etwas an einem Merkmal erkennen`. للسؤال عن العلامة نستخدم `woran`.",
+          "de": "Man erkennt etwas `an` einem Merkmal. Die Frage danach lautet `woran`."
+        },
+        "lesson": "pronominaladverbien"
+      },
+      {
+        "answer": "darüber",
+        "explain": {
+          "ar": "يأخذ `sprechen` حرف الجر `über` عند الحديث عن موضوع. و`darüber` تحيل إلى موضوع الشرح السابق.",
+          "de": "`über etwas sprechen` wird beim Bezug auf die Einführung zu `darüber sprechen`."
+        },
+        "lesson": "pronominaladverbien"
+      },
+      {
+        "answer": "bis",
+        "explain": {
+          "ar": "`bis zwölf Uhr` تعني أن العمل ينتهي في الساعة الثانية عشرة.",
+          "de": "`bis zwölf Uhr` nennt das Ende der Arbeitszeit."
+        },
+        "lesson": "bevor-bis"
+      },
+      {
+        "answer": "bevor",
+        "explain": {
+          "ar": "التسجيل المفترض سابق للحضور، لذلك تناسب `bevor` ترتيب الحدثين.",
+          "de": "`bevor` stellt die mögliche Anmeldung zeitlich vor den Besuch."
+        },
+        "lesson": "bevor-bis"
+      },
+      {
+        "answer": "damit",
+        "explain": {
+          "ar": "توفر الأدوات هو غرض إحضار المجرفة. `damit` تقدّم جملة الغرض.",
+          "de": "Dass genug Werkzeug da ist, ist der Zweck. `damit` leitet den Finalsatz ein."
+        }
+      },
+      {
+        "answer": "deshalb",
+        "explain": {
+          "ar": "صغر الشرفة سبب الرغبة في الزراعة في الحديقة. وبعد `Deshalb` يأتي الفعل أولًا.",
+          "de": "Der kleine Balkon ist der Grund. `Deshalb` nennt die Folge und wird direkt vom finiten Verb gefolgt."
+        },
+        "lesson": "deshalb-daher"
+      },
+      {
+        "answer": "mit",
+        "explain": {
+          "ar": "في `sich etwas mit jemandem teilen` نذكر الطرف الآخر بعد `mit`.",
+          "de": "Man teilt sich eine Aufgabe `mit` anderen Personen."
+        }
+      }
+    ]
+  },
+  {
+    "id": "reparatur",
+    "difficulty": 3,
+    "title": {
+      "ar": "متابعة طلب إصلاح جهاز",
+      "de": "Rückfrage zur Reparatur"
+    },
+    "summary": {
+      "ar": "رسالة رسمية إلى مركز صيانة. استدل من السياق على الكلمات المناسبة وسط خيارات متقاربة.",
+      "de": "Eine formelle Nachricht an eine Werkstatt mit ähnlichen Ausdrücken, die du im Kontext unterscheiden musst."
+    },
+    "paragraphs": [
+      "Sehr geehrtes Werkstatt-Team,",
+      "{1} meiner Kaffeemaschine mit der Auftragsnummer 813 habe ich noch eine Frage. {2} ich die Maschine letzte Woche abgegeben hatte, erhielt ich einen Kostenvoranschlag. Danach habe ich die Reparatur per E-Mail bestätigt.",
+      "Laut Ihrer Nachricht kann die Maschine {3} am Donnerstag oder am Freitag abgeholt werden. Leider bin ich an beiden Tagen unterwegs. Könnte ich sie am Samstag abholen? Bitte geben Sie mir bis morgen Bescheid, {4} kann ich die Abholung nicht mehr rechtzeitig organisieren.",
+      "Sie haben geschrieben, {5} Sie noch auf ein Ersatzteil warten. Wenn das Teil nicht rechtzeitig ankommt, könnten Sie mich am Donnerstag informieren, {6} bis zur geplanten Abholung zu warten. Ich freue mich {7}, die Maschine bald wieder benutzen zu können.",
+      "Ich habe die Rechnung bereits bezahlt. Können Sie den Zahlungseingang prüfen, {8} Sie die Auftragsnummer im System suchen? Wenn Sie die Zahlung gefunden haben, schicken Sie mir bitte {9} eine kurze Bestätigung. Meine Telefonnummer finden Sie {10} der Rubrik „Kontakt“ auf dem Auftragsformular.",
+      "Mit freundlichen Grüßen\nJonas Heller"
+    ],
+    "bank": [
+      "anschließend",
+      "anstatt",
+      "bezüglich",
+      "bis",
+      "darauf",
+      "darüber",
+      "dass",
+      "entweder",
+      "indem",
+      "nachdem",
+      "obwohl",
+      "sonst",
+      "trotz",
+      "unter",
+      "weder"
+    ],
+    "gaps": [
+      {
+        "answer": "bezüglich",
+        "explain": {
+          "ar": "تدلّ `bezüglich` على موضوع المراسلة («بخصوص») وتأتي هنا مع المضاف إليه `meiner Kaffeemaschine`.",
+          "de": "`bezüglich` nennt den Gegenstand der Nachricht und steht hier mit Genitiv."
+        },
+        "lesson": "genitiv-praep"
+      },
+      {
+        "answer": "nachdem",
+        "explain": {
+          "ar": "تسبق عملية التسليم استلام عرض السعر. لذلك نستخدم `Nachdem` مع الماضي الأسبق `abgegeben hatte`.",
+          "de": "Die Abgabe passierte vor dem Erhalt des Angebots. Dazu passt `Nachdem` mit Plusquamperfekt."
+        },
+        "lesson": "nachdem"
+      },
+      {
+        "answer": "entweder",
+        "explain": {
+          "ar": "تقدّم الصيغة `entweder … oder` خيارين لموعد الاستلام.",
+          "de": "`entweder … oder` nennt zwei mögliche Abholtage."
+        },
+        "lesson": "doppelkonjunktionen"
+      },
+      {
+        "answer": "sonst",
+        "explain": {
+          "ar": "التأخر في الرد سيمنع تنظيم الاستلام. تبدأ `sonst` جملة النتيجة إذا لم يصل الرد.",
+          "de": "`sonst` leitet die Folge ein, falls keine rechtzeitige Antwort kommt."
+        },
+        "lesson": "sonst"
+      },
+      {
+        "answer": "dass",
+        "explain": {
+          "ar": "تقدّم `dass` مضمون ما كتبته الورشة، ويأتي `warten` في آخر الجملة التابعة.",
+          "de": "Der `dass`-Satz gibt den Inhalt der Nachricht wieder."
+        }
+      },
+      {
+        "answer": "anstatt",
+        "explain": {
+          "ar": "الإبلاغ يوم الخميس بديل عن الانتظار. يرد `zu warten` لأن القائم بالفعل في الحالتين هو فريق الصيانة.",
+          "de": "Die Benachrichtigung soll das Warten ersetzen. Weil dieselbe Personengruppe handelt, passt `anstatt … zu`."
+        },
+        "lesson": "statt-zu"
+      },
+      {
+        "answer": "darauf",
+        "explain": {
+          "ar": "نقول `sich auf etwas freuen` عند التطلّع إلى أمر في المستقبل، لذا تشير `darauf` إلى استعمال الآلة قريبًا.",
+          "de": "`sich auf etwas freuen` bezeichnet die Vorfreude. `darauf` verweist auf die folgende Infinitivgruppe."
+        },
+        "lesson": "pronominaladverbien"
+      },
+      {
+        "answer": "indem",
+        "explain": {
+          "ar": "البحث عن رقم الطلب هو الطريقة التي يمكن بها التحقّق من الدفع، لذا نستخدم `indem`.",
+          "de": "Die Suche nach der Nummer ist die Methode für die Prüfung. Deshalb passt `indem`."
+        },
+        "lesson": "indem"
+      },
+      {
+        "answer": "anschließend",
+        "explain": {
+          "ar": "يأتي التأكيد بعد العثور على الدفعة. `anschließend` تعني «بعد ذلك».",
+          "de": "Nach der Prüfung folgt die Bestätigung. `anschließend` markiert diese Reihenfolge."
+        },
+        "lesson": "nachdem"
+      },
+      {
+        "answer": "unter",
+        "explain": {
+          "ar": "`unter der Rubrik` تعني «تحت بند» في الاستمارة.",
+          "de": "`unter der Rubrik` bezeichnet hier die Stelle im Formular."
+        }
+      }
+    ]
+  }
+]

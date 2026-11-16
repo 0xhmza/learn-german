@@ -6,7 +6,7 @@ import { esc, prose } from './html.js';
 
 // Search ignores accents, Arabic short vowels, letter variants and the
 // article: «المجهول» also finds «للمجهول».
-export const searchKey = value => String(value).normalize('NFD').replace(/\p{M}/gu, '')
+export const searchKey = value => String(value).normalize('NFD').replace(/[\p{M}`]/gu, '')
   .replace(/[أإآٱ]/g, 'ا').replace(/ـ/g, '').replace(/ة/g, 'ه').replace(/ى/g, 'ي')
   .replace(/(^|[\s·،,(])(?:وال|بال|كال|فال|لل|ال)(?=\p{Script=Arabic}{2})/gu, '$1')
   .toLowerCase();
@@ -26,7 +26,7 @@ export function renderIndex({ ctx, state, query, current, open }) {
     const isOpen = needle || open.has(island.id) || lessons.some(lesson => lesson.id === current);
     return `<details data-island="${island.id}" ${isOpen ? 'open' : ''}>
       <summary title="${esc(island.name[lang === 'de' ? 'ar' : 'de'])}"><span class="sum-emoji ${island.palette}" aria-hidden="true">${island.emoji}</span>
-        <span>${esc(islandName(island, lang))}</span><span class="sum-count">${num(learned)}/${num(lessons.length)}</span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <span>${prose(islandName(island, lang))}</span><bdi class="sum-count" dir="ltr" aria-label="${t('of', num(learned), num(lessons.length))}">${num(learned)}/${num(lessons.length)}</bdi><span class="chevron" aria-hidden="true">⌄</span></summary>
       <div class="index-links">${lessons.map(lesson => {
         const stars = lessonStars(state, lesson.id);
         return `<a href="#lesson/${lesson.id}" ${current === lesson.id ? 'aria-current="page"' : ''}>

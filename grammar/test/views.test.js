@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { setLang } from '../src/js/i18n/index.js';
 import { parse } from '../src/js/router.js';
 import { award } from '../src/js/engine/gamification.js';
-import { renderMap } from '../src/js/components/map.js';
+import { LAYOUTS, renderMap, routePoints } from '../src/js/components/map.js';
 import { renderHud } from '../src/js/components/hud.js';
 import { renderIndex } from '../src/js/components/sidebar.js';
 import * as home from '../src/js/views/home.js';
@@ -15,10 +15,13 @@ import * as practice from '../src/js/views/practice.js';
 import * as quiz from '../src/js/views/quiz.js';
 import * as progress from '../src/js/views/progress.js';
 import * as settings from '../src/js/views/settings.js';
+import * as readings from '../src/js/views/readings.js';
+import * as sprachbausteine from '../src/js/views/sprachbausteine.js';
+import * as cards from '../src/js/views/cards.js';
 import { context, freshState } from './support/context.js';
 
 const day = '2026-11-14';
-const views = { home, island, lesson, practice, quiz, progress, settings };
+const views = { home, island, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards };
 
 function fakeApp(ctx, state) {
   const store = {
@@ -68,7 +71,11 @@ for (const lang of ['ar', 'de']) {
       const routes = ['#home', '#practice', '#progress', '#settings',
         ...ctx.islands.map(item => `#island/${item.id}`),
         ...[...ctx.lessons.keys()].map(id => `#lesson/${id}`),
-        '#practice/passiv-perfekt', '#practice/exam-passiv', '#practice/mixed', '#practice/test', '#practice/mistakes'];
+        '#practice/passiv-perfekt', '#practice/exam-passiv', '#practice/mixed', '#practice/test', '#practice/mistakes',
+        '#readings', '#sprachbausteine', '#cards', '#cards/genitiv', '#practice/apply-genitiv',
+        ...[...ctx.practiceSets.keys()].map(id => `#practice/${id}`),
+        ...[...ctx.readings.keys()].map(id => `#readings/${id}`),
+        ...[...ctx.sprachbausteine.keys()].map(id => `#sprachbausteine/${id}`)];
       for (const hash of routes) {
         const route = parse(hash, ctx);
         app.route = route;
@@ -101,6 +108,15 @@ test('the map marks conquered islands and places the boat', () => {
   assert.match(svg, /class="isle conquered[^"]*" data-island="passiv"/);
   assert.match(svg, /class="token" transform="translate\([\d.]+ [\d.]+\)"/);
   assert.equal((svg.match(/class="route-seg"/g) || []).length, ctx.islands.length);
+});
+
+test('the Arabic map moves islands, docks and the treasure to mirrored coordinates', () => {
+  const ctx = context();
+  for (const [name, layout] of Object.entries(LAYOUTS)) {
+    const ltr = routePoints(ctx, name, false);
+    const rtl = routePoints(ctx, name, true);
+    assert.deepEqual(rtl, ltr.map(([x, y]) => [layout.width - x, y]));
+  }
 });
 
 test('search in the index finds lessons in both scripts', () => {

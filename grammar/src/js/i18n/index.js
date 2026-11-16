@@ -1,13 +1,13 @@
-import ar from './ar.js';
+import ar, { arabicNumbers } from './ar.js';
 import de from './de.js';
 
 export const dictionaries = { ar, de };
 let lang = 'ar';
-let numbers = new Intl.NumberFormat('ar');
+let numbers = arabicNumbers;
 
 export function setLang(next) {
   lang = next === 'de' ? 'de' : 'ar';
-  numbers = new Intl.NumberFormat(lang);
+  numbers = lang === 'ar' ? arabicNumbers : new Intl.NumberFormat('de');
 }
 
 export const getLang = () => lang;

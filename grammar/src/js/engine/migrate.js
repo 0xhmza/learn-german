@@ -19,6 +19,8 @@ export function defaultState(day) {
     lessonBonus: {},
     results: {},
     runs: {},
+    cards: {},
+    sprach: {},
     lastRun: null,
     lastLesson: null,
     islands: {},
@@ -76,6 +78,26 @@ export function normalizeState(raw, ctx, day) {
     }
   }
   if (state.runs[raw.lastRun]) state.lastRun = raw.lastRun;
+  for (const [id, value] of Object.entries(plain(raw.cards) ? raw.cards : {})) {
+    if (ctx.cards.has(id) && plain(value) && isDay(value.due)) {
+      state.cards[id] = { due: value.due, box: Math.min(5, Math.max(1, count(value.box))) };
+    }
+  }
+  for (const [id, value] of Object.entries(plain(raw.sprach) ? raw.sprach : {})) {
+    const set = ctx.sprachbausteine.get(id);
+    if (!set || !plain(value) || !Array.isArray(value.answers)) continue;
+    const used = new Set();
+    const answers = set.gaps.map((gap, i) => {
+      const answer = value.answers[i];
+      if (set.bank) {
+        if (!set.bank.includes(answer) || used.has(answer)) return '';
+        used.add(answer);
+        return answer;
+      }
+      return gap.options.includes(answer) ? answer : '';
+    });
+    state.sprach[id] = { answers, finished: value.finished === true && answers.every(Boolean) };
+  }
   if (ctx.lessons.has(raw.lastLesson)) state.lastLesson = raw.lastLesson;
   for (const [id, value] of Object.entries(plain(raw.islands) ? raw.islands : {})) {
     if (ctx.islandById.has(id) && plain(value)) {

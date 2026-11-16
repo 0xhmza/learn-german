@@ -28,7 +28,7 @@
   "i18n": {
     "ar": {
       "title": "قبل أن وإلى أن: bevor و bis",
-      "lead": "`bevor` تقول إن شيئًا يحدث قبل شيء آخر، و`bis` تحدد نقطة النهاية: إلى متى يستمر الأمر. كلتاهما أداة ربط تابعة، فيذهب الفعل إلى آخر جملتها.",
+      "lead": "تحدّد `bevor` أن فعلًا حصل قبل فعل آخر، وتحدّد `bis` اللحظة التي ينتهي عندها استمرار الفعل. في الجملتين التابعتين يأتي الفعل المصرّف في النهاية.",
       "translation": "قبل أن أفطر أستحم.",
       "steps": [
         { "text": "رتّب الحدثين", "why": "الاستحمام أولًا ثم الفطور. الكلمة `bevor` تقف أمام الحدث الذي يأتي لاحقًا، أي الفطور." },
@@ -139,7 +139,7 @@
       "context": "Vor ich esse, wasche ich mir die Hände.",
       "answer": "Bevor ich esse, wasche ich mir die Hände.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد الكلمة جملة كاملة فيها فعل، فنحتاج إلى أداة الربط `Bevor`. أما `vor` فتأتي قبل اسم.", "hints": ["هل يأتي بعدها اسم أم جملة؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "بعد الكلمة جملة كاملة فيها فعل، فنحتاج إلى أداة الربط `Bevor`. أما `vor` فتأتي قبل اسم.", "hints": ["هل يأتي بعدها اسم أم جملة؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Danach folgt ein ganzer Satz mit Verb, also brauchst du den Subjunktor `Bevor`. `vor` steht vor einem Nomen.", "hints": ["Folgt ein Nomen oder ein Satz?"] }
       }
     },
@@ -147,7 +147,7 @@
       "id": "bevor-bis-9", "type": "text", "difficulty": 2,
       "answer": "Ich lerne jeden Tag, bis ich die Prüfung bestanden habe.",
       "i18n": {
-        "ar": { "prompt": "اكتب ما ستفعله حتى تنجح في الامتحان. استعمل `bis`.", "explain": "مثال: `Ich lerne jeden Tag, bis ich die Prüfung bestanden habe.`", "hints": ["الفعل المصرف في آخر جملة `bis`."] },
+        "ar": { "prompt": "اكتب ما ستفعله حتى تنجح في الامتحان. استعمل `bis`.", "explain": "مثال: `Ich lerne jeden Tag, bis ich die Prüfung bestanden habe.`", "hints": ["الفعل المصرّف في آخر جملة `bis`."] },
         "de": { "prompt": "Schreib, was du tust, bis du die Prüfung bestanden hast. Benutze `bis`.", "explain": "Zum Beispiel: `Ich lerne jeden Tag, bis ich die Prüfung bestanden habe.`", "hints": ["Das konjugierte Verb steht am Ende des bis-Satzes."] }
       }
     }

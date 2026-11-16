@@ -1,0 +1,716 @@
+{
+  "genitiv": {
+    "correct": "Die Tür des Büros ist offen.",
+    "alternative": "Die Tür des Büro ist offen.",
+    "task": {
+      "ar": "أي جملة تبيّن أن الباب تابع للمكتب؟",
+      "de": "Welcher Satz bezeichnet die Tür des Büros korrekt?"
+    },
+    "hint": {
+      "ar": "اسم المكتب محايد، وابحث عن النهاية التي تأتي معه عند بيان الملكية.",
+      "de": "Büro ist sächlich. Achte auf die Endung des Nomens."
+    },
+    "ar": "إذا سألت «باب أي مكان؟» وجاءت الإجابة `des Büros`، فالمجموعة كلها في حالة المضاف إليه (`Genitiv`). تتغيّر الأداة إلى `des` ويلحق الاسم المحايد هنا حرف `s`. أمّا المؤنث في `die Tür der Küche` فتتغيّر أداته ويبقى الاسم على حاله.",
+    "de": "Auf die Frage „Wessen Tür?“ antwortet die Genitivgruppe `des Büros`. Beim Neutrum steht hier `des` und das Nomen erhält ein `s`. Beim Femininum wechselt nur der Artikel, wie in `die Tür der Küche`."
+  },
+  "genitiv-praep": {
+    "correct": "Wegen des starken Windes fährt die Fähre nicht.",
+    "alternative": "Wegen den starken Wind fährt die Fähre nicht.",
+    "task": {
+      "ar": "اختر الصياغة المناسبة لإعلان رسمي يذكر سبب إلغاء الرحلة.",
+      "de": "Welche Form passt zu einer formellen Durchsage über den Ausfall?"
+    },
+    "hint": {
+      "ar": "استعمل المضاف إليه بعد `wegen` في هذا الأسلوب.",
+      "de": "Verwende nach `wegen` in diesem Stil den Genitiv."
+    },
+    "ar": "في الإعلان المكتوب تأتي `wegen` هنا مع المضاف إليه. تظهر الحالة في ثلاثة مواضع: الأداة `des`، ونهاية الصفة `-en`، ونهاية الاسم `-es`. حين تبدأ الجملة كلها بظرف السبب `Wegen des starken Windes` يأتي الفعل المصرف `fährt` بعده مباشرة.",
+    "de": "In der formellen Durchsage folgt `wegen` hier der Genitiv. Du erkennst ihn an `des`, am Adjektiv auf `-en` und am Nomen auf `-es`. Die ganze Angabe `Wegen des starken Windes` belegt das Vorfeld. Gleich danach steht `fährt`."
+  },
+  "lokale-praep": {
+    "correct": "Wir gehen den Kanal entlang.",
+    "alternative": "Wir gehen dem Kanal entlang.",
+    "task": {
+      "ar": "أي جملة تصف السير بمحاذاة القناة وتضع `entlang` بعد الاسم؟",
+      "de": "Welcher Satz beschreibt den Weg am Kanal mit nachgestelltem `entlang` korrekt?"
+    },
+    "hint": {
+      "ar": "انظر إلى الحالة المطلوبة عندما تأتي `entlang` بعد المجموعة الاسمية.",
+      "de": "Achte auf den Kasus bei nachgestelltem `entlang`."
+    },
+    "ar": "عندما تأتي `entlang` بعد الاسم نستخدم هنا النصب (`Akkusativ`): `den Kanal entlang`. وإذا عبّرت عن مسار يدور حول الشيء فاستعمل `um` قبل الاسم و`herum` بعده، مثل `um den Teich herum`. السؤال في الحالتين عن مسار الحركة.",
+    "de": "Nachgestelltes `entlang` steht hier mit Akkusativ, also `den Kanal entlang`. Für einen Weg um etwas herum setzt du `um` vor und `herum` nach die Nominalgruppe, etwa `um den Teich herum`. Beide Angaben beschreiben den Verlauf des Weges."
+  },
+  "n-deklination": {
+    "correct": "Die Ärztin spricht mit einem Patienten.",
+    "alternative": "Die Ärztin spricht mit einem Patient.",
+    "task": {
+      "ar": "اختر الصيغة الصحيحة بعد `mit`.",
+      "de": "Wähle die richtige Form nach `mit`."
+    },
+    "hint": {
+      "ar": "راجع نهاية الاسم `Patient` عندما لا يكون فاعلًا في المفرد.",
+      "de": "Achte darauf, wie sich `Patient` im Singular außerhalb des Nominativs verändert."
+    },
+    "ar": "`Patient` من الأسماء المذكرة ذات التصريف الضعيف. في المفرد نقول `ein Patient` في الرفع، و`einen Patienten` في النصب، و`einem Patienten` بعد `mit`. لاحظ أن تغيير الأداة وحده لا يكفي، إذ تتغيّر نهاية الاسم أيضًا.",
+    "de": "`Patient` ist ein schwaches Maskulinum. Im Singular heißt es `ein Patient` im Nominativ, `einen Patienten` im Akkusativ und nach `mit` `einem Patienten`. Die Endung erscheint am Nomen und der Kasus ist auch am Artikel erkennbar."
+  },
+  "diminutiv": {
+    "correct": "Auf dem Tisch steht das kleine Gläschen.",
+    "alternative": "Auf dem Tisch steht der kleine Gläschen.",
+    "task": {
+      "ar": "ما الأداة المناسبة لتصغير `das Glas`؟",
+      "de": "Welcher Artikel passt zur Verkleinerungsform von `das Glas`?"
+    },
+    "hint": {
+      "ar": "تنتهي الكلمة بـ `-chen`، فحدّد جنس الاسم بعد التصغير.",
+      "de": "Bestimme das Genus anhand der Endung `-chen`."
+    },
+    "ar": "كل اسم مصغّر بـ `-chen` أو `-lein` محايد، حتى لو كان الأصل مذكرًا أو مؤنثًا، مثل `der Hund → das Hündchen`. وقد تتغيّر الحركة في أصل الكلمة أيضًا، كما في `Glas → Gläschen`. استعمل الأداة المحايدة ثم صرّف الصفة تبعًا لها.",
+    "de": "Diminutive auf `-chen` oder `-lein` sind Neutra, auch wenn das Grundwort ein anderes Genus hat, etwa `der Hund → das Hündchen`. Der Stamm kann außerdem einen Umlaut bekommen, wie bei `Glas → Gläschen`."
+  },
+  "verben-als-nomen": {
+    "correct": "Beim Packen hilft mir meine Schwester.",
+    "alternative": "Beim packen hilft mir meine Schwester.",
+    "task": {
+      "ar": "كيف تكتب المصدر بعد `beim` حين يدلّ على نشاط؟",
+      "de": "Wie schreibt man den Infinitiv, wenn er nach `beim` eine Tätigkeit bezeichnet?"
+    },
+    "hint": {
+      "ar": "`beim` اختصار `bei dem`.",
+      "de": "`beim` steht für `bei dem`."
+    },
+    "ar": "يتصرّف المصدر هنا كاسم محايد: `das Packen`. تكشف الأداة المضمرة في `beim` أنه اسم، فيبدأ بحرف كبير. قارن `Wir packen heute`، ففيها `packen` فعل مصرف يبدأ بحرف صغير.",
+    "de": "Hier ist der Infinitiv ein sächliches Nomen: `das Packen`. Der Artikel in `beim` zeigt die Nominalisierung, die du großschreibst. In `Wir packen heute` ist `packen` das kleingeschriebene finite Verb."
+  },
+  "nominalisierte-adjektive": {
+    "correct": "Im Kurs habe ich etwas Neues gelernt.",
+    "alternative": "Im Kurs habe ich etwas Neue gelernt.",
+    "task": {
+      "ar": "اختر الصيغة المناسبة لقول «تعلّمت شيئًا جديدًا».",
+      "de": "Welche Form passt, wenn du „etwas Neues“ gelernt hast?"
+    },
+    "hint": {
+      "ar": "بعد `etwas` جاءت الصفة اسمًا قائمًا بذاته.",
+      "de": "Nach `etwas` wird das Adjektiv hier als Nomen gebraucht."
+    },
+    "ar": "في `etwas Neues` تدلّ الصفة على شيء من دون ذكر اسم بعده. تبدأ بحرف كبير وتحمل علامة المحايد `-es`. للمقارنة، في `eine neue Regel` تتبع الصفة اسمًا مذكورًا، فتبدأ بحرف صغير وتأخذ النهاية `-e`.",
+    "de": "In `etwas Neues` steht das Adjektiv für eine Sache, ohne dass ein Nomen folgt. Es wird großgeschrieben und bekommt die neutrale Endung `-es`. In `eine neue Regel` bleibt es als Attribut klein und hat die Endung `-e`."
+  },
+  "komparativ": {
+    "correct": "Wir suchen einen günstigeren Raum als den alten.",
+    "alternative": "Wir suchen einen günstiger Raum als den alten.",
+    "task": {
+      "ar": "اختر صيغة المقارنة التي تسبق الاسم `Raum`.",
+      "de": "Welche Komparativform muss vor `Raum` stehen?"
+    },
+    "hint": {
+      "ar": "أضف علامة المقارنة ثم نهاية الصفة التي يطلبها `einen`.",
+      "de": "Ergänze nach dem Komparativ noch die Adjektivendung zu `einen`."
+    },
+    "ar": "حلّل `günstigeren` إلى أصل الصفة `günstig`، وعلامة المقارنة `-er`، ونهاية التصريف `-en`. تظهر نهاية التصريف لأن الصفة تسبق الاسم. أما بعد `sein` فنقول `Der Raum ist günstiger` بلا نهاية إضافية.",
+    "de": "In `günstigeren` erkennst du den Stamm `günstig`, das Komparativmerkmal `-er` und die Flexionsendung `-en`. Vor dem Nomen brauchst du die Endung. In `Der Raum ist günstiger` steht der Komparativ ohne zusätzliche Endung."
+  },
+  "superlativ": {
+    "correct": "Das ist die bequemste Verbindung nach Bonn.",
+    "alternative": "Das ist die am bequemsten Verbindung nach Bonn.",
+    "task": {
+      "ar": "كيف تقول «هذا أنسب خطّ مواصلات إلى بون»؟",
+      "de": "Wie sagst du, dass diese Verbindung nach Bonn am bequemsten ist?"
+    },
+    "hint": {
+      "ar": "الصفة هنا تسبق الاسم `Verbindung`.",
+      "de": "Das Adjektiv steht unmittelbar vor dem Nomen `Verbindung`."
+    },
+    "ar": "إذا وصفت اسمًا مباشرةً فضع صيغة التفضيل بين الأداة والاسم: `die bequemste Verbindung`. وإذا أخبرت عن الاسم بعد `sein` فاستعمل `am` مع `-sten`: `Diese Verbindung ist am bequemsten`. يتحدّد اختيارك من موضع الصفة في الجملة.",
+    "de": "Als Attribut steht der Superlativ zwischen Artikel und Nomen: `die bequemste Verbindung`. Prädikativ ist `Diese Verbindung ist am bequemsten` möglich. Die Position des Adjektivs entscheidet über die Form."
+  },
+  "genitiv-adjektiv": {
+    "correct": "Der Duft frischen Brotes erfüllt die Küche.",
+    "alternative": "Der Duft frischem Brot erfüllt die Küche.",
+    "task": {
+      "ar": "اختر صيغة «رائحة خبز طازج» من دون أداة قبل `Brot`.",
+      "de": "Wähle den Genitiv von `frisches Brot` ohne Artikel."
+    },
+    "hint": {
+      "ar": "تظهر علامة المضاف إليه هنا على الاسم `Brot`.",
+      "de": "Das Nomen `Brot` trägt hier die Genitivendung."
+    },
+    "ar": "في `frischen Brotes` يحمل الاسم المحايد علامة المضاف إليه `-es`، وتأخذ الصفة قبله `-en` حتى من دون أداة. قارِن بالاسم المؤنث في `der Duft frischer Minze`، حيث تظهر علامة الحالة على الصفة `-er` ويبقى الاسم بلا نهاية.",
+    "de": "In `frischen Brotes` trägt das neutrale Nomen die Genitivendung `-es`. Das Adjektiv endet auch ohne Artikel auf `-en`. Beim Femininum `der Duft frischer Minze` steht die Kasusendung `-er` am Adjektiv und das Nomen bleibt unverändert."
+  },
+  "partizip1": {
+    "correct": "Die wartenden Gäste lesen die Speisekarte.",
+    "alternative": "Die gewarteten Gäste lesen die Speisekarte.",
+    "task": {
+      "ar": "أي صيغة تصف ضيوفًا ينتظرون الآن؟",
+      "de": "Welche Form beschreibt Gäste, die gerade warten?"
+    },
+    "hint": {
+      "ar": "اسأل من يقوم بالانتظار في هذه اللحظة.",
+      "de": "Überlege, wer gerade wartet."
+    },
+    "ar": "الضيوف هم الذين ينتظرون، والانتظار قائم في سياق الجملة. من `warten` نكوّن `wartend` بإضافة `d` إلى المصدر، ثم `wartenden` بنهاية الصفة بعد `die` في الجمع. ويمكنك اختبار المعنى بتحويلها إلى جملة وصل: `die Gäste, die warten`.",
+    "de": "Die Gäste warten selbst. Aus dem Infinitiv `warten` wird mit `d` das Partizip `wartend`. Nach `die` im Plural kommt die Adjektivendung `-en` dazu. Die Bedeutung lässt sich mit `die Gäste, die warten` prüfen."
+  },
+  "partizip-adjektiv": {
+    "correct": "Die unterschriebenen Verträge liegen auf dem Tisch.",
+    "alternative": "Die unterschreibenden Verträge liegen auf dem Tisch.",
+    "task": {
+      "ar": "أي جملة تفيد أن العقود وُقّعت بالفعل؟",
+      "de": "Welcher Satz sagt, dass die Verträge bereits unterschrieben wurden?"
+    },
+    "hint": {
+      "ar": "العقود تتلقّى الفعل، وهناك نتيجة مكتملة.",
+      "de": "Die Verträge sind vom abgeschlossenen Vorgang betroffen."
+    },
+    "ar": "حوّل الوصف إلى جملة وصل: `die Verträge, die unterschrieben wurden`. لأن العقود وُقّعت بالفعل نستخدم `Partizip II`. أما `die unterschreibende Kundin` فتصف العميلة التي تقوم بالتوقيع. في الحالين يُصرّف اسم الفاعل أو المفعول كصفة عندما يسبق الاسم.",
+    "de": "Formuliere den Relativsatz `die Verträge, die unterschrieben wurden`. Für die unterschriebenen Verträge passt das Partizip II. Die `unterschreibende Kundin` führt die Handlung selbst aus. Vor dem Nomen werden beide Formen wie Adjektive flektiert."
+  },
+  "gradpartikeln": {
+    "correct": "Das war eine besonders hilfreiche Antwort.",
+    "alternative": "Das war eine besondere hilfreiche Antwort.",
+    "task": {
+      "ar": "أي صياغة تجعل معنى `hilfreich` أقوى؟",
+      "de": "Welche Formulierung verstärkt hier `hilfreich`?"
+    },
+    "hint": {
+      "ar": "الكلمة التي تعدّل درجة الصفة لا تحمل نهاية التأنيث.",
+      "de": "Das Wort, das den Grad ausdrückt, bekommt keine feminine Adjektivendung."
+    },
+    "ar": "تجيب `besonders` عن سؤال «إلى أي درجة كانت الإجابة مفيدة؟» وتبقى بلا نهاية. أما `hilfreiche` فتصف الاسم `Antwort` مباشرةً وتأخذ نهاية التأنيث. قارِن `ziemlich hilfreich`، وفيها الدرجة أقل من `besonders hilfreich`.",
+    "de": "`besonders` gibt den Grad von `hilfreich` an und bleibt unverändert. `hilfreiche` beschreibt dagegen das Nomen `Antwort` und wird flektiert. Mit `ziemlich hilfreich` drückst du einen schwächeren Grad aus."
+  },
+  "irgendein": {
+    "correct": "Wir brauchen irgendeinen Schlüssel für den Schrank.",
+    "alternative": "Wir brauchen irgendeinem Schlüssel für den Schrank.",
+    "task": {
+      "ar": "أي صيغة تفيد أن أي مفتاح مناسب يفي بالغرض؟",
+      "de": "Welche Form passt, wenn irgendein Schlüssel genügt?"
+    },
+    "hint": {
+      "ar": "اسأل عن المفعول المباشر للفعل `brauchen`.",
+      "de": "Bestimme den Kasus des direkten Objekts von `brauchen`."
+    },
+    "ar": "وجود `irgend-` يعبّر عن عدم تحديد المفتاح. ويظلّ تصريف الأداة مثل `ein`: فالمفتاح مذكر وهو مفعول مباشر، لذا نقول `irgendeinen Schlüssel`. في الجمع تستعمل `irgendwelche Schlüssel`.",
+    "de": "`irgend-` lässt offen, um welchen Schlüssel es sich handelt. Die Endung folgt der von `ein`. `Schlüssel` ist maskulin und hier direktes Objekt, deshalb `irgendeinen Schlüssel`. Im Plural verwendest du `irgendwelche Schlüssel`."
+  },
+  "indefinitpronomen": {
+    "correct": "Hast du einen Stift? – Ja, ich habe einen.",
+    "alternative": "Hast du einen Stift? – Ja, ich habe ein.",
+    "task": {
+      "ar": "كيف تستغني عن تكرار كلمة `Stift` في الجواب؟",
+      "de": "Wie vermeidest du im zweiten Satz die Wiederholung von `Stift`?"
+    },
+    "hint": {
+      "ar": "الضمير يحل محل اسم مذكر في حالة النصب.",
+      "de": "Das Pronomen ersetzt ein maskulines Nomen im Akkusativ."
+    },
+    "ar": "كلمة `einen` الأولى أداة قبل `Stift`، والثانية ضمير يحمل وحده معنى «قلمًا واحدًا». حافظ على الجنس والحالة عند الاستبدال. مع `das Heft` تقول `Ich habe eins`، لأن الاسم محايد.",
+    "de": "Das erste `einen` ist ein Artikel vor `Stift`. Das zweite ersetzt das Nomen selbst. Genus und Kasus bleiben bei der Ersetzung erhalten. Entsprechend sagst du zu `das Heft` zum Beispiel `Ich habe eins`."
+  },
+  "irgend-pronomen": {
+    "correct": "Wir treffen uns irgendwann nächste Woche.",
+    "alternative": "Wir treffen uns irgendwo nächste Woche.",
+    "task": {
+      "ar": "اختر ما يدل على أن موعد اللقاء لم يتحدّد بعد.",
+      "de": "Welcher Satz lässt den Zeitpunkt des Treffens offen?"
+    },
+    "hint": {
+      "ar": "حدّد السؤال الذي لم تُعرف إجابته: `Wann?` أم `Wo?`",
+      "de": "Welche Frage bleibt offen: `Wann?` oder `Wo?`"
+    },
+    "ar": "حدّد المعلومة المجهولة أولًا. `Irgendwann` يترك الوقت مفتوحًا داخل الأسبوع، و`irgendwo` يترك المكان مفتوحًا. يمكنك الجمع بينهما إذا كان الموعد والمكان مجهولين معًا: `irgendwann irgendwo`.",
+    "de": "Bestimme zuerst, welche Information fehlt. `Irgendwann` lässt hier den Zeitpunkt innerhalb der Woche offen, `irgendwo` dagegen den Ort. Beides lässt sich verbinden, wenn Zeit und Ort offen sind."
+  },
+  "pronominaladverbien": {
+    "correct": "Der Termin ist morgen. Denk bitte daran.",
+    "alternative": "Der Termin ist morgen. Denk bitte an ihn, dass er morgen ist.",
+    "task": {
+      "ar": "أي صياغة تحيل إلى معلومة أن الموعد غدًا؟",
+      "de": "Welche Formulierung verweist auf die Information, dass der Termin morgen ist?"
+    },
+    "hint": {
+      "ar": "يتعدّى `denken` هنا بحرف الجر `an`، والمقصود معلومة كاملة.",
+      "de": "`denken` steht hier mit `an`. Gemeint ist eine ganze Information."
+    },
+    "ar": "عندما تشير إلى فكرة أو جملة كاملة، اجمع `da` وحرف الجر الذي يطلبه الفعل. يبدأ `an` بحركة، فنضيف `r` ونحصل على `daran`. وإذا كنت تقصد شخصًا بعينه فاستعمل الضمير بعد الحرف، مثل `Ich denke an sie`.",
+    "de": "Für den Bezug auf eine Aussage verbindest du `da` mit der Präposition des Verbs. Vor dem Vokal in `an` kommt `r` hinzu, also `daran`. Für eine Person verwendest du die Präposition mit Personalpronomen, etwa `Ich denke an sie`."
+  },
+  "relativ-dativ": {
+    "correct": "Das sind die Nachbarn, denen ich gestern geholfen habe.",
+    "alternative": "Das sind die Nachbarn, die ich gestern geholfen habe.",
+    "task": {
+      "ar": "أي ضمير وصل يناسب الجملة التي تعني «ساعدتُ الجيران»؟",
+      "de": "Welches Relativpronomen passt, wenn du den Nachbarn geholfen hast?"
+    },
+    "hint": {
+      "ar": "حدّد الحالة التي يطلبها `helfen` داخل جملة الوصل.",
+      "de": "Bestimme den Kasus, den `helfen` im Relativsatz verlangt."
+    },
+    "ar": "خذ العدد من الاسم `Nachbarn`، والحالة من الفعل داخل جملة الوصل. نقول `Ich helfe den Nachbarn`، لذا يأتي ضمير الوصل للجمع في حالة الداتيف (`Dativ`): `denen`. مع `besuchen` نقول `die ich besucht habe` لأن الفعل يأخذ مفعولًا مباشرًا.",
+    "de": "Der Plural kommt vom Bezugswort `Nachbarn`, der Kasus von `helfen` im Relativsatz. Aus `Ich helfe den Nachbarn` wird `denen ich geholfen habe`. Mit `besuchen` im Akkusativ hieße es `die ich besucht habe`."
+  },
+  "relativ-praep": {
+    "correct": "Das ist die Kollegin, mit der ich das Projekt plane.",
+    "alternative": "Das ist die Kollegin, mit die ich das Projekt plane.",
+    "task": {
+      "ar": "اختر ضمير الوصل بعد `mit` عندما يعود على `die Kollegin`.",
+      "de": "Wähle nach `mit` das Relativpronomen für `die Kollegin`."
+    },
+    "hint": {
+      "ar": "`mit` يطلب حالة `Dativ`.",
+      "de": "Die Präposition `mit` verlangt den Dativ."
+    },
+    "ar": "ابدأ بجملة بسيطة: `Ich plane das Projekt mit der Kollegin`. انقل `mit der` معًا إلى بداية جملة الوصل، وضع `plane` في آخرها. الجنس مؤنث من `Kollegin`، أما الحالة فيحددها حرف الجر: `mit der`.",
+    "de": "Beginne mit `Ich plane das Projekt mit der Kollegin`. Setze Präposition und Pronomen als Einheit an den Anfang des Relativsatzes und `plane` ans Ende. Das Femininum kommt von `Kollegin`, der Dativ von `mit`."
+  },
+  "relativ-einschub": {
+    "correct": "Der Bus, der am Rathaus hält, fährt heute später.",
+    "alternative": "Der Bus, der am Rathaus hält fährt heute später.",
+    "task": {
+      "ar": "أين تضع الفواصل إذا جاءت جملة الوصل في وسط الجملة؟",
+      "de": "Wie setzt du die Kommas, wenn der Relativsatz in der Mitte steht?"
+    },
+    "hint": {
+      "ar": "احذف جملة الوصل مؤقتًا واقرأ الجملة الرئيسية وحدها.",
+      "de": "Lies den Hauptsatz probeweise ohne Relativsatz."
+    },
+    "ar": "إذا حذفت `der am Rathaus hält` تحصل على `Der Bus fährt heute später`. يبيّن ذلك أن `fährt` من الجملة الرئيسية. ضع فاصلة قبل الوصل وأخرى بعد فعله `hält` لتعود إلى الجملة الرئيسية.",
+    "de": "Ohne `der am Rathaus hält` bleibt `Der Bus fährt heute später`. `fährt` gehört also zum Hauptsatz. Das zweite Komma nach `hält` markiert den Wechsel zurück zum Hauptsatz."
+  },
+  "relativ-genitiv": {
+    "correct": "Die Nachbarin, deren Fahrrad gestohlen wurde, war bei der Polizei.",
+    "alternative": "Die Nachbarin, dessen Fahrrad gestohlen wurde, war bei der Polizei.",
+    "task": {
+      "ar": "أي ضمير يبيّن أن الدراجة تخصّ الجارة؟",
+      "de": "Welches Relativpronomen zeigt, dass das Fahrrad der Nachbarin gehört?"
+    },
+    "hint": {
+      "ar": "حدّد جنس صاحبة الدراجة، ثم اختر الضمير.",
+      "de": "Bestimme das Genus der Besitzerin, um das Pronomen zu wählen."
+    },
+    "ar": "اختر `deren` لأن مالكة الدراجة هي `die Nachbarin`. جنس الشيء المملوك لا يغيّر ضمير الوصل، لذا يصح `deren Fahrrad` و`deren Schlüssel` معًا. وإذا كان المالك مذكرًا قل `der Nachbar, dessen Fahrrad …`.",
+    "de": "`deren` bezieht sich auf die feminine Besitzerin `die Nachbarin`. Das Genus des Besitzes ändert daran nichts: `deren Fahrrad`, `deren Schlüssel`. Beim maskulinen Besitzer heißt es `der Nachbar, dessen Fahrrad …`."
+  },
+  "relativ-ort": {
+    "correct": "Das ist der Ort, wohin wir nach dem Kurs fahren.",
+    "alternative": "Das ist der Ort, woher wir nach dem Kurs fahren.",
+    "task": {
+      "ar": "أي جملة تحدّد المكان الذي سنتوجّه إليه بعد الدرس؟",
+      "de": "Welcher Satz nennt das Ziel der Fahrt nach dem Kurs?"
+    },
+    "hint": {
+      "ar": "الوجهة تجيب عن `Wohin?`.",
+      "de": "Das Ziel beantwortet die Frage `Wohin?`."
+    },
+    "ar": "`Wohin` يعبّر عن الوجهة، و`woher` عن نقطة الانطلاق. حتى مع أفعال الحركة قد يشير `wo` إلى المكان الذي تجري فيه الحركة، مثل `der Platz, wo die Kinder rennen`. اقرأ المعنى لتحدّد نوع العلاقة المكانية.",
+    "de": "`Wohin` bezeichnet das Ziel und `woher` den Ausgangspunkt. Auch bei Bewegung kann `wo` den Ort der Handlung nennen, wie in `der Platz, wo die Kinder rennen`. Die gemeinte räumliche Beziehung entscheidet."
+  },
+  "relativ-was": {
+    "correct": "Der Zug fiel aus, was uns überraschte.",
+    "alternative": "Der Zug fiel aus, der uns überraschte.",
+    "task": {
+      "ar": "أي جملة تفيد أن إلغاء الرحلة هو الذي فاجأنا؟",
+      "de": "Welcher Satz drückt aus, dass uns der Ausfall überrascht hat?"
+    },
+    "hint": {
+      "ar": "حدد ما الذي فاجأنا: القطار أم ما حدث للقطار؟",
+      "de": "Was hat uns überrascht: der Zug oder sein Ausfall?"
+    },
+    "ar": "في `Der Zug fiel aus, was uns überraschte` تعود `was` على الخبر كاملًا، أي إلغاء رحلة القطار. وللإحالة إلى الاسم وحده نستعمل ضميرًا يناسبه، مثل `der Zug, der ausfiel`. موضع الفاصلة وحده لا يكفي، فحدّد المرجع أولًا.",
+    "de": "In `Der Zug fiel aus, was uns überraschte` bezieht sich `was` auf den gesamten Sachverhalt. Für das Nomen allein benutzt du das passende Relativpronomen, etwa `der Zug, der ausfiel`. Bestimme zuerst, worauf der Relativsatz verweist."
+  },
+  "infinitiv-zu": {
+    "correct": "Nora versucht, das Formular auszufüllen.",
+    "alternative": "Nora versucht, das Formular zu ausfüllen.",
+    "task": {
+      "ar": "أين تأتي `zu` مع الفعل القابل للانفصال `ausfüllen`؟",
+      "de": "Wo steht `zu` bei dem trennbaren Verb `ausfüllen`?"
+    },
+    "hint": {
+      "ar": "قسّم المصدر إلى `aus` و`füllen`.",
+      "de": "Zerlege den Infinitiv in `aus` und `füllen`."
+    },
+    "ar": "مع الفعل القابل للانفصال تدخل `zu` بين الجزء المنفصل وأصل الفعل، فتُكتب الصيغة كلمة واحدة: `auszufüllen`. مع الفعل غير القابل للانفصال `erklären` تأتي مستقلة قبله: `zu erklären`. اسأل هل ينفصل الجزء الأول في `Sie füllt das Formular aus`.",
+    "de": "Bei einem trennbaren Verb steht `zu` zwischen Vorsilbe und Stamm: `auszufüllen`. Vor dem untrennbaren `erklären` bleibt es ein eigenes Wort: `zu erklären`. Die Trennung siehst du in `Sie füllt das Formular aus`."
+  },
+  "statt-zu": {
+    "correct": "Statt auf den Bus zu warten, gingen wir zu Fuß.",
+    "alternative": "Ohne auf den Bus zu warten, gingen wir zu Fuß.",
+    "task": {
+      "ar": "اختر الجملة التي تبرز أن المشي كان بديلًا عن الانتظار.",
+      "de": "Welcher Satz stellt das Gehen als Alternative zum Warten dar?"
+    },
+    "hint": {
+      "ar": "المطلوب إبراز الاختيار بين فعلين.",
+      "de": "Gesucht ist die Alternative zwischen zwei Handlungen."
+    },
+    "ar": "مع `statt … zu` تضع خيار الانتظار جانبًا وتذكر المشي بوصفه البديل. `Ohne … zu` يذكر فعلًا لم يحصل فقط. وفي الصياغة الأولى تشغل المجموعة المصدرية كل الموقع الأول، لذلك يأتي `gingen` مباشرة بعد الفاصلة.",
+    "de": "Mit `statt … zu` präsentierst du das Gehen als Alternative zum Warten. `Ohne … zu` sagt nur, dass das Warten unterblieb. Die vorangestellte Infinitivgruppe belegt das Vorfeld, deshalb steht `gingen` direkt nach dem Komma."
+  },
+  "ohne-zu": {
+    "correct": "Er verließ das Haus, ohne das Licht auszuschalten.",
+    "alternative": "Er verließ das Haus, ohne das Licht zu ausschalten.",
+    "task": {
+      "ar": "كيف تقول إن الشخص خرج ولم يطفئ الضوء؟",
+      "de": "Wie sagst du, dass er das Haus verlassen und das Licht nicht ausgeschaltet hat?"
+    },
+    "hint": {
+      "ar": "الفعل `ausschalten` قابل للانفصال.",
+      "de": "`ausschalten` ist trennbar."
+    },
+    "ar": "فاعل الخروج وإطفاء الضوء هو الشخص نفسه، لذا تكفي مجموعة `ohne … zu`. تدخل `zu` في `auszuschalten`. وإذا أردت ذكر فاعل آخر فاستعمل `ohne dass`، مثل `Er ging, ohne dass wir es merkten`.",
+    "de": "Für das gleiche Subjekt kannst du `ohne … zu` verwenden. Bei `ausschalten` steht `zu` in der Mitte. Ein anderes Subjekt kannst du mit `ohne dass` ausdrücken, etwa `Er ging, ohne dass wir es merkten`."
+  },
+  "brauchen": {
+    "correct": "Du brauchst das Formular nur zu unterschreiben.",
+    "alternative": "Du brauchst das Formular nur unterschreiben zu.",
+    "task": {
+      "ar": "أي جملة تفيد أن توقيع الاستمارة وحده يكفي؟",
+      "de": "Welcher Satz sagt, dass nur die Unterschrift nötig ist?"
+    },
+    "hint": {
+      "ar": "`nur` تحدّ مما يلزم فعله، وحدّد موضع `zu` مع `unterschreiben`.",
+      "de": "`nur` schränkt die Pflicht ein. Achte auf die Stellung von `zu`."
+    },
+    "ar": "مع `nur` يعبّر `brauchen` عن الحدّ الأدنى المطلوب: يكفي أن توقّع. وتأتي `zu` قبل المصدر غير القابل للانفصال `unterschreiben`. أما في `Du brauchst einen Stift` فـ `einen Stift` مفعول مباشر بمعنى شيء تحتاج إليه.",
+    "de": "Mit `nur` nennt `brauchen` die begrenzte Pflicht: Die Unterschrift reicht. `zu` steht vor dem untrennbaren Infinitiv `unterschreiben`. In `Du brauchst einen Stift` ist `einen Stift` dagegen ein direktes Objekt."
+  },
+  "lassen": {
+    "correct": "Ich habe mein Fahrrad reparieren lassen.",
+    "alternative": "Ich habe mein Fahrrad zu reparieren gelassen.",
+    "task": {
+      "ar": "أي جملة تفيد أنني أوكلتُ إصلاح الدراجة إلى شخص آخر؟",
+      "de": "Welcher Satz sagt, dass jemand anderes mein Fahrrad repariert hat?"
+    },
+    "hint": {
+      "ar": "في الماضي المركّب راقب صيغة `lassen` حين يكون معه مصدر آخر.",
+      "de": "Achte auf die Perfektform von `lassen` mit einem zweiten Infinitiv."
+    },
+    "ar": "`reparieren` هو العمل الذي يقوم به شخص آخر ويأتي هنا بلا `zu`. وفي الماضي المركّب يحلّ المصدر `lassen` محل `gelassen` عند اقترانه بمصدر آخر. أمّا إذا كان `lassen` بمعنى ترك شيء، فنقول مثلًا `Ich habe das Rad zu Hause gelassen`.",
+    "de": "`reparieren` bezeichnet die beauftragte Handlung und steht ohne `zu`. Im Perfekt mit weiterem Infinitiv erscheint der Ersatzinfinitiv `lassen`. In der Bedeutung „zurücklassen“ heißt es etwa `Ich habe das Rad zu Hause gelassen`."
+  },
+  "passiv-perfekt": {
+    "correct": "Die Heizung ist gestern repariert worden.",
+    "alternative": "Die Heizung ist gestern repariert geworden.",
+    "task": {
+      "ar": "أي جملة تخبر عن اكتمال إصلاح التدفئة أمس؟",
+      "de": "Welcher Satz meldet die abgeschlossene Reparatur von gestern?"
+    },
+    "hint": {
+      "ar": "ميّز صيغة المبني للمجهول عن الماضي المركّب من `werden` بمعنى «أصبح».",
+      "de": "Unterscheide das Passivperfekt von `werden` im Sinn von „sich verändern“."
+    },
+    "ar": "في الماضي المركّب للمبني للمجهول اجمع `sein` واسم المفعول ثم `worden`. تفيد هذه الصيغة حصول الإصلاح. لو قلت `Die Heizung ist repariert` لصفْت حال التدفئة، وفي `Es ist warm geworden` يعني `werden` أن الجو أصبح دافئًا.",
+    "de": "Im Passivperfekt stehen `sein`, das Partizip II und `worden`. Der Satz meldet den Reparaturvorgang. `Die Heizung ist repariert` beschreibt den Zustand. In `Es ist warm geworden` drückt `werden` dagegen eine Veränderung aus."
+  },
+  "passiv-modal": {
+    "correct": "Die Formulare müssen bis Freitag abgegeben werden.",
+    "alternative": "Die Formulare müssen bis Freitag werden abgegeben.",
+    "task": {
+      "ar": "أي صياغة تفيد وجوب تسليم الاستمارات بحلول الجمعة؟",
+      "de": "Welcher Satz drückt die Abgabepflicht bis Freitag aus?"
+    },
+    "hint": {
+      "ar": "ابدأ بالفعل الناقص المصرّف ثم رتّب الفعلين في آخر الجملة.",
+      "de": "Setze das finite Modalverb ein und ordne danach die beiden Verbteile am Ende."
+    },
+    "ar": "`müssen` هو الفعل المصرّف وهو في الموقع الثاني في الجملة الرئيسية. في آخرها تأتي صيغة المبني للمجهول المصدرية `abgegeben werden`. وإذا تحوّلت إلى جملة تابعة فضع الفعل الناقص في النهاية: `weil die Formulare abgegeben werden müssen`.",
+    "de": "`müssen` ist im Hauptsatz das finite Verb an Position zwei. Am Ende steht der Passivinfinitiv `abgegeben werden`. Im entsprechenden Nebensatz folgt das finite Modalverb am Schluss: `weil die Formulare abgegeben werden müssen`."
+  },
+  "subjektlos": {
+    "correct": "Den Gästen wird am Eingang geholfen.",
+    "alternative": "Die Gäste werden am Eingang geholfen.",
+    "task": {
+      "ar": "أي صيغة مبنية للمجهول تناسب `Man hilft den Gästen`؟",
+      "de": "Wie lautet das Passiv zu `Man hilft den Gästen`?"
+    },
+    "hint": {
+      "ar": "`helfen` يطلب `Dativ`، فهل تتحول المجموعة إلى فاعل؟",
+      "de": "`helfen` verlangt den Dativ. Prüfe, ob die Gruppe zum Subjekt werden kann."
+    },
+    "ar": "يبقى `den Gästen` في حالة `Dativ` في المبني للمجهول. فلا يوجد فاعل في هذه الجملة، ويأتي الفعل المساعد في صيغة المفرد `wird` رغم أن الضيوف جمع. ويمكن تغيير البداية فنقول `Am Eingang wird den Gästen geholfen`.",
+    "de": "`den Gästen` bleibt im Passiv ein Dativobjekt. Ohne Subjekt steht das Hilfsverb im Singular `wird`, obwohl die Gäste mehrere sind. Auch `Am Eingang wird den Gästen geholfen` ist möglich."
+  },
+  "erststellen-es": {
+    "correct": "Heute kommen viele Gäste.",
+    "alternative": "Heute kommen es viele Gäste.",
+    "task": {
+      "ar": "قدّم `Heute` في جملة `Es kommen heute viele Gäste`.",
+      "de": "Stelle `Heute` in `Es kommen heute viele Gäste` an den Anfang."
+    },
+    "hint": {
+      "ar": "ما الفاعل الذي يحدّد صيغة `kommen`؟",
+      "de": "Welches Subjekt bestimmt die Form `kommen`?"
+    },
+    "ar": "تملأ `es` الموقع الأول عندما يتأخّر الفاعل `viele Gäste`. إذا شغل `Heute` الموقع حُذفت `es` وبقي الفعل في الجمع. قارِن `Es regnet → Heute regnet es`، حيث تبقى `es` لأنها جزء ثابت من التركيب.",
+    "de": "`es` füllt das Vorfeld, wenn das Subjekt `viele Gäste` später steht. Mit `Heute` im Vorfeld entfällt dieses `es`. Die Pluralform bleibt. In `Es regnet → Heute regnet es` gehört `es` fest zur Konstruktion."
+  },
+  "plusquamperfekt": {
+    "correct": "Als ich am Bahnhof ankam, war der Zug schon abgefahren.",
+    "alternative": "Als ich am Bahnhof ankam, hatte der Zug schon abgefahren.",
+    "task": {
+      "ar": "أي صياغة تدل على أن مغادرة القطار سبقت وصولي؟",
+      "de": "Welcher Satz drückt aus, dass der Zug vor meiner Ankunft abfuhr?"
+    },
+    "hint": {
+      "ar": "اختر المساعد كما في الماضي المركّب من `abfahren`.",
+      "de": "Wähle das Hilfsverb wie im Perfekt von `abfahren`."
+    },
+    "ar": "حدّد الحدثين: وصل المتكلم إلى المحطة، وكان القطار قد غادر قبل ذلك. تضع الحدث الأسبق في `Plusquamperfekt`. وبما أن الماضي المركّب من `abfahren` هو `ist abgefahren`، يصبح الماضي الأسبق `war abgefahren`.",
+    "de": "Die Ankunft ist der spätere Zeitpunkt. Die Abfahrt liegt davor und steht im Plusquamperfekt. Das Perfekt `ist abgefahren` zeigt das Hilfsverb `sein`, das im Plusquamperfekt zu `war` wird."
+  },
+  "nachdem": {
+    "correct": "Nachdem wir gegessen hatten, räumten wir auf.",
+    "alternative": "Nachdem wir gegessen hatten, wir räumten auf.",
+    "task": {
+      "ar": "أي ترتيب يناسب جملة تبدأ بـ `Nachdem`؟",
+      "de": "Welche Wortstellung passt nach dem vorangestellten `Nachdem`-Satz?"
+    },
+    "hint": {
+      "ar": "عامل الجملة التابعة كلها على أنها الموقع الأول.",
+      "de": "Der gesamte Nebensatz besetzt das Vorfeld."
+    },
+    "ar": "`Nachdem wir gegessen hatten` يصف الحدث الأسبق ويشغل الموقع الأول كله. يأتي بعد الفاصلة الفعل المصرف من الرئيسية `räumten` ثم الفاعل `wir`، ويأتي الجزء المنفصل `auf` في آخرها.",
+    "de": "`Nachdem wir gegessen hatten` nennt das frühere Ereignis und füllt als Ganzes das Vorfeld. Danach folgen `räumten` und das Subjekt `wir`. Der abgetrennte Verbteil `auf` steht am Schluss."
+  },
+  "bevor-bis": {
+    "correct": "Wir bleiben im Raum, bis der Regen aufhört.",
+    "alternative": "Wir bleiben im Raum, bevor der Regen aufhört.",
+    "task": {
+      "ar": "أي جملة تجعل توقّف المطر نهايةً للانتظار؟",
+      "de": "Welcher Satz setzt das Ende des Regens als Grenze für das Bleiben?"
+    },
+    "hint": {
+      "ar": "هل تريد تحديد نقطة النهاية أم ترتيب حدثين منفصلين؟",
+      "de": "Geht es um einen Endpunkt oder nur die Reihenfolge zweier Ereignisse?"
+    },
+    "ar": "تستمر الإقامة في الغرفة إلى أن يتوقّف المطر، لذلك تناسبها `bis`. لو أردت أن تقول إننا غادرنا قبل توقّفه، لقلت `Wir gingen, bevor der Regen aufhörte`. وفي الجملة التابعة يأتي الفعل القابل للانفصال في كلمة واحدة: `aufhört`.",
+    "de": "Mit `bis` dauert das Bleiben bis zum Ende des Regens. Eine Handlung vor diesem Zeitpunkt drückst du mit `Wir gingen, bevor der Regen aufhörte` aus. Im Nebensatz wird `aufhört` zusammengeschrieben."
+  },
+  "seit-waehrend": {
+    "correct": "Seit ich im Schichtdienst arbeite, plane ich meine Woche genauer.",
+    "alternative": "Bis ich im Schichtdienst arbeite, plane ich meine Woche genauer.",
+    "task": {
+      "ar": "أي جملة تفيد أن العمل بنظام المناوبات بدأ بالفعل وما زال مستمرًا؟",
+      "de": "Welcher Satz sagt, dass die Schichtarbeit schon begonnen hat und weiterläuft?"
+    },
+    "hint": {
+      "ar": "ابحث عن أداة تحدّد بداية الأمر المستمر.",
+      "de": "Suche den Konnektor, der den Anfang des andauernden Zustands nennt."
+    },
+    "ar": "تحدّد `seit` نقطة البداية، وتوضح صيغة الحاضر `arbeite` استمرار العمل إلى الآن. وقد تأتي في جملة `seit` صيغة الماضي المركّب عندما يكون الحدث الذي بدأ منه التغيير منتهيًا، مثل `Seit ich umgezogen bin, fahre ich oft Rad`.",
+    "de": "`seit` nennt den Beginn. Im Präsens `arbeite` dauert die Schichtarbeit noch an. Das auslösende Ereignis kann auch abgeschlossen sein und dann etwa im Perfekt stehen: `Seit ich umgezogen bin, fahre ich oft Rad`."
+  },
+  "futur1": {
+    "correct": "Wir werden die Werkstatt im Mai eröffnen.",
+    "alternative": "Wir werden die Werkstatt im Mai eröffnet.",
+    "task": {
+      "ar": "أي صياغة تخبر عن خطة لافتتاح الورشة؟",
+      "de": "Welcher Satz kündigt die Eröffnung der Werkstatt an?"
+    },
+    "hint": {
+      "ar": "ضع مصدر `eröffnen` في آخر الجملة.",
+      "de": "Setze den Infinitiv von `eröffnen` ans Satzende."
+    },
+    "ar": "في `Futur I` تصرّف `werden` بحسب الفاعل وتضع المصدر في النهاية. `Wir werden … eröffnen` تعني أننا سنقوم بالافتتاح. أما `Die Werkstatt wird eröffnet` ففيها اسم المفعول مع `werden`، وهي صيغة المبني للمجهول.",
+    "de": "Im Futur I passt du `werden` an das Subjekt an und setzt den Infinitiv ans Ende. `Wir werden … eröffnen` nennt den künftigen Handelnden. `Die Werkstatt wird eröffnet` enthält dagegen das Partizip II und ist Passiv."
+  },
+  "kausal-da-weil": {
+    "correct": "Die Fähre fällt aus, weil es stark stürmt.",
+    "alternative": "Die Fähre fällt aus, weil es stürmt stark.",
+    "task": {
+      "ar": "أي جملة تعطي سبب إلغاء رحلة العبّارة؟",
+      "de": "Welcher Satz begründet den Ausfall der Fähre korrekt?"
+    },
+    "hint": {
+      "ar": "بعد `weil` ابحث عن الفعل المصرّف الذي يأتي في آخر الجملة التابعة.",
+      "de": "Nach `weil` gehört das finite Verb ans Ende des Nebensatzes."
+    },
+    "ar": "تذكر الجملة الرئيسية ما حدث، وتجيب جملة `weil` عن سؤال «لماذا؟». لذلك يأتي `stürmt` في آخر الجملة التابعة. ويمكن تقديم السبب: `Weil es stark stürmt, fällt die Fähre aus`. عندها يأتي فعل الرئيسية مباشرةً بعد الفاصلة.",
+    "de": "Der Hauptsatz nennt das Ereignis, der `weil`-Satz liefert die Antwort auf „Warum?“. `stürmt` steht am Ende des Nebensatzes. In `Weil es stark stürmt, fällt die Fähre aus` beginnt der Hauptsatz nach dem Komma mit dem Verb."
+  },
+  "deshalb-daher": {
+    "correct": "Es stürmt stark. Deshalb fällt die Fähre aus.",
+    "alternative": "Es stürmt stark. Deshalb die Fähre fällt aus.",
+    "task": {
+      "ar": "ما ترتيب الجملة حين تبدأ النتيجة بـ `deshalb`؟",
+      "de": "Welche Wortstellung hat der Satz, wenn die Folge mit `deshalb` beginnt?"
+    },
+    "hint": {
+      "ar": "`Deshalb` يشغل الموقع الأول في جملة رئيسية.",
+      "de": "`Deshalb` besetzt das Vorfeld eines Hauptsatzes."
+    },
+    "ar": "تحيل `deshalb` إلى السبب السابق وتقدّم النتيجة في جملة رئيسية جديدة. إذا وضعتها أولًا يأتي بعدها `fällt` ثم الفاعل `die Fähre`. ويمكن إبقاء الفاعل أولًا ونقل الظرف إلى الوسط: `Die Fähre fällt deshalb aus`.",
+    "de": "`deshalb` verweist auf den vorigen Grund und leitet hier einen neuen Hauptsatz ein. Nach `Deshalb` folgen `fällt` und dann `die Fähre`. Mit Subjekt im Vorfeld kannst du auch `Die Fähre fällt deshalb aus` sagen."
+  },
+  "sodass": {
+    "correct": "Die Straße war gesperrt, sodass wir einen Umweg fahren mussten.",
+    "alternative": "Die Straße war gesperrt, obwohl wir einen Umweg fahren mussten.",
+    "task": {
+      "ar": "أي جملة تجعل تغيير الطريق نتيجةً لإغلاق الشارع؟",
+      "de": "Welcher Satz stellt den Umweg als Folge der Sperrung dar?"
+    },
+    "hint": {
+      "ar": "اسأل «ماذا ترتّب على إغلاق الشارع؟».",
+      "de": "Frage: „Was hatte die Sperrung zur Folge?“"
+    },
+    "ar": "تقدّم `sodass` النتيجة التي ترتّبت على الوضع السابق. يبقى الفعل المصرّف `mussten` في آخر الجملة التابعة بعد المصدر `fahren`. ولإبراز درجة تؤدّي إلى نتيجة نقول مثلًا `Der Umweg war so lang, dass wir zu spät kamen`.",
+    "de": "`sodass` führt eine Folge des vorherigen Sachverhalts ein. Das finite `mussten` steht nach dem Infinitiv `fahren` am Ende. Einen Grad mit Folge drückst du zum Beispiel mit `Der Umweg war so lang, dass wir zu spät kamen` aus."
+  },
+  "indem": {
+    "correct": "Wir sparen Strom, indem wir das Licht früher ausschalten.",
+    "alternative": "Wir sparen Strom, indem wir schalten das Licht früher aus.",
+    "task": {
+      "ar": "كيف تحدّد الطريقة التي توفّر بها الكهرباء؟",
+      "de": "Wie nennst du die Methode, mit der ihr Strom spart?"
+    },
+    "hint": {
+      "ar": "في الجملة التابعة يأتي `ausschalten` في آخرها بصيغته المصرّفة المتصلة.",
+      "de": "Im Nebensatz steht die finite Form von `ausschalten` am Ende und bleibt zusammen."
+    },
+    "ar": "تجيب جملة `indem` عن سؤال «كيف؟» بإجراء عملي، وهو إطفاء الضوء مبكرًا. وفي الرئيسية تنفصل `aus`: `Wir schalten das Licht aus`. وبعد `indem` تتصل بالفعل في آخر الجملة: `… ausschalten`.",
+    "de": "Der `indem`-Satz beantwortet „Wie?“ mit einem konkreten Mittel. Im Hauptsatz wird `aus` getrennt: `Wir schalten das Licht aus`. Im Nebensatz steht die konjugierte Form `ausschalten` ungetrennt am Ende."
+  },
+  "obwohl": {
+    "correct": "Obwohl es stark regnete, blieb der Markt geöffnet.",
+    "alternative": "Obwohl es stark regnete, der Markt blieb geöffnet.",
+    "task": {
+      "ar": "كيف تبدأ الجملة بالعامل المعيق «مع أن المطر كان غزيرًا»؟",
+      "de": "Wie beginnst du den Satz mit dem Hindernis „obwohl es stark regnete“?"
+    },
+    "hint": {
+      "ar": "تؤلّف الجملة التابعة كلها الموقع الأول. ما الذي يأتي بعد الفاصلة؟",
+      "de": "Der Nebensatz als Ganzes steht im Vorfeld. Was kommt nach dem Komma?"
+    },
+    "ar": "تذكر `obwohl` وضعًا نتوقّع معه إغلاق السوق، ثم تأتي الرئيسية لتقول إن السوق ظلّ مفتوحًا. إذا قدّمت الجملة التابعة فضع `blieb` بعد الفاصلة مباشرة. ويمكنك في جملتين مستقلتين بدء النتيجة بـ `Trotzdem blieb …`.",
+    "de": "`obwohl` nennt einen Umstand, bei dem man erwartet, dass der Markt schließt. Der Hauptsatz sagt, dass er geöffnet blieb. Nach einem vorangestellten Nebensatz kommt sofort `blieb`. Zwei Hauptsätze verbindest du sinngemäß mit `Trotzdem blieb …`."
+  },
+  "trotzdem": {
+    "correct": "Es regnete stark. Trotzdem blieb der Markt geöffnet.",
+    "alternative": "Es regnete stark. Trotzdem der Markt geöffnet blieb.",
+    "task": {
+      "ar": "أي ترتيب يناسب `trotzdem` عندما تبدأ بها الجملة؟",
+      "de": "Welche Wortstellung ist nach vorangestelltem `trotzdem` richtig?"
+    },
+    "hint": {
+      "ar": "تأتي هنا جملة رئيسية. ابحث عن موقع `blieb`.",
+      "de": "Hier folgt ein Hauptsatz. Achte auf die Position von `blieb`."
+    },
+    "ar": "تعود `trotzdem` على المطر المذكور في الجملة السابقة. وهي ظرف يشغل الموقع الأول، لذلك يأتي الفعل بعده والفاعل في الموقع التالي. وفي جملة `obwohl es stark regnete` كانت أداة الربط جزءًا من جملة تابعة وفعلها في الآخر.",
+    "de": "`trotzdem` verweist auf den bereits genannten Regen. Das Adverb besetzt das Vorfeld, danach folgen Verb und Subjekt. In `obwohl es stark regnete` leitet die Konjunktion hingegen einen Nebensatz mit finitem Verb am Ende ein."
+  },
+  "waehrend-adversativ": {
+    "correct": "Während Lea lieber zu Hause lernt, geht Tarek zum Lernen in die Bibliothek.",
+    "alternative": "Während Lea lieber zu Hause lernt, Tarek geht zum Lernen in die Bibliothek.",
+    "task": {
+      "ar": "كيف تقارن بين عادتين دراسيتين في جملة واحدة تبدأ بـ `Während`؟",
+      "de": "Wie stellst du zwei Lerngewohnheiten in einem Satz mit `Während` gegenüber?"
+    },
+    "hint": {
+      "ar": "بعد الفاصلة يبدأ القسم الرئيسي بالفعل المصرّف.",
+      "de": "Nach dem Komma folgt das finite Verb des Hauptsatzes."
+    },
+    "ar": "يدلّ `während` هنا على المقابلة بين تفضيلين، ولا يشترط أن يدرس الشخصان في الوقت نفسه. يشغل القسم التابع الموقع الأول، ويأتي `geht` بعد الفاصلة. ويمكن التعبير عن المقابلة بجملتين مستقلتين باستعمال `dagegen`.",
+    "de": "`während` stellt hier Vorlieben gegenüber. Lea und Tarek müssen nicht zur gleichen Zeit lernen. Nach dem Nebensatz im Vorfeld folgt `geht`. Die Gegenüberstellung funktioniert auch in zwei Hauptsätzen mit `dagegen`."
+  },
+  "je-desto": {
+    "correct": "Je länger wir warten, desto voller wird der Bus.",
+    "alternative": "Je länger warten wir, desto wird der Bus voller.",
+    "task": {
+      "ar": "أي ترتيب يبيّن أن الحافلة تزدحم أكثر كلما طال الانتظار؟",
+      "de": "Welcher Satz zeigt, dass der Bus mit der Wartezeit voller wird?"
+    },
+    "hint": {
+      "ar": "تلتصق كل أداة بصيغة المقارنة التي تليها.",
+      "de": "Beide Einleiter stehen direkt vor ihrem Komparativ."
+    },
+    "ar": "تشكل `Je länger` بداية جملة تابعة تنتهي بالفعل `warten`. وتشغل `desto voller` الموقع الأول كله في الرئيسية، فتأتي بعدها `wird`. ويمكن أن تكون المقارنة مجموعة أطول، مثل `desto mehr Zeit` في `desto mehr Zeit brauchen wir`.",
+    "de": "`Je länger` leitet den Nebensatz mit `warten` am Ende ein. `desto voller` besetzt als Einheit das Vorfeld des Hauptsatzes. Danach kommt `wird`. Das Vergleichsglied kann größer sein, etwa `desto mehr Zeit` in `desto mehr Zeit brauchen wir`."
+  },
+  "doppelkonjunktionen": {
+    "correct": "Der Raum ist nicht nur hell, sondern auch ruhig.",
+    "alternative": "Der Raum ist nicht nur hell oder auch ruhig.",
+    "task": {
+      "ar": "كيف تقول إن الغرفة تجمع بين الإضاءة الجيدة والهدوء؟",
+      "de": "Wie sagst du, dass der Raum sowohl hell als auch ruhig ist?"
+    },
+    "hint": {
+      "ar": "قابل `nicht nur` بالأداة التي تضيف الصفة الثانية.",
+      "de": "Ergänze zu `nicht nur` den Teil, der die zweite Eigenschaft hinzufügt."
+    },
+    "ar": "تُضاف الصفة الثانية بالأداة `sondern auch`، وتأتي فاصلة قبل `sondern`. اربط عنصرين متوازيين، وهنا الصفتان `hell` و`ruhig`. ومع `entweder … oder` يتحوّل المعنى إلى الاختيار بين بديلين.",
+    "de": "`sondern auch` fügt die zweite Eigenschaft hinzu. Vor `sondern` steht ein Komma. Verbinde parallele Satzteile, hier die Adjektive `hell` und `ruhig`. Mit `entweder … oder` formulierst du dagegen eine Wahl."
+  },
+  "falls": {
+    "correct": "Falls du den Eingang nicht findest, ruf mich an.",
+    "alternative": "Falls du den Eingang nicht findest, du rufst mich an.",
+    "task": {
+      "ar": "أي صياغة تعطي تعليمات لحالة احتمال عدم العثور على المدخل؟",
+      "de": "Welcher Satz gibt eine Anweisung für den Fall, dass der Eingang schwer zu finden ist?"
+    },
+    "hint": {
+      "ar": "ضع صيغة الأمر مباشرةً بعد الفاصلة.",
+      "de": "Setze den Imperativ direkt nach dem Komma."
+    },
+    "ar": "يطرح `falls` احتمالًا، وتخبر الجملة الرئيسية المستمع بما يفعله عند تحقّقه. هنا تأتي صيغة الأمر `ruf` بعد الفاصلة ويذهب الجزء المنفصل `an` إلى النهاية. وإذا وضعت التعليمات أولًا قلت `Ruf mich an, falls du den Eingang nicht findest`.",
+    "de": "`falls` nennt eine Möglichkeit. Die Anweisung dazu beginnt hier mit dem Imperativ `ruf`, die Vorsilbe `an` steht am Ende. Du kannst die Anweisung auch voranstellen: `Ruf mich an, falls du den Eingang nicht findest`."
+  },
+  "sonst": {
+    "correct": "Lade das Handy auf, sonst kannst du mich unterwegs nicht anrufen.",
+    "alternative": "Lade das Handy auf, sonst du kannst mich unterwegs nicht anrufen.",
+    "task": {
+      "ar": "أي ترتيب يناسب التحذير بعد `sonst`؟",
+      "de": "Welche Wortstellung passt zur Warnung nach `sonst`?"
+    },
+    "hint": {
+      "ar": "`sonst` في الموقع الأول من جملة رئيسية.",
+      "de": "`sonst` steht im Vorfeld eines Hauptsatzes."
+    },
+    "ar": "اختبر المعنى بصياغة الشرط الضمني: `Wenn du das Handy nicht auflädst, kannst du mich nicht anrufen`. بعد `sonst` يأتي `kannst` مباشرةً لأن الجملة رئيسية. ويأتي المصدر القابل للانفصال `anrufen` في آخرها كلمةً واحدة.",
+    "de": "Prüfe die Bedeutung mit `Wenn du das Handy nicht auflädst, kannst du mich nicht anrufen`. Im Hauptsatz mit `sonst` folgt `kannst` direkt. Der trennbare Infinitiv `anrufen` bleibt am Ende zusammen."
+  },
+  "irreale-bedingung": {
+    "correct": "Wenn ich ein Auto hätte, könnte ich dich abholen.",
+    "alternative": "Wenn ich ein Auto hatte, könnte ich dich abholen.",
+    "task": {
+      "ar": "أي صياغة تفيد أنني لا أملك سيارة الآن لكنني أتصوّر ما يمكن فعله لو كانت عندي سيارة؟",
+      "de": "Welcher Satz sagt, was möglich wäre, wenn ich jetzt ein Auto hätte?"
+    },
+    "hint": {
+      "ar": "اختر صيغة `Konjunktiv II` من `haben`، ثم انظر إلى `können`.",
+      "de": "Wähle den Konjunktiv II von `haben` und beachte `können`."
+    },
+    "ar": "`hätte` تصف شرطًا مخالفًا للواقع الحالي، و`könnte` تصف القدرة المفترضة الناتجة عنه. يأتي المصدر `abholen` في النهاية من دون `zu` بعد الفعل الناقص. أما `hatte` فهي صيغة الماضي الخبري من `haben`.",
+    "de": "`hätte` markiert die irreale Bedingung der Gegenwart, `könnte` die hypothetische Möglichkeit. Der Infinitiv `abholen` folgt am Satzende ohne `zu`. `hatte` ist das Präteritum im Indikativ."
+  },
+  "konjunktiv2-vergangenheit": {
+    "correct": "Wenn wir früher losgefahren wären, hätten wir den Zug erreicht.",
+    "alternative": "Wenn wir früher losgefahren hätten, wären wir den Zug erreicht.",
+    "task": {
+      "ar": "أي صياغة تفترض أن انطلاقنا المبكر كان سيتيح لنا اللحاق بالقطار؟",
+      "de": "Welcher Satz drückt aus, dass eine frühere Abfahrt den Zug erreichbar gemacht hätte?"
+    },
+    "hint": {
+      "ar": "اختبر كل فعل وحده في الماضي المركّب حتى تختار الفعل المساعد.",
+      "de": "Bilde zuerst das Perfekt beider Verben, um die Hilfsverben zu bestimmen."
+    },
+    "ar": "الانطلاق واللحاق حدثان افتراضيان في الماضي. نقول في الماضي المركّب `wir sind losgefahren` و`wir haben den Zug erreicht`. لذلك نستعمل `wären` مع الأول و`hätten` مع الثاني، مع إبقاء اسم المفعول في كل جزء.",
+    "de": "Beide Handlungen liegen in einer irrealen Vergangenheit. Das Perfekt lautet `wir sind losgefahren` und `wir haben den Zug erreicht`. Daraus werden `wären losgefahren` und `hätten erreicht` mit unverändertem Partizip II."
+  },
+  "konjunktiv2-vergangenheit-modal": {
+    "correct": "Ohne die Karte hätten wir länger suchen müssen.",
+    "alternative": "Ohne die Karte wären wir länger gesucht müssen.",
+    "task": {
+      "ar": "أي صياغة تفيد أننا كنا سنضطر للبحث وقتًا أطول لولا الخريطة؟",
+      "de": "Welcher Satz drückt aus, dass ohne die Karte eine längere Suche nötig gewesen wäre?"
+    },
+    "hint": {
+      "ar": "في هذا التركيب يرد الفعل الناقص مصدرًا إلى جانب `suchen`.",
+      "de": "Das Modalverb steht hier als Infinitiv neben `suchen`."
+    },
+    "ar": "تعادل `Ohne die Karte` شرطًا غير واقعي في الماضي. رتب النتيجة على النحو الآتي: `hätten` ثم عناصر الجملة ثم المصدران `suchen müssen`. وإذا وصفت شيئًا كان سيقع عليه الفعل بصيغة المبني للمجهول، فقد تقول `Der Eingang wäre später gefunden worden`.",
+    "de": "`Ohne die Karte` steht für eine irreale Bedingung in der Vergangenheit. Im Hauptsatz folgen auf `hätten` am Satzende die beiden Infinitive `suchen müssen`. Im irrealen Passiv wäre dagegen etwa `Der Eingang wäre später gefunden worden` möglich."
+  }
+}

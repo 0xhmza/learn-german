@@ -10,6 +10,9 @@ export function parse(hash, ctx) {
   if (!raw || extra !== undefined) return home;
   if (view === 'island' && ctx.islandById.has(key)) return { view, key, hash: raw, tab: 'home' };
   if (view === 'lesson' && ctx.lessons.has(key)) return { view, key, hash: raw, tab: 'home' };
+  if (view === 'cards' && (key === undefined || ctx.lessonStudy.has(key))) return { view, key, hash: raw, tab: 'practice' };
+  const libraries = { readings: ctx.readings, sprachbausteine: ctx.sprachbausteine };
+  if (Object.hasOwn(libraries, view) && (key === undefined || libraries[view].has(key))) return { view, key, hash: raw, tab: 'practice' };
   if (view === 'practice') {
     if (key === undefined || key === '') return { view: 'practice', key: null, hash: 'practice', tab: 'practice' };
     if (/^unit-\d+$/.test(key)) return { view: 'practice', key: null, hash: 'practice', tab: 'practice' };

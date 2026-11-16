@@ -28,19 +28,19 @@
   "i18n": {
     "ar": {
       "title": "مع أنّ: التناقض بـ obwohl",
-      "lead": "عادةً لا نخرج للنزهة حين يمطر. فإذا فعلنا ذلك رغم المطر فالنتيجة غير متوقعة. هذا التناقض تعبّر عنه `obwohl`، وهي ترسل الفعل إلى آخر جملتها.",
+      "lead": "تذكر `obwohl` عائقًا حصل الفعل رغم وجوده. فإذا خرجت للنزهة مع أن المطر كان غزيرًا، تضع المطر في الجملة التابعة والفعل المصرّف في آخرها.",
       "translation": "مع أنها تمطر أخرج للنزهة.",
       "steps": [
         { "text": "لاحظ التناقض بين الجملتين", "why": "المطر يجعلنا نتوقع البقاء في البيت، لكن الشخص يخرج. حين لا تتفق النتيجة مع المتوقع نستعمل `obwohl`." },
-        { "text": "ضع obwohl قبل الأمر الذي كان يجب أن يمنع الفعل", "why": "`obwohl` تبدأ جملة تابعة، فيقف الفعل المصرف `regnet` في آخرها. وبين الجملتين فاصلة." },
-        { "text": "يمكن أن تبدأ الجملة كلها بـ obwohl", "why": "حين تأتي الجملة التابعة أولًا تشغل الموقع الأول، فيبدأ ما بعد الفاصلة بالفعل المصرف `gehe` ثم الفاعل." },
-        { "text": "في الماضي يبقى الفعل المصرف في الآخر أيضًا", "why": "مع الأزمنة المركبة يأتي `Partizip II` ثم الفعل المساعد: `obwohl sie lange gearbeitet hatte`. ومع `war` وحدها تقف `war` في الآخر." }
+        { "text": "ضع obwohl قبل الأمر الذي كان يجب أن يمنع الفعل", "why": "`obwohl` تبدأ جملة تابعة، فيقف الفعل المصرّف `regnet` في آخرها. وبين الجملتين فاصلة." },
+        { "text": "يمكن أن تبدأ الجملة كلها بـ obwohl", "why": "حين تأتي الجملة التابعة أولًا تشغل الموقع الأول، فيبدأ ما بعد الفاصلة بالفعل المصرّف `gehe` ثم الفاعل." },
+        { "text": "في الماضي يبقى الفعل المصرّف في الآخر أيضًا", "why": "مع الأزمنة المركبة يأتي `Partizip II` ثم الفعل المساعد: `obwohl sie lange gearbeitet hatte`. ومع `war` وحدها تقف `war` في الآخر." }
       ],
       "explain": [
         "تذكر `obwohl` السبب الذي كان من المفترض أن يمنع شيئًا، لكنه لم يمنعه. فالجملة الرئيسية تحمل ما حدث رغم ذلك.",
         "`obwohl` أداة ربط تابعة مثل `weil`، لكن معناها عكسه: `weil` سبب ينتج عنه الفعل، و`obwohl` سبب لم يمنع الفعل."
       ],
-      "pitfall": "إذا بدأت بالجملة التابعة فهي تشغل الموقع الأول كله، فيأتي الفعل المصرف بعد الفاصلة مباشرة ثم الفاعل.",
+      "pitfall": "إذا بدأت بالجملة التابعة فهي تشغل الموقع الأول كله، فيأتي الفعل المصرّف بعد الفاصلة مباشرة ثم الفاعل.",
       "recall": ["ما الفرق بين `Ich gehe raus, weil es regnet` و`Ich gehe raus, obwohl es regnet`؟", "الأولى تجعل المطر سبب الخروج، والثانية تقول إن المطر لم يمنع الخروج."],
       "linkTitles": ["جمل التنازل · grammis", "obwohl في معجم DWDS"]
     },
@@ -68,7 +68,7 @@
       "text": "Er trinkt Kaffee, obwohl es schon spät {{1}}.",
       "blanks": [["ist"]],
       "i18n": {
-        "ar": { "prompt": "أكمل بالفعل `sein` في المكان الصحيح.", "explain": "بعد `obwohl` يقف الفعل المصرف في آخر الجملة: `spät ist`.", "hints": ["الفاعل هو `es`."] },
+        "ar": { "prompt": "أكمل بالفعل `sein` في المكان الصحيح.", "explain": "بعد `obwohl` يقف الفعل المصرّف في آخر الجملة: `spät ist`.", "hints": ["الفاعل هو `es`."] },
         "de": { "prompt": "Ergänze die Form von `sein`.", "explain": "Nach `obwohl` steht das konjugierte Verb am Ende: `spät ist`.", "hints": ["Das Subjekt ist `es`."] }
       }
     },
@@ -129,7 +129,7 @@
       "context": "Obwohl es regnet, ich gehe spazieren.",
       "answer": "Obwohl es regnet, gehe ich spazieren.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "الجملة التابعة تشغل الموقع الأول، فيأتي الفعل `gehe` بعد الفاصلة مباشرة ثم `ich`.", "hints": ["ماذا يأتي بعد الفاصلة؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "الجملة التابعة تشغل الموقع الأول، فيأتي الفعل `gehe` بعد الفاصلة مباشرة ثم `ich`.", "hints": ["ماذا يأتي بعد الفاصلة؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Der Nebensatz besetzt Position 1. Nach dem Komma folgt `gehe`, dann `ich`.", "hints": ["Was steht nach dem Komma?"] }
       }
     },
@@ -137,7 +137,7 @@
       "id": "obwohl-9", "type": "text", "difficulty": 2,
       "answer": "Ich lerne Deutsch, obwohl die Grammatik schwer ist.",
       "i18n": {
-        "ar": { "prompt": "اكتب جملة عن تعلم الألمانية مع `obwohl`.", "explain": "مثال: `Ich lerne Deutsch, obwohl die Grammatik schwer ist.`", "hints": ["الفعل المصرف في آخر جملة `obwohl`."] },
+        "ar": { "prompt": "اكتب جملة عن تعلم الألمانية مع `obwohl`.", "explain": "مثال: `Ich lerne Deutsch, obwohl die Grammatik schwer ist.`", "hints": ["الفعل المصرّف في آخر جملة `obwohl`."] },
         "de": { "prompt": "Schreib einen Satz über dein Deutschlernen mit `obwohl`.", "explain": "Zum Beispiel: `Ich lerne Deutsch, obwohl die Grammatik schwer ist.`", "hints": ["Im obwohl-Satz steht das konjugierte Verb am Ende."] }
       }
     }

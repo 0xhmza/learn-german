@@ -25,10 +25,10 @@ function continueCard(app) {
   const nextIsland = next && ctx.islandById.get(next.island);
   const rankLine = level.to === null ? t('maxRank') : t('toNextRank', num(level.to - state.xp.total));
   return `<section class="panel dash-continue" aria-labelledby="dash-title">
-    <span class="eyebrow">${t('greeting')}</span>
+    <h1 id="dash-title" class="eyebrow">${t('greeting')}</h1>
     <div class="rank-row">
       <span class="rank-badge" aria-hidden="true">${num(level.level)}</span>
-      <div class="rank-text"><span class="label">${t('rank')}</span><strong id="dash-title">${esc(level.rank[lang])}</strong><small>${rankLine}</small></div>
+      <div class="rank-text"><span class="label">${t('rank')}</span><strong>${esc(level.rank[lang])}</strong><small>${rankLine}</small></div>
       <span class="rank-xp">${t('totalXp', num(state.xp.total))}</span>
     </div>
     <div class="xp-bar" aria-hidden="true"><i style="inline-size:${Math.round(level.progress * 100)}%"></i></div>

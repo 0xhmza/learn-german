@@ -22,6 +22,8 @@ function runTitle(app, run) {
   if (run.kind === 'review') return t('reviewName');
   if (run.kind === 'island') return t('islandRunName', islandName(ctx.islandById.get(run.target), lang));
   if (run.kind === 'exam') return t('examName', islandName(ctx.islandById.get(run.target), lang));
+  if (run.kind === 'set') return ctx.practiceSets.get(run.target).title[lang];
+  if (run.kind === 'apply') return t('lessonApply');
   return lessonTitle(ctx.lessons.get(run.target), lang);
 }
 
@@ -103,7 +105,7 @@ function renderInput(run, q, value, locked, showGrade) {
     return `<fieldset class="choices"><legend class="sr-only">${t('chooseOne')}</legend>
       ${permutation(run, q, q.options.length).map(i => {
         const gradeClass = showGrade && i === q.answer ? 'good' : showGrade && i === value ? 'bad' : '';
-        return `<label class="option ${gradeClass}"><input type="radio" name="choice" value="${i}" ${value === i ? 'checked' : ''} ${disabled}><span>${prose(q.options[i])}</span></label>`;
+        return `<label class="option ${gradeClass}"><input type="radio" name="choice" value="${i}" ${value === i ? 'checked' : ''} ${disabled}><span>${answerText(q.options[i])}</span></label>`;
       }).join('')}</fieldset>`;
   }
   if (q.type === 'cloze') {
@@ -117,8 +119,10 @@ function renderInput(run, q, value, locked, showGrade) {
   }
   if (q.type === 'order') return `<div id="ordering">${orderMarkup(run, q, value || [], locked)}</div>`;
   return `<label class="answer-label" for="written">${t('writeLabel')}</label>
-    <textarea id="written" dir="auto" lang="de" spellcheck="false" ${disabled}>${esc(value ?? '')}</textarea>`;
+    <textarea id="written" dir="ltr" lang="de" spellcheck="false" ${disabled}>${esc(value ?? '')}</textarea>`;
 }
+
+const answerText = value => /\p{Script=Arabic}/u.test(value) || value.includes('`') ? prose(value) : de(value);
 
 function orderMarkup(run, q, value, locked) {
   const token = (i, action) => `<button type="button" class="order-token" data-action="${action}" data-piece="${i}" lang="de" dir="ltr" ${locked ? 'disabled' : ''}>${esc(q.items[i])}</button>`;
@@ -132,7 +136,7 @@ function renderFeedback(q, grade) {
   const alternates = q.blanks?.flatMap((variants, i) => (variants.length > 1 ? [`${num(i + 1)} · ${variants.map(de).join(' / ')}`] : []));
   return `<div class="feedback ${grade === true ? 'correct' : grade === false ? 'incorrect' : ''}" id="feedback" tabindex="-1">
     <strong>${grade === true ? t('correct') : grade === false ? t('incorrect') : t('compare')}</strong>
-    <p>${prose(model(q))}</p>${alternates?.length ? `<p>${t('alternates')} ${alternates.join(' · ')}</p>` : ''}<p>${prose(q.explain)}</p>
+    <p>${answerText(model(q))}</p>${alternates?.length ? `<p>${t('alternates')} ${alternates.join(' · ')}</p>` : ''}<p>${prose(q.explain)}</p>
     ${grade === 'shown' ? `<div class="actions" style="margin-top:8px">${button('self-yes', t('selfYes'), 'primary')}${button('self-no', t('selfNo'))}</div>` : ''}
     </div>`;
 }
@@ -162,8 +166,8 @@ function renderResults(app, run) {
     const yours = q.type === 'mcq' ? q.options[value] : q.type === 'order' ? value?.map(i => q.items[i]).join(' ') : q.type === 'cloze' ? value?.filter(Boolean).join(' · ') : value;
     return `<details class="result-row"><summary>${statusOf(run.grades[id])} · ${prose(q.prompt)}</summary>
       ${q.context ? germanLine(q.context) : ''}${q.type === 'cloze' ? `<div class="review-model" lang="de" dir="ltr">${esc(q.text.replace(/\{\{\d+\}\}/g, '___'))}</div>` : ''}
-      ${yours ? `<p><strong>${t('yourAnswer')}</strong> · ${prose(yours)}</p>` : ''}
-      <p><strong>${t('solution')}</strong> · ${prose(model(q))}</p><p>${prose(q.explain)}</p><a href="#lesson/${q.lesson}">${t('openRule')}</a></details>`;
+      ${yours ? `<p><strong>${t('yourAnswer')}</strong> · ${answerText(yours)}</p>` : ''}
+      <p><strong>${t('solution')}</strong> · ${answerText(model(q))}</p><p>${prose(q.explain)}</p><a href="#lesson/${q.lesson}">${t('openRule')}</a></details>`;
   }).join('');
   return `${crumbs([['practice', t('practice')], [null, prose(name)]])}
     <section class="quiz-box"><h1 class="quiz-prompt">${t('resultOf', prose(name))}</h1>

@@ -19,6 +19,8 @@ export function shuffle(items, rng = Math.random) {
 
 export function parseRunKey(ctx, key) {
   if (ctx.lessons.has(key)) return { kind: 'lesson', id: key };
+  if (ctx.practiceSets.has(key)) return { kind: 'set', id: key };
+  if (key?.startsWith('apply-') && ctx.lessonStudy.has(key.slice(6))) return { kind: 'apply', id: key.slice(6) };
   const island = /^(island|exam)-(.+)$/.exec(key || '');
   if (island && ctx.islandById.has(island[2])) return { kind: island[1], id: island[2] };
   if (['mixed', 'test', 'mistakes', 'review'].includes(key)) return { kind: key, id: null };
@@ -69,6 +71,11 @@ export function newRun(ctx, state, key, { rng = Math.random, day, now = Date.now
   if (!parsed) return null;
   let ids = [];
   if (parsed.kind === 'lesson') ids = ctx.lessons.get(parsed.id).questions.map(q => q.id);
+  if (parsed.kind === 'apply') ids = [key];
+  if (parsed.kind === 'set') {
+    const set = ctx.practiceSets.get(key);
+    ids = shuffle([...set.lessons.map(id => `apply-${id}`), ...set.additionalQuestions], rng);
+  }
   if (parsed.kind === 'island') {
     const all = ctx.islandLessons(parsed.id);
     const chosen = all.filter(lesson => inFilter(lesson, filter));

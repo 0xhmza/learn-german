@@ -1,6 +1,6 @@
 /* The archipelago map. Colours come from tokens so both themes work. */
 .map-host { position: relative; border-radius: 24px; overflow: hidden; }
-.map-svg { display: block; width: 100%; height: auto; direction: ltr; user-select: none; -webkit-user-select: none; }
+.map-svg { display: block; width: 100%; height: auto; user-select: none; -webkit-user-select: none; }
 .map-svg.wide { max-height: 660px; margin-inline: auto; }
 .map-svg text { font-family: var(--font); }
 .map-svg .sea { fill: var(--sea); }

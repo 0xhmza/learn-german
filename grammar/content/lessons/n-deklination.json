@@ -28,8 +28,8 @@
   ],
   "i18n": {
     "ar": {
-      "title": "أسماء مذكرة تأخذ ‎-n",
-      "lead": "معظم الأسماء لا تتغير بعد `den` و`dem`. لكن مجموعة من الأسماء المذكرة، أغلبها للأشخاص، تأخذ `-n` أو `-en` في كل الحالات إلا الفاعل المفرد. ستتعلم كيف تعرفها.",
+      "title": "تصريف الأسماء المذكرة الضعيفة",
+      "lead": "تأخذ مجموعة من الأسماء المذكرة، مثل `Student` و`Patient`، النهاية `-n` أو `-en` في المفرد خارج حالة الرفع (`Nominativ`). تتغير نهاية الاسم مع الأداة، مثل `der Student` و`mit dem Studenten`.",
       "translation": "الزبون ينتظر ← أتصل بالزبون.",
       "steps": [
         { "text": "في حالة الفاعل لا يتغير الاسم", "why": "`der Kunde` فاعل في حالة `Nominativ`، فيبقى كما هو في المعجم." },
@@ -130,7 +130,7 @@
       "options": ["Wir haben einen neuen Kollegen.", "Wir haben einen neuen Kollege.", "Wir haben einen neue Kollegen."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "الصفة تأخذ `-en` بعد `einen`، والاسم يأخذ `-n`: `einen neuen Kollegen`.", "hints": ["انتبه إلى الصفة وإلى الاسم معًا."] },
+        "ar": { "prompt": "اختر الجملة الصحيحة.", "explain": "الصفة تأخذ `-en` بعد `einen`، والاسم يأخذ `-n`: `einen neuen Kollegen`.", "hints": ["انتبه إلى الصفة وإلى الاسم معًا."] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Das Adjektiv bekommt nach `einen` die Endung `-en`, das Nomen ein `-n`: `einen neuen Kollegen`.", "hints": ["Achte auf Adjektiv und Nomen."] }
       }
     },
@@ -147,7 +147,7 @@
       "context": "Ich kenne den Student.",
       "answer": "Ich kenne den Studenten.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`Student` ينتهي بـ `-ent`، فيأخذ `-en` في `Akkusativ`.", "hints": ["ما نهاية الكلمة `Student`؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "`Student` ينتهي بـ `-ent`، فيأخذ `-en` في `Akkusativ`.", "hints": ["ما نهاية الكلمة `Student`؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`Student` endet auf `-ent` und bekommt im Akkusativ `-en`.", "hints": ["Wie endet das Wort `Student`?"] }
       }
     },

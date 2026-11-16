@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { migrateLegacy, importLegacyExport, normalizeState, exportBackup, importBackup, defaultState } from '../src/js/engine/migrate.js';
 import { createStore, STATE_KEY, LANG_KEY } from '../src/js/state.js';
 import { XP, QUESTION_XP } from '../src/js/engine/gamification.js';
+import { newRun, permutation } from '../src/js/engine/runs.js';
 import { context, freshState } from './support/context.js';
 
 const day = '2026-11-14';
@@ -112,4 +113,39 @@ test('backups round-trip and foreign files are rejected', () => {
   assert.equal(restored.completed.lassen, day);
   assert.equal(restored.xp.total, 321);
   assert.throws(() => importBackup({ app: 'other', kind: 'backup', state: {} }, ctx, day));
+});
+
+test('version 1 cached attempts resume and new study progress survives a backup', () => {
+  const ctx = context();
+  const original = freshState(ctx, day);
+  delete original.cards;
+  delete original.sprach;
+  const legacyRun = newRun(ctx, original, 'genitiv', { day });
+  const choice = ctx.lessons.get('genitiv').questions.find(question => question.type === 'mcq');
+  permutation(legacyRun, choice, choice.options.length);
+  legacyRun.position = legacyRun.ids.indexOf(choice.id);
+  legacyRun.answers[choice.id] = choice.answer;
+  original.runs.genitiv = legacyRun;
+  original.lastRun = 'genitiv';
+  original.completed.genitiv = day;
+  original.stars.genitiv = 2;
+  original.xp.total = 142;
+  const store = createStore(ctx, { storage: memoryStorage({ [STATE_KEY]: JSON.stringify(original) }), day });
+  const state = store.state;
+  assert.deepEqual(state.runs.genitiv, legacyRun);
+  assert.equal(state.lastRun, 'genitiv');
+  assert.deepEqual([state.completed.genitiv, state.stars.genitiv, state.xp.total], [day, 2, 142]);
+  assert.deepEqual(state.cards, {});
+  assert.deepEqual(state.sprach, {});
+
+  const crossLesson = newRun(ctx, state, 'set-satzbau', { day });
+  assert.ok(new Set(crossLesson.ids.map(id => ctx.questions.get(id).lesson)).size > 1);
+  state.runs[crossLesson.key] = crossLesson;
+  state.cards['genitiv-recall'] = { box: 3, due: '2026-11-21' };
+  const { id, gaps } = ctx.sprachbausteine.get('gartenverein');
+  state.sprach[id] = { finished: false, answers: gaps.map((gap, i) => i < 3 ? gap.answer : '') };
+  const restored = importBackup(JSON.parse(JSON.stringify(exportBackup(state, ctx))), ctx, day);
+  assert.deepEqual(restored.cards, state.cards);
+  assert.deepEqual(restored.sprach, state.sprach);
+  assert.deepEqual(restored.runs[crossLesson.key], crossLesson);
 });

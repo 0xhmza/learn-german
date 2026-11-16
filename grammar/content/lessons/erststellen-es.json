@@ -28,8 +28,8 @@
   ],
   "i18n": {
     "ar": {
-      "title": "es يملأ الموقع الأول",
-      "lead": "أحيانًا تبدأ الجملة الألمانية بـ `es` دون أن تعني شيئًا. وظيفتها الوحيدة أن تملأ الموقع الأول حتى يأتي الفاعل الحقيقي متأخرًا، كما في بدايات الأخبار والحكايات. ستتعلم متى تبقى `es` ومتى تختفي.",
+      "title": "استعمال `es` في الموقع الأول",
+      "lead": "تملأ `es` الموقع الأول في بعض الجمل التي يأتي فاعلها الحقيقي بعد الفعل. جرّب وضع ظرف في البداية لترى متى تختفي هذه الكلمة ومتى تبقى جزءًا ثابتًا من الجملة.",
       "translation": "جاء ضيوف كثيرون.",
       "steps": [
         { "text": "ابدأ بجملة عادية", "why": "الفاعل `viele Gäste` في الموقع الأول، والفعل `kamen` في الموقع الثاني." },
@@ -103,7 +103,7 @@
       "options": ["Heute wird nicht gearbeitet.", "Heute wird es nicht gearbeitet.", "Heute es wird nicht gearbeitet."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "حوّل `Es wird heute nicht gearbeitet.` بحيث تبدأ بـ `Heute`. أي جملة صحيحة؟", "explain": "`Heute` يملأ الموقع الأول، فتختفي `es`.", "hints": ["هل بقي لـ `es` مكان؟"] },
+        "ar": { "prompt": "حوّل `Es wird heute nicht gearbeitet.` بحيث تبدأ بـ `Heute`. اختر الجملة الصحيحة.", "explain": "`Heute` يملأ الموقع الأول، فتختفي `es`.", "hints": ["هل بقي لـ `es` مكان؟"] },
         "de": { "prompt": "Beginne `Es wird heute nicht gearbeitet.` mit `Heute`. Welcher Satz ist richtig?", "explain": "`Heute` besetzt Position 1, `es` fällt weg.", "hints": ["Ist noch Platz für `es`?"] }
       }
     },
@@ -146,7 +146,7 @@
       "context": "Gestern wurde es viel gelacht.",
       "answer": "Gestern wurde viel gelacht.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`Gestern` يملأ الموقع الأول، فلا حاجة إلى `es`.", "hints": ["ما الذي يقف في الموقع الأول؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "`Gestern` يملأ الموقع الأول، فلا حاجة إلى `es`.", "hints": ["ما الذي يقف في الموقع الأول؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`Gestern` besetzt Position 1. `es` wird nicht gebraucht.", "hints": ["Was steht auf Position 1?"] }
       }
     },

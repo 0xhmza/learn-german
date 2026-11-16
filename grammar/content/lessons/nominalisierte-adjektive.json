@@ -28,8 +28,8 @@
   ],
   "i18n": {
     "ar": {
-      "title": "صفات تصير أسماء",
-      "lead": "في العربية نقول «المريض» و«الموظفون» دون كلمة «رجل» أو «أشخاص». والألمانية تفعل الشيء نفسه: تحذف الاسم وتكتب الصفة بحرف كبير. لكن الصفة تحتفظ بنهايتها كأن الاسم ما زال موجودًا.",
+      "title": "الصفات المستعملة أسماءً",
+      "lead": "يمكن أن تدلّ الصفة وحدها على شخص أو شيء، كما في «المريض» أو «شيء جديد». في الألمانية تبدأ عندئذ بحرف كبير، وتتغيّر نهايتها بحسب الأداة والحالة النحوية.",
       "translation": "أحد معارفي يعمل هنا.",
       "steps": [
         { "text": "ابدأ بصفة قبل اسم", "why": "`ein bekannter Mann`: الصفة `bekannt` تأخذ `-er` بعد `ein` مع المذكر في `Nominativ`." },
@@ -101,7 +101,7 @@
       "options": ["Mein Kollege ist ein Deutscher.", "Mein Kollege ist ein Deutsche.", "Mein Kollege ist ein deutscher."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "بعد `ein` مع المذكر: `-er`، والاسم بحرف كبير: `ein Deutscher`.", "hints": ["انتبه إلى النهاية وإلى الحرف الكبير."] },
+        "ar": { "prompt": "اختر الجملة الصحيحة.", "explain": "بعد `ein` مع المذكر: `-er`، والاسم بحرف كبير: `ein Deutscher`.", "hints": ["انتبه إلى النهاية وإلى الحرف الكبير."] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Nach `ein` maskulin: `-er`, als Nomen großgeschrieben: `ein Deutscher`.", "hints": ["Achte auf Endung und Großschreibung."] }
       }
     },
@@ -128,7 +128,7 @@
       "options": ["Ich habe nichts Neues gehört.", "Ich habe nichts neues gehört.", "Ich habe nichts Neue gehört."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة صحيحة؟", "explain": "بعد `nichts` تأخذ الصفة `-es` وتُكتب بحرف كبير: `nichts Neues`.", "hints": ["مثل `etwas Neues`."] },
+        "ar": { "prompt": "اختر الجملة الصحيحة.", "explain": "بعد `nichts` تأخذ الصفة `-es` وتُكتب بحرف كبير: `nichts Neues`.", "hints": ["مثل `etwas Neues`."] },
         "de": { "prompt": "Welcher Satz ist richtig?", "explain": "Nach `nichts`: `-es` und großgeschrieben: `nichts Neues`.", "hints": ["Wie `etwas Neues`."] }
       }
     },
@@ -145,7 +145,7 @@
       "context": "Ein Deutsche wohnt neben mir.",
       "answer": "Ein Deutscher wohnt neben mir.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد `ein` مع المذكر في `Nominativ` تأخذ الصفة `-er`: `ein Deutscher`. أما المؤنث فـ `eine Deutsche`.", "hints": ["ما نهاية الصفة بعد `ein` مع المذكر؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "بعد `ein` مع المذكر في `Nominativ` تأخذ الصفة `-er`: `ein Deutscher`. أما المؤنث فـ `eine Deutsche`.", "hints": ["ما نهاية الصفة بعد `ein` مع المذكر؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Nach `ein` maskulin im Nominativ: `-er`, also `ein Deutscher`. Feminin hieße es `eine Deutsche`.", "hints": ["Welche Endung hat das Adjektiv nach `ein` maskulin?"] }
       }
     },

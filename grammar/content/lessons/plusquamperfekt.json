@@ -28,7 +28,7 @@
   "i18n": {
     "ar": {
       "title": "الماضي الأسبق: Plusquamperfekt",
-      "lead": "حين تحكي عن الماضي يحدث أن يكون أمر قد وقع قبل أمر آخر. وصلتَ إلى المحطة، لكن القطار كان قد غادر قبل ذلك. لهذا «الماضي قبل الماضي» تحتاج إلى `Plusquamperfekt`.",
+      "lead": "وصلتَ إلى المحطة، لكن القطار كان قد غادر قبل وصولك. يضع الماضي الأسبق (`Plusquamperfekt`) حدث المغادرة قبل نقطة مرجعية أخرى في الماضي.",
       "translation": "حين وصلتُ إلى المحطة كان القطار قد غادر.",
       "steps": [
         { "text": "رتّب الحدثين على خط الزمن", "why": "كلا الحدثين في الماضي، لكن مغادرة القطار وقعت أولًا. الحدث الأقدم هو الذي يأخذ `Plusquamperfekt`." },
@@ -147,7 +147,7 @@
       "context": "Ich hatte schon nach Hause gegangen.",
       "answer": "Ich war schon nach Hause gegangen.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "`gehen` فعل حركة يأخذ `sein` في `Perfekt`، فيصير المساعد `war` في `Plusquamperfekt`.", "hints": ["`Ich bin gegangen` أم `Ich habe gegangen`؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "`gehen` فعل حركة يأخذ `sein` في `Perfekt`، فيصير المساعد `war` في `Plusquamperfekt`.", "hints": ["`Ich bin gegangen` أم `Ich habe gegangen`؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "`gehen` ist ein Bewegungsverb mit `sein`. Im Plusquamperfekt heißt das Hilfsverb deshalb `war`.", "hints": ["`Ich bin gegangen` oder `Ich habe gegangen`?"] }
       }
     },

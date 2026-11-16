@@ -12,9 +12,10 @@ export const LAYOUTS = {
 export const WIDE_MIN = 720;
 const DOCK = 62;
 
-export function routePoints(ctx, layout) {
-  const { scale, treasure } = LAYOUTS[layout];
-  return [...ctx.islands.map(island => [island.pos[layout][0], island.pos[layout][1] + DOCK * scale]), treasure];
+export function routePoints(ctx, layout, rtl = getLang() === 'ar') {
+  const { scale, width, treasure } = LAYOUTS[layout];
+  const points = [...ctx.islands.map(island => [island.pos[layout][0], island.pos[layout][1] + DOCK * scale]), treasure];
+  return rtl ? points.map(([x, y]) => [width - x, y]) : points;
 }
 
 const r1 = value => Math.round(value * 10) / 10;
@@ -51,19 +52,21 @@ function waves(layout) {
 
 export function renderMap({ ctx, state }, layout) {
   const lang = getLang();
-  const { width, height, scale, treasure } = LAYOUTS[layout];
+  const { width, height, scale } = LAYOUTS[layout];
   const points = routePoints(ctx, layout);
+  const treasure = points.at(-1);
   const segments = routeSegments(points);
   const target = nextLesson(ctx, state, 'all');
   const allConquered = ctx.islands.every(island => state.islands[island.id]?.conquered);
-  const tokenAt = points[stopIndex(ctx, state.player.at)] || treasure;
+  const tokenAt = points[stopIndex(ctx, state.player.at)];
 
   const route = segments.map((d, i) => `<path class="route-seg" d="${d}"/>`).join('');
   const sailed = segments.map((d, i) => (state.islands[ctx.islands[i]?.id]?.conquered ? `<path class="route-done" d="${d}"/>` : '')).join('');
 
-  const islands = ctx.islands.map(island => {
+  const islands = ctx.islands.map((island, i) => {
     const p = islandProgress(ctx, state, island.id);
-    const [x, y] = island.pos[layout];
+    const [x, dockY] = points[i];
+    const y = dockY - DOCK * scale;
     const stage = p.conquered ? 'conquered' : p.stars ? 'progress' : 'untouched';
     const share = p.maxStars ? p.stars / p.maxStars : 0;
     const circumference = 2 * Math.PI * 18;
@@ -78,13 +81,13 @@ export function renderMap({ ctx, state }, layout) {
         <ellipse class="isle-land" style="--isle-tint:var(--t-${island.palette})" cy="-6" rx="74" ry="46"/>
         <text class="isle-emoji" y="-8" text-anchor="middle" dominant-baseline="central" aria-hidden="true">${island.emoji}</text>
         ${stage === 'untouched' ? '<ellipse class="isle-fog" cy="-6" rx="80" ry="52"/>' : ''}
-        <g class="ring" transform="translate(-72 -46)">
+        <g class="ring" transform="translate(${lang === 'ar' ? 72 : -72} -46)">
           <circle class="ring-bg" r="20"/>
           <circle class="ring-track" r="18"/>
           <circle class="ring-arc" r="18" transform="rotate(-90)" stroke-dasharray="${r1(circumference * share)} ${r1(circumference)}"/>
           <text class="ring-num" text-anchor="middle" dominant-baseline="central">${num(island.order)}</text>
         </g>
-        ${p.conquered ? '<text class="flag" x="50" y="-50" text-anchor="middle" dominant-baseline="central" aria-hidden="true">🚩</text>' : ''}
+        ${p.conquered ? `<text class="flag" x="${lang === 'ar' ? -50 : 50}" y="-50" text-anchor="middle" dominant-baseline="central" aria-hidden="true">🚩</text>` : ''}
         <g class="plate" transform="translate(0 118)">
           <rect x="${-width / 2}" y="-23" width="${width}" height="46" rx="12"/>
           <text class="plate-name" y="-5" text-anchor="middle" dominant-baseline="central" ${lang === 'ar' ? 'direction="rtl"' : ''}>${esc(name)}</text>
@@ -94,7 +97,7 @@ export function renderMap({ ctx, state }, layout) {
     </a>`;
   }).join('');
 
-  return `<svg class="map-svg ${layout}" viewBox="0 0 ${width} ${height}" role="group" aria-label="${esc(t('mapTitle'))}" direction="ltr">
+  return `<svg class="map-svg ${layout}" viewBox="0 0 ${width} ${height}" role="group" aria-label="${esc(t('mapTitle'))}">
     <rect class="sea" width="${width}" height="${height}" rx="24"/>
     <g aria-hidden="true">${waves(layout)}</g>
     <g class="route" aria-hidden="true">${route}${sailed}</g>

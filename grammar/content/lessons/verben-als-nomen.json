@@ -28,7 +28,7 @@
   "i18n": {
     "ar": {
       "title": "تحويل الفعل إلى اسم",
-      "lead": "في الألمانية تستطيع أن تجعل أي فعل اسمًا: تكتب المصدر بحرف كبير وتضع قبله `das`. ستتعلم كيف تتحدث عن النشاط نفسه، وكيف تقول «أثناء الطبخ» و«من أجل الكتابة».",
+      "lead": "عندما تتحدّث عن النشاط بوصفه شيئًا في حدّ ذاته، حوّل مصدر الفعل إلى اسم محايد واكتبه بحرف كبير. فمثلًا `beim Kochen` تعني «أثناء الطبخ».",
       "translation": "أحب التعلم ← التعلم يمتعني.",
       "steps": [
         { "text": "ابدأ بجملة فيها فعل", "why": "الفعل `lernen` هنا يصف ما يفعله الشخص. نريد الآن أن نتكلم عن النشاط نفسه كشيء." },
@@ -100,7 +100,7 @@
       "options": ["Ich brauche eine Brille zum Lesen.", "Ich brauche eine Brille zum lesen.", "Ich brauche eine Brille zu Lesen."],
       "answer": 0,
       "i18n": {
-        "ar": { "prompt": "أي جملة مكتوبة بشكل صحيح؟", "explain": "بعد `zum` صار الفعل اسمًا ويُكتب بحرف كبير. و`zu` وحدها لا تكفي، فنحتاج إلى `zum` (`zu dem`).", "hints": ["انتبه إلى الحرف الكبير وإلى الأداة."] },
+        "ar": { "prompt": "أيّ الجمل مكتوبة كتابةً صحيحة؟", "explain": "بعد `zum` صار الفعل اسمًا ويُكتب بحرف كبير. و`zu` وحدها لا تكفي، فنحتاج إلى `zum` (`zu dem`).", "hints": ["انتبه إلى الحرف الكبير وإلى الأداة."] },
         "de": { "prompt": "Welcher Satz ist richtig geschrieben?", "explain": "Nach `zum` ist das Verb ein Nomen und wird großgeschrieben. Mit `zu` allein fehlt der Artikel.", "hints": ["Achte auf Großschreibung und Artikel."] }
       }
     },
@@ -144,7 +144,7 @@
       "context": "Beim lernen höre ich Musik.",
       "answer": "Beim Lernen höre ich Musik.",
       "i18n": {
-        "ar": { "prompt": "صحّح الخطأ في المثال واشرح سبب التصحيح.", "explain": "بعد `beim` صار الفعل اسمًا، والأسماء تُكتب بحرف كبير: `Lernen`.", "hints": ["هل `lernen` هنا فعل أم اسم؟"] },
+        "ar": { "prompt": "أعد كتابة المثال بعد تصحيح الخطأ، ثم اذكر سبب التصحيح.", "explain": "بعد `beim` صار الفعل اسمًا، والأسماء تُكتب بحرف كبير: `Lernen`.", "hints": ["هل `lernen` هنا فعل أم اسم؟"] },
         "de": { "prompt": "Korrigiere den Fehler im Beispiel und erkläre, warum.", "explain": "Nach `beim` ist `Lernen` ein Nomen und wird großgeschrieben.", "hints": ["Ist `lernen` hier Verb oder Nomen?"] }
       }
     },

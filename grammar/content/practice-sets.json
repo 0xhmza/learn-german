@@ -1,0 +1,180 @@
+[
+  {
+    "id": "set-satzbau",
+    "title": {
+      "ar": "ترتيب الفعل وأدوات الربط",
+      "de": "Verbstellung und Konnektoren"
+    },
+    "summary": {
+      "ar": "ميّز بين موقع الفعل في الجملة الرئيسية والتابعة حين تذكر السبب أو النتيجة أو ما حدث رغم عائق.",
+      "de": "Unterscheide die Verbstellung in Haupt- und Nebensätzen bei Grund, Folge und Gegensatz."
+    },
+    "lessons": [
+      "kausal-da-weil",
+      "deshalb-daher",
+      "sodass",
+      "indem",
+      "obwohl",
+      "trotzdem",
+      "waehrend-adversativ",
+      "je-desto",
+      "doppelkonjunktionen"
+    ],
+    "additionalQuestions": [
+      "kausal-da-weil-5",
+      "deshalb-daher-2"
+    ]
+  },
+  {
+    "id": "set-zeit",
+    "title": {
+      "ar": "ترتيب الأحداث والأزمنة",
+      "de": "Ereignisse zeitlich ordnen"
+    },
+    "summary": {
+      "ar": "حدّد ما حدث أولًا، وما استمر إلى وقت معين، وما يُتوقّع حدوثه.",
+      "de": "Drücke aus, was vorher passiert ist, wie lange es andauert und was noch passieren soll."
+    },
+    "lessons": [
+      "plusquamperfekt",
+      "nachdem",
+      "bevor-bis",
+      "seit-waehrend",
+      "futur1",
+      "erststellen-es"
+    ],
+    "additionalQuestions": [
+      "plusquamperfekt-4",
+      "nachdem-5"
+    ]
+  },
+  {
+    "id": "set-formen",
+    "title": {
+      "ar": "الأسماء والصفات والحالات الإعرابية",
+      "de": "Nomen, Adjektive und Kasus"
+    },
+    "summary": {
+      "ar": "طبّق تصريف الأسماء والصفات في سياقات الملكية والمقارنة والوصف.",
+      "de": "Übe die Endungen in Nominalgruppen für Besitz, Vergleich und Beschreibung."
+    },
+    "lessons": [
+      "genitiv",
+      "genitiv-praep",
+      "lokale-praep",
+      "n-deklination",
+      "diminutiv",
+      "verben-als-nomen",
+      "nominalisierte-adjektive",
+      "komparativ",
+      "superlativ",
+      "genitiv-adjektiv",
+      "partizip1",
+      "partizip-adjektiv",
+      "gradpartikeln"
+    ],
+    "additionalQuestions": [
+      "genitiv-2",
+      "komparativ-4"
+    ]
+  },
+  {
+    "id": "set-bezug",
+    "title": {
+      "ar": "الإحالة والربط بجمل الوصل",
+      "de": "Bezüge und Relativsätze"
+    },
+    "summary": {
+      "ar": "حدّد مرجع الضمير، ثم اختر الحالة أو أداة الوصل وفق المعنى.",
+      "de": "Bestimme das Bezugswort und wähle Kasus oder Relativwort passend zum Zusammenhang."
+    },
+    "lessons": [
+      "irgendein",
+      "indefinitpronomen",
+      "irgend-pronomen",
+      "pronominaladverbien",
+      "relativ-dativ",
+      "relativ-praep",
+      "relativ-einschub",
+      "relativ-genitiv",
+      "relativ-ort",
+      "relativ-was"
+    ],
+    "additionalQuestions": [
+      "relativ-dativ-2",
+      "relativ-praep-5"
+    ]
+  },
+  {
+    "id": "set-vorgang",
+    "title": {
+      "ar": "المصدر والمبني للمجهول",
+      "de": "Infinitiv und Passiv"
+    },
+    "summary": {
+      "ar": "ميّز بين وصف الإجراء ومن ينفّذه، وحدّد موضع المصدر والفعل الناقص.",
+      "de": "Beschreibe Vorgänge und Beteiligte und ordne Infinitive und Modalverben richtig an."
+    },
+    "lessons": [
+      "infinitiv-zu",
+      "statt-zu",
+      "ohne-zu",
+      "brauchen",
+      "lassen",
+      "passiv-perfekt",
+      "passiv-modal",
+      "subjektlos"
+    ],
+    "additionalQuestions": [
+      "passiv-modal-2",
+      "ohne-zu-4"
+    ]
+  },
+  {
+    "id": "set-bedingungen",
+    "title": {
+      "ar": "الشرط والاحتمال والندم",
+      "de": "Bedingungen, Möglichkeiten und Bedauern"
+    },
+    "summary": {
+      "ar": "عبّر عن احتمال وارد، وعن نتيجة لشرط غير متحقّق في الحاضر أو الماضي.",
+      "de": "Formuliere offene Bedingungen und irreale Folgen in Gegenwart und Vergangenheit."
+    },
+    "lessons": [
+      "falls",
+      "sonst",
+      "irreale-bedingung",
+      "konjunktiv2-vergangenheit",
+      "konjunktiv2-vergangenheit-modal"
+    ],
+    "additionalQuestions": [
+      "irreale-bedingung-4",
+      "falls-5"
+    ]
+  },
+  {
+    "id": "set-alltag",
+    "title": {
+      "ar": "في العمل والحياة اليومية",
+      "de": "Im Beruf und im Alltag"
+    },
+    "summary": {
+      "ar": "تدرّب على طلب الخدمات، وتقديم التعليمات، ووصف ما تم إنجازه.",
+      "de": "Bitte um Hilfe, gib Anweisungen und beschreibe abgeschlossene Arbeiten."
+    },
+    "lessons": [
+      "genitiv-praep",
+      "relativ-praep",
+      "brauchen",
+      "lassen",
+      "passiv-perfekt",
+      "passiv-modal",
+      "falls",
+      "trotzdem"
+    ],
+    "additionalQuestions": [
+      "brauchen-5",
+      "lassen-4"
+    ]
+  }
+]
