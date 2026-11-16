@@ -22,17 +22,13 @@
 .exam-mark { padding: 8px 12px; border-radius: 8px; background: var(--surface-2); }
 .exam-mark.good { background: var(--good-bg); color: var(--good); }
 .exam-mark.bad { background: var(--bad-bg); color: var(--bad); }
-.exam-scans summary, .exam-transcript summary { cursor: pointer; color: var(--brand-ink); }
-.exam-scan { margin-block-start: 10px; }
-.scan-controls { margin-block: 6px; }
-.exam-scan-image { overflow: auto; border-radius: 8px; }
-.exam-scan img { display: block; inline-size: 100%; block-size: auto; }
-.exam-scan.zoomed img { inline-size: max(100%, 850px); max-inline-size: none; }
-.exam-transcript p { white-space: pre-line; overflow-wrap: anywhere; }
-.exam-transcript h3 { margin-block-start: 8px; }
-.exam-transcript ol { padding-inline-start: 1.35em; }
-.exam-transcript > ol > li + li { margin-block-start: 10px; }
-.exam-variant-answer { color: var(--good); font-weight: 700; }
+.exam-ads summary, .exam-variant summary { cursor: pointer; color: var(--brand-ink); font-weight: 700; }
+.exam-ad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 10px; list-style: none; padding: 0; margin: 12px 0 0; }
+.exam-ad { padding: 12px; border: 1px solid var(--line); background: var(--surface-2); border-radius: 10px; overflow-wrap: anywhere; }
+.exam-ad h3 { display: flex; gap: 8px; align-items: baseline; font-size: 1rem; margin-block-end: 5px; }
+.exam-ad h3 b { color: var(--brand-ink); }
+.exam-variant ol { padding-inline-start: 1.4em; }
+.exam-variant > ol > li + li { margin-block-start: 10px; }
 #exam-writing { min-block-size: 13rem; }
 
 @media (max-width: 700px) {

@@ -3,6 +3,7 @@ export const isMatching = section => ['lesen-1', 'lesen-3', 'sprache-2'].include
 
 export function examChoices(section, item) {
   if (isListening(section)) return { '+': 'Richtig', '-': 'Falsch' };
+  if (section.ads) return Object.fromEntries([...section.ads.map(ad => [ad.code, ad.title]), ['x', '']]);
   return item.choices ?? section.choices ?? {};
 }
 
@@ -15,14 +16,13 @@ export function isAnswerable(section, item) {
 }
 
 export function isScorable(section, item) {
-  return isAnswerable(section, item) && ['source-key', 'verified', 'corrected'].includes(item.key.status)
-    && Object.hasOwn(examChoices(section, item), item.key.choice);
+  return !isListening(section) && Object.hasOwn(examChoices(section, item), item.answer);
 }
 
 export function examResult(section, responses) {
   const scorable = section.items.filter(item => isScorable(section, item));
   return {
     total: scorable.length,
-    correct: scorable.filter(item => item.key.choice === responses[item.number]).length
+    correct: scorable.filter(item => item.answer === responses[item.number]).length
   };
 }

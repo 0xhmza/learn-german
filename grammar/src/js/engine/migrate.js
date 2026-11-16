@@ -4,7 +4,7 @@ import { isDay } from '../dates.js';
 import { nextLesson, runStars } from './progress.js';
 import { checkBadges, QUESTION_XP, XP, DAILY_GOALS } from './gamification.js';
 import { isRunValid } from './runs.js';
-import { examChoices, isMatching } from './model-exams.js';
+import { examChoices, isListening, isMatching } from './model-exams.js';
 
 export const STATE_VERSION = 1;
 export const APP_ID = 'grammatikinseln';
@@ -86,7 +86,7 @@ export function normalizeState(raw, ctx, day) {
     const sections = {};
     for (const section of model.sections) {
       const value = saved[section.id];
-      if (section.availability !== 'available' || !plain(value)) continue;
+      if (!plain(value)) continue;
       if (section.id === 'schreiben') {
         if (typeof value.writing === 'string') sections[section.id] = { writing: value.writing.slice(0, 30000) };
         continue;
@@ -100,7 +100,7 @@ export function normalizeState(raw, ctx, day) {
         responses[item.number] = choice;
         used.add(choice);
       }
-      sections[section.id] = { responses, checked: value.checked === true };
+      sections[section.id] = { responses, checked: !isListening(section) && value.checked === true };
     }
     if (Object.keys(sections).length) state.modelExams[id] = sections;
   }

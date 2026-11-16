@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { validateContent } from '../scripts/validate-content.js';
+import { examChoices, examResult } from '../src/js/engine/model-exams.js';
 import { raw, context } from './support/context.js';
 import ar from '../src/js/i18n/ar.js';
 import de from '../src/js/i18n/de.js';
@@ -21,6 +22,20 @@ const ROUTE = {
 
 test('the content passes every structural check', () => {
   assert.deepEqual(validateContent(raw), []);
+});
+
+test('mock exams score the reviewed reading and grammar answers and omit listening keys', () => {
+  const ctx = context();
+  const section = (id, part) => ctx.modelTests.get(id).sections.find(section => section.id === part);
+  const ads = section('nicole', 'lesen-3');
+  assert.deepEqual(examResult(ads, { 16: 'f', 17: 'a', 18: 'x', 19: 'j' }), { correct: 4, total: 10 });
+  assert.deepEqual(examResult(ads, { 16: 'j', 17: 'x', 18: 'b', 19: 'x' }), { correct: 0, total: 10 });
+  const cloze = section('jennifer', 'sprache-2');
+  assert.deepEqual(examResult(cloze, { 36: 'o', 37: 'i', 38: 'a' }), { correct: 3, total: 10 });
+  assert.deepEqual(['o', 'i', 'a'].map(code => examChoices(cloze, cloze.items[0])[code]), ['WEIL', 'SUCHEN', 'AUCH']);
+  const listening = section('nicole', 'hoeren-1');
+  assert.deepEqual(examResult(listening, { 41: '+' }), { correct: 0, total: 0 });
+  assert.ok(listening.items.every(item => !Object.hasOwn(item, 'answer')));
 });
 
 test('ten islands hold exactly the planned 51 lessons in order', () => {

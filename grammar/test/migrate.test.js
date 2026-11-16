@@ -151,3 +151,15 @@ test('version 1 cached attempts resume and new study progress survives a backup'
   assert.deepEqual(restored.modelExams, state.modelExams);
   assert.deepEqual(restored.runs[crossLesson.key], crossLesson);
 });
+
+test('cached mock exam selections survive the answer review', () => {
+  const ctx = context();
+  const original = freshState(ctx, day);
+  original.modelExams.nicole = {
+    'lesen-3': { checked: true, responses: { 16: 'j', 18: 'b' } },
+    'hoeren-1': { checked: true, responses: { 41: '+' } }
+  };
+  const { state } = createStore(ctx, { storage: memoryStorage({ [STATE_KEY]: JSON.stringify(original) }), day });
+  assert.deepEqual(state.modelExams.nicole['lesen-3'], original.modelExams.nicole['lesen-3']);
+  assert.deepEqual(state.modelExams.nicole['hoeren-1'], { checked: false, responses: { 41: '+' } });
+});

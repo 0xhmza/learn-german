@@ -1,61 +1,80 @@
-import { examChoices, isMatching } from '../src/js/engine/model-exams.js';
+import { examChoices, isAnswerable, isListening, isMatching, isScorable } from '../src/js/engine/model-exams.js';
 
 const sections = [
   ['lesen-1', 1, 5], ['lesen-2', 6, 10], ['lesen-3', 11, 20],
   ['sprache-1', 21, 30], ['sprache-2', 31, 40],
   ['hoeren-1', 41, 45], ['hoeren-2', 46, 55], ['hoeren-3', 56, 60], ['schreiben', 0, -1]
 ];
-const statuses = new Set(['verified', 'source-key', 'corrected', 'disputed', 'missing']);
+const hasText = value => typeof value === 'string' && value.trim().length > 0;
+const hasOnly = (object, fields) => Object.keys(object).every(field => fields.includes(field));
+const numbered = (items, start, end) => Array.isArray(items)
+  && items.length === end - start + 1 && items.every((item, index) => item.number === start + index);
+
+function validateItems(errors, label, part, items) {
+  const used = new Set();
+  for (const item of items) {
+    const question = `${label}/${item.number}`;
+    const choices = examChoices(part, item);
+    if (!hasOnly(item, ['number', 'prompt', 'choices', 'answer']) || !isAnswerable(part, item)
+        || Object.entries(choices).some(([code, value]) => code !== 'x' && !hasText(value))) {
+      errors.push(`${question} has incomplete exercise content`);
+    }
+    if (isListening(part)) {
+      if (Object.hasOwn(item, 'answer')) errors.push(`${question} must be ungraded`);
+      continue;
+    }
+    if (!isScorable(part, item)) errors.push(`${question} needs a valid answer`);
+    if (isMatching(part) && item.answer !== 'x' && used.has(item.answer)) errors.push(`${question} reuses a matching answer`);
+    used.add(item.answer);
+  }
+}
 
 export function validateModelTests(data) {
+  if (data?.schemaVersion !== 2 || !Array.isArray(data.models) || data.models.length !== 17
+      || !hasOnly(data, ['schemaVersion', 'models'])) return ['Invalid telc model-test dataset'];
   const errors = [];
   const ids = new Set();
-  const counts = {};
-  if (data?.schemaVersion !== 1 || data.source !== 'telc b1 modal tests' || !Array.isArray(data.models)) return ['Invalid telc model-test dataset'];
-  const validPage = page => Number.isInteger(page) && page > 0 && page <= data.sourcePageCount;
-  for (const model of data.models) {
-    if (!/^[a-z0-9-]+$/.test(model.id) || ids.has(model.id) || !model.label) errors.push(`Invalid or repeated exam ID ${model.id}`);
+  const titles = { ar: new Set(), de: new Set() };
+  for (const [index, model] of data.models.entries()) {
+    if (!/^[a-z0-9-]+$/.test(model.id) || ids.has(model.id) || model.number !== index + 1
+        || !hasOnly(model, ['id', 'number', 'title', 'sections'])) errors.push(`Invalid model entry ${model.id}`);
     ids.add(model.id);
-    if (model.sourcePages.length !== 2 || !model.sourcePages.every(validPage) || !validPage(model.keyPage)) errors.push(`${model.id} has invalid source page references`);
-    if (model.sections.map(part => part.id).join() !== sections.map(part => part[0]).join()) errors.push(`${model.id} has invalid section order`);
-    for (const [index, part] of model.sections.entries()) {
+    for (const [lang, names] of Object.entries(titles)) {
+      const title = model.title?.[lang];
+      if (!hasText(title) || names.has(title)) errors.push(`${model.id} has a missing or repeated ${lang} title`);
+      names.add(title);
+    }
+    if (!Array.isArray(model.sections) || model.sections.map(part => part.id).join() !== sections.map(([id]) => id).join()) {
+      errors.push(`${model.id} has invalid section order`);
+      continue;
+    }
+    for (const [partIndex, part] of model.sections.entries()) {
       const label = `${model.id}/${part.id}`;
-      if (part.availability === 'missing') {
-        if (part.sourcePages.length || part.items.length) errors.push(`${label} contains material marked absent`);
+      const [, start, end] = sections[partIndex];
+      if (!hasOnly(part, ['id', 'passage', 'choices', 'ads', 'items', 'variants'])) errors.push(`${label} has unexpected metadata`);
+      if (!numbered(part.items, start, end)) {
+        errors.push(`${label} has unexpected question numbers`);
         continue;
       }
-      if (part.availability !== 'available' || !part.sourcePages.length || !part.sourcePages.every(validPage)) errors.push(`${label} has invalid section provenance`);
-      if (!sections[index]) continue;
-      const [, start, end] = sections[index];
-      if (part.items.length !== end - start + 1 || part.items.some((item, i) => item.number !== start + i)) errors.push(`${label} has unexpected question numbers`);
-      if (part.id === 'schreiben' && !part.passage?.length) errors.push(`${label} has no writing prompt`);
+      if (['lesen-2', 'sprache-1', 'sprache-2', 'schreiben'].includes(part.id)
+          && (!part.passage?.length || !part.passage.every(hasText))) errors.push(`${label} needs a passage`);
       if (part.id.startsWith('sprache-')) {
-        const gaps = [...part.passage.join(' ').matchAll(/\{(\d+)\}/g)].map(match => Number(match[1]));
+        const gaps = [...(part.passage || []).join(' ').matchAll(/\{(\d+)\}/g)].map(match => Number(match[1]));
         if (gaps.length !== 10 || gaps.some((n, i) => n !== start + i)) errors.push(`${label} has invalid gap markers`);
       }
-      const used = new Set();
-      for (const item of part.items) {
-        const status = item.key?.status;
-        if (!statuses.has(status)) { errors.push(`${label}/${item.number} has invalid key status`); continue; }
-        counts[status] = (counts[status] || 0) + 1;
-        if (status === 'disputed' || status === 'missing') {
-          if (item.key.choice) errors.push(`${label}/${item.number} assigns an unresolved answer`);
+      if (part.id === 'lesen-3') {
+        if (!Array.isArray(part.ads) || part.ads.map(ad => ad.code).join('') !== 'abcdefghijkl'
+            || part.ads.some(ad => !hasOnly(ad, ['code', 'title', 'text']) || !hasText(ad.title) || !hasText(ad.text))) {
+          errors.push(`${label} needs twelve ads with codes A to L`);
           continue;
         }
-        const choices = examChoices(part, item);
-        const { choice, page } = item.key;
-        if (Object.keys(choices).length < 2 || !Object.hasOwn(choices, choice) || !validPage(page)) errors.push(`${label}/${item.number} cannot be scored from the supplied key`);
-        if (isMatching(part) && choice !== 'x' && used.has(choice)) errors.push(`${label}/${item.number} reuses a matching answer`);
-        used.add(choice);
       }
-      for (const scan of part.scans || []) {
-        if (!validPage(scan.page) || !scan.data?.startsWith('data:image/webp;base64,')) errors.push(`${label} has an invalid scan`);
+      validateItems(errors, label, part, part.items);
+      for (const variant of part.variants || []) {
+        if (!hasOnly(variant, ['items']) || !numbered(variant.items, start, end)) errors.push(`${label} has an invalid extra exercise`);
+        else validateItems(errors, `${label}/extra`, part, variant.items);
       }
     }
   }
-  for (const model of data.models) for (const part of model.sections) {
-    if (part.related && !ids.has(part.related)) errors.push(`${model.id}/${part.id} has an unknown linked model`);
-  }
-  if ([...statuses].some(status => (counts[status] || 0) !== (data.audit?.[status] || 0))) errors.push('Model-test audit totals are outdated');
   return errors;
 }
