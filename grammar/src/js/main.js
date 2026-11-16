@@ -20,9 +20,10 @@ import * as settings from './views/settings.js';
 import * as readings from './views/readings.js';
 import * as sprachbausteine from './views/sprachbausteine.js';
 import * as cards from './views/cards.js';
+import * as modelExams from './views/model-exams.js';
 import { goToRun } from './views/practice.js';
 
-const views = { home, island, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards };
+const views = { home, island, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 // Actions available on every page.
 const globalActions = {
   run: (app, target) => goToRun(app, target.dataset.key)

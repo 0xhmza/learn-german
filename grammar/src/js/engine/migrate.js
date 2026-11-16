@@ -4,6 +4,7 @@ import { isDay } from '../dates.js';
 import { nextLesson, runStars } from './progress.js';
 import { checkBadges, QUESTION_XP, XP, DAILY_GOALS } from './gamification.js';
 import { isRunValid } from './runs.js';
+import { examChoices, isMatching } from './model-exams.js';
 
 export const STATE_VERSION = 1;
 export const APP_ID = 'grammatikinseln';
@@ -21,6 +22,7 @@ export function defaultState(day) {
     runs: {},
     cards: {},
     sprach: {},
+    modelExams: {},
     lastRun: null,
     lastLesson: null,
     islands: {},
@@ -78,6 +80,30 @@ export function normalizeState(raw, ctx, day) {
     }
   }
   if (state.runs[raw.lastRun]) state.lastRun = raw.lastRun;
+  for (const [id, saved] of Object.entries(plain(raw.modelExams) ? raw.modelExams : {})) {
+    const model = ctx.modelTests.get(id);
+    if (!model || !plain(saved)) continue;
+    const sections = {};
+    for (const section of model.sections) {
+      const value = saved[section.id];
+      if (section.availability !== 'available' || !plain(value)) continue;
+      if (section.id === 'schreiben') {
+        if (typeof value.writing === 'string') sections[section.id] = { writing: value.writing.slice(0, 30000) };
+        continue;
+      }
+      const responses = {};
+      const used = new Set();
+      for (const item of section.items) {
+        const choice = value.responses?.[item.number];
+        if (typeof choice !== 'string' || !Object.hasOwn(examChoices(section, item), choice)) continue;
+        if (isMatching(section) && choice !== 'x' && used.has(choice)) continue;
+        responses[item.number] = choice;
+        used.add(choice);
+      }
+      sections[section.id] = { responses, checked: value.checked === true };
+    }
+    if (Object.keys(sections).length) state.modelExams[id] = sections;
+  }
   for (const [id, value] of Object.entries(plain(raw.cards) ? raw.cards : {})) {
     if (ctx.cards.has(id) && plain(value) && isDay(value.due)) {
       state.cards[id] = { due: value.due, box: Math.min(5, Math.max(1, count(value.box))) };

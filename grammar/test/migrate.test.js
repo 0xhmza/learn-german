@@ -142,10 +142,12 @@ test('version 1 cached attempts resume and new study progress survives a backup'
   assert.ok(new Set(crossLesson.ids.map(id => ctx.questions.get(id).lesson)).size > 1);
   state.runs[crossLesson.key] = crossLesson;
   state.cards['genitiv-recall'] = { box: 3, due: '2026-11-21' };
+  state.modelExams.petra = { 'sprache-1': { checked: true, responses: { 21: 'b' } }, schreiben: { writing: 'Liebe Petra,' } };
   const { id, gaps } = ctx.sprachbausteine.get('gartenverein');
   state.sprach[id] = { finished: false, answers: gaps.map((gap, i) => i < 3 ? gap.answer : '') };
   const restored = importBackup(JSON.parse(JSON.stringify(exportBackup(state, ctx))), ctx, day);
   assert.deepEqual(restored.cards, state.cards);
   assert.deepEqual(restored.sprach, state.sprach);
+  assert.deepEqual(restored.modelExams, state.modelExams);
   assert.deepEqual(restored.runs[crossLesson.key], crossLesson);
 });

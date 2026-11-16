@@ -47,6 +47,8 @@ export function indexContent(raw) {
     readings: new Map((raw.readings?.texts || []).map(reading => [reading.id, reading])),
     glossary: new Map(Object.entries(raw.readings?.glossary || {})),
     sprachbausteine: new Map((raw.sprachbausteine || []).map(set => [set.id, set])),
+    modelTests: new Map((raw.modelTests?.models || []).map(model => [model.id, model])),
+    modelTestSource: raw.modelTests?.source,
     route,
     islandLessons: id => byIsland.get(id) || []
   };

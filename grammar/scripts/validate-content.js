@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { assembleContent } from './assemble-content.js';
 import { readingWords } from '../src/js/reading-words.js';
+import { validateModelTests } from './validate-model-tests.js';
 
 const LANGS = ['ar', 'de'];
 const FRAME_KINDS = new Set(['main', 'sub', 'rel', 'inf', 'np']);
@@ -290,7 +291,7 @@ export function validateContent(content) {
     }
   }
   for (const [part, difficulties] of formats) if (difficulties.size < 2) fail('Sprachbausteine', `part ${part} needs multiple difficulties`);
-  return errors;
+  return errors.concat(validateModelTests(content.modelTests));
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

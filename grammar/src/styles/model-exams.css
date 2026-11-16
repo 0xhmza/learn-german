@@ -1,0 +1,41 @@
+.exam-layout { display: grid; gap: 16px; }
+.exam-layout.with-part { grid-template-columns: minmax(9rem, 13rem) minmax(0, 1fr); align-items: start; }
+.exam-menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 10px; }
+.with-part .exam-menu { grid-template-columns: minmax(0, 1fr); }
+.exam-menu-section { border: 1px solid var(--line); background: var(--surface); padding: 10px 12px; border-radius: 12px; }
+.exam-menu-section h2 { font-size: .86rem; margin: 0; color: var(--muted); }
+.exam-menu-section ul { list-style: none; margin: 4px 0 0; padding: 0; }
+.exam-menu-section a { display: block; font-size: .87rem; line-height: 1.45; padding: 7px; border-radius: 7px; }
+.exam-menu-section a[aria-current] { color: var(--brand-ink); background: var(--brand-soft); font-weight: 750; }
+.exam-menu-section small { display: block; color: var(--muted); font-size: .72rem; }
+.exam-part { min-inline-size: 0; display: grid; gap: 12px; }
+.exam-part > .notice { margin-block: 0; }
+.exam-passage { color: var(--ink); padding: 12px; border-radius: 10px; background: var(--surface-2); overflow-wrap: anywhere; }
+.exam-passage p { white-space: pre-line; }
+.exam-passage p + p { margin-block-start: 10px; }
+.exam-bank { list-style: none; display: flex; flex-wrap: wrap; padding: 0; gap: 7px; margin: 12px 0; }
+.exam-bank li, .exam-gap { border-radius: 7px; padding: 2px 7px; background: var(--brand-soft); color: var(--brand-ink); }
+.exam-bank b { margin-inline-end: 3px; }
+.exam-item { border-block-end: 1px solid var(--line); padding-block: 12px; }
+.exam-item h3 { display: flex; gap: 8px; align-items: baseline; margin-block-end: 8px; overflow-wrap: anywhere; }
+.exam-number { color: var(--brand-ink); min-inline-size: 2ch; }
+.exam-mark { padding: 8px 12px; border-radius: 8px; background: var(--surface-2); }
+.exam-mark.good { background: var(--good-bg); color: var(--good); }
+.exam-mark.bad { background: var(--bad-bg); color: var(--bad); }
+.exam-scans summary, .exam-transcript summary { cursor: pointer; color: var(--brand-ink); }
+.exam-scan { margin-block-start: 10px; }
+.scan-controls { margin-block: 6px; }
+.exam-scan-image { overflow: auto; border-radius: 8px; }
+.exam-scan img { display: block; inline-size: 100%; block-size: auto; }
+.exam-scan.zoomed img { inline-size: max(100%, 850px); max-inline-size: none; }
+.exam-transcript p { white-space: pre-line; overflow-wrap: anywhere; }
+.exam-transcript h3 { margin-block-start: 8px; }
+.exam-transcript ol { padding-inline-start: 1.35em; }
+.exam-transcript > ol > li + li { margin-block-start: 10px; }
+.exam-variant-answer { color: var(--good); font-weight: 700; }
+#exam-writing { min-block-size: 13rem; }
+
+@media (max-width: 700px) {
+  .exam-layout.with-part { grid-template-columns: minmax(0, 1fr); }
+  .with-part .exam-menu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

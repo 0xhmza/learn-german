@@ -18,10 +18,11 @@ import * as settings from '../src/js/views/settings.js';
 import * as readings from '../src/js/views/readings.js';
 import * as sprachbausteine from '../src/js/views/sprachbausteine.js';
 import * as cards from '../src/js/views/cards.js';
+import * as modelExams from '../src/js/views/model-exams.js';
 import { context, freshState } from './support/context.js';
 
 const day = '2026-11-14';
-const views = { home, island, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards };
+const views = { home, island, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 
 function fakeApp(ctx, state) {
   const store = {
@@ -46,8 +47,9 @@ function fakeApp(ctx, state) {
 function check(html, where) {
   assert.equal(typeof html, 'string', where);
   assert.ok(html.length > 100, `${where}: suspiciously short`);
+  const markup = html.replace(/data:image\/webp;base64,[A-Za-z0-9+/=]+/g, 'data:image/webp');
   for (const hole of ['undefined', '[object Object]', 'NaN', '${']) {
-    assert.ok(!html.includes(hole), `${where}: contains ${hole}`);
+    assert.ok(!markup.includes(hole), `${where}: contains ${hole}`);
   }
 }
 
@@ -73,6 +75,7 @@ for (const lang of ['ar', 'de']) {
         ...[...ctx.lessons.keys()].map(id => `#lesson/${id}`),
         '#practice/passiv-perfekt', '#practice/exam-passiv', '#practice/mixed', '#practice/test', '#practice/mistakes',
         '#readings', '#sprachbausteine', '#cards', '#cards/genitiv', '#practice/apply-genitiv',
+        '#model-exams', ...[...ctx.modelTests.values()].flatMap(model => [`#model-exams/${model.id}`, ...model.sections.map(section => `#model-exams/${model.id}/${section.id}`)]),
         ...[...ctx.practiceSets.keys()].map(id => `#practice/${id}`),
         ...[...ctx.readings.keys()].map(id => `#readings/${id}`),
         ...[...ctx.sprachbausteine.keys()].map(id => `#sprachbausteine/${id}`)];

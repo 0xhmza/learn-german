@@ -7,6 +7,7 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **Four Sprachbausteine sets** across three difficulty levels, with ten gaps per letter. Part 1 uses three choices per gap and Part 2 uses a shared word bank. [telc Deutsch B1 sample format](https://shop.telc.net/media/catalog/product/file/telc_deutsch_b1_zd_uebungstest_1.pdf)
 - **Three B1 readings** with offline Arabic word glosses, paragraph translations and comprehension checks.
 - **102 grammar flashcards** for rule recall and application, with spaced review and two cards for every lesson.
+- **telc B1 exam trainer** with 17 PDF-sourced models, saved drafts, section-level scoring and answer-key corrections. [Extraction report](docs/telc-extraction-report.md)
 - **Dashboard** with your next lesson, daily goal, streak, due reviews, the island map and every topic with its progress.
 - **Island map**: a boat sails from island to island as you learn; inside an island a walker moves along the lesson trail.
 - **Gamification**: one to three stars per lesson, XP and nine ranks, daily goal and streak, 16 badges, an exam per island to conquer it, and spaced review of answered questions.
@@ -57,6 +58,7 @@ Progress is stored in the browser (`localStorage`), including unfinished practic
 | `content/practice-sets.json` | Curated sets that combine lessons and question types |
 | `content/readings.json` | B1 passages with a shared glossary and inline `word{Arabic gloss}` annotations |
 | `content/sprachbausteine.json` | Original letters, options and explanations for both exam-style formats |
+| `content/telc-b1-model-tests.json` | Model tests from the supplied PDF, with page references, scan images, keys and audit statuses |
 | `content/levels.json`, `content/badges.json` | Levels and badge texts |
 | `content/sources/` | The original B1.1 page (`legacy/`) and the B1.2 grammar list. The publisher PDF stays local and is git-ignored |
 | `src/index.html`, `src/styles/`, `src/fonts/` | Page shell, stylesheets, Noto Sans Arabic (SIL OFL) |

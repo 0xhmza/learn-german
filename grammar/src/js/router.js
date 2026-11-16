@@ -7,6 +7,13 @@ export function parse(hash, ctx) {
   const parts = raw.split('/');
   const [view, key, extra] = parts;
   const home = { view: 'home', key: null, hash: 'home', tab: 'home' };
+  if (view === 'model-exams' && parts.length <= 3) {
+    const exam = ctx.modelTests.get(key);
+    if (key === undefined || exam) {
+      const section = exam?.sections.find(section => section.id === extra)?.id;
+      return { view, key, section, hash: raw, tab: 'model-exams' };
+    }
+  }
   if (!raw || extra !== undefined) return home;
   if (view === 'island' && ctx.islandById.has(key)) return { view, key, hash: raw, tab: 'home' };
   if (view === 'lesson' && ctx.lessons.has(key)) return { view, key, hash: raw, tab: 'home' };

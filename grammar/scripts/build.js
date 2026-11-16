@@ -12,7 +12,8 @@ const src = path.join(root, 'src');
 const dist = path.join(root, 'dist');
 const site = path.join(dist, 'site');
 export const singleFile = path.join(dist, 'Deutsch-Grammatik-B1.html');
-const BUDGET = { single: 1.5 * 1024 * 1024, script: 150 * 1024 };
+// The standalone build also embeds the model-test scan pages.
+const BUDGET = { single: 4 * 1024 * 1024, script: 150 * 1024 };
 
 const between = (text, start, end, replacement) => {
   const a = text.indexOf(start);

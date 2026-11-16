@@ -1,0 +1,28 @@
+export const isListening = section => section.id.startsWith('hoeren-');
+export const isMatching = section => ['lesen-1', 'lesen-3', 'sprache-2'].includes(section.id);
+
+export function examChoices(section, item) {
+  if (isListening(section)) return { '+': 'Richtig', '-': 'Falsch' };
+  return item.choices ?? section.choices ?? {};
+}
+
+export function isAnswerable(section, item) {
+  const choices = examChoices(section, item);
+  if (['lesen-2', 'sprache-1'].includes(section.id) && Object.keys(choices).length !== 3) return false;
+  if (section.id.startsWith('sprache-') && !section.passage?.some(text => text.includes(`{${item.number}}`))) return false;
+  if ((section.id.startsWith('lesen-') || isListening(section)) && !item.prompt) return false;
+  return Object.keys(choices).length > 1;
+}
+
+export function isScorable(section, item) {
+  return isAnswerable(section, item) && ['source-key', 'verified', 'corrected'].includes(item.key.status)
+    && Object.hasOwn(examChoices(section, item), item.key.choice);
+}
+
+export function examResult(section, responses) {
+  const scorable = section.items.filter(item => isScorable(section, item));
+  return {
+    total: scorable.length,
+    correct: scorable.filter(item => item.key.choice === responses[item.number]).length
+  };
+}
