@@ -16,6 +16,8 @@ export function defaultState(day) {
     createdAt: day,
     settings: { levelFilter: 'all', dailyGoal: 30, reduceMotion: false },
     completed: {},
+    viewed: {},
+    transfer: {},
     stars: {},
     lessonBonus: {},
     results: {},
@@ -53,6 +55,14 @@ export function normalizeState(raw, ctx, day) {
   for (const [id, value] of Object.entries(plain(raw.completed) ? raw.completed : {})) {
     if (ctx.lessons.has(id) && value) state.completed[id] = dayOr(value, day);
   }
+  for (const [id, value] of Object.entries(plain(raw.viewed) ? raw.viewed : {})) {
+    if (ctx.lessons.has(id) && isDay(value)) state.viewed[id] = value;
+  }
+  for (const [id, value] of Object.entries(plain(raw.transfer) ? raw.transfer : {})) {
+    if (!ctx.transferQuestions.has(id) || !plain(value)) continue;
+    if (isDay(value.last)) state.transfer[id] = { last: value.last, correct: value.correct === true, hinted: value.hinted === true };
+    if (isDay(value.due)) (state.transfer[id] ||= {}).due = value.due;
+  }
   for (const [id, value] of Object.entries(plain(raw.stars) ? raw.stars : {})) {
     if (ctx.lessons.has(id) && [1, 2, 3].includes(value)) state.stars[id] = value;
   }
@@ -70,6 +80,8 @@ export function normalizeState(raw, ctx, day) {
       due: dayOr(value.due, day),
       last: dayOr(value.last, day),
       xpDone: value.xpDone === true,
+      ...(value.hinted === true ? { hinted: true } : {}),
+      ...(value.self === true ? { self: true } : {}),
       ...(isDay(value.xpDay) ? { xpDay: value.xpDay } : {})
     };
   }

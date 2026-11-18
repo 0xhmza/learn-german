@@ -1,6 +1,7 @@
 // Small HTML builders shared by all views. Everything that comes from
 // content goes through esc() or prose().
 import { getLang, t, num } from '../i18n/index.js';
+import { arabicLocale } from '../i18n/ar.js';
 
 export const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
 export const plainText = value => value.replaceAll('`', '');
@@ -36,10 +37,11 @@ export function meter(value, max, label) {
   return `<progress value="${value}" max="${Math.max(max, 1)}" aria-label="${esc(label)}"></progress>`;
 }
 
-// A localized date such as "14. November 2026" or "١٤ نوفمبر ٢٠٢٦".
+// Keep Arabic month names and use the same digits as the counters.
 export function formatDay(day, options = { day: 'numeric', month: 'long', year: 'numeric' }) {
   const [y, m, d] = day.split('-').map(Number);
-  return new Intl.DateTimeFormat(getLang(), { ...options, timeZone: 'UTC' }).format(new Date(Date.UTC(y, m - 1, d)));
+  const locale = getLang() === 'ar' ? arabicLocale : 'de';
+  return new Intl.DateTimeFormat(locale, { ...options, timeZone: 'UTC' }).format(new Date(Date.UTC(y, m - 1, d)));
 }
 
 export const crumbs = items => `<nav class="crumb" aria-label="${t('crumbLabel')}">${items.map(([href, label], i) =>

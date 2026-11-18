@@ -1,4 +1,17 @@
 .exam-layout { display: grid; gap: 16px; }
+.exam-featured { background: var(--hero-b); margin-block-end: 14px; }
+.coverage-list { padding-inline-start: 1.25em; margin-block: 6px; color: var(--ink-2); font-size: 14px; }
+.exam-overview .btn { margin-inline-end: 8px; margin-block-start: 10px; }
+.exam-sample { display: grid; gap: 14px; align-items: start; }
+.exam-sample audio { width: min(100%, 28rem); }
+.exam-sample fieldset { min-inline-size: 0; border: 1px solid var(--line); border-radius: 8px; }
+.exam-sample fieldset label { display: inline-flex; align-items: center; gap: 6px; margin-inline-end: 14px; }
+.exam-sample .btn { justify-self: start; }
+.exam-sample ol, .writing-review ul { padding-inline-start: 1.4em; }
+.exam-sample li + li, .writing-review p + p { margin-block-start: 8px; }
+.writing-review summary, .exam-sample summary { cursor: pointer; color: var(--brand-ink); font-weight: 750; }
+.writing-review details { margin-block-start: 12px; }
+.writing-review [lang="de"] { margin-block-start: 8px; }
 .exam-layout.with-part { grid-template-columns: minmax(9rem, 13rem) minmax(0, 1fr); align-items: start; }
 .exam-menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 10px; }
 .with-part .exam-menu { grid-template-columns: minmax(0, 1fr); }

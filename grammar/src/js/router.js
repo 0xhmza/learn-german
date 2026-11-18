@@ -10,7 +10,8 @@ export function parse(hash, ctx) {
   if (view === 'model-exams' && parts.length <= 3) {
     const exam = ctx.modelTests.get(key);
     if (key === undefined || exam) {
-      const section = exam?.sections.find(section => section.id === extra)?.id;
+      const sample = exam && ctx.learning.examSample?.model === exam.id;
+      const section = sample && ['audio-practice', 'speaking-practice'].includes(extra) ? extra : exam?.sections.find(section => section.id === extra)?.id;
       return { view, key, section, hash: raw, tab: 'model-exams' };
     }
   }

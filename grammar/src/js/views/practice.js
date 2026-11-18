@@ -4,7 +4,7 @@ import { t, num, getLang } from '../i18n/index.js';
 import { inFilter, lessonTitle, islandName } from '../content.js';
 import { islandProgress, pendingErrors } from '../engine/progress.js';
 import { newRun, examSize, TEST_MINUTES } from '../engine/runs.js';
-import { dueIds } from '../engine/srs.js';
+import { dailyReview, resumableRun } from '../engine/study.js';
 import { esc, link, button, plainText, prose } from '../components/html.js';
 
 export const title = () => t('practice');
@@ -28,9 +28,9 @@ export function render(app) {
   const lang = getLang();
   const filter = state.settings.levelFilter;
   const day = app.day();
-  const due = dueIds(ctx, state, day, filter).length;
   const mistakes = pendingErrors(ctx, state, filter).length;
-  const previous = state.runs[state.lastRun];
+  const previous = resumableRun(state);
+  const review = dailyReview(ctx, state, day);
   const options = ctx.islands.map(island => {
     const lessons = ctx.islandLessons(island.id).filter(lesson => inFilter(lesson, filter));
     if (!lessons.length) return '';
@@ -52,22 +52,22 @@ export function render(app) {
       <a href="#island/${island.id}">${esc(islandName(island, lang))}</a>${status}</li>`;
   }).join('');
   return `
-    <section class="simple-banner practice-head"><h1>${t('practiceTitle')}</h1><p>${t('practiceText')}</p></section>
+    <section class="simple-banner practice-head"><h1>${t('reviewAndTrain')}</h1>
+      <p>${t('dailyCounts', num(review.questions), num(review.cards), num(review.fresh), num(review.transfers))}</p>
+      <div class="actions study-actions">
+        ${previous ? link(`practice/${previous.key}`, t('resumeSession'), 'primary') : ''}
+        ${review.ids.length ? button('run', t('startReview'), previous ? 'secondary' : 'primary', 'data-key="daily"') : ''}
+        ${mistakes ? button('run', t('practiceMistakes'), 'secondary', 'data-key="mistakes"') : ''}</div></section>
     <nav class="study-grid study-entry" aria-label="${t('studyTools')}">
       ${[['sprachbausteine', 'sprachTitle', 'sprachSummary'], ['readings', 'readingsTitle', 'readingsIntro'], ['cards', 'cardsTitle', 'cardsIntro']].map(([route, heading, description]) => `<a class="panel study-tile" href="#${route}"><h2>${prose(t(heading))}</h2><p>${prose(t(description))}</p></a>`).join('')}
     </nav>
-    <div class="launcher">
+    <details class="panel modes-panel"><summary>${t('otherModes')}</summary><div class="launcher">
       <section class="panel"><h2>${t('byTopic')}</h2>
         <p>${t('byTopicText')}</p>
         <div class="form-row">
           <label for="scope">${t('scope')}<select id="scope"><option value="mixed">${esc(t('mixedOpt', num(20)))}</option>${options}</select></label>
           ${button('launch', t('launch'), 'primary')}
         </div>
-        ${previous && !previous.finished ? `<div class="notice">${t('pendingRun')} ${link(`practice/${previous.key}`, t('resumeRun'), 'quiet')}</div>` : ''}
-      </section>
-      <section class="panel"><h2>${t('reviewTitle')}</h2><p>${t('reviewText')}</p>
-        <p class="count-line">${due ? t('dueReviews', num(due)) : t('noDue')}</p>
-        ${due ? button('run', t('startReview'), 'primary', 'data-key="review"') : ''}
       </section>
       <section class="panel"><h2>${t('testTitle')}</h2><p>${t('testText', num(20), num(TEST_MINUTES))}</p>
         ${button('run', state.runs.test && !state.runs.test.finished ? t('resumeTest') : t('startTest'), 'secondary', 'data-key="test"')}
@@ -80,7 +80,7 @@ export function render(app) {
     <div class="study-grid">${[...ctx.practiceSets.values()].map(set => `<article class="panel study-tile">
       <h3>${prose(set.title[lang])}</h3><p>${prose(set.summary[lang])}</p><p class="study-meta">${t('lessonsN', set.lessons.length)}</p>
       ${button('run', t(state.runs[set.id] && !state.runs[set.id].finished ? 'resumeRun' : 'launch'), 'secondary', `data-key="${set.id}"`)}</article>`).join('')}</div>
-    <section class="panel exams-panel study-followup"><h2>${t('examsTitle')}</h2><p>${t('examsText')}</p><ul class="exam-list">${exams}</ul></section>`;
+    <section class="panel exams-panel study-followup"><h2>${t('examsTitle')}</h2><p>${t('examsText')}</p><ul class="exam-list">${exams}</ul></section></details>`;
 }
 
 export const actions = {

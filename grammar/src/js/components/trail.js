@@ -28,11 +28,13 @@ export function renderTrail({ ctx, state }, island) {
     </li>`;
   }).join('');
   const size = examSize(lessons.length);
+  const missing = lessons.filter(lesson => !state.completed[lesson.id]);
   const exam = progress.conquered
     ? `<div class="exam-text"><strong>${t('conquered')}</strong><span>${t('examBest', num(progress.examBest), num(size))}</span>${button('run', t('examRepeat'), 'quiet', `data-key="exam-${island.id}"`)}</div>`
     : progress.examReady
       ? `<div class="exam-text"><strong>${t('islandExam')}</strong><span>${t('examIntro', num(size), num(passMark(size)))}</span>${progress.examTries ? `<span>${t('examBest', num(progress.examBest), num(size))}</span>` : ''}${button('run', t('examStart'), 'primary', `data-key="exam-${island.id}"`)}</div>`
-      : `<div class="exam-text"><strong>${t('islandExam')}</strong><span>${t('examLocked', num(progress.learnedAll), num(progress.totalAll))}</span></div>`;
+      : `<div class="exam-text"><strong>${t('islandExam')}</strong><span>${t('examLocked', num(progress.learnedAll), num(progress.totalAll))}</span>
+          <details><summary>${t('remainingLessons')}</summary><ul>${missing.map(lesson => `<li><a href="#lesson/${lesson.id}">${prose(lessonTitle(lesson, lang))} ${levelChip(lesson.level)}</a></li>`).join('')}</ul></details></div>`;
   return `<div class="trail-wrap" id="trail">
     <svg class="trail-line" aria-hidden="true"><path/></svg>
     <ol class="trail" aria-label="${esc(t('trailLabel'))}">${nodes}

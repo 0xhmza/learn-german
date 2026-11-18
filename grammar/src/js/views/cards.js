@@ -1,6 +1,7 @@
 import { t, num, getLang } from '../i18n/index.js';
 import { inFilter, lessonTitle, islandName } from '../content.js';
 import { schedule } from '../engine/srs.js';
+import { cardQueue } from '../engine/study.js';
 import { shuffle } from '../engine/runs.js';
 import { button, crumbs, esc, germanLine, meter, plainText, prose } from '../components/html.js';
 
@@ -14,19 +15,13 @@ function deck(app, key) {
   return [...ctx.cards.values()].filter(card => key ? card.lesson === key : inFilter(ctx.lessons.get(card.lesson), state.settings.levelFilter));
 }
 
-function dueCards(app, cards) {
-  const day = app.day();
-  const { cards: reviews } = app.state;
-  return cards.filter(card => !reviews[card.id] || reviews[card.id].due <= day)
-    .sort((a, b) => (reviews[a.id]?.due || '9999').localeCompare(reviews[b.id]?.due || '9999'));
-}
+const queue = (app, key) => cardQueue(app.ctx, app.state, app.day(), app.state.settings.levelFilter, key);
 
 export function render(app, route) {
   if (!app.redrawing) round = null;
   const { ctx } = app;
   const lang = getLang();
-  const cards = deck(app, route.key);
-  const due = dueCards(app, cards).length;
+  const { due, fresh } = queue(app, route.key);
   const lesson = ctx.lessons.get(route.key);
   const trail = lesson
     ? [['cards', t('cardsTitle')], [`lesson/${lesson.id}`, prose(lessonTitle(lesson, lang))]]
@@ -39,9 +34,9 @@ export function render(app, route) {
     ${current ? renderCard(ctx, current, lang) : `<section class="panel study-page">
       <h2 id="card-heading" tabindex="-1">${round ? t('cardsComplete') : t('cardsReview')}</h2>
       ${round ? `<p>${t('cardsResult', num(round.remembered), num(round.cards.length))}</p>` : `<p>${t('cardsHow')}</p>`}
-      <p class="study-meta">${due ? t('cardsDue', num(due)) : t('cardsAllCaughtUp')}</p>
-      <div class="actions study-actions">${due ? button('cards-start', t(round ? 'cardsContinue' : 'cardsStart'), 'primary') : ''}
-        ${lesson ? button('cards-all', t('cardsAll'), due ? 'secondary' : 'primary') : ''}</div>
+      <p class="study-meta">${t('cardsDue', num(due.length))} · ${t('newCards', num(fresh.length))}</p>
+      <div class="actions study-actions">${due.length || fresh.length ? button('cards-start', t(round ? 'cardsContinue' : 'cardsStart'), 'primary') : ''}
+        ${lesson ? button('cards-all', t('cardsAll'), due.length || fresh.length ? 'secondary' : 'primary') : ''}</div>
       ${!lesson ? `<div class="form-row study-actions"><label for="card-lesson">${t('chooseLesson')}<select id="card-lesson">${options}</select></label>${button('cards-lesson', t('openDeck'))}</div>` : ''}
     </section>`}`;
 }
@@ -73,7 +68,8 @@ function redraw(app, selector = '#card-heading') {
 
 function start(app, all = false) {
   const cards = deck(app, app.route.key);
-  const selected = (all ? cards : dueCards(app, cards)).slice(0, ROUND_SIZE);
+  const { due, fresh } = queue(app, app.route.key);
+  const selected = (all ? cards : [...due, ...fresh.slice(0, 2)]).slice(0, ROUND_SIZE);
   if (!selected.length) return;
   round = { cards: selected, position: 0, revealed: false, remembered: 0 };
   chooseExamples(app);
@@ -83,7 +79,7 @@ function start(app, all = false) {
 function rate(app, correct) {
   if (!round?.revealed) return;
   const { id } = round.cards[round.position];
-  app.store.update(state => { state.cards[id] = schedule(state.cards[id] || { box: 1 }, correct, app.day()); });
+  app.store.update(state => { state.cards[id] = schedule(state.cards[id] || {}, correct, app.day()); });
   round.position++;
   round.revealed = false;
   round.remembered += Number(correct);

@@ -4,8 +4,9 @@ import { t, num, getLang } from '../i18n/index.js';
 import { localizeQuestion, lessonTitle, islandName } from '../content.js';
 import { isCorrect, answered, blankCorrect, model } from '../engine/grading.js';
 import { newRun, permutation, runScore, passMark, isRunValid } from '../engine/runs.js';
-import { lessonStars } from '../engine/progress.js';
-import { esc, de, prose, germanLine, link, button, stars, crumbs } from '../components/html.js';
+import { lessonStars, pendingErrors } from '../engine/progress.js';
+import { dailyReview } from '../engine/study.js';
+import { esc, de, prose, germanLine, link, button, stars, crumbs, formatDay } from '../components/html.js';
 
 let hintCount = 0;
 let shownQuestion = '';
@@ -13,13 +14,17 @@ let timer = 0;
 
 const xpOf = notes => notes.filter(note => note.type === 'xp' || note.type === 'goal').reduce((sum, note) => sum + note.amount, 0);
 
-function runTitle(app, run) {
+export function runTitle(app, run) {
   const lang = getLang();
   const { ctx } = app;
   if (run.kind === 'test') return t('testName');
   if (run.kind === 'mixed') return t('mixedName');
   if (run.kind === 'mistakes') return t('mistakesName');
   if (run.kind === 'review') return t('reviewName');
+  if (run.kind === 'daily') return t('reviewToday');
+  if (run.kind === 'quick') return t('quickPractice');
+  if (run.kind === 'write') return t('realLifeTask');
+  if (run.kind === 'repair') return t('missedLesson');
   if (run.kind === 'island') return t('islandRunName', islandName(ctx.islandById.get(run.target), lang));
   if (run.kind === 'exam') return t('examName', islandName(ctx.islandById.get(run.target), lang));
   if (run.kind === 'set') return ctx.practiceSets.get(run.target).title[lang];
@@ -42,6 +47,13 @@ function getRun(app, key) {
 
 const question = (app, run) => localizeQuestion(app.ctx.questions.get(run.ids[run.position]), getLang());
 const save = app => app.store.save();
+
+function retryQuestion(ctx, run, q) {
+  if (!['quick', 'lesson', 'apply', 'repair', 'set', 'island', 'mixed', 'mistakes', 'review'].includes(run.kind) || run.retryIds?.includes(q.id)) return null;
+  const pilot = ctx.learning.pilot?.[q.lesson]?.retry;
+  return [pilot, `apply-${q.lesson}`, ...ctx.lessons.get(q.lesson).questions.filter(item => item.type === q.type).map(item => item.id)]
+    .find(id => id && ctx.questions.has(id) && !run.ids.includes(id));
+}
 
 export function title(app, route) {
   const run = app.state.runs[route.key];
@@ -69,20 +81,22 @@ export function render(app, route) {
   const last = run.position === run.ids.length - 1;
   const hintText = q.hints[hintCount - 1];
   const name = runTitle(app, run);
+  const retry = grade === false && retryQuestion(app.ctx, run, q);
+  const due = q.transfer ? app.state.transfer[q.lesson]?.due : q.card ? app.state.cards[q.card]?.due : app.state.results[q.id]?.due;
   return `${crumbs([['practice', t('practice')], [null, prose(name)]])}
     <section class="quiz-box" aria-labelledby="quiz-heading">
       <div class="quiz-meta"><strong id="quiz-heading">${prose(name)}</strong>
         <span>${t('questionOf', num(run.position + 1), num(run.ids.length))}</span>
         ${run.mode === 'test' ? `<span id="timer" class="timer" role="timer" dir="ltr" aria-label="${t('timeLeft')}"></span>` : ''}</div>
       <progress value="${run.position + 1}" max="${run.ids.length}" aria-label="${t('position')}"></progress>
-      <div class="quiz-meta"><span class="quiz-type">${t('kindLabels')[q.type]} · ${t('difficulty')[q.difficulty]}</span>
+      <div class="quiz-meta"><span class="quiz-type">${q.transfer ? t('transferPractice') : q.card ? t('cardsTitle') : `${t('kindLabels')[q.type]} · ${t('difficulty')[q.difficulty]}`}</span>
       ${!graded ? `<a href="#lesson/${lesson.id}">${prose(lessonTitle(lesson, getLang()))} ↗</a>` : ''}</div>
       <h1 class="quiz-prompt" id="quiz-prompt" tabindex="-1">${prose(q.prompt)}</h1>
       ${q.context ? `<div class="example">${germanLine(q.context)}</div>` : ''}
       ${renderInput(run, q, run.answers[q.id], checked || grade === 'shown', checked)}
       <div id="quiz-status" class="sr-only" aria-live="polite"></div>
       ${hintText && !graded ? `<div class="quiz-help" tabindex="-1"><strong>💡 ${t('hint', num(hintCount))}</strong> · ${prose(hintText)}</div>` : ''}
-      ${checked || grade === 'shown' ? renderFeedback(q, grade) : ''}
+      ${checked || grade === 'shown' ? renderFeedback(q, grade, retry, due) : ''}
       <div class="quiz-controls">
         ${graded ? [
           previous ? button('q-prev', t('back')) : '',
@@ -92,7 +106,8 @@ export function render(app, route) {
           !checked && grade !== 'shown' ? button('check', q.type === 'text' ? t('showModel') : t('check'), 'primary') : '',
           !checked && grade !== 'shown' && hintCount < q.hints.length ? button('hint', t('showHint'), 'quiet') : '',
           previous ? button('q-prev', t('back')) : '',
-          grade !== 'shown' ? button('q-next', last ? t('showResult') : checked ? t('forward') : t('skipQ'), checked ? 'primary' : 'secondary') : ''
+          retry ? button('retry-example', t('retryExample'), 'primary') : '',
+          grade !== 'shown' ? button('q-next', last ? t('showResult') : checked ? t('forward') : t('skipQ'), checked && !retry ? 'primary' : 'secondary') : ''
         ].join('')}
       </div>
       ${graded ? `<div id="test-confirm" class="notice" hidden><p id="test-summary"></p><div class="actions" style="margin-top:8px">${button('confirm-test', t('submitNow'), 'primary')}${button('cancel-finish', t('keepSolving'))}</div></div>` : ''}
@@ -132,11 +147,15 @@ function orderMarkup(run, q, value, locked) {
     <div class="order-line" dir="ltr" aria-label="${t('piecesAria')}">${permutation(run, q, q.items.length).filter(i => !value.includes(i)).map(i => token(i, 'add-piece')).join('')}</div>`;
 }
 
-function renderFeedback(q, grade) {
+function renderFeedback(q, grade, retry, due) {
   const alternates = q.blanks?.flatMap((variants, i) => (variants.length > 1 ? [`${num(i + 1)} · ${variants.map(de).join(' / ')}`] : []));
+  const solution = model(q);
+  const correction = `${solution ? `<p>${answerText(solution)}</p>` : ''}${alternates?.length ? `<p>${t('alternates')} ${alternates.join(' · ')}</p>` : ''}<p>${prose(q.explain)}</p>
+    ${q.writing ? `<p>${t('productionCriteria')}</p>` : ''}`;
   return `<div class="feedback ${grade === true ? 'correct' : grade === false ? 'incorrect' : ''}" id="feedback" tabindex="-1">
     <strong>${grade === true ? t('correct') : grade === false ? t('incorrect') : t('compare')}</strong>
-    <p>${answerText(model(q))}</p>${alternates?.length ? `<p>${t('alternates')} ${alternates.join(' · ')}</p>` : ''}<p>${prose(q.explain)}</p>
+    ${retry ? `${q.hints[0] ? `<p>${prose(q.hints[0])}</p>` : ''}<details><summary>${t('revealCorrection')}</summary>${correction}</details>` : correction}
+    ${due && grade !== 'shown' ? `<p class="muted">${t('dueOn', formatDay(due))}</p>` : ''}
     ${grade === 'shown' ? `<div class="actions" style="margin-top:8px">${button('self-yes', t('selfYes'), 'primary')}${button('self-no', t('selfNo'))}</div>` : ''}
     </div>`;
 }
@@ -144,11 +163,21 @@ function renderFeedback(q, grade) {
 const statusOf = grade => (grade === true ? t('statusRight') : grade === false ? t('statusReview') : t('statusNone'));
 
 function renderResults(app, run) {
-  const { ctx } = app;
+  const { ctx, state } = app;
   const lang = getLang();
   const { correct, total, counted } = runScore(run);
   const name = runTitle(app, run);
   const summary = run.summary || {};
+  const lesson = ctx.lessons.get(run.target);
+  const mistakes = pendingErrors(ctx, state, 'all');
+  const missed = lesson ? mistakes.some(id => ctx.questions.get(id).lesson === lesson.id) : run.ids.some(id => mistakes.includes(id));
+  const upcomingTransfer = state.transfer[lesson?.id]?.due;
+  const relatedSet = lesson && [...ctx.practiceSets.values()].find(set =>
+    set.lessons.includes(lesson.id) && set.lessons.filter(id => state.completed[id]).length >= 2);
+  const moreReview = run.kind === 'daily' && dailyReview(ctx, state, app.day()).ids.some(id => !run.ids.includes(id));
+  const assessed = run.ids.filter(id => typeof run.grades[id] === 'boolean');
+  const self = assessed.filter(id => ctx.questions.get(id).type === 'text').length;
+  const hinted = assessed.filter(id => run.hinted[id]).length;
   const islandId = run.kind === 'lesson' ? ctx.lessons.get(run.target).island : run.kind === 'island' || run.kind === 'exam' ? run.target : null;
   let outcome = '';
   if (run.kind === 'lesson') {
@@ -167,17 +196,25 @@ function renderResults(app, run) {
     return `<details class="result-row"><summary>${statusOf(run.grades[id])} · ${prose(q.prompt)}</summary>
       ${q.context ? germanLine(q.context) : ''}${q.type === 'cloze' ? `<div class="review-model" lang="de" dir="ltr">${esc(q.text.replace(/\{\{\d+\}\}/g, '___'))}</div>` : ''}
       ${yours ? `<p><strong>${t('yourAnswer')}</strong> · ${answerText(yours)}</p>` : ''}
-      <p><strong>${t('solution')}</strong> · ${answerText(model(q))}</p><p>${prose(q.explain)}</p><a href="#lesson/${q.lesson}">${t('openRule')}</a></details>`;
+      ${model(q) ? `<p><strong>${t('solution')}</strong> · ${answerText(model(q))}</p>` : ''}<p>${prose(q.explain)}</p><a href="#lesson/${q.lesson}">${t('openRule')}</a></details>`;
   }).join('');
   return `${crumbs([['practice', t('practice')], [null, prose(name)]])}
     <section class="quiz-box"><h1 class="quiz-prompt">${t('resultOf', prose(name))}</h1>
       ${run.timedOut ? `<p class="notice">${t('timeUp')}</p>` : ''}
       ${outcome}
-      <div class="stats"><div class="stat"><strong>${num(correct)}</strong>${t('statRight')}</div>
+    <div class="stats"><div class="stat"><strong>${num(correct)}</strong>${t('statRight')}</div>
       <div class="stat"><strong>${num(counted - correct)}</strong>${t('statNeeds')}</div>
       <div class="stat"><strong>${num(total - counted)}</strong>${t('statNone')}</div></div>
-      ${run.xp ? `<p class="xp-line">✨ ${t('xpEarned', num(run.xp))}</p>` : ''}
-      <div class="actions">${button('restart', t('newRun'), 'primary')}${islandId ? link(`island/${islandId}`, t('backToIsland')) : ''}${link('progress', t('progressLog'))}${link('practice', t('otherPractice'))}</div>
+      <p class="muted">${t('answerEvidence', num(counted - self), num(self), num(hinted))}</p>
+      ${upcomingTransfer ? `<p class="notice">${t('transferOn', formatDay(upcomingTransfer))}</p>` : ''}
+      ${run.xp ? `<p class="xp-line">${t('xpEarned', num(run.xp))}</p>` : ''}
+      <div class="actions">
+        ${moreReview ? button('restart', t('afterReview'), 'primary') : ''}
+        ${missed ? button('run', t(lesson ? 'missedLesson' : 'practiceMistakes'), moreReview ? 'secondary' : 'primary', `data-key="${lesson ? `repair-${lesson.id}` : 'mistakes'}"`) : ''}
+        ${run.kind === 'quick' ? button('run', t('practiceMore'), missed ? 'secondary' : 'primary', `data-key="${lesson.id}"`) : ''}
+        ${['quick', 'lesson'].includes(run.kind) && relatedSet ? button('run', t('crossPractice'), 'secondary', `data-key="${relatedSet.id}"`) : ''}
+        ${!moreReview && run.kind !== 'daily' ? button('restart', t('newRun'), missed || run.kind === 'quick' ? 'secondary' : 'primary') : ''}
+        ${islandId ? link(`island/${islandId}`, t('backToIsland')) : ''}${link('home', t('home'))}${link('progress', t('progressLog'))}</div>
       <div class="section-heading"><h2>${t('answersTitle')}</h2></div>${rows}
     </section>`;
 }
@@ -190,7 +227,9 @@ function addXp(run, notes) {
 function finishPractice(app, run) {
   run.finished = true;
   if (run.kind === 'lesson') {
-    const { correct, total } = runScore(run);
+    const coreIds = run.ids.filter(id => !run.retryIds?.includes(id));
+    const correct = coreIds.filter(id => run.grades[id] === true).length;
+    const total = coreIds.length;
     addXp(run, app.apply([{ kind: 'lessonRun', lesson: run.target, correct, total }]));
   } else save(app);
 }
@@ -272,7 +311,7 @@ const active = app => {
 function grade(app, run, q, correct) {
   run.grades[q.id] = correct;
   const raw = app.ctx.questions.get(q.id);
-  addXp(run, app.apply([{ kind: 'answer', q: raw, correct, hinted: Boolean(run.hinted[q.id]), review: run.kind === 'review' }]));
+  addXp(run, app.apply([{ kind: 'answer', q: raw, correct, hinted: Boolean(run.hinted[q.id]), review: ['review', 'daily'].includes(run.kind) }]));
   app.rerender();
   document.querySelector('#feedback')?.focus({ preventScroll: false });
 }
@@ -290,6 +329,16 @@ export const actions = {
   },
   'q-prev': app => { const run = active(app); if (run) moveQuestion(app, run, -1); },
   'q-next': app => { const run = active(app); if (run) moveQuestion(app, run, 1); },
+  'retry-example'(app) {
+    const run = active(app);
+    if (!run) return;
+    const q = question(app, run);
+    const id = run.grades[q.id] === false && retryQuestion(app.ctx, run, q);
+    if (!id) return;
+    (run.retryIds ||= []).push(id);
+    run.ids.splice(run.position + 1, 0, id);
+    moveQuestion(app, run, 1);
+  },
   hint(app) {
     const run = active(app);
     if (!run) return;

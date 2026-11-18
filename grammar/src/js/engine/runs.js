@@ -2,6 +2,7 @@
 import { inFilter } from '../content.js';
 import { pendingErrors } from './progress.js';
 import { dueIds } from './srs.js';
+import { dailyReview } from './study.js';
 
 export const TEST_MINUTES = 20;
 export const MAX_REVIEW = 20;
@@ -21,9 +22,12 @@ export function parseRunKey(ctx, key) {
   if (ctx.lessons.has(key)) return { kind: 'lesson', id: key };
   if (ctx.practiceSets.has(key)) return { kind: 'set', id: key };
   if (key?.startsWith('apply-') && ctx.lessonStudy.has(key.slice(6))) return { kind: 'apply', id: key.slice(6) };
+  const scoped = /^(quick|repair|write)-(.+)$/.exec(key || '');
+  if (scoped?.[1] === 'write' && !ctx.questions.has(key)) return null;
+  if (scoped && ctx.lessons.has(scoped[2])) return { kind: scoped[1], id: scoped[2] };
   const island = /^(island|exam)-(.+)$/.exec(key || '');
   if (island && ctx.islandById.has(island[2])) return { kind: island[1], id: island[2] };
-  if (['mixed', 'test', 'mistakes', 'review'].includes(key)) return { kind: key, id: null };
+  if (['mixed', 'test', 'mistakes', 'review', 'daily'].includes(key)) return { kind: key, id: null };
   return null;
 }
 
@@ -71,6 +75,9 @@ export function newRun(ctx, state, key, { rng = Math.random, day, now = Date.now
   if (!parsed) return null;
   let ids = [];
   if (parsed.kind === 'lesson') ids = ctx.lessons.get(parsed.id).questions.map(q => q.id);
+  if (parsed.kind === 'quick') ids = ctx.lessons.get(parsed.id).questions.slice(0, 2).map(q => q.id);
+  if (parsed.kind === 'write') ids = [key];
+  if (parsed.kind === 'repair') ids = pendingErrors(ctx, state, 'all').filter(id => ctx.questions.get(id).lesson === parsed.id);
   if (parsed.kind === 'apply') ids = [key];
   if (parsed.kind === 'set') {
     const set = ctx.practiceSets.get(key);
@@ -85,6 +92,7 @@ export function newRun(ctx, state, key, { rng = Math.random, day, now = Date.now
   if (parsed.kind === 'mixed' || parsed.kind === 'test') ids = mixedQuestions(ctx, filter, rng, parsed.kind === 'test');
   if (parsed.kind === 'mistakes') ids = pendingErrors(ctx, state, filter);
   if (parsed.kind === 'review') ids = dueIds(ctx, state, day, filter).slice(0, MAX_REVIEW);
+  if (parsed.kind === 'daily') ids = dailyReview(ctx, state, day, filter).ids;
   if (!ids.length) return null;
   const mode = parsed.kind === 'test' ? 'test' : parsed.kind === 'exam' ? 'exam' : 'practice';
   return {

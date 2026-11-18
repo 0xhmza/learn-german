@@ -25,8 +25,10 @@ export function renderIndex({ ctx, state, query, current, open }) {
     const learned = lessons.filter(lesson => state.completed[lesson.id]).length;
     const isOpen = needle || open.has(island.id) || lessons.some(lesson => lesson.id === current);
     return `<details data-island="${island.id}" ${isOpen ? 'open' : ''}>
-      <summary title="${esc(island.name[lang === 'de' ? 'ar' : 'de'])}"><span class="sum-emoji ${island.palette}" aria-hidden="true">${island.emoji}</span>
-        <span>${prose(islandName(island, lang))}</span><bdi class="sum-count" dir="ltr" aria-label="${t('of', num(learned), num(lessons.length))}">${num(learned)}/${num(lessons.length)}</bdi><span class="chevron" aria-hidden="true">⌄</span></summary>
+      <summary title="${esc(island.name[lang === 'de' ? 'ar' : 'de'])}">
+        <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg>
+        <span class="sum-emoji ${island.palette}" aria-hidden="true">${island.emoji}</span>
+        <span class="sum-name">${prose(islandName(island, lang))}</span><bdi class="sum-count" dir="ltr" aria-label="${t('of', num(learned), num(lessons.length))}">${num(learned)}/${num(lessons.length)}</bdi></summary>
       <div class="index-links">${lessons.map(lesson => {
         const stars = lessonStars(state, lesson.id);
         return `<a href="#lesson/${lesson.id}" ${current === lesson.id ? 'aria-current="page"' : ''}>

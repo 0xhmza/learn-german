@@ -6,6 +6,7 @@ export function indexContent(raw) {
   const lessons = new Map();
   const questions = new Map();
   const cards = new Map();
+  const transferQuestions = new Map();
   const lessonStudy = new Map(Object.entries(raw.lessonStudy || {}));
   const byIsland = new Map(islands.map(island => [island.id, []]));
   for (const lesson of raw.lessons) {
@@ -26,8 +27,35 @@ export function indexContent(raw) {
         de: { prompt: study.task.de, explain: study.de, hints: [study.hint.de] }
       }
     });
-    cards.set(`${lesson.id}-recall`, { id: `${lesson.id}-recall`, lesson: lesson.id, kind: 'recall' });
-    cards.set(`${lesson.id}-apply`, { id: `${lesson.id}-apply`, lesson: lesson.id, kind: 'apply' });
+    for (const kind of ['recall', 'apply']) {
+      const card = { id: `${lesson.id}-${kind}`, lesson: lesson.id, kind };
+      cards.set(card.id, card);
+      const cardQuestion = `card-${card.id}`;
+      const apply = questions.get(id);
+      const base = { id: cardQuestion, lesson: lesson.id, card: card.id, difficulty: 2 };
+      questions.set(cardQuestion, kind === 'apply' ? { ...apply, ...base } : {
+        ...base, type: 'text', model: '',
+        i18n: Object.fromEntries(['ar', 'de'].map(lang => [lang, {
+          prompt: lesson.i18n[lang].recall[0], explain: lesson.i18n[lang].recall[1], hints: []
+        }]))
+      });
+    }
+    const transfer = raw.learning?.pilot?.[lesson.id]?.transfer;
+    if (transfer) {
+      const question = { ...transfer, id: `transfer-${lesson.id}`, lesson: lesson.id, difficulty: 2, transfer: true };
+      transferQuestions.set(lesson.id, question);
+      questions.set(question.id, question);
+    }
+    const writing = raw.learning?.islands?.[lesson.island];
+    if (writing?.lesson === lesson.id) {
+      const id = `write-${lesson.id}`;
+      questions.set(id, {
+        id, lesson: lesson.id, type: 'text', difficulty: 3, answer: writing.model, writing: true,
+        i18n: Object.fromEntries(['ar', 'de'].map(lang => [lang, {
+          prompt: writing[lang], explain: raw.learning.outcomes[lesson.id][lang], hints: []
+        }]))
+      });
+    }
   }
   for (const list of byIsland.values()) list.sort((a, b) => a.order - b.order);
   const route = islands.flatMap(island => byIsland.get(island.id));
@@ -42,6 +70,8 @@ export function indexContent(raw) {
     lessons,
     questions,
     cards,
+    transferQuestions,
+    learning: raw.learning || {},
     lessonStudy,
     practiceSets: new Map((raw.practiceSets || []).map(set => [set.id, set])),
     readings: new Map((raw.readings?.texts || []).map(reading => [reading.id, reading])),

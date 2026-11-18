@@ -71,7 +71,7 @@ Progress is stored in the browser (`localStorage`), including unfinished practic
 
 1. `npm run new:lesson -- my-topic zeiten B1.2 10`
 2. Replace every `TODO` in `content/lessons/my-topic.json`. German terms inside Arabic text go between backticks. Question 8 corrects the lesson's `pitfallPair`.
-3. Add a worked comparison to `content/lesson-study.json` and include the lesson ID in a set in `content/practice-sets.json`. Keep published question IDs and answer indices stable so in-progress attempts can resume.
+3. Add a worked comparison to `content/lesson-study.json`, a bilingual outcome to `content/learning.json`, and include the lesson ID in a set in `content/practice-sets.json`. Keep published question IDs and answer indices stable so in-progress attempts can resume.
 4. Run `npm run validate`, then check the lesson at http://127.0.0.1:4180/#lesson/my-topic in both languages.
 
 The [grammar platform plan](docs/grammar-platform-plan.md) describes the content model, routes, gamification rules and map geometry in detail.

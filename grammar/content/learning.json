@@ -1,0 +1,125 @@
+{
+  "outcomes": {
+    "genitiv": {"ar":"أستطيع أن أبيّن لمن ينتمي شيء باستخدام حالة المضاف إليه.","de":"Ich kann mit dem Genitiv sagen, wem etwas gehört."},
+    "genitiv-praep": {"ar":"أستطيع أن أستخدم حالة المضاف إليه بعد حروف مثل `wegen` و`trotz`.","de":"Ich kann nach Präpositionen wie `wegen` und `trotz` den Genitiv bilden."},
+    "lokale-praep": {"ar":"أستطيع وصف موقع شيء بالنسبة إلى معلم قريب.","de":"Ich kann einen Ort im Verhältnis zu einem anderen Ort beschreiben."},
+    "n-deklination": {"ar":"أستطيع تصريف أسماء مثل `der Kollege` في الحالات المختلفة.","de":"Ich kann Nomen wie `der Kollege` in den verschiedenen Fällen bilden."},
+    "diminutiv": {"ar":"أستطيع تكوين صيغ التصغير واستعمال أداة التعريف المناسبة.","de":"Ich kann Verkleinerungsformen bilden und den passenden Artikel verwenden."},
+    "verben-als-nomen": {"ar":"أستطيع تحويل فعل إلى اسم عند الحديث عن نشاط.","de":"Ich kann eine Tätigkeit mit einem nominalisierten Verb benennen."},
+    "nominalisierte-adjektive": {"ar":"أستطيع استعمال الصفة اسمًا لوصف شخص أو شيء.","de":"Ich kann Adjektive als Nomen für Personen oder Dinge verwenden."},
+    "komparativ": {"ar":"أستطيع مقارنة خيارين باستخدام صيغة المقارنة.","de":"Ich kann zwei Möglichkeiten mit dem Komparativ vergleichen."},
+    "superlativ": {"ar":"أستطيع تحديد الخيار الأفضل أو الأسرع من بين عدة خيارات.","de":"Ich kann unter mehreren Möglichkeiten die beste oder schnellste benennen."},
+    "genitiv-adjektiv": {"ar":"أستطيع اختيار نهاية الصفة في حالة المضاف إليه.","de":"Ich kann die Adjektivendung im Genitiv wählen."},
+    "partizip1": {"ar":"أستطيع وصف شخص أو شيء بفعل يحدث الآن.","de":"Ich kann mit dem Partizip I eine laufende Handlung als Eigenschaft ausdrücken."},
+    "partizip-adjektiv": {"ar":"أستطيع التمييز بين وصف حدث مستمر ووصف نتيجته.","de":"Ich kann mit Partizip I und II zwischen einem Vorgang und seinem Ergebnis unterscheiden."},
+    "gradpartikeln": {"ar":"أستطيع تقوية وصفٍ أو تخفيفه بكلمة مناسبة.","de":"Ich kann eine Beschreibung mit einer passenden Gradpartikel verstärken oder abschwächen."},
+    "irgendein": {"ar":"أستطيع الإشارة إلى شيء غير محدد باستخدام `irgendein`.","de":"Ich kann mit `irgendein` auf etwas Unbestimmtes verweisen."},
+    "indefinitpronomen": {"ar":"أستطيع الحديث عن أشخاص وأشياء دون تحديدها.","de":"Ich kann mit Indefinitpronomen über unbestimmte Personen und Dinge sprechen."},
+    "irgend-pronomen": {"ar":"أستطيع الإشارة إلى شخص أو مكان أو وقت غير معروف.","de":"Ich kann eine unbekannte Person, einen unbekannten Ort oder Zeitpunkt benennen."},
+    "pronominaladverbien": {"ar":"أستطيع السؤال عن شيء والإحالة إليه باستخدام صيغ مثل `worauf` و`darauf`.","de":"Ich kann mit Wörtern wie `worauf` fragen und mit `darauf` auf etwas verweisen."},
+    "relativ-dativ": {"ar":"أستطيع إضافة وصف باستخدام ضمير وصل في الداتيف.","de":"Ich kann eine Person oder Sache mit einem Relativsatz im Dativ genauer beschreiben."},
+    "relativ-praep": {"ar":"أستطيع وضع حرف الجر والضمير المناسبين في جملة الوصل.","de":"Ich kann eine Präposition mit dem passenden Relativpronomen verbinden."},
+    "relativ-einschub": {"ar":"أستطيع إدراج جملة وصل في منتصف الجملة الرئيسية.","de":"Ich kann einen Relativsatz in einen Hauptsatz einschieben und mit Kommas abgrenzen."},
+    "relativ-genitiv": {"ar":"أستطيع بيان علاقة الملكية بضميرَي الوصل `dessen` و`deren`.","de":"Ich kann mit `dessen` und `deren` Besitz oder Zugehörigkeit ausdrücken."},
+    "relativ-ort": {"ar":"أستطيع إضافة معلومات عن مكان باستخدام جملة وصل.","de":"Ich kann mit einem Relativsatz zusätzliche Informationen zu einem Ort geben."},
+    "relativ-was": {"ar":"أستطيع الرجوع إلى شيء غير محدد أو إلى جملة كاملة باستخدام `was`.","de":"Ich kann mit `was` auf etwas Unbestimmtes oder einen ganzen Satz Bezug nehmen."},
+    "infinitiv-zu": {"ar":"أستطيع الحديث عن خطة أو رغبة باستخدام المصدر مع `zu`.","de":"Ich kann mit einem Infinitiv mit `zu` einen Plan oder Wunsch ausdrücken."},
+    "statt-zu": {"ar":"أستطيع أن أقول ما حدث بدلًا من فعل آخر.","de":"Ich kann mit `statt … zu` sagen, welche Handlung eine andere ersetzt."},
+    "ohne-zu": {"ar":"أستطيع وصف حدث وقع دون القيام بفعل آخر.","de":"Ich kann mit `ohne … zu` sagen, welche Handlung unterbleibt."},
+    "brauchen": {"ar":"أستطيع القول إن أمرًا ليس ضروريًا باستخدام `brauchen` مع النفي.","de":"Ich kann mit verneintem `brauchen` ausdrücken, dass etwas nicht nötig ist."},
+    "lassen": {"ar":"أستطيع التعبير عن السماح أو تكليف شخص بعمل باستخدام `lassen`.","de":"Ich kann mit `lassen` ausdrücken, dass jemand etwas tun darf oder für mich erledigt."},
+    "passiv-perfekt": {"ar":"أستطيع الإبلاغ عما تمّ إنجازه باستخدام المبني للمجهول في الماضي.","de":"Ich kann im Passiv Perfekt berichten, was erledigt worden ist."},
+    "passiv-modal": {"ar":"أستطيع التعبير عما يجب أو يمكن فعله دون ذكر الفاعل.","de":"Ich kann mit dem Passiv und einem Modalverb sagen, was getan werden muss oder kann."},
+    "subjektlos": {"ar":"أستطيع وصف نشاط عام بالمبني للمجهول دون فاعل نحوي.","de":"Ich kann eine allgemeine Tätigkeit im unpersönlichen Passiv beschreiben."},
+    "erststellen-es": {"ar":"أستطيع استعمال `es` في صدر جملة مبنية للمجهول.","de":"Ich kann `es` an die erste Stelle eines Passivsatzes setzen."},
+    "plusquamperfekt": {"ar":"أستطيع أن أبيّن أي حدث وقع أولًا في الماضي.","de":"Ich kann mit dem Plusquamperfekt zeigen, welches Ereignis zuerst stattfand."},
+    "nachdem": {"ar":"أستطيع أن أروي حدثين في الماضي بالترتيب الصحيح باستخدام `nachdem`.","de":"Ich kann mit `nachdem` zwei vergangene Ereignisse in der richtigen Reihenfolge erzählen."},
+    "bevor-bis": {"ar":"أستطيع التمييز بين حدث يسبق آخر وحدث يستمر حتى وقت معيّن.","de":"Ich kann mit `bevor` eine Reihenfolge und mit `bis` einen Endpunkt ausdrücken."},
+    "seit-waehrend": {"ar":"أستطيع التفريق بين بداية أمر مستمر وتزامن حدثين.","de":"Ich kann mit `seit` einen Startpunkt und mit `während` Gleichzeitigkeit ausdrücken."},
+    "futur1": {"ar":"أستطيع التعبير عن خطة مستقبلية أو توقّع.","de":"Ich kann mit dem Futur I einen Plan oder eine Vermutung ausdrücken."},
+    "kausal-da-weil": {"ar":"أستطيع شرح سبب قرارٍ باستخدام `weil` أو `da`.","de":"Ich kann mit `weil` oder `da` einen Grund für eine Entscheidung angeben."},
+    "deshalb-daher": {"ar":"أستطيع ربط سبب بنتيجته في جملة رئيسية.","de":"Ich kann mit `deshalb` oder `daher` eine Folge im Hauptsatz ausdrücken."},
+    "sodass": {"ar":"أستطيع أن أشرح ما ترتّب على حدث باستخدام `sodass`.","de":"Ich kann mit `sodass` die Folge eines Ereignisses nennen."},
+    "indem": {"ar":"أستطيع أن أشرح كيف توصل شخص إلى نتيجة.","de":"Ich kann mit `indem` erklären, auf welche Weise jemand ein Ergebnis erreicht."},
+    "obwohl": {"ar":"أستطيع قول ما حدث على الرغم من وجود عائق.","de":"Ich kann mit `obwohl` ausdrücken, was trotz eines Hindernisses geschieht."},
+    "trotzdem": {"ar":"أستطيع أن أذكر العائق ثم أقول ما حدث رغم ذلك.","de":"Ich kann ein Hindernis nennen und mit `trotzdem` sagen, was dennoch geschah."},
+    "waehrend-adversativ": {"ar":"أستطيع مقابلة موقفين مختلفين باستخدام `während`.","de":"Ich kann mit `während` zwei gegensätzliche Situationen gegenüberstellen."},
+    "je-desto": {"ar":"أستطيع أن أصف كيف يتغيّر شيء عندما يتغيّر شيء آخر.","de":"Ich kann mit `je … desto` ausdrücken, wie sich zwei Dinge gemeinsam verändern."},
+    "doppelkonjunktionen": {"ar":"أستطيع ربط بديلين أو جمع فكرتين بأداة ربط ذات جزأين.","de":"Ich kann mit zweiteiligen Konjunktionen Alternativen oder Gemeinsamkeiten ausdrücken."},
+    "falls": {"ar":"أستطيع اقتراح خطة بديلة تعتمد على شرط.","de":"Ich kann mit `falls` einen Vorschlag für einen möglichen Fall machen."},
+    "sonst": {"ar":"أستطيع ذكر ما سيحصل إذا لم يتحقق شرط معيّن.","de":"Ich kann mit `sonst` sagen, was bei Nichterfüllung einer Bedingung geschieht."},
+    "irreale-bedingung": {"ar":"أستطيع وصف ما كنت سأفعله في وضع افتراضي حالي.","de":"Ich kann sagen, was ich in einer hypothetischen Situation jetzt tun würde."},
+    "konjunktiv2-vergangenheit": {"ar":"أستطيع وصف نتيجة بديلة لحدث مضى.","de":"Ich kann eine alternative Folge für eine vergangene Situation ausdrücken."},
+    "konjunktiv2-vergangenheit-modal": {"ar":"أستطيع بيان ما كان ممكنًا أو ضروريًا في الماضي.","de":"Ich kann ausdrücken, was in der Vergangenheit möglich oder nötig gewesen wäre."}
+  },
+  "islands": {
+    "nomen-kasus": {"lesson":"genitiv","reading":"nachbarschaft","ar":"عند ترتيب مائدة مع الجيران، صف لمن تعود الأطباق والأكواب.","de":"Beschreibe beim Tischdecken mit Nachbarn, wem das Geschirr gehört.","model":"Die blauen Teller gehören uns. Die Gläser sind die Gläser unserer Nachbarin."},
+    "adjektive": {"lesson":"komparativ","reading":"rad-zur-arbeit","ar":"قارن طريقين إلى العمل واختر الأسرع أو الأهدأ.","de":"Vergleiche zwei Arbeitswege und entscheide, welcher schneller oder ruhiger ist.","model":"Mit der Straßenbahn bin ich schneller als mit dem Bus. Der Weg durch den Park ist aber ruhiger."},
+    "pronomen": {"lesson":"pronominaladverbien","ar":"اتفق مع زميل على خطة واستعمل ضميرًا للإحالة إلى ما سبق ذكره.","de":"Vereinbare einen Plan und beziehe dich mit einem Pronominaladverb auf einen Vorschlag.","model":"Der Ausflug am Samstag klingt gut. Ich freue mich darauf."},
+    "relativsaetze": {"lesson":"relativ-dativ","ar":"عرّف صديقًا بشخص من الحيّ وأضف معلومة عنه.","de":"Stelle jemandem eine Person aus der Nachbarschaft vor und ergänze einen Relativsatz.","model":"Das ist Frau Kaya, der ich gestern beim Einkaufen geholfen habe."},
+    "infinitiv-verben": {"lesson":"infinitiv-zu","ar":"اكتب لصديق عما تنوي فعله في نهاية الأسبوع.","de":"Schreibe einer Freundin, was du am Wochenende vorhast.","model":"Ich habe vor, am Samstag zu Hause zu kochen. Hast du Lust, vorbeizukommen?"},
+    "passiv": {"lesson":"passiv-perfekt","reading":"reparaturcafe","ar":"أخبر صاحب دراجة بما تم إصلاحه فيها.","de":"Berichte der Besitzerin eines Fahrrads, was daran repariert worden ist.","model":"Die Kette ist gereinigt worden. Die vordere Bremse ist auch repariert worden."},
+    "zeiten": {"lesson":"nachdem","reading":"rad-zur-arbeit","ar":"اكتب رسالة قصيرة عن رحلتك وبيّن ترتيب حدثين.","de":"Schreibe eine kurze Nachricht über deinen Weg und ordne zwei Ereignisse zeitlich ein.","model":"Nachdem ich den Bus verpasst hatte, fuhr ich mit dem Rad zum Bahnhof."},
+    "grund-folge": {"lesson":"kausal-da-weil","ar":"اشرح لصديق سبب تأخرك أو تغييرك للموعد.","de":"Erkläre einem Freund, warum du dich verspätest oder den Termin änderst.","model":"Ich komme etwas später, weil mein Zug ausgefallen ist."},
+    "gegensatz-vergleich": {"lesson":"obwohl","ar":"أخبر صديقًا كيف قضيت يومك رغم سوء الطقس.","de":"Erzähle einem Freund, wie du deinen Tag trotz schlechten Wetters verbracht hast.","model":"Obwohl es den ganzen Morgen regnete, besuchte ich mit meiner Schwester den Flohmarkt."},
+    "konjunktiv-bedingung": {"lesson":"irreale-bedingung","ar":"ناقش مع زميل ما كنت ستفعله لو كان لديك يوم إجازة إضافي.","de":"Besprich mit einem Partner, was du mit einem zusätzlichen freien Tag machen würdest.","model":"Wenn ich einen zusätzlichen freien Tag hätte, würde ich meine Freunde in Bremen besuchen."}
+  },
+  "examSample": {
+    "model":"petra",
+    "listening":{
+      "transcript":"Guten Tag, hier ist das Kulturzentrum. Der Fotokurs beginnt am Samstag um zehn Uhr. Wegen des Stadtfests findet der Kurs in der Stadtbibliothek statt. Bitte bringen Sie Ihr Handy mit. Wer sich bis Donnerstag anmeldet, bezahlt zwölf Euro.",
+      "items":[
+        {"prompt":"Der Fotokurs beginnt am Samstag um zehn Uhr.","answer":"true","quote":"Der Fotokurs beginnt am Samstag um zehn Uhr."},
+        {"prompt":"Der Kurs findet im Kulturzentrum statt.","answer":"false","quote":"Wegen des Stadtfests findet der Kurs in der Stadtbibliothek statt."},
+        {"prompt":"Bei einer Anmeldung bis Donnerstag kostet der Kurs zwölf Euro.","answer":"true","quote":"Wer sich bis Donnerstag anmeldet, bezahlt zwölf Euro."}
+      ]
+    },
+    "writingReply":[
+      "Hamburg, 20. Juni",
+      "Liebe Petra,",
+      "vielen Dank für deine Nachricht und die nette Einladung! Ich komme sehr gern nach Deutschland, weil ich dich endlich wiedersehen und den Schwarzwald kennenlernen möchte.",
+      "Am liebsten würde ich mit dem Zug anreisen. Wenn du mir sagst, welcher Bahnhof in der Nähe des Hauses liegt, kann ich gleich nach einer passenden Verbindung suchen.",
+      "Wir könnten zusammen wandern und abends für alle kochen. Falls es regnet, könnten wir einen Spieleabend machen oder einen Ausflug in die nächste Stadt planen.",
+      "Ich würde gern meine Schwester Lina mitbringen. Sie hat in der ersten Augustwoche frei. Passt dir diese Woche? Schreib mir kurz, dann können wir unsere Fahrkarten buchen.",
+      "Viele Grüße",
+      "Amir"
+    ],
+    "speaking":[
+      "Lernt euch kennen. Erzählt, wo ihr wohnt und was ihr in eurer Freizeit gern macht. Stellt jeweils eine Rückfrage.",
+      "Sprecht über Freizeitangebote in eurer Stadt. Erzählt von einem Angebot, das ihr schon ausprobiert habt, und nennt einen Vorteil oder Nachteil.",
+      "Plant gemeinsam einen Fotospaziergang durch die Stadt. Einigt euch auf einen Termin, einen Treffpunkt und eine Alternative bei Regen."
+    ]
+  },
+  "pilot": {
+    "nachdem": {
+      "retry": "nachdem-4",
+      "transfer": {
+        "type":"cloze", "text":"Nachdem Amir die Medikamente abgeholt {{1}}, rief er seine Mutter an.", "blanks":[["hatte"]],
+        "i18n":{
+          "ar":{"prompt":"أكمل رسالة أمير. ذهب إلى الصيدلية أولًا ثم اتصل بوالدته.","explain":"إحضار الدواء حدث أولًا. مع `nachdem` نستخدم هنا الماضي الأسبق `abgeholt hatte` قبل `rief … an`.","hints":["ابحث عن الفعل المساعد في الماضي الأسبق."]},
+          "de":{"prompt":"Vervollständige Amirs Nachricht. Er war zuerst in der Apotheke und rief danach seine Mutter an.","explain":"Das Abholen geschah zuerst. Zu `rief … an` passt im Nebensatz das Plusquamperfekt `abgeholt hatte`.","hints":["Setze das Hilfsverb ins Plusquamperfekt."]}
+        }
+      }
+    },
+    "bevor-bis": {
+      "retry":"bevor-bis-4",
+      "transfer":{
+        "type":"cloze","text":"Ich bleibe am Schalter, {{1}} du die Fahrkarten hast. {{2}} wir einsteigen, kaufen wir noch Wasser.","blanks":[["bis"],["Bevor"]],
+        "i18n":{
+          "ar":{"prompt":"أكمل رسالة من محطة القطار باستخدام `bevor` و`bis` مرة واحدة لكلّ منهما.","explain":"الحصول على التذاكر ينهي الانتظار، لذلك نستخدم `bis`. شراء الماء يسبق ركوب القطار، لذلك نستخدم `bevor`.","hints":["حدّد أولًا نهاية الانتظار، ثم رتّب الحدثين الآخرين."]},
+          "de":{"prompt":"Ergänze die Nachricht vom Bahnhof. Verwende `bevor` und `bis` je einmal.","explain":"Die Fahrkarten markieren das Ende des Wartens, deshalb steht dort `bis`. Der Wasserkauf geschieht vor dem Einsteigen, deshalb steht dort `bevor`.","hints":["Bestimme zuerst den Endpunkt des Wartens."]}
+        }
+      }
+    },
+    "seit-waehrend": {
+      "retry":"seit-waehrend-4",
+      "transfer":{
+        "type":"cloze","text":"{{1}} Samira in der Bibliothek arbeitet, fährt sie mit dem Rad dorthin. {{2}} sie heute die Bücher einsortiert, hört sie leise Musik.","blanks":[["Seit","Seitdem"],["Während"]],
+        "i18n":{
+          "ar":{"prompt":"أكمل وصف يوم سميرة بـ `seit/seitdem` و`während` لبيان البداية والتزامن.","explain":"بداية عملها تحدّد منذ متى تذهب بالدراجة. ترتيب الكتب والاستماع إلى الموسيقى يحدثان في الوقت نفسه.","hints":["أيهما يحدّد البداية؟ وأيهما يصف فعلين في الوقت نفسه؟"]},
+          "de":{"prompt":"Ergänze Samiras Bericht mit `seit/seitdem` und `während`, um Beginn und Gleichzeitigkeit auszudrücken.","explain":"Der Arbeitsbeginn markiert den Anfang ihrer Gewohnheit. Bücher einsortieren und Musik hören passieren gleichzeitig.","hints":["Welche Aussage nennt den Beginn und welche beschreibt zwei gleichzeitige Handlungen?"]}
+        }
+      }
+    }
+  }
+}

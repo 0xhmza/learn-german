@@ -4,6 +4,7 @@
 import { addDays } from '../dates.js';
 import { lessonStars, runStars, nextLesson, record } from './progress.js';
 import { passMark } from './runs.js';
+import { schedule } from './srs.js';
 
 export const RANKS = [
   { xp: 0, de: 'Neu an Bord', ar: 'مُبحر جديد' },
@@ -119,10 +120,23 @@ export function checkBadges(ctx, state) {
 export function award(ctx, state, event, day) {
   const notes = [];
   if (event.kind === 'lessonLearned') {
+    (state.viewed ||= {})[event.lesson] ||= day;
     learn(ctx, state, event.lesson, day, notes);
   } else if (event.kind === 'answer') {
     const { q, correct, hinted = false, review = false } = event;
+    if (q.card) {
+      state.cards[q.card] = schedule(state.cards[q.card] || {}, correct, day);
+      state.stats.reviewsDone += Number(review);
+      return notes;
+    }
+    if (q.transfer) {
+      state.transfer[q.lesson] = { last: day, correct, hinted, ...(correct && !hinted ? {} : { due: addDays(day, 7) }) };
+      return notes;
+    }
+    if (ctx.transferQuestions.has(q.lesson)) state.transfer[q.lesson] ||= { due: addDays(day, 7) };
     const { result } = record(state, q, correct, day);
+    result.hinted = hinted;
+    result.self = q.type === 'text';
     if (review) state.stats.reviewsDone += 1;
     if (correct) {
       if (!result.xpDone) {

@@ -63,6 +63,7 @@ function applyChrome() {
   const lang = getLang();
   root.lang = lang;
   root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  index.dir = root.dir;
   for (const el of document.querySelectorAll('[data-t]')) el.textContent = t(el.dataset.t);
   for (const el of document.querySelectorAll('[data-t-prose]')) el.innerHTML = prose(t(el.dataset.tProse));
   for (const el of document.querySelectorAll('[data-t-aria]')) el.setAttribute('aria-label', t(el.dataset.tAria));

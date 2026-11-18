@@ -11,8 +11,8 @@
   { "id": "b12", "emoji": "📗", "name": { "de": "B1.2 komplett", "ar": "أتممتَ B1.2" }, "text": { "de": "Alle Lektionen der Stufe B1.2 abgeschlossen.", "ar": "أنهيتَ كل دروس المستوى B1.2." } },
   { "id": "flawless-exam", "emoji": "💎", "name": { "de": "Fehlerfrei", "ar": "بلا أخطاء" }, "text": { "de": "Eine Inselprüfung ohne Fehler bestanden.", "ar": "نجحتَ في اختبار جزيرة دون أي خطأ." } },
   { "id": "mistake-hunter", "emoji": "🧹", "name": { "de": "Fehlerjäger·in", "ar": "صيّاد الأخطاء" }, "text": { "de": "20 Fragen aus der Fehlerliste geholt.", "ar": "أخرجتَ عشرين سؤالًا من قائمة الأخطاء." } },
-  { "id": "reviewer", "emoji": "🔁", "name": { "de": "Dranbleiben", "ar": "المواظبة" }, "text": { "de": "50 fällige Wiederholungen beantwortet.", "ar": "أجبتَ عن خمسين سؤال مراجعة في موعدها." } },
-  { "id": "timed-ace", "emoji": "⏱️", "name": { "de": "Gegen die Uhr", "ar": "سباق مع الوقت" }, "text": { "de": "Mindestens 90 % im Test mit Zeitlimit.", "ar": "حقّقتَ ٩٠٪ أو أكثر في الاختبار المؤقّت." } },
-  { "id": "xp-1000", "emoji": "⭐", "name": { "de": "1 000 XP", "ar": "١٠٠٠ نقطة" }, "text": { "de": "1 000 Erfahrungspunkte gesammelt.", "ar": "جمعتَ ألف نقطة." } },
-  { "id": "xp-5000", "emoji": "🌟", "name": { "de": "5 000 XP", "ar": "٥٠٠٠ نقطة" }, "text": { "de": "5 000 Erfahrungspunkte gesammelt.", "ar": "جمعتَ خمسة آلاف نقطة." } }
+  { "id": "reviewer", "emoji": "↻", "name": { "de": "Dranbleiben", "ar": "المواظبة" }, "text": { "de": "50 fällige Wiederholungen beantwortet.", "ar": "أجبتَ عن خمسين سؤال مراجعة في موعدها." } },
+  { "id": "timed-ace", "emoji": "⏱️", "name": { "de": "Gegen die Uhr", "ar": "سباق مع الوقت" }, "text": { "de": "Mindestens 90 % im Test mit Zeitlimit.", "ar": "حقّقتَ 90٪ أو أكثر في الاختبار المؤقّت." } },
+  { "id": "xp-1000", "emoji": "⭐", "name": { "de": "1 000 XP", "ar": "1000 نقطة" }, "text": { "de": "1 000 Erfahrungspunkte gesammelt.", "ar": "جمعتَ ألف نقطة." } },
+  { "id": "xp-5000", "emoji": "🌟", "name": { "de": "5 000 XP", "ar": "5000 نقطة" }, "text": { "de": "5 000 Erfahrungspunkte gesammelt.", "ar": "جمعتَ خمسة آلاف نقطة." } }
 ]

@@ -1,131 +1,164 @@
-// Dashboard: next stop, today's goal, the island map and every topic.
+// Dashboard: one suggested study action, a searchable index, and the optional map.
 import { t, num, getLang } from '../i18n/index.js';
 import { inFilter, lessonTitle, islandName } from '../content.js';
-import { islandProgress, lessonStars, nextLesson, overall, pendingErrors } from '../engine/progress.js';
-import { levelFor, displayStreak } from '../engine/gamification.js';
-import { dueIds } from '../engine/srs.js';
-import { addDays } from '../dates.js';
+import { islandProgress, nextLesson, overall, pendingErrors } from '../engine/progress.js';
+import { dailyReview, recommendedLesson, resumableRun } from '../engine/study.js';
 import { mountMap } from '../components/map.js';
-import { esc, prose, link, button, stars, levelChip, meter, formatDay } from '../components/html.js';
+import { searchKey } from '../components/sidebar.js';
+import { runTitle } from './quiz.js';
+import { esc, prose, link, button, levelChip } from '../components/html.js';
 
-function goalRing(value, goal) {
-  const share = Math.min(1, goal ? value / goal : 0);
-  const c = 2 * Math.PI * 34;
-  return `<svg class="goal-ring" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" class="track"/>
-    <circle cx="42" cy="42" r="34" class="arc ${share >= 1 ? 'full' : ''}" stroke-dasharray="${(c * share).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 42 42)"/></svg>`;
-}
+export const title = () => t('home');
 
-function continueCard(app) {
+function recommendation(app, review) {
   const { ctx, state } = app;
-  const lang = getLang();
-  const level = levelFor(state.xp.total);
-  const next = nextLesson(ctx, state);
-  const started = Object.keys(state.completed).length > 0;
-  const allConquered = ctx.islands.every(island => state.islands[island.id]?.conquered);
-  const nextIsland = next && ctx.islandById.get(next.island);
-  const rankLine = level.to === null ? t('maxRank') : t('toNextRank', num(level.to - state.xp.total));
-  return `<section class="panel dash-continue" aria-labelledby="dash-title">
-    <h1 id="dash-title" class="eyebrow">${t('greeting')}</h1>
-    <div class="rank-row">
-      <span class="rank-badge" aria-hidden="true">${num(level.level)}</span>
-      <div class="rank-text"><span class="label">${t('rank')}</span><strong>${esc(level.rank[lang])}</strong><small>${rankLine}</small></div>
-      <span class="rank-xp">${t('totalXp', num(state.xp.total))}</span>
-    </div>
-    <div class="xp-bar" aria-hidden="true"><i style="inline-size:${Math.round(level.progress * 100)}%"></i></div>
-    ${next ? `<a class="next-card" href="#lesson/${next.id}">
-        <span class="unit-emoji ${nextIsland.palette}" aria-hidden="true">${next.emoji}</span>
-        <span class="next-text"><small>${t('continueTitle')} · ${esc(islandName(nextIsland, lang))}</small>
-          <b>${prose(lessonTitle(next, lang))}</b>
-          <span class="next-meta"><span class="de-name" lang="de" dir="ltr">${esc(next.german)}</span>${levelChip(next.level)}${stars(lessonStars(state, next.id))}</span></span>
-        <span class="go" aria-hidden="true">${t('next')}</span></a>
-      <div class="actions">${link(`lesson/${next.id}`, started ? t('continueBtn') : t('startBtn'), 'primary')}${link('practice', t('choosePractice'))}</div>`
-    : `<div class="treasure-note"><span aria-hidden="true">🏆</span><div><strong>${allConquered ? t('treasure') : t('allMastered')}</strong>${allConquered ? `<p>${t('treasureText')}</p>` : ''}</div></div>
-      <div class="actions">${button('run', t('startReview'), 'primary', 'data-key="review"')}${link('practice', t('choosePractice'))}</div>`}
-  </section>`;
+  const resume = resumableRun(state);
+  if (resume) {
+    return {
+      title: t('resumeRun'), detail: prose(runTitle(app, resume)),
+      action: button('run', t('resumeSession'), 'primary', `data-key="${resume.key}"`)
+    };
+  }
+  if (review.ids.length) {
+    return {
+      title: t('reviewToday'), detail: t('dailyLength', num(review.ids.length), num(Math.ceil(review.ids.length * 0.6))),
+      action: button('run', t('startReview'), 'primary', 'data-key="daily"')
+    };
+  }
+  const next = recommendedLesson(ctx, state);
+  if (next) {
+    const outcome = ctx.learning.outcomes?.[next.id]?.[getLang()];
+    return {
+      title: state.lastLesson || Object.keys(state.completed).length ? t('continueLesson') : t('startLearning'),
+      detail: `<strong>${prose(lessonTitle(next, getLang()))}</strong> ${levelChip(next.level)}`,
+      outcome,
+      action: state.completed[next.id]
+        ? button('run', t('practiceMore'), 'primary', `data-key="${next.id}"`)
+        : link(`lesson/${next.id}`, t(state.lastLesson === next.id ? 'resumeLesson' : 'openLesson'), 'primary')
+    };
+  }
+  return { title: t('studyCaughtUp'), detail: t('studyCaughtUpDetail'), action: link('practice', t('choosePractice'), 'primary') };
 }
 
-function todayCard(app) {
-  const { ctx, state } = app;
-  const day = app.day();
-  const goal = state.settings.dailyGoal;
-  const earned = state.xp.byDay[day] || 0;
-  const streak = displayStreak(state, day);
-  const filter = state.settings.levelFilter;
-  const due = dueIds(ctx, state, day, filter).length;
-  const mistakes = pendingErrors(ctx, state, filter).length;
-  const week = Array.from({ length: 7 }, (_, i) => addDays(day, i - 6)).map(date => {
-    const reached = (state.xp.byDay[date] || 0) >= goal || state.xp.goalBonusDay === date;
-    const active = (state.xp.byDay[date] || 0) > 0;
-    return `<li class="${reached ? 'reached' : active ? 'active' : ''} ${date === day ? 'today' : ''}" title="${esc(formatDay(date, { weekday: 'long', day: 'numeric', month: 'long' }))}"><span>${esc(formatDay(date, { weekday: 'narrow' }))}</span></li>`;
-  }).join('');
-  return `<section class="panel dash-today" aria-labelledby="today-title">
-    <h2 id="today-title">${t('todayTitle')}</h2>
-    <div class="goal-row">
-      <div class="goal-ring-wrap">${goalRing(earned, goal)}<span class="goal-num">${num(Math.min(earned, 999))}</span></div>
-      <div><span class="label">${t('goalLabel')}</span><strong>${earned >= goal ? t('goalDone') : t('dailyGoal', num(earned), num(goal))}</strong></div>
-    </div>
-    <div class="streak-row">
-      <span class="streak-flame ${streak ? 'live' : ''}" aria-hidden="true">🔥</span>
-      <div><strong>${streak ? t('streakDays', streak) : t('streakNone')}</strong>
-      <ol class="week" aria-label="${esc(t('streakWeek'))}">${week}</ol></div>
-    </div>
-    <div class="today-actions">
-      <p>${due ? t('dueReviews', num(due)) : t('noDue')}</p>
-      ${due ? button('run', t('startReview'), 'quiet', 'data-key="review"') : ''}
-      <p>${mistakes ? t('mistakesN', num(mistakes)) : ''}</p>
-      ${mistakes ? button('run', t('practiceMistakes'), 'secondary', 'data-key="mistakes"') : ''}
-    </div>
-  </section>`;
+export function reviewSummary(review) {
+  return t('dailyCounts', num(review.questions), num(review.cards), num(review.fresh), num(review.transfers));
 }
 
-function islandCard(app, island) {
+function directory(app, island) {
   const { ctx, state } = app;
   const lang = getLang();
   const filter = state.settings.levelFilter;
   const lessons = ctx.islandLessons(island.id).filter(lesson => inFilter(lesson, filter));
   if (!lessons.length) return '';
-  const p = islandProgress(ctx, state, island.id, filter);
-  const other = lang === 'de' ? `<span lang="ar" dir="rtl">${esc(island.name.ar)}</span>` : `<bdi lang="de" dir="ltr">${esc(island.name.de)}</bdi>`;
-  return `<article class="unit-card island-card ${p.conquered ? 'conquered' : ''}">
-    <div class="unit-head">
-      <span class="unit-emoji ${island.palette}" aria-hidden="true">${island.emoji}</span>
-      <span><strong>${num(island.order)}. ${esc(islandName(island, lang))}</strong><small>${other}</small></span>
-      ${p.conquered ? `<span class="conquered-flag" title="${esc(t('conquered'))}" role="img" aria-label="${esc(t('conquered'))}">🚩</span>` : ''}
-    </div>
-    <div class="unit-meter">${meter(p.learned, p.total, islandName(island, lang))}<span>${t('learnedOf', num(p.learned), num(p.total))}</span><span class="star-sum" aria-label="${esc(t('starsTotal'))}">★ ${num(p.stars)}</span></div>
-    <ul>${lessons.map(lesson => `<li><a href="#lesson/${lesson.id}">
-      <span>${prose(lessonTitle(lesson, lang))}${lang === 'ar' ? `<span class="de-name" lang="de" dir="ltr">${esc(lesson.german)}</span>` : ''}</span>
-      <span class="li-meta">${levelChip(lesson.level)}${stars(lessonStars(state, lesson.id), 14)}</span></a></li>`).join('')}</ul>
-    <a class="card-foot" href="#island/${island.id}">${t('openIsland')}</a>
-  </article>`;
+  const progress = islandProgress(ctx, state, island.id, filter);
+  const words = esc(searchKey([island.name.ar, island.name.de].join(' ')));
+  return `<details class="directory-island" data-topic="${words}">
+    <summary><span class="sum-emoji ${island.palette}" aria-hidden="true">${island.emoji}</span>
+      <strong>${esc(islandName(island, lang))}</strong>
+      <small dir="ltr">${num(progress.learned)}/${num(progress.total)}</small></summary>
+    <ul>${lessons.map(lesson => `<li data-rule="${esc(searchKey([lessonTitle(lesson, 'ar'), lessonTitle(lesson, 'de'), lesson.german].join(' ')))}">
+      <a href="#lesson/${lesson.id}">${prose(lessonTitle(lesson, lang))}${levelChip(lesson.level)}</a></li>`).join('')}</ul>
+    <a class="directory-link" href="#island/${island.id}">${t('openIsland')}</a>
+  </details>`;
 }
 
 export function render(app) {
   const { ctx, state } = app;
   const filter = state.settings.levelFilter;
+  const review = dailyReview(ctx, state, app.day());
+  const selected = recommendation(app, review);
+  const resume = resumableRun(state);
   const stats = overall(ctx, state, filter);
-  const filters = ['all', ...ctx.levels.map(level => level.id)].map(id => `<button type="button" class="filter-chip" data-action="filter" data-level="${id}" aria-pressed="${filter === id}">${id === 'all' ? t('filterAll') : `<span lang="de" dir="ltr">${id}</span>`}</button>`).join('');
-  return `
-    <div class="dash-top">${continueCard(app)}${todayCard(app)}</div>
-    <section class="panel map-panel" aria-labelledby="map-title">
-      <div class="panel-head"><h2 id="map-title">${t('mapTitle')} 🧭</h2><p class="muted">${t('mapHelp')}</p></div>
-      <div class="map-host" id="map-host"></div>
+  const mistakes = pendingErrors(ctx, state, filter).length;
+  const recommended = recommendedLesson(ctx, state);
+  const started = Boolean(state.lastLesson || state.lastRun || stats.learned || state.xp.total);
+  const filters = ['all', ...ctx.levels.map(level => level.id)].map(id =>
+    `<button type="button" class="filter-chip" data-action="filter" data-level="${id}" aria-pressed="${filter === id}">${id === 'all' ? t('filterAll') : esc(id)}</button>`).join('');
+  const starts = ctx.levels.filter(level => level.id !== recommended?.level).map(level =>
+    button('start-level', t('startLevel', level.id), 'secondary', `data-level="${level.id}"`)).join('');
+  const action = !started && recommended
+    ? button('start-level', t('startLevel', recommended.level), 'primary', `data-level="${recommended.level}"`)
+    : selected.action;
+  return `<div class="study-dashboard">
+    <section class="dash-hero panel">
+      <div class="dash-hero-copy">
+        <p class="dash-course">${t('docTitle')}</p>
+        <h1>${selected.title}</h1>
+        <p class="dash-detail">${selected.detail}</p>
+        ${selected.outcome ? `<p class="dash-outcome">${prose(selected.outcome)}</p>` : ''}
+        <div class="dash-action">${action}</div>
+      </div>
+      <div class="dash-illustration" aria-hidden="true"><span></span><i></i><b>⛵</b></div>
     </section>
-    <div class="section-heading">
-      <div><h2>${t('allTopics')}</h2><p>${t('topicsCount', num(stats.lessons), num(stats.questions), num(ctx.islands.length))}</p></div>
-      <div class="filter-group" role="group" aria-label="${esc(t('filterLabel'))}">${filters}</div>
-    </div>
-    <section class="units islands-grid" aria-label="${esc(t('allTopics'))}">${ctx.islands.map(island => islandCard(app, island)).join('')}</section>`;
+    ${!started ? `<div class="dash-starts" aria-label="${t('filterLabel')}">${starts}${button('find-rule', t('findRule'), 'quiet')}</div>` : ''}
+    <section class="dash-tools" aria-label="${t('studyTools')}">
+      <div class="dash-tool panel"><h2>${t('reviewToday')}</h2>
+        <p>${review.ids.length ? reviewSummary(review) : t('reviewReadyLater')}</p>
+        ${resume && resume.kind !== 'daily' && review.ids.length ? button('run', t('startReview'), 'secondary', 'data-key="daily"')
+          : mistakes ? button('run', t('practiceMistakes'), 'secondary', 'data-key="mistakes"') : link('practice', t('choosePractice'), 'secondary')}</div>
+      <div class="dash-tool panel"><h2>${t('examTrainerNav')}</h2>
+        <p>${t('examToolDesc')}</p>${link('model-exams', t('openExamPrep'), 'secondary')}</div>
+    </section>
+    <section class="panel dash-directory" aria-labelledby="directory-title">
+      <div class="panel-head"><h2 id="directory-title">${t('allTopics')}</h2>
+        <div class="filter-group" role="group" aria-label="${esc(t('filterLabel'))}">${filters}</div></div>
+      <label class="search-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="rule-search" dir="auto" aria-label="${esc(t('searchLabel'))}" placeholder="${esc(t('searchPh'))}"></label>
+      <details class="directory" id="topic-list"><summary>${t('browseDirectory', num(stats.lessons))}</summary>
+        <div class="directory-grid">${ctx.islands.map(island => directory(app, island)).join('')}</div>
+        <p id="directory-empty" class="notice" role="status" hidden>${t('noMatch')}</p>
+      </details>
+    </section>
+    <details class="panel map-panel"><summary><strong>${t('mapTitle')}</strong></summary>
+      <p class="muted">${t('mapHelp')}</p>
+      ${recommended ? `<p class="muted"><strong>${t('recommendedIsland')}</strong> · ${esc(islandName(ctx.islandById.get(recommended.island), getLang()))}</p>` : ''}
+      <div class="map-host" id="map-host"></div>
+    </details>
+  </div>`;
 }
 
 export function mount(app, root) {
-  return mountMap(root.querySelector('#map-host'), app);
+  const host = root.querySelector('#map-host');
+  const map = host.closest('details');
+  let dispose;
+  const openMap = () => { if (map.open && !dispose) dispose = mountMap(host, app); };
+  map.addEventListener('toggle', openMap);
+  openMap();
+  return () => { map.removeEventListener('toggle', openMap); dispose?.(); };
+}
+
+export function onInput(app, event) {
+  const input = event.target;
+  if (input.id !== 'rule-search') return;
+  const query = searchKey(input.value.trim());
+  const directory = document.querySelector('#topic-list');
+  directory.open ||= Boolean(query);
+  let found = false;
+  for (const section of directory.querySelectorAll('[data-topic]')) {
+    const matchTopic = section.dataset.topic.includes(query);
+    let match = false;
+    for (const rule of section.querySelectorAll('[data-rule]')) {
+      rule.hidden = !(matchTopic || rule.dataset.rule.includes(query));
+      match ||= !rule.hidden;
+    }
+    section.hidden = !match;
+    section.open = Boolean(query) && match;
+    found ||= match;
+  }
+  document.querySelector('#directory-empty').hidden = found;
 }
 
 export const actions = {
   filter(app, target) {
     app.store.update(state => { state.settings.levelFilter = target.dataset.level; });
     app.rerender();
-  }
+    document.querySelector('#topic-list').open = true;
+    document.querySelector(`#content [data-action="filter"][aria-pressed="true"]`)?.focus({ preventScroll: true });
+  },
+  'start-level'(app, target) {
+    app.store.update(state => { state.settings.levelFilter = target.dataset.level; });
+    const next = nextLesson(app.ctx, app.state);
+    if (next) app.navigate(`lesson/${next.id}`);
+  },
+  'find-rule'() { document.querySelector('#rule-search').focus(); }
 };
-

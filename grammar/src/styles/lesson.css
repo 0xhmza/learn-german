@@ -11,19 +11,27 @@
 .lesson-emoji { background: var(--surface); box-shadow: var(--shadow-sm); }
 .lesson-banner .lead, .simple-banner p { margin-top: 12px; max-width: 46rem; color: var(--ink-2); }
 .lesson-banner .actions { margin-top: 18px; }
+.lesson-outcome strong { display: block; color: var(--brand-ink); font-size: 13px; }
+.lesson-finish { border-block-start: 1px solid var(--line); margin-block-start: 16px; padding-block-start: 12px; }
+.lesson-finish .actions { margin-block-start: 6px; }
 .glance { margin-top: 15px; display: grid; gap: 16px; }
-.glance-head { display: flex; align-items: center; gap: 10px; }
-.glance-head .badge { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); font-size: 17px; }
+.glance h2 { margin: 0; }
+.glance-formula { padding: 10px 14px 12px; border-inline-start: 3px solid var(--g-hl-line); border-radius: 10px; background: var(--surface-2); }
+.glance-formula, .glance-structure { display: grid; gap: 8px; min-inline-size: 0; }
+.glance .label { margin: 0; }
 .label { display: block; font-size: 12px; font-weight: 750; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
 :root[lang="ar"] .label { text-transform: none; letter-spacing: 0; font-size: 13px; }
-.pattern { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; justify-content: flex-start; }
-.chip { font: 700 15px/1.3 var(--font-de); padding: 7px 12px; border-radius: 10px; background: var(--g-hl-bg); color: var(--g-hl); border: 1px solid var(--g-hl-line); }
+.pattern, .slots { display: flex; flex-wrap: wrap; justify-self: start; min-inline-size: 0; }
+:root[dir="rtl"] :is(.pattern, .slots) { justify-content: flex-end; }
+.pattern { align-items: center; gap: 6px; }
+.chip { font: 700 15px/1.3 var(--font-de); padding: 6px 10px; border-radius: 8px; background: var(--g-hl-bg); color: var(--g-hl); border: 1px solid var(--g-hl-line); min-inline-size: 0; overflow-wrap: anywhere; }
 .op { font: 700 16px/1 var(--font-de); color: var(--muted); padding: 0 1px; }
-.frames { display: grid; gap: 12px; }
-.frame { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; }
-.frame-kind { font-size: 12.5px; font-weight: 700; color: var(--muted); }
-.slots { display: flex; flex-wrap: wrap; gap: 6px; }
-.slot { display: grid; gap: 2px; padding: 7px 11px 6px; border-radius: 11px; border: 1px solid var(--g-mf-line); background: var(--g-mf-bg); color: var(--g-mf); min-width: 0; text-align: center; }
+.frames { border: 1px solid var(--line); border-radius: 12px; }
+.frame { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 6px 14px; padding: 10px 12px; }
+.frame + .frame { border-block-start: 1px solid var(--line); }
+.frame-kind { font-size: 13px; font-weight: 700; color: var(--ink-2); }
+.slots { gap: 6px; }
+.slot { display: grid; align-content: center; gap: 2px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--g-mf-line); background: var(--g-mf-bg); color: var(--g-mf); min-width: 0; text-align: center; }
 .slot b { font: 700 15.5px/1.35 var(--font-de); overflow-wrap: anywhere; }
 .slot i { font-style: normal; font-size: 12px; font-weight: 650; opacity: .85; line-height: 1.5; }
 .slot.vf { background: var(--g-vf-bg); color: var(--g-vf); border-color: var(--g-vf-line); }
@@ -33,6 +41,9 @@
 .slot.hl { background: var(--g-hl-bg); color: var(--g-hl); border-color: var(--g-hl-line); }
 .slot.n { background: transparent; border-color: transparent; color: var(--ink-2); padding-inline: 3px; }
 .frames-hint { font-size: 13px; color: var(--muted); }
+@media (min-width: 700px) {
+  .frame { grid-template-columns: 8rem minmax(0, 1fr); }
+}
 .lesson-body { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); gap: 15px; margin-top: 15px; align-items: start; }
 .lesson-side { display: grid; gap: 15px; min-width: 0; }
 .panel, .quiz-box { padding: clamp(16px, 2.3vw, 26px); }
@@ -43,6 +54,7 @@
 .example { margin: 4px 0 16px; padding: 14px 16px; border-radius: 14px; background: var(--brand-soft); border: 1px solid var(--g-hl-line); }
 .example .de { color: var(--brand-ink); font-size: clamp(17px, 1.9vw, 21px); font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
 .example p { color: var(--ink-2); font-size: 15px; margin-top: 6px; }
+:root[dir="rtl"] :is(.example, .lesson-depth) .de { text-align: right; }
 .example .tr-label { display: block; font-size: 11.5px; font-weight: 700; color: var(--muted); margin-top: 8px; }
 .steps { list-style: none; margin: 0; padding: 0; }
 .step { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }

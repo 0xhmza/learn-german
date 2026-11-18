@@ -10,56 +10,82 @@ const wordCount = text => text.trim() ? text.trim().split(/\s+/).length : 0;
 const savedSection = (app, model, section) => app.state.modelExams[model.id]?.[section.id] || {};
 const hasWork = draft => draft.checked || draft.writing || Object.keys(draft.responses || {}).length;
 
+function coverage(sample) {
+  return `<ul class="coverage-list">${['readingScored', 'writingSelf', 'listeningStatements', ...(sample ? ['listeningSample', 'speakingSample'] : [])].map(key => `<li>${t(key)}</li>`).join('')}</ul>`;
+}
+
 export function title(app, route) {
   const model = app.ctx.modelTests.get(route.key);
   return model ? modelTitle(model) : t('examTrainerTitle');
 }
 
 function list(app) {
-  return `<section class="simple-banner practice-head"><h1>${t('examTrainerTitle')}</h1><p>${t('examTrainerIntro')}</p></section>
-    <div class="study-grid exam-catalog">${[...app.ctx.modelTests.values()].map(model => {
-      const started = Object.values(app.state.modelExams[model.id] || {}).some(hasWork);
-      return `<article class="panel study-tile">
-        <p class="study-meta">${modelNumber(model)}${started ? ` · ${t('examInProgress')}` : ''}</p>
+  const sampleId = app.ctx.learning.examSample?.model;
+  const models = [...app.ctx.modelTests.values()];
+  const added = models.find(model => model.id === sampleId);
+  const card = (model, featured = false) => {
+      const saved = app.state.modelExams[model.id] || {};
+      const draft = saved.schreiben?.writing?.trim();
+      const started = Object.values(saved).some(hasWork);
+      return `<article class="panel study-tile ${featured ? 'exam-featured' : ''}">
+        <p class="study-meta">${featured ? t('featuredModel') : modelNumber(model)}${started ? ` · ${t('examInProgress')}` : ''}</p>
         <h2>${esc(modelTitle(model))}</h2>
-        ${link(routeFor(model), t('examOpen'), 'secondary', `aria-label="${esc(`${t('examOpen')} · ${modelNumber(model)} · ${modelTitle(model)}`)}"`)}</article>`;
-    }).join('')}</div>`;
+        ${coverage(model.id === sampleId)}
+        <div class="actions">
+          ${draft ? link(`${routeFor(model)}/schreiben`, t('resumeWriting'), 'primary') : ''}
+          ${link(routeFor(model), t('examOpen'), featured && !draft ? 'primary' : 'secondary', `aria-label="${esc(`${t('examOpen')} · ${modelNumber(model)} · ${modelTitle(model)}`)}"`)}
+        </div></article>`;
+  };
+  const extra = models.filter(model => model !== added);
+  const activeDrafts = extra.filter(model => app.state.modelExams[model.id]?.schreiben?.writing?.trim());
+  return `<section class="simple-banner practice-head"><h1>${t('examTrainerTitle')}</h1><p>${t('examTrainerIntro')}</p></section>
+    ${added ? card(added, true) : ''}${activeDrafts.length ? `<div class="study-grid exam-catalog">${activeDrafts.map(model => card(model)).join('')}</div>` : ''}
+    <details class="panel modes-panel"><summary>${t('allModels', num(extra.length - activeDrafts.length))}</summary>
+      <div class="study-grid exam-catalog">${extra.filter(model => !activeDrafts.includes(model)).map(model => card(model)).join('')}</div></details>
+    <p class="study-followup"><a href="https://www.telc.net/sprachpruefungen/deutsch/zertifikat-deutsch-telc-deutsch-b1/" target="_blank" rel="noopener">${t('officialExam')}</a></p>`;
 }
 
 const groups = [['lesen', 'examGroupRead'], ['sprache', 'examGroupLang'], ['hoeren', 'examGroupListen'], ['schreiben', 'examGroupWrite']];
 
-function menu(app, model, current) {
+function menu(app, model, current, sample) {
   return `<nav class="exam-menu" aria-label="${t('examParts')}">${groups.map(([prefix, label]) => `
     <section class="exam-menu-section">${prefix === 'schreiben' ? '' : `<h2>${t(label)}</h2>`}<ul>${model.sections.filter(section => section.id.startsWith(prefix)).map(section => {
       const draft = savedSection(app, model, section);
       const status = !isListening(section) && draft.checked ? t('examChecked') : hasWork(draft) ? t('examInProgress') : '';
-      return `<li><a href="#${routeFor(model, section)}" ${current?.id === section.id ? 'aria-current="location"' : ''}>
+      return `<li><a href="#${routeFor(model, section)}" ${current === section.id ? 'aria-current="location"' : ''}>
         <span>${partTitle(section)}</span>${status ? `<small>${status}</small>` : ''}</a></li>`;
-    }).join('')}</ul></section>`).join('')}</nav>`;
+    }).join('')}</ul></section>`).join('')}
+    ${sample ? `<section class="exam-menu-section"><h2>${t('independentExam')}</h2><ul>
+      ${[['audio-practice', 'listeningSample'], ['speaking-practice', 'speakingSample']].map(([id, label]) =>
+        `<li><a href="#${routeFor(model, { id })}" ${current === id ? 'aria-current="location"' : ''}>${t(label)}</a></li>`).join('')}
+    </ul></section>` : ''}</nav>`;
 }
 
 export function render(app, route) {
   const model = app.ctx.modelTests.get(route.key);
   if (!model) return list(app);
   const section = model.sections.find(part => part.id === route.section);
+  const sample = app.ctx.learning.examSample?.model === model.id ? app.ctx.learning.examSample : null;
+  const sampleRoute = route.section === 'audio-practice' || route.section === 'speaking-practice';
   const name = esc(modelTitle(model));
-  const navigation = menu(app, model, section);
+  const navigation = menu(app, model, route.section, sample);
   const writing = section?.id === 'schreiben';
+  const heading = section ? partTitle(section) : sampleRoute ? t(route.section === 'audio-practice' ? 'listeningSample' : 'speakingSample') : name;
   const layout = writing
     ? `<details class="exam-writing-navigation">
         <summary>${t('examParts')}</summary>
         ${navigation}
       </details>
-      ${renderWriting(app, model, section)}`
-    : `<div class="exam-layout ${section ? 'with-part' : ''}">${navigation}
-      ${section ? renderPart(app, model, section) : ''}</div>`;
+      ${renderWriting(app, model, section, sample)}`
+    : `<div class="exam-layout ${section || sampleRoute ? 'with-part' : ''}">${navigation}
+      ${section ? renderPart(app, model, section) : sampleRoute && sample ? renderSample(route.section, sample) : `<section class="panel exam-overview"><h2>${t('examCoverage')}</h2>${coverage(sample)}${link(`${routeFor(model)}/lesen-1`, t('examOpen'), 'primary')}${savedSection(app, model, { id: 'schreiben' }).writing?.trim() ? link(`${routeFor(model)}/schreiben`, t('resumeWriting')) : ''}</section>`}</div>`;
   return `${crumbs([['model-exams', t('examTrainerNav')], [section ? routeFor(model) : null, name], ...(section ? [[null, partTitle(section)]] : [])])}
-    <section class="simple-banner practice-head${writing ? ' exam-writing-heading' : ''}"><h1>${section ? partTitle(section) : name}</h1>
-      <p>${section ? `${modelNumber(model)} · ${name}` : modelNumber(model)}</p></section>
+    <section class="simple-banner practice-head${writing ? ' exam-writing-heading' : ''}"><h1>${heading}</h1>
+      <p>${section || sampleRoute ? `${modelNumber(model)} · ${name}` : modelNumber(model)}</p></section>
     ${layout}`;
 }
 
-function renderWriting(app, model, section) {
+function renderWriting(app, model, section, sample) {
   const { intro, greeting, body, closing, instruction, points, notes } = section.writing;
   const reply = savedSection(app, model, section).writing || '';
   return `<div class="exam-writing-workspace">
@@ -95,7 +121,25 @@ ${esc(reply)}</textarea>
         </section>
       </div>
     </div>
+    <details class="panel writing-review"><summary>${t('writingReview')}</summary>
+      <ul>${t('writingCriteria').map(criterion => `<li>${esc(criterion)}</li>`).join('')}</ul>
+      ${sample ? `<details><summary>${t('writingExample')}</summary><div lang="de" dir="ltr">${sample.writingReply.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</div></details>` : ''}
+    </details>
   </div>`;
+}
+
+function renderSample(part, sample) {
+  if (part === 'speaking-practice') return `<section class="panel exam-sample"><p>${t('speakingHow')}</p>
+    <ol lang="de" dir="ltr">${sample.speaking.map(prompt => `<li>${esc(prompt)}</li>`).join('')}</ol></section>`;
+  const { audio, items, transcript } = sample.listening;
+  return `<section class="panel exam-sample"><p>${t('listenFirst')}</p>
+    <audio controls preload="metadata" aria-label="${esc(t('listeningSample'))}" src="${esc(audio)}"></audio>
+    ${items.map((item, i) => `<fieldset><legend lang="de" dir="ltr">${esc(item.prompt)}</legend>
+      ${[['true', 'correctWord'], ['false', 'incorrectWord']].map(([value, label]) =>
+        `<label><input type="radio" name="listening-${i}" value="${value}"> ${t(label)}</label>`).join('')}</fieldset>`).join('')}
+    ${button('check-listening-sample', t('listeningCheck'), 'primary')}
+    <div id="listening-result" tabindex="-1" aria-live="polite"></div>
+    <details><summary>${t('examTranscript')}</summary><p lang="de" dir="ltr">${esc(transcript)}</p></details></section>`;
 }
 
 function renderPassage(section) {
@@ -205,5 +249,14 @@ function check(app, checked) {
 
 export const actions = {
   'exam-check': app => check(app, true),
-  'exam-edit': app => check(app, false)
+  'exam-edit': app => check(app, false),
+  'check-listening-sample'(app) {
+    const items = app.ctx.learning.examSample.listening.items;
+    const answers = items.map((item, i) => document.querySelector(`[name="listening-${i}"]:checked`)?.value);
+    const result = document.querySelector('#listening-result');
+    const right = items.filter((item, i) => item.answer === answers[i]).length;
+    result.innerHTML = `<p><strong>${t('examScore', num(right), num(items.length))}</strong></p><ol>${items.map((item, i) =>
+      `<li class="exam-mark ${item.answer === answers[i] ? 'good' : 'bad'}">${t(item.answer === 'true' ? 'correctWord' : 'incorrectWord')} · ${de(item.quote)}</li>`).join('')}</ol>`;
+    result.focus();
+  }
 };

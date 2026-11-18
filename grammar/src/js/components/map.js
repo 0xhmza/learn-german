@@ -2,12 +2,13 @@
 // The boat token sails between islands when the learner moves on.
 import { t, num, getLang } from '../i18n/index.js';
 import { islandName } from '../content.js';
-import { islandProgress, nextLesson } from '../engine/progress.js';
+import { islandProgress } from '../engine/progress.js';
+import { recommendedLesson } from '../engine/study.js';
 import { esc } from './html.js';
 
 export const LAYOUTS = {
   wide: { width: 1200, height: 800, scale: 1, treasure: [940, 650] },
-  tall: { width: 600, height: 1800, scale: 0.85, treasure: [190, 1735] }
+  tall: { width: 500, height: 1980, scale: 1, treasure: [168, 1925] }
 };
 export const WIDE_MIN = 720;
 const DOCK = 62;
@@ -50,15 +51,37 @@ function waves(layout) {
   }).join('');
 }
 
+const SHORE = 'M-100 19C-106-14-80-51-42-58C-9-67 24-68 58-53C88-42 108-13 101 15C95 46 66 64 27 66C-27 69-91 59-100 19Z';
+
+function islandArt(island) {
+  return `<path class="isle-water" d="${SHORE}"/>
+    <g class="isle-art" aria-hidden="true" style="--isle-tint:var(--t-${island.palette})">
+      <path class="isle-ripple" d="M-88 33q10 14 29 19m103 4q24-2 39-17"/>
+      <path class="isle-beach" d="M-84 9C-89-18-67-42-35-47C-2-53 23-57 51-43C77-33 88-12 84 11C81 36 52 48 23 49C-21 54-75 43-84 9Z"/>
+      <path class="isle-land" d="M-76 3C-78-21-55-40-27-42C-2-44 23-50 48-37C70-27 79-8 74 11C68 29 47 32 25 32C-6 30-20 41-43 32C-62 27-72 22-76 3Z"/>
+      <path class="isle-sand-detail" d="M-65 28h4m53 17h3m67-17h4"/>
+      <g transform="scale(${island.order % 2 ? 1 : -1} 1)">
+        <path class="isle-stem" d="M-52 7q4-14 0-23m0 12q3-8 10-9"/>
+        <path class="isle-leaf" d="M-53-10q-12-3-10-10q11-2 10 10Zm1-4q-5-12 3-15q7 8-3 15Zm4 9q1-10 12-10q2 8-12 10Z"/>
+        <ellipse class="isle-pebble" cx="55" cy="18" rx="8" ry="5"/>
+        <ellipse class="isle-pebble" cx="66" cy="23" rx="4" ry="3"/>
+        <path class="isle-bloom" d="M34-24h10m-5-5v10"/>
+        <circle class="isle-bloom-center" cx="39" cy="-24" r="2.5"/>
+      </g>
+      <circle class="isle-emblem" cy="-5" r="26"/>
+      <text class="isle-emoji" y="-4" text-anchor="middle" dominant-baseline="central">${island.emoji}</text>
+    </g>`;
+}
+
 export function renderMap({ ctx, state }, layout) {
   const lang = getLang();
   const { width, height, scale } = LAYOUTS[layout];
   const points = routePoints(ctx, layout);
   const treasure = points.at(-1);
   const segments = routeSegments(points);
-  const target = nextLesson(ctx, state, 'all');
+  const target = recommendedLesson(ctx, state);
   const allConquered = ctx.islands.every(island => state.islands[island.id]?.conquered);
-  const tokenAt = points[stopIndex(ctx, state.player.at)];
+  const tokenAt = points[stopIndex(ctx, target?.id)];
 
   const route = segments.map((d, i) => `<path class="route-seg" d="${d}"/>`).join('');
   const sailed = segments.map((d, i) => (state.islands[ctx.islands[i]?.id]?.conquered ? `<path class="route-done" d="${d}"/>` : '')).join('');
@@ -69,28 +92,23 @@ export function renderMap({ ctx, state }, layout) {
     const y = dockY - DOCK * scale;
     const stage = p.conquered ? 'conquered' : p.stars ? 'progress' : 'untouched';
     const share = p.maxStars ? p.stars / p.maxStars : 0;
-    const circumference = 2 * Math.PI * 18;
+    const circumference = 2 * Math.PI * 16;
     const name = islandName(island, lang);
-    const width = Math.max(120, Math.round(name.length * (lang === 'ar' ? 8.4 : 8.6) + 32));
+    const labelWidth = Math.max(120, Math.round(name.length * (layout === 'tall' ? 10 : 8.6) + 32));
     return `<a href="#island/${island.id}" class="isle ${stage} ${target?.island === island.id ? 'next' : ''}" data-island="${island.id}"
-        aria-label="${esc(t('islandAria', name, num(p.learnedAll), num(p.totalAll), Boolean(p.conquered)))}">
+        aria-label="${esc(t('islandAria', name, num(p.learnedAll), num(p.totalAll), Boolean(p.conquered)) + (target?.island === island.id ? ` · ${t('recommendedIsland')}` : ''))}">
       <g transform="translate(${x} ${y}) scale(${scale})">
-        ${target?.island === island.id ? '<circle class="pulse" r="98"/>' : ''}
-        <ellipse class="isle-water" rx="104" ry="70"/>
-        <ellipse class="isle-beach" rx="88" ry="58"/>
-        <ellipse class="isle-land" style="--isle-tint:var(--t-${island.palette})" cy="-6" rx="74" ry="46"/>
-        <text class="isle-emoji" y="-8" text-anchor="middle" dominant-baseline="central" aria-hidden="true">${island.emoji}</text>
-        ${stage === 'untouched' ? '<ellipse class="isle-fog" cy="-6" rx="80" ry="52"/>' : ''}
-        <g class="ring" transform="translate(${lang === 'ar' ? 72 : -72} -46)">
-          <circle class="ring-bg" r="20"/>
-          <circle class="ring-track" r="18"/>
-          <circle class="ring-arc" r="18" transform="rotate(-90)" stroke-dasharray="${r1(circumference * share)} ${r1(circumference)}"/>
+        ${islandArt(island)}
+        <g class="ring" transform="translate(${lang === 'ar' ? 72 : -72} -40)" aria-hidden="true">
+          <circle class="ring-bg" r="19"/>
+          <circle class="ring-track" r="16"/>
+          ${share ? `<circle class="ring-arc" r="16" transform="rotate(-90)" stroke-dasharray="${r1(circumference * share)} ${r1(circumference)}"/>` : ''}
           <text class="ring-num" text-anchor="middle" dominant-baseline="central">${num(island.order)}</text>
         </g>
         ${p.conquered ? `<text class="flag" x="${lang === 'ar' ? -50 : 50}" y="-50" text-anchor="middle" dominant-baseline="central" aria-hidden="true">🚩</text>` : ''}
-        <g class="plate" transform="translate(0 118)">
-          <rect x="${-width / 2}" y="-23" width="${width}" height="46" rx="12"/>
-          <text class="plate-name" y="-5" text-anchor="middle" dominant-baseline="central" ${lang === 'ar' ? 'direction="rtl"' : ''}>${esc(name)}</text>
+        <g class="plate" transform="translate(0 104)">
+          <rect x="${-labelWidth / 2}" y="-24" width="${labelWidth}" height="48" rx="12"/>
+          <text class="plate-name" y="-8" text-anchor="middle" dominant-baseline="central" ${lang === 'ar' ? 'direction="rtl"' : ''}>${esc(name)}</text>
           <text class="plate-sub" y="13" text-anchor="middle" dominant-baseline="central" direction="ltr">${num(p.learnedAll)}/${num(p.totalAll)} · ★ ${num(p.stars)}</text>
         </g>
       </g>
@@ -114,9 +132,10 @@ export function renderMap({ ctx, state }, layout) {
 function fitPlates(svg) {
   for (const plate of svg.querySelectorAll('.plate')) {
     try {
-      const width = Math.max(...[...plate.querySelectorAll('text')].map(text => text.getBBox().width)) + 30;
+      const textWidth = Math.max(...[...plate.querySelectorAll('text')].map(text => text.getBBox().width));
       const rect = plate.querySelector('rect');
-      if (width > 30) {
+      if (textWidth > 0) {
+        const width = Math.max(120, textWidth + 30);
         rect.setAttribute('x', String(-width / 2));
         rect.setAttribute('width', String(width));
       }
@@ -163,9 +182,9 @@ export function mountMap(host, app) {
   const { player } = app.state;
   if (player.animate) {
     const from = stopIndex(app.ctx, player.from);
-    const to = stopIndex(app.ctx, player.at);
+    const to = stopIndex(app.ctx, recommendedLesson(app.ctx, app.state)?.id);
     if (player.from && from !== to && !app.reduceMotion()) trip = [from, to];
-    if (from !== to || !player.from) app.store.update(state => { state.player.animate = false; });
+    app.store.update(state => { state.player.animate = false; });
   }
   const draw = () => {
     const next = host.clientWidth >= WIDE_MIN ? 'wide' : 'tall';
@@ -174,6 +193,7 @@ export function mountMap(host, app) {
     host.innerHTML = renderMap(app, layout);
     const svg = host.querySelector('svg');
     fitPlates(svg);
+    document.fonts?.ready.then(() => { if (svg.isConnected) fitPlates(svg); });
     if (trip) {
       const [from, to] = trip;
       trip = null;

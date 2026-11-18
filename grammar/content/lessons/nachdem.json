@@ -4,7 +4,7 @@
   "island": "zeiten",
   "order": 2,
   "prereqs": ["plusquamperfekt"],
-  "emoji": "🔁",
+  "emoji": "◷",
   "german": "Temporale Nebensätze mit nachdem",
   "source": { "lektion": 10, "kind": "toc" },
   "pattern": ["nachdem", "+", "Plusquamperfekt", ",", "Präteritum / Perfekt"],

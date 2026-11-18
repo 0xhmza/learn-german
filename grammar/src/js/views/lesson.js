@@ -14,15 +14,14 @@ export function title(app, route) {
 
 function renderGlance(lesson) {
   const roles = t('roles');
-  const pattern = `<div><span class="label">${t('formula')}</span><div class="pattern" lang="de" dir="ltr">${lesson.pattern.map(token =>
+  const pattern = `<div class="glance-formula"><h3 class="label">${t('formula')}</h3><div class="pattern" lang="de" dir="ltr">${lesson.pattern.map(token =>
     ['+', ',', '·', '…', '→'].includes(token) ? `<span class="op" aria-hidden="true">${esc(token)}</span>` : `<span class="chip">${esc(token)}</span>`).join('')}</div></div>`;
-  const frames = `<div><span class="label">${t('structure')}</span><div class="frames">${lesson.frames.map(frame => `
+  const frames = `<div class="glance-structure"><h3 class="label">${t('structure')}</h3><div class="frames">${lesson.frames.map(frame => `
     <div class="frame"><span class="frame-kind">${t('kinds')[frame.k]}</span>
       <div class="slots" lang="de" dir="ltr">${frame.parts.map(([role, text]) => `<span class="slot ${role}"><b>${esc(text)}</b>${roles[role] ? `<i lang="${getLang()}" dir="${getLang() === 'ar' ? 'rtl' : 'ltr'}">${roles[role]}</i>` : ''}</span>`).join('')}</div></div>`).join('')}
-    </div></div>
-    <p class="frames-hint">${t('framesHint')}</p>`;
+    </div><p class="frames-hint">${t('framesHint')}</p></div>`;
   return `<section class="panel glance" aria-labelledby="glance-title">
-    <div class="glance-head"><span class="badge" aria-hidden="true">✦</span><h2 id="glance-title">${t('glance')}</h2></div>
+    <h2 class="icon-heading" id="glance-title"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6m-6 4h6m-6 4h3"/></svg>${t('glance')}</h2>
     ${pattern}${frames}</section>`;
 }
 
@@ -41,17 +40,14 @@ function renderTable([headers, ...rows]) {
 }
 
 function finishBar(app, lesson, total) {
-  const learned = Boolean(app.state.completed[lesson.id]);
-  const count = lessonStars(app.state, lesson.id);
-  if (learned) {
-    return `<section class="panel finish-bar done" id="finish">
-      <div><strong>${t('learnedDone')}</strong>${stars(count, 20)}</div>
-      <div class="actions">${button('run', t('lessonPractice', num(lesson.questions.length)), 'primary', `data-key="${lesson.id}"`)}</div></section>`;
-  }
+  const viewed = Boolean(app.state.viewed[lesson.id]);
   const ready = stepCount >= total;
-  return `<section class="panel finish-bar" id="finish">
-    <p id="finish-hint" ${ready ? 'hidden' : ''}>${t('finishHint')}</p>
-    <div class="actions">${button('finish', t('finishLesson'), 'primary', ready ? '' : 'disabled')}${button('run', t('lessonPractice', num(lesson.questions.length)), 'secondary', `data-key="${lesson.id}"`)}</div></section>`;
+  return `<section class="finish-bar lesson-finish ${viewed ? 'done' : ''}" id="finish">
+    ${viewed ? `<p><strong>${t('viewed')}</strong></p>` : `<p id="finish-hint" ${ready ? 'hidden' : ''}>${t('finishHint')}</p>`}
+    <div class="actions">
+      ${button('run', t('quickPractice'), 'primary', `data-key="quick-${lesson.id}"`)}
+      ${viewed ? '' : button('finish', t('markViewed'), 'secondary', ready ? '' : 'disabled')}
+    </div></section>`;
 }
 
 export function render(app, route) {
@@ -65,6 +61,7 @@ export function render(app, route) {
   if (!app.redrawing && (state.lastLesson !== lesson.id || state.player.at !== lesson.id)) app.store.update(s => visitLesson(s, lesson.id));
   const view = localize(lesson, lang);
   const study = ctx.lessonStudy.get(lesson.id);
+  const outcome = ctx.learning.outcomes?.[lesson.id]?.[lang];
   const island = ctx.islandById.get(lesson.island);
   const siblings = ctx.islandLessons(island.id);
   const position = ctx.route.indexOf(lesson);
@@ -86,10 +83,11 @@ export function render(app, route) {
         ${lang === 'ar' ? `<p class="lesson-german" lang="de" dir="ltr">${esc(lesson.german)}</p>` : ''}
         <div class="lesson-sub">${levelChip(lesson.level)} ${stars(lessonStars(state, lesson.id))}</div></div></div>
       ${missing.length ? `<p class="prereq-chip">${t('bestFirst')} ${missing.map(item => `<a href="#lesson/${item.id}">${prose(lessonTitle(item, lang))}</a>`).join(lang === 'ar' ? '، ' : ', ')}</p>` : ''}
+      ${outcome ? `<p class="lead lesson-outcome"><strong>${t('learningGoal')}</strong> ${prose(outcome)}</p>` : ''}
       <p class="lead">${prose(view.lead)}</p>
-      <div class="actions">${button('run', t('lessonPractice', num(lesson.questions.length)), 'primary', `data-key="${lesson.id}"`)}
+      <div class="actions">${button('run', t('lessonPractice', num(lesson.questions.length)), 'secondary', `data-key="${lesson.id}"`)}
         ${study ? link(`cards/${lesson.id}`, t('cardsTitle')) : ''}
-        ${state.completed[lesson.id] ? `<span class="learned-chip">${t('learnedDone')}</span>` : ''}</div>
+        ${state.viewed[lesson.id] ? `<span class="learned-chip">${t('viewed')}</span>` : ''}</div>
     </section>
     ${renderGlance(lesson)}
     <div class="lesson-body">
@@ -105,6 +103,7 @@ export function render(app, route) {
           ${button('step', t('nextStep'), 'primary', `title="${t('keyHint')}"`)}${button('all-steps', t('allSteps'))}
         </div>
         <p class="sr-only" id="step-status" aria-live="polite"></p>
+        ${finishBar(app, lesson, total)}
       </section>
       <div class="lesson-side">
         <section class="panel reading"><h2>${t('detail')}</h2>${view.explain.map(p => `<p>${prose(p)}</p>`).join('')}</section>
@@ -120,7 +119,6 @@ export function render(app, route) {
       <div><h3>${t('lessonWorked')}</h3>${germanLine(study.correct)}
         <div class="actions study-actions">${button('run', t('lessonApply'), 'secondary', `data-key="apply-${lesson.id}"`)}</div></div>
     </section>` : ''}
-    ${finishBar(app, lesson, total)}
     <details class="panel sources"><summary>${t('sources')}</summary>
       <p><strong>${prose(sourceTitle)}</strong></p>
       <p>${lesson.source.kind === 'sample' ? t('sourceSample') : t('sourceToc')} ${t('sourceOriginal')}</p>

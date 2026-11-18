@@ -291,6 +291,43 @@ export function validateContent(content) {
     }
   }
   for (const [part, difficulties] of formats) if (difficulties.size < 2) fail('Sprachbausteine', `part ${part} needs multiple difficulties`);
+  const learning = content.learning || {};
+  for (const id of lessons.keys()) bilingual(`learning.outcomes.${id}`, learning.outcomes?.[id]);
+  for (const id of islands.keys()) {
+    const task = learning.islands?.[id];
+    const where = `learning.islands.${id}`;
+    bilingual(where, task);
+    text(`${where}.model`, task?.model);
+    if (lessons.get(task?.lesson)?.island !== id) fail(where, 'needs a lesson from this island');
+    if (task?.reading && !readingIds.has(task.reading)) fail(where, 'unknown contextual reading');
+  }
+  for (const [id, entry] of Object.entries(learning.pilot || {})) {
+    const where = `learning.pilot.${id}`;
+    if (!lessons.get(id)?.questions.slice(2).some(q => q.id === entry.retry)) fail(where, 'retry must differ from the opening questions');
+    const q = entry.transfer;
+    const marks = [...(q?.text || '').matchAll(/\{\{(\d+)\}\}/g)].map(match => Number(match[1]));
+    if (q?.type !== 'cloze' || !marks.length || marks.join() !== q.blanks?.map((_, i) => i + 1).join()) fail(where, 'invalid delayed cloze');
+    for (const blank of q?.blanks || []) textList(where, blank);
+    for (const lang of LANGS) {
+      text(where, q?.i18n?.[lang]?.prompt);
+      text(where, q?.i18n?.[lang]?.explain);
+      textList(where, q?.i18n?.[lang]?.hints);
+    }
+  }
+  const sample = learning.examSample;
+  if (!content.modelTests?.models?.some(model => model.id === sample?.model)) fail('exam sample', 'unknown model');
+  textList('exam sample writing', sample?.writingReply);
+  textList('exam sample speaking', sample?.speaking, 3, 3);
+  const listening = sample?.listening;
+  text('exam sample transcript', listening?.transcript);
+  if (!listening?.audio?.startsWith('data:audio/mpeg;base64,')) fail('exam sample', 'needs embedded MP3 audio');
+  if (!Array.isArray(listening?.items) || !listening.items.length) fail('exam sample', 'needs listening items');
+  for (const item of listening?.items || []) {
+    text('exam sample listening item', item.prompt);
+    if (!['true', 'false'].includes(item.answer) || !listening.transcript?.includes(item.quote)) {
+      fail('exam sample listening item', 'needs a key and a quote from the transcript');
+    }
+  }
   return errors.concat(validateModelTests(content.modelTests));
 }
 

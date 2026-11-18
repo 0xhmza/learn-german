@@ -77,11 +77,18 @@ export const actions = {
     const lesson = app.ctx.lessons.get(id);
     app.store.update(state => {
       delete state.completed[id];
+      delete state.viewed[id];
+      delete state.transfer[id];
       delete state.stars[id];
       delete state.lessonBonus[id];
       delete state.runs[id];
       delete state.runs[`apply-${id}`];
+      delete state.runs[`quick-${id}`];
+      delete state.runs[`repair-${id}`];
+      delete state.runs[`write-${id}`];
+      if (state.runs.daily?.ids.some(questionId => app.ctx.questions.get(questionId)?.lesson === id)) delete state.runs.daily;
       delete state.results[`apply-${id}`];
+      delete state.results[`write-${id}`];
       for (const q of lesson.questions) delete state.results[q.id];
       for (const card of app.ctx.cards.values()) if (card.lesson === id) delete state.cards[card.id];
       if (!state.runs[state.lastRun]) state.lastRun = null;
