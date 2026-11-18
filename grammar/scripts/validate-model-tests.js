@@ -6,6 +6,7 @@ const sections = [
   ['hoeren-1', 41, 45], ['hoeren-2', 46, 55], ['hoeren-3', 56, 60], ['schreiben', 0, -1]
 ];
 const hasText = value => typeof value === 'string' && value.trim().length > 0;
+const hasLines = value => Array.isArray(value) && value.length > 0 && value.every(hasText);
 const hasOnly = (object, fields) => Object.keys(object).every(field => fields.includes(field));
 const numbered = (items, start, end) => Array.isArray(items)
   && items.length === end - start + 1 && items.every((item, index) => item.number === start + index);
@@ -27,6 +28,13 @@ function validateItems(errors, label, part, items) {
     if (isMatching(part) && item.answer !== 'x' && used.has(item.answer)) errors.push(`${question} reuses a matching answer`);
     used.add(item.answer);
   }
+}
+
+function validWriting(writing) {
+  return writing && hasOnly(writing, ['intro', 'greeting', 'body', 'closing', 'instruction', 'points', 'notes'])
+    && [writing.intro, writing.greeting, writing.instruction].every(hasText)
+    && [writing.body, writing.closing, writing.points, writing.notes].every(hasLines)
+    && writing.points.length === 4;
 }
 
 export function validateModelTests(data) {
@@ -51,13 +59,15 @@ export function validateModelTests(data) {
     for (const [partIndex, part] of model.sections.entries()) {
       const label = `${model.id}/${part.id}`;
       const [, start, end] = sections[partIndex];
-      if (!hasOnly(part, ['id', 'passage', 'choices', 'ads', 'items', 'variants'])) errors.push(`${label} has unexpected metadata`);
+      const fields = part.id === 'schreiben' ? ['id', 'writing', 'items'] : ['id', 'passage', 'choices', 'ads', 'items', 'variants'];
+      if (!hasOnly(part, fields)) errors.push(`${label} has unexpected metadata`);
       if (!numbered(part.items, start, end)) {
         errors.push(`${label} has unexpected question numbers`);
         continue;
       }
-      if (['lesen-2', 'sprache-1', 'sprache-2', 'schreiben'].includes(part.id)
-          && (!part.passage?.length || !part.passage.every(hasText))) errors.push(`${label} needs a passage`);
+      if (['lesen-2', 'sprache-1', 'sprache-2'].includes(part.id)
+          && !hasLines(part.passage)) errors.push(`${label} needs a passage`);
+      if (part.id === 'schreiben' && !validWriting(part.writing)) errors.push(`${label} needs a complete writing prompt`);
       if (part.id.startsWith('sprache-')) {
         const gaps = [...(part.passage || []).join(' ').matchAll(/\{(\d+)\}/g)].map(match => Number(match[1]));
         if (gaps.length !== 10 || gaps.some((n, i) => n !== start + i)) errors.push(`${label} has invalid gap markers`);

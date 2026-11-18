@@ -29,7 +29,62 @@
 .exam-ad h3 b { color: var(--brand-ink); }
 .exam-variant ol { padding-inline-start: 1.4em; }
 .exam-variant > ol > li + li { margin-block-start: 10px; }
-#exam-writing { min-block-size: 13rem; }
+
+.exam-writing-heading { padding: clamp(16px, 2.4vw, 28px); margin-block-end: 10px; }
+.exam-writing-heading p { margin-block-start: 5px; }
+.exam-writing-navigation { margin-block-end: 14px; }
+.exam-writing-navigation summary {
+  display: list-item;
+  inline-size: fit-content;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: var(--brand-ink);
+  font-size: .9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.exam-writing-navigation summary:hover { background: var(--brand-soft); }
+.exam-writing-navigation .exam-menu { margin-block-start: 8px; }
+
+.exam-writing-workspace { container-type: inline-size; }
+.exam-writing-grid, .exam-writing-response { display: grid; gap: clamp(14px, 2vw, 22px); min-inline-size: 0; }
+.exam-writing-source [lang="de"], .exam-writing-task [lang="de"], #exam-writing {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.exam-writing-intro { color: var(--ink-2); }
+.exam-writing-message {
+  margin: 12px 0 0;
+  padding: clamp(14px, 2vw, 22px);
+  border-inline-start: 3px solid var(--brand);
+  border-radius: 0 10px 10px 0;
+  background: var(--surface-2);
+}
+.exam-writing-message p + p { margin-block-start: .75em; }
+.exam-writing-message .exam-writing-closing { margin-block-start: 1em; }
+.exam-writing-points {
+  margin: 12px 0;
+  padding-block: 10px;
+  padding-inline: 2rem 16px;
+  border-radius: 10px;
+  background: var(--brand-soft);
+}
+.exam-writing-points li + li { margin-block-start: .25em; }
+.exam-writing-points li::marker { color: var(--brand); }
+.exam-writing-notes { display: grid; gap: .5em; color: var(--ink-2); font-size: .92em; }
+.exam-writing-editor-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin-block-end: 12px; }
+.exam-writing-editor-header h2 { margin: 0; }
+#exam-words { color: var(--ink-2); font-size: .85rem; font-variant-numeric: tabular-nums; }
+#exam-writing { min-block-size: clamp(18rem, 36dvh, 26rem); padding: 14px 16px; background: var(--surface-2); }
+.exam-writing-storage { margin-block-start: 8px; color: var(--muted); font-size: .85rem; }
+
+@container (min-width: 52rem) {
+  .exam-writing-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: start; }
+  @media screen and (min-height: 850px) {
+    .exam-writing-source { position: sticky; inset-block-start: calc(var(--head) + 14px); }
+  }
+}
 
 @media (max-width: 700px) {
   .exam-layout.with-part { grid-template-columns: minmax(0, 1fr); }

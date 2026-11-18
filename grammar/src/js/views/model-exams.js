@@ -43,11 +43,59 @@ export function render(app, route) {
   if (!model) return list(app);
   const section = model.sections.find(part => part.id === route.section);
   const name = esc(modelTitle(model));
+  const navigation = menu(app, model, section);
+  const writing = section?.id === 'schreiben';
+  const layout = writing
+    ? `<details class="exam-writing-navigation">
+        <summary>${t('examParts')}</summary>
+        ${navigation}
+      </details>
+      ${renderWriting(app, model, section)}`
+    : `<div class="exam-layout ${section ? 'with-part' : ''}">${navigation}
+      ${section ? renderPart(app, model, section) : ''}</div>`;
   return `${crumbs([['model-exams', t('examTrainerNav')], [section ? routeFor(model) : null, name], ...(section ? [[null, partTitle(section)]] : [])])}
-    <section class="simple-banner practice-head"><h1>${section ? partTitle(section) : name}</h1>
+    <section class="simple-banner practice-head${writing ? ' exam-writing-heading' : ''}"><h1>${section ? partTitle(section) : name}</h1>
       <p>${section ? `${modelNumber(model)} · ${name}` : modelNumber(model)}</p></section>
-    <div class="exam-layout ${section ? 'with-part' : ''}">${menu(app, model, section)}
-    ${section ? renderPart(app, model, section) : ''}</div>`;
+    ${layout}`;
+}
+
+function renderWriting(app, model, section) {
+  const { intro, greeting, body, closing, instruction, points, notes } = section.writing;
+  const reply = savedSection(app, model, section).writing || '';
+  return `<div class="exam-writing-workspace">
+    <div class="exam-writing-grid">
+      <section class="panel exam-writing-source" aria-labelledby="exam-writing-message-title">
+        <h2 id="exam-writing-message-title">${t('examWritingMessage')}</h2>
+        <div lang="de" dir="ltr">
+          <p class="exam-writing-intro">${esc(intro)}</p>
+          <blockquote class="exam-writing-message">
+            <p>${esc(greeting)}</p>
+            ${body.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}
+            <p class="exam-writing-closing">${closing.map(esc).join('<br>')}</p>
+          </blockquote>
+        </div>
+      </section>
+      <div class="exam-writing-response">
+        <section class="panel exam-writing-task" aria-labelledby="exam-writing-task-title">
+          <h2 id="exam-writing-task-title">${t('examWritingTask')}</h2>
+          <div lang="de" dir="ltr">
+            <p id="exam-writing-instruction">${esc(instruction)}</p>
+            <ul class="exam-writing-points">${points.map(point => `<li>${esc(point)}</li>`).join('')}</ul>
+            <div class="exam-writing-notes">${notes.map(note => `<p>${esc(note)}</p>`).join('')}</div>
+          </div>
+        </section>
+        <section class="panel exam-writing-editor" aria-labelledby="exam-writing-label">
+          <div class="exam-writing-editor-header">
+            <h2><label id="exam-writing-label" for="exam-writing">${t('examWritten')}</label></h2>
+            <p id="exam-words">${t('examWords', num(wordCount(reply)))}</p>
+          </div>
+          <textarea id="exam-writing" maxlength="30000" lang="de" dir="ltr" aria-describedby="exam-writing-instruction exam-writing-storage">
+${esc(reply)}</textarea>
+          <p id="exam-writing-storage" class="exam-writing-storage">${t('examWritingStorage')}</p>
+        </section>
+      </div>
+    </div>
+  </div>`;
 }
 
 function renderPassage(section) {
@@ -76,18 +124,14 @@ function renderVariants(section) {
 
 function renderPart(app, model, section) {
   const draft = savedSection(app, model, section);
-  const writing = section.id === 'schreiben';
   const listening = isListening(section);
   const passage = renderPassage(section);
   const bank = section.choices ? `<ul class="exam-bank" lang="de" dir="ltr">${Object.entries(section.choices).map(([value, label]) => `<li><b>${value.toUpperCase()}</b> ${esc(label)}</li>`).join('')}</ul>` : '';
   const { responses = {} } = draft;
   const score = examResult(section, responses);
   const checked = score.total > 0 && draft.checked;
-  const exercise = writing ? `<label for="exam-writing">${t('examWritten')}</label>
-    <textarea id="exam-writing" maxlength="30000" lang="de" dir="ltr">${esc(draft.writing || '')}</textarea>
-    <p id="exam-words" class="study-meta">${t('examWords', num(wordCount(draft.writing || '')))}</p><p>${t('examWriteOwn')}</p>`
-    : `<div class="exam-questions">${section.items.map(item => renderItem(section, item, responses, checked)).join('')}</div>
-      ${score.total ? `<div class="actions study-actions">${button(checked ? 'exam-edit' : 'exam-check', t(checked ? 'examPracticeAgain' : 'examCheck'), 'primary')}</div>` : ''}`;
+  const exercise = `<div class="exam-questions">${section.items.map(item => renderItem(section, item, responses, checked)).join('')}</div>
+    ${score.total ? `<div class="actions study-actions">${button(checked ? 'exam-edit' : 'exam-check', t(checked ? 'examPracticeAgain' : 'examCheck'), 'primary')}</div>` : ''}`;
   const tip = section.ads ? 'examMatchAds' : 'examMatchHelp';
   return `<div class="exam-part">
       ${listening ? `<p class="notice">${t('examNoAudio')}</p>` : ''}
