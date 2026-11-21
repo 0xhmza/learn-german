@@ -190,6 +190,36 @@ export function validateContent(content) {
   }
   for (const id of lessons.keys()) if (!bookOrder.has(id)) fail('roadmap', `missing lesson ${id}`);
 
+  const decks = content.flashcards || {};
+  const cardIds = new Set();
+  for (const id of Object.keys(decks)) if (!lessons.has(id)) fail('flashcards', `unknown lesson ${id}`);
+  for (const id of lessons.keys()) {
+    const deck = decks[id];
+    const where = `flashcards ${id}`;
+    if (!deck || typeof deck !== 'object' || Array.isArray(deck) || !Object.keys(deck).length) {
+      fail(where, 'needs a deck of recall cards');
+      continue;
+    }
+    for (const [key, card] of Object.entries(deck)) {
+      const at = `${where}/${key}`;
+      const cardId = `card-${id}-${key}`;
+      if (!ID.test(key) || ['recall', 'apply'].includes(key)) fail(at, 'needs a unique concept key distinct from legacy card keys');
+      if (cardIds.has(cardId) || questionIds.has(cardId)) fail(at, `duplicate question id ${cardId}`);
+      cardIds.add(cardId);
+      if (!Array.isArray(card) || card.length !== 3) {
+        fail(at, 'needs a German prompt, an Arabic prompt and a short answer');
+        continue;
+      }
+      const [de, ar, answer] = card;
+      text(`${at}.prompt.de`, de);
+      text(`${at}.prompt.ar`, ar);
+      if (typeof answer === 'string') {
+        text(`${at}.answer`, answer);
+        if (/[\p{Script=Arabic}`]/u.test(answer)) fail(at, 'shared answers must be unformatted German text or formulas');
+      } else bilingual(`${at}.answer`, answer);
+    }
+  }
+
   for (const island of islands.values()) {
     const own = [...lessons.values()].filter(lesson => lesson.island === island.id).map(lesson => lesson.order).sort((a, b) => a - b);
     if (!own.length) fail(`island ${island.id}`, 'has no lessons');
@@ -362,6 +392,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     console.error(`\n${errors.length} problem(s) in ${content.lessons.length} lessons.`);
     process.exitCode = 1;
   } else {
-    console.log(`✓ ${content.islands.length} islands, ${content.lessons.length} lessons, ${questionCount} core questions and ${Object.keys(content.lessonStudy).length} extra questions, ${content.practiceSets.length} practice sets, ${content.readings.texts.length} readings, ${content.sprachbausteine.length} Sprachbausteine sets. Content version ${content.version}.`);
+    const cardCount = Object.values(content.flashcards).reduce((sum, deck) => sum + Object.keys(deck).length, 0);
+    console.log(`✓ ${content.islands.length} islands, ${content.lessons.length} lessons, ${cardCount} recall cards, ${questionCount} core questions and ${Object.keys(content.lessonStudy).length} extra questions, ${content.practiceSets.length} practice sets, ${content.readings.texts.length} readings, ${content.sprachbausteine.length} Sprachbausteine sets. Content version ${content.version}.`);
   }
 }

@@ -76,7 +76,6 @@ export function render(app) {
         ${selected.outcome ? `<p class="dash-outcome">${prose(selected.outcome)}</p>` : ''}
         <div class="dash-action">${action}</div>
       </div>
-      <div class="dash-illustration" aria-hidden="true"><span></span><i></i><b>⛵</b></div>
     </section>
     ${!started ? `<div class="dash-starts" aria-label="${t('filterLabel')}">${starts}${button('find-rule', t('findRule'), 'quiet')}</div>` : ''}
     <section class="panel dash-directory" aria-labelledby="directory-title">

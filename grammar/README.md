@@ -6,7 +6,7 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **460 core exercises and 51 additional applications** with worked explanations, plus seven practice sets that combine lessons.
 - **Four Sprachbausteine sets** across three difficulty levels, with ten gaps per letter. Part 1 uses three choices per gap and Part 2 uses a shared word bank. [telc Deutsch B1 sample format](https://shop.telc.net/media/catalog/product/file/telc_deutsch_b1_zd_uebungstest_1.pdf)
 - **Three B1 readings** with offline Arabic word glosses, paragraph translations and comprehension checks.
-- **102 grammar flashcards** for rule recall and application, with spaced review and two cards for every lesson.
+- **156 grammar flashcards** for recalling endings, irregular forms, connector meanings and word order, with spaced review for every lesson.
 - **telc Deutsch B1 exam trainer** with 17 named mock exams, saved drafts, scored reading and Sprachbausteine sections, and writing practice. Listening statements are available for practice.
 - **Dashboard** with your next lesson, daily goal, streak, due reviews, the island map and every topic with its progress.
 - **Island map**: a boat sails from island to island as you learn; inside an island a walker moves along the lesson trail.
@@ -56,7 +56,8 @@ The dashboard and sidebar let you switch between grammar islands and the order o
 | --- | --- |
 | `content/islands.json` | The ten islands: names, colours, map positions |
 | `content/lessons/*.json` | One file per lesson: rule, steps, pitfall, table, links and nine to twelve questions, in Arabic and German |
-| `content/lesson-study.json` | Worked comparisons, extra questions and application cards keyed by lesson ID |
+| `content/lesson-study.json` | Worked comparisons and extra practice questions keyed by lesson ID |
+| `content/flashcards.json` | Topic decks keyed by lesson and concept. Each card lists its German prompt, Arabic prompt and short answer. A shared answer gives the German form or pattern. Use `de` and `ar` for explanations that need translation. |
 | `content/practice-sets.json` | Curated sets that combine lessons and question types |
 | `content/readings.json` | B1 passages with a shared glossary and inline `word{Arabic gloss}` annotations |
 | `content/sprachbausteine.json` | Original letters, options and explanations for both exam-style formats |
@@ -74,7 +75,7 @@ The dashboard and sidebar let you switch between grammar islands and the order o
 
 1. `npm run new:lesson -- my-topic zeiten B1.2 10`
 2. Replace every `TODO` in `content/lessons/my-topic.json`. German terms inside Arabic text go between backticks. Question 8 corrects the lesson's `pitfallPair`.
-3. Add a worked comparison to `content/lesson-study.json`, a bilingual outcome to `content/learning.json`, and include the lesson ID in a set in `content/practice-sets.json`. Keep published question IDs and answer indices stable so in-progress attempts can resume.
+3. Add a worked comparison to `content/lesson-study.json`, short recall cards to `content/flashcards.json`, a bilingual outcome to `content/learning.json`, and include the lesson ID in a set in `content/practice-sets.json`. Keep published card and question IDs stable so review schedules and in-progress attempts can resume.
 4. Run `npm run validate`, then check the lesson at http://127.0.0.1:4180/#lesson/my-topic in both languages.
 
 The [grammar platform plan](docs/grammar-platform-plan.md) describes the content model, routes, gamification rules and map geometry in detail.

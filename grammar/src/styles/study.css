@@ -41,11 +41,11 @@ a.study-tile:hover h2 { color: var(--brand-ink); }
 .sprach-good { color: var(--good); }
 .sprach-bad { color: var(--bad); }
 
-.card-stage h2 { margin-block: 16px 12px; }
-.card-examples, .card-answer { padding: 14px; border-radius: 12px; background: var(--surface-2); overflow-wrap: anywhere; }
-.card-examples p + p { margin-block-start: 8px; }
-.card-answer { border-inline-start: 3px solid var(--brand); }
-.card-answer .de { margin-block: 7px; font-weight: 700; }
+.deck-picker label, .deck-picker select { min-inline-size: 0; max-inline-size: 100%; }
+.card-stage h2 { margin-block: 20px 14px; text-wrap: pretty; }
+.card-answer { display: grid; gap: 6px; padding: 14px 16px; color: var(--ink); border-radius: 12px; border-inline-start: 3px solid var(--brand); background: var(--surface-2); overflow-wrap: anywhere; }
+.card-answer h3 { color: var(--muted); font-size: .875rem; }
+.card-answer .term { font-size: 1em; }
 .modes-panel { margin-block-start: 15px; }
 .modes-panel > summary { cursor: pointer; color: var(--brand-ink); font-weight: 700; }
 .modes-panel > .launcher { margin-block-start: 12px; }

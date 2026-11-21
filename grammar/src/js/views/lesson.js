@@ -92,7 +92,7 @@ export function render(app, route) {
       ${outcome ? `<p class="lead lesson-outcome"><strong>${t('learningGoal')}</strong> ${prose(outcome)}</p>` : ''}
       <p class="lead">${prose(view.lead)}</p>
       <div class="actions">${button('run', t('lessonPractice', num(lesson.questions.length)), 'secondary', `data-key="${lesson.id}"`)}
-        ${study ? link(`cards/${lesson.id}`, t('cardsTitle')) : ''}
+        ${ctx.decks.has(lesson.id) ? link(`cards/${lesson.id}`, t('cardsTitle')) : ''}
         ${state.viewed[lesson.id] ? `<span class="learned-chip">${t('viewed')}</span>` : ''}</div>
     </section>
     ${renderGlance(lesson)}

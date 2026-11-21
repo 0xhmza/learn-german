@@ -141,7 +141,7 @@ test('version 1 cached attempts resume and new study progress survives a backup'
   const crossLesson = newRun(ctx, state, 'set-satzbau', { day });
   assert.ok(new Set(crossLesson.ids.map(id => ctx.questions.get(id).lesson)).size > 1);
   state.runs[crossLesson.key] = crossLesson;
-  state.cards['genitiv-recall'] = { box: 3, due: '2026-11-21' };
+  state.cards['genitiv-artikel'] = { box: 3, due: '2026-11-21' };
   state.modelExams.petra = { 'sprache-1': { checked: true, responses: { 21: 'b' } }, schreiben: { writing: 'Liebe Petra,' } };
   const { id, gaps } = ctx.sprachbausteine.get('gartenverein');
   state.sprach[id] = { finished: false, answers: gaps.map((gap, i) => i < 3 ? gap.answer : '') };
@@ -150,6 +150,25 @@ test('version 1 cached attempts resume and new study progress survives a backup'
   assert.deepEqual(restored.sprach, state.sprach);
   assert.deepEqual(restored.modelExams, state.modelExams);
   assert.deepEqual(restored.runs[crossLesson.key], crossLesson);
+});
+
+test('old card schedules are retired while daily practice and its position are restored', () => {
+  const ctx = context();
+  const saved = freshState(ctx, day);
+  saved.lastRun = 'daily';
+  saved.cards['genitiv-apply'] = { box: 5, due: day };
+  saved.runs.daily = {
+    key: 'daily', kind: 'daily', mode: 'practice', position: 1,
+    ids: ['genitiv-1', 'card-genitiv-apply', 'genitiv-2'],
+    answers: { 'genitiv-1': 1, 'card-genitiv-apply': 0 },
+    grades: { 'genitiv-1': true, 'card-genitiv-apply': false }
+  };
+  const state = normalizeState(saved, ctx, day);
+  assert.deepEqual(state.cards, {});
+  assert.equal(state.lastRun, 'daily');
+  assert.equal(state.runs.daily.position, 1);
+  assert.deepEqual(state.runs.daily.ids, ['genitiv-1', 'genitiv-2']);
+  assert.deepEqual(state.runs.daily.grades, { 'genitiv-1': true });
 });
 
 test('cached mock exam selections survive the answer review', () => {

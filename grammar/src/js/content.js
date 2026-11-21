@@ -6,6 +6,7 @@ export function indexContent(raw) {
   const lessons = new Map();
   const questions = new Map();
   const cards = new Map();
+  const decks = new Map();
   const transferQuestions = new Map();
   const lessonStudy = new Map(Object.entries(raw.lessonStudy || {}));
   const byIsland = new Map(islands.map(island => [island.id, []]));
@@ -15,6 +16,21 @@ export function indexContent(raw) {
     for (const q of lesson.questions) {
       q.lesson = lesson.id;
       questions.set(q.id, q);
+    }
+    for (const [key, [de, ar, answer]] of Object.entries(raw.flashcards?.[lesson.id] || {})) {
+      const card = { id: `${lesson.id}-${key}`, lesson: lesson.id };
+      const id = `card-${card.id}`;
+      cards.set(card.id, card);
+      if (!decks.has(lesson.id)) decks.set(lesson.id, []);
+      decks.get(lesson.id).push(card);
+      const shared = typeof answer === 'string' ? '`' + answer + '`' : null;
+      questions.set(id, {
+        id, lesson: lesson.id, card: card.id, type: 'text',
+        i18n: {
+          de: { prompt: de, explain: shared ?? answer.de, hints: [] },
+          ar: { prompt: ar, explain: shared ?? answer.ar, hints: [] }
+        }
+      });
     }
     const study = lessonStudy.get(lesson.id);
     if (!study) continue;
@@ -27,19 +43,6 @@ export function indexContent(raw) {
         de: { prompt: study.task.de, explain: study.de, hints: [study.hint.de] }
       }
     });
-    for (const kind of ['recall', 'apply']) {
-      const card = { id: `${lesson.id}-${kind}`, lesson: lesson.id, kind };
-      cards.set(card.id, card);
-      const cardQuestion = `card-${card.id}`;
-      const apply = questions.get(id);
-      const base = { id: cardQuestion, lesson: lesson.id, card: card.id, difficulty: 2 };
-      questions.set(cardQuestion, kind === 'apply' ? { ...apply, ...base } : {
-        ...base, type: 'text', model: '',
-        i18n: Object.fromEntries(['ar', 'de'].map(lang => [lang, {
-          prompt: lesson.i18n[lang].recall[0], explain: lesson.i18n[lang].recall[1], hints: []
-        }]))
-      });
-    }
     const transfer = raw.learning?.pilot?.[lesson.id]?.transfer;
     if (transfer) {
       const question = { ...transfer, id: `transfer-${lesson.id}`, lesson: lesson.id, difficulty: 2, transfer: true };
@@ -74,6 +77,7 @@ export function indexContent(raw) {
     lessons,
     questions,
     cards,
+    decks,
     transferQuestions,
     learning: raw.learning || {},
     lessonStudy,

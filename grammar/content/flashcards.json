@@ -1,0 +1,260 @@
+{
+  "passiv-perfekt": {
+    "aufbau": ["Wie bildet man das Passiv im Perfekt?", "كيف يُبنى المجهول في الماضي التام؟", "sein + Partizip II + worden"],
+    "hilfsverb": ["Welches Hilfsverb trägt Person und Zahl?", "أي فعل مساعد يُصرَّف مع الفاعل؟", "sein (bin, bist, ist, sind, seid, sind)"],
+    "werden-formen": ["Passivhilfsverb oder Vollverb? Welche Perfektformen hat `werden`?", "ما صيغتا `werden` في الماضي التام حسب استعماله؟", "Passiv → worden · Vollverb → geworden"]
+  },
+  "je-desto": {
+    "paar": ["Welche zweiteiligen Konjunktionen zeigen eine proportionale Veränderung?", "أي رابط ثنائي يعبّر عن تغيّر متناسب؟", "je … desto / je … umso"],
+    "nebensatz": ["Wo steht das finite Verb im `je`-Satz?", "أين يقع الفعل المصرَّف في جملة `je`؟", "je + Komparativgruppe + … + finites Verb"],
+    "hauptsatz": ["Was steht direkt nach der `desto`- oder `umso`-Gruppe?", "ما الذي يلي مجموعة المقارنة بعد `desto` أو `umso`؟", "desto/umso + Komparativgruppe + finites Verb"]
+  },
+  "relativ-dativ": {
+    "formen": ["Wie lauten die Dativ-Relativpronomen in der Reihenfolge m, f, n, Plural?", "ما ضمائر الوصل في الداتيف للمذكر والمؤنث والمحايد والجمع بالترتيب؟", "dem · der · dem · denen"],
+    "kasus": ["Wodurch bekommt das Relativpronomen den Dativ?", "ما الذي يحدّد الداتيف لضمير الوصل؟", {"de": "Seine Funktion im Relativsatz, etwa bei `helfen` oder nach `mit`.", "ar": "وظيفته في جملة الوصل، مثل استعماله مع `helfen` أو بعد `mit`."}],
+    "bezug": ["Was bestimmt Genus und Numerus des Relativpronomens?", "ما الذي يحدّد جنس ضمير الوصل وعدده؟", {"de": "Das Bezugswort im übergeordneten Satz.", "ar": "الاسم الذي يعود إليه الضمير في الجملة الأساسية."}]
+  },
+  "relativ-praep": {
+    "position": ["Wo steht die Präposition im Relativsatz?", "أين يوضع حرف الجر في جملة الوصل؟", "Präposition + Relativpronomen am Satzanfang"],
+    "kasus": ["Welchen Kasus fordern `mit`, `bei`, `von` und welchen `für`, `ohne`, `durch`?", "أي حالة تتطلّبها `mit` و`bei` و`von` وأيّ حالة تتطلّبها `für` و`ohne` و`durch`؟", "mit, bei, von → Dativ · für, ohne, durch → Akkusativ"],
+    "dativ-plural": ["Wie lautet das Relativpronomen nach `mit` im Plural?", "ما ضمير الوصل للجمع بعد `mit`؟", "mit denen"]
+  },
+  "relativ-einschub": {
+    "kommas": ["Wie trennt man einen eingeschobenen Relativsatz ab?", "كيف نفصل جملة الوصل الاعتراضية؟", "Bezugswort, Relativsatz, Rest des Satzes"],
+    "position": ["Wo steht der Einschub in Bezug auf sein Bezugswort?", "أين يقع الاعتراض بالنسبة إلى الاسم الذي يصفه؟", {"de": "Direkt nach dem Bezugswort bzw. seiner Nominalgruppe.", "ar": "مباشرةً بعد الاسم الموصوف أو مجموعته الاسمية."}],
+    "wortstellung": ["Wo steht das finite Verb im eingeschobenen Relativsatz?", "أين يقع الفعل المصرَّف داخل جملة الوصل الاعتراضية؟", "… finites Verb, Rest des Hauptsatzes"]
+  },
+  "partizip1": {
+    "bildung": ["Wie bildet man das Partizip I?", "كيف يُصاغ اسم الفاعل `Partizip I`؟", "Infinitiv + d (lachen → lachend)"],
+    "aktiv": ["Was drückt ein Partizip I über die Handlung des Nomens aus?", "ما علاقة الاسم بالفعل عند استعمال `Partizip I`؟", {"de": "Das Nomen bezeichnet jemanden oder etwas, das selbst handelt.", "ar": "الاسم يدلّ على من يقوم بالفعل أو على الشيء الذي يصدر عنه."}],
+    "endung": ["Was bekommt das Partizip I zusätzlich vor einem Nomen?", "ماذا نضيف إلى `Partizip I` قبل الاسم؟", "Adjektivendung (lachend + e → lachende Kinder)"]
+  },
+  "partizip-adjektiv": {
+    "partizip-i": ["Welches Partizip beschreibt eine aktive, gleichzeitige Handlung?", "أي صيغة تصف فعلاً يقوم به الاسم في الوقت نفسه؟", "Partizip I (die singende Frau)"],
+    "partizip-ii": ["Welches Partizip beschreibt ein Ergebnis oder etwas bereits Geschehenes?", "أي صيغة تصف نتيجة أو حدثًا تمّ؟", "Partizip II (das gelöste Problem, der gefallene Schnee)"],
+    "beugung": ["Was nehmen beide Partizipien vor einem Nomen an?", "ماذا يأخذ كلا الاسمين المشتقّين قبل الاسم الموصوف؟", "Adjektivendungen (ein lachendes Kind · ein gelöstes Problem)"]
+  },
+  "infinitiv-zu": {
+    "trennbar": ["Wo steht `zu` bei einem trennbaren Verb?", "أين توضع `zu` مع الفعل القابل للفصل؟", "Verbzusatz + zu + Infinitiv (ein-zu-kaufen)"],
+    "untrennbar": ["Wo steht `zu` bei einem untrennbaren Verb?", "أين توضع `zu` مع الفعل غير القابل للفصل؟", "zu + Infinitiv (zu verstehen)"],
+    "bezug": ["Hat eine Infinitivgruppe mit `zu` ein eigenes ausgedrücktes Subjekt?", "هل لمجموعة المصدر مع `zu` فاعل مذكور فيها؟", {"de": "Nein. Wer handelt, ergibt sich aus dem Hauptsatz oder Kontext.", "ar": "لا. نعرف من يقوم بالفعل من الجملة الأساسية أو السياق."}]
+  },
+  "doppelkonjunktionen": {
+    "beides": ["Welches Paar bedeutet „beides“?", "أي رابط ثنائي يفيد الجمع بين أمرين؟", "sowohl … als auch"],
+    "wahl": ["Welches Paar nennt zwei Alternativen?", "أي رابط ثنائي يطرح خيارين؟", "entweder … oder"],
+    "verneinung": ["Welches Paar verneint beide Teile?", "أي رابط ثنائي ينفي الأمرين معًا؟", "weder … noch"],
+    "verstaerkung": ["Welches Paar bejaht beides und verstärkt den zweiten Teil?", "أي رابط يثبت الأمرين ويؤكّد الثاني؟", "nicht nur …, sondern auch"],
+    "einschraenkung": ["Welches Paar räumt zuerst etwas ein und schränkt es dann ein?", "أي رابط يقرّ بالأمر أولاً ثم يقيّده؟", "zwar …, aber"]
+  },
+  "diminutiv": {
+    "suffixe": ["Welche zwei Endungen bilden ein Diminutiv?", "ما اللاحقتان اللتان تصوغان التصغير؟", "-chen · -lein"],
+    "genus": ["Welches Genus haben Diminutive auf `-chen` und `-lein`?", "ما جنس الاسم المصغّر بـ `-chen` أو `-lein`؟", "Neutrum (das)"],
+    "plural": ["Welche zusätzliche Endung bekommen sie im Nominativ Plural?", "ما اللاحقة الإضافية في جمع الاسم المصغّر في الرفع؟", "Keine (das Mädchen → die Mädchen)"]
+  },
+  "lokale-praep": {
+    "rundherum": ["Welcher Kasus steht bei `um … herum`?", "ما الحالة بعد `um … herum`؟", "um + Akkusativ + herum"],
+    "am-entlang": ["Welcher Kasus steht bei `an … entlang`?", "ما الحالة بعد `an … entlang`؟", "an + Dativ + entlang"],
+    "entlang": ["Welcher Kasus steht unmittelbar vor nachgestelltem `entlang`?", "ما حالة الاسم إذا أتت بعده `entlang` مباشرة؟", "Akkusativ + entlang (den Fluss entlang)"]
+  },
+  "irgendein": {
+    "staemme": ["Welche Wortstämme benutzt man im Singular und im Plural?", "ما جذع الأداة في المفرد وفي الجمع؟", "Singular → irgendein- · Plural → irgendwelch-"],
+    "singular": ["Nach welchem Muster wird `irgendein-` dekliniert?", "وفق أي نمط تُصرَّف `irgendein-`؟", "wie ein, eine, einen, einem, einer, eines"],
+    "dativ-plural": ["Wie lautet der Dativ Plural von `irgendwelche`?", "ما صيغة `irgendwelche` في الداتيف للجمع؟", "irgendwelchen"]
+  },
+  "falls": {
+    "bedeutung": ["Welche Bedeutung hat `falls`?", "ما معنى `falls`؟", {"de": "Eine mögliche Bedingung. Synonym: `für den Fall, dass`.", "ar": "شرط محتمل. معناها «في حال أن»."}],
+    "nebensatz": ["Wo steht das finite Verb im `falls`-Satz?", "أين يقع الفعل المصرَّف في جملة `falls`؟", "falls + … + finites Verb"],
+    "anschluss": ["Womit beginnt der Aussagesatz nach `falls`, wenn kein `dann` folgt?", "بم تبدأ الجملة الأساسية بعد شرطٍ متقدّم بـ `falls` إذا لم نستخدم `dann`؟", "Falls … Verb, finites Verb + Subjekt …"]
+  },
+  "irreale-bedingung": {
+    "zeitbezug": ["Welchen Modus hat eine vorgestellte Bedingung in der Gegenwart?", "أي صيغة تستعمل للشرط غير الواقعي في الحاضر؟", "Konjunktiv II"],
+    "haeufige-formen": ["Wie lauten die häufigen Konjunktiv-II-Formen von `sein`, `haben` und `können`?", "ما صيغ `sein` و`haben` و`können` في `Konjunktiv II`؟", "wäre · hätte · könnte"],
+    "wuerde": ["Wie bildet man die Umschreibung mit `würde`?", "كيف نبني صيغة `würde` البديلة؟", "würde + Infinitiv (würde helfen)"]
+  },
+  "genitiv": {
+    "fragewort": ["Mit welchem Fragewort fragt man bei Besitz nach dem Genitiv?", "بأي كلمة نسأل عن الملكية في المضاف إليه؟", "Wessen?"],
+    "artikel": ["Wie lauten die bestimmten Genitivartikel in der Reihenfolge m, f, n, Plural?", "ما أدوات التعريف في المضاف إليه للمذكر والمؤنث والمحايد والجمع بالترتيب؟", "des · der · des · der"],
+    "nomenendung": ["Welche Endung tragen die meisten maskulinen und neutralen Nomen im Genitiv Singular?", "ما نهاية معظم الأسماء المذكرة والمحايدة في المفرد في المضاف إليه؟", "-s / -es (des Kinos · des Hauses)"]
+  },
+  "genitiv-praep": {
+    "grund-gegensatz": ["Welche Genitivpräpositionen drücken Grund oder Gegengrund aus?", "ما حرفا الجر مع المضاف إليه للسبب وللمخالفة؟", "Grund → wegen · Gegengrund → trotz"],
+    "zeit": ["Welche Genitivpräpositionen bezeichnen einen Zeitraum oder seine Grenzen?", "ما حروف الجر مع المضاف إليه لفترة زمنية أو حدودها؟", "während · innerhalb · außerhalb"],
+    "ersatz": ["Welche Genitivpräposition drückt eine Alternative oder einen Ersatz aus?", "ما حرف الجر مع المضاف إليه الذي يفيد الاستبدال؟", "statt / anstatt"]
+  },
+  "genitiv-adjektiv": {
+    "artikel": ["Welche Endung hat das Adjektiv im Genitiv nach bestimmtem oder unbestimmtem Artikel?", "ما نهاية الصفة بعد أداة معرّفة أو نكرة في المضاف إليه؟", "-en"],
+    "ohne-artikel-fp": ["Welche Genitivendung hat das Adjektiv ohne Artikel bei Femininum und Plural?", "ما نهاية الصفة دون أداة للمؤنث والجمع في المضاف إليه؟", "-er (guter Qualität · neuer Geräte)"],
+    "ohne-artikel-mn": ["Welche Genitivendung hat das Adjektiv ohne Artikel bei Maskulinum und Neutrum?", "ما نهاية الصفة دون أداة للمذكر والمحايد في المضاف إليه؟", "-en (heißen Tees · kalten Wassers)"]
+  },
+  "relativ-genitiv": {
+    "dessen": ["Bei welchem Genus des Bezugsworts steht `dessen`?", "مع أي جنس للاسم المرجعي نستعمل `dessen`؟", "Maskulinum oder Neutrum im Singular"],
+    "deren": ["Wann steht `deren` als Genitiv-Relativpronomen?", "متى نستعمل `deren` ضمير وصل للمضاف إليه؟", "Femininum im Singular oder Plural aller Genera"],
+    "artikel": ["Steht nach `dessen` und `deren` noch ein Artikel vor dem Nomen?", "هل تأتي أداة تعريف قبل الاسم بعد `dessen` أو `deren`؟", {"de": "Nein. `dessen Name`, `deren Adresse`.", "ar": "لا. نقول `dessen Name` و`deren Adresse`."}]
+  },
+  "relativ-ort": {
+    "ort": ["Welches Relativadverb bezeichnet einen Ort ohne Richtung?", "ما ظرف الوصل الذي يعبّر عن المكان دون اتجاه؟", "wo"],
+    "ziel": ["Welches Relativadverb bezeichnet das Ziel einer Bewegung?", "ما ظرف الوصل الذي يعبّر عن وجهة الحركة؟", "wohin"],
+    "herkunft": ["Welches Relativadverb bezeichnet die Herkunft?", "ما ظرف الوصل الذي يعبّر عن نقطة الانطلاق؟", "woher"]
+  },
+  "komparativ": {
+    "marker": ["Welche Endung bildet den regelmäßigen Komparativ?", "ما لاحقة صيغة المقارنة المنتظمة؟", "-er (klein → kleiner)"],
+    "vor-nomen": ["In welcher Reihenfolge stehen die Endungen vor einem Nomen?", "ما ترتيب اللواحق عند استعمال المقارنة قبل اسم؟", "Adjektivstamm + Komparativendung + Deklinationsendung (klein-er-es)"],
+    "unregelmaessig": ["Wie lauten die Komparative von `gut`, `viel` und `hoch`?", "ما صيغ المقارنة لـ `gut` و`viel` و`hoch`؟", "besser · mehr · höher"]
+  },
+  "superlativ": {
+    "praedikativ": ["Wie lautet das übliche Superlativmuster ohne folgendes Nomen?", "ما الصيغة الشائعة للتفضيل عندما لا يليها اسم؟", "am …-(e)sten"],
+    "attributiv": ["Wie baut man den Superlativ direkt vor einem Nomen?", "كيف يُبنى التفضيل مباشرةً قبل الاسم؟", "Artikel + Adjektivstamm + -(e)st- + Adjektivendung + Nomen"],
+    "unregelmaessig": ["Wie lauten die Superlative mit `am` von `gut`, `viel` und `gern`?", "ما صيغ التفضيل مع `am` لـ `gut` و`viel` و`gern`؟", "am besten · am meisten · am liebsten"]
+  },
+  "statt-zu": {
+    "bedeutung": ["Welche Beziehung drückt `(an)statt … zu` aus?", "ما العلاقة التي تعبّر عنها صيغة `(an)statt … zu`؟", {"de": "Eine nicht gewählte Alternative zur Handlung im Hauptsatz.", "ar": "البديل الذي لم يقع بدلاً من الفعل المذكور في الجملة الأساسية."}],
+    "muster": ["Wie grenzt man die Gruppe mit `(an)statt … zu` ab?", "كيف نفصل مجموعة `(an)statt … zu`؟", "Hauptsatz, (an)statt + … + zu-Infinitiv"],
+    "subjektwechsel": ["Welche Form erlaubt ausdrücklich ein anderes Subjekt?", "ما الصيغة التي تسمح بذكر فاعل آخر؟", "(an)statt dass + Subjekt + … + finites Verb"]
+  },
+  "ohne-zu": {
+    "bedeutung": ["Was signalisiert `ohne … zu`?", "ما الذي تعبّر عنه صيغة `ohne … zu`؟", {"de": "Eine begleitende Handlung findet nicht statt.", "ar": "فعل مصاحب لم يحدث."}],
+    "muster": ["Wie grenzt man die Infinitivgruppe mit `ohne` ab?", "كيف نفصل مجموعة المصدر مع `ohne`؟", "Hauptsatz, ohne + … + zu-Infinitiv"],
+    "subjektwechsel": ["Welche Form erlaubt ausdrücklich ein anderes Subjekt?", "ما الصيغة التي تسمح بذكر فاعل آخر؟", "ohne dass + Subjekt + … + finites Verb"]
+  },
+  "passiv-modal": {
+    "mustersatz": ["Wie lautet das Hauptsatzmuster für Passiv mit Modalverb?", "ما ترتيب المجهول مع فعل ناقص في الجملة الأساسية؟", "Subjekt + Modalverb + … + Partizip II + werden"],
+    "nebensatz": ["In welcher Reihenfolge stehen die drei Verbteile im Nebensatz?", "ما ترتيب الأجزاء الفعلية الثلاثة في الجملة الفرعية؟", "… Partizip II + werden + finites Modalverb"],
+    "kongruenz": ["Welcher Verbteil richtet sich nach Person und Zahl des Subjekts?", "أي جزء فعلي يُصرَّف بحسب الفاعل؟", "Das Modalverb (muss/müssen, darf/dürfen)"]
+  },
+  "lassen": {
+    "infinitiv": ["In welcher Form folgt ein Vollverb auf `lassen`?", "بأي صيغة يأتي الفعل الأساسي مع `lassen`؟", "Infinitiv ohne zu"],
+    "gebrauch": ["Welche zwei Bedeutungen hat `jemanden etwas tun lassen`?", "ما معنيا تركيب `jemanden etwas tun lassen`؟", "erlauben oder veranlassen"],
+    "reflexiv": ["Was drückt `sich lassen + Infinitiv` aus?", "ماذا يفيد تركيب `sich lassen + Infinitiv`؟", "Möglichkeit (kann … werden)"]
+  },
+  "pronominaladverbien": {
+    "staemme": ["Welcher Anfang gehört zum Verweis, welcher zur Frage?", "ما بداية الإحالة وما بداية السؤال؟", "Verweis → da(r)- · Frage → wo(r)-"],
+    "verbindungs-r": ["Wann steht ein zusätzliches `r` zwischen Stamm und Präposition?", "متى نضيف `r` بين البداية وحرف الجر؟", "Vor Vokal (darauf · worüber)"],
+    "personen": ["Wie fragt man mit einer Präposition nach einer Person?", "كيف نسأل عن شخص مع حرف جر؟", "Präposition + wen/wem (für wen · mit wem)"]
+  },
+  "sonst": {
+    "bedeutung": ["Was bedeuten `sonst` und `andernfalls` in einer Warnung?", "ما معنى `sonst` و`andernfalls` في التحذير؟", {"de": "Im anderen Fall, also wenn die genannte Bedingung nicht erfüllt ist.", "ar": "وإلا، أي إذا لم يتحقق الشرط المذكور."}],
+    "wortstellung": ["Was kommt nach `sonst` oder `andernfalls` auf Position 1?", "ما الذي يلي `sonst` أو `andernfalls` في صدر الجملة؟", "sonst/andernfalls + finites Verb + Subjekt"],
+    "satztyp": ["Welche Satzart leiten diese Verbindungsadverbien ein?", "ما نوع الجملة التي تبدأ بهذه الظروف الرابطة؟", "Hauptsatz mit Verbzweitstellung"]
+  },
+  "subjektlos": {
+    "verbform": ["In welcher Person und Zahl steht das Verb im subjektlosen Passiv?", "ما صيغة الفعل في المجهول من دون فاعل؟", "3. Person Singular (wird)"],
+    "platzhalter": ["Wann kann `es` im subjektlosen Passiv als Platzhalter stehen?", "متى يمكن أن تأتي `es` في المجهول من دون فاعل؟", "Nur im Vorfeld (Position 1)"],
+    "dativ": ["Was passiert beim subjektlosen Passiv mit einem Dativobjekt?", "ماذا يحدث لمفعول الداتيف عند صياغة المجهول من دون فاعل؟", {"de": "Es bleibt im Dativ und wird nicht zum Subjekt.", "ar": "يبقى في الداتيف ولا يصبح فاعلاً."}]
+  },
+  "indefinitpronomen": {
+    "nominativ": ["Wie lauten die unbestimmten Pronomen im Nominativ m, f, n und Plural?", "ما الضمائر غير المحددة في الرفع للمذكر والمؤنث والمحايد والجمع؟", "einer · eine · eins · welche"],
+    "akkusativ": ["Welche Form ändert sich im Akkusativ gegenüber dem Nominativ?", "أي صيغة من هذه الضمائر تتغيّر من الرفع إلى النصب؟", "Maskulinum (einer → einen, keiner → keinen)"],
+    "dativ": ["Wie lauten die unbestimmten Pronomen im Dativ m, f, n und Plural?", "ما الضمائر غير المحددة في الداتيف للمذكر والمؤنث والمحايد والجمع؟", "einem · einer · einem · welchen"],
+    "genitiv": ["Welche Genitivformen haben `jemand` und `niemand`?", "ما صيغتا `jemand` و`niemand` في المضاف إليه؟", "jemandes/jemands · niemandes/niemands"]
+  },
+  "verben-als-nomen": {
+    "bildung": ["Wie schreibt man einen Infinitiv, der als Nomen gebraucht wird?", "كيف يُكتب المصدر حين يُستعمل اسمًا؟", "Groß (schwimmen → das Schwimmen)"],
+    "genus": ["Welches Genus haben nominalisierte Infinitive?", "ما جنس الاسم المشتقّ من المصدر؟", "Neutrum (das)"],
+    "signale": ["Welche Artikel stecken in `beim`, `zum` und `vom`?", "ما أداة التعريف المدمجة في `beim` و`zum` و`vom`؟", "beim = bei dem · zum = zu dem · vom = von dem"]
+  },
+  "kausal-da-weil": {
+    "fragewort": ["Auf welche Frage antwortet ein Satz mit `weil` oder `da`?", "عن أي سؤال تجيب جملة `weil` أو `da`؟", "Warum?"],
+    "nebensatz": ["Wo steht das finite Verb nach `weil` oder `da`?", "أين يقع الفعل المصرَّف في جملة `weil` أو `da`؟", "weil/da + … + finites Verb"],
+    "hauptsatz": ["Was steht hinter dem Komma, wenn der Kausalsatz vorn steht?", "ما الذي يلي الفاصلة إذا بدأت الجملة بالسبب؟", "Nebensatz, finites Verb + Subjekt …"]
+  },
+  "deshalb-daher": {
+    "synonyme": ["Welche vier Verbindungsadverbien leiten eine Folge ein?", "ما الظروف الرابطة الأربعة التي تقدّم النتيجة؟", "deshalb · daher · darum · deswegen"],
+    "richtung": ["Steht nach `deshalb` der Grund oder die Folge?", "هل يأتي بعد `deshalb` السبب أم النتيجة؟", "Grund → deshalb + Folge"],
+    "wortstellung": ["Was folgt direkt auf `deshalb` am Satzanfang?", "ما الذي يلي `deshalb` مباشرةً في أول الجملة؟", "deshalb + finites Verb + Subjekt …"]
+  },
+  "obwohl": {
+    "bedeutung": ["Leitet `obwohl` das Hindernis oder das unerwartete Ergebnis ein?", "هل تقدّم `obwohl` العائق أم النتيجة غير المتوقّعة؟", {"de": "Das Hindernis. Der Hauptsatz nennt, was trotz des Hindernisses passiert.", "ar": "العائق. الجملة الأساسية تذكر ما يحدث رغم العائق."}],
+    "nebensatz": ["Wo steht das finite Verb im `obwohl`-Satz?", "أين يقع الفعل المصرَّف في جملة `obwohl`؟", "obwohl + … + finites Verb"],
+    "hauptsatz": ["Womit startet der Hauptsatz nach einem vorangestellten `obwohl`-Satz?", "بم تبدأ الجملة الأساسية بعد جملة `obwohl` المتقدّمة؟", "Obwohl … Verb, finites Verb + Subjekt …"]
+  },
+  "trotzdem": {
+    "bedeutung": ["Leitet `trotzdem` das Hindernis oder die unerwartete Folge ein?", "هل تقدّم `trotzdem` العائق أم النتيجة غير المتوقّعة؟", "Hindernis → trotzdem + unerwartete Folge"],
+    "wortstellung": ["Was steht direkt nach `trotzdem` auf Position 1?", "ما الذي يلي `trotzdem` في الموضع الأول؟", "trotzdem + finites Verb + Subjekt …"],
+    "satztyp": ["Welcher Satztyp folgt bei `trotzdem`, welcher bei `obwohl`?", "ما نوع الجملة مع `trotzdem` ومع `obwohl`؟", "trotzdem → Hauptsatz · obwohl → Nebensatz"]
+  },
+  "gradpartikeln": {
+    "stufe": ["Wie unterscheiden sich `etwas`, `sehr` und `zu` vor einem Adjektiv?", "ما الفرق بين `etwas` و`sehr` و`zu` قبل الصفة؟", {"de": "`etwas` schwächt ab, `sehr` verstärkt, `zu` überschreitet eine Grenze.", "ar": "`etwas` تخفّف، و`sehr` تقوّي، و`zu` تدلّ على تجاوز الحدّ."}],
+    "komparativ": ["Mit welchen Wörtern kann man einen Komparativ abstufen?", "ما الكلمات التي نعدّل بها درجة المقارنة؟", "etwas · viel · noch (etwas schneller · viel schneller · noch schneller)"],
+    "position": ["Wo steht eine Gradpartikel relativ zum Adjektiv oder Adverb?", "أين توضع أداة الدرجة بالنسبة إلى الصفة أو الظرف؟", "Gradpartikel + Adjektiv/Adverb (sehr leise · ganz hinten)"]
+  },
+  "relativ-was": {
+    "indefinita": ["Nenne typische unbestimmte Bezugswörter für einen Relativsatz mit `was`.", "اذكر كلمات غير محددة يمكن أن تعود إليها جملة وصل بـ `was`.", "alles · nichts · etwas · vieles · einiges"],
+    "superlativ": ["Welches Relativpronomen steht nach `das Beste` oder `das Schönste`?", "أي ضمير وصل يأتي بعد `das Beste` أو `das Schönste`؟", "was"],
+    "satzbezug": ["Worauf kann sich relatives `was` außer auf ein einzelnes Wort beziehen?", "إلى ماذا يمكن أن تعود `was` عدا كلمة واحدة؟", {"de": "Auf den Inhalt des ganzen vorherigen Satzes.", "ar": "إلى مضمون الجملة السابقة بأكملها."}]
+  },
+  "n-deklination": {
+    "endung": ["In welchen Singularfällen bekommen schwache Maskulina `-n` oder `-en`?", "في أي حالات يأخذ الاسم المذكر الضعيف في المفرد `-n` أو `-en`؟", "Akkusativ · Dativ · Genitiv"],
+    "muster": ["Wie lauten Nominativ, Akkusativ, Dativ und Genitiv Singular von `der Kunde`?", "ما صيغ مفرد `der Kunde` في الرفع والنصب والداتيف والمضاف إليه؟", "der Kunde · den Kunden · dem Kunden · des Kunden"],
+    "erkennbare-gruppen": ["Welche typischen Gruppen gehören zur N-Deklination?", "ما المجموعات الشائعة التي تتبع التصريف الضعيف للأسماء؟", "Viele maskuline Personen- und Tiernamen (Kollege, Student, Löwe)."]
+  },
+  "sodass": {
+    "richtung": ["Leitet `sodass` die Ursache oder die Folge ein?", "هل تقدّم `sodass` السبب أم النتيجة؟", "Ursache, sodass + Folge"],
+    "grad": ["Wie verbindet man einen hohen Grad mit seiner Folge?", "كيف نربط درجة الصفة بالنتيجة المترتّبة عليها؟", "so + Adjektiv/Adverb, dass + …"],
+    "wortstellung": ["Wo steht das finite Verb im Folgesatz mit `sodass`?", "أين يقع الفعل المصرَّف في جملة النتيجة مع `sodass`؟", "sodass + … + finites Verb"]
+  },
+  "indem": {
+    "fragewort": ["Auf welche Frage nach dem Mittel antwortet `indem`?", "عن أي سؤال تجيب `indem` عندما تدلّ على الوسيلة؟", "Wie? / Wodurch?"],
+    "wortstellung": ["Wo steht das finite Verb nach `indem`?", "أين يقع الفعل المصرَّف في جملة `indem`؟", "indem + … + finites Verb"],
+    "schreibung": ["Was unterscheidet `indem` von `in dem`?", "ما الفرق بين `indem` و`in dem`؟", {"de": "`indem` leitet das Mittel ein. `in dem` ist `in` plus Artikel oder Pronomen.", "ar": "`indem` تقدّم الوسيلة. أما `in dem` فهي حرف الجر `in` مع أداة أو ضمير."}]
+  },
+  "brauchen": {
+    "verneinung": ["Welches Muster bedeutet „nicht müssen“?", "ما تركيب `brauchen` الذي يعني «لا يلزم»؟", "nicht/kein … brauchen + zu-Infinitiv"],
+    "einschraenkung": ["Mit welchem Wort lässt sich `brauchen zu` auf das Nötige beschränken?", "بأي كلمة نحصر المطلوب عند استعمال `brauchen zu`؟", "nur (nur … zu brauchen / braucht nur … zu …)"],
+    "pflicht": ["Welches Verb drückt eine Pflicht ohne Verneinung oder Einschränkung aus?", "أي فعل يعبّر عن وجوب الفعل دون نفي أو حصر؟", "müssen + Infinitiv ohne zu"]
+  },
+  "plusquamperfekt": {
+    "bildung": ["Wie bildet man das Plusquamperfekt?", "كيف نُصيغ الماضي الأسبق؟", "hatte/war + Partizip II"],
+    "hilfsverb": ["Wie bestimmt man das Hilfsverb im Plusquamperfekt?", "كيف نختار الفعل المساعد في الماضي الأسبق؟", "Perfekt mit haben → hatte · Perfekt mit sein → war"],
+    "zeitbezug": ["Welches von zwei vergangenen Ereignissen steht im Plusquamperfekt?", "أي الحدثين الماضيين نضعه في الماضي الأسبق؟", {"de": "Das frühere Ereignis.", "ar": "الحدث الذي وقع أولاً."}]
+  },
+  "bevor-bis": {
+    "bevor": ["Welcher Konnektor bedeutet „früher als das andere Ereignis“?", "أي رابط يفيد أن حدثًا وقع قبل حدث آخر؟", "bevor"],
+    "bis": ["Welcher Konnektor markiert den Endpunkt einer Handlung?", "أي رابط يحدّد اللحظة التي ينتهي عندها الفعل؟", "bis"],
+    "vor-bevor": ["Was folgt auf zeitliches `vor`, was auf `bevor`?", "ما الذي يأتي بعد `vor` الزمانية وبعد `bevor`؟", "vor + Nominalgruppe im Dativ · bevor + Nebensatz"]
+  },
+  "seit-waehrend": {
+    "seit": ["Welcher Konnektor gibt den Startpunkt eines andauernden Geschehens an?", "أي رابط يحدّد بداية حدث مستمر؟", "seit / seitdem"],
+    "waehrend": ["Welcher temporale Konnektor verbindet gleichzeitige Vorgänge?", "أي رابط زمني يجمع حدثين متزامنين؟", "während"],
+    "praesens": ["Welche Zeitform passt für einen Zustand, der seit damals bis heute andauert?", "ما الزمن المناسب لحالة بدأت في الماضي وما زالت مستمرة؟", "Präsens"]
+  },
+  "nachdem": {
+    "reihenfolge": ["Welcher Satz nennt das frühere Ereignis?", "أي جملة تذكر الحدث الذي وقع أولاً؟", "Der nachdem-Nebensatz."],
+    "vergangenheit": ["Welche Tempusfolge ist bei zwei vergangenen Ereignissen typisch?", "ما ترتيب الزمنين المعتاد عند وصف حدثين ماضيين؟", "nachdem + Plusquamperfekt → Hauptsatz im Präteritum oder Perfekt"],
+    "gegenwart": ["Welche Tempusfolge ist typisch, wenn der Hauptsatz im Präsens steht?", "ما الزمن الشائع في جملة `nachdem` عندما تكون الجملة الأساسية في الحاضر؟", "nachdem + Perfekt → Hauptsatz im Präsens"]
+  },
+  "erststellen-es": {
+    "position": ["Auf welcher Position steht das reine Vorfeld-`es`?", "في أي موضع تأتي `es` التي تملأ صدر الجملة؟", "Position 1 (Vorfeld)"],
+    "wegfall": ["Was passiert mit dem Vorfeld-`es`, wenn eine Zeitangabe vorn steht?", "ماذا يحدث لـ `es` إذا شغل ظرف زمني أول الجملة؟", {"de": "Es entfällt. Die Zeitangabe füllt das Vorfeld.", "ar": "تُحذَف لأنّ ظرف الزمن يشغل الموضع الأول."}],
+    "kongruenz": ["Was bestimmt die Form des Verbs bei einem Vorfeld-`es`?", "ما الذي يحدّد تصريف الفعل عند وجود `es` في أول الجملة؟", {"de": "Das eigentliche Subjekt bestimmt Person und Zahl.", "ar": "الفاعل الحقيقي هو ما يحدّد الشخص والعدد."}]
+  },
+  "konjunktiv2-vergangenheit": {
+    "bildung": ["Wie bildet man den Konjunktiv II der Vergangenheit ohne Modalverb?", "كيف نبني صيغة الماضي الافتراضي من دون فعل ناقص؟", "hätte/wäre + Partizip II"],
+    "hilfsverb": ["Wann nimmt man `hätte`, wann `wäre`?", "متى نستعمل `hätte` ومتى نستعمل `wäre`؟", "Perfekt mit haben → hätte · Perfekt mit sein → wäre"],
+    "wenn-satz": ["Wie stehen die Verbteile im irrealen `wenn`-Satz der Vergangenheit?", "ما ترتيب الأجزاء الفعلية في جملة الشرط الافتراضي في الماضي؟", "wenn + … + Partizip II + hätte/wäre"]
+  },
+  "nominalisierte-adjektive": {
+    "grossschreibung": ["Wie schreibt man ein Adjektiv, das als Nomen verwendet wird?", "كيف نكتب الصفة حين تُستعمل اسمًا؟", "Groß (etwas Neues · die Reisenden)"],
+    "flektieren": ["Nach welchem Muster werden nominalisierte Adjektive dekliniert?", "وفق أي نمط تُصرَّف الصفات المستعملة أسماءً؟", {"de": "Wie Adjektive, abhängig von Artikel, Kasus, Genus und Numerus.", "ar": "مثل الصفات، بحسب الأداة والحالة والجنس والعدد."}],
+    "etwas-nichts": ["Welche Endung steht nach `etwas` oder `nichts` im Nominativ und Akkusativ?", "ما نهاية الصفة الاسمية بعد `etwas` أو `nichts` في الرفع والنصب؟", "-es (etwas Neues · nichts Wichtiges)"]
+  },
+  "waehrend-adversativ": {
+    "bedeutung": ["Was bedeutet adversatives `während`?", "ما معنى `während` عندما تعبّر عن التضاد؟", "wohingegen / im Gegensatz dazu"],
+    "vergleich": ["Gleichzeitigkeit oder Gegensatz – welche zwei Funktionen kann `während` haben?", "ما وظيفتا `während` عندما تكون زمنية أو تقابلية؟", {"de": "Temporal verbindet es gleichzeitige Vorgänge. Adversativ stellt es Gegensätze gegenüber.", "ar": "زمنيًا يربط حدثين متزامنين، وفي الاستعمال التقابلي يبيّن التضادّ."}],
+    "wortstellung": ["Wo steht das finite Verb bei adversativem `während`?", "أين يقع الفعل المصرَّف مع `während` التي تفيد التضاد؟", "während + … + finites Verb"]
+  },
+  "irgend-pronomen": {
+    "zeit-ort": ["Welche `irgend-`-Wörter stehen für unbekannte Zeit, unbekannten Ort und unbekanntes Ziel?", "ما الكلمات بـ `irgend-` لوقت ومكان ووجهة غير محددة؟", "irgendwann · irgendwo · irgendwohin"],
+    "person-sache": ["Wie nennt man eine unbekannte Person oder Sache mit `irgend-`?", "ما الكلمتان بـ `irgend-` لشخص أو شيء غير محدّد؟", "irgendwer · irgendwas (auch: irgendjemand · irgendetwas)"],
+    "art": ["Welches `irgend-`-Wort steht für eine nicht näher bestimmte Art und Weise?", "أي كلمة بـ `irgend-` تعني «بطريقة ما»؟", "irgendwie"]
+  },
+  "konjunktiv2-vergangenheit-modal": {
+    "modal": ["Wie bildet man den Konjunktiv II der Vergangenheit mit Modalverb?", "كيف نبني الماضي الافتراضي مع فعل ناقص؟", "hätte + Vollverb im Infinitiv + Modalverb im Infinitiv"],
+    "passiv": ["Wie bildet man das irreale Passiv der Vergangenheit?", "كيف نبني الماضي الافتراضي بصيغة المجهول؟", "wäre + Partizip II + worden"],
+    "nebensatz": ["In welcher Reihenfolge stehen die drei Verbteile im `wenn`-Satz?", "ما ترتيب الأجزاء الفعلية الثلاثة في جملة `wenn`؟", "wenn + … + hätte + Infinitiv + Modalinfinitiv"]
+  },
+  "futur1": {
+    "bildung": ["Wie bildet man das Futur I im Hauptsatz?", "كيف نبني المستقبل الأول في الجملة الأساسية؟", "werden (konjugiert) + … + Infinitiv"],
+    "vermutung": ["Welche Bedeutung hat Futur I außer Zukunft noch?", "ما المعنى الآخر للمستقبل الأول غير الدلالة على المستقبل؟", {"de": "Eine Vermutung, auch über die Gegenwart.", "ar": "التعبير عن تخمين، حتى عن الحاضر."}],
+    "passiv": ["Welcher Verbteil unterscheidet Futur I vom Vorgangspassiv mit `werden`?", "ما الصيغة التي تميّز المستقبل الأول من المجهول مع `werden`؟", "Futur I → Infinitiv · Vorgangspassiv → Partizip II"]
+  }
+}

@@ -3,7 +3,7 @@
 import { readFile, writeFile, mkdir, rm, copyFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { build } from 'esbuild';
+import { build, transform } from 'esbuild';
 import { assembleContent } from './assemble-content.js';
 import { validateContent } from './validate-content.js';
 
@@ -63,7 +63,8 @@ export async function buildAll({ quiet = false } = {}) {
   const license = (await readFile(path.join(src, 'fonts', 'OFL.txt'), 'utf8'))
     .replace(/[ \t]+$/gm, '')
     .replaceAll('*/', '* /');
-  const inlineCss = `/*\nNoto Sans Arabic\n${license}*/\n` + css.replaceAll('url(../fonts/NotoSansArabic-Variable.woff2)', `url(data:font/woff2;base64,${font.toString('base64')})`);
+  const compactCss = await transform(css, { loader: 'css', minifyWhitespace: true, charset: 'utf8' });
+  const inlineCss = `/*\nNoto Sans Arabic\n${license}*/\n` + compactCss.code.replaceAll('url(../fonts/NotoSansArabic-Variable.woff2)', `url(data:font/woff2;base64,${font.toString('base64')})`);
   let single = between(index, '<!-- styles -->', '<!-- /styles -->', `<style>\n${inlineCss.replace(/<\/style/gi, '<\\/style')}\n</style>`);
   single = single.replace('<!-- content -->', `<script id="content-data" type="application/json">${json}</script>`);
   single = between(single, '<!-- script -->', '<!-- /script -->', `<script>${script.replace(/<\/script/gi, '<\\/script')}</script>`);

@@ -103,7 +103,7 @@ export function render(app, route) {
           !last ? button('q-next', t('forward'), 'primary') : '',
           button('finish-test', t('submitTest'), last ? 'primary' : 'quiet')
         ].join('') : [
-          !checked && grade !== 'shown' ? button('check', q.type === 'text' ? t('showModel') : t('check'), 'primary') : '',
+          !checked && grade !== 'shown' ? button('check', t(q.card ? 'showAnswer' : q.type === 'text' ? 'showModel' : 'check'), 'primary') : '',
           !checked && grade !== 'shown' && hintCount < q.hints.length ? button('hint', t('showHint'), 'quiet') : '',
           previous ? button('q-prev', t('back')) : '',
           retry ? button('retry-example', t('retryExample'), 'primary') : '',
@@ -115,6 +115,7 @@ export function render(app, route) {
 }
 
 function renderInput(run, q, value, locked, showGrade) {
+  if (q.card) return '';
   const disabled = locked ? 'disabled' : '';
   if (q.type === 'mcq') {
     return `<fieldset class="choices"><legend class="sr-only">${t('chooseOne')}</legend>
@@ -152,11 +153,13 @@ function renderFeedback(q, grade, retry, due) {
   const solution = model(q);
   const correction = `${solution ? `<p>${answerText(solution)}</p>` : ''}${alternates?.length ? `<p>${t('alternates')} ${alternates.join(' · ')}</p>` : ''}<p>${prose(q.explain)}</p>
     ${q.writing ? `<p>${t('productionCriteria')}</p>` : ''}`;
+  const label = q.card ? (grade === true ? 'cardKnown' : grade === false ? 'cardAgain' : 'cardsAnswer')
+    : (grade === true ? 'correct' : grade === false ? 'incorrect' : 'compare');
   return `<div class="feedback ${grade === true ? 'correct' : grade === false ? 'incorrect' : ''}" id="feedback" tabindex="-1">
-    <strong>${grade === true ? t('correct') : grade === false ? t('incorrect') : t('compare')}</strong>
+    <strong>${t(label)}</strong>
     ${retry ? `${q.hints[0] ? `<p>${prose(q.hints[0])}</p>` : ''}<details><summary>${t('revealCorrection')}</summary>${correction}</details>` : correction}
     ${due && grade !== 'shown' ? `<p class="muted">${t('dueOn', formatDay(due))}</p>` : ''}
-    ${grade === 'shown' ? `<div class="actions" style="margin-top:8px">${button('self-yes', t('selfYes'), 'primary')}${button('self-no', t('selfNo'))}</div>` : ''}
+    ${grade === 'shown' ? `<div class="actions" style="margin-top:8px">${button('self-yes', t(q.card ? 'cardKnown' : 'selfYes'), 'primary')}${button('self-no', t(q.card ? 'cardAgain' : 'selfNo'))}</div>` : ''}
     </div>`;
 }
 
@@ -375,7 +378,7 @@ export const actions = {
     if (!run) return;
     const q = question(app, run);
     const answer = run.answers[q.id];
-    if (!answered(q, answer)) {
+    if (!q.card && !answered(q, answer)) {
       const status = document.querySelector('#quiz-status');
       status.className = 'notice';
       status.textContent = t('finishFirst');

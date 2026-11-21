@@ -41,6 +41,21 @@ const plain = value => value && typeof value === 'object' && !Array.isArray(valu
 const count = value => (Number.isFinite(value) && value >= 0 ? Math.floor(value) : 0);
 const dayOr = (value, fallback) => (isDay(value) ? value : fallback);
 
+// The old recap and multiple-choice cards no longer measure the same recall.
+// Keep the other items in a daily session that was saved with those cards.
+function stripLegacyCards(ctx, run) {
+  if (run.key !== 'daily' || !Array.isArray(run.ids)) return run;
+  const obsolete = id => ctx.lessons.has(/^card-(.+)-(?:recall|apply)$/.exec(id)?.[1]);
+  const ids = run.ids.filter(id => !obsolete(id));
+  if (ids.length === run.ids.length) return run;
+  const position = run.ids.slice(0, count(run.position)).filter(id => !obsolete(id)).length;
+  const restored = { ...run, ids, position };
+  for (const field of ['answers', 'grades', 'order', 'hinted']) {
+    restored[field] = Object.fromEntries(Object.entries(run[field] || {}).filter(([id]) => !obsolete(id)));
+  }
+  return restored;
+}
+
 export function normalizeState(raw, ctx, day) {
   const state = defaultState(day);
   if (!plain(raw) || raw.v !== STATE_VERSION) {
@@ -91,8 +106,10 @@ export function normalizeState(raw, ctx, day) {
       ...(isDay(value.xpDay) ? { xpDay: value.xpDay } : {})
     };
   }
-  for (const [key, run] of Object.entries(plain(raw.runs) ? raw.runs : {})) {
-    if (plain(run) && run.key === key && isRunValid(ctx, run)) {
+  for (const [key, saved] of Object.entries(plain(raw.runs) ? raw.runs : {})) {
+    if (!plain(saved) || saved.key !== key) continue;
+    const run = stripLegacyCards(ctx, saved);
+    if (isRunValid(ctx, run)) {
       state.runs[key] = { answers: {}, grades: {}, order: {}, hinted: {}, position: 0, finished: false, summary: null, ...run };
       state.runs[key].position = Math.min(count(run.position), run.ids.length - 1);
     }
