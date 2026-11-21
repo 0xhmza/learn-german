@@ -35,6 +35,8 @@ Offline single file: run `npm run build` once (after `npm install`), then double
 
 Progress is stored in the browser (`localStorage`), including unfinished practice and Sprachbausteine attempts and flashcard review dates. Back it up under **Settings → Download backup** and restore it in another browser. Progress from the original `Deutsch-B1.1-Arabic.html` page moves over automatically when the new file can read the original storage. You can also restore the results file exported by that page.
 
+The dashboard and sidebar let you switch between grammar islands and the order of the telc books *Auf jeden Fall! Deutsch B1.1* and *B1.2*. Both views share the same progress. The hide-completed filter applies to the topic lists and island trails.
+
 ## Commands
 
 | Command | What it does |
@@ -61,6 +63,7 @@ Progress is stored in the browser (`localStorage`), including unfinished practic
 | `content/telc-b1-model-tests.json` | Model tests with Arabic and German titles, digital reading ads, and a single answer per scored question |
 | `content/levels.json`, `content/badges.json` | Levels and badge texts |
 | `content/sources/` | The original B1.1 page (`legacy/`) and the B1.2 grammar list. The publisher PDF stays local and is git-ignored |
+| `content/roadmap.json` | Grammar topic order by chapter, based on the publisher samples listed in `content/levels.json` |
 | `src/index.html`, `src/styles/`, `src/fonts/` | Page shell, stylesheets, Noto Sans Arabic (SIL OFL) |
 | `src/js/engine/` | Pure logic: grading, runs, progress, XP and badges, spaced review, state migration |
 | `src/js/views/`, `src/js/components/` | Pages and building blocks (map, trail, sidebar, toasts) |

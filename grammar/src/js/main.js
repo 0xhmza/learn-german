@@ -7,7 +7,7 @@ import { t, num, setLang, getLang } from './i18n/index.js';
 import { award } from './engine/gamification.js';
 import { overall } from './engine/progress.js';
 import { renderHud } from './components/hud.js';
-import { renderIndex } from './components/sidebar.js';
+import { createTopicBrowser, bindTopicBrowser, renderTopicBrowser } from './components/sidebar.js';
 import { createToaster, describeNotes } from './components/toast.js';
 import { esc, plainText, prose } from './components/html.js';
 import * as home from './views/home.js';
@@ -32,8 +32,7 @@ const root = document.documentElement;
 const $ = selector => document.querySelector(selector);
 const content = $('#content');
 const main = $('#main');
-const index = $('#index');
-const search = $('#search');
+const sidebarHost = $('#sidebar-browser');
 const menu = $('#menu');
 const sidebar = $('#sidebar');
 const shade = $('#shade');
@@ -63,14 +62,13 @@ function applyChrome() {
   const lang = getLang();
   root.lang = lang;
   root.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  index.dir = root.dir;
   for (const el of document.querySelectorAll('[data-t]')) el.textContent = t(el.dataset.t);
   for (const el of document.querySelectorAll('[data-t-prose]')) el.innerHTML = prose(t(el.dataset.tProse));
   for (const el of document.querySelectorAll('[data-t-aria]')) el.setAttribute('aria-label', t(el.dataset.tAria));
   for (const el of document.querySelectorAll('[data-t-ph]')) el.placeholder = t(el.dataset.tPh);
   for (const el of document.querySelectorAll('[data-t-title]')) el.title = t(el.dataset.tTitle);
   for (const el of document.querySelectorAll('[data-lang]')) el.setAttribute('aria-pressed', String(el.dataset.lang === lang));
-  menu.setAttribute('aria-label', sidebar.classList.contains('open') ? t('menuClose') : t('menuOpen'));
+  setDrawer(sidebar.classList.contains('open'));
   applyTheme();
 }
 
@@ -78,7 +76,8 @@ function setDrawer(open) {
   sidebar.classList.toggle('open', open);
   shade.hidden = !open;
   menu.setAttribute('aria-expanded', String(open));
-  menu.setAttribute('aria-label', open ? t('menuClose') : t('menuOpen'));
+  menu.title = t(open ? 'menuClose' : 'menuOpen');
+  menu.setAttribute('aria-label', menu.title);
 }
 
 async function boot() {
@@ -95,7 +94,8 @@ async function boot() {
   const ctx = indexContent(raw);
   const store = createStore(ctx, { storage, day: today() });
   const toaster = createToaster($('#toasts'));
-  const openIslands = new Set();
+  const browser = createTopicBrowser();
+  let sidebarTree;
   let route = null;
   let view = null;
   let cleanup = null;
@@ -134,6 +134,7 @@ async function boot() {
       setLang(next);
       safeSet(storage, LANG_KEY, next);
       applyChrome();
+      mountSidebar();
       this.rerender();
     },
     setTheme(mode) {
@@ -149,25 +150,43 @@ async function boot() {
     themeMode: () => root.dataset.theme || 'auto'
   };
 
+  const sidebarOptions = () => ({
+    ctx, state: store.state, compact: true, browser, id: 'sidebar-topics',
+    current: route?.view === 'lesson' ? route.key : null
+  });
+
+  function mountSidebar() {
+    sidebarHost.innerHTML = renderTopicBrowser(sidebarOptions());
+    sidebarTree = bindTopicBrowser(sidebarHost, sidebarOptions);
+  }
+
   function drawChrome() {
     $('#hud').innerHTML = renderHud(store.state, today());
-    const current = route?.view === 'lesson' ? route.key : null;
-    const previous = index.scrollTop;
-    const { html, count } = renderIndex({ ctx, state: store.state, query: search.value, current, open: openIslands });
-    index.innerHTML = html;
-    index.scrollTop = previous;
-    $('#topic-total').textContent = t('lessonsN', count);
-    const stats = overall(ctx, store.state, store.state.settings.levelFilter);
-    $('#side-progress').textContent = t('of', num(stats.learned), num(stats.lessons));
-    $('#side-meter').value = stats.lessons ? Math.round((100 * stats.learned) / stats.lessons) : 0;
+    sidebarTree.refresh();
+    const { levelFilter } = store.state.settings;
+    const stats = overall(ctx, store.state, levelFilter);
+    $('#side-progress').textContent = t('topicsDone', num(stats.learned), num(stats.lessons));
+    const level = $('#side-level');
+    level.hidden = levelFilter === 'all';
+    level.textContent = levelFilter;
+    level.title = t('filterLabel');
+    const meter = $('#side-meter');
+    meter.max = Math.max(1, stats.lessons);
+    meter.value = stats.learned;
   }
 
   function render(initial = false) {
     cleanup?.();
     cleanup = null;
+    const previous = route;
     route = parse(location.hash, ctx);
     view = views[route.view];
-    setDrawer(false);
+    if (!app.redrawing) setDrawer(false);
+    if (route.view === 'lesson' && route.key !== previous?.key) {
+      const current = ctx.lessons.get(route.key);
+      browser.open.delete(current.island);
+      browser.open.delete(`chapter-${current.source.lektion}`);
+    }
     for (const anchor of document.querySelectorAll('[data-tab]')) {
       if (anchor.dataset.tab === route.tab) anchor.setAttribute('aria-current', 'page');
       else anchor.removeAttribute('aria-current');
@@ -194,20 +213,34 @@ async function boot() {
     $('#notice-slot').addEventListener('click', event => event.target.closest('[data-dismiss]')?.parentElement.remove());
   }
 
-  search.addEventListener('input', drawChrome);
-  index.addEventListener('click', event => {
-    const details = event.target.closest('summary')?.parentElement;
-    if (details && !search.value) {
-      const id = details.dataset.island;
-      if (details.open) openIslands.delete(id);
-      else openIslands.add(id);
+  function updateTopicSetting(target, key, value, focusSelector) {
+    if (store.state.settings[key] === value) return;
+    const area = target.closest('#sidebar') || content;
+    store.update(state => { state.settings[key] = value; });
+    if (route.view === 'home' || route.view === 'island' || (route.view === 'lesson' && key === 'roadmap')) app.rerender();
+    (area.querySelector(focusSelector) || area.querySelector('[data-topic-search]'))?.focus({ preventScroll: true });
+  }
+
+  document.addEventListener('click', event => {
+    const mode = event.target.closest('[data-roadmap-mode]');
+    if (mode) updateTopicSetting(mode, 'roadmap', mode.dataset.roadmapMode, `[data-roadmap-mode="${mode.dataset.roadmapMode}"]`);
+    const show = event.target.closest('[data-show-completed]');
+    if (show) updateTopicSetting(show, 'hideCompleted', false, '[data-hide-completed]');
+  });
+  document.addEventListener('change', event => {
+    if (!event.target.matches('[data-hide-completed]')) return;
+    updateTopicSetting(event.target, 'hideCompleted', event.target.checked, '[data-hide-completed]');
+  });
+  sidebarHost.addEventListener('click', event => {
+    if (event.target.closest('a') && sidebar.classList.contains('open')) {
+      setDrawer(false);
+      if (event.target.closest('a').hash === location.hash) main.focus({ preventScroll: true });
     }
-    if (event.target.closest('a') && sidebar.classList.contains('open')) setDrawer(false);
   });
   menu.addEventListener('click', () => {
     const open = !sidebar.classList.contains('open');
     setDrawer(open);
-    if (open) search.focus();
+    if (open) sidebarTree.search.focus();
   });
   shade.addEventListener('click', () => {
     setDrawer(false);
@@ -246,6 +279,7 @@ async function boot() {
   content.addEventListener('change', event => view?.onChange?.(app, event));
 
   applyChrome();
+  mountSidebar();
   render(true);
 }
 

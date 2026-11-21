@@ -1,0 +1,14 @@
+[
+  { "chapter": 1, "title": "Ankommen", "lessons": ["passiv-perfekt", "je-desto", "relativ-dativ", "relativ-praep", "relativ-einschub"] },
+  { "chapter": 2, "title": "Arbeiten, um zu leben?", "lessons": ["partizip1", "partizip-adjektiv", "infinitiv-zu", "doppelkonjunktionen"] },
+  { "chapter": 3, "title": "Lebensräume", "lessons": ["diminutiv", "lokale-praep", "irgendein", "falls", "irreale-bedingung"] },
+  { "chapter": 4, "title": "Migration", "lessons": ["genitiv", "genitiv-praep", "genitiv-adjektiv", "relativ-genitiv", "relativ-ort"] },
+  { "chapter": 5, "title": "Auf die Gesundheit!", "lessons": ["komparativ", "superlativ", "statt-zu", "ohne-zu", "passiv-modal"] },
+  { "chapter": 6, "title": "Kaufen, kaufen, kaufen", "lessons": ["lassen", "pronominaladverbien", "sonst", "subjektlos"] },
+  { "chapter": 7, "title": "Man lernt nie aus", "lessons": ["indefinitpronomen", "verben-als-nomen", "kausal-da-weil", "deshalb-daher", "obwohl", "trotzdem"] },
+  { "chapter": 8, "title": "Gemeinsam in Vielfalt", "lessons": ["gradpartikeln", "relativ-was"] },
+  { "chapter": 9, "title": "Für eine nachhaltigere Zukunft", "lessons": ["n-deklination", "sodass", "indem", "brauchen"] },
+  { "chapter": 10, "title": "Im Laufe der Zeit", "lessons": ["plusquamperfekt", "bevor-bis", "seit-waehrend", "nachdem"] },
+  { "chapter": 11, "title": "Im Namen der Gerechtigkeit", "lessons": ["erststellen-es", "konjunktiv2-vergangenheit", "nominalisierte-adjektive", "waehrend-adversativ"] },
+  { "chapter": 12, "title": "Zukunftsvisionen", "lessons": ["irgend-pronomen", "konjunktiv2-vergangenheit-modal", "futur1"] }
+]

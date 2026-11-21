@@ -5,12 +5,14 @@ import { lessonTitle } from '../content.js';
 import { lessonStars, islandProgress, missingPrereqs } from '../engine/progress.js';
 import { examSize, passMark } from '../engine/runs.js';
 import { esc, prose, stars, levelChip, button } from './html.js';
+import { hideCompletedControl, topicStatus, topicTitle } from './sidebar.js';
 
 export function renderTrail({ ctx, state }, island) {
   const lang = getLang();
   const lessons = ctx.islandLessons(island.id);
+  const visible = state.settings.hideCompleted ? lessons.filter(lesson => !state.completed[lesson.id]) : lessons;
   const progress = islandProgress(ctx, state, island.id);
-  const nodes = lessons.map(lesson => {
+  const nodes = visible.map(lesson => {
     const count = lessonStars(state, lesson.id);
     const stage = count >= 3 ? 'mastered' : count === 2 ? 'practised' : count === 1 ? 'learned' : 'new';
     const missing = missingPrereqs(ctx, state, lesson);
@@ -19,9 +21,9 @@ export function renderTrail({ ctx, state }, island) {
         <span class="node-dot" aria-hidden="true"><span>${lesson.emoji}</span>${count >= 2 ? '<i class="node-check">✓</i>' : ''}</span>
         <span class="node-text">
           <span class="node-num">${num(lesson.order)}</span>
-          <strong>${prose(lessonTitle(lesson, lang))}</strong>
-          <span class="node-meta"><span class="de-name" lang="de" dir="ltr">${esc(lesson.german)}</span>${levelChip(lesson.level)}</span>
-          ${stars(count)}
+          <strong>${topicTitle(lessonTitle(lesson, lang), lang)}</strong>
+          <span class="node-meta">${lang === 'ar' ? `<span class="de-name" lang="de" dir="ltr">${esc(lesson.german)}</span>` : ''}${levelChip(lesson.level)}</span>
+          <span class="node-meta">${topicStatus(state, lesson)}${stars(count)}</span>
           ${missing.length ? `<span class="prereq-chip">${t('bestFirst')} ${missing.map(item => prose(lessonTitle(item, lang))).join(lang === 'ar' ? '، ' : ', ')}</span>` : ''}
         </span>
       </a>
@@ -35,7 +37,10 @@ export function renderTrail({ ctx, state }, island) {
       ? `<div class="exam-text"><strong>${t('islandExam')}</strong><span>${t('examIntro', num(size), num(passMark(size)))}</span>${progress.examTries ? `<span>${t('examBest', num(progress.examBest), num(size))}</span>` : ''}${button('run', t('examStart'), 'primary', `data-key="exam-${island.id}"`)}</div>`
       : `<div class="exam-text"><strong>${t('islandExam')}</strong><span>${t('examLocked', num(progress.learnedAll), num(progress.totalAll))}</span>
           <details><summary>${t('remainingLessons')}</summary><ul>${missing.map(lesson => `<li><a href="#lesson/${lesson.id}">${prose(lessonTitle(lesson, lang))} ${levelChip(lesson.level)}</a></li>`).join('')}</ul></details></div>`;
-  return `<div class="trail-wrap" id="trail">
+  return `<div class="trail-filters">${hideCompletedControl(state)}
+    ${visible.length < lessons.length ? `<span class="topic-count">${t('topicsHidden', num(lessons.length - visible.length))}</span>` : ''}
+    ${!visible.length ? `<p class="muted">${t('noOpenTopics')}</p>` : ''}</div>
+    <div class="trail-wrap" id="trail">
     <svg class="trail-line" aria-hidden="true"><path/></svg>
     <ol class="trail" aria-label="${esc(t('trailLabel'))}">${nodes}
       <li class="trail-node exam ${progress.conquered ? 'conquered' : progress.examReady ? 'ready' : 'locked'}">

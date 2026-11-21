@@ -59,6 +59,10 @@ export function indexContent(raw) {
   }
   for (const list of byIsland.values()) list.sort((a, b) => a.order - b.order);
   const route = islands.flatMap(island => byIsland.get(island.id));
+  const chapters = (raw.roadmap || []).map(chapter => {
+    const topics = chapter.lessons.map(id => lessons.get(id));
+    return { ...chapter, lessons: topics, level: topics[0].level };
+  });
   return {
     version: raw.version,
     levels: raw.levels,
@@ -79,14 +83,17 @@ export function indexContent(raw) {
     sprachbausteine: new Map((raw.sprachbausteine || []).map(set => [set.id, set])),
     modelTests: new Map((raw.modelTests?.models || []).map(model => [model.id, model])),
     route,
+    chapters,
+    bookRoute: chapters.flatMap(chapter => chapter.lessons),
     islandLessons: id => byIsland.get(id) || []
   };
 }
 
 export const inFilter = (lesson, filter) => !filter || filter === 'all' || lesson.level === filter;
 
-export function routeFor(ctx, filter) {
-  return ctx.route.filter(lesson => inFilter(lesson, filter));
+export function routeFor(ctx, filter, mode) {
+  const route = mode === 'telc' && ctx.bookRoute.length ? ctx.bookRoute : ctx.route;
+  return route.filter(lesson => inFilter(lesson, filter));
 }
 
 export function localize(lesson, lang) {

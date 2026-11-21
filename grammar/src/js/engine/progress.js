@@ -7,6 +7,13 @@ export function lessonStars(state, id) {
   return Math.max(state.stars[id] || 0, state.completed[id] ? 1 : 0);
 }
 
+export function lessonStatus(state, lesson) {
+  if (state.completed[lesson.id]) return 'done';
+  if (state.started[lesson.id] || state.viewed[lesson.id] || lessonStars(state, lesson.id)
+    || state.results[`apply-${lesson.id}`] || lesson.questions.some(q => state.results[q.id])) return 'started';
+  return 'new';
+}
+
 // Stars earned by a finished practice run of one lesson (0 = below ★★).
 export function runStars(correct, total) {
   const ratio = total ? correct / total : 0;
@@ -54,7 +61,7 @@ export function overall(ctx, state, filter = 'all') {
 // First unlearned lesson on the route, then the first one below three
 // stars, then null when everything is mastered.
 export function nextLesson(ctx, state, filter = state.settings?.levelFilter || 'all') {
-  const route = routeFor(ctx, filter);
+  const route = routeFor(ctx, filter, state.settings?.roadmap);
   return route.find(lesson => !state.completed[lesson.id])
     || route.find(lesson => lessonStars(state, lesson.id) < 3)
     || null;
@@ -87,6 +94,7 @@ export function record(state, q, correct, day) {
 
 // Moves the player token when a lesson is opened.
 export function visitLesson(state, id) {
+  state.started[id] = true;
   state.lastLesson = id;
   if (state.player.at !== id) {
     state.player.from = state.player.at;

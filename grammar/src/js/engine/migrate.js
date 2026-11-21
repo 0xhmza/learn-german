@@ -14,8 +14,9 @@ export function defaultState(day) {
   return {
     v: STATE_VERSION,
     createdAt: day,
-    settings: { levelFilter: 'all', dailyGoal: 30, reduceMotion: false },
+    settings: { levelFilter: 'all', dailyGoal: 30, reduceMotion: false, roadmap: 'islands', hideCompleted: false },
     completed: {},
+    started: {},
     viewed: {},
     transfer: {},
     stars: {},
@@ -51,9 +52,14 @@ export function normalizeState(raw, ctx, day) {
   if (['all', ...ctx.levels.map(level => level.id)].includes(settings.levelFilter)) state.settings.levelFilter = settings.levelFilter;
   if (DAILY_GOALS.includes(settings.dailyGoal)) state.settings.dailyGoal = settings.dailyGoal;
   state.settings.reduceMotion = settings.reduceMotion === true;
+  if (settings.roadmap === 'telc') state.settings.roadmap = 'telc';
+  state.settings.hideCompleted = settings.hideCompleted === true;
 
   for (const [id, value] of Object.entries(plain(raw.completed) ? raw.completed : {})) {
     if (ctx.lessons.has(id) && value) state.completed[id] = dayOr(value, day);
+  }
+  for (const [id, value] of Object.entries(plain(raw.started) ? raw.started : {})) {
+    if (ctx.lessons.has(id) && value === true) state.started[id] = true;
   }
   for (const [id, value] of Object.entries(plain(raw.viewed) ? raw.viewed : {})) {
     if (ctx.lessons.has(id) && isDay(value)) state.viewed[id] = value;
@@ -136,7 +142,10 @@ export function normalizeState(raw, ctx, day) {
     });
     state.sprach[id] = { answers, finished: value.finished === true && answers.every(Boolean) };
   }
-  if (ctx.lessons.has(raw.lastLesson)) state.lastLesson = raw.lastLesson;
+  if (ctx.lessons.has(raw.lastLesson)) {
+    state.lastLesson = raw.lastLesson;
+    state.started[raw.lastLesson] = true;
+  }
   for (const [id, value] of Object.entries(plain(raw.islands) ? raw.islands : {})) {
     if (ctx.islandById.has(id) && plain(value)) {
       state.islands[id] = { conquered: isDay(value.conquered) ? value.conquered : null, examBest: count(value.examBest), examTries: count(value.examTries) };

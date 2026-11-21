@@ -1050,7 +1050,7 @@ Static server on `127.0.0.1:${PORT || 4180}`: `/` → `src/index.html`; `/conten
 3. Concatenate the CSS files in the order listed in §2.
 4. `dist/site/`: `index.html` (links `app.css`, `app.js`), `content.json`, `fonts/`.
 5. `dist/Deutsch-Grammatik-B1.html`: one file with inline CSS (font as base64 `data:` URL, licence text kept as a CSS comment), inline content JSON, inline script. JSON is embedded with `<` escaped as `<`.
-6. Print sizes. Budget: single file ≤ 1.5 MB, script ≤ 150 KB minified.
+6. Print sizes. Budget: single file ≤ 1.5 MB, script ≤ 160 KB minified.
 
 ### 14.5 Tests (`node --test`)
 

@@ -89,7 +89,7 @@ for (const lang of ['ar', 'de']) {
       check(renderMap(app, 'wide'), `${label} map wide`);
       check(renderMap(app, 'tall'), `${label} map tall`);
       check(renderHud(app.state, day), `${label} hud`);
-      check(renderIndex({ ctx, state: app.state, query: '', current: null, open: new Set() }).html, `${label} index`);
+      check(renderIndex({ ctx, state: app.state }).html, `${label} index`);
     }
   });
 }
@@ -126,7 +126,33 @@ test('search in the index finds lessons in both scripts', () => {
   setLang('ar');
   const ctx = context();
   const state = freshState(ctx, day);
-  assert.equal(renderIndex({ ctx, state, query: 'Plusquamperfekt', current: null, open: new Set() }).count, 1);
-  assert.equal(renderIndex({ ctx, state, query: 'المجهول', current: null, open: new Set() }).count >= 3, true);
-  assert.equal(renderIndex({ ctx, state, query: 'zzzz', current: null, open: new Set() }).count, 0);
+  assert.equal(renderIndex({ ctx, state, query: 'Plusquamperfekt' }).count, 1);
+  assert.equal(renderIndex({ ctx, state, query: 'المجهول' }).count >= 3, true);
+  assert.equal(renderIndex({ ctx, state, query: 'zzzz' }).count, 0);
+});
+
+test('both roadmaps use the same progress and hide completed topics without changing totals', () => {
+  setLang('de');
+  const ctx = context();
+  const state = freshState(ctx, day);
+  state.completed['passiv-perfekt'] = day;
+  state.started['je-desto'] = true;
+  for (const roadmap of ['islands', 'telc']) {
+    state.settings.roadmap = roadmap;
+    state.settings.hideCompleted = false;
+    const full = renderIndex({ ctx, state });
+    assert.equal(full.count, ctx.lessons.size);
+    assert.match(full.html, /lang="de" dir="ltr">Passiv im Perfekt/);
+    assert.match(full.html, /topic-status done/);
+    assert.match(full.html, /topic-status started/);
+    const groupSize = roadmap === 'islands' ? 4 : 5;
+    assert.match(full.html, new RegExp(`value="1" max="${groupSize}"`));
+    state.settings.hideCompleted = true;
+    const incomplete = renderIndex({ ctx, state });
+    assert.equal(incomplete.count, full.count - 1);
+    assert.equal(incomplete.hidden, 1);
+    assert.doesNotMatch(incomplete.html, /#lesson\/passiv-perfekt"/);
+    assert.match(incomplete.html, new RegExp(`value="1" max="${groupSize}"`));
+    assert.match(renderIndex({ ctx, state, query: 'Passiv im Perfekt' }).html, /data-show-completed/);
+  }
 });

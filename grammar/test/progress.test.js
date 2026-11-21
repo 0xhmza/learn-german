@@ -42,6 +42,16 @@ test('the next lesson walks the route, then the unmastered ones, then stops', ()
   assert.equal(nextLesson(ctx, state).level, 'B1.1');
 });
 
+test('the textbook roadmap recommends topics in chapter and book order', () => {
+  const ctx = context();
+  const state = freshState(ctx);
+  state.settings.roadmap = 'telc';
+  assert.equal(nextLesson(ctx, state).id, 'passiv-perfekt');
+  state.completed['passiv-perfekt'] = '2026-11-14';
+  assert.equal(nextLesson(ctx, state).id, 'je-desto');
+  assert.equal(nextLesson(ctx, state, 'B1.2').id, 'indefinitpronomen');
+});
+
 test('island progress counts learned lessons, stars and the exam gate', () => {
   const ctx = context();
   const state = freshState(ctx);

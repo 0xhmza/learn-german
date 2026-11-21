@@ -1,9 +1,9 @@
 /* Dashboard and shared progress styles. */
 .study-dashboard { display: grid; gap: 16px; max-inline-size: 950px; margin-inline: auto; }
-.dash-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(140px, .42fr); align-items: center; gap: 20px; min-height: 265px; padding: clamp(22px, 5vw, 48px); background: var(--hero-b); overflow: hidden; }
+.dash-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(130px, .32fr); align-items: center; gap: 20px; padding: clamp(20px, 4vw, 32px); background: var(--hero-b); overflow: hidden; }
 .dash-hero-copy { display: grid; gap: 10px; justify-items: start; }
 .dash-course { color: var(--brand-ink); font-size: 13px; font-weight: 760; }
-.dash-hero h1 { line-height: 1.25; font-size: clamp(29px, 4.1vw, 48px); }
+.dash-hero h1 { line-height: 1.25; font-size: clamp(27px, 3.6vw, 40px); }
 .dash-detail { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 9px; color: var(--ink); font-size: clamp(16px, 2vw, 20px); }
 .dash-outcome { color: var(--ink-2); max-inline-size: 43ch; }
 .dash-action { margin-block-start: 6px; }
@@ -16,34 +16,27 @@
 .dash-tool { display: flex; flex-direction: column; align-items: start; gap: 8px; }
 .dash-tool h2, .dash-directory .panel-head h2 { margin: 0; }
 .dash-tool p { color: var(--ink-2); font-size: 14px; flex: 1; }
-.dash-directory .panel-head { align-items: center; }
-.dash-directory .search-label { margin-block: 4px 8px; }
-.directory { color: var(--ink-2); }
-.directory > summary, .map-panel > summary { cursor: pointer; padding-block: 4px; color: var(--brand-ink); font-weight: 700; }
-.directory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-block-start: 8px; }
-.directory-island { background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; }
-.directory-island > summary { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 8px 10px; cursor: pointer; }
-.directory-island > summary::-webkit-details-marker { display: none; }
-.directory-island summary small { color: var(--muted); }
-.directory-island ul { list-style: none; padding: 4px 12px; margin: 0; }
-.directory-island li a { display: block; padding: 6px 0; font-size: 14px; }
-.directory-island li .level-chip { margin-inline-start: 7px; }
-.directory-link { display: inline-block; margin: 4px 12px 10px; font-size: 13px; font-weight: 700; }
+.dash-directory .panel-head { align-items: center; flex-wrap: wrap; gap: 8px 16px; }
+.roadmap-progress { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding: 10px 14px; margin-block: 12px; border-radius: 10px; background: var(--brand-soft); color: var(--brand-ink); }
+.roadmap-progress strong { font-size: .875rem; }
+.roadmap-progress progress { flex: 1 1 110px; background: var(--surface); }
+.roadmap-progress progress::-webkit-progress-bar { background: var(--surface); }
+.map-panel > summary { list-style: none; display: flex; align-items: center; gap: 7px; cursor: pointer; inline-size: fit-content; min-block-size: 38px; color: var(--brand-ink); font-weight: 700; font-size: .875rem; }
+.map-panel > summary::-webkit-details-marker { display: none; }
 .map-panel .map-host { margin-block-start: 12px; }
-.map-panel:not([open]) { padding-block: 12px; }
 
 @media (min-width: 1021px) {
   :root:has(.study-dashboard) .layout { display: block; }
   :root:has(.study-dashboard) .menu-toggle { display: inline-grid; }
   :root:has(.study-dashboard) .sidebar { display: none; }
-  :root:has(.study-dashboard) .sidebar.open { display: flex; position: fixed; z-index: 12; inset-inline-start: 0; inline-size: 300px; box-shadow: var(--shadow); }
+  :root:has(.study-dashboard) .sidebar.open { display: flex; position: fixed; z-index: 12; inset-inline-start: 0; inline-size: 320px; box-shadow: var(--shadow); }
   :root:has(.study-dashboard) .shade:not([hidden]) { display: block; position: fixed; inset: var(--head) 0 0; z-index: 11; border: 0; background: var(--scrim); }
 }
 :root:has(.study-dashboard) #hud { display: none; }
 @media (max-width: 600px) {
   .dash-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .dash-illustration { display: none; }
-  .dash-tools, .directory-grid { grid-template-columns: minmax(0, 1fr); }
+  .dash-tools { grid-template-columns: minmax(0, 1fr); }
 }
 
 .rank-row { display: flex; align-items: center; gap: 12px; }

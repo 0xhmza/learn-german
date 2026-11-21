@@ -49,6 +49,7 @@ export function validateContent(content) {
     islands.set(island.id, island);
     if (!PALETTES.has(island.palette)) fail(where, `unknown palette ${island.palette}`);
     for (const field of ['name', 'nickname', 'blurb']) for (const lang of LANGS) text(`${where}.${field}.${lang}`, island[field]?.[lang]);
+    if (/\p{Script=Arabic}|\p{Bidi_Control}/u.test(island.name?.de || '')) fail(where, 'German name must use left-to-right text');
     for (const layout of ['wide', 'tall']) {
       const point = island.pos?.[layout];
       if (!Array.isArray(point) || point.length !== 2 || !point.every(Number.isFinite)) fail(where, `pos.${layout} must be [x, y]`);
@@ -113,6 +114,7 @@ export function validateContent(content) {
       const at = `${where}.i18n.${lang}`;
       if (!t) { fail(at, 'missing'); continue; }
       for (const field of ['title', 'lead', 'pitfall']) text(`${at}.${field}`, t[field]);
+      if (lang === 'de' && /\p{Script=Arabic}|\p{Bidi_Control}/u.test(t.title || '')) fail(at, 'German title must use left-to-right text');
       if (!Array.isArray(t.steps) || t.steps.length !== stepCount) fail(at, `steps must have ${stepCount} entries`);
       else t.steps.forEach((step, i) => { text(`${at}.steps[${i}].text`, step.text); text(`${at}.steps[${i}].why`, step.why); });
       textList(`${at}.explain`, t.explain, 1, 3);
@@ -167,6 +169,26 @@ export function validateContent(content) {
       }
     });
   }
+
+  const bookOrder = new Set();
+  const chapterNumbers = [...levels.values()].flatMap(({ lektionen: [first, last] }) =>
+    Array.from({ length: last - first + 1 }, (_, i) => first + i));
+  if (!Array.isArray(content.roadmap) || content.roadmap.length !== chapterNumbers.length) fail('roadmap', 'must list every book chapter');
+  for (const [i, chapter] of (Array.isArray(content.roadmap) ? content.roadmap : []).entries()) {
+    const where = `roadmap chapter ${chapter?.chapter}`;
+    if (chapter?.chapter !== chapterNumbers[i]) fail(where, 'chapter is out of order');
+    text(`${where}.title`, chapter?.title);
+    if (!Array.isArray(chapter?.lessons) || !chapter.lessons.length) {
+      fail(where, 'must list its lessons in book order');
+      continue;
+    }
+    for (const id of chapter.lessons) {
+      if (lessons.get(id)?.source?.lektion !== chapter.chapter) fail(where, `${id} does not belong to this chapter`);
+      if (bookOrder.has(id)) fail(where, `${id} already appears in the roadmap`);
+      bookOrder.add(id);
+    }
+  }
+  for (const id of lessons.keys()) if (!bookOrder.has(id)) fail('roadmap', `missing lesson ${id}`);
 
   for (const island of islands.values()) {
     const own = [...lessons.values()].filter(lesson => lesson.island === island.id).map(lesson => lesson.order).sort((a, b) => a - b);

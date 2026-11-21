@@ -97,7 +97,7 @@ test('saved state is sanitized against the current content', () => {
   assert.equal(state.results['genitiv-1'].due, day);
   assert.deepEqual(Object.keys(state.runs), ['genitiv']);
   assert.equal(state.runs.genitiv.position, 0);
-  assert.deepEqual(state.settings, { levelFilter: 'all', dailyGoal: 30, reduceMotion: false });
+  assert.deepEqual(state.settings, { levelFilter: 'all', dailyGoal: 30, reduceMotion: false, roadmap: 'islands', hideCompleted: false });
   assert.equal(state.player.at, ctx.route.find(lesson => lesson.id !== 'genitiv').id);
   assert.equal(state.player.animate, false);
   assert.equal(normalizeState({ v: 99 }, ctx, day).v, 1);

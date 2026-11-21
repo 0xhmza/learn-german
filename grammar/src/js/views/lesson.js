@@ -1,9 +1,9 @@
 // Lesson page: rule at a glance, worked example, explanation, pitfall,
 // recall, table, sources and the "lesson learned" step.
 import { t, num, getLang } from '../i18n/index.js';
-import { localize, lessonTitle, islandName } from '../content.js';
+import { localize, lessonTitle, islandName, routeFor } from '../content.js';
 import { lessonStars, missingPrereqs, visitLesson } from '../engine/progress.js';
-import { esc, prose, germanLine, link, button, stars, levelChip, crumbs } from '../components/html.js';
+import { esc, prose, de, germanLine, link, button, stars, levelChip, crumbs } from '../components/html.js';
 
 let stepCount = 1;
 let lastLesson = '';
@@ -64,9 +64,12 @@ export function render(app, route) {
   const outcome = ctx.learning.outcomes?.[lesson.id]?.[lang];
   const island = ctx.islandById.get(lesson.island);
   const siblings = ctx.islandLessons(island.id);
-  const position = ctx.route.indexOf(lesson);
-  const prev = ctx.route[position - 1];
-  const next = ctx.route[position + 1];
+  const chapter = state.settings.roadmap === 'telc' && ctx.chapters.find(item => item.chapter === lesson.source.lektion);
+  const chapterLabel = chapter ? t('roadmapChapter', num(chapter.chapter)) : '';
+  const path = routeFor(ctx, 'all', state.settings.roadmap);
+  const position = path.indexOf(lesson);
+  const prev = path[position - 1];
+  const next = path[position + 1];
   const level = ctx.levelById.get(lesson.level);
   const missing = missingPrereqs(ctx, state, lesson);
   const sourceTitle = t('sourceLine', '`' + level.book + '`', num(lesson.source.lektion));
@@ -76,10 +79,13 @@ export function render(app, route) {
   const total = view.steps.length;
   if (state.completed[lesson.id]) stepCount = Math.max(stepCount, total);
 
-  return `${crumbs([['home', t('home')], [`island/${island.id}`, esc(islandName(island, lang))], [null, prose(view.title)]])}
+  const sectionCrumb = chapter
+    ? [null, `${chapterLabel} · ${de(chapter.title)}`]
+    : [`island/${island.id}`, esc(islandName(island, lang))];
+  return `${crumbs([['home', t('home')], sectionCrumb, [null, prose(view.title)]])}
     <section class="lesson-banner ${island.palette}">
       <div class="unit-head"><span class="lesson-emoji" aria-hidden="true">${lesson.emoji}</span>
-      <div><span class="lesson-count">${t('lessonOnIsland', num(lesson.order), num(siblings.length))}</span><h1>${prose(view.title)}</h1>
+      <div><span class="lesson-count">${chapter ? chapterLabel : t('lessonOnIsland', num(lesson.order), num(siblings.length))}</span><h1>${prose(view.title)}</h1>
         ${lang === 'ar' ? `<p class="lesson-german" lang="de" dir="ltr">${esc(lesson.german)}</p>` : ''}
         <div class="lesson-sub">${levelChip(lesson.level)} ${stars(lessonStars(state, lesson.id))}</div></div></div>
       ${missing.length ? `<p class="prereq-chip">${t('bestFirst')} ${missing.map(item => `<a href="#lesson/${item.id}">${prose(lessonTitle(item, lang))}</a>`).join(lang === 'ar' ? '، ' : ', ')}</p>` : ''}
