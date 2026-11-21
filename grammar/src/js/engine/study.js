@@ -5,6 +5,7 @@ import { nextLesson } from './progress.js';
 const NEW_CARDS = 2;
 export const DAILY_SIZE = 8;
 export const cardQuestionId = id => `card-${id}`;
+export const isGuidedRun = run => run.kind === 'lesson-practice' || run.kind === 'lesson-cards';
 
 export function cardQueue(ctx, state, day, filter, lessonId) {
   const seen = new Set([...Object.keys(state.completed), ...Object.keys(state.viewed || {})]);
@@ -44,7 +45,7 @@ export function dailyReview(ctx, state, day, filter = state.settings.levelFilter
 
 export function resumableRun(state, now = Date.now()) {
   return [state.runs[state.lastRun], ...Object.values(state.runs).reverse()]
-    .find(run => run && !run.finished && (run.mode !== 'test' || run.deadline > now));
+    .find(run => run && !isGuidedRun(run) && !run.finished && (run.mode !== 'test' || run.deadline > now));
 }
 
 export function recommendedLesson(ctx, state) {

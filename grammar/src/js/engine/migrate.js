@@ -18,6 +18,7 @@ export function defaultState(day) {
     completed: {},
     started: {},
     viewed: {},
+    lessonSlides: {},
     transfer: {},
     stars: {},
     lessonBonus: {},
@@ -78,6 +79,9 @@ export function normalizeState(raw, ctx, day) {
   }
   for (const [id, value] of Object.entries(plain(raw.viewed) ? raw.viewed : {})) {
     if (ctx.lessons.has(id) && isDay(value)) state.viewed[id] = value;
+  }
+  for (const [id, value] of Object.entries(plain(raw.lessonSlides) ? raw.lessonSlides : {})) {
+    if (ctx.lessons.has(id) && typeof value === 'string' && /^[a-z]+(?:-\d+)?$/.test(value)) state.lessonSlides[id] = value;
   }
   for (const [id, value] of Object.entries(plain(raw.transfer) ? raw.transfer : {})) {
     if (!ctx.transferQuestions.has(id) || !plain(value)) continue;

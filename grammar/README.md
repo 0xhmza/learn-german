@@ -37,6 +37,8 @@ Progress is stored in the browser (`localStorage`), including unfinished practic
 
 The dashboard and sidebar let you switch between grammar islands and the order of the telc books *Auf jeden Fall! Deutsch B1.1* and *B1.2*. Both views share the same progress. The hide-completed filter applies to the topic lists and island trails.
 
+Each lesson opens as a slide sequence with an outline and inline exercises and flashcards. Your place in the lesson and in each activity is saved. The shortcuts in the lesson header open the separate practice and flashcard views.
+
 ## Commands
 
 | Command | What it does |

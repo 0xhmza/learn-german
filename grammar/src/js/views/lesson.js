@@ -1,182 +1,176 @@
-// Lesson page: rule at a glance, worked example, explanation, pitfall,
-// recall, table, sources and the "lesson learned" step.
 import { t, num, getLang } from '../i18n/index.js';
 import { localize, lessonTitle, islandName, routeFor } from '../content.js';
 import { lessonStars, missingPrereqs, visitLesson } from '../engine/progress.js';
-import { esc, prose, de, germanLine, link, button, stars, levelChip, crumbs } from '../components/html.js';
+import { lessonRunKey } from '../engine/runs.js';
+import { esc, prose, de, germanLine, link, button, meter, stars, levelChip, crumbs } from '../components/html.js';
+import * as quiz from './quiz.js';
 
-let stepCount = 1;
-let lastLesson = '';
+export const title = (app, route) => lessonTitle(app.ctx.lessons.get(route.key), getLang());
 
-export function title(app, route) {
-  return lessonTitle(app.ctx.lessons.get(route.key), getLang());
-}
-
-function renderGlance(lesson) {
+function renderGlance(lesson, lang) {
   const roles = t('roles');
   const pattern = `<div class="glance-formula"><h3 class="label">${t('formula')}</h3><div class="pattern" lang="de" dir="ltr">${lesson.pattern.map(token =>
-    ['+', ',', '·', '…', '→'].includes(token) ? `<span class="op" aria-hidden="true">${esc(token)}</span>` : `<span class="chip">${esc(token)}</span>`).join('')}</div></div>`;
-  const frames = `<div class="glance-structure"><h3 class="label">${t('structure')}</h3><div class="frames">${lesson.frames.map(frame => `
+    ['+', ',', '·', '…', '→'].includes(token) ? `<span class="op">${esc(token)}</span>` : `<span class="chip">${esc(token)}</span>`).join('')}</div></div>`;
+  return `<div class="glance">${pattern}<div class="glance-structure">
+    <h3 class="label">${t('structure')}</h3><div class="frames">${lesson.frames.map(frame => `
     <div class="frame"><span class="frame-kind">${t('kinds')[frame.k]}</span>
-      <div class="slots" lang="de" dir="ltr">${frame.parts.map(([role, text]) => `<span class="slot ${role}"><b>${esc(text)}</b>${roles[role] ? `<i lang="${getLang()}" dir="${getLang() === 'ar' ? 'rtl' : 'ltr'}">${roles[role]}</i>` : ''}</span>`).join('')}</div></div>`).join('')}
-    </div><p class="frames-hint">${t('framesHint')}</p></div>`;
-  return `<section class="panel glance" aria-labelledby="glance-title">
-    <h2 class="icon-heading" id="glance-title"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6m-6 4h6m-6 4h3"/></svg>${t('glance')}</h2>
-    ${pattern}${frames}</section>`;
+      <div class="slots" lang="de" dir="ltr">${frame.parts.map(([role, text]) => `<span class="slot ${role}"><b>${esc(text)}</b>${roles[role] ? `<i lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">${roles[role]}</i>` : ''}</span>`).join('')}</div></div>`).join('')}
+    </div><p class="frames-hint">${t('framesHint')}</p></div></div>`;
 }
 
 function wrongRight(pair) {
-  const [wrong, right] = String(pair).split(' → ');
+  const [wrong, right] = pair.split(' → ');
   return `<div class="wr" lang="de" dir="ltr">
     <div class="no"><span class="mark" aria-hidden="true">✗</span><span class="sr-only" lang="${getLang()}">${t('wrong')}</span><span>${esc(wrong)}</span></div>
     <div class="yes"><span class="mark" aria-hidden="true">✓</span><span class="sr-only" lang="${getLang()}">${t('right')}</span><span>${esc(right)}</span></div></div>`;
 }
 
 function renderTable([headers, ...rows]) {
-  return `<section class="panel table-panel"><h2>${t('tableTitle')}</h2><p class="table-help">${t('tableHelp')}</p><div class="table-wrap" tabindex="0" role="region" aria-label="${t('tableLabel')}">
+  return `<p class="table-help">${t('tableHelp')}</p><div class="table-wrap" tabindex="0" role="region" aria-label="${t('tableLabel')}">
     <table><thead><tr>${headers.map(cell => `<th scope="col">${prose(cell)}</th>`).join('')}</tr></thead>
-    <tbody>${rows.map(([label, ...cells]) => `<tr><th scope="row">${prose(label)}</th>${cells.map(cell => `<td>${prose(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table>
-    </div></section>`;
+    <tbody>${rows.map(([label, ...cells]) => `<tr><th scope="row">${prose(label)}</th>${cells.map(cell => `<td>${prose(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
 }
 
-function finishBar(app, lesson, total) {
-  const viewed = Boolean(app.state.viewed[lesson.id]);
-  const ready = stepCount >= total;
-  return `<section class="finish-bar lesson-finish ${viewed ? 'done' : ''}" id="finish">
-    ${viewed ? `<p><strong>${t('viewed')}</strong></p>` : `<p id="finish-hint" ${ready ? 'hidden' : ''}>${t('finishHint')}</p>`}
-    <div class="actions">
-      ${button('run', t('quickPractice'), 'primary', `data-key="quick-${lesson.id}"`)}
-      ${viewed ? '' : button('finish', t('markViewed'), 'secondary', ready ? '' : 'disabled')}
-    </div></section>`;
+function sources(ctx, lesson, view) {
+  const book = ctx.levelById.get(lesson.level).book;
+  return `<details class="sources"><summary>${t('sources')}</summary>
+    <p><strong>${prose(t('sourceLine', '`' + book + '`', num(lesson.source.lektion)))}</strong></p>
+    <p>${t(lesson.source.kind === 'sample' ? 'sourceSample' : 'sourceToc')} ${t('sourceOriginal')}</p>
+    <ul>${view.links.map(([label, url]) => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${prose(label)}</a></li>`).join('')}</ul>
+  </details>`;
+}
+
+function finish(app, lesson, view) {
+  const { ctx, state } = app;
+  const path = routeFor(ctx, 'all', state.settings.roadmap);
+  const index = path.indexOf(lesson);
+  const previous = path[index - 1];
+  const next = path[index + 1];
+  return `<p>${t(state.viewed[lesson.id] ? 'viewed' : 'guideFinishHint')}</p>
+    ${state.viewed[lesson.id] ? '' : `<div class="actions">${button('finish', t('markViewed'), 'primary')}</div>`}
+    <nav class="lesson-nav" aria-label="${t('lessonNav')}">
+      ${previous ? link(`lesson/${previous.id}`, t('prevLesson')) : link(`island/${lesson.island}`, t('backToIsland'))}
+      ${next ? link(`lesson/${next.id}`, t('nextLesson')) : link('practice', t('toPractice'))}
+    </nav>${sources(ctx, lesson, view)}`;
+}
+
+function lessonSlides(app, lesson, view, lang) {
+  const { ctx, state } = app;
+  const outcome = ctx.learning.outcomes?.[lesson.id]?.[lang];
+  const study = ctx.lessonStudy.get(lesson.id);
+  const missing = missingPrereqs(ctx, state, lesson);
+  const slides = [
+    ['intro', t('guideIntro'), () => `
+      ${outcome ? `<p class="slide-outcome">${prose(outcome)}</p>` : ''}
+      <p>${prose(view.lead)}</p>
+      <div class="example">${germanLine(lesson.example)}${lang === 'de' ? `<span class="tr-label">${t('inArabic')}</span>` : ''}
+        <p lang="ar" dir="rtl">${esc(view.translation)}</p></div>
+      ${missing.length ? `<p class="prereq-chip">${t('bestFirst')} ${missing.map(item => `<a href="#lesson/${item.id}">${prose(lessonTitle(item, lang))}</a>`).join(lang === 'ar' ? '، ' : ', ')}</p>` : ''}`],
+    ['rule', t('glance'), () => renderGlance(lesson, lang)],
+    ...view.steps.map((step, i) => [`step-${i + 1}`, step.text, () => `
+      <div class="example">${germanLine(step.example)}</div><p>${prose(step.why)}</p>`]),
+    ['details', t('detail'), () => `${view.explain.map(p => `<p>${prose(p)}</p>`).join('')}
+      <details class="slide-recap"><summary>${t('recall')}</summary><p>${prose(view.recall[0])}</p>
+        <details><summary>${t('showAnswer')}</summary><p>${prose(view.recall[1])}</p></details></details>`],
+    ['pitfall', t('pitfall'), () => wrongRight(lesson.pitfallPair) + `<p>${prose(view.pitfall)}</p>`]
+  ];
+  if (view.table) slides.push(['table', t('tableTitle'), () => renderTable(view.table)]);
+  if (study) slides.push(['example', t('lessonWorked'), () => `<div class="example">${germanLine(study.correct)}</div><p>${prose(study[lang])}</p>
+    <div class="actions">${button('run', t('lessonApply'), 'secondary', `data-key="apply-${lesson.id}"`)}</div>`]);
+  slides.push(['practice', t('tabPractice')]);
+  if (ctx.decks.has(lesson.id)) slides.push(['cards', t('cardsTitle')]);
+  slides.push(['finish', t('guideFinish'), () => finish(app, lesson, view)]);
+  return slides;
+}
+
+const slideButton = (slide, label, style = 'secondary', attrs = '') =>
+  button('lesson-slide', label, style, `data-slide="${slide}" ${attrs}`);
+
+function slideNavigation(slides, index, phase, finished) {
+  const previous = slides[index - 1];
+  const next = slides[index + 1];
+  return `<nav class="slide-footer" aria-label="${t('guideNav')}">
+    ${previous ? slideButton(previous[0], phase ? prose(previous[1]) : t('guideBack'), 'secondary', 'data-deck-back') : '<span></span>'}
+    ${next ? slideButton(next[0], phase || ['practice', 'cards', 'finish'].includes(next[0]) ? esc(next[1]) : t('guideNext'),
+      phase && !finished ? 'secondary' : 'primary', 'data-deck-next') : ''}
+  </nav>`;
 }
 
 export function render(app, route) {
   const { ctx, state } = app;
   const lang = getLang();
   const lesson = ctx.lessons.get(route.key);
-  if (lastLesson !== lesson.id) {
-    stepCount = 1;
-    lastLesson = lesson.id;
-  }
   if (!app.redrawing && (state.lastLesson !== lesson.id || state.player.at !== lesson.id)) app.store.update(s => visitLesson(s, lesson.id));
   const view = localize(lesson, lang);
-  const study = ctx.lessonStudy.get(lesson.id);
-  const outcome = ctx.learning.outcomes?.[lesson.id]?.[lang];
   const island = ctx.islandById.get(lesson.island);
-  const siblings = ctx.islandLessons(island.id);
+  const slides = lessonSlides(app, lesson, view, lang);
+  const index = Math.max(0, slides.findIndex(([id]) => id === state.lessonSlides[lesson.id]));
+  const [id, label, body] = slides[index];
+  const phase = lessonRunKey(lesson.id, id);
   const chapter = state.settings.roadmap === 'telc' && ctx.chapters.find(item => item.chapter === lesson.source.lektion);
-  const chapterLabel = chapter ? t('roadmapChapter', num(chapter.chapter)) : '';
-  const path = routeFor(ctx, 'all', state.settings.roadmap);
-  const position = path.indexOf(lesson);
-  const prev = path[position - 1];
-  const next = path[position + 1];
-  const level = ctx.levelById.get(lesson.level);
-  const missing = missingPrereqs(ctx, state, lesson);
-  const sourceTitle = t('sourceLine', '`' + level.book + '`', num(lesson.source.lektion));
-  const translation = lang === 'de'
-    ? `<span class="tr-label">${t('inArabic')}</span><p lang="ar" dir="rtl">${esc(view.translation)}</p>`
-    : `<p>${prose(view.translation)}</p>`;
-  const total = view.steps.length;
-  if (state.completed[lesson.id]) stepCount = Math.max(stepCount, total);
-
-  const sectionCrumb = chapter
-    ? [null, `${chapterLabel} · ${de(chapter.title)}`]
+  const section = chapter ? [null, `${t('roadmapChapter', num(chapter.chapter))} · ${de(chapter.title)}`]
     : [`island/${island.id}`, esc(islandName(island, lang))];
-  return `${crumbs([['home', t('home')], sectionCrumb, [null, prose(view.title)]])}
-    <section class="lesson-banner ${island.palette}">
-      <div class="unit-head"><span class="lesson-emoji" aria-hidden="true">${lesson.emoji}</span>
-      <div><span class="lesson-count">${chapter ? chapterLabel : t('lessonOnIsland', num(lesson.order), num(siblings.length))}</span><h1>${prose(view.title)}</h1>
-        ${lang === 'ar' ? `<p class="lesson-german" lang="de" dir="ltr">${esc(lesson.german)}</p>` : ''}
-        <div class="lesson-sub">${levelChip(lesson.level)} ${stars(lessonStars(state, lesson.id))}</div></div></div>
-      ${missing.length ? `<p class="prereq-chip">${t('bestFirst')} ${missing.map(item => `<a href="#lesson/${item.id}">${prose(lessonTitle(item, lang))}</a>`).join(lang === 'ar' ? '، ' : ', ')}</p>` : ''}
-      ${outcome ? `<p class="lead lesson-outcome"><strong>${t('learningGoal')}</strong> ${prose(outcome)}</p>` : ''}
-      <p class="lead">${prose(view.lead)}</p>
-      <div class="actions">${button('run', t('lessonPractice', num(lesson.questions.length)), 'secondary', `data-key="${lesson.id}"`)}
-        ${ctx.decks.has(lesson.id) ? link(`cards/${lesson.id}`, t('cardsTitle')) : ''}
-        ${state.viewed[lesson.id] ? `<span class="learned-chip">${t('viewed')}</span>` : ''}</div>
-    </section>
-    ${renderGlance(lesson)}
-    <div class="lesson-body">
-      <section class="panel">
-        <div class="panel-head"><h2>${t('stepByStep')}</h2><span class="step-count" id="step-count">${t('stepOf', num(Math.min(stepCount, total)), num(total))}</span></div>
-        <div class="example">${germanLine(lesson.example)}${translation}</div>
-        <ol class="steps" id="lesson-steps">${view.steps.map((step, i) => `
-          <li class="step" ${i >= stepCount ? 'hidden' : ''}>
-            <span class="step-num" aria-hidden="true">${num(i + 1)}</span>
-            <div><h3>${prose(step.text)}</h3>${germanLine(step.example)}<p>${prose(step.why)}</p></div>
-          </li>`).join('')}</ol>
-        <div class="actions" id="step-controls" ${stepCount >= total ? 'hidden' : ''}>
-          ${button('step', t('nextStep'), 'primary', `title="${t('keyHint')}"`)}${button('all-steps', t('allSteps'))}
+  const groups = [['intro', t('guideLearn')], ...slides.filter(([key]) => ['practice', 'cards', 'finish'].includes(key))];
+  const currentGroup = phase || id === 'finish' ? id : 'intro';
+  const position = t('guidePosition', num(index + 1), num(slides.length));
+
+  return `${crumbs([['home', t('home')], section])}
+    <div class="lesson-deck">
+      <header class="deck-header ${island.palette}">
+        <div><div class="deck-meta">${levelChip(lesson.level)} ${stars(lessonStars(state, lesson.id))}</div>
+          <h1>${prose(view.title)}</h1>
+          ${lang === 'ar' ? `<p class="lesson-german" lang="de" dir="ltr">${esc(lesson.german)}</p>` : ''}</div>
+        <div class="deck-shortcuts" role="group" aria-label="${t('guideShortcuts')}">
+          ${button('run', t('guideOpenPractice'), 'secondary', `data-key="${lesson.id}"`)}
+          ${ctx.decks.has(lesson.id) ? link(`cards/${lesson.id}`, t('openDeck')) : ''}
         </div>
-        <p class="sr-only" id="step-status" aria-live="polite"></p>
-        ${finishBar(app, lesson, total)}
-      </section>
-      <div class="lesson-side">
-        <section class="panel reading"><h2>${t('detail')}</h2>${view.explain.map(p => `<p>${prose(p)}</p>`).join('')}</section>
-        <section class="panel pitfall"><h2>⚠ ${t('pitfall')}</h2>${wrongRight(lesson.pitfallPair)}<p>${prose(view.pitfall)}</p></section>
-        <details class="panel recall"><summary>${t('recall')}</summary>
-          <p>${prose(view.recall[0])}</p><details><summary>${t('showAnswer')}</summary><p>${prose(view.recall[1])}</p></details>
-        </details>
+      </header>
+      <nav class="deck-phases" aria-label="${t('guideNav')}">${groups.map(([key, text]) =>
+        slideButton(key, esc(text), 'quiet', currentGroup === key ? 'aria-current="step"' : '')).join('')}</nav>
+      <div class="deck-progress">
+        <span>${position}</span>${meter(index + 1, slides.length, position)}
+        <details class="deck-outline"><summary>${t('guideOutline')}</summary><ol>${slides.map(([key, text]) => `<li>
+          ${slideButton(key, prose(text), 'quiet', key === id ? 'aria-current="step"' : '')}</li>`).join('')}</ol></details>
       </div>
-    </div>
-    ${view.table ? renderTable(view.table) : ''}
-    ${study ? `<section class="panel lesson-depth" aria-labelledby="depth-title">
-      <div><h2 id="depth-title">${t('lessonDepth')}</h2><p>${prose(study[lang])}</p></div>
-      <div><h3>${t('lessonWorked')}</h3>${germanLine(study.correct)}
-        <div class="actions study-actions">${button('run', t('lessonApply'), 'secondary', `data-key="apply-${lesson.id}"`)}</div></div>
-    </section>` : ''}
-    <details class="panel sources"><summary>${t('sources')}</summary>
-      <p><strong>${prose(sourceTitle)}</strong></p>
-      <p>${lesson.source.kind === 'sample' ? t('sourceSample') : t('sourceToc')} ${t('sourceOriginal')}</p>
-      <ul>${view.links.map(([label, url]) => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${prose(label)} ↗</a></li>`).join('')}</ul>
-    </details>
-    <nav class="lesson-nav" aria-label="${t('lessonNav')}">${prev ? link(`lesson/${prev.id}`, t('prevLesson')) : link(`island/${island.id}`, t('backToIsland'))}
-      ${next ? link(`lesson/${next.id}`, t('nextLesson'), 'primary') : link('practice', t('toPractice'), 'primary')}</nav>`;
+      <article class="deck-slide panel ${id === 'pitfall' ? 'pitfall' : ''}" data-lesson-slide="${id}">
+        ${phase ? quiz.render(app, { key: phase }, true) : `<h2 id="slide-title" tabindex="-1">${prose(label)}</h2><div class="slide-body">${body()}</div>`}
+      </article>
+      ${slideNavigation(slides, index, phase, state.runs[phase]?.finished)}
+    </div>`;
 }
 
-function revealSteps(app, all, source) {
-  const steps = [...document.querySelectorAll('.step')];
-  const old = stepCount;
-  stepCount = Math.min(steps.length, all ? steps.length : stepCount + 1);
-  steps.slice(old, stepCount).forEach(element => {
-    element.hidden = false;
-    element.classList.add('enter');
-  });
-  const controls = document.querySelector('#step-controls');
-  controls.hidden = stepCount >= steps.length;
-  document.querySelector('#step-count').textContent = t('stepOf', num(stepCount), num(steps.length));
-  document.querySelector('#step-status').textContent = t('stepsShown', num(stepCount), num(steps.length));
-  if (stepCount >= steps.length) {
-    const finish = document.querySelector('[data-action="finish"]');
-    if (finish) finish.disabled = false;
-    const hint = document.querySelector('#finish-hint');
-    if (hint) hint.hidden = true;
-  }
-  if (!all) steps[stepCount - 1]?.scrollIntoView({ block: 'nearest', behavior: app.reduceMotion() ? 'auto' : 'smooth' });
-  if (controls.hidden && source) {
-    steps[old]?.setAttribute('tabindex', '-1');
-    steps[old]?.focus({ preventScroll: true });
-  }
+function focusSlide() {
+  document.querySelector('#slide-title, #quiz-prompt, #phase-result')?.focus();
 }
 
 export const actions = {
-  step: (app, target) => revealSteps(app, false, target),
-  'all-steps': (app, target) => revealSteps(app, true, target),
-  finish(app) {
-    const id = app.route.key;
-    app.apply([{ kind: 'lessonLearned', lesson: id }]);
+  ...quiz.actions,
+  'lesson-slide'(app, target) {
+    app.store.update(state => { state.lessonSlides[app.route.key] = target.dataset.slide; });
     app.rerender();
-    document.querySelector('#finish')?.scrollIntoView({ block: 'nearest' });
-    document.querySelector('#finish button')?.focus({ preventScroll: true });
+    if (!app.reduceMotion()) document.querySelector('.deck-slide')?.classList.add('slide-enter');
+    focusSlide();
+  },
+  finish(app) {
+    app.apply([{ kind: 'lessonLearned', lesson: app.route.key }]);
+    app.rerender();
+    focusSlide();
   }
 };
 
+export const onInput = quiz.onInput;
+
 export function onKey(app, event) {
+  quiz.onKey(app, event);
+  if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey
+    || event.target.closest('a,button,input,textarea,select,summary,[tabindex="0"],#sidebar')
+    || lessonRunKey(app.route.key, app.state.lessonSlides[app.route.key])) return;
   const forward = getLang() === 'ar' ? 'ArrowLeft' : 'ArrowRight';
-  if (![forward, ' '].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey) return;
-  if (event.target.closest('a,button,input,textarea,select,summary,[tabindex="0"]')) return;
-  if (stepCount < document.querySelectorAll('.step').length) {
+  const backward = forward === 'ArrowLeft' ? 'ArrowRight' : 'ArrowLeft';
+  const target = event.key === forward ? '[data-deck-next]' : event.key === backward ? '[data-deck-back]' : null;
+  const control = target && document.querySelector(target);
+  if (control) {
     event.preventDefault();
-    revealSteps(app, false);
+    control.click();
   }
 }

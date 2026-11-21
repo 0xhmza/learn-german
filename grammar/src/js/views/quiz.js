@@ -3,9 +3,9 @@
 import { t, num, getLang } from '../i18n/index.js';
 import { localizeQuestion, lessonTitle, islandName } from '../content.js';
 import { isCorrect, answered, blankCorrect, model } from '../engine/grading.js';
-import { newRun, permutation, runScore, passMark, isRunValid } from '../engine/runs.js';
+import { newRun, permutation, runScore, passMark, isRunValid, lessonRunKey } from '../engine/runs.js';
 import { lessonStars, pendingErrors } from '../engine/progress.js';
-import { dailyReview } from '../engine/study.js';
+import { dailyReview, isGuidedRun } from '../engine/study.js';
 import { esc, de, prose, germanLine, link, button, stars, crumbs, formatDay } from '../components/html.js';
 
 let hintCount = 0;
@@ -22,6 +22,7 @@ export function runTitle(app, run) {
   if (run.kind === 'mistakes') return t('mistakesName');
   if (run.kind === 'review') return t('reviewName');
   if (run.kind === 'daily') return t('reviewToday');
+  if (run.kind === 'lesson-cards') return t('cardsTitle');
   if (run.kind === 'quick') return t('quickPractice');
   if (run.kind === 'write') return t('realLifeTask');
   if (run.kind === 'repair') return t('missedLesson');
@@ -39,7 +40,7 @@ function getRun(app, key) {
     const created = newRun(app.ctx, state, key, { day: app.day() });
     if (created) {
       state.runs[key] = created;
-      state.lastRun = key;
+      if (!isGuidedRun(created)) state.lastRun = key;
     } else delete state.runs[key];
     return created;
   });
@@ -60,14 +61,21 @@ export function title(app, route) {
   return run ? runTitle(app, run) : t('practice');
 }
 
-export function render(app, route) {
+export function render(app, route, embedded = false) {
   const run = getRun(app, route.key);
   if (!run) {
+    if (embedded) return `<p class="notice">${t('noQuestions')}</p>`;
     return `${crumbs([['practice', t('practice')]])}<section class="panel"><h1>${t('noQuestions')}</h1><p>${t('noQuestionsText')}</p>
       <div class="actions" style="margin-top:12px">${link('practice', t('allPractice'))}</div></section>`;
   }
   if (!run.finished && run.mode === 'test' && Date.now() >= run.deadline) submit(app, run);
-  if (run.finished) return renderResults(app, run);
+  if (run.finished) {
+    if (!embedded) return renderResults(app, run);
+    const { correct, total } = runScore(run);
+    return `<div class="phase-result"><h2 id="phase-result" tabindex="-1">${t(run.kind === 'lesson-cards' ? 'cardsComplete' : 'guidePracticeDone')}</h2>
+      <p>${t(run.kind === 'lesson-cards' ? 'cardsResult' : 'guideScore', num(correct), num(total))}</p>
+      ${button('restart', t('newRun'))}</div>`;
+  }
   const q = question(app, run);
   if (shownQuestion !== q.id) {
     shownQuestion = q.id;
@@ -80,18 +88,19 @@ export function render(app, route) {
   const previous = run.position > 0;
   const last = run.position === run.ids.length - 1;
   const hintText = q.hints[hintCount - 1];
-  const name = runTitle(app, run);
+  const name = embedded ? t(q.card ? 'cardsTitle' : 'tabPractice') : prose(runTitle(app, run));
   const retry = grade === false && retryQuestion(app.ctx, run, q);
   const due = q.transfer ? app.state.transfer[q.lesson]?.due : q.card ? app.state.cards[q.card]?.due : app.state.results[q.id]?.due;
-  return `${crumbs([['practice', t('practice')], [null, prose(name)]])}
-    <section class="quiz-box" aria-labelledby="quiz-heading">
-      <div class="quiz-meta"><strong id="quiz-heading">${prose(name)}</strong>
-        <span>${t('questionOf', num(run.position + 1), num(run.ids.length))}</span>
+  const heading = embedded ? 'h2' : 'h1';
+  return `${embedded ? '' : crumbs([['practice', t('practice')], [null, name]])}
+    <section class="${embedded ? 'lesson-quiz' : 'quiz-box'}" aria-labelledby="quiz-heading">
+      <div class="quiz-meta"><strong id="quiz-heading">${name}</strong>
+        <span>${t(embedded && q.card ? 'cardOf' : 'questionOf', num(run.position + 1), num(run.ids.length))}</span>
         ${run.mode === 'test' ? `<span id="timer" class="timer" role="timer" dir="ltr" aria-label="${t('timeLeft')}"></span>` : ''}</div>
       <progress value="${run.position + 1}" max="${run.ids.length}" aria-label="${t('position')}"></progress>
-      <div class="quiz-meta"><span class="quiz-type">${q.transfer ? t('transferPractice') : q.card ? t('cardsTitle') : `${t('kindLabels')[q.type]} · ${t('difficulty')[q.difficulty]}`}</span>
+      ${embedded ? '' : `<div class="quiz-meta"><span class="quiz-type">${q.transfer ? t('transferPractice') : q.card ? t('cardsTitle') : `${t('kindLabels')[q.type]} · ${t('difficulty')[q.difficulty]}`}</span>
       ${!graded ? `<a href="#lesson/${lesson.id}">${prose(lessonTitle(lesson, getLang()))} ↗</a>` : ''}</div>
-      <h1 class="quiz-prompt" id="quiz-prompt" tabindex="-1">${prose(q.prompt)}</h1>
+      `}<${heading} class="quiz-prompt" id="quiz-prompt" tabindex="-1">${prose(q.prompt)}</${heading}>
       ${q.context ? `<div class="example">${germanLine(q.context)}</div>` : ''}
       ${renderInput(run, q, run.answers[q.id], checked || grade === 'shown', checked)}
       <div id="quiz-status" class="sr-only" aria-live="polite"></div>
@@ -229,8 +238,8 @@ function addXp(run, notes) {
 // Practice run reached its end.
 function finishPractice(app, run) {
   run.finished = true;
-  if (run.kind === 'lesson') {
-    const coreIds = run.ids.filter(id => !run.retryIds?.includes(id));
+  if (run.kind === 'lesson' || run.kind === 'lesson-practice') {
+    const coreIds = run.ids.filter(id => id !== `apply-${run.target}` && !run.retryIds?.includes(id));
     const correct = coreIds.filter(id => run.grades[id] === true).length;
     const total = coreIds.length;
     addXp(run, app.apply([{ kind: 'lessonRun', lesson: run.target, correct, total }]));
@@ -289,7 +298,7 @@ function moveQuestion(app, run, delta) {
     if (run.mode === 'practice') {
       finishPractice(app, run);
       app.rerender({ keepScroll: false });
-      document.querySelector('#main').focus({ preventScroll: true });
+      (document.querySelector('#phase-result') || document.querySelector('#main')).focus({ preventScroll: !isGuidedRun(run) });
     }
     return;
   }
@@ -297,7 +306,7 @@ function moveQuestion(app, run, delta) {
   hintCount = 0;
   save(app);
   app.rerender({ keepScroll: false });
-  document.querySelector('#quiz-prompt')?.focus({ preventScroll: true });
+  document.querySelector('#quiz-prompt')?.focus({ preventScroll: !isGuidedRun(run) });
 }
 
 function changeAnswer(app, run, q, value) {
@@ -306,8 +315,11 @@ function changeAnswer(app, run, q, value) {
   save(app);
 }
 
+const currentKey = ({ route, state }) => route.view === 'lesson'
+  ? lessonRunKey(route.key, state.lessonSlides[route.key]) : route.key;
+
 const active = app => {
-  const run = app.state.runs[app.route.key];
+  const run = app.state.runs[currentKey(app)];
   return run && !run.finished ? run : null;
 };
 
@@ -315,13 +327,14 @@ function grade(app, run, q, correct) {
   run.grades[q.id] = correct;
   const raw = app.ctx.questions.get(q.id);
   addXp(run, app.apply([{ kind: 'answer', q: raw, correct, hinted: Boolean(run.hinted[q.id]), review: ['review', 'daily'].includes(run.kind) }]));
+  if (run.kind === 'lesson-cards' && app.route.view === 'lesson') return moveQuestion(app, run, 1);
   app.rerender();
   document.querySelector('#feedback')?.focus({ preventScroll: false });
 }
 
 export const actions = {
   restart(app) {
-    const key = app.route.key;
+    const key = currentKey(app);
     app.store.update(state => {
       const run = newRun(app.ctx, state, key, { day: app.day() });
       if (run) state.runs[key] = run;
@@ -329,6 +342,7 @@ export const actions = {
     });
     hintCount = 0;
     app.rerender({ keepScroll: false });
+    if (app.route.view === 'lesson') document.querySelector('#quiz-prompt')?.focus();
   },
   'q-prev': app => { const run = active(app); if (run) moveQuestion(app, run, -1); },
   'q-next': app => { const run = active(app); if (run) moveQuestion(app, run, 1); },

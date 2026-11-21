@@ -103,6 +103,30 @@ test('the dashboard lists every island and every lesson', () => {
   for (const item of ctx.islands) assert.ok(html.includes(`#island/${item.id}"`), item.id);
 });
 
+test('the lesson renders only the saved slide and opens each activity in the deck', () => {
+  setLang('de');
+  const ctx = context();
+  const state = freshState(ctx, day);
+  const app = fakeApp(ctx, state);
+  const route = parse('#lesson/genitiv', ctx);
+  app.route = route;
+  const intro = lesson.render(app, route);
+  assert.match(intro, /data-lesson-slide="intro"/);
+  assert.doesNotMatch(intro, /class="wr"|id="quiz-prompt"|<table>/);
+  assert.match(intro, /href="#cards\/genitiv"/);
+  state.lessonSlides.genitiv = 'practice';
+  const practice = lesson.render(app, route);
+  assert.match(practice, /class="lesson-quiz"/);
+  assert.equal(state.runs['lesson-practice-genitiv'].ids.length, ctx.lessons.get('genitiv').questions.length + 1);
+  assert.equal(state.runs.genitiv, undefined);
+  state.lessonSlides.genitiv = 'cards';
+  const cards = lesson.render(app, route);
+  assert.match(cards, /Karte 1 von 3/);
+  assert.doesNotMatch(cards, /<textarea|type="radio"|data-blank/);
+  assert.equal(state.lastRun, null);
+  assert.deepEqual(state.runs['lesson-cards-genitiv'].ids, ctx.decks.get('genitiv').map(card => `card-${card.id}`));
+});
+
 test('the map marks conquered islands and places the boat', () => {
   setLang('ar');
   const ctx = context();

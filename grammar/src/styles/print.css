@@ -5,10 +5,9 @@
   .layout { display: block; }
   main { padding: 0; }
   body { padding: 0; }
-  .lesson-body, .lesson-side { display: block; }
+  .deck-phases, .deck-progress, .deck-shortcuts, .slide-footer { display: none !important; }
   .panel { margin: 10px 0; box-shadow: none; }
-  .step[hidden] { display: grid !important; }
-  details.sources, details.recall { display: block; }
+  details.sources, details.slide-recap { display: block; }
   .lesson-banner, .panel { border-color: #ccc; background: #fff; }
-  .step, .pitfall, .glance { break-inside: avoid; }
+  .pitfall, .glance { break-inside: avoid; }
 }

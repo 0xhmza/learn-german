@@ -45,7 +45,6 @@
 .finish-bar p { color: var(--muted); font-size: 14px; }
 .finish-bar.done { background: var(--good-bg); border-color: var(--good-line); }
 .finish-bar.done strong { color: var(--good); }
-.lesson-finish, .lesson-finish.done { background: transparent; }
 .lesson-evidence { padding-block: 9px; border-block-end: 1px solid var(--line); }
 .lesson-evidence p { color: var(--muted); font-size: 13px; }
 .table-panel { margin-top: 15px; }

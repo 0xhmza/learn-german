@@ -2,12 +2,13 @@
 import { inFilter } from '../content.js';
 import { pendingErrors } from './progress.js';
 import { dueIds } from './srs.js';
-import { dailyReview } from './study.js';
+import { cardQuestionId, dailyReview } from './study.js';
 
 export const TEST_MINUTES = 20;
 export const MAX_REVIEW = 20;
 export const examSize = lessonCount => Math.max(8, Math.min(12, 2 * lessonCount));
 export const passMark = total => Math.ceil(0.8 * total);
+export const lessonRunKey = (id, slide) => ['practice', 'cards'].includes(slide) ? `lesson-${slide}-${id}` : null;
 
 export function shuffle(items, rng = Math.random) {
   const result = [...items];
@@ -25,6 +26,8 @@ export function parseRunKey(ctx, key) {
   const scoped = /^(quick|repair|write)-(.+)$/.exec(key || '');
   if (scoped?.[1] === 'write' && !ctx.questions.has(key)) return null;
   if (scoped && ctx.lessons.has(scoped[2])) return { kind: scoped[1], id: scoped[2] };
+  const guided = /^(lesson-practice|lesson-cards)-(.+)$/.exec(key || '');
+  if (guided && ctx.lessons.has(guided[2])) return { kind: guided[1], id: guided[2] };
   const island = /^(island|exam)-(.+)$/.exec(key || '');
   if (island && ctx.islandById.has(island[2])) return { kind: island[1], id: island[2] };
   if (['mixed', 'test', 'mistakes', 'review', 'daily'].includes(key)) return { kind: key, id: null };
@@ -75,6 +78,11 @@ export function newRun(ctx, state, key, { rng = Math.random, day, now = Date.now
   if (!parsed) return null;
   let ids = [];
   if (parsed.kind === 'lesson') ids = ctx.lessons.get(parsed.id).questions.map(q => q.id);
+  if (parsed.kind === 'lesson-practice') {
+    ids = ctx.lessons.get(parsed.id).questions.map(q => q.id);
+    if (ctx.lessonStudy.has(parsed.id)) ids.push(`apply-${parsed.id}`);
+  }
+  if (parsed.kind === 'lesson-cards') ids = (ctx.decks.get(parsed.id) || []).map(card => cardQuestionId(card.id));
   if (parsed.kind === 'quick') ids = ctx.lessons.get(parsed.id).questions.slice(0, 2).map(q => q.id);
   if (parsed.kind === 'write') ids = [key];
   if (parsed.kind === 'repair') ids = pendingErrors(ctx, state, 'all').filter(id => ctx.questions.get(id).lesson === parsed.id);
