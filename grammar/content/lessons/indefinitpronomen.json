@@ -24,7 +24,8 @@
   "pitfallPair": "Das ist ein von meinen Kollegen. → Das ist einer von meinen Kollegen.",
   "links": [
     "https://grammis.ids-mannheim.de/progr%40mm/5310",
-    "https://grammis.ids-mannheim.de/fragen/4332"
+    "https://grammis.ids-mannheim.de/fragen/4332",
+    "https://www.duden.de/sprachwissen/sprachratgeber/Deklination-von-niemand"
   ],
   "i18n": {
     "ar": {
@@ -40,11 +41,12 @@
       ],
       "explain": [
         "يشبه الضمير غير المحدد أداة النكرة، لكنه يقف وحده. لذلك تظهر عليه نهاية تدل على الجنس والحالة حتى حيث تكون الأداة بلا نهاية: نقول `ein Stift` لكن `einer`، ونقول `ein Heft` لكن `eins` (وفي الكتابة الرسمية `eines`).",
-        "الكلمة `man` لا تتغيّر في حالة `Nominativ`، لكنها تصير `einen` في `Akkusativ` و`einem` في `Dativ`: `Das freut einen.` و`Das kann einem passieren.`"
+        "الكلمة `man` لا تتغيّر في حالة `Nominativ`، لكنها تصير `einen` في `Akkusativ` و`einem` في `Dativ`: `Das freut einen.` و`Das kann einem passieren.`",
+        "قد يدلّ `Genitiv` على الملكية ويجيب عن السؤال `Wessen?`. نقول `jemandes Jacke` (سترة شخص ما) أو `niemandes Jacke` (سترة لا تخصّ أحدًا). وتصحّ أيضًا الصيغتان `jemands` و`niemands`."
       ],
       "pitfall": "حين يقف الضمير دون اسم بعده يحتاج إلى نهاية كاملة. الكلمة `ein` وحدها لا تكفي للمذكر في حالة `Nominativ`.",
       "recall": ["لماذا نقول `Ich habe keins` حين نتكلم عن `das Auto`؟", "لأن `das Auto` محايد، والضمير المحايد في `Nominativ` و`Akkusativ` هو `eins` أو `keins`."],
-      "linkTitles": ["الضمائر غير المحددة · grammis", "jemand أم jemanden؟ · grammis"],
+      "linkTitles": ["الضمائر غير المحددة · grammis", "jemand أم jemanden؟ · grammis", "تصريف niemand · Duden"],
       "table": [
         ["الحالة", "مذكر", "مؤنث", "محايد", "جمع"],
         ["Nominativ", "einer / keiner", "eine / keine", "eins / keins", "welche / keine"],
@@ -64,11 +66,12 @@
       ],
       "explain": [
         "Das Indefinitpronomen sieht aus wie der unbestimmte Artikel, steht aber allein. Deshalb zeigt es Genus und Kasus auch dort, wo der Artikel keine Endung hat: `ein Stift`, aber `einer`; `ein Heft`, aber `eins` (geschrieben auch `eines`).",
-        "`man` bleibt im Nominativ unverändert, wird aber im Akkusativ zu `einen` und im Dativ zu `einem`: `Das freut einen.`, `Das kann einem passieren.`"
+        "`man` bleibt im Nominativ unverändert, wird aber im Akkusativ zu `einen` und im Dativ zu `einem`: `Das freut einen.`, `Das kann einem passieren.`",
+        "Der Genitiv kann ausdrücken, wem etwas gehört. Auf die Frage `Wessen Jacke?` passen zum Beispiel `jemandes Jacke` und `niemandes Jacke`. Auch `jemands` und `niemands` sind richtig."
       ],
       "pitfall": "Ohne Nomen braucht das Pronomen die volle Endung. Für maskulin im Nominativ reicht `ein` nicht.",
       "recall": ["Warum heißt es `Ich habe keins`, wenn es um `das Auto` geht?", "Weil `das Auto` ein Neutrum ist. Im Nominativ und Akkusativ heißt das Pronomen dann `eins` bzw. `keins`."],
-      "linkTitles": ["Indefinit-Pronomen · grammis", "jemand oder jemanden? · grammis"],
+      "linkTitles": ["Indefinit-Pronomen · grammis", "jemand oder jemanden? · grammis", "Deklination von niemand · Duden"],
       "table": [
         ["Kasus", "maskulin", "feminin", "neutral", "Plural"],
         ["Nominativ", "einer / keiner", "eine / keine", "eins / keins", "welche / keine"],
@@ -155,6 +158,57 @@
       "i18n": {
         "ar": { "prompt": "أجب بالإثبات دون تكرار الاسم: `Gibt es hier in der Nähe eine Apotheke?`", "explain": "`die Apotheke` مؤنث، فالضمير هو `eine`.", "hints": ["انقل الأداة من السؤال إلى الجواب."] },
         "de": { "prompt": "Antworte bejahend, ohne das Nomen zu wiederholen: `Gibt es hier in der Nähe eine Apotheke?`", "explain": "`die Apotheke` ist feminin, also `eine`.", "hints": ["Übernimm das Artikelwort aus der Frage."] }
+      }
+    },
+    {
+      "id": "indefinitpronomen-10", "type": "cloze", "difficulty": 1,
+      "text": "Wir packen für ein Picknick. Jonas fragt: „Haben wir einen Rucksack?“ Im Flur steht noch {{1}}, aber wir nehmen {{2}} mit, weil wir schon eine große Tasche haben. Mia fragt nach einer Flasche. Ich habe leider {{3}}, aber Mia findet zu Hause {{4}}. Im Garten brauchen wir ein Messer. Auf dem Tisch liegt schon {{5}}, also holen wir {{6}} aus der Küche. Leo bringt Becher mit. In seiner Tasche sind {{7}}. In meiner Tasche sind {{8}}, denn ich habe nur Teller dabei.",
+      "blanks": [["einer"], ["keinen"], ["keine"], ["eine"], ["eins", "eines"], ["keins", "keines"], ["welche"], ["keine"]],
+      "i18n": {
+        "ar": {
+          "prompt": "نستعدّ لنزهة. أكمل الفراغات بصيغة مناسبة من `ein-` أو `kein-` أو بـ `welche`.",
+          "explain": "في ١–٢، `der Rucksack` مذكّر: فاعل مع `steht` ومفعول به مع `mitnehmen`. في ٣–٤، `die Flasche` مؤنّث ومفعول به في الجملتين. في ٥–٦، `das Messer` محايد: فاعل مع `liegt` ومفعول به مع `holen`. في ٧–٨، `die Becher` جمع وفي حالة `Nominativ`: `welche` في الإثبات و`keine` في النفي.",
+          "hints": ["انتبه إلى جنس الأسماء: `der Rucksack`، `die Flasche`، `das Messer`، والجمع `die Becher`.", "اسأل عمّا يقف أو يوضع في مكان أو يوجد فيه. إذا كان الجواب هو الضمير نفسه، فهو فاعل. ثم قرّر هل المعنى إثبات أم نفي."]
+        },
+        "de": {
+          "prompt": "Ergänze den Text über das Picknick mit einer Form von `ein-` oder `kein-` oder mit `welche`.",
+          "explain": "In 1–2 ist `der Rucksack` erst Subjekt von `steht` und dann Akkusativobjekt von `mitnehmen`. In 3–4 steht `die Flasche` im Akkusativ. In 5–6 ist `das Messer` erst Subjekt von `liegt` und dann Akkusativobjekt von `holen`. In 7–8 stehen `die Becher` im Nominativ Plural. Die positive Form lautet `welche`, die negative `keine`.",
+          "hints": ["Achte auf die Artikel: `der Rucksack`, `die Flasche`, `das Messer`, Plural `die Becher`.", "Was steht, liegt oder ist irgendwo? Die Antwort ist das Subjekt. Entscheide dann, ob der Satz etwas bejaht oder verneint."]
+        }
+      }
+    },
+    {
+      "id": "indefinitpronomen-11", "type": "cloze", "difficulty": 2,
+      "text": "Wir machen einen Spielenachmittag im Kurs. Am Anfang suchen wir ein Spiel. Im Schrank liegt noch {{1}}. Lea hat auch {{2}} von zu Hause mitgebracht. Wir fangen mit {{3}} aus dem Schrank an. Später brauchen wir eine Bank. Neben der Tür steht {{4}}. Wir setzen uns auf {{5}} im Garten. Auf {{6}} vor dem Haus sitzen schon zwei Kinder. Ben sucht einen Partner. Er findet zuerst {{7}} und spielt deshalb allein. Später kann er doch mit {{8}} aus seinem Kurs spielen. Mia fragt Ben: „Hast du schon mit Kindern aus dem neuen Kurs gespielt?“ Ben sagt: „Ja, ich habe schon mit {{9}} gespielt.“ Mia fragt: „Und mit Kindern aus dem anderen Kurs?“ Ben sagt: „Nein, noch mit {{10}}.“",
+      "blanks": [["eins", "eines"], ["eins", "eines"], ["einem"], ["eine"], ["eine"], ["einer"], ["keinen"], ["einem"], ["welchen"], ["keinen"]],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل النص بضمائر من `ein-` و`kein-` و`welch-`. استعمل صيغة الجمع في الحوار عن الأطفال.",
+          "explain": "في ١–٣، `das Spiel` محايد ويأتي بالترتيب في `Nominativ` ثم `Akkusativ` ثم `Dativ` بعد `mit`. في ٤–٦، `die Bank` مؤنّث: فاعل أولًا، ثم `Akkusativ` مع `sich setzen` (إلى أين؟)، ثم `Dativ` مع `sitzen` (أين؟). الفعل `finden` يطلب `Akkusativ` في ٧، و`mit` يطلب `Dativ` في ٨–١٠: `einem` للمذكر، و`welchen` أو `keinen` للجمع بحسب المعنى.",
+          "hints": ["بعد `mit` يأتي `Dativ` دائمًا. عند الحديث عن الأطفال استعمل صيغة الجمع.", "مع `auf`، اسأل `Wohin?` عند الجلوس على المقعد و`Wo?` عند وصف مكان جلوس شخص."]
+        },
+        "de": {
+          "prompt": "Ergänze den Text mit Formen von `ein-`, `kein-` und `welch-`. Verwende im Dialog über die Kinder die Pluralformen.",
+          "explain": "In 1–3 steht `das Spiel` zuerst im Nominativ, dann im Akkusativ und nach `mit` im Dativ. In 4–6 ist `die Bank` zuerst Subjekt. Nach `auf` steht bei `sich setzen` der Akkusativ (wohin?) und bei `sitzen` der Dativ (wo?). `finden` verlangt in 7 den Akkusativ. Nach `mit` steht in 8–10 der Dativ: maskulin `einem`, im Plural bejaht `welchen` und verneint `keinen`.",
+          "hints": ["Nach `mit` steht immer der Dativ. Die Kinder stehen im Plural.", "Frag bei `auf`: Wohin setzen wir uns? Wo sitzen die Kinder schon?"]
+        }
+      }
+    },
+    {
+      "id": "indefinitpronomen-12", "type": "cloze", "difficulty": 3,
+      "text": "Lea findet im Park ein Handy. Es ist nicht ihr Handy. Sie hat also {{1}} Handy gefunden. Sie wartet, aber {{2}} kommt zurück. Am Eingang sieht sie zwei Frauen. Sie spricht mit {{3}} von ihnen. Die Frau fragt: „Hast du hier eine Tasche gesehen?“ Lea sagt: „Nein, ich habe {{4}} gesehen.“ Die Frau möchte zu Hause anrufen und fragt nach einem Handy. Lea sagt: „Ich habe zwar {{5}} gefunden, aber das gehört mir nicht. Wir können im Café fragen.“ Dort fragt Lea: „Hat hier {{6}} nach einem Handy gefragt?“ Ein Mann antwortet: „Nein, ich habe {{7}} gesehen, der ein Handy sucht.“ Lea gibt das Handy {{8}}, der im Café arbeitet. Auf dem Heimweg denkt sie: „{{9}} kann schnell etwas verlieren. So etwas kann {{10}} überall passieren. Dann freut es {{11}}, wenn jemand hilft. Man darf {{12}} Handy einfach behalten.“",
+      "blanks": [["jemandes", "jemands"], ["niemand"], ["einer"], ["keine"], ["eins", "eines"], ["jemand"], ["niemanden", "niemand"], ["jemandem", "jemand"], ["Man"], ["einem"], ["einen"], ["niemandes", "niemands"]],
+      "i18n": {
+        "ar": {
+          "prompt": "أكمل قصة الهاتف. استعمل صيغ `jemand` أو `niemand` في ١–٢ و٦–٨ و١٢، وصيغ `man` في ٩–١١. في ٣–٥ استعمل ضميرًا يحلّ محل الاسم المذكور.",
+          "explain": "في ١ و١٢، يجيب `Genitiv` عن `Wessen Handy?`: نقول `jemandes` أو `niemandes` بحسب المعنى. في ٢ و٦ الضمير فاعل، لذا نستخدم `niemand` و`jemand`. بعد `mit` في ٣ نستخدم `einer` لأن الحديث عن امرأة من اثنتين. في ٤–٥ تأتي الصيغتان `keine` و`eins` في `Akkusativ`. في ٧ يأتي `niemanden` مفعولًا به مع `sehen`، وفي ٨ نستخدم `jemandem` للدلالة على متلقّي الهاتف. في ٩–١١ الترتيب هو `man` للفاعل، و`einem` مع `passieren`، و`einen` مع `freuen`.",
+          "hints": ["إذا جاء الفراغ قبل `Handy`، اسأل `Wessen Handy?`. وهذا هو `Genitiv`.", "اسأل `Wem gibt Lea das Handy?` لتحديد الحالة في الفراغ ٨، و`Wen freut es?` للفراغ ١١."]
+        },
+        "de": {
+          "prompt": "Ergänze die Geschichte über das Handy. Verwende Formen von `jemand` oder `niemand` in 1–2, 6–8 und 12 und Formen von `man` in 9–11. Ersetze in 3–5 das jeweilige Nomen durch ein Pronomen.",
+          "explain": "In 1 und 12 antwortet der Genitiv auf `Wessen Handy?`. Je nach Bedeutung passt `jemandes` oder `niemandes`. In 2 und 6 stehen `niemand` und `jemand` als Subjekt. In 3 verlangt `mit` den Dativ. Weil es um eine von zwei Frauen geht, passt `einer`. In 4–5 stehen `keine` und `eins` im Akkusativ. In 7 verlangt `sehen` den Akkusativ (`niemanden`). In 8 steht der Empfänger des Handys im Dativ (`jemandem`). In 9–11 ist `man` das Subjekt. Zu `passieren` gehört der Dativ `einem` und zu `freuen` der Akkusativ `einen`.",
+          "hints": ["Steht die Lücke direkt vor `Handy`, frag `Wessen Handy?`. Die Antwort steht im Genitiv.", "Frag in 8 `Wem gibt Lea das Handy?` und in 11 `Wen freut es?`."]
+        }
       }
     }
   ]

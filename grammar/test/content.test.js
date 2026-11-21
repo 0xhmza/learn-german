@@ -58,11 +58,10 @@ test('the original B1.1 course is carried over unchanged in size', () => {
   assert.deepEqual(types, { cloze: 89, mcq: 58, order: 22, text: 84 });
 });
 
-test('every B1.2 lesson follows the nine-question template', () => {
+test('every B1.2 lesson starts with the nine-question template', () => {
   const ctx = context();
   for (const lesson of [...ctx.lessons.values()].filter(l => l.level === 'B1.2')) {
-    assert.equal(lesson.questions.length, 9, lesson.id);
-    assert.deepEqual(lesson.questions.map(q => q.difficulty), [1, 1, 1, 2, 2, 2, 3, 3, 2], lesson.id);
+    assert.deepEqual(lesson.questions.slice(0, 9).map(q => q.difficulty), [1, 1, 1, 2, 2, 2, 3, 3, 2], lesson.id);
     assert.equal(lesson.questions[7].type, 'text', `${lesson.id}: question 8 corrects the pitfall`);
     assert.equal(lesson.questions[7].context, lesson.pitfallPair.split(' → ')[0], `${lesson.id}: question 8 uses the pitfall sentence`);
     assert.ok(lesson.source.lektion >= 7 && lesson.source.lektion <= 12);

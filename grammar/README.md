@@ -53,7 +53,7 @@ Progress is stored in the browser (`localStorage`), including unfinished practic
 | Path | Contents |
 | --- | --- |
 | `content/islands.json` | The ten islands: names, colours, map positions |
-| `content/lessons/*.json` | One file per lesson: rule, steps, pitfall, table, links and nine to ten questions, in Arabic and German |
+| `content/lessons/*.json` | One file per lesson: rule, steps, pitfall, table, links and nine to twelve questions, in Arabic and German |
 | `content/lesson-study.json` | Worked comparisons, extra questions and application cards keyed by lesson ID |
 | `content/practice-sets.json` | Curated sets that combine lessons and question types |
 | `content/readings.json` | B1 passages with a shared glossary and inline `word{Arabic gloss}` annotations |
