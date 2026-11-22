@@ -1,6 +1,7 @@
 import { t, num, getLang } from '../i18n/index.js';
 import { lessonTitle } from '../content.js';
 import { esc, de, prose, link, button, crumbs } from '../components/html.js';
+import { dropGap, wordChips, mountDragDrop, focusAfterPlacing } from '../components/dragdrop.js';
 
 export const title = (app, route) => app.ctx.sprachbausteine.get(route.key)?.title[getLang()] ?? t('sprachTitle');
 
@@ -26,13 +27,15 @@ export function render(app, route) {
   }
   const { answers, finished } = attempt(set, state);
   const correct = set.gaps.filter((gap, index) => gap.answer === answers[index]).length;
-  const bank = set.bank?.map((word, i) => `<li data-bank-word="${esc(word)}" class="${!finished && answers.includes(word) ? 'used' : ''}"><small aria-hidden="true">${String.fromCharCode(97 + i)}</small> ${esc(word)}</li>`).join('');
+  const bank = !set.bank ? '' : finished
+    ? `<div class="sprach-bank"><h2>${t('wordBank')}</h2><ul lang="de" dir="ltr">${set.bank.map((word, i) => `<li><small aria-hidden="true">${String.fromCharCode(97 + i)}</small> ${esc(word)}</li>`).join('')}</ul></div>`
+    : wordChips(set.bank.map(word => [word, word, answers.includes(word)]), t('wordBank'));
   return `${crumbs([['practice', t('practice')], ['sprachbausteine', prose(t('sprachTitle'))], [null, prose(set.title[lang])]])}
     <section class="simple-banner practice-head"><span class="study-meta">${t(set.bank ? 'sprachPart2' : 'sprachPart1')} · ${t('difficulty')[set.difficulty]}</span>
       <h1>${prose(set.title[lang])}</h1><p>${t(set.bank ? 'sprachBankHelp' : 'sprachChoiceHelp')}</p></section>
     <section class="panel study-page">
       ${finished ? `<h2 id="sprach-result" tabindex="-1">${t('sprachScore', num(correct), num(set.gaps.length))}</h2>` : ''}
-      ${bank ? `<div class="sprach-bank"><h2>${t('wordBank')}</h2><ul lang="de" dir="ltr">${bank}</ul></div>` : ''}
+      <div class="${set.bank && !finished ? 'drag-layout' : ''}">${bank}
       <div class="sprach-text" lang="de" dir="ltr">${set.paragraphs.map(paragraph => `<p>${paragraph.split(/(\{\d+\})/g).map((part, position, parts) => {
         if (!/^\{\d+\}$/.test(part)) return esc(part);
         const i = Number(part.slice(1, -1)) - 1;
@@ -44,9 +47,10 @@ export function render(app, route) {
           const word = startsSentence ? gap.answer[0].toLocaleUpperCase('de') + gap.answer.slice(1) : gap.answer;
           return `<a href="#sprach-feedback-${number}" data-action="gap-feedback" data-gap="${number}" class="sprach-solution ${answers[i] === gap.answer ? 'good' : 'bad'}"><small aria-hidden="true">${number}</small> ${esc(word)}</a>`;
         }
-        const options = (set.bank || gap.options).map((word, j) => `<option value="${esc(word)}" ${word === answers[i] ? 'selected' : ''} ${set.bank && answers[i] !== word && answers.includes(word) ? 'disabled' : ''}>${String.fromCharCode(97 + j)} · ${esc(word)}</option>`).join('');
+        if (set.bank) return dropGap({ key: String(i), number, value: answers[i], label: answers[i] });
+        const options = gap.options.map((word, j) => `<option value="${esc(word)}" ${word === answers[i] ? 'selected' : ''}>${String.fromCharCode(97 + j)} · ${esc(word)}</option>`).join('');
         return `<label class="sprach-gap"><span aria-hidden="true">${number}</span><select data-sprach-gap="${i}" aria-label="${esc(t('blank', num(number)))}" required><option value="">—</option>${options}</select></label>`;
-      }).join('')}</p>`).join('')}</div>
+      }).join('')}</p>`).join('')}</div></div>
       <div class="actions study-actions">${finished ? button('sprach-reset', t('newRun'), 'primary') : button('sprach-check', t('check'), 'primary')}</div>
       <p id="sprach-status" class="study-status" role="status"></p>
     </section>
@@ -59,14 +63,17 @@ export function render(app, route) {
 
 export const actions = {
   'sprach-check'(app) {
-    const incomplete = document.querySelector('[data-sprach-gap]:invalid');
-    if (incomplete) {
-      incomplete.reportValidity();
+    const set = app.ctx.sprachbausteine.get(app.route.key);
+    const { answers } = attempt(set, app.state);
+    const empty = answers.findIndex(answer => !answer);
+    if (empty >= 0) {
+      const incomplete = document.querySelector(`[data-sprach-gap="${empty}"], [data-drop-gap="${empty}"]`);
+      incomplete?.focus();
+      incomplete?.reportValidity?.();
       const status = document.querySelector('#sprach-status');
       if (status) status.textContent = t('sprachIncomplete');
       return;
     }
-    const set = app.ctx.sprachbausteine.get(app.route.key);
     app.store.update(state => { state.sprach[set.id].finished = true; });
     app.rerender({ keepScroll: false });
     document.querySelector('#sprach-result')?.focus();
@@ -74,7 +81,7 @@ export const actions = {
   'sprach-reset'(app) {
     app.store.update(state => { delete state.sprach[app.route.key]; });
     app.rerender();
-    document.querySelector('[data-sprach-gap]')?.focus();
+    document.querySelector('[data-sprach-gap], [data-drop-gap]')?.focus();
   },
   'gap-feedback'(app, target) {
     document.getElementById(`sprach-feedback-${target.dataset.gap}`)?.focus();
@@ -85,18 +92,28 @@ export function onChange(app, event) {
   const select = event.target;
   if (!select.matches('[data-sprach-gap]')) return;
   const set = app.ctx.sprachbausteine.get(app.route.key);
-  const data = app.store.update(state => {
+  app.store.update(state => {
     const current = state.sprach[set.id] ||= attempt(set, state);
     current.answers[Number(select.dataset.sprachGap)] = select.value;
-    return current;
   });
   const status = document.querySelector('#sprach-status');
   if (status) status.textContent = '';
-  if (!set.bank) return;
-  for (const control of document.querySelectorAll('[data-sprach-gap]')) {
-    for (const option of control.options) {
-      option.disabled = Boolean(option.value && option.value !== control.value && data.answers.includes(option.value));
-    }
-  }
-  for (const word of document.querySelectorAll('[data-bank-word]')) word.classList.toggle('used', data.answers.includes(word.dataset.bankWord));
+}
+
+// Part 2: drag words into the gaps.
+export function mount(app, root, route) {
+  const set = app.ctx.sprachbausteine.get(route.key);
+  if (!set?.bank || attempt(set, app.state).finished) return null;
+  const write = (key, value, keyboard) => {
+    app.store.update(state => {
+      const current = state.sprach[set.id] ||= attempt(set, state);
+      current.answers = current.answers.map(answer => (value && answer === value ? '' : answer));
+      current.answers[Number(key)] = value;
+    });
+    const status = document.querySelector('#sprach-status');
+    if (status) status.textContent = '';
+    app.rerender();
+    if (keyboard) focusAfterPlacing(document.querySelector('#content'), key);
+  };
+  return mountDragDrop(root, { place: write, clear: (key, keyboard) => write(key, '', keyboard) });
 }

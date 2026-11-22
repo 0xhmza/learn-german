@@ -5,6 +5,8 @@ import { nextLesson, runStars } from './progress.js';
 import { checkBadges, QUESTION_XP, XP, DAILY_GOALS } from './gamification.js';
 import { isRunValid } from './runs.js';
 import { examChoices, isListening, isMatching } from './model-exams.js';
+import { normalizeWords } from './words.js';
+import { normalizeLast, LEVELS } from './areas.js';
 
 export const STATE_VERSION = 1;
 export const APP_ID = 'grammatikinseln';
@@ -14,7 +16,7 @@ export function defaultState(day) {
   return {
     v: STATE_VERSION,
     createdAt: day,
-    settings: { levelFilter: 'all', dailyGoal: 30, reduceMotion: false, roadmap: 'islands', hideCompleted: false },
+    settings: { level: 'B1', levelFilter: 'all', dailyGoal: 30, reduceMotion: false, roadmap: 'islands', hideCompleted: false },
     completed: {},
     started: {},
     viewed: {},
@@ -27,6 +29,8 @@ export function defaultState(day) {
     cards: {},
     sprach: {},
     modelExams: {},
+    words: {},
+    last: {},
     lastRun: null,
     lastLesson: null,
     islands: {},
@@ -70,6 +74,9 @@ export function normalizeState(raw, ctx, day) {
   state.settings.reduceMotion = settings.reduceMotion === true;
   if (settings.roadmap === 'telc') state.settings.roadmap = 'telc';
   state.settings.hideCompleted = settings.hideCompleted === true;
+  state.words = normalizeWords(raw.words, isDay);
+  state.last = normalizeLast(raw.last, isDay);
+  if (LEVELS.includes(settings.level)) state.settings.level = settings.level;
 
   for (const [id, value] of Object.entries(plain(raw.completed) ? raw.completed : {})) {
     if (ctx.lessons.has(id) && value) state.completed[id] = dayOr(value, day);

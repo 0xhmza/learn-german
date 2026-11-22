@@ -20,7 +20,8 @@ export function parse(hash, ctx) {
   if (view === 'vokabeln' && key === undefined) return { view: 'vocab', key: null, hash: raw, tab: 'vocab' };
   if (view === 'schreiben' && key === undefined) return { view: 'writing', key: null, hash: raw, tab: 'writing' };
   if (view === 'topics' && key === undefined) return { view: 'topics', key: null, hash: raw, tab: 'home' };
-  if (view === 'level' && cefrBySlug.has(key)) return { view: 'level', key, hash: raw, tab: 'home' };
+  if (view === 'grammatik' && key === undefined) return { view: 'grammar', key: null, hash: raw, tab: 'home' };
+  if (view === 'level' && (key === undefined || cefrBySlug.has(key))) return { view: 'level', key: key ?? null, hash: raw, tab: 'home' };
   if (view === 'island' && ctx.islandById.has(key)) return { view, key, hash: raw, tab: 'home' };
   if (view === 'lesson' && ctx.lessons.has(key)) return { view, key, hash: raw, tab: 'home' };
   if (view === 'cards' && (key === undefined || ctx.decks.has(key))) return { view, key, hash: raw, tab: 'practice' };

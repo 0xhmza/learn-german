@@ -1,11 +1,12 @@
-// Side cards: streak week, daily goal, rank and the level strip.
+// Dashboard cards: current level, streak week, daily goal, rank, area
+// progress and the "where you stopped" banner of the area pages.
 import { t, num, getLang } from '../i18n/index.js';
 import { displayStreak, levelFor } from '../engine/gamification.js';
-import { overall } from '../engine/progress.js';
 import { addDays } from '../dates.js';
 import { esc } from './html.js';
 import { flame, bolt, icons } from './icons.js';
 import { CEFR } from '../cefr.js';
+import { currentLevel } from '../engine/areas.js';
 
 export function streakCard(state, day) {
   const streak = displayStreak(state, day);
@@ -49,38 +50,43 @@ export function rankCard(state) {
   </a>`;
 }
 
-// Today's essentials for narrow screens, where the side cards are hidden:
-// streak, daily goal, due review and the exam trainer in one row.
-export function todayStrip(state, day, review) {
-  const streak = displayStreak(state, day);
-  const goal = state.settings.dailyGoal;
-  const xp = state.xp.byDay[day] || 0;
-  const percent = Math.min(100, Math.round((xp / goal) * 100));
-  return `<section class="today" aria-label="${esc(t('todayLabel'))}">
-    <a class="today-chip streak-chip ${streak ? 'live' : ''}" href="#progress"><span class="today-icon" aria-hidden="true">${flame}</span>
-      <span><b>${num(streak)}</b><small>${t('streakTitle')}</small></span></a>
-    <a class="today-chip goal-chip" href="#progress"><span class="today-ring" style="--p:${percent}" aria-hidden="true">${bolt}</span>
-      <span><b><bdi dir="ltr">${num(xp)}/${num(goal)}</bdi></b><small>${t('setGoal')}</small></span></a>
-    ${review.ids.length
-      ? `<button type="button" class="today-chip review-chip" data-action="run" data-key="daily"><span class="today-icon" aria-hidden="true">${icons.cards}</span>
-        <span><b>${num(review.ids.length)}</b><small>${t('reviewToday')}</small></span></button>`
-      : `<a class="today-chip review-chip" href="#practice"><span class="today-icon" aria-hidden="true">${icons.practice}</span>
-        <span><b>${t('tabPractice')}</b><small>${t('reviewAndTrain')}</small></span></a>`}
-    <a class="today-chip exam-chip" href="#model-exams"><span class="today-icon" aria-hidden="true">${icons.exam}</span>
-      <span><b>${t('navExam')}</b><small>telc B1</small></span></a>
-  </section>`;
+// The current level; opens the page to switch levels.
+export function levelCard(state) {
+  const level = currentLevel(state);
+  const info = CEFR.find(item => item.id === level);
+  return `<a class="widget level-widget" href="#level" aria-label="${esc(`${t('currentLevel')}: ${level} · ${t('levelNames')[level]}. ${t('changeLevel')}`)}">
+    <span class="level-code level-card-code ${info.tone}" lang="de" dir="ltr" aria-hidden="true">${level}</span>
+    <span class="level-card-text"><small>${t('currentLevel')}</small><strong>${esc(t('levelNames')[level])}</strong>
+      <span class="level-card-change">${t('changeLevel')} ${icons.chevron}</span></span>
+  </a>`;
 }
 
-// Five level cards; B1 carries the grammar course and its progress.
-export function levelStrip(ctx, state) {
-  const stats = overall(ctx, state);
-  return `<ul class="level-strip">${CEFR.map(level => {
-    const percent = level.grammar ? Math.round((stats.learned / Math.max(1, stats.lessons)) * 100) : 0;
-    return `<li><a class="level-card ${level.grammar ? 'active' : 'soon'}" href="#level/${level.slug}">
-      <span class="level-code ${level.tone}" lang="de" dir="ltr">${level.id}</span>
-      <span class="level-name">${esc(t('levelNames')[level.id])}</span>
-      <span class="level-state">${level.grammar ? t('courseProgressPct', num(percent)) : t('comingSoon')}</span>
-      ${level.grammar ? `<span class="level-bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span>` : ''}
-    </a></li>`;
-  }).join('')}</ul>`;
+// One area on the dashboard. `value` is the big number, `percent` the bar
+// (omitted for open-ended areas such as the word list).
+export function progressCard({ area, href, icon, title, detail, value, percent, soon }) {
+  return `<a class="progress-card ${area} ${soon ? 'soon' : ''}" href="#${href}">
+    <span class="pc-icon" aria-hidden="true">${icon}</span>
+    <span class="pc-text"><strong>${title}</strong><small>${detail}</small></span>
+    <span class="pc-value"><bdi dir="ltr">${value}</bdi></span>
+    ${percent === undefined ? '' : `<span class="bar pc-bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span>`}
+  </a>`;
+}
+
+// "Where you stopped": shown at the top of every area page.
+export function resumeCard({ stop, empty, eyebrow }) {
+  if (!stop) {
+    return `<section class="resume-card empty"><div class="resume-copy"><p class="eyebrow-line">${eyebrow || t('notStarted')}</p>
+      <h2>${empty.title}</h2>${empty.detail ? `<p class="resume-meta">${empty.detail}</p>` : ''}</div>
+      ${empty.action ? `<div class="resume-actions">${empty.action}</div>` : ''}</section>`;
+  }
+  return `<section class="resume-card"><div class="resume-copy"><p class="eyebrow-line">${eyebrow || t('stoppedHere')}</p>
+    <h2>${stop.title}</h2><p class="resume-meta">${stop.meta}</p></div>
+    ${stop.action ? `<div class="resume-actions">${stop.action}</div>` : ''}</section>`;
+}
+
+// For levels without content yet: what is missing and a way to switch.
+export function levelSoonCard(level) {
+  return `<section class="panel empty-state compact level-soon"><span class="empty-icon" aria-hidden="true">${icons.sparkle}</span>
+    <div><h2>${t('levelSoonTitle', level)}</h2><p>${t('levelSoonText')}</p>
+      <p><a class="btn secondary" href="#level">${t('changeLevel')}</a></p></div></section>`;
 }

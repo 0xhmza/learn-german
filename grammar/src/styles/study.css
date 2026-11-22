@@ -49,3 +49,53 @@ a.study-tile:hover h2 { color: var(--brand-ink); }
 .modes-panel { margin-block-start: 15px; }
 .modes-panel > summary { cursor: pointer; color: var(--brand-ink); font-weight: 700; }
 .modes-panel > .launcher { margin-block-start: 12px; }
+
+/* Gap texts: a dropdown inside each gap (part 1), drop zones and a word
+   list to drag from (part 2). */
+.gap-text { font-size: clamp(16px, 2.2vw, 18px); line-height: 2.3; }
+.gap-slot { display: inline-flex; align-items: center; gap: 4px; padding-inline: 2px; white-space: nowrap; vertical-align: baseline; }
+.gap-no { font-size: .72em; color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 700; }
+.gap-slot select { inline-size: auto; max-inline-size: 12rem; min-block-size: 40px; padding: 3px 8px; font-size: .92em; border-width: 2px; border-color: var(--brand); background: var(--surface); }
+.drop-gap { display: inline-flex; align-items: center; gap: 6px; min-inline-size: 5.5rem; min-block-size: 40px; padding: 2px 10px; margin-inline: 2px; vertical-align: middle; border: 2px dashed var(--line-strong); border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; line-height: 1.3; cursor: pointer; transition: border-color .15s, background-color .15s; }
+.drop-gap.filled { border-style: solid; border-color: var(--brand); background: var(--brand-soft); color: var(--brand-ink); font-weight: 700; }
+.drop-gap:hover, .drop-gap.over, .placing .drop-gap:not(.filled) { border-color: var(--brand); }
+.drop-gap.over { background: var(--brand-soft); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 25%, transparent); }
+.placing .drop-gap:not(.filled) { background: color-mix(in srgb, var(--brand-soft) 60%, var(--surface)); }
+.drag-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 18px; align-items: start; }
+.drag-layout > .sprach-text, .drag-layout > .gap-text { grid-column: 1; grid-row: 1; }
+.drag-bank { grid-column: 2; grid-row: 1; position: sticky; top: calc(var(--head) + 12px); padding: 14px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface-2); }
+.drag-bank h2 { font-size: 16px; margin-block-end: 10px; }
+.drag-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.bank-chip { min-block-size: 40px; padding: 6px 12px; border: 2px solid var(--line-strong); border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; font-weight: 700; box-shadow: 0 2px 0 var(--line); cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.bank-chip:hover { border-color: var(--brand); }
+.bank-chip[aria-pressed="true"] { border-color: var(--brand); background: var(--brand); color: var(--on-brand); box-shadow: 0 2px 0 var(--brand-strong); }
+.bank-chip.used { opacity: .4; box-shadow: none; text-decoration: line-through; cursor: default; }
+.bank-chip.dragging { opacity: .35; }
+.drag-ghost { position: fixed; top: 0; left: 0; z-index: 40; pointer-events: none; border-color: var(--brand); box-shadow: var(--shadow); cursor: grabbing; }
+.drag-active, .drag-active * { cursor: grabbing; user-select: none; -webkit-user-select: none; }
+.drag-help { margin-block-start: 10px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.exam-filled { display: inline-flex; align-items: baseline; gap: 4px; padding: 0 7px; border-radius: 7px; font-weight: 700; }
+.exam-filled small { color: var(--muted); font-weight: 700; }
+.exam-filled.good { background: var(--good-bg); color: var(--good); }
+.exam-filled.bad { background: var(--bad-bg); color: var(--bad); }
+.exam-filled.bad b { color: var(--good); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 860px) {
+  .drag-layout { grid-template-columns: minmax(0, 1fr); }
+  /* The word list stays at the bottom of the screen while the text scrolls. */
+  .drag-bank { grid-column: 1; grid-row: 2; position: sticky; top: auto; bottom: calc(66px + env(safe-area-inset-bottom)); z-index: 5; margin-inline: -6px; padding: 10px; box-shadow: 0 -6px 20px #1a223214; background: var(--surface); }
+  .drag-bank h2, .drag-help { display: none; }
+  .drag-chips { flex-wrap: nowrap; overflow-x: auto; padding-block-end: 2px; scrollbar-width: none; }
+  .bank-chip { flex: none; }
+}
+@media (min-width: 768px) and (max-width: 860px) {
+  .drag-bank { bottom: 12px; }
+}
+
+/* Readings: save the selected word. */
+.gloss-row { position: sticky; inset-block-start: calc(var(--head) + 6px); z-index: 1; display: flex; align-items: stretch; gap: 8px; }
+.gloss-row .gloss-box { position: static; flex: 1; }
+.gloss-save { flex: none; align-self: center; }
+@media (max-width: 860px) {
+  /* Placed words leave the strip; tapping their gap brings them back. */
+  .drag-bank .bank-chip.used { display: none; }
+}

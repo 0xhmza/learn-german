@@ -173,7 +173,7 @@ export function render(app, route) {
   const total = textCount + (run?.ids.length || 0) + 1;
   const done = item.kind === 'finish' ? total - 1
     : flow.slice(0, index).filter(entry => entry.kind === 'text').length + (usedUp(run) ? run?.ids.length || 0 : run.position);
-  const closeHash = state.settings.roadmap === 'telc' ? 'home' : `island/${island.id}`;
+  const closeHash = state.settings.roadmap === 'telc' ? 'grammatik' : `island/${island.id}`;
   let body;
   let bar;
   if (item.kind === 'finish') ({ body, bar } = completion(app, lesson, view, run));

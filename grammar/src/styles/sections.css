@@ -1,4 +1,4 @@
-/* Vokabeln and Schreiben areas, level pages, all topics and the profile. */
+/* Vokabeln and Schreiben, level picker, all topics and the profile. */
 .page-head { display: grid; gap: 6px; margin-block-end: 18px; }
 .page-head p { color: var(--muted); max-inline-size: 64ch; }
 .topics-panel { padding: clamp(14px, 2vw, 22px); }
@@ -27,26 +27,8 @@
 .level-code.small { inline-size: 42px; block-size: 34px; margin: 0; font-size: 15px; flex: none; }
 .soon-chip { flex: none; padding: 3px 10px; border-radius: 99px; background: var(--surface-3); color: var(--muted); font-size: 12px; font-weight: 750; white-space: nowrap; }
 
-/* Level pages */
-.level-tabs { display: flex; gap: 8px; overflow-x: auto; margin-block-end: 16px; scrollbar-width: none; }
-.level-tab { flex: none; display: grid; place-items: center; min-inline-size: 56px; block-size: 42px; padding-inline: 12px; border-radius: 12px; border: 2px solid var(--line); background: var(--surface); color: var(--ink-2); font: 800 15px/1 var(--font-de); }
-.level-tab:hover { border-color: var(--brand); color: var(--ink); }
-.level-tab[aria-current] { border-color: var(--brand); background: var(--brand); color: var(--on-brand); }
-.level-hero { display: flex; align-items: center; gap: 20px; padding: clamp(18px, 3vw, 30px); border-radius: 20px; border: 1px solid var(--line); margin-block-end: 18px; }
-.level-hero small { color: var(--ink-2); font-weight: 750; }
-.level-hero p { color: var(--ink-2); max-inline-size: 62ch; margin-block-start: 4px; }
+/* Level code sizes */
 .level-code.big { inline-size: 84px; block-size: 84px; border-radius: 22px; margin: 0; font-size: 28px; background: var(--surface); box-shadow: var(--shadow-sm); flex: none; }
-.course-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 12px; }
-.course-card { display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 16px; background: var(--surface); border: 2px solid var(--line); color: var(--ink); block-size: 100%; }
-a.course-card:hover { border-color: var(--brand); color: var(--ink); }
-.course-card.soon { background: var(--surface-2); }
-.course-card-icon { display: grid; place-items: center; inline-size: 52px; block-size: 52px; border-radius: 16px; flex: none; color: var(--ink-2); }
-.course-card-icon .ico { inline-size: 26px; block-size: 26px; }
-.course-card-text { display: grid; flex: 1; min-inline-size: 0; gap: 2px; line-height: 1.4; }
-.course-card-text strong { font-size: 16px; }
-.course-card-text small { color: var(--muted); font-size: 13px; }
-.course-card-go { display: grid; place-items: center; inline-size: 36px; block-size: 36px; border-radius: 50%; flex: none; background: var(--brand-soft); color: var(--brand-ink); }
-.course-card-go .ico { inline-size: 18px; block-size: 18px; }
 
 /* Profile */
 .profile-head { display: flex; align-items: center; gap: 20px; padding: clamp(18px, 3vw, 28px); border-radius: 20px; background: var(--surface); border: 1px solid var(--line); flex-wrap: wrap; }
@@ -85,3 +67,58 @@ body[data-view="progress"] #content > .section-row { margin-block: 26px 12px; }
   .stat-icon { inline-size: 36px; block-size: 36px; }
   .stat-tile strong { font-size: 17px; }
 }
+
+/* Word list: saving words and "Meine Wörter". */
+.word-pop { position: fixed; top: 0; left: 0; z-index: 35; }
+.word-pop-btn { display: inline-flex; align-items: center; gap: 6px; min-block-size: 40px; padding: 6px 14px; border: 0; border-radius: 99px; background: var(--ink); color: var(--bg); font: inherit; font-size: 14px; font-weight: 750; box-shadow: var(--shadow); animation: pop-in .14s ease-out both; }
+.word-pop-btn .ico { inline-size: 18px; block-size: 18px; }
+.word-pop-btn.saved { background: var(--good); color: var(--good-bg); }
+@keyframes pop-in { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
+.my-words-panel { margin-block-end: 18px; }
+.my-words-panel .section-row { margin-block-end: 6px; }
+.count-chip { display: inline-grid; place-items: center; min-inline-size: 28px; block-size: 24px; padding-inline: 8px; margin-inline-start: 6px; border-radius: 99px; background: var(--brand-soft); color: var(--brand-ink); font-size: 13px; vertical-align: middle; }
+.my-words-how { margin-block-end: 12px; max-inline-size: 70ch; }
+.my-words { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 8px; }
+.my-words li { display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
+.my-word { flex: 1; min-inline-size: 0; font-weight: 750; overflow-wrap: anywhere; }
+.my-words small { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.word-remove { inline-size: 36px; block-size: 36px; border-color: transparent; background: transparent; color: var(--muted); }
+.word-remove:hover { color: var(--bad); background: var(--bad-bg); }
+.word-remove svg { inline-size: 16px; block-size: 16px; }
+
+/* Writing tasks with their status. */
+.task-panel { margin-block-end: 18px; }
+.task-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.task-row { display: flex; align-items: center; gap: 12px; padding-block: 12px; border-block-start: 1px solid var(--line); }
+.task-row:first-child { border-block-start: 0; }
+.task-main { display: grid; gap: 2px; flex: 1; min-inline-size: 0; line-height: 1.45; }
+.task-main small { color: var(--muted); font-size: 13.5px; }
+.task-number { display: grid; place-items: center; inline-size: 32px; block-size: 32px; border-radius: 10px; background: var(--surface-3); font-weight: 800; flex: none; }
+.task-status { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 99px; background: var(--surface-3); color: var(--muted); font-size: 12.5px; font-weight: 750; white-space: nowrap; }
+.task-status.done { background: var(--good-bg); color: var(--good); }
+.task-status.draft { background: var(--warn-bg); color: var(--warn); }
+.task-status .ico { inline-size: 14px; block-size: 14px; }
+.task-row .btn { min-block-size: 40px; padding: 6px 14px; font-size: 14px; flex: none; }
+
+/* Level picker. */
+.level-options { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.level-option { display: flex; align-items: center; gap: 16px; inline-size: 100%; padding: 16px 18px; border: 2px solid var(--line); border-radius: 18px; background: var(--surface); color: var(--ink); font: inherit; text-align: start; transition: border-color .15s, transform .15s; }
+.level-option:hover { border-color: var(--brand); transform: translateY(-1px); }
+.level-option.current { border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+.level-option-code { inline-size: 60px; block-size: 60px; margin: 0; border-radius: 16px; font-size: 22px; flex: none; }
+.level-option-text { display: grid; gap: 3px; flex: 1; min-inline-size: 0; line-height: 1.45; }
+.level-option-text strong { font-size: 17px; }
+.level-option-text small { color: var(--ink-2); font-size: 14px; }
+.level-option-state { justify-self: start; padding: 2px 10px; border-radius: 99px; background: var(--surface-3); color: var(--muted); font-size: 12.5px; font-weight: 750; }
+.level-option-state.ready { background: var(--good-bg); color: var(--good); }
+.level-option-check { display: grid; justify-items: center; gap: 2px; color: var(--brand-ink); font-size: 12px; font-weight: 800; flex: none; }
+.level-option-check .ico { inline-size: 26px; block-size: 26px; padding: 4px; border-radius: 50%; background: var(--brand); color: var(--on-brand); }
+@media (max-width: 560px) {
+  .task-row { flex-wrap: wrap; }
+  .task-row .task-main { flex-basis: calc(100% - 50px); }
+  .task-row .btn { margin-inline-start: auto; }
+  .level-option { padding: 14px; gap: 12px; }
+  .level-option-code { inline-size: 48px; block-size: 48px; font-size: 18px; }
+}
+
+.page-head h1 .level-chip { font-size: 15px; padding: 6px 10px; margin-inline-start: 6px; vertical-align: middle; background: var(--brand-soft); color: var(--brand-ink); border-radius: 10px; }

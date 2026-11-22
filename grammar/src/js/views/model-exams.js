@@ -1,6 +1,10 @@
 import { getLang, t, num } from '../i18n/index.js';
 import { button, crumbs, de, esc, link } from '../components/html.js';
 import { examChoices, examResult, isListening, isMatching } from '../engine/model-exams.js';
+import { dropGap, wordChips, mountDragDrop, focusAfterPlacing } from '../components/dragdrop.js';
+import { currentLevel, levelHasContent, testsProgress } from '../engine/areas.js';
+import { resumeCard, levelSoonCard } from '../components/widgets.js';
+import { stopFor } from '../components/stops.js';
 
 const routeFor = (model, section) => `model-exams/${model.id}${section ? `/${section.id}` : ''}`;
 const partTitle = section => t('examPartTitle')[section.id];
@@ -38,7 +42,15 @@ function list(app) {
   };
   const extra = models.filter(model => model !== added);
   const activeDrafts = extra.filter(model => app.state.modelExams[model.id]?.schreiben?.writing?.trim());
-  return `<section class="simple-banner practice-head"><h1>${t('examTrainerTitle')}</h1><p>${t('examTrainerIntro')}</p></section>
+  const level = currentLevel(app.state);
+  const head = `<section class="simple-banner practice-head"><h1>${t('examTrainerTitle')}</h1><p>${t('examTrainerIntro')}</p></section>`;
+  if (!levelHasContent(level)) return head + levelSoonCard(level);
+  const progress = testsProgress(app.ctx, app.state);
+  const percent = Math.round((progress.done / Math.max(1, progress.total)) * 100);
+  const first = added || models[0];
+  return `${head}
+    ${resumeCard({ stop: stopFor(app, 'tests'), empty: { title: esc(`${modelNumber(first)} · ${modelTitle(first)}`), action: link(`${routeFor(first)}/lesen-1`, t('startHere'), 'primary') } })}
+    <div class="area-progress"><span>${t('testsDone', num(progress.done), num(progress.total))}</span><span class="bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span></div>
     ${added ? card(added, true) : ''}${activeDrafts.length ? `<div class="study-grid exam-catalog">${activeDrafts.map(model => card(model)).join('')}</div>` : ''}
     <details class="panel modes-panel"><summary>${t('allModels', num(extra.length - activeDrafts.length))}</summary>
       <div class="study-grid exam-catalog">${extra.filter(model => !activeDrafts.includes(model)).map(model => card(model)).join('')}</div></details>
@@ -142,9 +154,27 @@ function renderSample(part, sample) {
     <details><summary>${t('examTranscript')}</summary><p lang="de" dir="ltr">${esc(transcript)}</p></details></section>`;
 }
 
-function renderPassage(section) {
+const isGapText = section => section.id.startsWith('sprache-');
+
+// The text of a part. In Sprachbausteine the gaps are filled in place: part 1
+// with a dropdown per gap, part 2 by dragging words from the list.
+function renderPassage(section, responses = {}, checked = false) {
+  const gapText = isGapText(section);
+  const gap = number => {
+    const item = section.items.find(entry => entry.number === number);
+    if (!gapText || !item) return `<strong class="exam-gap">${num(number)}</strong>`;
+    const choices = examChoices(section, item);
+    const value = responses[number];
+    if (checked) {
+      const right = value === item.answer;
+      return `<span class="exam-filled ${right ? 'good' : 'bad'}"><small aria-hidden="true">${num(number)}</small>${value ? (right ? esc(choices[value]) : `<s>${esc(choices[value])}</s>`) : '—'}${right ? '' : ` <b>${esc(choices[item.answer])}</b>`}</span>`;
+    }
+    if (isMatching(section)) return dropGap({ key: String(number), number, value, label: value ? choices[value] : '' });
+    return `<span class="gap-slot"><span class="gap-no" aria-hidden="true">${num(number)}</span><select data-exam-item="${number}" aria-label="${esc(t('blank', num(number)))}">
+      <option value="">—</option>${Object.entries(choices).map(([code, label]) => `<option value="${esc(code)}" ${value === code ? 'selected' : ''}>${esc(label)}</option>`).join('')}</select></span>`;
+  };
   return section.passage?.map(line => `<p>${line.split(/(\{\d+\})/g).map(piece => /^\{\d+\}$/.test(piece)
-    ? `<strong class="exam-gap">${esc(piece.slice(1, -1))}</strong>` : esc(piece)).join('')}</p>`).join('') || '';
+    ? gap(Number(piece.slice(1, -1))) : esc(piece)).join('')}</p>`).join('') || '';
 }
 
 function renderAds(ads) {
@@ -169,22 +199,27 @@ function renderVariants(section) {
 function renderPart(app, model, section) {
   const draft = savedSection(app, model, section);
   const listening = isListening(section);
-  const passage = renderPassage(section);
-  const bank = section.choices ? `<ul class="exam-bank" lang="de" dir="ltr">${Object.entries(section.choices).map(([value, label]) => `<li><b>${value.toUpperCase()}</b> ${esc(label)}</li>`).join('')}</ul>` : '';
+  const gapText = isGapText(section);
+  const draftResponses = draft.responses || {};
+  const passage = renderPassage(section, draftResponses, draft.checked && examResult(section, draftResponses).total > 0);
+  const used = new Set(Object.values(draftResponses));
+  const bank = section.choices && gapText && !draft.checked
+    ? wordChips(Object.entries(section.choices).map(([value, label]) => [value, label, used.has(value)]), t('wordBank'))
+    : section.choices ? `<ul class="exam-bank" lang="de" dir="ltr">${Object.entries(section.choices).map(([value, label]) => `<li><b>${value.toUpperCase()}</b> ${esc(label)}</li>`).join('')}</ul>` : '';
   const { responses = {} } = draft;
   const score = examResult(section, responses);
   const checked = score.total > 0 && draft.checked;
-  const exercise = `<div class="exam-questions">${section.items.map(item => renderItem(section, item, responses, checked)).join('')}</div>
+  const exercise = `${gapText && !checked ? '' : `<div class="exam-questions">${section.items.map(item => renderItem(section, item, responses, checked)).join('')}</div>`}
     ${score.total ? `<div class="actions study-actions">${button(checked ? 'exam-edit' : 'exam-check', t(checked ? 'examPracticeAgain' : 'examCheck'), 'primary')}</div>` : ''}`;
   const tip = section.ads ? 'examMatchAds' : 'examMatchHelp';
   return `<div class="exam-part">
       ${listening ? `<p class="notice">${t('examNoAudio')}</p>` : ''}
-      ${isMatching(section) && !checked ? `<p class="study-meta">${t(tip)}</p>` : ''}
+      ${isMatching(section) && !checked && !gapText ? `<p class="study-meta">${t(tip)}</p>` : ''}
       ${section.ads ? renderAds(section.ads) : ''}
       <section class="panel exam-paper">
         ${checked ? `<h2 id="exam-result" tabindex="-1">${t('examScore', num(score.correct), num(score.total))}</h2>` : ''}
-        ${passage ? `<div class="exam-passage" lang="de" dir="ltr">${passage}</div>` : ''}
-        ${bank}${exercise}
+        ${gapText && !checked && isMatching(section) ? `<div class="drag-layout">${bank}<div class="exam-passage gap-text" lang="de" dir="ltr">${passage}</div></div>${exercise}`
+          : `${passage ? `<div class="exam-passage ${gapText ? 'gap-text' : ''}" lang="de" dir="ltr">${passage}</div>` : ''}${bank}${exercise}`}
       </section>
       ${renderVariants(section)}
     </div>`;
@@ -260,3 +295,21 @@ export const actions = {
     result.focus();
   }
 };
+
+// Sprachbausteine part 2: drag words from the list into the gaps.
+export function mount(app, root, route) {
+  const model = app.ctx.modelTests.get(route.key);
+  const section = model?.sections.find(part => part.id === route.section);
+  if (!section || !isGapText(section) || !isMatching(section)) return null;
+  const write = (key, value, keyboard) => {
+    updateDraft(app, draft => {
+      const responses = draft.responses ||= {};
+      for (const [number, answer] of Object.entries(responses)) if (value && answer === value) delete responses[number];
+      if (value) responses[key] = value;
+      else delete responses[key];
+    });
+    app.rerender();
+    if (keyboard) focusAfterPlacing(document.querySelector('#content'), key);
+  };
+  return mountDragDrop(root, { place: write, clear: (key, keyboard) => write(key, '', keyboard) });
+}

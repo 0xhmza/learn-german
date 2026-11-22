@@ -15,7 +15,7 @@ const topicOptions = app => ({
 
 export function render(app) {
   const { state } = app;
-  return `${crumbs([['home', t('tabHome')], [null, t('allTopics')]])}
+  return `${crumbs([['home', t('tabHome')], ['grammatik', t('courseGrammar')], [null, t('allTopics')]])}
     <section class="page-head"><h1>${t('allTopics')}</h1><p>${t('allTopicsIntro')}</p></section>
     <section class="panel topics-panel">
       ${renderTopicBrowser({

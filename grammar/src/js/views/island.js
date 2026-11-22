@@ -26,7 +26,7 @@ export function render(app, route) {
   const task = ctx.learning.islands?.[island.id];
   const current = nextLesson(ctx, state)?.id;
   const percent = Math.round((p.learnedAll / Math.max(1, p.totalAll)) * 100);
-  return `${crumbs([['home', t('tabHome')], [null, `${t('moduleN', num(island.order))} · ${esc(islandName(island, lang))}`]])}
+  return `${crumbs([['home', t('tabHome')], ['grammatik', t('courseGrammar')], [null, `${t('moduleN', num(island.order))} · ${esc(islandName(island, lang))}`]])}
     <section class="module-hero ${island.palette}">
       <span class="module-hero-badge" aria-hidden="true">${p.conquered ? icons.trophy : island.emoji}</span>
       <div class="module-hero-copy">

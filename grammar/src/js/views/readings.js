@@ -20,9 +20,9 @@ export function render(app, route) {
     <section class="simple-banner practice-head"><h1>${prose(reading.title[lang])}</h1><p>${prose(t('wordHelp'))}</p></section>
     <article class="panel study-page passage-panel" aria-label="${esc(reading.title[lang])}">
       ${lang === 'ar' ? `<h2 class="passage-title" lang="de" dir="ltr">${esc(reading.title.de)}</h2>` : ''}
-      <div class="gloss-box" role="status" aria-live="polite" aria-atomic="true">
+      <div class="gloss-row"><div class="gloss-box" role="status" aria-live="polite" aria-atomic="true">
         <bdi id="gloss-word" dir="ltr" lang="de" hidden></bdi><span id="gloss-meaning" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">${t('wordPlaceholder')}</span>
-      </div>
+      </div><button type="button" class="btn quiet gloss-save" id="gloss-save" data-action="save-word" hidden>${t('wordAdd')}</button></div>
       ${reading.paragraphs.map(({ de: line, ar }, paragraph) => {
         let index = 0;
         const words = readingWords(line, ctx.glossary).map(({ text, gloss }) => gloss
@@ -39,7 +39,7 @@ export function render(app, route) {
       ${reading.lessons.map(id => `<li><a href="#lesson/${id}">${prose(lessonTitle(ctx.lessons.get(id), lang))}</a></li>`).join('')}</ul></section>`;
 }
 
-function showGloss(target) {
+function showGloss(target, app) {
   const previous = document.querySelector('.gloss-word[aria-pressed="true"]');
   if (previous) previous.setAttribute('aria-pressed', 'false');
   const paragraph = target.closest('.passage-text');
@@ -53,9 +53,16 @@ function showGloss(target) {
   meaning.lang = 'ar';
   meaning.dir = 'rtl';
   meaning.textContent = target.dataset.gloss;
+  const save = document.querySelector('#gloss-save');
+  const saved = Boolean(app.state.words[target.textContent]);
+  save.hidden = false;
+  save.dataset.word = target.textContent;
+  save.disabled = saved;
+  save.textContent = t(saved ? 'wordSaved' : 'wordAdd');
+  save.setAttribute('aria-label', t(saved ? 'wordSavedNamed' : 'wordAddNamed', target.textContent));
 }
 
-export const actions = { gloss: (app, target) => showGloss(target) };
+export const actions = { gloss: (app, target) => showGloss(target, app) };
 
 export function onKey(app, event) {
   const word = event.target.closest('.gloss-word');

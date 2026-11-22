@@ -7,9 +7,13 @@ import { t, setLang, getLang } from './i18n/index.js';
 import { award } from './engine/gamification.js';
 import { renderHud } from './components/hud.js';
 import { icons, logo } from './components/icons.js';
+import { mountWordPicker } from './components/wordpick.js';
+import { addWord } from './engine/words.js';
+import { areaOf, recordVisit } from './engine/areas.js';
 import { createToaster, describeNotes } from './components/toast.js';
 import { esc, plainText, prose } from './components/html.js';
 import * as home from './views/home.js';
+import * as grammar from './views/grammar.js';
 import * as island from './views/island.js';
 import * as topics from './views/topics.js';
 import { vocab, writing, level } from './views/sections.js';
@@ -24,7 +28,7 @@ import * as cards from './views/cards.js';
 import * as modelExams from './views/model-exams.js';
 import { goToRun } from './views/practice.js';
 
-const views = { home, island, topics, level, vocab, writing, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+const views = { home, grammar, island, topics, level, vocab, writing, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 // Main navigation: [hash, tab, label key, icon]. The bottom bar on phones
 // leaves out the exam trainer, which the practice page links to.
 const NAV = [
@@ -39,7 +43,12 @@ const NAV = [
 const PLAYER_VIEWS = new Set(['lesson', 'quiz']);
 // Actions available on every page.
 const globalActions = {
-  run: (app, target) => goToRun(app, target.dataset.key)
+  run: (app, target) => goToRun(app, target.dataset.key),
+  'save-word'(app, target) {
+    app.saveWord(target.dataset.word);
+    target.disabled = true;
+    target.textContent = t('wordSaved');
+  }
 };
 const root = document.documentElement;
 const $ = selector => document.querySelector(selector);
@@ -104,6 +113,7 @@ async function boot() {
   const store = createStore(ctx, { storage, day: today() });
   const toaster = createToaster($('#toasts'));
   let route = null;
+  let picker = null;
   let view = null;
   let cleanup = null;
 
@@ -169,6 +179,11 @@ async function boot() {
     view = views[route.view];
     document.body.classList.toggle('player-mode', PLAYER_VIEWS.has(route.view));
     document.body.dataset.view = route.view;
+    picker?.hide();
+    // Remember where the learner stopped in grammar, writing and exams.
+    const area = areaOf(route);
+    const last = area && store.state.last[area];
+    if (area && !app.redrawing && (last?.hash !== route.hash || last?.day !== today())) store.update(state => recordVisit(state, route, today()));
     for (const anchor of document.querySelectorAll('[data-tab]')) {
       if (anchor.dataset.tab === route.tab) anchor.setAttribute('aria-current', 'page');
       else anchor.removeAttribute('aria-current');
@@ -188,6 +203,21 @@ async function boot() {
   }
 
   store.subscribe(drawChrome);
+
+  // Word list: any German word on the platform can be saved.
+  app.notify = (text, icon = '✓') => toaster([{ icon, text, kind: 'goal' }]);
+  app.saveWord = word => {
+    const saved = store.update(state => addWord(state, word, today()));
+    if (saved) toaster([{ icon: '📒', text: t('wordAddedToast', saved), kind: 'word' }]);
+    if (route?.view === 'vocab') app.rerender();
+    return saved;
+  };
+  picker = mountWordPicker({
+    isSaved: word => Boolean(store.state.words[word]),
+    save: word => app.saveWord(word),
+    // No lookups while a question is still open.
+    blocked: el => Boolean(el.closest('.lesson-quiz') && document.querySelector('[data-check]'))
+  });
 
   const notice = [];
   if (!store.available) notice.push(t('storageOff'));

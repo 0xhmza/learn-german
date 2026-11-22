@@ -1,11 +1,14 @@
-// Level pages (A1–C1) and the Vokabeln and Schreiben areas. Only B1 has
-// content so far: the grammar course and the telc exam trainer. Everything
-// else is an empty section that is ready for content.
-import { t, num } from '../i18n/index.js';
-import { overall } from '../engine/progress.js';
-import { CEFR, cefrBySlug } from '../cefr.js';
+// The level picker and the Vokabeln and Schreiben pages. Only B1 has
+// content so far: grammar, writing tasks and the telc exam trainer.
+import { t, num, getLang } from '../i18n/index.js';
+import { CEFR } from '../cefr.js';
+import { islandName } from '../content.js';
+import { currentLevel, levelHasContent, writingTasks, writingProgress, vocabProgress } from '../engine/areas.js';
+import { resumeCard, levelSoonCard } from '../components/widgets.js';
+import { stopFor } from '../components/stops.js';
 import { icons } from '../components/icons.js';
-import { esc, link, crumbs } from '../components/html.js';
+import { esc, prose, link, button, crumbs, formatDay } from '../components/html.js';
+import { wordList, removeWord } from '../engine/words.js';
 
 const art = {
   vocab: `<svg viewBox="0 0 160 120" aria-hidden="true"><rect x="38" y="22" width="76" height="86" rx="10" fill="var(--t-sky)" transform="rotate(-8 76 65)"/>
@@ -25,12 +28,13 @@ function levelRows(kind) {
     <span class="soon-chip">${t('comingSoon')}</span></li>`).join('')}</ul>`;
 }
 
-function area(kind) {
+function area(kind, extra = '') {
   const vocab = kind === 'vocab';
   return `<section class="area-hero ${vocab ? 'sky' : 'peach'}">
       <span class="area-icon" aria-hidden="true">${vocab ? icons.vocab : icons.writing}</span>
       <div><h1>${t(vocab ? 'navVocab' : 'navWriting')}</h1><p>${t(vocab ? 'vocabIntro' : 'writingIntro')}</p></div>
     </section>
+    ${extra}
     <div class="area-grid">
       <section class="panel empty-state">
         <div class="empty-art">${art[kind]}</div>
@@ -42,49 +46,127 @@ function area(kind) {
     </div>`;
 }
 
+// The learner's saved words, newest first.
+function myWords(app) {
+  const words = wordList(app.state);
+  const list = words.length
+    ? `<ul class="my-words" lang="de" dir="ltr">${words.map(([word, day]) => `<li>
+        <span class="my-word">${esc(word)}</span><small lang="${getLang()}" dir="auto">${esc(formatDay(day, { day: 'numeric', month: 'short' }))}</small>
+        <button type="button" class="icon-btn word-remove" data-action="word-remove" data-word="${esc(word)}" aria-label="${esc(t('wordRemove', word))}" title="${esc(t('wordRemove', word))}">${icons.close}</button>
+      </li>`).join('')}</ul>`
+    : `<p class="muted">${t('myWordsEmpty')}</p>`;
+  return `<section class="panel my-words-panel" aria-labelledby="my-words-title">
+      <div class="section-row"><h2 id="my-words-title">${t('myWords')} <span class="count-chip">${num(words.length)}</span></h2>
+        ${words.length ? button('words-copy', t('wordsCopy'), 'quiet') : ''}</div>
+      <p class="muted my-words-how">${t('myWordsHow')}</p>
+      ${list}
+    </section>`;
+}
+
 export const vocab = {
   title: () => t('navVocab'),
-  render: () => area('vocab')
+  render(app) {
+    const { last, words } = vocabProgress(app.state);
+    const resume = last ? resumeCard({ eyebrow: t('lastWordSaved'), stop: {
+      title: `<bdi lang="de" dir="ltr">${esc(last.word)}</bdi>`,
+      meta: `${t('lastOn', formatDay(last.day, { day: 'numeric', month: 'long' }))} · ${t('wordsSavedCount', num(words))}`,
+      action: ''
+    } }) : '';
+    return area('vocab', resume + myWords(app));
+  },
+  actions: {
+    'word-remove'(app, target) {
+      const word = target.dataset.word;
+      app.store.update(state => removeWord(state, word));
+      app.rerender();
+      document.querySelector('.word-remove')?.focus({ preventScroll: true });
+    },
+    async 'words-copy'(app, target) {
+      const text = wordList(app.state).map(([word]) => word).join('\n');
+      try {
+        await navigator.clipboard.writeText(text);
+        target.textContent = t('wordsCopied');
+      } catch {
+        target.textContent = t('wordsCopyFailed');
+      }
+    }
+  }
 };
+
+// Schreiben: where the learner stopped, then every writing task with its
+// status: the everyday task of each grammar island and the writing part of
+// each mock exam.
+function writingPage(app) {
+  const { ctx, state } = app;
+  const lang = getLang();
+  const level = currentLevel(state);
+  const hero = `<section class="area-hero peach">
+      <span class="area-icon" aria-hidden="true">${icons.writing}</span>
+      <div><h1>${t('navWriting')}</h1><p>${t('writingIntro')}</p></div>
+    </section>`;
+  if (!levelHasContent(level)) return hero + levelSoonCard(level);
+  const { exams, everyday } = writingTasks(ctx, state);
+  const progress = writingProgress(ctx, state);
+  const percent = Math.round((progress.done / Math.max(1, progress.total)) * 100);
+  const islandOf = task => ctx.islandById.get(task.id);
+  const open = everyday.find(task => !task.done) || exams.find(task => !task.done);
+  const startOpen = open && (open.kind === 'exam'
+    ? { title: esc(`${t('examModel', num(open.model.number))} · ${open.model.title[lang]}`), action: link(open.hash, t('startHere'), 'primary') }
+    : { title: prose(open.task[lang]), action: button('run', t('startHere'), 'primary', `data-key="${open.key}"`) });
+  const status = done => `<span class="task-status ${done ? 'done' : ''}">${done ? `${icons.check}${t('taskDone')}` : t('topicNew')}</span>`;
+  return `${hero}
+    ${resumeCard({ stop: stopFor(app, 'writing'), empty: startOpen ? { title: startOpen.title, action: startOpen.action } : { title: t('studyCaughtUp') } })}
+    <div class="area-progress"><span>${t('writingDone', num(progress.done), num(progress.total))}</span><span class="bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span></div>
+    <section class="panel task-panel" aria-labelledby="everyday-tasks">
+      <h2 id="everyday-tasks">${t('writingEverydayTasks')}</h2>
+      <ul class="task-list">${everyday.map(task => `<li class="task-row">
+        <span class="sum-emoji ${islandOf(task).palette}" aria-hidden="true">${islandOf(task).emoji}</span>
+        <span class="task-main"><strong>${esc(islandName(islandOf(task), lang))}</strong><small>${prose(task.task[lang])}</small></span>
+        ${status(task.done)}${button('run', t(task.done ? 'writeAgain' : 'startHere'), task.done ? 'quiet' : 'secondary', `data-key="${task.key}"`)}
+      </li>`).join('')}</ul>
+    </section>
+    <section class="panel task-panel" aria-labelledby="exam-tasks">
+      <h2 id="exam-tasks">${t('writingExamTasks')}</h2>
+      <ul class="task-list">${exams.map(task => `<li class="task-row">
+        <span class="task-number" aria-hidden="true">${num(task.model.number)}</span>
+        <span class="task-main"><strong>${esc(task.model.title[lang])}</strong><small>${esc(t('examModel', num(task.model.number)))}</small></span>
+        <span class="task-status ${task.done ? 'draft' : ''}">${task.done ? t('taskDraft') : t('topicNew')}</span>
+        ${link(task.hash, t(task.done ? 'resumeWriting' : 'startHere'), task.done ? 'quiet' : 'secondary')}
+      </li>`).join('')}</ul>
+    </section>`;
+}
 
 export const writing = {
   title: () => t('navWriting'),
-  render: () => area('writing')
+  render: app => writingPage(app)
 };
 
-function courseCard({ icon, tone, title, text, href, soon, progress }) {
-  const body = `<span class="course-card-icon ${tone}" aria-hidden="true">${icon}</span>
-    <span class="course-card-text"><strong>${title}</strong><small>${text}</small>
-      ${progress !== undefined ? `<span class="bar" aria-hidden="true"><i style="inline-size:${progress}%"></i></span>` : ''}</span>
-    ${soon ? `<span class="soon-chip">${t('comingSoon')}</span>` : `<span class="course-card-go" aria-hidden="true">${icons.chevron}</span>`}`;
-  return soon ? `<li><div class="course-card soon">${body}</div></li>` : `<li><a class="course-card" href="#${href}">${body}</a></li>`;
-}
-
+// Choosing the level. The dashboard, grammar, writing and exam pages follow
+// the chosen level; progress on other levels is kept.
 export const level = {
-  title: (app, route) => t('levelTitle', cefrBySlug.get(route.key).id),
+  title: () => t('levelPickTitle'),
   render(app, route) {
-    const { ctx, state } = app;
-    const info = cefrBySlug.get(route.key);
-    const stats = overall(ctx, state);
-    const percent = Math.round((stats.learned / Math.max(1, stats.lessons)) * 100);
-    const cards = [
-      courseCard({ icon: icons.learn, tone: 'lilac', title: info.grammar ? t('grammarCourseName') : t('courseGrammar'),
-        text: info.grammar ? `${t('grammarCourseSub', num(ctx.lessons.size), num(ctx.islands.length))} · ${t('courseProgressPct', num(percent))}` : t('grammarEmptyText'),
-        href: 'home', soon: !info.grammar, progress: info.grammar ? percent : undefined }),
-      courseCard({ icon: icons.vocab, tone: 'sky', title: t('navVocab'), text: t('vocabEmptyText'), href: 'vokabeln', soon: true }),
-      courseCard({ icon: icons.writing, tone: 'peach', title: t('navWriting'), text: t('writingEmptyText'), href: 'schreiben', soon: true })
-    ];
-    if (info.grammar) cards.push(courseCard({ icon: icons.exam, tone: 'mint', title: t('courseExam'), text: t('examToolDesc'), href: 'model-exams' }));
-    const tabs = CEFR.map(item => `<a class="level-tab ${item.tone}" href="#level/${item.slug}" ${item.slug === info.slug ? 'aria-current="page"' : ''} lang="de" dir="ltr">${item.id}</a>`).join('');
-    return `${crumbs([['home', t('tabHome')], [null, t('levelTitle', info.id)]])}
-      <nav class="level-tabs" aria-label="${esc(t('levelsTitle'))}">${tabs}</nav>
-      <section class="level-hero ${info.tone}">
-        <span class="level-code big" lang="de" dir="ltr">${info.id}</span>
-        <div><small>${esc(t('levelNames')[info.id])}</small><h1>${t('levelTitle', info.id)}</h1><p>${esc(t('levelCan')[info.id])}</p></div>
-      </section>
-      ${info.grammar ? '' : `<section class="panel empty-state compact"><span class="empty-icon" aria-hidden="true">${icons.sparkle}</span>
-        <div><h2>${t('levelSoonTitle', info.id)}</h2><p>${t('levelSoonText')}</p></div></section>`}
-      <section class="home-section"><div class="section-row"><h2>${t('levelCourses')}</h2></div>
-        <ul class="course-cards">${cards.join('')}</ul></section>`;
+    const current = currentLevel(app.state);
+    const options = CEFR.map(info => {
+      const ready = levelHasContent(info.id);
+      const isCurrent = info.id === current;
+      return `<li><button type="button" class="level-option ${isCurrent ? 'current' : ''} ${route.key === info.slug ? 'focus' : ''}" data-action="pick-level" data-level="${info.id}" aria-pressed="${isCurrent}">
+        <span class="level-code level-option-code ${info.tone}" lang="de" dir="ltr">${info.id}</span>
+        <span class="level-option-text"><strong>${esc(t('levelNames')[info.id])}</strong><small>${esc(t('levelCan')[info.id])}</small>
+          <span class="level-option-state ${ready ? 'ready' : ''}">${ready ? t('levelAvailable') : t('comingSoon')}</span></span>
+        ${isCurrent ? `<span class="level-option-check">${icons.check}<span>${t('currentLevel')}</span></span>` : ''}
+      </button></li>`;
+    }).join('');
+    return `${crumbs([['home', t('tabHome')], [null, t('levelPickTitle')]])}
+      <section class="page-head"><h1>${t('levelPickTitle')}</h1><p>${t('levelPickIntro')}</p></section>
+      <ul class="level-options">${options}</ul>`;
+  },
+  actions: {
+    'pick-level'(app, target) {
+      const chosen = target.dataset.level;
+      app.store.update(state => { state.settings.level = chosen; });
+      app.notify(t('levelChosen', chosen));
+      app.navigate('home');
+    }
   }
 };

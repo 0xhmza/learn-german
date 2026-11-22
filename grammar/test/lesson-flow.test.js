@@ -9,7 +9,7 @@ import { localize } from '../src/js/content.js';
 import { lessonRunKey } from '../src/js/engine/runs.js';
 import * as lesson from '../src/js/views/lesson.js';
 import * as quiz from '../src/js/views/quiz.js';
-import * as home from '../src/js/views/home.js';
+import * as grammar from '../src/js/views/grammar.js';
 import { context, freshState } from './support/context.js';
 
 const day = '2026-11-14';
@@ -140,7 +140,7 @@ test('Arabic pages isolate German text as left-to-right', () => {
   setLang('ar');
   const ctx = context();
   const app = fakeApp(ctx, freshState(ctx, day));
-  const html = home.render(app, parse('#home', ctx));
+  const html = grammar.render(app, parse('#grammatik', ctx));
   for (const item of ctx.lessons.values()) {
     const german = item.german.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
     assert.ok(html.includes(`lang="de" dir="ltr">${german}<`), `${item.id}: German name marked as LTR`);

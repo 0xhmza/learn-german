@@ -9,6 +9,7 @@ import { LAYOUTS, renderMap, routePoints } from '../src/js/components/map.js';
 import { renderHud } from '../src/js/components/hud.js';
 import { renderIndex } from '../src/js/components/sidebar.js';
 import * as home from '../src/js/views/home.js';
+import * as grammar from '../src/js/views/grammar.js';
 import * as island from '../src/js/views/island.js';
 import * as topics from '../src/js/views/topics.js';
 import { vocab, writing, level } from '../src/js/views/sections.js';
@@ -24,7 +25,7 @@ import * as modelExams from '../src/js/views/model-exams.js';
 import { context, freshState } from './support/context.js';
 
 const day = '2026-11-14';
-const views = { home, island, topics, level, vocab, writing, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+const views = { home, grammar, island, topics, level, vocab, writing, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 
 function fakeApp(ctx, state) {
   const store = {
@@ -74,7 +75,7 @@ for (const lang of ['ar', 'de']) {
     for (const [label, state] of [['new', freshState(ctx, day)], ['active', busyState(ctx)]]) {
       const app = fakeApp(ctx, state);
       const routes = ['#home', '#practice', '#progress', '#settings', '#topics', '#vokabeln', '#schreiben',
-        '#level/a1', '#level/a2', '#level/b1', '#level/b2', '#level/c1',
+        '#level', '#level/a1', '#level/c1', '#grammatik',
         ...ctx.islands.map(item => `#island/${item.id}`),
         ...[...ctx.lessons.keys()].map(id => `#lesson/${id}`),
         '#practice/passiv-perfekt', '#practice/exam-passiv', '#practice/mixed', '#practice/test', '#practice/mistakes',
@@ -98,11 +99,11 @@ for (const lang of ['ar', 'de']) {
   });
 }
 
-test('the dashboard lists every island and every lesson', () => {
+test('the grammar page lists every island and every lesson', () => {
   setLang('de');
   const ctx = context();
   const app = fakeApp(ctx, freshState(ctx, day));
-  const html = home.render(app, parse('#home', ctx));
+  const html = grammar.render(app, parse('#grammatik', ctx));
   for (const id of ctx.lessons.keys()) assert.ok(html.includes(`#lesson/${id}"`), id);
   for (const item of ctx.islands) assert.ok(html.includes(`#island/${item.id}"`), item.id);
 });
@@ -188,18 +189,33 @@ test('both roadmaps use the same progress and hide completed topics without chan
   }
 });
 
-test('the platform shows Vokabeln, Schreiben and the five levels', () => {
+test('the dashboard shows the current level and progress in four areas, nothing more', () => {
   setLang('de');
   const ctx = context();
-  const app = fakeApp(ctx, freshState(ctx, day));
+  const state = freshState(ctx, day);
+  const app = fakeApp(ctx, state);
   const dashboard = home.render(app, parse('#home', ctx));
-  for (const slug of ['a1', 'a2', 'b1', 'b2', 'c1']) assert.match(dashboard, new RegExp(`href="#level/${slug}"`));
-  assert.match(vocab.render(app), /Noch keine Wortlisten/);
-  assert.match(writing.render(app), /Noch keine Schreibaufgaben/);
-  const b1 = level.render(app, parse('#level/b1', ctx));
-  assert.match(b1, /Grammatikinseln B1/);
-  assert.match(b1, /href="#model-exams"/);
-  const c1 = level.render(app, parse('#level/c1', ctx));
-  assert.match(c1, /C1 ist in Vorbereitung/);
-  assert.doesNotMatch(c1, /href="#model-exams"/);
+  for (const href of ['grammatik', 'vokabeln', 'schreiben', 'model-exams']) assert.match(dashboard, new RegExp(`class="progress-card [^"]*" href="#${href}"`), href);
+  assert.equal((dashboard.match(/class="progress-card /g) || []).length, 4);
+  assert.doesNotMatch(dashboard, /#lesson\/|class="modules"|class="continue-card"/, 'no lesson details on the dashboard');
+  assert.ok(dashboard.indexOf('href="#level"') < dashboard.indexOf('streak-widget'), 'the level card sits above the streak');
+  assert.match(dashboard, /Aktuelle Stufe/);
+  assert.match(dashboard, /0 von 51 Lektionen gelernt/);
+});
+
+test('switching the level changes the dashboard and the area pages', () => {
+  setLang('de');
+  const ctx = context();
+  const state = freshState(ctx, day);
+  const app = fakeApp(ctx, state);
+  const picker = level.render(app, parse('#level', ctx));
+  for (const id of ['A1', 'A2', 'B1', 'B2', 'C1']) assert.match(picker, new RegExp(`data-action="pick-level" data-level="${id}" aria-pressed="${id === 'B1'}"`), id);
+  state.settings.level = 'B2';
+  const dashboard = home.render(app, parse('#home', ctx));
+  assert.match(dashboard, /Stufe B2/);
+  assert.equal((dashboard.match(/Bald verfügbar/g) || []).length, 3, 'grammar, writing and exams wait for content');
+  assert.match(grammar.render(app, parse('#grammatik', ctx)), /B2 ist in Vorbereitung/);
+  assert.match(writing.render(app), /B2 ist in Vorbereitung/);
+  assert.match(modelExams.render(app, parse('#model-exams', ctx)), /B2 ist in Vorbereitung/);
+  assert.match(vocab.render(app), /Meine Wörter/);
 });

@@ -21,6 +21,7 @@ import { assembleContent } from './assemble-content.js';
 import { indexContent } from '../src/js/content.js';
 import { defaultState, normalizeState } from '../src/js/engine/migrate.js';
 import { award } from '../src/js/engine/gamification.js';
+import { addWord } from '../src/js/engine/words.js';
 import { today, addDays } from '../src/js/dates.js';
 import { decodePng, pixelDifference } from './png.js';
 
@@ -43,8 +44,9 @@ const SCREENS = [
   ['home', 'home', null, true],
   ['module', 'island/relativsaetze', null, true],
   ['topics', 'topics'],
-  ['level-b1', 'level/b1'],
-  ['level-c1', 'level/c1'],
+  ['grammar', 'grammatik', null, true],
+  ['levels', 'level'],
+  ['home-b2', 'level', 'level:B2'],
   ['vocab', 'vokabeln'],
   ['writing', 'schreiben'],
   ['practice', 'practice'],
@@ -57,9 +59,14 @@ const SCREENS = [
   ['lesson-wrong', 'lesson/genitiv', 'continue:2,wrong'],
   ['lesson-finish', 'lesson/genitiv', 'walk'],
   ['practice-question', 'practice/genitiv'],
-  ['cards', 'cards/genitiv']
+  ['cards', 'cards/genitiv'],
+  ['sprach-part1', 'sprachbausteine/bibliothek', 'choose:3'],
+  ['sprach-part2', 'sprachbausteine/gartenverein', 'place:3'],
+  ['exam-part1', 'model-exams/petra/sprache-1', 'choose:3'],
+  ['exam-part2', 'model-exams/petra/sprache-2', 'place:3'],
+  ['word-pick', 'lesson/genitiv', 'pick']
 ];
-const DARK = new Set(['home', 'lesson-question', 'lesson-wrong', 'lesson-finish', 'profile']);
+const DARK = new Set(['home', 'lesson-question', 'lesson-wrong', 'lesson-finish', 'profile', 'sprach-part2', 'vocab']);
 
 // A learner with some progress: one island done, one exam, a mistake and a
 // short streak, so every widget has something to show.
@@ -72,6 +79,11 @@ async function seedState() {
   for (const lesson of ctx.islandLessons('passiv')) award(ctx, state, { kind: 'lessonLearned', lesson: lesson.id }, day);
   award(ctx, state, { kind: 'exam', island: 'passiv', correct: 9, total: 10 }, day);
   award(ctx, state, { kind: 'answer', q: ctx.route[0].questions[0], correct: false }, day);
+  const second = [...ctx.modelTests.values()][1];
+  state.last = { grammar: { hash: `lesson/${ctx.islandLessons('nomen-kasus')[3].id}`, day }, writing: { hash: 'model-exams/petra/schreiben', day }, tests: { hash: `model-exams/${second.id}/lesen-1`, day } };
+  state.modelExams.petra = { schreiben: { writing: 'Liebe Petra, vielen Dank für deine Nachricht.' } };
+  state.modelExams[second.id] = { 'lesen-1': { checked: true, responses: {} } };
+  for (const word of ['Gebäudes', 'Umzug', 'Ausweis', 'Bushaltestelle', 'Nachbarschaftsgarten', 'trotzdem']) addWord(state, word, day);
   return JSON.stringify(state);
 }
 
@@ -166,6 +178,37 @@ const STEPS = String(async function steps(plan) {
       if (area) { area.value = 'xyz'; fire(area); }
       click('[data-check]');
       await wait(120);
+    }
+    if (name === 'level') {
+      click(`[data-action="pick-level"][data-level="${count}"]`);
+      await wait(250);
+    }
+    if (name === 'choose') {
+      for (const select of [...document.querySelectorAll('select[data-sprach-gap], select[data-exam-item]')].slice(0, Number(count))) {
+        select.selectedIndex = 1;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    }
+    if (name === 'place') {
+      for (let i = 0; i < Number(count); i++) {
+        click('.bank-chip:not(:disabled)');
+        await wait(30);
+        const gap = [...document.querySelectorAll('[data-drop-gap]')].find(item => !item.dataset.value);
+        gap.click();
+        await wait(80);
+      }
+      document.activeElement?.blur();
+    }
+    if (name === 'pick') {
+      const word = document.querySelector('.example .de');
+      const range = document.createRange();
+      range.setStart(word.firstChild, word.textContent.lastIndexOf(' ') + 1);
+      range.setEnd(word.firstChild, word.textContent.length);
+      getSelection().removeAllRanges();
+      getSelection().addRange(range);
+      await wait(250);
+      if (document.querySelector('.word-pop').hidden) throw new Error('the word button did not appear');
+      continue;
     }
     if (name === 'walk') {
       for (let guard = 0; guard < 80 && !document.querySelector('.lesson-complete'); guard++) {

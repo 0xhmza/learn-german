@@ -60,6 +60,19 @@ No step fails. The remaining frictions are listed under open points.
 | Low | In Arabic, "+70 XP" was shown as "70+". | The number is isolated as left-to-right. |
 | Bug | The new completion screen's class also matched finished modules on the path and squeezed their header (found when reviewing the Arabic tablet screenshot). | Class renamed. The screenshot baseline now guards against this. |
 
+## Update: dashboard as a progress overview
+
+The dashboard now shows only the progress of the four areas for the current level, with the level card above the streak. Details moved to the area pages, which open with "Hier hast du aufgehört".
+
+| Task | Before | Now |
+| --- | --- | --- |
+| Continue the current lesson | 1 tap (continue card) | 2 taps: Grammatik card, then "Fortsetzen" |
+| Continue a writing task or exam part | Several steps through the exam trainer | 2 taps: area card, then "Fortsetzen" |
+| Switch level | Level strip, then a level page | 2 taps: level card, then the level |
+| Today's review | 1 tap on the dashboard | Üben tab |
+
+Continuing a lesson costs one more tap. In exchange, every area has the same way back in, and the dashboard stays short on phones (level, streak, goal, four cards).
+
 ## Open points
 
 - The continue card prefers an unfinished practice run over the next lesson. That is the existing study rule; consider offering both when a lesson is waiting.
@@ -70,4 +83,4 @@ No step fails. The remaining frictions are listed under open points.
 ## How this is tested
 
 - `npm test` includes `test/lesson-flow.test.js`. It checks the screen order of every lesson, walks a lesson to its end, checks that questions cannot be skipped and that a finished lesson restarts, renders every screen of all 51 lessons in German and Arabic, and checks that German text is marked as left-to-right in Arabic pages.
-- `npm run test:visual` opens 18 screens in a headless browser: on phone, tablet and desktop, in German and Arabic, with light mode and a dark mode subset (128 captures). It checks text direction, sideways scrolling, elements outside the viewport, cut-off text, covered controls, touch targets under 24 px, WCAG AA text contrast, and that the navigation rail, tab bar and lesson close button follow the reading direction. It also compares every screenshot with a local baseline (`--update` accepts the current state). The report is `visual-report/index.html`.
+- `npm run test:visual` opens 23 screens in a headless browser: on phone, tablet and desktop, in German and Arabic, with light mode and a dark mode subset (166 captures). The screens include Sprachbausteine with dropdowns and dragged words, and the word-list button. It checks text direction, sideways scrolling, elements outside the viewport, cut-off text, covered controls, touch targets under 24 px, WCAG AA text contrast, and that the navigation rail, tab bar and lesson close button follow the reading direction. It also compares every screenshot with a local baseline (`--update` accepts the current state). The report is `visual-report/index.html`.
