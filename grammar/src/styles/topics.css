@@ -54,8 +54,6 @@
 .topic-island-link { display: inline-flex; align-items: center; min-block-size: 40px; margin-inline: 14px; font-size: .875rem; font-weight: 700; }
 .topic-island-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .topic-empty { display: grid; justify-items: start; gap: 10px; padding: 16px; border: 1px dashed var(--line-strong); border-radius: 10px; color: var(--muted); font-size: .875rem; }
-.trail-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 0 16px; margin-block-start: 12px; }
-.trail-filters p { flex-basis: 100%; }
 
 #sidebar-browser { flex: 1; display: flex; flex-direction: column; min-block-size: 0; }
 .topic-browser.compact { grid-template-rows: auto auto auto minmax(0, 1fr); flex: 1; min-block-size: 0; gap: 7px; }

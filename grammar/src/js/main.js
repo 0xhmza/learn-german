@@ -3,15 +3,16 @@ import { indexContent } from './content.js';
 import { createStore, safeGet, safeSet, LANG_KEY, THEME_KEY } from './state.js';
 import { parse } from './router.js';
 import { today } from './dates.js';
-import { t, num, setLang, getLang } from './i18n/index.js';
+import { t, setLang, getLang } from './i18n/index.js';
 import { award } from './engine/gamification.js';
-import { overall } from './engine/progress.js';
 import { renderHud } from './components/hud.js';
-import { createTopicBrowser, bindTopicBrowser, renderTopicBrowser } from './components/sidebar.js';
+import { icons, logo } from './components/icons.js';
 import { createToaster, describeNotes } from './components/toast.js';
 import { esc, plainText, prose } from './components/html.js';
 import * as home from './views/home.js';
 import * as island from './views/island.js';
+import * as topics from './views/topics.js';
+import { vocab, writing, level } from './views/sections.js';
 import * as lesson from './views/lesson.js';
 import * as practice from './views/practice.js';
 import * as quiz from './views/quiz.js';
@@ -23,7 +24,19 @@ import * as cards from './views/cards.js';
 import * as modelExams from './views/model-exams.js';
 import { goToRun } from './views/practice.js';
 
-const views = { home, island, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+const views = { home, island, topics, level, vocab, writing, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+// Main navigation: [hash, tab, label key, icon]. The bottom bar on phones
+// leaves out the exam trainer, which the practice page links to.
+const NAV = [
+  ['home', 'home', 'tabHome', 'learn'],
+  ['vokabeln', 'vocab', 'navVocab', 'vocab'],
+  ['schreiben', 'writing', 'navWriting', 'writing'],
+  ['practice', 'practice', 'tabPractice', 'practice'],
+  ['model-exams', 'model-exams', 'navExam', 'exam'],
+  ['progress', 'progress', 'navProfile', 'profile']
+];
+// Lessons and practice runs open as a focused player without the app navigation.
+const PLAYER_VIEWS = new Set(['lesson', 'quiz']);
 // Actions available on every page.
 const globalActions = {
   run: (app, target) => goToRun(app, target.dataset.key)
@@ -32,10 +45,6 @@ const root = document.documentElement;
 const $ = selector => document.querySelector(selector);
 const content = $('#content');
 const main = $('#main');
-const sidebarHost = $('#sidebar-browser');
-const menu = $('#menu');
-const sidebar = $('#sidebar');
-const shade = $('#shade');
 const themeButton = $('#theme');
 const storage = (() => { try { return window.localStorage; } catch { return null; } })();
 
@@ -55,7 +64,15 @@ function applyTheme() {
   const dark = currentTheme() === 'dark';
   themeButton.setAttribute('aria-label', dark ? t('toLight') : t('toDark'));
   themeButton.title = themeButton.getAttribute('aria-label');
-  $('meta[name="theme-color"]').content = dark ? '#111019' : '#f6f5fa';
+  $('meta[name="theme-color"]').content = dark ? '#10141c' : '#f3f5f9';
+}
+
+function drawNav() {
+  const item = ([hash, tab, label, icon], cls) => `<a href="#${hash}" class="${cls}" data-tab="${tab}"><span class="nav-ico" aria-hidden="true">${icons[icon]}</span><span class="nav-label" data-t="${label}"></span></a>`;
+  $('#rail-nav').innerHTML = NAV.map(entry => item(entry, 'rail-link')).join('');
+  $('#bottom-nav').innerHTML = NAV.filter(([hash]) => hash !== 'model-exams').map(entry => item(entry, 'tab-link')).join('');
+  for (const el of document.querySelectorAll('[data-logo]')) el.innerHTML = logo;
+  for (const el of document.querySelectorAll('[data-icon]')) el.innerHTML = icons[el.dataset.icon];
 }
 
 function applyChrome() {
@@ -68,19 +85,11 @@ function applyChrome() {
   for (const el of document.querySelectorAll('[data-t-ph]')) el.placeholder = t(el.dataset.tPh);
   for (const el of document.querySelectorAll('[data-t-title]')) el.title = t(el.dataset.tTitle);
   for (const el of document.querySelectorAll('[data-lang]')) el.setAttribute('aria-pressed', String(el.dataset.lang === lang));
-  setDrawer(sidebar.classList.contains('open'));
   applyTheme();
 }
 
-function setDrawer(open) {
-  sidebar.classList.toggle('open', open);
-  shade.hidden = !open;
-  menu.setAttribute('aria-expanded', String(open));
-  menu.title = t(open ? 'menuClose' : 'menuOpen');
-  menu.setAttribute('aria-label', menu.title);
-}
-
 async function boot() {
+  drawNav();
   const initialLang = safeGet(storage, LANG_KEY) || safeGet(storage, 'deutsch-b11-lang') || (root.lang === 'de' ? 'de' : 'ar');
   setLang(initialLang);
   let raw;
@@ -94,8 +103,6 @@ async function boot() {
   const ctx = indexContent(raw);
   const store = createStore(ctx, { storage, day: today() });
   const toaster = createToaster($('#toasts'));
-  const browser = createTopicBrowser();
-  let sidebarTree;
   let route = null;
   let view = null;
   let cleanup = null;
@@ -110,7 +117,9 @@ async function boot() {
     day: () => today(),
     reduceMotion: () => store.state.settings.reduceMotion || matchMedia('(prefers-reduced-motion: reduce)').matches,
     toast(notes) {
-      const messages = describeNotes(ctx, notes);
+      // In the player, XP is summed up on the completion screen instead.
+      const shown = document.body.classList.contains('player-mode') ? notes.filter(note => note.type !== 'xp') : notes;
+      const messages = describeNotes(ctx, shown);
       if (messages.length) toaster(messages);
     },
     // Applies learning events in one store update and shows their notes.
@@ -134,7 +143,6 @@ async function boot() {
       setLang(next);
       safeSet(storage, LANG_KEY, next);
       applyChrome();
-      mountSidebar();
       this.rerender();
     },
     setTheme(mode) {
@@ -150,49 +158,25 @@ async function boot() {
     themeMode: () => root.dataset.theme || 'auto'
   };
 
-  const sidebarOptions = () => ({
-    ctx, state: store.state, compact: true, browser, id: 'sidebar-topics',
-    current: route?.view === 'lesson' ? route.key : null
-  });
-
-  function mountSidebar() {
-    sidebarHost.innerHTML = renderTopicBrowser(sidebarOptions());
-    sidebarTree = bindTopicBrowser(sidebarHost, sidebarOptions);
-  }
-
   function drawChrome() {
     $('#hud').innerHTML = renderHud(store.state, today());
-    sidebarTree.refresh();
-    const { levelFilter } = store.state.settings;
-    const stats = overall(ctx, store.state, levelFilter);
-    $('#side-progress').textContent = t('topicsDone', num(stats.learned), num(stats.lessons));
-    const level = $('#side-level');
-    level.hidden = levelFilter === 'all';
-    level.textContent = levelFilter;
-    level.title = t('filterLabel');
-    const meter = $('#side-meter');
-    meter.max = Math.max(1, stats.lessons);
-    meter.value = stats.learned;
   }
 
   function render(initial = false) {
     cleanup?.();
     cleanup = null;
-    const previous = route;
     route = parse(location.hash, ctx);
     view = views[route.view];
-    if (!app.redrawing) setDrawer(false);
-    if (route.view === 'lesson' && route.key !== previous?.key) {
-      const current = ctx.lessons.get(route.key);
-      browser.open.delete(current.island);
-      browser.open.delete(`chapter-${current.source.lektion}`);
-    }
+    document.body.classList.toggle('player-mode', PLAYER_VIEWS.has(route.view));
+    document.body.dataset.view = route.view;
     for (const anchor of document.querySelectorAll('[data-tab]')) {
       if (anchor.dataset.tab === route.tab) anchor.setAttribute('aria-current', 'page');
       else anchor.removeAttribute('aria-current');
     }
-    if (route.tab === 'settings') $('#settings-link').setAttribute('aria-current', 'page');
-    else $('#settings-link').removeAttribute('aria-current');
+    for (const anchor of document.querySelectorAll('[data-settings-link]')) {
+      if (route.tab === 'settings') anchor.setAttribute('aria-current', 'page');
+      else anchor.removeAttribute('aria-current');
+    }
     content.innerHTML = view.render(app, route);
     document.title = view.title ? `${plainText(view.title(app, route))} · ${t('brand')}` : t('docTitle');
     cleanup = view.mount?.(app, content, route) || null;
@@ -215,10 +199,9 @@ async function boot() {
 
   function updateTopicSetting(target, key, value, focusSelector) {
     if (store.state.settings[key] === value) return;
-    const area = target.closest('#sidebar') || content;
     store.update(state => { state.settings[key] = value; });
-    if (route.view === 'home' || route.view === 'island' || (route.view === 'lesson' && key === 'roadmap')) app.rerender();
-    (area.querySelector(focusSelector) || area.querySelector('[data-topic-search]'))?.focus({ preventScroll: true });
+    if (['home', 'island', 'topics'].includes(route.view) || (route.view === 'lesson' && key === 'roadmap')) app.rerender();
+    (content.querySelector(focusSelector) || content.querySelector('[data-topic-search]'))?.focus({ preventScroll: true });
   }
 
   document.addEventListener('click', event => {
@@ -230,21 +213,6 @@ async function boot() {
   document.addEventListener('change', event => {
     if (!event.target.matches('[data-hide-completed]')) return;
     updateTopicSetting(event.target, 'hideCompleted', event.target.checked, '[data-hide-completed]');
-  });
-  sidebarHost.addEventListener('click', event => {
-    if (event.target.closest('a') && sidebar.classList.contains('open')) {
-      setDrawer(false);
-      if (event.target.closest('a').hash === location.hash) main.focus({ preventScroll: true });
-    }
-  });
-  menu.addEventListener('click', () => {
-    const open = !sidebar.classList.contains('open');
-    setDrawer(open);
-    if (open) sidebarTree.search.focus();
-  });
-  shade.addEventListener('click', () => {
-    setDrawer(false);
-    menu.focus();
   });
   for (const el of document.querySelectorAll('[data-lang]')) el.addEventListener('click', () => app.setLanguage(el.dataset.lang));
   themeButton.addEventListener('click', () => app.setTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
@@ -259,9 +227,9 @@ async function boot() {
     if (document.visibilityState === 'hidden') store.flush();
   });
   window.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && sidebar.classList.contains('open')) {
-      setDrawer(false);
-      menu.focus();
+    // Escape leaves a lesson or practice run, like the close button.
+    if (event.key === 'Escape' && document.body.classList.contains('player-mode') && !event.target.closest('details[open], textarea')) {
+      document.querySelector('[data-player-close]')?.click();
       return;
     }
     view?.onKey?.(app, event);
@@ -279,7 +247,6 @@ async function boot() {
   content.addEventListener('change', event => view?.onChange?.(app, event));
 
   applyChrome();
-  mountSidebar();
   render(true);
 }
 

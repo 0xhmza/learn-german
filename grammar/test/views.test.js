@@ -10,6 +10,8 @@ import { renderHud } from '../src/js/components/hud.js';
 import { renderIndex } from '../src/js/components/sidebar.js';
 import * as home from '../src/js/views/home.js';
 import * as island from '../src/js/views/island.js';
+import * as topics from '../src/js/views/topics.js';
+import { vocab, writing, level } from '../src/js/views/sections.js';
 import * as lesson from '../src/js/views/lesson.js';
 import * as practice from '../src/js/views/practice.js';
 import * as quiz from '../src/js/views/quiz.js';
@@ -22,7 +24,7 @@ import * as modelExams from '../src/js/views/model-exams.js';
 import { context, freshState } from './support/context.js';
 
 const day = '2026-11-14';
-const views = { home, island, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+const views = { home, island, topics, level, vocab, writing, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 
 function fakeApp(ctx, state) {
   const store = {
@@ -40,7 +42,8 @@ function fakeApp(ctx, state) {
     reduceMotion: () => true,
     redrawing: false,
     themeMode: () => 'auto',
-    route: null
+    route: null,
+    apply(events) { return events.flatMap(event => award(ctx, store.state, event, day)); }
   };
 }
 
@@ -70,7 +73,8 @@ for (const lang of ['ar', 'de']) {
     const ctx = context();
     for (const [label, state] of [['new', freshState(ctx, day)], ['active', busyState(ctx)]]) {
       const app = fakeApp(ctx, state);
-      const routes = ['#home', '#practice', '#progress', '#settings',
+      const routes = ['#home', '#practice', '#progress', '#settings', '#topics', '#vokabeln', '#schreiben',
+        '#level/a1', '#level/a2', '#level/b1', '#level/b2', '#level/c1',
         ...ctx.islands.map(item => `#island/${item.id}`),
         ...[...ctx.lessons.keys()].map(id => `#lesson/${id}`),
         '#practice/passiv-perfekt', '#practice/exam-passiv', '#practice/mixed', '#practice/test', '#practice/mistakes',
@@ -103,7 +107,7 @@ test('the dashboard lists every island and every lesson', () => {
   for (const item of ctx.islands) assert.ok(html.includes(`#island/${item.id}"`), item.id);
 });
 
-test('the lesson renders only the saved slide and opens each activity in the deck', () => {
+test('the lesson renders only the saved screen and keeps questions in the practice run', () => {
   setLang('de');
   const ctx = context();
   const state = freshState(ctx, day);
@@ -112,19 +116,22 @@ test('the lesson renders only the saved slide and opens each activity in the dec
   app.route = route;
   const intro = lesson.render(app, route);
   assert.match(intro, /data-lesson-slide="intro"/);
-  assert.doesNotMatch(intro, /class="wr"|id="quiz-prompt"|<table>/);
-  assert.match(intro, /href="#cards\/genitiv"/);
-  state.lessonSlides.genitiv = 'practice';
-  const practice = lesson.render(app, route);
-  assert.match(practice, /class="lesson-quiz"/);
+  assert.match(intro, /class="player-bar"/);
+  assert.match(intro, /data-continue/);
+  assert.doesNotMatch(intro, /class="wr"|id="quiz-prompt"|<table>|data-deck-back/);
+  state.lessonSlides.genitiv = 'quiz-1';
+  const question = lesson.render(app, route);
+  assert.match(question, /class="lesson-quiz"/);
+  assert.match(question, /data-check/);
   assert.equal(state.runs['lesson-practice-genitiv'].ids.length, ctx.lessons.get('genitiv').questions.length + 1);
   assert.equal(state.runs.genitiv, undefined);
-  state.lessonSlides.genitiv = 'cards';
-  const cards = lesson.render(app, route);
-  assert.match(cards, /Karte 1 von 3/);
-  assert.doesNotMatch(cards, /<textarea|type="radio"|data-blank/);
   assert.equal(state.lastRun, null);
-  assert.deepEqual(state.runs['lesson-cards-genitiv'].ids, ctx.decks.get('genitiv').map(card => `card-${card.id}`));
+  state.lessonSlides.genitiv = 'finish';
+  app.redrawing = true;
+  const finish = lesson.render(app, route);
+  assert.match(finish, /Lektion geschafft!/);
+  assert.match(finish, /href="#cards\/genitiv"/);
+  assert.match(finish, /href="#lesson\/genitiv-praep"/);
 });
 
 test('the map marks conquered islands and places the boat', () => {
@@ -179,4 +186,20 @@ test('both roadmaps use the same progress and hide completed topics without chan
     assert.match(incomplete.html, new RegExp(`value="1" max="${groupSize}"`));
     assert.match(renderIndex({ ctx, state, query: 'Passiv im Perfekt' }).html, /data-show-completed/);
   }
+});
+
+test('the platform shows Vokabeln, Schreiben and the five levels', () => {
+  setLang('de');
+  const ctx = context();
+  const app = fakeApp(ctx, freshState(ctx, day));
+  const dashboard = home.render(app, parse('#home', ctx));
+  for (const slug of ['a1', 'a2', 'b1', 'b2', 'c1']) assert.match(dashboard, new RegExp(`href="#level/${slug}"`));
+  assert.match(vocab.render(app), /Noch keine Wortlisten/);
+  assert.match(writing.render(app), /Noch keine Schreibaufgaben/);
+  const b1 = level.render(app, parse('#level/b1', ctx));
+  assert.match(b1, /Grammatikinseln B1/);
+  assert.match(b1, /href="#model-exams"/);
+  const c1 = level.render(app, parse('#level/c1', ctx));
+  assert.match(c1, /C1 ist in Vorbereitung/);
+  assert.doesNotMatch(c1, /href="#model-exams"/);
 });

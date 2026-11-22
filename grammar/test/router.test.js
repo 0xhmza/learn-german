@@ -18,6 +18,12 @@ test('routes resolve against the content', () => {
   assert.deepEqual(parse('#progress', ctx).tab, 'progress');
   assert.deepEqual(parse('#settings', ctx).view, 'settings');
   assert.deepEqual(parse('#nonsense', ctx).view, 'home');
+  assert.deepEqual(parse('#vokabeln', ctx), { view: 'vocab', key: null, hash: 'vokabeln', tab: 'vocab' });
+  assert.deepEqual(parse('#schreiben', ctx).view, 'writing');
+  assert.deepEqual(parse('#topics', ctx).view, 'topics');
+  assert.deepEqual(parse('#level/b2', ctx), { view: 'level', key: 'b2', hash: 'level/b2', tab: 'home' });
+  assert.deepEqual(parse('#level/d1', ctx).view, 'home');
+  assert.deepEqual(parse('#vokabeln/x', ctx).view, 'home');
 });
 
 test('links from the original B1.1 page still work', () => {

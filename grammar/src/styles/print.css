@@ -1,13 +1,13 @@
 /* Printing a lesson. */
 @media print {
   :root, body { background: #fff; color: #000; }
-  .topbar, .sidebar, .page-foot, .actions, .lesson-nav, .quiz-controls, .shade, .bottom-nav, .toasts, #notice-slot, .finish-bar, .map-panel, .walker, .trail-line { display: none !important; }
-  .layout { display: block; }
+  .topbar, .rail, .player-bar, .page-foot, .actions, .lesson-nav, .quiz-controls, .bottom-nav, .toasts, #notice-slot, .map-panel { display: none !important; }
+  .app { display: block; }
   main { padding: 0; }
   body { padding: 0; }
-  .deck-phases, .deck-progress, .deck-shortcuts, .slide-footer { display: none !important; }
+  .action-bar, .answer-sheet { display: none !important; }
   .panel { margin: 10px 0; box-shadow: none; }
   details.sources, details.slide-recap { display: block; }
-  .lesson-banner, .panel { border-color: #ccc; background: #fff; }
+  .panel { border-color: #ccc; background: #fff; }
   .pitfall, .glance { break-inside: avoid; }
 }

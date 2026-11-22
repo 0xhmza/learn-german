@@ -1,45 +1,29 @@
-/* Island page: banner and lesson trail. */
-.island-banner .lesson-emoji { font-size: 28px; width: 56px; height: 56px; }
-.island-meter { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 14px; font-size: 13px; color: var(--ink-2); }
-.island-meter progress { max-width: 260px; flex: 1 1 140px; }
-.flag-inline { font-size: .8em; }
-.conquered-chip, .learned-chip { display: inline-flex; align-items: center; gap: 4px; background: var(--gold-bg); color: var(--ink); border: 1px solid var(--gold-line); border-radius: 99px; padding: 2px 11px; font-size: 13px; font-weight: 700; }
-.learned-chip { background: var(--good-bg); border-color: var(--good-line); color: var(--good); }
+/* Module page (one grammar island): hero, path and the real-life task. */
+.module-hero { display: flex; align-items: flex-start; gap: 18px; padding: clamp(18px, 3vw, 30px); border-radius: 20px; border: 1px solid var(--line); margin-block-end: 18px; }
+.module-hero-badge { display: grid; place-items: center; inline-size: 72px; block-size: 72px; border-radius: 20px; background: var(--surface); box-shadow: var(--shadow-sm); font-size: 36px; flex: none; }
+.module-hero-badge .ico { inline-size: 34px; block-size: 34px; color: var(--gold); }
+.module-hero-copy { display: grid; gap: 6px; min-inline-size: 0; flex: 1; }
+.module-hero-copy small { color: var(--ink-2); font-weight: 750; font-size: 13px; }
+.module-hero-copy h1 { font-size: clamp(24px, 3vw, 34px); line-height: 1.25; }
+.module-hero-sub { color: var(--ink-2); font-weight: 650; }
+.module-hero-copy > p:not(.module-hero-sub) { color: var(--ink-2); max-inline-size: 60ch; }
+.module-hero-stats { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; font-size: 13.5px; font-weight: 700; color: var(--ink-2); margin-block: 6px 4px; }
+.module-hero-stats .bar { flex: 1 1 160px; max-inline-size: 280px; margin: 0; block-size: 8px; background: var(--surface); }
+.module-hero .actions { margin-block-start: 8px; }
+.module-page { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
+.module-page .module { grid-row: span 2; }
+.module-page .module-more { display: none; }
+.task-card { display: grid; gap: 10px; }
+.task-card h2 { margin: 0; }
+.task-card p { color: var(--ink-2); }
+.task-card .actions { flex-direction: column; align-items: stretch; }
+.conquered-chip { display: inline-flex; align-items: center; gap: 4px; background: var(--gold-bg); color: var(--ink); border: 1px solid var(--gold-line); border-radius: 99px; padding: 2px 11px; font-size: 13px; font-weight: 750; }
 
-.trail-wrap { position: relative; margin-top: 26px; padding: 6px 0 10px; }
-.trail-line { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; }
-.trail-line path { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 3 10; stroke-linecap: round; }
-.trail { list-style: none; margin: 0; padding: 0; display: grid; gap: 30px; position: relative; }
-.trail-node { width: min(100%, 470px); }
-.trail-node:nth-child(odd) { justify-self: start; }
-.trail-node:nth-child(even) { justify-self: end; }
-.node-link { display: flex; align-items: center; gap: 14px; color: var(--ink); padding: 10px 14px 10px 10px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); position: relative; }
-a.node-link:hover { border-color: var(--brand); color: var(--ink); }
-.node-dot { width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; font-size: 30px; background: var(--surface-3); border: 4px solid var(--line-strong); position: relative; z-index: 1; }
-.trail-node.learned .node-dot { border-color: var(--brand); background: var(--brand-soft); }
-.trail-node.practised .node-dot { border-color: var(--brand); background: var(--brand-soft); }
-.trail-node.mastered .node-dot { border-color: var(--gold); background: var(--gold-bg); }
-.node-check { position: absolute; bottom: -4px; inset-inline-end: -4px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 13px; font-weight: 800; background: var(--good); color: #fff; border: 2px solid var(--surface); }
-.trail-node.mastered .node-check { background: var(--gold); color: #1c1a2b; }
-.node-text { display: grid; gap: 3px; min-width: 0; line-height: 1.45; }
-.node-text strong { font-size: 16px; }
-.node-num { font-size: 12px; font-weight: 800; color: var(--muted); }
-.node-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-.prereq-chip { display: inline-block; font-size: 12.5px; color: var(--warn); background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 10px; padding: 3px 9px; line-height: 1.5; }
-.lesson-banner .prereq-chip { margin-top: 10px; }
-.trail-node.exam .node-link { background: linear-gradient(130deg, var(--surface), var(--gold-bg)); }
-.trail-node.exam.locked .node-link { background: var(--surface-2); }
-.trail-node.exam.locked .node-dot { filter: grayscale(1); opacity: .7; }
-.trail-node.exam.ready .node-dot, .trail-node.exam.conquered .node-dot { border-color: var(--gold); background: var(--gold-bg); }
-.exam-text { display: grid; gap: 6px; justify-items: start; font-size: 14px; color: var(--ink-2); }
-.exam-text strong { font-size: 16px; color: var(--ink); }
-.walker { position: absolute; left: 0; top: 0; z-index: 2; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 20px; background: var(--brand); box-shadow: 0 4px 10px #1c1a2b40; border: 2px solid var(--surface); transition: transform .6s cubic-bezier(.4, 0, .2, 1); pointer-events: none; }
-
-@media (max-width: 560px) {
-  .trail { gap: 18px; }
-  .trail-node, .trail-node:nth-child(even) { justify-self: stretch; width: 100%; }
-  .node-dot { width: 60px; height: 60px; font-size: 26px; }
+@media (max-width: 1000px) {
+  .module-page { grid-template-columns: minmax(0, 1fr); }
 }
-@media (prefers-reduced-motion: reduce) {
-  .walker { transition: none; }
+@media (max-width: 560px) {
+  .module-hero { flex-direction: column; gap: 12px; }
+  .module-hero-badge { inline-size: 56px; block-size: 56px; font-size: 28px; }
+  .module-hero .actions .btn { flex: 1 1 100%; }
 }

@@ -1,6 +1,7 @@
 // Hash routes. Unknown or malformed routes fall back to the dashboard;
 // links from the original B1.1 file keep working.
 import { parseRunKey } from './engine/runs.js';
+import { cefrBySlug } from './cefr.js';
 
 export function parse(hash, ctx) {
   const raw = String(hash || '').replace(/^#/, '');
@@ -16,6 +17,10 @@ export function parse(hash, ctx) {
     }
   }
   if (!raw || extra !== undefined) return home;
+  if (view === 'vokabeln' && key === undefined) return { view: 'vocab', key: null, hash: raw, tab: 'vocab' };
+  if (view === 'schreiben' && key === undefined) return { view: 'writing', key: null, hash: raw, tab: 'writing' };
+  if (view === 'topics' && key === undefined) return { view: 'topics', key: null, hash: raw, tab: 'home' };
+  if (view === 'level' && cefrBySlug.has(key)) return { view: 'level', key, hash: raw, tab: 'home' };
   if (view === 'island' && ctx.islandById.has(key)) return { view, key, hash: raw, tab: 'home' };
   if (view === 'lesson' && ctx.lessons.has(key)) return { view, key, hash: raw, tab: 'home' };
   if (view === 'cards' && (key === undefined || ctx.decks.has(key))) return { view, key, hash: raw, tab: 'practice' };

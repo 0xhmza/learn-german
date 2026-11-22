@@ -61,3 +61,28 @@ textarea { width: 100%; display: block; min-height: 110px; resize: vertical; lin
   .stat { padding: 9px 10px; }
   .stat strong { font-size: 20px; }
 }
+
+/* Exercise cards in the player style. */
+.quiz-top { display: flex; align-items: center; gap: 8px; margin-block-end: 10px; }
+.quiz-top .crumb { margin: 0; }
+.quiz-box { margin-inline: auto; border-radius: 20px; padding: clamp(18px, 3.5vw, 32px); }
+.quiz-box > progress, .lesson-quiz > progress { block-size: 10px; margin-block: 4px 6px; }
+.quiz-prompt { font-weight: 760; }
+.choices { gap: 10px; }
+.option { align-items: center; padding: 14px 16px; border: 2px solid var(--line); border-radius: 14px; font-weight: 600; box-shadow: 0 2px 0 var(--line); }
+.option:hover { border-color: var(--brand); background: var(--surface-2); }
+.option:has(input:checked) { border-color: var(--brand); background: var(--brand-soft); box-shadow: 0 2px 0 var(--brand); }
+.option input[type=radio] { inline-size: 20px; block-size: 20px; flex: none; margin: 0; }
+.blank.good, .option.good { border-color: var(--done); box-shadow: 0 2px 0 var(--done); }
+.blank.bad, .option.bad { border-color: var(--bad); box-shadow: 0 2px 0 var(--bad); }
+.order-token { border-width: 2px; border-color: var(--line); border-radius: 12px; min-height: 44px; box-shadow: 0 2px 0 var(--line); }
+.answer-order { border-width: 2px; border-radius: 14px; }
+.feedback { border-width: 2px; border-radius: 16px; padding: 14px 16px; }
+.feedback strong { font-size: 17px; }
+.feedback.correct { border-color: var(--done); }
+.feedback.incorrect { border-color: var(--bad); }
+.quiz-controls .btn { min-block-size: 50px; }
+.quiz-controls .btn.primary { flex: 1 1 200px; max-inline-size: 320px; }
+@media (max-width: 767px) {
+  .quiz-controls .btn { flex: 1 1 auto; }
+}

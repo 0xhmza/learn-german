@@ -626,6 +626,8 @@ Rule: views never write to `localStorage` and never compute XP. They call `state
 
 ### 6.2 Routes
 
+> **Update, November 2026 (redesign).** The platform is now called Deutschpfad and the grammar islands are its B1 course. The shell has a navigation rail on desktop and a five-tab bar on phones (Lernen, Vokabeln, Schreiben, Üben, Profil; the exam trainer sits in the rail and on the practice page). New routes: `#level/<a1|a2|b1|b2|c1>`, `#vokabeln`, `#schreiben` and `#topics` (the topic index and island map that used to sit in the sidebar and on the dashboard). `#home` shows the course path, with one module per island, and `#island/<id>` shows one module. The trail walker and `components/trail.js` were removed. Lessons and practice runs open as a focused player without the navigation. The table below describes the original routes.
+
 | Hash | View | Notes |
 |---|---|---|
 | `#home` (or empty) | dashboard | map + all topics + progress summary |

@@ -2,12 +2,13 @@
 import { t, num, getLang } from '../i18n/index.js';
 import { lessonTitle, islandName } from '../content.js';
 import { overall, pendingErrors, islandProgress, lessonStars } from '../engine/progress.js';
-import { levelFor } from '../engine/gamification.js';
+import { levelFor, displayStreak } from '../engine/gamification.js';
+import { icons, flame, bolt } from '../components/icons.js';
 import { addDays, diffDays } from '../dates.js';
 import { esc, prose, link, button, stars, formatDay } from '../components/html.js';
 import { downloadBackup } from './settings.js';
 
-export const title = () => t('tabProgress');
+export const title = () => t('navProfile');
 
 function calendar(state, day) {
   // 12 full weeks ending with the current week; weeks start on Monday.
@@ -59,34 +60,37 @@ export function render(app) {
         </li>`;
       }).join('')}</ul></details>`;
   }).join('');
+  const streak = displayStreak(state, day);
+  const tiles = [
+    ['streak', flame, num(streak), t('streakTitle')],
+    ['xp', bolt, num(state.xp.total), t('totalXp', '').trim()],
+    ['lessons', icons.learn, t('of', num(stats.learned), num(stats.lessons)), t('lessonsDone')],
+    ['stars', icons.sparkle, t('of', num(stats.stars), num(stats.maxStars)), t('starsTotal')],
+    ['islands', icons.trophy, t('of', num(stats.conquered), num(stats.islands)), t('islandsConquered')],
+    ['answers', icons.check, t('of', num(stats.correct), num(stats.questions)), t('rightAnswers')]
+  ].map(([kind, icon, value, label]) => `<div class="stat-tile ${kind}"><span class="stat-icon" aria-hidden="true">${icon}</span>
+    <span><strong>${value}</strong><small>${label}</small></span></div>`).join('');
   return `
-    <section class="simple-banner practice-head"><h1>${t('progressTitle')}</h1>
-      <p>${store.available ? t('localBackup') : t('progressNoStore')}</p>
-      <div class="actions">${button('backup', t('backup'))}${mistakes ? button('run', t('reviewMistakes'), 'secondary', 'data-key="mistakes"') : ''}</div>
-    </section>
-    <section class="panel">
-      <h2>${t('completedMilestones')}</h2><p>${t('milestoneInfo')}</p>
-      <div class="stats four">
-        <div class="stat"><strong>${t('of', num(stats.learned), num(stats.lessons))}</strong>${t('lessonsDone')}</div>
-        <div class="stat"><strong>${t('of', num(stats.stars), num(stats.maxStars))}</strong>${t('starsTotal')}</div>
-        <div class="stat"><strong>${t('of', num(stats.conquered), num(stats.islands))}</strong>${t('islandsConquered')}</div>
-        <div class="stat"><strong>${t('of', num(stats.correct), num(stats.questions))}</strong>${t('rightAnswers')}</div>
+    <section class="profile-head">
+      <span class="profile-avatar" aria-hidden="true">${num(level.level)}</span>
+      <div class="profile-copy">
+        <small>${t('profileTitle')} · ${t('rank')}</small>
+        <h1>${esc(level.rank[lang])}</h1>
+        <p>${t('totalXp', num(state.xp.total))} · ${t('streakBest', num(state.streak.best))}</p>
+        <div class="goal-bar rank" aria-hidden="true"><i style="inline-size:${Math.round(level.progress * 100)}%"></i></div>
+        <p class="widget-note">${level.to === null ? t('maxRank') : t('toNextRank', num(level.to - state.xp.total))}</p>
       </div>
+      <div class="profile-actions">${button('backup', t('backup'))}${link('settings', t('settings'), 'quiet')}</div>
     </section>
-    <div class="section-heading"><h2>${t('byIsland')}</h2></div>
-    <div class="island-stats-list">${islands}</div>
-    <details class="panel modes-panel"><summary>${t('calendar')} · ${t('badges')}</summary>
-      <div class="rank-row big">
-        <span class="rank-badge" aria-hidden="true">${num(level.level)}</span>
-        <div class="rank-text"><span class="label">${t('rank')}</span><strong>${esc(level.rank[lang])}</strong>
-          <small>${level.to === null ? t('maxRank') : t('toNextRank', num(level.to - state.xp.total))}</small></div>
-        <span class="rank-xp">${t('totalXp', num(state.xp.total))}</span>
-      </div>
-      <div class="xp-bar" aria-hidden="true"><i style="inline-size:${Math.round(level.progress * 100)}%"></i></div>
-      ${calendar(state, day)}
-      <section><h2>${t('badges')}</h2><ul class="badges">${badges}</ul></section>
-    </details>
-    <div class="actions" style="margin-top:14px">${link('settings', t('settings'))}</div>`;
+    <p class="muted profile-note">${store.available ? t('localBackup') : t('progressNoStore')}</p>
+    <section class="home-section"><div class="section-row"><h2>${t('completedMilestones')}</h2>
+      ${mistakes ? button('run', t('reviewMistakes'), 'secondary', 'data-key="mistakes"') : ''}</div>
+      <div class="stat-tiles">${tiles}</div>
+      <p class="muted section-note">${t('milestoneInfo')}</p></section>
+    ${calendar(state, day)}
+    <section class="panel"><h2>${t('badges')}</h2><ul class="badges">${badges}</ul></section>
+    <div class="section-row"><h2>${t('byIsland')}</h2></div>
+    <div class="island-stats-list">${islands}</div>`;
 }
 
 export const actions = {

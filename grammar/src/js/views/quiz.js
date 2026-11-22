@@ -7,6 +7,8 @@ import { newRun, permutation, runScore, passMark, isRunValid, lessonRunKey } fro
 import { lessonStars, pendingErrors } from '../engine/progress.js';
 import { dailyReview, isGuidedRun } from '../engine/study.js';
 import { esc, de, prose, germanLine, link, button, stars, crumbs, formatDay } from '../components/html.js';
+import { icons } from '../components/icons.js';
+import { playerBar } from '../components/player.js';
 
 let hintCount = 0;
 let shownQuestion = '';
@@ -33,7 +35,7 @@ export function runTitle(app, run) {
   return lessonTitle(ctx.lessons.get(run.target), lang);
 }
 
-function getRun(app, key) {
+export function getRun(app, key) {
   let run = app.state.runs[key];
   if (run && isRunValid(app.ctx, run)) return run;
   return app.store.update(state => {
@@ -76,6 +78,7 @@ export function render(app, route, embedded = false) {
       <p>${t(run.kind === 'lesson-cards' ? 'cardsResult' : 'guideScore', num(correct), num(total))}</p>
       ${button('restart', t('newRun'))}</div>`;
   }
+  if (!embedded && run.mode === 'practice') return renderPracticePlayer(app, run);
   const q = question(app, run);
   if (shownQuestion !== q.id) {
     shownQuestion = q.id;
@@ -92,7 +95,7 @@ export function render(app, route, embedded = false) {
   const retry = grade === false && retryQuestion(app.ctx, run, q);
   const due = q.transfer ? app.state.transfer[q.lesson]?.due : q.card ? app.state.cards[q.card]?.due : app.state.results[q.id]?.due;
   const heading = embedded ? 'h2' : 'h1';
-  return `${embedded ? '' : crumbs([['practice', t('practice')], [null, name]])}
+  return `${embedded ? '' : `<div class="quiz-top"><a class="icon-btn player-close" href="#practice" aria-label="${esc(t('closePractice'))}" title="${esc(t('closePractice'))}">${icons.close}</a>${crumbs([['practice', t('practice')], [null, name]])}</div>`}
     <section class="${embedded ? 'lesson-quiz' : 'quiz-box'}" aria-labelledby="quiz-heading">
       <div class="quiz-meta"><strong id="quiz-heading">${name}</strong>
         <span>${t(embedded && q.card ? 'cardOf' : 'questionOf', num(run.position + 1), num(run.ids.length))}</span>
@@ -121,6 +124,80 @@ export function render(app, route, embedded = false) {
       </div>
       ${graded ? `<div id="test-confirm" class="notice" hidden><p id="test-summary"></p><div class="actions" style="margin-top:8px">${button('confirm-test', t('submitNow'), 'primary')}${button('cancel-finish', t('keepSolving'))}</div></div>` : ''}
     </section>`;
+}
+
+// One question as a player screen, the way lessons show it: prompt and
+// answer in the card; the check button, and after checking the coloured
+// answer sheet with "Weiter", in the bottom bar.
+export function playerQuestion(app, run, { onContinue = 'q-next', eyebrow = '' } = {}) {
+  const q = question(app, run);
+  if (shownQuestion !== q.id) {
+    shownQuestion = q.id;
+    hintCount = 0;
+  }
+  const grade = run.grades[q.id];
+  const checked = typeof grade === 'boolean';
+  const value = run.answers[q.id];
+  const hintText = q.hints[hintCount - 1];
+  const retry = grade === false && retryQuestion(app.ctx, run, q);
+  const body = `<div class="lesson-quiz">${eyebrow}
+    <h2 class="quiz-prompt" id="quiz-prompt" tabindex="-1">${prose(q.prompt)}</h2>
+    ${q.context ? `<div class="example">${germanLine(q.context)}</div>` : ''}
+    ${renderInput(run, q, value, checked || grade === 'shown', checked)}
+    <div id="quiz-status" class="sr-only" aria-live="polite"></div>
+    ${hintText && grade === undefined ? `<div class="quiz-help" tabindex="-1"><strong>💡 ${t('hint', num(hintCount))}</strong> · ${prose(hintText)}</div>` : ''}</div>`;
+  const bar = checked || grade === 'shown' ? answerSheet(q, grade, retry, onContinue)
+    : `<div class="action-bar"><div class="action-inner">
+      ${hintCount < q.hints.length ? button('hint', t('showHint'), 'quiet') : '<span></span>'}
+      ${button('check', t(q.card ? 'showAnswer' : q.type === 'text' ? 'showModel' : 'check'), 'primary', !q.card && !answered(q, value) ? 'disabled data-check' : 'data-check')}
+    </div></div>`;
+  return { body, bar };
+}
+
+function answerSheet(q, grade, retry, onContinue) {
+  const solution = model(q);
+  const alternates = q.blanks?.flatMap((variants, i) => (variants.length > 1 ? [`${num(i + 1)} · ${variants.map(de).join(' / ')}`] : []));
+  const explain = `${alternates?.length ? `<p>${t('alternates')} ${alternates.join(' · ')}</p>` : ''}${q.explain ? `<p>${prose(q.explain)}</p>` : ''}
+    ${q.writing ? `<p>${t('productionCriteria')}</p>` : ''}`;
+  const more = (open, summary = t('explanation'), extra = '') => (extra + explain).trim()
+    ? `<details class="sheet-more" ${open ? 'open' : ''}><summary>${summary}</summary>${extra}${explain}</details>` : '';
+  if (grade === 'shown') {
+    return `<div class="answer-sheet neutral" id="feedback" tabindex="-1" role="status"><div class="action-inner sheet-inner">
+      <div class="sheet-head"><span class="sheet-icon" aria-hidden="true">${icons.sparkle}</span><strong>${t(q.card ? 'cardsAnswer' : 'compare')}</strong></div>
+      ${solution ? `<p class="sheet-solution">${answerText(solution)}</p>` : ''}${more(false)}
+      <div class="sheet-actions">${button('self-no', t(q.card ? 'cardAgain' : 'selfNo'), 'secondary')}${button('self-yes', t(q.card ? 'cardKnown' : 'selfYes'), 'primary')}</div>
+    </div></div>`;
+  }
+  const ok = grade === true;
+  const detail = retry
+    ? `${q.hints[0] ? `<p>${prose(q.hints[0])}</p>` : ''}${more(false, t('revealCorrection'), solution ? `<p>${answerText(solution)}</p>` : '')}`
+    : `${!ok && solution ? `<p class="sheet-solution">${answerText(solution)}</p>` : ''}${more(!ok)}`;
+  return `<div class="answer-sheet ${ok ? 'correct' : 'incorrect'}" id="feedback" tabindex="-1" role="status"><div class="action-inner sheet-inner">
+    <div class="sheet-head"><span class="sheet-icon" aria-hidden="true">${ok ? icons.check : icons.close}</span><strong>${t(ok ? 'sheetCorrect' : 'incorrect')}</strong></div>
+    ${detail}
+    <div class="sheet-actions">${retry ? button('retry-example', t('retryExample'), 'secondary') : ''}${button(onContinue, t('guideNext'), 'primary', 'data-continue')}</div>
+  </div></div>`;
+}
+
+// Practice runs (review, mistakes, sets, islands) in the player.
+function renderPracticePlayer(app, run) {
+  const q = question(app, run);
+  const type = q.transfer ? t('transferPractice') : q.card ? t('cardsTitle') : t('kindLabels')[q.type];
+  const { body, bar } = playerQuestion(app, run, {
+    eyebrow: `<p class="slide-eyebrow"><span>${prose(runTitle(app, run))}</span><span>${esc(type)}</span></p>`
+  });
+  return `<div class="lesson-deck player quiz-player">
+    ${playerBar('practice', t('closePractice'), run.position, run.ids.length)}
+    <h1 class="sr-only">${prose(runTitle(app, run))}</h1>
+    <article class="deck-slide panel" data-quiz-slide>${body}</article>
+    ${bar}
+  </div>`;
+}
+
+// Enables the check button once the question has an answer.
+function syncCheck(q, value) {
+  const check = document.querySelector('[data-check]');
+  if (check && !q.card) check.disabled = !answered(q, value);
 }
 
 function renderInput(run, q, value, locked, showGrade) {
@@ -236,7 +313,7 @@ function addXp(run, notes) {
 }
 
 // Practice run reached its end.
-function finishPractice(app, run) {
+export function finishPractice(app, run) {
   run.finished = true;
   if (run.kind === 'lesson' || run.kind === 'lesson-practice') {
     const coreIds = run.ids.filter(id => id !== `apply-${run.target}` && !run.retryIds?.includes(id));
@@ -419,6 +496,7 @@ function movePiece(app, target, add) {
   const old = run.answers[q.id] || [];
   const value = add ? [...old, piece] : old.filter(i => i !== piece);
   changeAnswer(app, run, q, value);
+  syncCheck(q, value);
   const ordering = document.querySelector('#ordering');
   ordering.innerHTML = orderMarkup(run, q, value, false);
   ordering.querySelector(`button[data-piece="${piece}"]`)?.focus({ preventScroll: true });
@@ -436,6 +514,7 @@ export function onInput(app, event) {
     values[Number(target.dataset.blank)] = target.value;
     changeAnswer(app, run, q, values);
   }
+  syncCheck(q, run.answers[q.id]);
   const status = document.querySelector('#quiz-status');
   if (status) {
     status.className = 'sr-only';

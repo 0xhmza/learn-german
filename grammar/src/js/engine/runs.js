@@ -8,7 +8,10 @@ export const TEST_MINUTES = 20;
 export const MAX_REVIEW = 20;
 export const examSize = lessonCount => Math.max(8, Math.min(12, 2 * lessonCount));
 export const passMark = total => Math.ceil(0.8 * total);
-export const lessonRunKey = (id, slide) => ['practice', 'cards'].includes(slide) ? `lesson-${slide}-${id}` : null;
+// Question slides inside a lesson (`quiz-1`, `quiz-2`, … and `practice`) share
+// one practice run; `cards` is the lesson's flashcard run.
+export const lessonRunKey = (id, slide) => slide === 'cards' ? `lesson-cards-${id}`
+  : slide === 'practice' || /^quiz-\d+$/.test(slide || '') ? `lesson-practice-${id}` : null;
 
 export function shuffle(items, rng = Math.random) {
   const result = [...items];
