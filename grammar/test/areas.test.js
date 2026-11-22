@@ -51,14 +51,22 @@ test('progress counts lessons, words, writing tasks and checked exam parts', () 
   const { exams, everyday } = writingTasks(ctx, state);
   assert.equal(exams.length, ctx.modelTests.size);
   assert.ok(everyday.length >= 10);
+  const key = everyday[0].key;
+  state.runs[key] = { answers: { [key]: 'Ich schreibe später weiter.' } };
+  assert.equal(writingTasks(ctx, state).everyday[0].draft, true);
+  assert.equal(writingProgress(ctx, state).done, 0);
+  state.runs[key].finished = true;
+  assert.equal(writingTasks(ctx, state).everyday[0].draft, false);
   state.modelExams.petra = { schreiben: { writing: 'Liebe Petra, ...' }, 'sprache-1': { checked: true, responses: {} } };
-  state.results[everyday[0].key] = { correct: true };
+  state.results[key] = { correct: true };
   assert.deepEqual(writingProgress(ctx, state), { done: 2, total: exams.length + everyday.length });
   const tests = testsProgress(ctx, state);
   assert.equal(tests.done, 1);
   assert.equal(tests.total, ctx.modelTests.size * 5, 'three reading and two Sprachbausteine parts per exam');
   addWord(state, 'Umzug', day);
   assert.deepEqual(vocabProgress(state), { words: 1, last: { word: 'Umzug', day } });
+  addWord(state, 'Ausweis', '2026-11-13');
+  assert.deepEqual(vocabProgress(state), { words: 2, last: { word: 'Umzug', day } });
 });
 
 test('a saved stop becomes a title, a date and a link back', () => {
@@ -72,6 +80,9 @@ test('a saved stop becomes a title, a date and a link back', () => {
   assert.match(writing.title, /Schriftlicher Ausdruck/);
   assert.match(writing.meta, /Modelltest 1 · .+ · zuletzt am 14. November$/);
   assert.match(writing.action, /href="#model-exams\/petra\/schreiben"/);
+  state.last.writing.hash = 'model-exams/petra/lesen-1';
+  state.modelExams.petra = { schreiben: { writing: 'Liebe Petra, ...' } };
+  assert.match(stopFor(app, 'writing').action, /href="#model-exams\/petra\/schreiben"/);
   state.lastLesson = 'genitiv';
   const grammar = stopFor(app, 'grammar');
   assert.match(grammar.action, /href="#lesson\/genitiv"[^>]*>Fortsetzen</);

@@ -2,6 +2,7 @@
 // date and a button that goes straight back.
 import { t, num, getLang } from '../i18n/index.js';
 import { lessonTitle, islandName } from '../content.js';
+import { areaOf } from '../engine/areas.js';
 import { parse } from '../router.js';
 import { esc, prose, link, formatDay } from './html.js';
 
@@ -26,9 +27,11 @@ function earlierWork(ctx, state, area) {
 export function stopFor(app, area) {
   const { ctx, state } = app;
   const lang = getLang();
-  const saved = state.last[area] || earlierWork(ctx, state, area);
+  const entry = state.last[area];
+  const entryRoute = entry && parse(entry.hash, ctx);
+  const saved = entryRoute && areaOf(entryRoute) === area ? entry : null;
   if (area === 'grammar') {
-    const id = saved ? parse(`#${saved.hash}`, ctx).key : state.lastLesson;
+    const id = saved ? entryRoute.key : state.lastLesson;
     const lesson = ctx.lessons.get(id);
     if (!lesson) return null;
     const island = ctx.islandById.get(lesson.island);
@@ -40,22 +43,25 @@ export function stopFor(app, area) {
       lesson, done
     };
   }
-  if (!saved) return null;
-  const route = parse(`#${saved.hash}`, ctx);
+  const work = saved || earlierWork(ctx, state, area);
+  if (!work) return null;
+  const route = saved ? entryRoute : parse(work.hash, ctx);
   if (route.view === 'model-exams' && route.key) {
     const model = ctx.modelTests.get(route.key);
+    const sampleTitle = { 'audio-practice': 'listeningSample', 'speaking-practice': 'speakingSample' }[route.section];
+    const title = sampleTitle ? t(sampleTitle) : t('examPartTitle')[route.section];
     return {
-      title: esc(`${t('examPartTitle')[route.section] || t('examGroupWrite')}`),
-      meta: `${esc(`${t('examModel', num(model.number))} · ${model.title[lang]}`)}${when(saved.day)}`,
-      action: link(saved.hash, t('continueHere'), 'primary')
+      title: esc(title),
+      meta: `${esc(`${t('examModel', num(model.number))} · ${model.title[lang]}`)}${when(work.day)}`,
+      action: link(work.hash, t('continueHere'), 'primary')
     };
   }
   if (route.view === 'quiz') {
     const write = /^write-(.+)$/.exec(route.key);
     const exam = /^exam-(.+)$/.exec(route.key);
     const title = write ? t('realLifeTask') : exam ? t('examName', islandName(ctx.islandById.get(exam[1]), lang)) : t('testName');
-    const meta = write ? `${prose(lessonTitle(ctx.lessons.get(write[1]), lang))}${when(saved.day)}` : saved.day ? t('lastOn', formatDay(saved.day, { day: 'numeric', month: 'long' })) : '';
-    return { title: esc(title), meta, action: link(saved.hash, t('continueHere'), 'primary') };
+    const meta = write ? `${prose(lessonTitle(ctx.lessons.get(write[1]), lang))}${when(work.day)}` : work.day ? t('lastOn', formatDay(work.day, { day: 'numeric', month: 'long' })) : '';
+    return { title: esc(title), meta, action: link(work.hash, t('continueHere'), 'primary') };
   }
   return null;
 }

@@ -197,7 +197,7 @@ test('the dashboard shows the current level and progress in four areas, nothing 
   const dashboard = home.render(app, parse('#home', ctx));
   for (const href of ['grammatik', 'vokabeln', 'schreiben', 'model-exams']) assert.match(dashboard, new RegExp(`class="progress-card [^"]*" href="#${href}"`), href);
   assert.equal((dashboard.match(/class="progress-card /g) || []).length, 4);
-  assert.doesNotMatch(dashboard, /#lesson\/|class="modules"|class="continue-card"/, 'no lesson details on the dashboard');
+  assert.doesNotMatch(dashboard, /#lesson\/|class="modules"|class="resume-card|goal-widget|rank-widget/);
   assert.ok(dashboard.indexOf('href="#level"') < dashboard.indexOf('streak-widget'), 'the level card sits above the streak');
   assert.match(dashboard, /Aktuelle Stufe/);
   assert.match(dashboard, /0 von 51 Lektionen gelernt/);
@@ -212,7 +212,7 @@ test('switching the level changes the dashboard and the area pages', () => {
   for (const id of ['A1', 'A2', 'B1', 'B2', 'C1']) assert.match(picker, new RegExp(`data-action="pick-level" data-level="${id}" aria-pressed="${id === 'B1'}"`), id);
   state.settings.level = 'B2';
   const dashboard = home.render(app, parse('#home', ctx));
-  assert.match(dashboard, /Stufe B2/);
+  assert.match(dashboard, /href="#level" aria-label="Aktuelle Stufe: B2/);
   assert.equal((dashboard.match(/Bald verfügbar/g) || []).length, 3, 'grammar, writing and exams wait for content');
   assert.match(grammar.render(app, parse('#grammatik', ctx)), /B2 ist in Vorbereitung/);
   assert.match(writing.render(app), /B2 ist in Vorbereitung/);

@@ -46,9 +46,10 @@ const SCREENS = [
   ['topics', 'topics'],
   ['grammar', 'grammatik', null, true],
   ['levels', 'level'],
-  ['home-b2', 'level', 'level:B2'],
+  ['home-b2', 'home', 'switch-b2'],
   ['vocab', 'vokabeln'],
   ['writing', 'schreiben'],
+  ['writing-resume', 'home', 'resume-draft'],
   ['practice', 'practice'],
   ['exams', 'model-exams'],
   ['profile', 'progress', null, true],
@@ -169,6 +170,8 @@ const STEPS = String(async function steps(plan) {
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
   const click = selector => { const el = document.querySelector(selector); if (!el) throw new Error(`missing ${selector}`); el.click(); };
   const fire = el => el.dispatchEvent(new Event('input', { bubbles: true }));
+  const open = async selector => { click(selector); await wait(80); };
+  const level = () => document.querySelector('.level-card-code')?.textContent;
   for (const step of plan.split(',')) {
     const [name, count] = step.split(':');
     if (name === 'continue') for (let i = 0; i < Number(count); i++) { click('[data-continue]'); await wait(80); }
@@ -179,9 +182,35 @@ const STEPS = String(async function steps(plan) {
       click('[data-check]');
       await wait(120);
     }
-    if (name === 'level') {
-      click(`[data-action="pick-level"][data-level="${count}"]`);
-      await wait(250);
+    if (name === 'switch-b2') {
+      await open('.level-widget');
+      await open('[data-level="B2"]');
+      if (level() !== 'B2') throw new Error('the dashboard did not switch to B2');
+    }
+    if (name === 'resume-draft') {
+      await open('.progress-card.writing');
+      await open('.resume-card .btn');
+      const draft = 'Liebe Petra, ich schreibe morgen weiter.';
+      const editor = document.querySelector('#exam-writing');
+      if (!editor?.value) throw new Error('the writing draft was not restored');
+      editor.value = draft;
+      fire(editor);
+      const otherTask = document.querySelector('.exam-menu a[href$="/lesen-1"]').hash;
+      await open('.crumb a[href="#schreiben"]');
+      await open(document.querySelector('#bottom-nav').clientWidth ? '#bottom-nav [href="#home"]' : '#rail-nav [href="#home"]');
+      await open('.level-widget');
+      await open('[data-level="B2"]');
+      location.hash = otherTask;
+      await wait(80);
+      if (!document.querySelector('.level-soon') || document.querySelector('.exam-part')) throw new Error('a B1 deep link opened under B2');
+      await open('.level-soon a[href="#level"]');
+      await open('[data-level="B1"]');
+      if (level() !== 'B1') throw new Error('the dashboard did not switch back to B1');
+      await open('.progress-card.writing');
+      await open('.resume-card .btn');
+      if (document.querySelector('#exam-writing')?.value !== draft) throw new Error('switching levels lost the draft');
+      await wait(170);
+      if (JSON.parse(localStorage.getItem('gi-state-v1')).modelExams.petra.schreiben.writing !== draft) throw new Error('the writing draft was not persisted');
     }
     if (name === 'choose') {
       for (const select of [...document.querySelectorAll('select[data-sprach-gap], select[data-exam-item]')].slice(0, Number(count))) {

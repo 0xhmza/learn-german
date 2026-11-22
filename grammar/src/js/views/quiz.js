@@ -187,7 +187,7 @@ function renderPracticePlayer(app, run) {
     eyebrow: `<p class="slide-eyebrow"><span>${prose(runTitle(app, run))}</span><span>${esc(type)}</span></p>`
   });
   return `<div class="lesson-deck player quiz-player">
-    ${playerBar('practice', t('closePractice'), run.position, run.ids.length)}
+    ${playerBar(run.kind === 'write' ? 'schreiben' : 'practice', t('closePractice'), run.position, run.ids.length)}
     <h1 class="sr-only">${prose(runTitle(app, run))}</h1>
     <article class="deck-slide panel" data-quiz-slide>${body}</article>
     ${bar}
@@ -287,7 +287,7 @@ function renderResults(app, run) {
       ${yours ? `<p><strong>${t('yourAnswer')}</strong> · ${answerText(yours)}</p>` : ''}
       ${model(q) ? `<p><strong>${t('solution')}</strong> · ${answerText(model(q))}</p>` : ''}<p>${prose(q.explain)}</p><a href="#lesson/${q.lesson}">${t('openRule')}</a></details>`;
   }).join('');
-  return `${crumbs([['practice', t('practice')], [null, prose(name)]])}
+  return `${crumbs([run.kind === 'write' ? ['schreiben', t('navWriting')] : ['practice', t('practice')], [null, prose(name)]])}
     <section class="quiz-box"><h1 class="quiz-prompt">${t('resultOf', prose(name))}</h1>
       ${run.timedOut ? `<p class="notice">${t('timeUp')}</p>` : ''}
       ${outcome}

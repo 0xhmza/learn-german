@@ -3,48 +3,12 @@
 import { t, num, getLang } from '../i18n/index.js';
 import { CEFR } from '../cefr.js';
 import { islandName } from '../content.js';
-import { currentLevel, levelHasContent, writingTasks, writingProgress, vocabProgress } from '../engine/areas.js';
+import { currentLevel, LEVELS, levelHasContent, writingTasks, writingProgress, vocabProgress } from '../engine/areas.js';
 import { resumeCard, levelSoonCard } from '../components/widgets.js';
 import { stopFor } from '../components/stops.js';
 import { icons } from '../components/icons.js';
 import { esc, prose, link, button, crumbs, formatDay } from '../components/html.js';
 import { wordList, removeWord } from '../engine/words.js';
-
-const art = {
-  vocab: `<svg viewBox="0 0 160 120" aria-hidden="true"><rect x="38" y="22" width="76" height="86" rx="10" fill="var(--t-sky)" transform="rotate(-8 76 65)"/>
-    <rect x="48" y="16" width="76" height="86" rx="10" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/>
-    <rect x="60" y="34" width="40" height="8" rx="4" fill="var(--brand)"/><rect x="60" y="52" width="52" height="6" rx="3" fill="var(--line-strong)"/>
-    <rect x="60" y="66" width="34" height="6" rx="3" fill="var(--line-strong)"/><circle cx="118" cy="96" r="16" fill="#ffd54a"/><path d="M111 96h14M118 89v14" stroke="#7a5a00" stroke-width="3" stroke-linecap="round"/></svg>`,
-  writing: `<svg viewBox="0 0 160 120" aria-hidden="true"><rect x="30" y="14" width="86" height="96" rx="10" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/>
-    <rect x="44" y="32" width="50" height="7" rx="3.5" fill="var(--brand)"/><rect x="44" y="50" width="58" height="5" rx="2.5" fill="var(--line-strong)"/>
-    <rect x="44" y="62" width="48" height="5" rx="2.5" fill="var(--line-strong)"/><rect x="44" y="74" width="54" height="5" rx="2.5" fill="var(--line-strong)"/>
-    <path d="M104 98 136 60l10 9-32 37-13 4z" fill="#ffd54a" stroke="#7a5a00" stroke-width="2.5" stroke-linejoin="round"/></svg>`
-};
-
-function levelRows(kind) {
-  return `<ul class="soon-list">${CEFR.map(level => `<li class="soon-row">
-    <span class="level-code small ${level.tone}" lang="de" dir="ltr">${level.id}</span>
-    <span class="soon-text"><strong>${esc(t('levelNames')[level.id])}</strong><small>${t(kind === 'vocab' ? 'vocabEmpty' : 'writingEmpty')}</small></span>
-    <span class="soon-chip">${t('comingSoon')}</span></li>`).join('')}</ul>`;
-}
-
-function area(kind, extra = '') {
-  const vocab = kind === 'vocab';
-  return `<section class="area-hero ${vocab ? 'sky' : 'peach'}">
-      <span class="area-icon" aria-hidden="true">${vocab ? icons.vocab : icons.writing}</span>
-      <div><h1>${t(vocab ? 'navVocab' : 'navWriting')}</h1><p>${t(vocab ? 'vocabIntro' : 'writingIntro')}</p></div>
-    </section>
-    ${extra}
-    <div class="area-grid">
-      <section class="panel empty-state">
-        <div class="empty-art">${art[kind]}</div>
-        <h2>${t(vocab ? 'vocabEmpty' : 'writingEmpty')}</h2>
-        <p>${t(vocab ? 'vocabEmptyText' : 'writingEmptyText')}</p>
-        ${vocab ? link('cards', t('vocabBridge'), 'secondary') : link('model-exams/petra/schreiben', t('writingBridge'), 'secondary')}
-      </section>
-      <section class="panel"><h2>${t('levelsTitle')}</h2>${levelRows(kind)}</section>
-    </div>`;
-}
 
 // The learner's saved words, newest first.
 function myWords(app) {
@@ -72,7 +36,11 @@ export const vocab = {
       meta: `${t('lastOn', formatDay(last.day, { day: 'numeric', month: 'long' }))} · ${t('wordsSavedCount', num(words))}`,
       action: ''
     } }) : '';
-    return area('vocab', resume + myWords(app));
+    return `<section class="area-hero sky">
+      <span class="area-icon" aria-hidden="true">${icons.vocab}</span><div><h1>${t('navVocab')}</h1></div>
+    </section>
+    ${resume}${myWords(app)}
+    ${levelHasContent(currentLevel(app.state)) ? link('cards', t('vocabBridge'), 'secondary') : ''}`;
   },
   actions: {
     'word-remove'(app, target) {
@@ -113,7 +81,8 @@ function writingPage(app) {
   const startOpen = open && (open.kind === 'exam'
     ? { title: esc(`${t('examModel', num(open.model.number))} · ${open.model.title[lang]}`), action: link(open.hash, t('startHere'), 'primary') }
     : { title: prose(open.task[lang]), action: button('run', t('startHere'), 'primary', `data-key="${open.key}"`) });
-  const status = done => `<span class="task-status ${done ? 'done' : ''}">${done ? `${icons.check}${t('taskDone')}` : t('topicNew')}</span>`;
+  const status = task => task.draft ? `<span class="task-status draft">${t('taskDraft')}</span>`
+    : `<span class="task-status ${task.done ? 'done' : ''}">${task.done ? `${icons.check}${t('taskDone')}` : t('topicNew')}</span>`;
   return `${hero}
     ${resumeCard({ stop: stopFor(app, 'writing'), empty: startOpen ? { title: startOpen.title, action: startOpen.action } : { title: t('studyCaughtUp') } })}
     <div class="area-progress"><span>${t('writingDone', num(progress.done), num(progress.total))}</span><span class="bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span></div>
@@ -122,7 +91,7 @@ function writingPage(app) {
       <ul class="task-list">${everyday.map(task => `<li class="task-row">
         <span class="sum-emoji ${islandOf(task).palette}" aria-hidden="true">${islandOf(task).emoji}</span>
         <span class="task-main"><strong>${esc(islandName(islandOf(task), lang))}</strong><small>${prose(task.task[lang])}</small></span>
-        ${status(task.done)}${button('run', t(task.done ? 'writeAgain' : 'startHere'), task.done ? 'quiet' : 'secondary', `data-key="${task.key}"`)}
+        ${status(task)}${button('run', t(task.draft ? 'resumeWriting' : task.done ? 'writeAgain' : 'startHere'), task.done && !task.draft ? 'quiet' : 'secondary', `data-key="${task.key}"`)}
       </li>`).join('')}</ul>
     </section>
     <section class="panel task-panel" aria-labelledby="exam-tasks">
@@ -164,6 +133,7 @@ export const level = {
   actions: {
     'pick-level'(app, target) {
       const chosen = target.dataset.level;
+      if (!LEVELS.includes(chosen)) return;
       app.store.update(state => { state.settings.level = chosen; });
       app.notify(t('levelChosen', chosen));
       app.navigate('home');

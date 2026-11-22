@@ -9,7 +9,8 @@ import { renderHud } from './components/hud.js';
 import { icons, logo } from './components/icons.js';
 import { mountWordPicker } from './components/wordpick.js';
 import { addWord } from './engine/words.js';
-import { areaOf, recordVisit } from './engine/areas.js';
+import { areaOf, currentLevel, levelHasContent, recordVisit } from './engine/areas.js';
+import { levelSoonCard } from './components/widgets.js';
 import { createToaster, describeNotes } from './components/toast.js';
 import { esc, plainText, prose } from './components/html.js';
 import * as home from './views/home.js';
@@ -41,6 +42,11 @@ const NAV = [
 ];
 // Lessons and practice runs open as a focused player without the app navigation.
 const PLAYER_VIEWS = new Set(['lesson', 'quiz']);
+const COURSE_VIEWS = new Set(['island', 'topics', 'lesson', 'practice', 'quiz', 'readings', 'sprachbausteine', 'cards']);
+const unavailableCourse = {
+  title: app => t('levelSoonTitle', currentLevel(app.state)),
+  render: app => levelSoonCard(currentLevel(app.state), 'h1')
+};
 // Actions available on every page.
 const globalActions = {
   run: (app, target) => goToRun(app, target.dataset.key),
@@ -176,12 +182,14 @@ async function boot() {
     cleanup?.();
     cleanup = null;
     route = parse(location.hash, ctx);
-    view = views[route.view];
-    document.body.classList.toggle('player-mode', PLAYER_VIEWS.has(route.view));
+    const needsCourse = COURSE_VIEWS.has(route.view) || (route.view === 'model-exams' && route.key);
+    const blocked = needsCourse && !levelHasContent(currentLevel(store.state));
+    view = blocked ? unavailableCourse : views[route.view];
+    document.body.classList.toggle('player-mode', !blocked && PLAYER_VIEWS.has(route.view));
     document.body.dataset.view = route.view;
     picker?.hide();
     // Remember where the learner stopped in grammar, writing and exams.
-    const area = areaOf(route);
+    const area = blocked ? null : areaOf(route);
     const last = area && store.state.last[area];
     if (area && !app.redrawing && (last?.hash !== route.hash || last?.day !== today())) store.update(state => recordVisit(state, route, today()));
     for (const anchor of document.querySelectorAll('[data-tab]')) {
@@ -230,7 +238,7 @@ async function boot() {
   function updateTopicSetting(target, key, value, focusSelector) {
     if (store.state.settings[key] === value) return;
     store.update(state => { state.settings[key] = value; });
-    if (['home', 'island', 'topics'].includes(route.view) || (route.view === 'lesson' && key === 'roadmap')) app.rerender();
+    if (['grammar', 'island', 'topics'].includes(route.view) || (route.view === 'lesson' && key === 'roadmap')) app.rerender();
     (content.querySelector(focusSelector) || content.querySelector('[data-topic-search]'))?.focus({ preventScroll: true });
   }
 

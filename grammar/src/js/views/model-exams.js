@@ -2,7 +2,7 @@ import { getLang, t, num } from '../i18n/index.js';
 import { button, crumbs, de, esc, link } from '../components/html.js';
 import { examChoices, examResult, isListening, isMatching } from '../engine/model-exams.js';
 import { dropGap, wordChips, mountDragDrop, focusAfterPlacing } from '../components/dragdrop.js';
-import { currentLevel, levelHasContent, testsProgress } from '../engine/areas.js';
+import { currentLevel, levelHasContent, modelProgress, testsProgress } from '../engine/areas.js';
 import { resumeCard, levelSoonCard } from '../components/widgets.js';
 import { stopFor } from '../components/stops.js';
 
@@ -31,9 +31,11 @@ function list(app) {
       const saved = app.state.modelExams[model.id] || {};
       const draft = saved.schreiben?.writing?.trim();
       const started = Object.values(saved).some(hasWork);
+      const progress = modelProgress(model, app.state);
       return `<article class="panel study-tile ${featured ? 'exam-featured' : ''}">
         <p class="study-meta">${featured ? t('featuredModel') : modelNumber(model)}${started ? ` · ${t('examInProgress')}` : ''}</p>
         <h2>${esc(modelTitle(model))}</h2>
+        <p class="study-meta">${t('testsDone', num(progress.done), num(progress.total))}</p>
         ${coverage(model.id === sampleId)}
         <div class="actions">
           ${draft ? link(`${routeFor(model)}/schreiben`, t('resumeWriting'), 'primary') : ''}
@@ -91,7 +93,7 @@ export function render(app, route) {
       ${renderWriting(app, model, section, sample)}`
     : `<div class="exam-layout ${section || sampleRoute ? 'with-part' : ''}">${navigation}
       ${section ? renderPart(app, model, section) : sampleRoute && sample ? renderSample(route.section, sample) : `<section class="panel exam-overview"><h2>${t('examCoverage')}</h2>${coverage(sample)}${link(`${routeFor(model)}/lesen-1`, t('examOpen'), 'primary')}${savedSection(app, model, { id: 'schreiben' }).writing?.trim() ? link(`${routeFor(model)}/schreiben`, t('resumeWriting')) : ''}</section>`}</div>`;
-  return `${crumbs([['model-exams', t('examTrainerNav')], [section ? routeFor(model) : null, name], ...(section ? [[null, partTitle(section)]] : [])])}
+  return `${crumbs([writing ? ['schreiben', t('navWriting')] : ['model-exams', t('examTrainerNav')], [section || sampleRoute ? routeFor(model) : null, name], ...(section || sampleRoute ? [[null, heading]] : [])])}
     <section class="simple-banner practice-head${writing ? ' exam-writing-heading' : ''}"><h1>${heading}</h1>
       <p>${section || sampleRoute ? `${modelNumber(model)} · ${name}` : modelNumber(model)}</p></section>
     ${layout}`;

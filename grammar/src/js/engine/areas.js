@@ -2,6 +2,7 @@
 // writing, exams): progress per area for the current level, and where the
 // learner stopped last time in each area.
 import { examResult } from './model-exams.js';
+import { wordList } from './words.js';
 import { CEFR } from '../cefr.js';
 
 export const AREAS = ['grammar', 'vocab', 'writing', 'tests'];
@@ -10,7 +11,7 @@ export const DEFAULT_LEVEL = 'B1';
 
 export const currentLevel = state => (LEVELS.includes(state.settings.level) ? state.settings.level : DEFAULT_LEVEL);
 // Only B1 has content so far: the grammar islands, writing tasks and the telc exams.
-export const levelHasContent = level => level === 'B1';
+export const levelHasContent = level => CEFR.some(info => info.id === level && info.grammar);
 
 // Which area a route belongs to, for remembering where the learner stopped.
 export function areaOf(route) {
@@ -54,10 +55,15 @@ export function writingTasks(ctx, state) {
     kind: 'exam', id: model.id, model, hash: `model-exams/${model.id}/schreiben`,
     done: Boolean(state.modelExams[model.id]?.schreiben?.writing?.trim())
   }));
-  const everyday = Object.entries(ctx.learning.islands || {}).filter(([, task]) => ctx.questions.has(`write-${task.lesson}`)).map(([island, task]) => ({
-    kind: 'everyday', id: island, task, key: `write-${task.lesson}`, hash: `practice/write-${task.lesson}`,
-    done: Boolean(state.results[`write-${task.lesson}`])
-  }));
+  const everyday = [];
+  for (const [id, task] of Object.entries(ctx.learning.islands || {})) {
+    const key = `write-${task.lesson}`;
+    if (!ctx.questions.has(key)) continue;
+    const run = state.runs[key];
+    const answer = run?.answers?.[key];
+    everyday.push({ kind: 'everyday', id, task, key, hash: `practice/${key}`,
+      done: Boolean(state.results[key]), draft: !run?.finished && typeof answer === 'string' && Boolean(answer.trim()) });
+  }
   return { exams, everyday };
 }
 
@@ -67,22 +73,31 @@ export function writingProgress(ctx, state) {
   return { done: all.filter(task => task.done).length, total: all.length };
 }
 
-// Exam parts that can be checked (reading and Sprachbausteine of every mock exam).
+// Exam parts that can be checked (reading and Sprachbausteine).
+export function modelProgress(model, state) {
+  let done = 0;
+  let total = 0;
+  for (const section of model.sections) {
+    if (!examResult(section, {}).total) continue;
+    total += 1;
+    if (state.modelExams[model.id]?.[section.id]?.checked) done += 1;
+  }
+  return { done, total };
+}
+
 export function testsProgress(ctx, state) {
   let done = 0;
   let total = 0;
   for (const model of ctx.modelTests.values()) {
-    for (const section of model.sections) {
-      if (!examResult(section, {}).total) continue;
-      total += 1;
-      if (state.modelExams[model.id]?.[section.id]?.checked) done += 1;
-    }
+    const progress = modelProgress(model, state);
+    done += progress.done;
+    total += progress.total;
   }
   return { done, total };
 }
 
 export function vocabProgress(state) {
-  const entries = Object.entries(state.words);
-  const [word, day] = entries.at(-1) || [];
+  const entries = wordList(state);
+  const [word, day] = entries[0] || [];
   return { words: entries.length, last: word ? { word, day } : null };
 }

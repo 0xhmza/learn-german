@@ -5,12 +5,17 @@ import { inFilter, lessonTitle, islandName } from '../content.js';
 import { islandProgress, pendingErrors } from '../engine/progress.js';
 import { newRun, examSize, TEST_MINUTES } from '../engine/runs.js';
 import { dailyReview, resumableRun } from '../engine/study.js';
+import { currentLevel, levelHasContent } from '../engine/areas.js';
 import { esc, link, button, plainText, prose } from '../components/html.js';
 
 export const title = () => t('practice');
 
 // Opens a run, creating it when it is missing or already finished.
 export function goToRun(app, key, reset = false) {
+  if (!levelHasContent(currentLevel(app.state))) {
+    app.navigate(`practice/${key}`);
+    return;
+  }
   app.store.update(state => {
     const existing = state.runs[key];
     if (reset || !existing || existing.finished) {

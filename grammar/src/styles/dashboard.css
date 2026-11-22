@@ -89,11 +89,7 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
 .widget-icon .ico { inline-size: 24px; block-size: 24px; }
 .widget-icon.streak { background: var(--surface-3); color: var(--line-strong); }
 .streak-widget.live .widget-icon.streak { background: var(--streak-soft); color: var(--streak); }
-.widget-icon.xp { background: var(--xp-soft); color: var(--xp); }
-.widget-icon.review { background: var(--brand-soft); color: var(--brand); }
-.widget-icon.exam { background: var(--done-soft); color: var(--done); }
 .widget-big { font-size: 26px; font-weight: 800; line-height: 1.1; }
-.widget-title { font-size: 15.5px; font-weight: 780; }
 .widget-label { color: var(--muted); font-size: 13px; }
 .widget-note { color: var(--muted); font-size: 12.5px; }
 .week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; text-align: center; font-size: 11.5px; font-weight: 700; color: var(--muted); }
@@ -106,7 +102,6 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
 .goal-bar { block-size: 12px; border-radius: 99px; background: var(--surface-3); overflow: hidden; }
 .goal-bar i { display: block; block-size: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--xp), #ffb300); transition: inline-size .4s; }
 .goal-bar.rank i { background: linear-gradient(90deg, var(--brand), #7b6cf0); }
-.rank-medal { display: grid; place-items: center; inline-size: 44px; block-size: 44px; border-radius: 50%; flex: none; background: var(--brand); color: var(--on-brand); font-weight: 800; font-size: 18px; box-shadow: 0 0 0 4px var(--brand-soft); }
 
 /* Shared bits */
 .map-panel > summary { list-style: none; display: flex; align-items: center; gap: 7px; cursor: pointer; inline-size: fit-content; min-block-size: 38px; color: var(--brand-ink); font-weight: 700; font-size: .875rem; }
@@ -138,14 +133,13 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
   .search-btn { inline-size: 40px; padding: 0; }
 }
 
-/* Dashboard: four progress cards beside the level, streak, goal and rank. */
-.dash { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: start; }
-.dash-main { display: grid; gap: 6px; min-inline-size: 0; }
+/* Dashboard: four progress cards with the level and streak. */
+.dash { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start; }
+.dash-main { display: grid; gap: 14px; min-inline-size: 0; }
 .dash-main h1 { font-size: clamp(24px, 2.8vw, 32px); }
-.dash-sub { color: var(--muted); font-weight: 650; margin-block-end: 12px; }
-.dash-side { display: grid; gap: 14px; position: sticky; top: calc(var(--head) + 20px); }
+.dash-side { display: grid; gap: 14px; }
 .progress-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.progress-card { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-rows: auto auto; align-items: center; gap: 14px; padding: 20px; border-radius: 20px; background: var(--surface); border: 2px solid var(--line); color: var(--ink); min-block-size: 150px; transition: border-color .15s, transform .15s; }
+.progress-card { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-content: center; align-items: center; gap: 14px; padding: 20px; border-radius: 20px; background: var(--surface); border: 2px solid var(--line); color: var(--ink); min-block-size: 132px; transition: border-color .15s, transform .15s; }
 .progress-card:hover { color: var(--ink); border-color: var(--brand); transform: translateY(-2px); }
 .pc-icon { display: grid; place-items: center; inline-size: 52px; block-size: 52px; border-radius: 16px; }
 .pc-icon .ico { inline-size: 26px; block-size: 26px; }
@@ -160,7 +154,6 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
 .pc-text small { color: var(--muted); font-size: 13.5px; }
 .pc-value { font-size: 24px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .pc-bar { grid-column: 1 / -1; margin: 0; block-size: 10px; }
-.progress-card.soon .pc-value { color: var(--muted); }
 .level-widget { display: flex; align-items: center; gap: 14px; background: linear-gradient(135deg, var(--brand-soft), var(--surface)); }
 .level-card-code { inline-size: 58px; block-size: 58px; margin: 0; border-radius: 16px; font-size: 22px; flex: none; }
 .level-card-text { display: grid; line-height: 1.3; min-inline-size: 0; }
@@ -187,18 +180,13 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
 .area-progress { display: grid; gap: 6px; margin-block-end: 18px; font-size: 14px; font-weight: 700; color: var(--ink-2); }
 .area-progress .bar { margin: 0; block-size: 10px; }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .dash { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-  .dash-side { position: static; order: -1; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .dash-side .level-widget { grid-column: 1 / -1; }
-  .dash-side .rank-widget { display: none; }
 }
 @media (max-width: 767px) {
   .progress-cards { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .progress-card { min-block-size: 0; padding: 16px; gap: 10px 12px; }
   .pc-icon { inline-size: 44px; block-size: 44px; }
   .pc-value { font-size: 20px; }
-  .dash-side .streak-widget .week { display: none; }
   .dash-side .widget { padding: 14px; gap: 8px; }
-  .dash-side .widget-note { display: none; }
 }

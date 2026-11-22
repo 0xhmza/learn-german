@@ -1,10 +1,9 @@
-// Dashboard cards: current level, streak week, daily goal, rank, area
-// progress and the "where you stopped" banner of the area pages.
-import { t, num, getLang } from '../i18n/index.js';
-import { displayStreak, levelFor } from '../engine/gamification.js';
+// Dashboard cards and the "where you stopped" banner of the area pages.
+import { t, num } from '../i18n/index.js';
+import { displayStreak } from '../engine/gamification.js';
 import { addDays } from '../dates.js';
 import { esc } from './html.js';
-import { flame, bolt, icons } from './icons.js';
+import { flame, icons } from './icons.js';
 import { CEFR } from '../cefr.js';
 import { currentLevel } from '../engine/areas.js';
 
@@ -28,28 +27,6 @@ export function streakCard(state, day) {
   </section>`;
 }
 
-export function goalCard(state, day) {
-  const goal = state.settings.dailyGoal;
-  const xp = state.xp.byDay[day] || 0;
-  const percent = Math.min(100, Math.round((xp / goal) * 100));
-  return `<section class="widget goal-widget">
-    <div class="widget-head"><span class="widget-icon xp" aria-hidden="true">${bolt}</span>
-      <div><strong class="widget-title">${t('setGoal')}</strong><span class="widget-label">${xp >= goal ? t('goalDone') : t('goalToday', num(xp), num(goal))}</span></div></div>
-    <div class="goal-bar" role="img" aria-label="${esc(t('goalToday', num(xp), num(goal)))}"><i style="inline-size:${percent}%"></i></div>
-  </section>`;
-}
-
-export function rankCard(state) {
-  const lang = getLang();
-  const level = levelFor(state.xp.total);
-  return `<a class="widget rank-widget" href="#progress">
-    <div class="widget-head"><span class="rank-medal" aria-hidden="true">${num(level.level)}</span>
-      <div><strong class="widget-title">${esc(level.rank[lang])}</strong><span class="widget-label">${t('totalXp', num(state.xp.total))}</span></div></div>
-    <div class="goal-bar rank" aria-hidden="true"><i style="inline-size:${Math.round(level.progress * 100)}%"></i></div>
-    <p class="widget-note">${level.to === null ? t('maxRank') : t('toNextRank', num(level.to - state.xp.total))}</p>
-  </a>`;
-}
-
 // The current level; opens the page to switch levels.
 export function levelCard(state) {
   const level = currentLevel(state);
@@ -63,11 +40,11 @@ export function levelCard(state) {
 
 // One area on the dashboard. `value` is the big number, `percent` the bar
 // (omitted for open-ended areas such as the word list).
-export function progressCard({ area, href, icon, title, detail, value, percent, soon }) {
-  return `<a class="progress-card ${area} ${soon ? 'soon' : ''}" href="#${href}">
+export function progressCard({ area, href, icon, title, detail, value, percent }) {
+  return `<a class="progress-card ${area}" href="#${href}">
     <span class="pc-icon" aria-hidden="true">${icon}</span>
     <span class="pc-text"><strong>${title}</strong><small>${detail}</small></span>
-    <span class="pc-value"><bdi dir="ltr">${value}</bdi></span>
+    ${value === undefined ? '' : `<span class="pc-value"><bdi dir="ltr">${value}</bdi></span>`}
     ${percent === undefined ? '' : `<span class="bar pc-bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span>`}
   </a>`;
 }
@@ -85,8 +62,8 @@ export function resumeCard({ stop, empty, eyebrow }) {
 }
 
 // For levels without content yet: what is missing and a way to switch.
-export function levelSoonCard(level) {
-  return `<section class="panel empty-state compact level-soon"><span class="empty-icon" aria-hidden="true">${icons.sparkle}</span>
-    <div><h2>${t('levelSoonTitle', level)}</h2><p>${t('levelSoonText')}</p>
+export function levelSoonCard(level, heading = 'h2') {
+  return `<section class="panel level-soon"><span class="empty-icon" aria-hidden="true">${icons.sparkle}</span>
+    <div><${heading}>${t('levelSoonTitle', level)}</${heading}><p>${t('levelSoonText')}</p>
       <p><a class="btn secondary" href="#level">${t('changeLevel')}</a></p></div></section>`;
 }
