@@ -9,6 +9,7 @@ import { stopFor } from '../components/stops.js';
 import { icons } from '../components/icons.js';
 import { esc, prose, link, button, crumbs, formatDay } from '../components/html.js';
 import { wordList, removeWord } from '../engine/words.js';
+import * as writingCourse from './writing-course.js';
 
 // The learner's saved words, newest first.
 function myWords(app) {
@@ -64,7 +65,7 @@ export const vocab = {
 // Schreiben: where the learner stopped, then every writing task with its
 // status: the everyday task of each grammar island and the writing part of
 // each mock exam.
-function writingPage(app) {
+function writingPage(app, route) {
   const { ctx, state } = app;
   const lang = getLang();
   const level = currentLevel(state);
@@ -73,6 +74,7 @@ function writingPage(app) {
       <div><h1>${t('navWriting')}</h1><p>${t('writingIntro')}</p></div>
     </section>`;
   if (!levelHasContent(level)) return hero + levelSoonCard(level);
+  if (route?.key && ctx.writingCourse) return writingCourse.renderPage(app, route);
   const { exams, everyday } = writingTasks(ctx, state);
   const progress = writingProgress(ctx, state);
   const percent = Math.round((progress.done / Math.max(1, progress.total)) * 100);
@@ -83,10 +85,7 @@ function writingPage(app) {
     : { title: prose(open.task[lang]), action: button('run', t('startHere'), 'primary', `data-key="${open.key}"`) });
   const status = task => task.draft ? `<span class="task-status draft">${t('taskDraft')}</span>`
     : `<span class="task-status ${task.done ? 'done' : ''}">${task.done ? `${icons.check}${t('taskDone')}` : t('topicNew')}</span>`;
-  return `${hero}
-    ${resumeCard({ stop: stopFor(app, 'writing'), empty: startOpen ? { title: startOpen.title, action: startOpen.action } : { title: t('studyCaughtUp') } })}
-    <div class="area-progress"><span>${t('writingDone', num(progress.done), num(progress.total))}</span><span class="bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span></div>
-    <section class="panel task-panel" aria-labelledby="everyday-tasks">
+  const library = `<section class="panel task-panel" aria-labelledby="everyday-tasks">
       <h2 id="everyday-tasks">${t('writingEverydayTasks')}</h2>
       <ul class="task-list">${everyday.map(task => `<li class="task-row">
         <span class="sum-emoji ${islandOf(task).palette}" aria-hidden="true">${islandOf(task).emoji}</span>
@@ -103,11 +102,18 @@ function writingPage(app) {
         ${link(task.hash, t(task.done ? 'resumeWriting' : 'startHere'), task.done ? 'quiet' : 'secondary')}
       </li>`).join('')}</ul>
     </section>`;
+  if (ctx.writingCourse) return writingCourse.landing(app, library);
+  return `${hero}${resumeCard({ stop: stopFor(app, 'writing'), empty: startOpen ?? { title: t('studyCaughtUp') } })}
+    <div class="area-progress"><span>${t('writingDone', num(progress.done), num(progress.total))}</span><span class="bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span></div>${library}`;
 }
 
 export const writing = {
   title: () => t('navWriting'),
-  render: app => writingPage(app)
+  render: writingPage,
+  actions: writingCourse.actions,
+  mount: writingCourse.mount,
+  onInput: writingCourse.onInput,
+  onChange: writingCourse.onChange
 };
 
 // Choosing the level. The dashboard, grammar, writing and exam pages follow

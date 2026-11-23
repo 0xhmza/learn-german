@@ -11,7 +11,7 @@
     "start": "node server.js",
     "preview": "node server.js --dist",
     "validate": "node scripts/validate-content.js",
-    "test": "node --test",
+    "test": "node --test \"test/*.test.js\"",
     "build": "node scripts/validate-content.js && node scripts/build.js",
     "extract:legacy": "node scripts/extract-legacy.js",
     "new:lesson": "node scripts/new-lesson.js",

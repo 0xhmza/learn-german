@@ -66,7 +66,13 @@ export function indexContent(raw) {
     const topics = chapter.lessons.map(id => lessons.get(id));
     return { ...chapter, lessons: topics, level: topics[0].level };
   });
+  const writingCourse = raw.writingCourse;
+  const writingChapters = new Map((writingCourse?.chapters || []).map(chapter => [chapter.id, chapter]));
+  const writingExercises = new Map([
+    ...[...writingChapters.values()].flatMap(chapter => chapter.tasks), ...(writingCourse?.readiness || [])
+  ].map(task => [task.id, task]));
   return {
+    writingCourse, writingChapters, writingExercises,
     version: raw.version,
     levels: raw.levels,
     levelById: new Map(raw.levels.map(level => [level.id, level])),

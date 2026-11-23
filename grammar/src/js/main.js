@@ -182,14 +182,16 @@ async function boot() {
     cleanup?.();
     cleanup = null;
     route = parse(location.hash, ctx);
-    const needsCourse = COURSE_VIEWS.has(route.view) || (route.view === 'model-exams' && route.key);
+    const needsCourse = COURSE_VIEWS.has(route.view) || (['model-exams', 'writing'].includes(route.view) && route.key);
     const blocked = needsCourse && !levelHasContent(currentLevel(store.state));
     view = blocked ? unavailableCourse : views[route.view];
     document.body.classList.toggle('player-mode', !blocked && PLAYER_VIEWS.has(route.view));
     document.body.dataset.view = route.view;
     picker?.hide();
     // Remember where the learner stopped in grammar, writing and exams.
-    const area = blocked ? null : areaOf(route);
+    const task = route.view === 'writing' && route.task ? ctx.writingExercises.get(route.key) : null;
+    const unopened = task?.heldOut && !store.state.writingCourse[task.id];
+    const area = blocked || unopened ? null : areaOf(route);
     const last = area && store.state.last[area];
     if (area && !app.redrawing && (last?.hash !== route.hash || last?.day !== today())) store.update(state => recordVisit(state, route, today()));
     for (const anchor of document.querySelectorAll('[data-tab]')) {

@@ -5,6 +5,7 @@ import path from 'node:path';
 import { assembleContent } from './assemble-content.js';
 import { readingWords } from '../src/js/reading-words.js';
 import { validateModelTests } from './validate-model-tests.js';
+import { validateWriting } from './validate-writing.js';
 
 const LANGS = ['ar', 'de'];
 const FRAME_KINDS = new Set(['main', 'sub', 'rel', 'inf', 'np']);
@@ -380,7 +381,7 @@ export function validateContent(content) {
       fail('exam sample listening item', 'needs a key and a quote from the transcript');
     }
   }
-  return errors.concat(validateModelTests(content.modelTests));
+  return errors.concat(validateModelTests(content.modelTests), validateWriting(content.writingCourse));
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

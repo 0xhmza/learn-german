@@ -190,3 +190,24 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
   .pc-value { font-size: 20px; }
   .dash-side .widget { padding: 14px; gap: 8px; }
 }
+
+.skills-radar { margin-block-start: 1.2rem; display: grid; grid-template-columns: minmax(130px, .8fr) minmax(0, 1fr); align-items: center; gap: .2rem 1.2rem; }
+.skills-radar h2, .skills-radar > p { grid-column: 1 / -1; margin: 0; }
+.skills-radar h2 { font-size: 1.18rem; }
+.skills-radar > p { color: var(--muted); }
+.skills-radar svg { display: block; margin-inline: auto; inline-size: min(100%, 240px); }
+.skills-radar-grid { fill: none; stroke: var(--line-strong); stroke-width: 1; }
+.skills-radar-fill { fill: var(--brand); fill-opacity: .17; }
+.skills-radar-line { fill: none; stroke: var(--brand); stroke-width: 2.4; stroke-linecap: round; }
+.skills-radar-dot { fill: var(--brand); stroke: var(--surface); stroke-width: 1.4; }
+.skills-radar-dot.missing { fill: var(--surface); stroke: var(--line-strong); }
+.skills-radar-label { fill: var(--ink-2); font-size: 11.75px; font-weight: 750; }
+.skills-radar ul { list-style: none; margin: 0; padding: 0; }
+.skills-radar li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .2rem .45rem; padding: .5rem 0; border-block-end: 1px solid var(--line); }
+.skills-radar li:last-child { border: 0; }
+.skills-radar li a { font-weight: 720; }
+.skills-radar li > span { color: var(--muted); font-size: .86rem; }
+.skills-radar li strong { color: var(--ink); }
+@media (max-width: 540px) {
+  .skills-radar { grid-template-columns: 1fr; }
+}

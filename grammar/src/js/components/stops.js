@@ -46,6 +46,11 @@ export function stopFor(app, area) {
   const work = saved || earlierWork(ctx, state, area);
   if (!work) return null;
   const route = saved ? entryRoute : parse(work.hash, ctx);
+  if (route.view === 'writing' && route.task) {
+    const task = ctx.writingExercises.get(route.key);
+    if (task.heldOut && !state.writingCourse[task.id]) return null;
+    return { title: prose(task.title[lang]), meta: when(work.day).replace(/^ · /, ''), action: link(work.hash, t('continueHere'), 'primary') };
+  }
   if (route.view === 'model-exams' && route.key) {
     const model = ctx.modelTests.get(route.key);
     const sampleTitle = { 'audio-practice': 'listeningSample', 'speaking-practice': 'speakingSample' }[route.section];

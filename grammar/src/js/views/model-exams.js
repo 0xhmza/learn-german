@@ -5,12 +5,13 @@ import { dropGap, wordChips, mountDragDrop, focusAfterPlacing } from '../compone
 import { currentLevel, levelHasContent, modelProgress, testsProgress } from '../engine/areas.js';
 import { resumeCard, levelSoonCard } from '../components/widgets.js';
 import { stopFor } from '../components/stops.js';
+import { expectedWords, updateWritingMeter, writingMeter } from '../components/writing-meter.js';
+import { w } from '../i18n/writing.js';
 
 const routeFor = (model, section) => `model-exams/${model.id}${section ? `/${section.id}` : ''}`;
 const partTitle = section => t('examPartTitle')[section.id];
 const modelTitle = model => model.title[getLang()];
 const modelNumber = model => t('examModel', num(model.number));
-const wordCount = text => text.trim() ? text.trim().split(/\s+/).length : 0;
 const savedSection = (app, model, section) => app.state.modelExams[model.id]?.[section.id] || {};
 const hasWork = draft => draft.checked || draft.writing || Object.keys(draft.responses || {}).length;
 
@@ -102,6 +103,7 @@ export function render(app, route) {
 function renderWriting(app, model, section, sample) {
   const { intro, greeting, body, closing, instruction, points, notes } = section.writing;
   const reply = savedSection(app, model, section).writing || '';
+  const expected = sample ? expectedWords({ model: sample.writingReply.join(' ') }) : 100;
   return `<div class="exam-writing-workspace">
     <div class="exam-writing-grid">
       <section class="panel exam-writing-source" aria-labelledby="exam-writing-message-title">
@@ -124,14 +126,14 @@ function renderWriting(app, model, section, sample) {
             <div class="exam-writing-notes">${notes.map(note => `<p>${esc(note)}</p>`).join('')}</div>
           </div>
         </section>
-        <section class="panel exam-writing-editor" aria-labelledby="exam-writing-label">
+        <section class="panel exam-writing-editor writing-editor" aria-labelledby="exam-writing-label">
           <div class="exam-writing-editor-header">
             <h2><label id="exam-writing-label" for="exam-writing">${t('examWritten')}</label></h2>
-            <p id="exam-words">${t('examWords', num(wordCount(reply)))}</p>
           </div>
-          <textarea id="exam-writing" maxlength="30000" lang="de" dir="ltr" aria-describedby="exam-writing-instruction exam-writing-storage">
+          <textarea id="exam-writing" maxlength="30000" lang="de" dir="ltr" aria-describedby="exam-writing-instruction exam-writing-storage exam-writing-meter">
 ${esc(reply)}</textarea>
-          <p id="exam-writing-storage" class="exam-writing-storage">${t('examWritingStorage')}</p>
+          ${writingMeter('exam-writing', expected, reply)}
+          <p id="exam-writing-storage" class="exam-writing-storage">${esc(w('expectedHelp'))} ${t('examWritingStorage')}</p>
         </section>
       </div>
     </div>
@@ -259,7 +261,7 @@ export function onInput(app, event) {
   const input = event.target;
   if (input.id !== 'exam-writing') return;
   updateDraft(app, draft => { draft.writing = input.value; });
-  document.querySelector('#exam-words').textContent = t('examWords', num(wordCount(input.value)));
+  updateWritingMeter(input);
 }
 
 export function onChange(app, event) {
@@ -291,7 +293,14 @@ export const actions = {
     const items = app.ctx.learning.examSample.listening.items;
     const answers = items.map((item, i) => document.querySelector(`[name="listening-${i}"]:checked`)?.value);
     const result = document.querySelector('#listening-result');
+    const missing = answers.findIndex(answer => answer === undefined);
+    if (missing !== -1) {
+      result.textContent = t('listeningComplete');
+      document.querySelector(`[name="listening-${missing}"]`)?.focus();
+      return;
+    }
     const right = items.filter((item, i) => item.answer === answers[i]).length;
+    app.store.update(state => { state.listeningSample = { correct: right, total: items.length }; });
     result.innerHTML = `<p><strong>${t('examScore', num(right), num(items.length))}</strong></p><ol>${items.map((item, i) =>
       `<li class="exam-mark ${item.answer === answers[i] ? 'good' : 'bad'}">${t(item.answer === 'true' ? 'correctWord' : 'incorrectWord')} · ${de(item.quote)}</li>`).join('')}</ol>`;
     result.focus();
@@ -300,6 +309,8 @@ export const actions = {
 
 // Sprachbausteine part 2: drag words from the list into the gaps.
 export function mount(app, root, route) {
+  const editor = root.querySelector('#exam-writing');
+  if (editor) updateWritingMeter(editor);
   const model = app.ctx.modelTests.get(route.key);
   const section = model?.sections.find(part => part.id === route.section);
   if (!section || !isGapText(section) || !isMatching(section)) return null;

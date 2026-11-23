@@ -80,6 +80,7 @@ export default {
   writingExample: 'اقرأ نموذج ردّ',
   independentExam: 'تدريب قصير من إعداد جُزُر القواعد',
   examTranscript: 'اعرض نص التسجيل',
+  listeningComplete: 'أجب عن جميع الأسئلة أولًا.',
   listeningCheck: 'تحقّق من إجابات الاستماع',
   listenFirst: 'استمع إلى الإعلان، ثم حدّد إن كانت كلّ عبارة صحيحة أم خاطئة.',
   correctWord: 'صحيح',

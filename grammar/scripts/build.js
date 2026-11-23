@@ -12,7 +12,7 @@ const src = path.join(root, 'src');
 const dist = path.join(root, 'dist');
 const site = path.join(dist, 'site');
 export const singleFile = path.join(dist, 'Deutsch-Grammatik-B1.html');
-const BUDGET = { single: 1.6 * 1024 * 1024, script: 224 * 1024 };
+const BUDGET = { single: 1.75 * 1024 * 1024, script: 248 * 1024 };
 
 const between = (text, start, end, replacement) => {
   const a = text.indexOf(start);

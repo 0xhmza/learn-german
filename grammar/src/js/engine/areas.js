@@ -16,6 +16,7 @@ export const levelHasContent = level => CEFR.some(info => info.id === level && i
 // Which area a route belongs to, for remembering where the learner stopped.
 export function areaOf(route) {
   if (route.view === 'lesson') return 'grammar';
+  if (route.view === 'writing' && route.task) return 'writing';
   if (route.view === 'model-exams' && route.key && route.section) return route.section === 'schreiben' ? 'writing' : 'tests';
   if (route.view === 'quiz') {
     if (/^write-/.test(route.key)) return 'writing';

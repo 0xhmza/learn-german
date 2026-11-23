@@ -18,7 +18,12 @@ export function parse(hash, ctx) {
   }
   if (!raw || extra !== undefined) return home;
   if (view === 'vokabeln' && key === undefined) return { view: 'vocab', key: null, hash: raw, tab: 'vocab' };
-  if (view === 'schreiben' && key === undefined) return { view: 'writing', key: null, hash: raw, tab: 'writing' };
+  if (view === 'schreiben') {
+    const task = ctx.writingExercises?.has(key) ?? false;
+    if (key === undefined || key === 'bereit' || ctx.writingChapters?.has(key) || task) {
+      return { view: 'writing', key: key ?? null, task, hash: raw, tab: 'writing' };
+    }
+  }
   if (view === 'topics' && key === undefined) return { view: 'topics', key: null, hash: raw, tab: 'home' };
   if (view === 'grammatik' && key === undefined) return { view: 'grammar', key: null, hash: raw, tab: 'home' };
   if (view === 'level' && (key === undefined || cefrBySlug.has(key))) return { view: 'level', key: key ?? null, hash: raw, tab: 'home' };

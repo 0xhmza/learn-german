@@ -1,0 +1,1685 @@
+{
+  "chapters": [
+    {
+      "id": "schreibauftrag",
+      "title": {
+        "de": "Den Schreibauftrag verstehen",
+        "ar": "فهم مهمة الكتابة"
+      },
+      "description": {
+        "de": "Erkenne, wer schreibt, was die Person braucht und worauf du antworten sollst.",
+        "ar": "تعرّف إلى المرسل وما يحتاجه وما ينبغي أن تجيب عنه."
+      },
+      "tip": {
+        "de": "Frag dich vor dem Schreiben: Wer liest meinen Text? Was soll die Person danach wissen oder tun? Markiere die Verben in den Leitpunkten, zum Beispiel „erklären“ oder „vorschlagen“.",
+        "ar": "قبل الكتابة اسأل نفسك: من سيقرأ النص؟ ماذا ينبغي أن يعرف أو يفعل بعد قراءته؟ حدّد أفعال النقاط، مثل «اشرح» أو «اقترح»."
+      },
+      "phrases": [
+        "Danke für deine Nachricht.",
+        "Ich kann am Samstag kommen.",
+        "Können wir uns am Bahnhof treffen?"
+      ],
+      "tasks": [
+        {
+          "id": "erste-nachricht",
+          "title": {
+            "de": "Deine erste Antwort",
+            "ar": "ردّك الأول"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Schreib eine kurze Antwort an Lina. Schreib so, wie du es heute kannst.",
+              "points": [
+                "Sag, ob du kommen kannst.",
+                "Schlag einen Treffpunkt vor.",
+                "Frag, was du mitbringen sollst."
+              ],
+              "model": "Liebe Lina,\n\nam Samstag kann ich gern mitkommen. Treffen wir uns am Eingang? Soll ich etwas zu essen mitbringen?\n\nViele Grüße\nSam",
+              "modelPoints": [
+                "am Samstag kann ich gern mitkommen",
+                "Treffen wir uns am Eingang?",
+                "Soll ich etwas zu essen mitbringen?"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Die drei kurzen Sätze ergeben eine vollständige Nachricht mit Anrede und Gruß.",
+                    "ar": "تشكّل الجمل الثلاث رسالة كاملة مع تحية افتتاحية وختامية."
+                  }
+                }
+              ],
+              "message": "Hallo Sam,\n\nwir gehen am Samstag in den Stadtpark. Hast du Lust mitzukommen? Schreib mir, wo wir uns treffen können.\n\nLiebe Grüße\nLina"
+            }
+          ],
+          "diagnostic": true
+        },
+        {
+          "id": "wer-liest",
+          "title": {
+            "de": "Wer liest deine Antwort?",
+            "ar": "من يقرأ ردّك؟"
+          },
+          "kind": "choice",
+          "question": "„Liebe Mila, wir feiern am Sonntag meinen Geburtstag. Kannst du kommen? Liebe Grüße, Karim.“ An wen und warum schreibst du?",
+          "options": [
+            "An Mila, um sie einzuladen.",
+            "An Karim, um auf die Einladung zu reagieren.",
+            "An Karim, um seinen Geburtstag zu planen."
+          ],
+          "answer": 1,
+          "feedback": {
+            "de": "Karim hat die Nachricht geschrieben. Als Mila reagierst du auf seine Einladung.",
+            "ar": "كريم هو كاتب الرسالة، وأنت تردّ بصفتك ميلا على دعوته."
+          },
+          "skill": "coverage"
+        },
+        {
+          "id": "punkt-oder-stichwort",
+          "title": {
+            "de": "Einen Leitpunkt beantworten",
+            "ar": "الإجابة عن نقطة من المهمة"
+          },
+          "kind": "choice",
+          "question": "Leitpunkt: Sag, wann ihr euch treffen könnt und wo. Welche Antwort gibt beide Informationen?",
+          "options": [
+            "Wir können uns am Samstag um drei vor dem Kino treffen.",
+            "Ich freue mich schon auf das Kino.",
+            "Ein Treffen am Samstag? Mal sehen."
+          ],
+          "answer": 0,
+          "feedback": {
+            "de": "Ein Satz reicht hier aus: „am Samstag um drei“ nennt die Zeit, „vor dem Kino“ den Ort.",
+            "ar": "جملة واحدة تكفي هنا: «السبت في الثالثة» تحدّد الوقت، و«أمام السينما» تحدّد المكان."
+          },
+          "skill": "coverage"
+        },
+        {
+          "id": "ein-satz-zwei-punkte",
+          "title": {
+            "de": "Ein Satz, zwei Informationen",
+            "ar": "جملة واحدة ومعلومتان"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Deine Cousine will mit dir ins Kino. Antworte ihr in einem Satz.",
+              "points": [
+                "Sag, an welchem Tag du Zeit hast.",
+                "Schlag eine Uhrzeit vor."
+              ],
+              "model": "Am Freitag habe ich Zeit und könnte um sieben vor dem Kino sein.",
+              "modelPoints": [
+                "Am Freitag habe ich Zeit",
+                "um sieben"
+              ],
+              "explain": [
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Du kannst zwei Leitpunkte in einem verständlichen Satz verbinden.",
+                    "ar": "يمكنك الإجابة عن نقطتين في جملة واحدة واضحة."
+                  }
+                }
+              ],
+              "alternatives": [
+                "Am Sonntag passt es mir, am besten gegen sechs."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "passend-reagieren",
+      "title": {
+        "de": "Passend reagieren",
+        "ar": "الردّ بأسلوب مناسب"
+      },
+      "description": {
+        "de": "Bitte, danke, entschuldige dich und mach einen Gegenvorschlag.",
+        "ar": "تدرّب على الطلب والشكر والاعتذار واقتراح بديل."
+      },
+      "tip": {
+        "de": "Schreib zuerst die eigentliche Nachricht mit deinen eigenen Angaben. Wähle dann Anrede, Pronomen und Gruß passend zur Person.",
+        "ar": "اكتب مضمون الرسالة أولًا بتفاصيلك الخاصة، ثم اختر صيغة المخاطبة والضمائر والتحية المناسبة للشخص."
+      },
+      "phrases": [
+        "Hättest du am Samstag Zeit?",
+        "Wäre ein Termin am Samstag möglich?",
+        "Leider schaffe ich es am Freitag nicht.",
+        "Vielen Dank für Ihre Nachricht."
+      ],
+      "tasks": [
+        {
+          "id": "anrede-und-gruss",
+          "title": {
+            "de": "Die passende Anrede finden",
+            "ar": "اختيار التحية المناسبة"
+          },
+          "kind": "choice",
+          "question": "Du antwortest deiner Kursleiterin Frau Wolf. Welche Kombination passt?",
+          "options": [
+            "Hallo Wolf, … Liebe Grüße, dein Alex",
+            "Sehr geehrte Frau Wolf, … Mit freundlichen Grüßen",
+            "Liebe Frau Wolf, … Ich freue mich auf deine Antwort."
+          ],
+          "answer": 1,
+          "feedback": {
+            "de": "Die Anrede und der Gruß passen zusammen. Bleib im Text bei „Sie“, „Ihnen“ und „Ihr“.",
+            "ar": "التحيتان منسجمتان. استخدم في النص صيغ الاحترام «Sie» و«Ihnen» و«Ihr»."
+          },
+          "skill": "register"
+        },
+        {
+          "id": "absagen-freund",
+          "title": {
+            "de": "Einem Freund absagen",
+            "ar": "الاعتذار لصديق"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Ben lädt dich am Freitag ein. Schreib ihm zwei Sätze.",
+              "points": [
+                "Sag freundlich ab und erkläre kurz warum.",
+                "Schlag einen anderen Termin vor."
+              ],
+              "model": "Leider kann ich am Freitag nicht, weil meine Schwester zu Besuch kommt. Hättest du am Sonntag Zeit?",
+              "modelPoints": [
+                "Leider kann ich am Freitag nicht, weil meine Schwester zu Besuch kommt.",
+                "Hättest du am Sonntag Zeit?"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "„Leider“ macht die Absage freundlich. Die Frage mit „du“ passt zu Ben.",
+                    "ar": "كلمة «Leider» تلطف الاعتذار. وسؤال بصيغة «du» يناسب بن."
+                  }
+                }
+              ],
+              "alternatives": [
+                "Danke für die Einladung! Können wir uns stattdessen am Sonntag treffen?"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "termin-kursleitung",
+          "title": {
+            "de": "Der Kursleiterin schreiben",
+            "ar": "مراسلة مدرّسة الدورة"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Frau Wolf möchte dich am Freitag sprechen. Schreib dieselbe Art von Antwort diesmal an deine Kursleiterin.",
+              "points": [
+                "Erkläre, warum der Termin nicht passt.",
+                "Frag höflich nach einem Ersatztermin."
+              ],
+              "model": "Leider kann ich den Termin am Freitag nicht wahrnehmen, weil ich arbeiten muss. Wäre ein Gespräch am Montag möglich?",
+              "modelPoints": [
+                "weil ich arbeiten muss",
+                "Wäre ein Gespräch am Montag möglich?"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "„Wäre … möglich?“ lässt Frau Wolf Raum für eine andere Lösung.",
+                    "ar": "سؤال «Wäre … möglich?» يترك للمدرّسة مجالًا لاقتراح حلّ آخر."
+                  }
+                }
+              ],
+              "alternatives": [
+                "Könnten wir das Gespräch auf Montag verschieben?"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reihenfolge-absage",
+          "title": {
+            "de": "Eine Antwort ordnen",
+            "ar": "ترتيب الردّ"
+          },
+          "kind": "order",
+          "question": "Ordne die Nachricht an deine Freundin von der Anrede bis zum Gruß.",
+          "options": [
+            "Hast du stattdessen am Sonntag Zeit?",
+            "Liebe Nora,",
+            "Viele Grüße\nAli",
+            "danke für deine Einladung. Am Samstag bin ich leider unterwegs."
+          ],
+          "answer": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "feedback": {
+            "de": "Erst begrüßt und bedankst du dich, dann erklärst du die Absage und schlägst etwas vor. Zum Schluss kommt der Gruß.",
+            "ar": "ابدأ بالتحية والشكر، ثم اشرح الاعتذار واقترح بديلًا، واختتم بالتحية."
+          },
+          "skill": "cohesion"
+        }
+      ]
+    },
+    {
+      "id": "gruende-details",
+      "title": {
+        "de": "Gründe und Details ergänzen",
+        "ar": "إضافة الأسباب والتفاصيل"
+      },
+      "description": {
+        "de": "Mach aus einer knappen Antwort einen kleinen zusammenhängenden Text.",
+        "ar": "حوّل إجابة مقتضبة إلى نص قصير مترابط."
+      },
+      "tip": {
+        "de": "Ergänze einen Grund, ein Beispiel oder eine nützliche Angabe. Nach „weil“ steht das Verb am Ende; nach „deshalb“ kommt das Verb direkt danach.",
+        "ar": "أضف سببًا أو مثالًا أو معلومة مفيدة. بعد «weil» يأتي الفعل في نهاية الجملة، وبعد «deshalb» يأتي الفعل مباشرة."
+      },
+      "phrases": [
+        "Ich komme gern mit, weil …",
+        "Deshalb würde ich lieber …",
+        "Zum Beispiel könnten wir …",
+        "Obwohl es regnet, …"
+      ],
+      "tasks": [
+        {
+          "id": "verb-am-ende",
+          "title": {
+            "de": "Mit weil begründen",
+            "ar": "ذكر السبب باستخدام weil"
+          },
+          "kind": "choice",
+          "question": "Welche Antwort hat die richtige Wortstellung?",
+          "options": [
+            "Ich nehme den Bus, weil mein Knie tut weh.",
+            "Ich nehme den Bus, weil mein Knie wehtut.",
+            "Ich nehme den Bus, weil wehtut mein Knie."
+          ],
+          "answer": 1,
+          "feedback": {
+            "de": "Nach „weil“ steht das konjugierte Verb am Ende. „Wehtun“ bleibt hier zusammen: „wehtut“.",
+            "ar": "بعد «weil» يكون الفعل المصرف في النهاية. ويكتب «wehtut» هنا كلمةً واحدة."
+          },
+          "skill": "word-order"
+        },
+        {
+          "id": "folge-satz",
+          "title": {
+            "de": "Mit deshalb verbinden",
+            "ar": "الربط باستخدام deshalb"
+          },
+          "kind": "order",
+          "question": "Bau einen Satz, der mit „Deshalb“ beginnt.",
+          "options": [
+            "heute",
+            "Deshalb",
+            "ich",
+            "zu Hause.",
+            "bleibe"
+          ],
+          "answer": [
+            1,
+            4,
+            2,
+            0,
+            3
+          ],
+          "feedback": {
+            "de": "„Deshalb“ steht vorne, „bleibe“ direkt danach. Das Subjekt „ich“ folgt dem Verb.",
+            "ar": "تأتي «Deshalb» أولًا، يليها الفعل «bleibe»، ثم الفاعل «ich»."
+          },
+          "skill": "word-order"
+        },
+        {
+          "id": "essen-begruenden",
+          "title": {
+            "de": "Einen Vorschlag begründen",
+            "ar": "تعليل اقتراح"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Ihr plant ein gemeinsames Essen nach dem Sport. Schreib einen Vorschlag mit einem Grund.",
+              "points": [
+                "Nenne ein Gericht oder einen Ort.",
+                "Erkläre, warum das gut passt."
+              ],
+              "model": "Wir könnten eine Gemüsesuppe kochen, weil sie schnell fertig ist. Dazu bringe ich Brot mit.",
+              "modelPoints": [
+                "eine Gemüsesuppe kochen",
+                "weil sie schnell fertig ist"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Der Grund gehört direkt zum Vorschlag. Das Brot ist eine nützliche Zusatzinformation.",
+                    "ar": "السبب يرتبط مباشرة بالاقتراح، والخبز تفصيل إضافي مفيد."
+                  }
+                }
+              ],
+              "alternatives": [
+                "Das Café am Park hat auch vegetarische Gerichte. Deshalb würde ich dort essen."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sport-kurze-mail",
+          "title": {
+            "de": "Eine kurze Nachricht verbinden",
+            "ar": "كتابة رسالة قصيرة مترابطة"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Sofia lädt dich zum Sport ein. Antworte ihr mit einer kurzen Nachricht. Denk an Anrede und Gruß.",
+              "points": [
+                "Sag, ob du zum Training kommen kannst.",
+                "Nenne einen Grund und schlag bei Bedarf etwas anderes vor."
+              ],
+              "model": "Liebe Sofia,\n\nheute kann ich nicht zum Training kommen, weil ich noch arbeiten muss. Morgen habe ich früher Feierabend. Wollen wir dann zusammen laufen gehen?\n\nLiebe Grüße\nMina",
+              "modelPoints": [
+                "heute kann ich nicht zum Training kommen",
+                "weil ich noch arbeiten muss"
+              ],
+              "explain": [
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Die Antwort erklärt die Absage und bietet direkt einen neuen Termin an.",
+                    "ar": "يوضح الردّ سبب الاعتذار ويقترح مباشرةً موعدًا جديدًا."
+                  }
+                },
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "„Heute“, „morgen“ und „dann“ verbinden die Sätze miteinander.",
+                    "ar": "تربط «Heute» و«morgen» و«dann» بين الجمل."
+                  }
+                }
+              ],
+              "message": "Hi Mina,\n\nkommst du heute um sechs mit zum Training?\n\nLiebe Grüße\nSofia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "absaetze",
+      "title": {
+        "de": "Absätze aufbauen",
+        "ar": "بناء الفقرات"
+      },
+      "description": {
+        "de": "Ordne deine Gedanken so, dass die andere Person gut folgen kann.",
+        "ar": "رتّب أفكارك بحيث يسهل على القارئ متابعتها."
+      },
+      "tip": {
+        "de": "Nenne zuerst den Anlass. Beschreibe dann, was passiert ist, und formuliere am Ende eine konkrete Bitte. Ein neuer Gedanke kann einen neuen Absatz bekommen.",
+        "ar": "ابدأ بسبب الكتابة، ثم صف ما حدث، واختم بطلب واضح. يمكن لكل فكرة جديدة أن تبدأ في فقرة جديدة."
+      },
+      "phrases": [
+        "Seit Montag funktioniert … nicht.",
+        "Am Dienstag habe ich …",
+        "Könnten Sie bitte …?",
+        "Bitte teilen Sie mir mit, wann …"
+      ],
+      "tasks": [
+        {
+          "id": "problem-ordnen",
+          "title": {
+            "de": "Anlass, Details und Bitte ordnen",
+            "ar": "ترتيب السبب والتفاصيل والطلب"
+          },
+          "kind": "order",
+          "question": "Bau aus den Sätzen einen Absatz zur kaputten Heizung.",
+          "options": [
+            "Könnten Sie bitte jemanden zur Reparatur schicken?",
+            "Seit Montag funktioniert die Heizung in meiner Wohnung nicht.",
+            "Besonders abends ist es deshalb sehr kalt im Wohnzimmer."
+          ],
+          "answer": [
+            1,
+            2,
+            0
+          ],
+          "feedback": {
+            "de": "Der erste Satz nennt das Problem. Der zweite schildert die Folge. Die Bitte am Ende ist konkret.",
+            "ar": "تذكر الجملة الأولى المشكلة، والثانية نتيجتها، وفي النهاية يأتي طلب محدّد."
+          },
+          "skill": "cohesion"
+        },
+        {
+          "id": "mit-zeitangabe-starten",
+          "title": {
+            "de": "Satzanfänge variieren",
+            "ar": "تنويع بدايات الجمل"
+          },
+          "kind": "choice",
+          "question": "Du hast schon zweimal mit „Ich“ begonnen. Welche Formulierung ist korrekt und beginnt mit der Zeitangabe?",
+          "options": [
+            "Am Dienstag ich habe das Paket abgeholt.",
+            "Am Dienstag das Paket ich abgeholt habe.",
+            "Am Dienstag habe ich das Paket abgeholt."
+          ],
+          "answer": 2,
+          "feedback": {
+            "de": "Nach der Zeitangabe steht „habe“ an zweiter Stelle. Satzanfänge mit Zeitangaben helfen beim Erzählen.",
+            "ar": "بعد ظرف الزمن يأتي «habe» في المركز الثاني. وتساعد بدايات الجمل الزمنية في سرد الأحداث."
+          },
+          "skill": "word-order"
+        },
+        {
+          "id": "artikel-nach-mit",
+          "title": {
+            "de": "Kasus beim Schreiben prüfen",
+            "ar": "مراجعة الحالة الإعرابية"
+          },
+          "kind": "choice",
+          "question": "Welche Formulierung passt zu einer E-Mail über einen Defekt?",
+          "options": [
+            "Ich habe ein Problem mit den neuen Lampe.",
+            "Ich habe ein Problem mit der neuen Lampe.",
+            "Ich habe ein Problem mit die neue Lampe."
+          ],
+          "answer": 1,
+          "feedback": {
+            "de": "„Mit“ verlangt den Dativ. Aus „die neue Lampe“ wird „mit der neuen Lampe“.",
+            "ar": "يتطلب حرف الجر «mit» حالة الداتيف، فتتحول «die neue Lampe» إلى «mit der neuen Lampe»."
+          },
+          "skill": "case"
+        },
+        {
+          "id": "lieferung-absatz",
+          "title": {
+            "de": "Eine Reklamation formulieren",
+            "ar": "صياغة شكوى عن طلب"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Du hast einen Wasserkocher bestellt. Er kam mit einem beschädigten Griff an. Schreib einen zusammenhängenden Absatz an den Kundenservice.",
+              "points": [
+                "Sag, wann der Wasserkocher angekommen ist.",
+                "Beschreibe den Schaden.",
+                "Bitte um eine konkrete Lösung."
+              ],
+              "model": "Am Dienstag ist der bestellte Wasserkocher angekommen. Leider ist der Griff beschädigt, sodass ich das Gerät nicht sicher benutzen kann. Könnten Sie mir bitte einen neuen Wasserkocher schicken?",
+              "modelPoints": [
+                "Am Dienstag ist der bestellte Wasserkocher angekommen.",
+                "der Griff beschädigt",
+                "einen neuen Wasserkocher schicken"
+              ],
+              "explain": [
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Der Text nennt den Zeitpunkt, erklärt den Schaden und bittet um Ersatz.",
+                    "ar": "يذكر النص موعد الوصول، ويوضح التلف، ويطلب الاستبدال."
+                  }
+                },
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Die Bitte folgt logisch aus dem beschriebenen Problem.",
+                    "ar": "يتبع الطلبُ المشكلةَ المذكورة بشكل منطقي."
+                  }
+                }
+              ],
+              "alternatives": [
+                "Ich bitte Sie um einen Ersatz oder um eine Rückerstattung."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "persoenliche-mail",
+      "title": {
+        "de": "Eine persönliche E-Mail schreiben",
+        "ar": "كتابة بريد شخصي"
+      },
+      "description": {
+        "de": "Plane vier Leitpunkte und schreibe zwei vollständige Antworten.",
+        "ar": "خطّط لأربع نقاط واكتب ردّين كاملين."
+      },
+      "tip": {
+        "de": "Schreib zu jedem Leitpunkt ein Stichwort. Ordne verwandte Gedanken und lies am Schluss nach, ob die Anrede und der Gruß zur Person passen.",
+        "ar": "اكتب كلمة مفتاحية لكل نقطة، ورتّب الأفكار المترابطة، ثم تأكّد من ملاءمة التحية الافتتاحية والختامية."
+      },
+      "phrases": [
+        "Danke, dass du an mich gedacht hast.",
+        "Am besten fahren wir …",
+        "Falls es regnet, können wir …",
+        "Gib mir bitte Bescheid, ob …"
+      ],
+      "tasks": [
+        {
+          "id": "vier-punkte-erkennen",
+          "title": {
+            "de": "Zwei Punkte in einem Satz erkennen",
+            "ar": "تمييز نقطتين في جملة واحدة"
+          },
+          "kind": "choice",
+          "question": "Leitpunkte: Wo trefft ihr euch? Wie kommt Alex dorthin? Welcher Satz beantwortet beide?",
+          "options": [
+            "Wir treffen uns um sechs an der Haltestelle.",
+            "Fahr bis zum Rathaus, dort warte ich vor dem Eingang auf dich.",
+            "Das Rathaus liegt mitten in der Stadt."
+          ],
+          "answer": 1,
+          "feedback": {
+            "de": "Der Satz gibt einen Hinweis zur Anreise und nennt einen genauen Treffpunkt.",
+            "ar": "تقدّم الجملة معلومة عن طريقة الوصول وتذكر نقطة لقاء دقيقة."
+          },
+          "skill": "coverage"
+        },
+        {
+          "id": "besuch-planen",
+          "title": {
+            "de": "Einen Besuch planen",
+            "ar": "التخطيط لزيارة"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Lea möchte dich besuchen. Antworte ihr mit einer vollständigen persönlichen E-Mail.",
+              "points": [
+                "Bedanke dich und bestätige den Besuch.",
+                "Mach einen Vorschlag für die Anreise.",
+                "Schlag eine Aktivität vor und begründe sie.",
+                "Frag nach etwas, das Lea mitbringen soll."
+              ],
+              "model": "Liebe Lea,\n\nvielen Dank für deine Nachricht! Du kannst mich sehr gern am ersten Juniwochenende besuchen. Ich freue mich schon darauf.\n\nAm besten fährst du mit dem Zug bis zum Hauptbahnhof. Dort kann ich dich am Samstag gegen elf Uhr abholen. Am Nachmittag könnten wir zum See fahren, weil man dort schön spazieren gehen kann. Falls es regnet, gehen wir einfach ins Museum.\n\nKannst du bitte eine Regenjacke mitbringen? Das Wetter ändert sich hier manchmal sehr schnell. Sag mir bitte noch, wann dein Zug ankommt.\n\nLiebe Grüße\nMira",
+              "modelPoints": [
+                "Du kannst mich sehr gern am ersten Juniwochenende besuchen.",
+                "Am besten fährst du mit dem Zug bis zum Hauptbahnhof.",
+                "Am Nachmittag könnten wir zum See fahren, weil man dort schön spazieren gehen kann.",
+                "Kannst du bitte eine Regenjacke mitbringen?"
+              ],
+              "explain": [
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Mira bestätigt den Besuch und gibt Lea Informationen, mit denen sie die Reise planen kann.",
+                    "ar": "تؤكّد ميرا الزيارة وتعطي ليا معلومات تساعدها في التخطيط للسفر."
+                  }
+                },
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Die Reihenfolge folgt dem Besuch: Anreise, gemeinsamer Plan und Vorbereitung.",
+                    "ar": "يتّبع ترتيب الرسالة مراحل الزيارة: الوصول، ثم البرنامج المشترك، ثم التحضير."
+                  }
+                },
+                {
+                  "criterion": "accuracy",
+                  "text": {
+                    "de": "Nach „weil“ und „falls“ stehen die Verben am Ende des Nebensatzes.",
+                    "ar": "بعد «weil» و«falls» تأتي الأفعال في نهاية الجملة الفرعية."
+                  }
+                }
+              ],
+              "message": "Liebe Mira,\n\nkann ich dich am ersten Juniwochenende besuchen? Ich kenne deine Stadt noch nicht. Wie komme ich am besten zu dir und was können wir zusammen unternehmen?\n\nLiebe Grüße\nLea",
+              "alternatives": [
+                "Ich hole dich gern vom Bahnhof ab.",
+                "Wenn du magst, machen wir am Nachmittag einen Ausflug zum See."
+              ],
+              "expected": 100
+            }
+          ],
+          "plan": true
+        },
+        {
+          "id": "geburtstag-nachfeiern",
+          "title": {
+            "de": "Auf eine Einladung antworten",
+            "ar": "الردّ على دعوة"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Schreib deinem Freund Tarek eine persönliche E-Mail.",
+              "points": [
+                "Reagiere auf die Einladung.",
+                "Erkläre, warum du erst später kommst.",
+                "Schlag vor, was du mitbringen kannst.",
+                "Frag nach dem Heimweg."
+              ],
+              "model": "Lieber Tarek,\n\nvielen Dank für die Einladung. Ich feiere deinen Geburtstag sehr gern mit euch! Leider kann ich erst gegen acht Uhr kommen, weil ich vorher noch meine Schwester vom Bahnhof abholen muss.\n\nAm Vormittag kann ich einen Kuchen backen und ihn zur Feier mitbringen. Sag mir bitte kurz, ob jemand eine Allergie hat. Dann weiß ich, welche Zutaten ich benutzen kann.\n\nWeißt du, ob nach Mitternacht noch ein Bus in Richtung Innenstadt fährt? Sonst würde ich mir mit jemandem ein Taxi teilen.\n\nBis Samstag und liebe Grüße\nJana",
+              "modelPoints": [
+                "Ich feiere deinen Geburtstag sehr gern mit euch!",
+                "weil ich vorher noch meine Schwester vom Bahnhof abholen muss",
+                "einen Kuchen backen und ihn zur Feier mitbringen",
+                "ob nach Mitternacht noch ein Bus in Richtung Innenstadt fährt?"
+              ],
+              "explain": [
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Die Antwort löst alle vier Aufgaben und fragt nach einer praktischen Information.",
+                    "ar": "ينجز الردّ المطلوب في النقاط الأربع ويسأل عن معلومة عملية."
+                  }
+                },
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Jeder Absatz hat einen klaren Schwerpunkt. „Sonst“ verbindet Frage und Alternative.",
+                    "ar": "لكل فقرة فكرة واضحة. وتربط «Sonst» السؤال بالبديل."
+                  }
+                }
+              ],
+              "message": "Hallo Jana,\n\nam Samstag feiere ich ab 18 Uhr meinen Geburtstag. Kommst du auch? Wir machen ein kleines Buffet. Du musst nichts mitbringen, aber wenn du Lust hast, sag einfach Bescheid.\n\nViele Grüße\nTarek",
+              "expected": 100
+            }
+          ],
+          "independent": true
+        }
+      ]
+    },
+    {
+      "id": "halbformelle-mail",
+      "title": {
+        "de": "Eine halbformelle E-Mail schreiben",
+        "ar": "كتابة بريد شبه رسمي"
+      },
+      "description": {
+        "de": "Erkläre dein Anliegen höflich und bitte um eine klare Antwort.",
+        "ar": "اشرح طلبك بأسلوب مهذّب واطلب ردًا واضحًا."
+      },
+      "tip": {
+        "de": "Prüf vor dem Abschicken: Passt die Anrede zum Kontakt? Schreibst du Sie, Ihnen und Ihr richtig? Weiß die andere Person am Schluss, was du von ihr brauchst?",
+        "ar": "قبل الإرسال تحقّق: هل تناسب التحية الشخص؟ هل كتبت Sie وIhnen وIhr بشكل صحيح؟ هل يعرف القارئ في النهاية ما الذي تحتاج إليه؟"
+      },
+      "phrases": [
+        "Wäre es möglich, …?",
+        "Könnten Sie mir bitte mitteilen, ob …?",
+        "Den Termin kann ich leider nicht wahrnehmen.",
+        "Vielen Dank für Ihre Hilfe."
+      ],
+      "tasks": [
+        {
+          "id": "sie-gross",
+          "title": {
+            "de": "Höflichkeitsformen prüfen",
+            "ar": "مراجعة صيغ الاحترام"
+          },
+          "kind": "choice",
+          "question": "Welche Zeile ist korrekt geschrieben?",
+          "options": [
+            "Könnten sie mir bitte ihre Telefonnummer schicken?",
+            "Könnten Sie mir bitte ihre Telefonnummer schicken?",
+            "Könnten Sie mir bitte Ihre Telefonnummer schicken?"
+          ],
+          "answer": 2,
+          "feedback": {
+            "de": "In der direkten höflichen Anrede schreibst du „Sie“ und „Ihre“ groß.",
+            "ar": "عند المخاطبة بصيغة الاحترام، اكتب «Sie» و«Ihre» بحرف كبير."
+          },
+          "skill": "capitalization"
+        },
+        {
+          "id": "angebot-statt-forderung",
+          "title": {
+            "de": "Einen Vorschlag höflich machen",
+            "ar": "تقديم اقتراح مهذّب"
+          },
+          "kind": "choice",
+          "question": "Welcher Satz bittet höflich um eine Lösung?",
+          "options": [
+            "Schicken Sie mir sofort einen anderen Termin!",
+            "Könnten Sie mir bitte einen anderen Termin anbieten?",
+            "Du musst mir einen anderen Termin geben."
+          ],
+          "answer": 1,
+          "feedback": {
+            "de": "„Könnten Sie …?“ passt als höfliche Frage an eine Person, die du siezt.",
+            "ar": "سؤال «Könnten Sie …?» مناسب لطلب مهذّب من شخص تخاطبه بصيغة الاحترام."
+          },
+          "skill": "register"
+        },
+        {
+          "id": "kursanfrage",
+          "title": {
+            "de": "Dem Kursbüro antworten",
+            "ar": "الردّ على مكتب الدورة"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Schreib eine vollständige Antwort an Frau Gül aus dem Kursbüro.",
+              "points": [
+                "Bestätige, dass du weiter am Kurs teilnehmen möchtest.",
+                "Erkläre, warum du dienstags später kommst.",
+                "Mach einen Vorschlag, wie du den Anfang nachholen könntest.",
+                "Frag nach einer Rückmeldung."
+              ],
+              "model": "Sehr geehrte Frau Gül,\n\nvielen Dank für Ihre Nachricht. Ich möchte gern weiter am Abendkurs teilnehmen, weil ich mich auf die B1-Prüfung vorbereite.\n\nDienstags kann ich leider erst um halb sieben kommen, da ich bis sechs Uhr arbeite. Den Anfang könnte ich nachholen, wenn ich die Aufgaben vorher per E-Mail bekomme. Die ersten Übungen würde ich dann zu Hause machen.\n\nWäre diese Lösung für Sie in Ordnung? Falls nicht, könnten Sie mir bitte sagen, ob es noch einen Kurs an einem anderen Abend gibt?\n\nMit freundlichen Grüßen\nNora Demir",
+              "modelPoints": [
+                "Ich möchte gern weiter am Abendkurs teilnehmen",
+                "da ich bis sechs Uhr arbeite",
+                "wenn ich die Aufgaben vorher per E-Mail bekomme",
+                "Wäre diese Lösung für Sie in Ordnung?"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "„Ihre“, „Sie“ und die Grußformel halten das Register durchgehend höflich.",
+                    "ar": "تحافظ «Ihre» و«Sie» والتحية الختامية على الأسلوب المهذّب طوال الرسالة."
+                  }
+                },
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Nora macht einen konkreten Vorschlag und bittet um Rückmeldung.",
+                    "ar": "تقدّم نورا اقتراحًا محدّدًا وتطلب الردّ."
+                  }
+                },
+                {
+                  "criterion": "accuracy",
+                  "text": {
+                    "de": "Der Satz mit „wenn“ nennt die Bedingung. Das Verb „bekomme“ steht am Ende.",
+                    "ar": "تذكر جملة «wenn» الشرط، ويأتي الفعل «bekomme» في النهاية."
+                  }
+                }
+              ],
+              "message": "Guten Tag Frau Demir,\n\nSie hatten gefragt, ob Sie dienstags später zum Abendkurs kommen dürfen. Können Sie uns kurz sagen, warum das nötig ist und wie Sie den verpassten Teil nachholen könnten? Möchten Sie weiterhin an diesem Kurs teilnehmen?\n\nFreundliche Grüße\nLeyla Gül, Kursbüro",
+              "alternatives": [
+                "Könnten Sie mir die Aufgaben vom Anfang der Stunde schicken?",
+                "Geben Sie mir bitte Bescheid, ob das möglich ist."
+              ],
+              "expected": 100
+            }
+          ],
+          "plan": true
+        },
+        {
+          "id": "termin-verschieben",
+          "title": {
+            "de": "Einen Termin verschieben",
+            "ar": "تغيير موعد"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Antworten Sie Herrn Frank mit einer vollständigen E-Mail.",
+              "points": [
+                "Bestätigen Sie, dass Sie zur Beratung kommen möchten.",
+                "Sagen Sie, warum Sie den Termin nicht wahrnehmen können.",
+                "Schlagen Sie zwei neue Termine vor.",
+                "Fragen Sie, was Sie mitbringen sollen."
+              ],
+              "model": "Sehr geehrter Herr Frank,\n\nvielen Dank für Ihre Einladung. Ich möchte die Beratung gern nutzen, weil ich mich beruflich weiterbilden möchte.\n\nAm Montag um zehn Uhr kann ich allerdings nicht kommen. Zu dieser Zeit habe ich einen wichtigen Termin bei der Arbeit. Wäre ein Gespräch am Dienstag nach vier Uhr oder am Donnerstagvormittag möglich?\n\nKönnten Sie mir bitte auch sagen, welche Unterlagen ich mitbringen soll? Meinen Lebenslauf kann ich Ihnen vorab per E-Mail schicken.\n\nMit freundlichen Grüßen\nMara Öztürk",
+              "modelPoints": [
+                "Ich möchte die Beratung gern nutzen",
+                "Zu dieser Zeit habe ich einen wichtigen Termin bei der Arbeit.",
+                "am Dienstag nach vier Uhr oder am Donnerstagvormittag",
+                "welche Unterlagen ich mitbringen soll?"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Die Zeilen vor dem Gruß sagen, welche Antwort Mara braucht.",
+                    "ar": "توضّح الأسطر قبل التحية الختامية الردّ الذي تحتاجه مارا."
+                  }
+                },
+                {
+                  "criterion": "accuracy",
+                  "text": {
+                    "de": "„Allerdings“ steht hier im Satz und leitet den Einwand ein. „Ihnen“ wird großgeschrieben.",
+                    "ar": "تمهّد «Allerdings» للاعتراض، وتكتب «Ihnen» بحرف كبير لأنها صيغة احترام."
+                  }
+                }
+              ],
+              "message": "Guten Tag Frau Öztürk,\n\nfür Ihre Beratung zur Weiterbildung schlage ich Montag um 10 Uhr vor. Bitte bestätigen Sie mir, ob Sie den Termin wahrnehmen können.\n\nFreundliche Grüße\nDaniel Frank",
+              "expected": 90
+            }
+          ],
+          "independent": true
+        }
+      ]
+    },
+    {
+      "id": "briefe-und-texte",
+      "title": {
+        "de": "Briefe und andere B1-Texte schreiben",
+        "ar": "كتابة رسائل ونصوص أخرى على مستوى B1"
+      },
+      "description": {
+        "de": "Passe Aufbau und Ton an einen Brief, einen Bericht oder einen Diskussionsbeitrag an.",
+        "ar": "كيّف البناء والأسلوب بحسب ما إذا كنت تكتب رسالة أو تقريرًا أو مشاركة في نقاش."
+      },
+      "tip": {
+        "de": "Ein Bericht beantwortet „Was ist passiert?“. In einer Diskussion sagst du, was du denkst, und erklärst es. In einem Brief nennst du den Anlass und deine Bitte.",
+        "ar": "يجيب التقرير عن سؤال «ماذا حدث؟». وفي النقاش تذكر رأيك وتشرحه، أما في الرسالة فتذكر سبب الكتابة وطلبك."
+      },
+      "phrases": [
+        "Ich halte … für sinnvoll, weil …",
+        "Aus meiner Erfahrung …",
+        "Einerseits …, andererseits …",
+        "Ich würde mich über eine Rückmeldung freuen."
+      ],
+      "tasks": [
+        {
+          "id": "brief-nachbarschaft",
+          "title": {
+            "de": "Einen Brief an die Hausverwaltung schreiben",
+            "ar": "كتابة رسالة إلى إدارة المبنى"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "In deinem Haus gibt es zu wenig Platz für Fahrräder. Schreib einen kurzen Brief an die Hausverwaltung. Gib dem Brief einen Betreff.",
+              "points": [
+                "Beschreibe die Situation.",
+                "Erkläre ein Problem, das dadurch entsteht.",
+                "Mache einen Vorschlag."
+              ],
+              "model": "Betreff: Mehr Platz für Fahrräder\n\nSehr geehrte Damen und Herren,\n\nim Fahrradraum unseres Hauses stehen inzwischen so viele Räder, dass man die Tür kaum öffnen kann. Manche Nachbarinnen stellen ihre Fahrräder deshalb im Flur ab. Dort ist der Durchgang dann oft zu eng.\n\nWäre es möglich, im Hof zwei zusätzliche Fahrradständer aufzustellen? Neben der Mauer ist noch Platz. Über eine kurze Rückmeldung würde ich mich freuen.\n\nMit freundlichen Grüßen\nLuca Stein",
+              "modelPoints": [
+                "dass man die Tür kaum öffnen kann",
+                "Dort ist der Durchgang dann oft zu eng.",
+                "im Hof zwei zusätzliche Fahrradständer aufzustellen"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Im Betreff steht das Anliegen. Danach folgen Situation, Problem und Vorschlag.",
+                    "ar": "يظهر الغرض في عنوان الرسالة، ثم يأتي وصف الوضع والمشكلة والاقتراح."
+                  }
+                }
+              ],
+              "expected": 85
+            }
+          ]
+        },
+        {
+          "id": "erlebnis-berichten",
+          "title": {
+            "de": "Von einem Erlebnis berichten",
+            "ar": "السرد عن تجربة"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "Schreib für eine Kursseite einen kurzen Bericht über einen Tauschmarkt, den du besucht hast.",
+              "points": [
+                "Sag, wann und wo er stattfand.",
+                "Beschreibe, was du dort gemacht hast.",
+                "Sag, wie dir der Besuch gefallen hat."
+              ],
+              "model": "Am letzten Samstag war ich auf einem Tauschmarkt im Jugendzentrum. Zuerst habe ich meine alten Bücher auf einen Tisch gelegt. Danach bin ich durch den Raum gegangen und habe einen warmen Pullover gefunden. Eine Besucherin wollte genau das Buch haben, das ich mitgebracht hatte. Wir haben unsere Sachen getauscht. Am besten hat mir gefallen, dass ich dabei mit vielen Menschen ins Gespräch gekommen bin.",
+              "modelPoints": [
+                "Am letzten Samstag war ich auf einem Tauschmarkt im Jugendzentrum.",
+                "Zuerst habe ich meine alten Bücher auf einen Tisch gelegt.",
+                "Am besten hat mir gefallen"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "„Zuerst“ und „danach“ machen die zeitliche Reihenfolge klar.",
+                    "ar": "توضّح «Zuerst» و«danach» التسلسل الزمني."
+                  }
+                }
+              ],
+              "expected": 75
+            }
+          ]
+        },
+        {
+          "id": "forum-meinung",
+          "title": {
+            "de": "Eine Meinung für ein Forum schreiben",
+            "ar": "كتابة رأي في منتدى"
+          },
+          "kind": "write",
+          "prompts": [
+            {
+              "instruction": "In einem Forum wird über autofreie Sonntage in der Innenstadt diskutiert. Schreib einen kurzen Beitrag.",
+              "points": [
+                "Sag, wie du dazu stehst.",
+                "Begründe deine Meinung mit einem Beispiel.",
+                "Geh kurz auf einen möglichen Einwand ein."
+              ],
+              "model": "Ich finde autofreie Sonntage in der Innenstadt gut, weil es dann für Familien ruhiger und sicherer ist. Bei uns könnten Kinder zum Beispiel auf dem großen Platz spielen, ohne ständig auf den Verkehr zu achten. Natürlich haben manche Menschen ohne Auto einen längeren Weg. Deshalb sollte die Stadt an diesen Tagen zusätzliche Busse einsetzen. So können auch ältere Menschen und Familien von außerhalb in die Innenstadt kommen.",
+              "modelPoints": [
+                "Ich finde autofreie Sonntage in der Innenstadt gut",
+                "Kinder zum Beispiel auf dem großen Platz spielen",
+                "manche Menschen ohne Auto einen längeren Weg"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Die Meinung, das Beispiel und der Einwand bauen aufeinander auf.",
+                    "ar": "يدعم المثال الرأي، ثم يتناول النص اعتراضًا محتملًا بشكل مترابط."
+                  }
+                }
+              ],
+              "expected": 75
+            }
+          ]
+        },
+        {
+          "id": "goethe-probe",
+          "title": {
+            "de": "Goethe B1 · Drei Aufgaben",
+            "ar": "غوته B1 · ثلاث مهام"
+          },
+          "kind": "goethe",
+          "minutes": 60,
+          "prompts": [
+            {
+              "instruction": "Schreiben Sie Ihrer Freundin eine E-Mail mit ungefähr 80 Wörtern. Richtzeit: 20 Minuten. Ihre Freundin war bei Ihrem ersten Treffen im Fotoclub nicht dabei.",
+              "points": [
+                "Beschreiben Sie das Treffen.",
+                "Erklären Sie, was Ihnen besonders gefallen hat.",
+                "Schlagen Sie einen gemeinsamen Besuch vor."
+              ],
+              "model": "Liebe Ella,\n\nschade, dass du beim Fotoclub nicht dabei sein konntest. Wir waren zuerst im Gemeindehaus und sind danach zusammen durch den Park gegangen. In kleinen Gruppen haben wir Fotos von Bäumen und Vögeln gemacht.\n\nAm besten hat mir gefallen, dass uns der Kursleiter gezeigt hat, wie man auch bei wenig Licht schöne Bilder macht. Beim nächsten Treffen geht es um Porträts. Wollen wir am Donnerstag zusammen hingehen? Ich kann dich um sechs an der Bushaltestelle abholen.\n\nLiebe Grüße\nSara",
+              "modelPoints": [
+                "Wir waren zuerst im Gemeindehaus",
+                "Am besten hat mir gefallen",
+                "Wollen wir am Donnerstag zusammen hingehen?"
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Die E-Mail führt von der Erfahrung zum gemeinsamen Plan.",
+                    "ar": "تنتقل الرسالة من وصف التجربة إلى اقتراح خطة مشتركة."
+                  }
+                }
+              ],
+              "expected": 80,
+              "title": "Persönliche E-Mail"
+            },
+            {
+              "instruction": "In einem Online-Forum wird gefragt: „Sollten Nachbarn häufiger Dinge miteinander teilen?“ Schreiben Sie einen Diskussionsbeitrag mit ungefähr 80 Wörtern. Richtzeit: 25 Minuten.",
+              "points": [
+                "Äußern und begründen Sie Ihre Meinung."
+              ],
+              "model": "Meiner Meinung nach sollten Nachbarn mehr Dinge miteinander teilen. Wir müssen nicht alle eine Bohrmaschine kaufen, wenn wir sie nur einmal im Jahr brauchen. In unserem Haus gibt es zum Beispiel eine Liste mit Werkzeugen, die man ausleihen kann. Das spart Geld und erleichtert es, die Nachbarn kennenzulernen. Natürlich muss man geliehene Dinge pünktlich zurückgeben. Wenn alle sorgfältig damit umgehen, funktioniert das Teilen gut. Eine solche Liste könnte auch in anderen Häusern nützlich sein.",
+              "modelPoints": [
+                "Das spart Geld und erleichtert es, die Nachbarn kennenzulernen."
+              ],
+              "explain": [
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "Ein konkretes Beispiel macht die Meinung nachvollziehbar.",
+                    "ar": "يوضّح مثال عملي وجهة النظر."
+                  }
+                }
+              ],
+              "expected": 80,
+              "title": "Diskussionsbeitrag"
+            },
+            {
+              "instruction": "Herr Ebert hat Sie zu einer Besichtigung im Gemeindehaus eingeladen. Sie können zum vorgeschlagenen Zeitpunkt nicht kommen. Schreiben Sie eine höfliche E-Mail mit ungefähr 40 Wörtern. Richtzeit: 15 Minuten.",
+              "points": [
+                "Entschuldigen Sie sich und erklären Sie, warum Sie nicht kommen können."
+              ],
+              "model": "Sehr geehrter Herr Ebert,\n\nvielen Dank für die Einladung. Bitte entschuldigen Sie, dass ich am Dienstag nicht kommen kann. Ich habe zu dieser Zeit einen Arzttermin. Wäre eine Besichtigung am Donnerstagnachmittag möglich?\n\nMit freundlichen Grüßen\nAylin Demir",
+              "modelPoints": [
+                "Bitte entschuldigen Sie, dass ich am Dienstag nicht kommen kann. Ich habe zu dieser Zeit einen Arzttermin."
+              ],
+              "explain": [
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Die kurze Nachricht nennt Entschuldigung und Grund direkt.",
+                    "ar": "تذكر الرسالة القصيرة الاعتذار والسبب مباشرةً."
+                  }
+                }
+              ],
+              "expected": 40,
+              "title": "Höfliche E-Mail"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pruefungsmodus",
+      "title": {
+        "de": "Unter Prüfungsbedingungen schreiben",
+        "ar": "الكتابة في ظروف الامتحان"
+      },
+      "description": {
+        "de": "Schreibe zwei komplette telc-B1-Antworten in je 30 Minuten.",
+        "ar": "اكتب ردّين كاملين بأسلوب امتحان telc B1 في 30 دقيقة لكل ردّ."
+      },
+      "tip": {
+        "de": "Ein möglicher Rhythmus: vier Minuten planen, 21 Minuten schreiben, fünf Minuten prüfen. Kontrolliere zuerst die vier Leitpunkte, dann Ton und Satzbau.",
+        "ar": "تقسيم مقترح: أربع دقائق للتخطيط، و21 للكتابة، وخمس للمراجعة. راجع النقاط الأربع أولًا، ثم الأسلوب وبناء الجمل."
+      },
+      "phrases": [],
+      "tasks": [
+        {
+          "id": "probe-rolle-verstehen",
+          "title": {
+            "de": "Eine Antwort wie eine Lehrkraft lesen",
+            "ar": "اقرأ الردّ بعين المعلّم"
+          },
+          "kind": "choice",
+          "question": "Die Kursleiterin hat Sie zur Kursfeier eingeladen. Ihre Aufgabe ist, die Einladung anzunehmen. Jemand schreibt: „Sehr geehrte Frau Bauer, ich lade Sie am Freitag zu unserer Kursfeier ein. Mit freundlichen Grüßen, Noura“. Was ist das wichtigste Problem?",
+          "options": [
+            "Die Antwort verwechselt die Rollen. Noura schreibt selbst eine Einladung.",
+            "Die Antwort ist höflich, aber es fehlt ein Datum über der Anrede.",
+            "Die Wörter „Kursfeier“ und „Freitag“ zeigen, dass die Aufgabe erfüllt ist."
+          ],
+          "answer": 0,
+          "feedback": {
+            "de": "Der Text hat eine passende Anrede und behandelt die Feier. Die angekündigte Handlung passt aber nicht zur Situation: Noura sollte zusagen. Nach der telc-Richtlinie erhält hier die Aufgabenbewältigung ein D. Stil und Richtigkeit werden weiterhin beurteilt.",
+            "ar": "التحية مناسبة والرسالة تتناول الحفل، لكن نورة تدعو المدرّسة بدل قبول دعوتها. وفق معيار telc، يحصل إنجاز المهمة هنا على D، ويظل الأسلوب والصحّة اللغوية قيد التقييم."
+          },
+          "skill": "coverage"
+        },
+        {
+          "id": "probe-bibliothek",
+          "title": {
+            "de": "Prüfungsprobe · Leseabend",
+            "ar": "محاكاة الامتحان · أمسية قراءة"
+          },
+          "kind": "telc",
+          "minutes": 30,
+          "register": "personal",
+          "topic": "freizeit",
+          "prompts": [
+            {
+              "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+              "points": [
+                "ob du mitkommen möchtest und warum",
+                "wann und wo ihr euch treffen könnt",
+                "was ihr vor dem Leseabend machen könnt",
+                "was du zu Ellis Vorschlag mit ihrer Schwester sagst"
+              ],
+              "model": "Liebe Elli,\n\nvielen Dank für deinen Vorschlag. Ich komme gern zum Leseabend mit, weil ich die neue Stadtbibliothek noch nicht kenne. Dort liest auch ein Autor vor, dessen Bücher ich mag.\n\nWir könnten uns um halb sechs vor der Bibliothek treffen. Neben dem Eingang gibt es ein kleines Café. Dort können wir vor der Lesung etwas essen und in Ruhe miteinander sprechen.\n\nDeine Schwester kann natürlich gern mitkommen. Wenn du willst, reserviere ich für uns drei Plätze. Sag mir bitte bis Freitag Bescheid.\n\nLiebe Grüße\nJamie",
+              "modelPoints": [
+                "Ich komme gern zum Leseabend mit, weil ich die neue Stadtbibliothek noch nicht kenne.",
+                "Wir könnten uns um halb sechs vor der Bibliothek treffen.",
+                "Dort können wir vor der Lesung etwas essen",
+                "Deine Schwester kann natürlich gern mitkommen."
+              ],
+              "explain": [
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Die Nachricht gibt zu jedem Leitpunkt eine klare Antwort.",
+                    "ar": "تعطي الرسالة إجابة واضحة عن كل نقطة."
+                  }
+                },
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "„Dort“ verbindet Vorschlag und Ort. Der letzte Absatz reagiert auf die Schwester.",
+                    "ar": "تربط «Dort» الاقتراح بالمكان. وتتناول الفقرة الأخيرة انضمام الأخت."
+                  }
+                },
+                {
+                  "criterion": "accuracy",
+                  "text": {
+                    "de": "Im Satz mit „wenn“ steht „willst“ am Ende des Nebensatzes.",
+                    "ar": "في جملة «wenn» يأتي الفعل «willst» في نهاية الجملة الفرعية."
+                  }
+                }
+              ],
+              "message": "Hallo Jamie,\n\nich habe gelesen, dass unsere Stadtbibliothek nächsten Monat einen Leseabend organisiert. Wir könnten gemeinsam hingehen. Wollen wir vorher etwas essen? Meine Schwester würde vielleicht auch gern mitkommen.\n\nLiebe Grüße\nElli"
+            }
+          ],
+          "printable": true
+        },
+        {
+          "id": "probe-reparaturkurs",
+          "title": {
+            "de": "Prüfungsprobe · Reparaturkurs",
+            "ar": "محاكاة الامتحان · دورة إصلاح"
+          },
+          "kind": "telc",
+          "minutes": 30,
+          "register": "semi-formal",
+          "topic": "nachhaltigkeit",
+          "prompts": [
+            {
+              "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+              "points": [
+                "welchen Termin du wählst und warum",
+                "was an deinem Fahrrad repariert werden muss",
+                "welche Vorkenntnisse du hast",
+                "eine Frage zur Ausstattung des Kurses"
+              ],
+              "model": "Sehr geehrte Frau Weiß,\n\nvielen Dank für Ihre Nachricht. Ich würde gern am Mittwoch kommen, weil ich am Samstag arbeiten muss. Der Kurs am Abend passt gut in meinen Wochenplan.\n\nMein Fahrrad hat einen platten Reifen. Außerdem ist das Rücklicht seit einigen Tagen kaputt. Einen Reifen habe ich schon einmal gewechselt, aber mit der Beleuchtung kenne ich mich noch nicht aus.\n\nMuss ich eigenes Werkzeug mitbringen oder kann ich es bei Ihnen ausleihen? Könnten Sie mir bitte auch sagen, ob ich mich vorher anmelden muss?\n\nMit freundlichen Grüßen\nEmir Kaya",
+              "modelPoints": [
+                "Ich würde gern am Mittwoch kommen, weil ich am Samstag arbeiten muss.",
+                "Mein Fahrrad hat einen platten Reifen.",
+                "Einen Reifen habe ich schon einmal gewechselt",
+                "Muss ich eigenes Werkzeug mitbringen oder kann ich es bei Ihnen ausleihen?"
+              ],
+              "explain": [
+                {
+                  "criterion": "task",
+                  "text": {
+                    "de": "Der Text beantwortet die Frage nach dem Termin, nennt Defekte und Vorkenntnisse und fragt nach Werkzeug.",
+                    "ar": "يحدّد الرد الموعد، ويذكر الأعطال والخبرة السابقة، ويسأل عن الأدوات."
+                  }
+                },
+                {
+                  "criterion": "style",
+                  "text": {
+                    "de": "„Außerdem“ verbindet die beiden Defekte. Die Fragen stehen zusammen im letzten Absatz.",
+                    "ar": "تربط «Außerdem» العطلين، وتأتي الأسئلة معًا في الفقرة الأخيرة."
+                  }
+                },
+                {
+                  "criterion": "accuracy",
+                  "text": {
+                    "de": "„Könnten Sie …“ formuliert die Bitte höflich.",
+                    "ar": "تعبّر «Könnten Sie …» عن الطلب بطريقة مهذّبة."
+                  }
+                }
+              ],
+              "message": "Guten Tag Herr Kaya,\n\nvielen Dank für Ihr Interesse an unserem Fahrrad-Reparaturkurs. Der Samstagstermin ist fast voll. Am Mittwoch haben wir noch Plätze frei. Schreiben Sie uns, welcher Termin für Sie passt und was Sie gern lernen möchten.\n\nFreundliche Grüße\nAnja Weiß, Stadtteilwerkstatt"
+            }
+          ],
+          "printable": true
+        }
+      ]
+    }
+  ],
+  "readiness": [
+    {
+      "id": "schreibprobe-1",
+      "title": {
+        "de": "Ein Nachmittag im Verein",
+        "ar": "أمسية في النادي"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "personal",
+      "topic": "freizeit",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "ob und warum du mitkommst",
+            "welches Spiel du vorschlägst",
+            "wann und wo ihr euch trefft",
+            "was ihr danach unternehmen könnt"
+          ],
+          "model": "Lieber Milan,\n\nich komme gern mit, weil ich Brettspiele mag und den Verein noch nicht kenne. Wir könnten ein kurzes Kartenspiel mitbringen. Das lässt sich schnell erklären, und auch neue Leute können gleich mitspielen.\n\nWollen wir uns um halb drei vor dem Vereinsheim treffen? Ich fahre mit dem Rad hin und warte am Eingang auf dich. Nach dem Spielen könnten wir noch etwas essen. Gleich um die Ecke gibt es eine kleine Pizzeria mit Tischen draußen.\n\nSchreib mir bitte, ob dir die Uhrzeit passt.\n\nViele Grüße\nToni",
+          "modelPoints": [
+            "ich komme gern mit, weil ich Brettspiele mag",
+            "ein kurzes Kartenspiel mitbringen",
+            "um halb drei vor dem Vereinsheim treffen",
+            "Nach dem Spielen könnten wir noch etwas essen."
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Mit „nach dem Spielen“ wechselt die E-Mail klar zum Programm danach.",
+                "ar": "تنتقل الرسالة بوضوح إلى البرنامج التالي باستخدام «nach dem Spielen»."
+              }
+            }
+          ],
+          "message": "Hallo Toni,\n\nunser Verein veranstaltet einen Spielenachmittag. Ich möchte daran teilnehmen, kenne aber noch niemanden dort. Kommst du mit? Danach könnten wir noch etwas zusammen machen.\n\nViele Grüße\nMilan"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-2",
+      "title": {
+        "de": "Ein Termin im Haus",
+        "ar": "موعد في المبنى"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "semi-formal",
+      "topic": "wohnen",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "ob Dienstag für Sie passt",
+            "welches Fenster ein Problem hat",
+            "einen anderen Termin und einen Grund",
+            "eine Frage zum Besuch der Firma"
+          ],
+          "model": "Sehr geehrter Herr Lenz,\n\nvielen Dank für Ihre Nachricht. Am Dienstag kann ich leider nicht zu Hause sein. Das Fenster im Schlafzimmer lässt sich seit letzter Woche nicht richtig schließen. Deshalb zieht es vor allem nachts stark.\n\nAm Donnerstag wäre ich ab 15 Uhr zu Hause, weil ich an diesem Tag früher Feierabend habe. Könnte die Firma Meier dann vorbeikommen?\n\nBitte teilen Sie mir auch mit, wie lange die Prüfung ungefähr dauern wird. Wenn ich vorher etwas vorbereiten soll, geben Sie mir gern Bescheid.\n\nMit freundlichen Grüßen\nMina Amin",
+          "modelPoints": [
+            "Am Dienstag kann ich leider nicht zu Hause sein.",
+            "Das Fenster im Schlafzimmer lässt sich seit letzter Woche nicht richtig schließen.",
+            "Am Donnerstag wäre ich ab 15 Uhr zu Hause, weil ich an diesem Tag früher Feierabend habe.",
+            "wie lange die Prüfung ungefähr dauern wird."
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Der Ersatztermin folgt auf die Beschreibung des Problems. Die Anrede bleibt höflich.",
+                "ar": "يأتي الموعد البديل بعد وصف المشكلة، وتظل صيغة المخاطبة مهذّبة."
+              }
+            }
+          ],
+          "message": "Guten Tag Frau Amin,\n\nam Dienstag möchte die Firma Meier Ihre Fenster prüfen. Bitte schreiben Sie mir, ob Sie zu Hause sind. Falls der Termin nicht passt, brauche ich eine Alternative und Informationen zu den Fenstern.\n\nFreundliche Grüße\nRobin Lenz, Hausverwaltung"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-3",
+      "title": {
+        "de": "Wieder zusammen Sport machen",
+        "ar": "ممارسة الرياضة معًا من جديد"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "personal",
+      "topic": "gesundheit",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "reagiere auf die Nachricht über die Pause",
+            "welche leichte Aktivität du vorschlägst und warum",
+            "wann du Zeit hast",
+            "was Nele mitbringen könnte"
+          ],
+          "model": "Liebe Nele,\n\nwie schön, dass du wieder Sport machen darfst! Lass uns langsam anfangen. Ich würde zuerst am Fluss spazieren gehen, weil der Weg dort flach ist. Wenn du müde wirst, können wir uns jederzeit auf eine Bank setzen.\n\nAm Mittwoch habe ich ab fünf Uhr Zeit. Wir könnten uns an der alten Brücke treffen. Bring am besten bequeme Schuhe und etwas Wasser mit. Ich nehme eine leichte Jacke für den Rückweg mit.\n\nSag mir einfach Bescheid, ob dir Mittwoch passt.\n\nLiebe Grüße\nJo",
+          "modelPoints": [
+            "wie schön, dass du wieder Sport machen darfst!",
+            "am Fluss spazieren gehen, weil der Weg dort flach ist",
+            "Am Mittwoch habe ich ab fünf Uhr Zeit.",
+            "Bring am besten bequeme Schuhe und etwas Wasser mit."
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Die Antwort reagiert zuerst auf Nele und macht danach einen konkreten Plan.",
+                "ar": "يرد النص أولًا على خبر نيلي، ثم يقدّم خطة محدّدة."
+              }
+            }
+          ],
+          "message": "Hi Jo,\n\nich darf nach meiner Pause wieder leichten Sport machen. Hast du Lust, diese Woche mit mir anzufangen? Ich weiß noch nicht, was für den Einstieg am besten ist.\n\nLiebe Grüße\nNele"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-4",
+      "title": {
+        "de": "Platz im Sprachkurs",
+        "ar": "مقعد في دورة اللغة"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "semi-formal",
+      "topic": "lernen",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "bestätigen Sie, ob Sie teilnehmen möchten",
+            "beschreiben Sie Ihre bisherige Lernerfahrung",
+            "erklären Sie, wofür Sie Deutsch brauchen",
+            "fragen Sie nach den Kursmaterialien"
+          ],
+          "model": "Sehr geehrte Frau Kurz,\n\nvielen Dank für Ihr Angebot. Ich möchte ab dem 8. Mai gern am Abendkurs teilnehmen. Die Uhrzeit passt gut, weil ich tagsüber arbeite.\n\nIm letzten Jahr habe ich einen A2-Kurs besucht. Seitdem übe ich mit einer Kollegin, aber beim Schreiben bin ich noch unsicher. Ich möchte vor allem bessere E-Mails an Kundinnen und Kunden schreiben können.\n\nKönnten Sie mir bitte sagen, welches Kursbuch ich brauche? Falls Sie weitere Unterlagen empfehlen, schicken Sie mir gern eine kurze Liste.\n\nMit freundlichen Grüßen\nOmar Said",
+          "modelPoints": [
+            "Ich möchte ab dem 8. Mai gern am Abendkurs teilnehmen.",
+            "Im letzten Jahr habe ich einen A2-Kurs besucht.",
+            "bessere E-Mails an Kundinnen und Kunden schreiben",
+            "welches Kursbuch ich brauche?"
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "„Seitdem“ verbindet die bisherige Lernerfahrung mit der aktuellen Situation.",
+                "ar": "تربط «Seitdem» تجربة التعلّم السابقة بالوضع الحالي."
+              }
+            }
+          ],
+          "message": "Guten Tag Herr Said,\n\nin unserem Abendkurs ist ein Platz frei geworden. Der Kurs beginnt am 8. Mai. Schreiben Sie bitte, ob Sie teilnehmen möchten, welche Erfahrung Sie mitbringen und ob Sie noch Fragen haben.\n\nFreundliche Grüße\nMarie Kurz, Sprachschule"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-5",
+      "title": {
+        "de": "Ein Wochenende ohne Auto",
+        "ar": "عطلة نهاية أسبوع دون سيارة"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "personal",
+      "topic": "reisen",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "schlag ein Ziel vor",
+            "erkläre die Anreise ohne Auto",
+            "sag, was ihr dort machen könnt",
+            "nenn etwas, das Sara einpacken soll"
+          ],
+          "model": "Liebe Sara,\n\nauch ohne Auto können wir einen schönen Ausflug machen. Ich schlage das kleine Dorf am Waldrand vor. Der Regionalzug fährt sonntags um neun vom Hauptbahnhof direkt dorthin. Die Fahrt dauert nur eine halbe Stunde.\n\nAm Vormittag könnten wir auf dem kurzen Rundweg wandern. Danach können wir uns im Dorfcafé aufwärmen und etwas essen. Pack bitte feste Schuhe ein, weil es auf dem Weg nach dem Regen rutschig sein kann.\n\nIch freue mich auf den Sonntag. Soll ich die Fahrkarten kaufen?\n\nLiebe Grüße\nMika",
+          "modelPoints": [
+            "das kleine Dorf am Waldrand",
+            "Der Regionalzug fährt sonntags um neun vom Hauptbahnhof direkt dorthin.",
+            "auf dem kurzen Rundweg wandern",
+            "Pack bitte feste Schuhe ein"
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "„Danach“ zeigt die Reihenfolge der Aktivitäten.",
+                "ar": "تبيّن «Danach» ترتيب الأنشطة."
+              }
+            }
+          ],
+          "message": "Hallo Mika,\n\nich möchte am Wochenende einen Ausflug machen. Unser Auto ist in der Werkstatt. Können wir trotzdem irgendwohin fahren? Ich würde gern einen neuen Ort kennenlernen.\n\nViele Grüße\nSara"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-6",
+      "title": {
+        "de": "Eine Bestellung zurückgeben",
+        "ar": "إرجاع طلب"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "semi-formal",
+      "topic": "einkaufen",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "um welchen Artikel es geht",
+            "wann und in welchem Zustand er ankam",
+            "ob Sie Ersatz oder Erstattung wollen und warum",
+            "eine Frage zum Rückversand"
+          ],
+          "model": "Guten Tag Herr Malik,\n\nes geht um die dunkelblaue Schreibtischlampe aus meiner letzten Bestellung. Das Paket ist am Donnerstag angekommen. Der Karton war in Ordnung, aber der Fuß der Lampe hat einen tiefen Riss. Deshalb steht die Lampe nicht sicher.\n\nIch hätte gern eine Erstattung, weil ich inzwischen eine andere Lampe gekauft habe. Können Sie mir bitte ein Rücksendeetikett schicken? Dann kann ich das Paket morgen zur Post bringen.\n\nVielen Dank für Ihre Unterstützung.\n\nMit freundlichen Grüßen\nEva Reimann",
+          "modelPoints": [
+            "die dunkelblaue Schreibtischlampe",
+            "Das Paket ist am Donnerstag angekommen. Der Karton war in Ordnung, aber der Fuß der Lampe hat einen tiefen Riss.",
+            "Ich hätte gern eine Erstattung, weil ich inzwischen eine andere Lampe gekauft habe.",
+            "Können Sie mir bitte ein Rücksendeetikett schicken?"
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Der Text unterscheidet den Zustand des Pakets vom Zustand des Artikels.",
+                "ar": "يميّز النص بين حالة الطرد وحالة السلعة."
+              }
+            }
+          ],
+          "message": "Guten Tag Frau Reimann,\n\nSie möchten eine Bestellung zurückgeben. Bitte schreiben Sie uns, um welchen Artikel es geht und warum Sie ihn zurückgeben möchten. Wir können Ihnen einen Ersatz oder eine Erstattung anbieten.\n\nFreundliche Grüße\nJ. Malik, Kundenservice"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-7",
+      "title": {
+        "de": "Ein Film für den Kursabend",
+        "ar": "فيلم لأمسية الدورة"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "personal",
+      "topic": "medien",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "was für einen Film du vorschlägst und warum",
+            "welcher Termin dir passt",
+            "wie ihr den Abend nach dem Film gestalten könnt",
+            "was du bei der Vorbereitung übernehmen kannst"
+          ],
+          "model": "Liebe Kim,\n\nfür unseren Kursabend würde ich eine kurze Komödie auf Deutsch wählen. Wir haben in der Gruppe sehr unterschiedliche Sprachkenntnisse. Bei einem Film mit deutschen Untertiteln können hoffentlich alle gut folgen.\n\nMir passt Freitag besser, weil ich mittwochs lange arbeite. Nach dem Film könnten wir noch eine Viertelstunde darüber sprechen, welche Szene uns am besten gefallen hat. Ich kann vorher die Untertitel testen und ein paar Fragen für die Runde vorbereiten.\n\nDanke, dass du den Raum reservierst!\n\nLiebe Grüße\nAlex",
+          "modelPoints": [
+            "eine kurze Komödie auf Deutsch wählen",
+            "Mir passt Freitag besser",
+            "Nach dem Film könnten wir noch eine Viertelstunde darüber sprechen",
+            "die Untertitel testen und ein paar Fragen für die Runde vorbereiten"
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Die Antwort bleibt persönlich und verbindet die Filmwahl mit dem Sprachniveau der Gruppe.",
+                "ar": "يحافظ الرد على أسلوب شخصي ويربط اختيار الفيلم بمستوى المجموعة اللغوي."
+              }
+            }
+          ],
+          "message": "Hallo Alex,\n\nich suche einen Film für unseren Kursabend. Wir können den Projektor im Kursraum benutzen. Hast du einen Vorschlag? Ich kann den Raum am Mittwoch oder am Freitag reservieren.\n\nLiebe Grüße\nKim"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-8",
+      "title": {
+        "de": "Eine Schicht übernehmen",
+        "ar": "تولّي مناوبة"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "semi-formal",
+      "topic": "arbeit",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "ob Sie am Samstag helfen können",
+            "ab wann Sie verfügbar sind und warum",
+            "welche Aufgabe Sie übernehmen können",
+            "eine Frage zur Übergabe"
+          ],
+          "model": "Guten Tag Frau Scholz,\n\nvielen Dank für Ihre Nachricht. Ich kann am Samstag einen Teil der Schicht übernehmen. Am Vormittag habe ich einen Termin, deshalb kann ich erst ab 13 Uhr im Laden sein.\n\nAb dann kann ich bis zum Ladenschluss an der Kasse arbeiten. Wenn nötig, kann ich vorher auch die Lieferung auspacken. Wer ist am Mittag im Laden und kann mir die Kasse übergeben? Bitte sagen Sie mir auch, ob ich etwas für die Übergabe vorbereiten soll.\n\nFreundliche Grüße\nSimon Roth",
+          "modelPoints": [
+            "Ich kann am Samstag einen Teil der Schicht übernehmen.",
+            "Am Vormittag habe ich einen Termin, deshalb kann ich erst ab 13 Uhr im Laden sein.",
+            "bis zum Ladenschluss an der Kasse arbeiten",
+            "Wer ist am Mittag im Laden und kann mir die Kasse übergeben?"
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Der genaue Zeitrahmen hilft der Empfängerin bei der Planung.",
+                "ar": "يساعد تحديد الفترة الزمنية المتلقية في التخطيط."
+              }
+            }
+          ],
+          "message": "Guten Tag Herr Roth,\n\nnächste Woche fehlt uns am Samstag jemand im Laden. Können Sie die Schicht übernehmen? Melden Sie sich bitte auch dann, wenn nur ein Teil der Schicht möglich ist.\n\nViele Grüße\nAnita Scholz"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-9",
+      "title": {
+        "de": "Ein Tauschfest organisieren",
+        "ar": "تنظيم فعالية للتبادل"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "personal",
+      "topic": "umwelt",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "ob du mitmachst",
+            "was du selbst mitbringst",
+            "wie ihr die Nachbarn einladen könnt",
+            "was ihr bei Regen macht"
+          ],
+          "model": "Lieber Ivo,\n\nbei deinem Tauschfest helfe ich gern mit. Ich habe noch ein paar Bücher und eine kleine Lampe, die ich mitbringen kann. Vielleicht finden sie bei jemand anderem einen guten Platz.\n\nWir könnten eine kurze Einladung an das schwarze Brett im Haus hängen. Darauf sollten Datum, Uhrzeit und eine Telefonnummer stehen. Wenn es regnet, können wir im Gemeinschaftsraum bleiben. Ich frage morgen, ob der Raum am Samstag frei ist und wo wir den Schlüssel bekommen.\n\nDanke für die schöne Idee und liebe Grüße\nLou",
+          "modelPoints": [
+            "bei deinem Tauschfest helfe ich gern mit",
+            "ein paar Bücher und eine kleine Lampe",
+            "eine kurze Einladung an das schwarze Brett im Haus hängen",
+            "Wenn es regnet, können wir im Gemeinschaftsraum bleiben."
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Der wenn-Satz verbindet das mögliche Wetter mit einer Lösung.",
+                "ar": "تربط جملة «wenn» حالة الطقس المحتملة بالحل."
+              }
+            }
+          ],
+          "message": "Hey Lou,\n\nwir wollen im Hof ein kleines Tauschfest machen. Jede Person kann etwas mitbringen, das sie nicht mehr braucht. Hilfst du mir bei der Vorbereitung? Für Regen brauchen wir einen Plan.\n\nLiebe Grüße\nIvo"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-10",
+      "title": {
+        "de": "Eine Auskunft zur Buslinie",
+        "ar": "استعلام عن خط الحافلة"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "semi-formal",
+      "topic": "mobilitaet",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "welche Haltestelle Sie nutzen",
+            "um welche Uhrzeit Sie fahren möchten",
+            "was sich für Sie durch die Änderung verschlechtert hat",
+            "welche Auskunft Sie brauchen"
+          ],
+          "model": "Guten Tag Herr Holm,\n\nich steige normalerweise an der Haltestelle Marktstraße ein. An Werktagen brauche ich eine Verbindung gegen sieben Uhr morgens. Seit der Änderung fährt der erste Bus dort aber erst um halb acht. Dadurch komme ich zu spät zur Arbeit.\n\nKönnten Sie mir bitte sagen, ob ich von einer anderen Haltestelle in der Nähe früher fahren kann? Zur Not kann ich zehn Minuten zu Fuß gehen. Über eine kurze Auskunft würde ich mich freuen.\n\nMit freundlichen Grüßen\nDeniz Yilmaz",
+          "modelPoints": [
+            "an der Haltestelle Marktstraße",
+            "gegen sieben Uhr morgens",
+            "Seit der Änderung fährt der erste Bus dort aber erst um halb acht. Dadurch komme ich zu spät zur Arbeit.",
+            "ob ich von einer anderen Haltestelle in der Nähe früher fahren kann?"
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "„Dadurch“ verbindet die Änderung mit ihrer konkreten Folge.",
+                "ar": "تربط «Dadurch» التغيير بنتيجته العملية."
+              }
+            }
+          ],
+          "message": "Guten Tag Frau Yilmaz,\n\nSie haben uns wegen einer Änderung der Buslinie 4 geschrieben. Damit wir Ihnen helfen können, brauchen wir die Haltestelle, die Uhrzeit und eine genauere Beschreibung Ihres Problems.\n\nFreundliche Grüße\nDavid Holm, Verkehrsservice"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-11",
+      "title": {
+        "de": "Ein gemeinsames Familienessen",
+        "ar": "وجبة عائلية مشتركة"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "personal",
+      "topic": "familie",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "schlag einen Termin vor und begründe ihn",
+            "nenn einen passenden Ort",
+            "mach einen Vorschlag für ein Geschenk",
+            "biete Hilfe bei der Vorbereitung an"
+          ],
+          "model": "Liebe Elin,\n\nich würde am Sonntagmittag feiern, weil unsere Gäste dann noch genug Zeit für die Heimfahrt haben. Das Restaurant am Marktplatz wäre gut. Es liegt nah am Bahnhof und hat einen ruhigen Raum für größere Gruppen.\n\nFür Oma könnten wir ein Fotoalbum machen und Bilder aus den letzten Jahren sammeln. Ich kann die Fotos nächste Woche ausdrucken. Außerdem rufe ich gern im Restaurant an und frage, ob der Raum frei ist. Sag mir bitte noch, wie viele Personen ungefähr kommen.\n\nLiebe Grüße\nNoa",
+          "modelPoints": [
+            "am Sonntagmittag feiern, weil unsere Gäste dann noch genug Zeit für die Heimfahrt haben",
+            "Das Restaurant am Marktplatz wäre gut.",
+            "ein Fotoalbum machen",
+            "Außerdem rufe ich gern im Restaurant an"
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Die Reihenfolge erleichtert Elin die Planung: Termin, Ort, Geschenk und Hilfe.",
+                "ar": "يسهّل ترتيب الأفكار على إيلين التخطيط: الموعد، ثم المكان، فالهدية والمساعدة."
+              }
+            }
+          ],
+          "message": "Hallo Noa,\n\nwir möchten zum Geburtstag von Oma zusammen essen. Einige aus der Familie kommen von weit weg. Hast du eine Idee, wann und wo wir feiern und was wir Oma schenken könnten?\n\nLiebe Grüße\nElin"
+        }
+      ],
+      "heldOut": true
+    },
+    {
+      "id": "schreibprobe-12",
+      "title": {
+        "de": "Beim Stadtteilfest helfen",
+        "ar": "المساعدة في مهرجان الحي"
+      },
+      "kind": "telc",
+      "minutes": 30,
+      "register": "semi-formal",
+      "topic": "ehrenamt",
+      "prompts": [
+        {
+          "instruction": "Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Wählen Sie eine sinnvolle Reihenfolge und eine passende Anrede, Einleitung und Schlussformel.",
+          "points": [
+            "wann Sie am Festtag helfen können",
+            "welche Aufgabe Sie übernehmen möchten",
+            "welche passende Erfahrung Sie haben",
+            "eine Frage zur Organisation"
+          ],
+          "model": "Sehr geehrte Frau Berg,\n\nich helfe gern beim Stadtteilfest und habe am Samstag von neun bis zwölf Uhr Zeit. Danach muss ich zur Arbeit. Am liebsten würde ich beim Aufbau der Stände mithelfen. Letztes Jahr habe ich schon das Sommerfest in unserer Straße vorbereitet und dabei Tische und Bänke aufgestellt.\n\nKönnten Sie mir bitte sagen, wo wir uns morgens treffen? Falls ich Handschuhe oder eigenes Werkzeug mitbringen soll, geben Sie mir gern vorher Bescheid.\n\nMit freundlichen Grüßen\nBaran Eren",
+          "modelPoints": [
+            "am Samstag von neun bis zwölf Uhr",
+            "beim Aufbau der Stände mithelfen",
+            "das Sommerfest in unserer Straße vorbereitet",
+            "wo wir uns morgens treffen?"
+          ],
+          "explain": [
+            {
+              "criterion": "style",
+              "text": {
+                "de": "Die höfliche Frage am Schluss klärt, was der Helfer vor dem Einsatz wissen muss.",
+                "ar": "يوضّح السؤال المهذّب في الختام ما يحتاج المتطوّع إلى معرفته قبل البدء."
+              }
+            }
+          ],
+          "message": "Guten Tag Herr Eren,\n\nwir suchen Helferinnen und Helfer für das Stadtteilfest. Schreiben Sie uns bitte, wann Sie Zeit haben und bei welchen Aufgaben Sie helfen möchten. Wir freuen uns auch über kurze Einsätze.\n\nViele Grüße\nSaskia Berg, Stadtteilbüro"
+        }
+      ],
+      "heldOut": true
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import { dailyReview, isGuidedRun } from '../engine/study.js';
 import { esc, de, prose, germanLine, link, button, stars, crumbs, formatDay } from '../components/html.js';
 import { icons } from '../components/icons.js';
 import { playerBar } from '../components/player.js';
+import { expectedWords, updateWritingMeter, writingMeter } from '../components/writing-meter.js';
 
 let hintCount = 0;
 let shownQuestion = '';
@@ -220,8 +221,9 @@ function renderInput(run, q, value, locked, showGrade) {
     }).join('')}</div>`;
   }
   if (q.type === 'order') return `<div id="ordering">${orderMarkup(run, q, value || [], locked)}</div>`;
-  return `<label class="answer-label" for="written">${t('writeLabel')}</label>
-    <textarea id="written" dir="ltr" lang="de" spellcheck="false" ${disabled}>${esc(value ?? '')}</textarea>`;
+  const editor = `<label class="answer-label" for="written">${t('writeLabel')}</label>
+    <textarea id="written" dir="ltr" lang="de" spellcheck="false" ${q.writing ? 'aria-describedby="written-meter"' : ''} ${disabled}>\n${esc(value ?? '')}</textarea>`;
+  return q.writing ? `<div class="writing-editor">${editor}${writingMeter('written', expectedWords({ model: model(q) || '' }), value ?? '')}</div>` : editor;
 }
 
 const answerText = value => /\p{Script=Arabic}/u.test(value) || value.includes('`') ? prose(value) : de(value);
@@ -363,6 +365,8 @@ function startClock(app, run) {
 }
 
 export function mount(app, root, route) {
+  const editor = root.querySelector('.writing-editor #written');
+  if (editor) updateWritingMeter(editor);
   const run = app.state.runs[route.key];
   if (run && !run.finished && run.mode === 'test') startClock(app, run);
   return () => clearInterval(timer);
@@ -508,7 +512,10 @@ export function onInput(app, event) {
   const q = question(app, run);
   const target = event.target;
   if (target.name === 'choice') changeAnswer(app, run, q, Number(target.value));
-  else if (target.id === 'written') changeAnswer(app, run, q, target.value);
+  else if (target.id === 'written') {
+    changeAnswer(app, run, q, target.value);
+    if (q.writing) updateWritingMeter(target);
+  }
   else if ('blank' in target.dataset) {
     const values = [...(run.answers[q.id] || [])];
     values[Number(target.dataset.blank)] = target.value;

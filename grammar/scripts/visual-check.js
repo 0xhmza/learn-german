@@ -49,6 +49,9 @@ const SCREENS = [
   ['home-b2', 'home', 'switch-b2'],
   ['vocab', 'vokabeln'],
   ['writing', 'schreiben'],
+  ['writing-chapter', 'schreiben/persoenliche-mail'],
+  ['writing-feedback', 'schreiben/besuch-planen', 'writing-feedback', true],
+  ['writing-timed', 'schreiben/bereit', 'writing-timed-flow', true],
   ['writing-resume', 'home', 'resume-draft'],
   ['practice', 'practice'],
   ['exams', 'model-exams'],
@@ -211,6 +214,57 @@ const STEPS = String(async function steps(plan) {
       if (document.querySelector('#exam-writing')?.value !== draft) throw new Error('switching levels lost the draft');
       await wait(170);
       if (JSON.parse(localStorage.getItem('gi-state-v1')).modelExams.petra.schreiben.writing !== draft) throw new Error('the writing draft was not persisted');
+    }
+    if (name === 'writing-feedback') {
+      const editor = document.querySelector('#writing-draft-0');
+      const draft = 'Liebe Lea,\nich komme gern mit.';
+      editor.value = draft;
+      fire(editor);
+      const meter = document.querySelector('#writing-draft-0-meter');
+      if (!meter.textContent.includes('~') || !editor.closest('.writing-editor').classList.contains('has-writing')) {
+        throw new Error('writing counters did not update');
+      }
+      if (document.querySelector('.writing-model')) throw new Error('reference shown before writing');
+      click('[data-action="writing-submit"]');
+      await wait(80);
+      const frozen = document.querySelector('#writing-before-0');
+      frozen.focus();
+      frozen.setSelectionRange(0, 9);
+      click('[data-evidence-id="0-0"]');
+      if (!document.querySelector('.writing-evidence blockquote')?.textContent.includes('Liebe Lea')) throw new Error('evidence was not saved');
+      click('[data-action="writing-reveal"]');
+      await wait(80);
+      if (document.querySelector('.writing-manuscript.original').textContent !== draft || !document.querySelector('.writing-model')) {
+        throw new Error('the model and original should appear together');
+      }
+      const revision = document.querySelector('#writing-revision-0');
+      revision.value = 'Liebe Lea,\n\nich würde dich gern am Samstag besuchen!';
+      fire(revision);
+      click('[data-action="writing-finish"]');
+      await wait(200);
+      const saved = JSON.parse(localStorage.getItem('gi-state-v1')).writingCourse['besuch-planen'];
+      if (saved.answers[0] !== draft || saved.revision[0] !== revision.value || !saved.done) throw new Error('revision overwrote or failed to save the original');
+    }
+    if (name === 'writing-timed-flow') {
+      const { setClock } = await import('/js/dates.js');
+      let time = Date.now();
+      setClock(() => new Date(time));
+      await open('[data-action="writing-start-readiness"]');
+      const editor = document.querySelector('#writing-draft-0');
+      if (!editor || editor.spellcheck || !document.querySelector('[data-writing-timer]')) throw new Error('the timed editor is missing or allows spellcheck');
+      editor.value = 'Lieber Milan, ich komme gern mit.';
+      fire(editor);
+      time += 1801000;
+      await wait(480);
+      if (document.querySelector('[data-writing-timer]') || document.querySelector('#writing-before-0')?.value !== editor.value) throw new Error('deadline did not submit the stored draft');
+      click('[data-action="writing-reveal"]');
+      const form = document.querySelector('[data-writing-review]');
+      for (const select of form.querySelectorAll('select')) select.value = 'A';
+      for (const input of form.querySelectorAll('input[name^="reason-"]')) input.value = 'Ein Beispiel aus der Antwort.';
+      click('[data-action="writing-save-review"]');
+      await wait(200);
+      const saved = JSON.parse(localStorage.getItem('gi-state-v1')).writingCourse['schreibprobe-1'];
+      if (saved.review?.grades.task !== 'A') throw new Error('teacher review was not saved');
     }
     if (name === 'choose') {
       for (const select of [...document.querySelectorAll('select[data-sprach-gap], select[data-exam-item]')].slice(0, Number(count))) {

@@ -2,8 +2,10 @@
 // for the current level, with the level picker and streak beside it.
 import { t, num } from '../i18n/index.js';
 import { currentLevel, levelHasContent, grammarProgress, writingProgress, testsProgress, vocabProgress } from '../engine/areas.js';
+import { courseProgress as writingCourseProgress } from '../engine/writing.js';
 import { streakCard, levelCard, progressCard } from '../components/widgets.js';
 import { icons } from '../components/icons.js';
+import { skillsRadar } from '../components/skills-radar.js';
 
 export const title = () => t('tabHome');
 
@@ -22,7 +24,7 @@ export function render(app) {
     progressCard({ area: 'vocab', href: 'vokabeln', icon: icons.vocab, title: t('navVocab'),
       detail: t('wordsSaved'), value: num(vocabProgress(state).words) }),
     progressCard({ area: 'writing', href: 'schreiben', icon: icons.writing, title: t('navWriting'),
-      ...courseProgress(writingProgress, 'writingDone') }),
+      ...courseProgress(ctx.writingCourse ? () => writingCourseProgress(ctx.writingCourse, state) : writingProgress, 'writingDone') }),
     progressCard({ area: 'tests', href: 'model-exams', icon: icons.exam, title: t('areaTests'),
       ...courseProgress(testsProgress, 'testsDone') })
   ];
@@ -30,6 +32,7 @@ export function render(app) {
     <section class="dash-main" aria-labelledby="dash-title">
       <h1 id="dash-title">${t('dashProgress')}</h1>
       <div class="progress-cards">${cards.join('')}</div>
+      ${ready ? skillsRadar(ctx, state) : ''}
     </section>
     <aside class="dash-side">
       ${levelCard(state)}

@@ -62,6 +62,7 @@ export default {
   writingExample: 'Eine mögliche Antwort lesen',
   independentExam: 'Kurze Übung von Grammatikinseln',
   examTranscript: 'Hörtext anzeigen',
+  listeningComplete: 'Beantworte zuerst alle Fragen.',
   listeningCheck: 'Hörantworten prüfen',
   listenFirst: 'Hör die Ansage und entscheide, ob die Aussagen richtig oder falsch sind.',
   correctWord: 'Richtig',
