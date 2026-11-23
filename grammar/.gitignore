@@ -9,3 +9,4 @@ dist/
 Thumbs.db
 graphify-out/
 visual-report/
+.listening-private/

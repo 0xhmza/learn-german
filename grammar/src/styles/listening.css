@@ -55,7 +55,17 @@
   min-block-size: 44px; inline-size: 100%; padding: .55rem .65rem; border: 1px solid var(--line-strong); border-radius: 9px;
   font: inherit; color: var(--ink); background: var(--surface-2); margin-block: .35rem;
 }
-.listening-gap { color: var(--brand-ink); margin-inline: .1rem; }
+.listening-dictation { line-height: 1.5; resize: vertical; }
+.listening-task .listening-inline { line-height: 2.45; }
+.listening-task .listening-gap-input {
+  display: inline-block; vertical-align: baseline; inline-size: var(--listening-gap-width, 8ch); min-inline-size: 2.3rem;
+  max-inline-size: calc(100% - .3em); margin-block: .15em; margin-inline: .15em; border-color: var(--brand); background: var(--brand-soft);
+}
+.listening-task.yes .listening-gap-input { border-color: var(--good); background: var(--good-bg); }
+.listening-task.no .listening-gap-input { border-color: var(--warn); background: var(--warn-bg); }
+.listening-timeline { display: flex; align-items: center; gap: .7rem; }
+.listening-timeline progress { accent-color: var(--good); flex: 1; inline-size: 0; block-size: .55rem; }
+.listening-timeline span { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
 .listening-task button[data-action="listen-excerpt"] { margin-block-start: .25rem; }
 .listening-score { background: var(--t-mint); scroll-margin-block-start: var(--head); }
 .listening-feedback { margin-block-start: .55rem; padding: .65rem; border-radius: 9px; background: var(--t-peach); color: var(--ink); }

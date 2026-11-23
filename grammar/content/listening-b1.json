@@ -20,15 +20,15 @@
           "lines": [
             {
               "text": "Hallo Nura, die Haltestelle am Rathaus ist wegen der Baustelle gesperrt.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Wir treffen uns deshalb um Viertel nach sechs am Südeingang des Parks.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Wenn du etwas später kommst, warte ich direkt neben dem Stadtplan.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -89,15 +89,15 @@
           "lines": [
             {
               "text": "Hier ist die Stadtbibliothek. Sie hatten einen Termin, um Ihren Ausweis abzuholen.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Am Freitag schließen wir früher, weil die Computer erneuert werden.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Sie können den Ausweis am Donnerstag ab drei Uhr abholen oder uns einen anderen Termin vorschlagen.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             }
           ],
           "tasks": [
@@ -146,15 +146,15 @@
           "lines": [
             {
               "text": "Sollen wir das Picknick verschieben, falls es morgen regnet?",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Wir müssen es nicht absagen. Im Jugendzentrum ist ein Raum frei, den wir nutzen dürfen.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Gut, dann bringe ich das Essen dorthin und schreibe den anderen, sobald wir den Schlüssel haben.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -216,15 +216,15 @@
           "lines": [
             {
               "text": "Am Mittwoch wird das Wasser von neun bis elf Uhr abgestellt, damit die Firma ein Rohr austauschen kann.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Bitte füllen Sie vorher etwas Trinkwasser ab, wenn Sie am Vormittag zu Hause sind.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Das warme Wasser kann danach noch eine halbe Stunde brauchen, bis es wieder normal läuft.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             }
           ],
           "tasks": [
@@ -285,15 +285,15 @@
           "lines": [
             {
               "text": "Ich habe Ihr Paket angenommen, weil Sie gestern nicht da waren.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Danke, das ist nett. Könnte ich es heute gegen sieben bei Ihnen abholen?",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Gern. Klingeln Sie bitte nur einmal, damit das Baby nicht aufwacht.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             }
           ],
           "tasks": [
@@ -342,15 +342,15 @@
           "lines": [
             {
               "text": "Bis Freitag sollen alle Fahrräder aus dem Flur entfernt werden, da der Durchgang frei bleiben muss.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Im Innenhof stehen vorübergehend zusätzliche Ständer zur Verfügung.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Wer sein Fahrrad im Keller lassen möchte, kann ab Montag einen Schlüssel im Büro abholen.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -412,15 +412,15 @@
           "lines": [
             {
               "text": "Könntest du am Samstag meine Schicht übernehmen? Ich muss meine Tochter zum Arzt bringen.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Den Vormittag schaffe ich nicht, aber ab zwei Uhr kann ich an der Kasse arbeiten.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Dann frage ich Jonas, ob er den Anfang übernimmt. Ich melde mich, sobald er geantwortet hat.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -481,15 +481,15 @@
           "lines": [
             {
               "text": "Die Besprechung am Mittwoch beginnt wie geplant um zehn Uhr, dauert aber nur eine halbe Stunde.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Schicken Sie mir deshalb Ihre Fragen bis Dienstagabend, damit ich die wichtigsten zuerst sammeln kann.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Die Entscheidung zum neuen Dienstplan verschieben wir auf nächste Woche.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -538,15 +538,15 @@
           "lines": [
             {
               "text": "Die Lieferung ist gerade angekommen, aber statt der blauen Tassen haben wir grüne bekommen.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Ruf bitte beim Lieferanten an und kläre, ob er die richtigen Tassen bis Donnerstag schicken kann.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Falls das zu knapp ist, stellen wir für die Veranstaltung erst einmal unsere weißen Tassen bereit.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             }
           ],
           "tasks": [
@@ -608,15 +608,15 @@
           "lines": [
             {
               "text": "Der Abendkurs ist voll. Im Kurs am Samstag gibt es noch Plätze, allerdings beginnt er schon um halb neun.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Das würde gehen, wenn ich die erste Stunde online nachholen kann. An diesem Samstag arbeite ich.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Das ist möglich. Melden Sie sich bis Donnerstag an, damit wir Ihnen den Link rechtzeitig schicken können.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -677,15 +677,15 @@
           "lines": [
             {
               "text": "Für das Projekt gibt jede Gruppe am Dienstag einen kurzen Bericht ab.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Der Bericht soll auch dann abgegeben werden, wenn die Präsentation noch nicht fertig ist.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Wer am Montag Hilfe braucht, kann nach dem Kurs bleiben. Die Lehrerin beantwortet dort Fragen zum Aufbau.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -734,15 +734,15 @@
           "lines": [
             {
               "text": "Seit wir uns im Tandem treffen, spreche ich häufiger Deutsch. Beim Schreiben fühle ich mich aber noch unsicher.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Dann können wir einmal pro Woche kurze Nachrichten austauschen und uns am nächsten Tag Rückmeldung geben.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Gute Idee. Lass uns zuerst die Stellen besprechen, an denen man die Bedeutung schwer versteht.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             }
           ],
           "tasks": [
@@ -804,15 +804,15 @@
           "lines": [
             {
               "text": "Wegen einer technischen Störung endet dieser Zug heute in Uelzen.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Reisende nach Hamburg können dort in den Regionalzug auf Gleis drei umsteigen.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Wer ein Ticket nur für diesen Zug hat, darf den Regionalzug trotzdem ohne Aufpreis nutzen.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             }
           ],
           "tasks": [
@@ -873,15 +873,15 @@
           "lines": [
             {
               "text": "Wir kommen schon gegen elf Uhr an. Können wir unser Gepäck bei Ihnen abstellen?",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Natürlich. Ihr Zimmer ist erst ab drei Uhr fertig, aber Ihre Koffer können Sie an der Rezeption lassen.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Wenn Sie inzwischen spazieren gehen möchten, gebe ich Ihnen gern einen Stadtplan mit.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -930,15 +930,15 @@
           "lines": [
             {
               "text": "Die Brücke am Fluss ist gesperrt, seit dort nach dem Hochwasser gebaut wird.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Wir fahren deshalb über die alte Landstraße. Der Umweg dauert ungefähr zwanzig Minuten.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Wenn euch das zu lang ist, können wir am Bahnhof umkehren und mit dem Zug zurückfahren.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -1000,15 +1000,15 @@
           "lines": [
             {
               "text": "Guten Tag, hier ist die Praxis am Markt. Ihr Termin morgen findet wie geplant statt.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Bringen Sie bitte den ausgefüllten Fragebogen mit, damit wir beim Gespräch weniger Zeit für die Anmeldung brauchen.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Wenn Sie den Bogen nicht ausdrucken können, kommen Sie bitte fünfzehn Minuten früher.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -1069,15 +1069,15 @@
           "lines": [
             {
               "text": "Bei der Hitze beginnen wir das Lauftraining heute erst um halb acht.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Wir bleiben auf der kurzen Strecke, damit niemand zu lange in der Sonne läuft.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Bringt bitte Wasser mit und meldet euch bei mir, falls euch während des Trainings schwindelig wird.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             }
           ],
           "tasks": [
@@ -1126,15 +1126,15 @@
           "lines": [
             {
               "text": "Seit ich mittags kurz spazieren gehe, kann ich mich am Nachmittag besser konzentrieren.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Ich würde gern mitkommen, obwohl ich nur zwanzig Minuten Pause habe.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Kein Problem. Wir gehen nur bis zur nächsten Kreuzung und drehen dort um.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -1196,15 +1196,15 @@
           "lines": [
             {
               "text": "Ich habe den Rucksack letzte Woche gekauft. Leider ist einer der Reißverschlüsse kaputt.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Wenn Sie den Kassenbon dabeihaben, können wir Ihnen entweder das Geld zurückgeben oder den Rucksack umtauschen.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Ich würde ihn lieber umtauschen, sofern Sie dasselbe Modell noch in Blau haben.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             }
           ],
           "tasks": [
@@ -1265,15 +1265,15 @@
           "lines": [
             {
               "text": "Ab heute berechnen wir für Einwegschalen zwanzig Cent extra.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Wer einen eigenen Behälter mitbringt, zahlt weiterhin nur den Preis für das Essen.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Falls Sie keinen Behälter haben, können Sie bei uns gegen Pfand eine Schale ausleihen und beim nächsten Besuch zurückgeben.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -1322,15 +1322,15 @@
           "lines": [
             {
               "text": "Guten Tag, Ihr Handy ist repariert. Wir mussten nur den Akku austauschen, deshalb kostet es weniger als geschätzt.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Sie können Ihr Gerät heute bis achtzehn Uhr abholen. Morgen bleibt das Geschäft wegen Inventur geschlossen.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Bringen Sie bitte den Abholschein mit, den wir Ihnen bei der Reparaturannahme gegeben haben.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -1392,15 +1392,15 @@
           "lines": [
             {
               "text": "Ich finde es schwierig, mich zu konzentrieren, wenn ständig irgendwo ein Handy klingelt.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             },
             {
               "text": "Ganz verbieten würde ich Handys nicht, weil manche die Wörterbuch-App benutzen.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Dann stellen wir sie lautlos und benutzen sie nur, wenn eine Aufgabe das erfordert.",
-              "voice": "Hedda"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -1461,15 +1461,15 @@
           "lines": [
             {
               "text": "Unser Reparaturtreff öffnet am ersten Samstag im Monat. Wir helfen Ihnen dabei, kleine Geräte selbst zu reparieren.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Obwohl wir Werkzeug vor Ort haben, können wir keine passenden Ersatzteile garantieren.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             },
             {
               "text": "Wenn Sie wissen, welches Teil kaputt ist, bringen Sie bitte nach Möglichkeit ein passendes Ersatzteil mit.",
-              "voice": "Stefan"
+              "voice": "Thorsten"
             }
           ],
           "tasks": [
@@ -1518,15 +1518,15 @@
           "lines": [
             {
               "text": "Für unsere Buchrunde würde ich diesmal ein kürzeres Buch vorschlagen, weil wir nur drei Wochen Zeit haben.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             },
             {
               "text": "Das passt. Wer das Buch nicht kaufen möchte, könnte es in der Stadtbibliothek ausleihen.",
-              "voice": "Stefan"
+              "voice": "Thorsten Dialog"
             },
             {
               "text": "Lasst uns beim ersten Treffen nur über die ersten zwei Kapitel sprechen, damit niemand die Geschichte vorwegnimmt.",
-              "voice": "Katja"
+              "voice": "Kerstin"
             }
           ],
           "tasks": [
@@ -1579,15 +1579,15 @@
       "lines": [
         {
           "text": "Am Montag treffen sich alle neuen Mitarbeitenden zu Beginn am Haupteingang.",
-          "voice": "Hedda"
+          "voice": "Kerstin"
         },
         {
           "text": "Wer schon einen Ausweis hat, kann direkt in den Schulungsraum gehen, nachdem er sich bei der Empfangsdame gemeldet hat.",
-          "voice": "Hedda"
+          "voice": "Kerstin"
         },
         {
           "text": "Die Einführung beginnt erst um neun Uhr. Bringen Sie Ihre eigenen Kopfhörer mit, falls Sie bei der Computerübung lieber alleine zuhören.",
-          "voice": "Hedda"
+          "voice": "Kerstin"
         }
       ],
       "tasks": [
@@ -1641,15 +1641,15 @@
       "lines": [
         {
           "text": "Für den Ausflug am Sonntag sind noch Plätze frei. Der Bus fährt um acht Uhr vor der Sporthalle ab.",
-          "voice": "Stefan"
+          "voice": "Thorsten"
         },
         {
           "text": "Sie können bis Freitag kostenlos absagen. Danach müssen wir Ihnen den Fahrpreis berechnen, falls wir den Platz nicht weitergeben können.",
-          "voice": "Stefan"
+          "voice": "Thorsten"
         },
         {
           "text": "Wer in der Nähe des Ziels wohnt, kann auch direkt zum Museum kommen. Schreiben Sie uns bitte vorher, wenn Sie das möchten.",
-          "voice": "Stefan"
+          "voice": "Thorsten"
         }
       ],
       "tasks": [
@@ -1703,15 +1703,15 @@
       "lines": [
         {
           "text": "Am Samstag wollten wir das Nachbarschaftshaus von elf bis fünf Uhr öffnen. Wegen eines Stromproblems können wir erst nach Mittag beginnen.",
-          "voice": "Katja"
+          "voice": "Kerstin"
         },
         {
           "text": "Die Führung durch das Gebäude findet um zwei Uhr statt. Der Bastelkurs fällt dagegen aus, weil die Werkstatt noch überprüft werden muss.",
-          "voice": "Katja"
+          "voice": "Kerstin"
         },
         {
           "text": "Wer sich schon für den Kurs angemeldet hat, bekommt am Montag eine Nachricht mit einem neuen Vorschlag.",
-          "voice": "Katja"
+          "voice": "Kerstin"
         }
       ],
       "tasks": [
@@ -1765,15 +1765,15 @@
       "lines": [
         {
           "text": "Unser Bürgerbüro nimmt bis Ende des Monats keine Termine am Telefon an, da die Telefonanlage ausgetauscht wird.",
-          "voice": "Stefan"
+          "voice": "Thorsten"
         },
         {
           "text": "Online sind weiterhin Termine verfügbar. Falls Sie keinen Internetzugang haben, helfen Ihnen die Mitarbeitenden in der Stadtbibliothek bei der Buchung.",
-          "voice": "Stefan"
+          "voice": "Thorsten"
         },
         {
           "text": "Die normalen Öffnungszeiten des Bürgerbüros ändern sich dadurch nicht. Bereits bestätigte Termine bleiben gültig.",
-          "voice": "Stefan"
+          "voice": "Thorsten"
         }
       ],
       "tasks": [

@@ -6,14 +6,14 @@ import path from 'node:path';
 import { build, transform } from 'esbuild';
 import { assembleContent } from './assemble-content.js';
 import { validateContent } from './validate-content.js';
+import { privateSeriesDirectory, readSeriesPack, seriesDirectory } from './series-pack.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = path.join(root, 'src');
 const dist = path.join(root, 'dist');
-const site = path.join(dist, 'site');
 export const singleFile = path.join(dist, 'Deutsch-Grammatik-B1.html');
-// The single file embeds the original B1 recordings for offline use.
-const BUDGET = { single: 4.25 * 1024 * 1024, script: 280 * 1024 };
+// The single file embeds the B1 recordings and series excerpts for offline use.
+const BUDGET = { single: 5 * 1024 * 1024, script: 280 * 1024 };
 
 const between = (text, start, end, replacement) => {
   const a = text.indexOf(start);
@@ -23,8 +23,16 @@ const between = (text, start, end, replacement) => {
 };
 const kb = bytes => `${(bytes / 1024).toFixed(0)} KB`;
 
-export async function buildAll({ quiet = false } = {}) {
-  const content = await assembleContent();
+export async function buildAll({ quiet = false, includeSeries = false } = {}) {
+  const target = includeSeries ? path.join(dist, 'mit-serien') : dist;
+  const site = path.resolve(target, 'site');
+  const output = path.join(target, path.basename(singleFile));
+  const original = await assembleContent();
+  const privateSeries = includeSeries ? await readSeriesPack(privateSeriesDirectory) : null;
+  const packDirectory = privateSeries ? privateSeriesDirectory : seriesDirectory;
+  const listeningSeries = privateSeries ?? await readSeriesPack(packDirectory);
+  if (!listeningSeries) throw new Error('The published listening series pack is missing.');
+  const content = { ...original, listeningSeries };
   const errors = validateContent(content);
   if (errors.length) throw new Error(`Content has ${errors.length} problem(s). Run npm run validate.`);
 
@@ -44,23 +52,25 @@ export async function buildAll({ quiet = false } = {}) {
   const sheets = [...index.matchAll(/<link rel="stylesheet" href="(styles\/[^"]+)">/g)].map(match => match[1]);
   const css = (await Promise.all(sheets.map(file => readFile(path.join(src, file), 'utf8')))).join('\n');
   const font = await readFile(path.join(src, 'fonts', 'NotoSansArabic-Variable.woff2'));
-  const recordingIds = Object.keys(content.listeningTimings);
-  const recordings = await Promise.all(recordingIds.map(async id => [id, await readFile(path.join(root, 'listening-audio', `${id}.mp3`))]));
-  const sharedSubtitles = await readFile(path.resolve(root, '../public/subtitles.js'), 'utf8');
-  const listeningAudio = Object.fromEntries(recordings.map(([id, audio]) => [id, `data:audio/mpeg;base64,${audio.toString('base64')}`]));
+  const recordings = await Promise.all(Object.keys(content.listeningTimings).map(async id => ({
+    id, folder: 'listening-audio', audio: await readFile(path.join(root, 'listening-audio', `${id}.mp3`))
+  })));
+  recordings.push(...await Promise.all(Object.keys(listeningSeries.timings).map(async id => ({
+    id, folder: 'listening-clips', audio: await readFile(path.join(packDirectory, `${id}.mp3`))
+  }))));
+  const listeningAudio = Object.fromEntries(recordings.map(({ id, audio }) => [id, `data:audio/mpeg;base64,${audio.toString('base64')}`]));
   const contentJson = JSON.stringify(content);
   const json = JSON.stringify({ ...content, listeningAudio }).replace(/</g, '\\u003c');
 
-  await rm(dist, { recursive: true, force: true });
+  if (!site.startsWith(dist + path.sep)) throw new Error('Invalid output directory.');
+  await rm(site, { recursive: true, force: true });
   await mkdir(path.join(site, 'fonts'), { recursive: true });
-  await mkdir(path.join(site, 'listening-audio'), { recursive: true });
-  await mkdir(path.join(site, 'shared'), { recursive: true });
-  await Promise.all(recordings.map(([id, audio]) => writeFile(path.join(site, 'listening-audio', `${id}.mp3`), audio)));
-  await writeFile(path.join(site, 'shared', 'subtitles.js'), sharedSubtitles);
+  for (const folder of new Set(recordings.map(recording => recording.folder))) await mkdir(path.join(site, folder), { recursive: true });
+  await Promise.all(recordings.map(({ id, folder, audio }) => writeFile(path.join(site, folder, `${id}.mp3`), audio)));
 
   // Hostable folder.
   let page = between(index, '<!-- styles -->', '<!-- /styles -->', '<link rel="stylesheet" href="app.css">');
-  page = between(page, '<!-- script -->', '<!-- /script -->', '<script src="shared/subtitles.js" defer></script><script src="app.js" defer></script>');
+  page = between(page, '<!-- script -->', '<!-- /script -->', '<script src="app.js" defer></script>');
   page = page.replace('<!-- content -->\n', '');
   await writeFile(path.join(site, 'index.html'), page);
   await writeFile(path.join(site, 'app.css'), css.replaceAll('url(../fonts/', 'url(fonts/'));
@@ -77,21 +87,22 @@ export async function buildAll({ quiet = false } = {}) {
   const inlineCss = `/*\nNoto Sans Arabic\n${license}*/\n` + compactCss.code.replaceAll('url(../fonts/NotoSansArabic-Variable.woff2)', `url(data:font/woff2;base64,${font.toString('base64')})`);
   let single = between(index, '<!-- styles -->', '<!-- /styles -->', `<style>\n${inlineCss.replace(/<\/style/gi, '<\\/style')}\n</style>`);
   single = single.replace('<!-- content -->', `<script id="content-data" type="application/json">${json}</script>`);
-  single = between(single, '<!-- script -->', '<!-- /script -->', `<script>${sharedSubtitles.replace(/<\/script/gi, '<\\/script')}\n${script.replace(/<\/script/gi, '<\\/script')}</script>`);
-  await writeFile(singleFile, single);
+  single = between(single, '<!-- script -->', '<!-- /script -->', `<script>${script.replace(/<\/script/gi, '<\\/script')}</script>`);
+  await writeFile(output, single);
 
   const sizes = { single: Buffer.byteLength(single), script: Buffer.byteLength(script), content: Buffer.byteLength(contentJson), css: Buffer.byteLength(css) };
   if (!quiet) {
-    console.log(`✓ dist/site: index.html, app.js (${kb(sizes.script)}), app.css (${kb(sizes.css)}), content.json (${kb(sizes.content)}), fonts/`);
-    console.log(`✓ dist/Deutsch-Grammatik-B1.html (${kb(sizes.single)}) – ${content.lessons.length} lessons, content ${content.version}`);
+    console.log(`✓ ${path.relative(root, site)}: index.html, app.js (${kb(sizes.script)}), app.css (${kb(sizes.css)}), content.json (${kb(sizes.content)}), fonts/`);
+    console.log(`✓ ${path.relative(root, output)} (${kb(sizes.single)}) – ${content.lessons.length} lessons, content ${content.version}`);
   }
-  if (sizes.single > BUDGET.single) throw new Error(`Single file is ${kb(sizes.single)}, budget ${kb(BUDGET.single)}.`);
+  const budget = includeSeries ? 5.75 * 1024 * 1024 : BUDGET.single;
+  if (sizes.single > budget) throw new Error(`Single file is ${kb(sizes.single)}, budget ${kb(budget)}.`);
   if (sizes.script > BUDGET.script) throw new Error(`Script is ${kb(sizes.script)}, budget ${kb(BUDGET.script)}.`);
   return sizes;
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  buildAll().catch(error => {
+  buildAll({ includeSeries: process.argv.includes('--with-series') }).catch(error => {
     console.error(`✗ ${error.message}`);
     process.exitCode = 1;
   });

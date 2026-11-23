@@ -13,6 +13,8 @@
     "validate": "node scripts/validate-content.js",
     "test": "node --test \"test/*.test.js\"",
     "build": "node scripts/validate-content.js && node scripts/build.js",
+    "build:series": "node scripts/build.js --with-series",
+    "prepare:series": "node scripts/prepare-series-listening.js",
     "extract:legacy": "node scripts/extract-legacy.js",
     "new:lesson": "node scripts/new-lesson.js",
     "check:links": "node scripts/check-links.js",

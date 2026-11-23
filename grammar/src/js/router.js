@@ -24,7 +24,9 @@ export function parse(hash, ctx) {
       return { view: 'writing', key: key ?? null, task, hash: raw, tab: 'writing' };
     }
   }
-  if (view === 'hoeren' && (key === undefined || ['serien', 'check'].includes(key) || ctx.listeningScenes?.has(key) || ctx.listeningChapters?.some(chapter => chapter.id === key))) {
+  if (view === 'hoeren' && (key === undefined || ['serien', 'check'].includes(key) ||
+    (key === 'folgen' && ctx.listeningEpisodeLibrary) || ctx.listeningScenes?.has(key) ||
+    [...(ctx.listeningChapters ?? []), ...(ctx.listeningSeries ?? [])].some(chapter => chapter.id === key))) {
     return { view: 'listening', key: key ?? null, hash: raw, tab: 'listening' };
   }
   if (view === 'topics' && key === undefined) return { view: 'topics', key: null, hash: raw, tab: 'home' };

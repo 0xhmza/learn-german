@@ -4,6 +4,7 @@ import { button, crumbs, esc, link, meter } from '../components/html.js';
 import { icons } from '../components/icons.js';
 import { mountListeningAudio } from '../components/listening-audio.js';
 import { listeningPlayer, playListening, playerStatus } from '../components/listening-player.js';
+import { listeningInput, sizeListeningGaps } from '../components/listening-gap.js';
 import { checkListening, listeningAssessment, listeningDraft, makeListeningRun, MAX_PLAYS, scoreListening } from '../engine/listening.js';
 import { libraryActions, libraryChange, libraryInput, libraryPause, libraryPlay, mountLibrary, renderLibrary } from './listening-library.js';
 
@@ -13,7 +14,8 @@ const urlFor = item => `${base}/${item.id}`;
 const label = item => esc(item.title[getLang()]);
 const runFor = (app, scene) => app.state.listening.runs[scene.id];
 const assessScenes = app => app.ctx.listeningAssessment;
-const isLibrary = app => app.route.key === 'serien';
+const isLibrary = app => app.route.key === 'folgen' || (app.route.key === 'serien' && !app.ctx.listeningSeries.length);
+const sections = app => [...app.ctx.listeningChapters, ...app.ctx.listeningSeries];
 const currentScene = app => app.ctx.listeningScenes.get(app.route.key);
 let audio = null;
 
@@ -32,7 +34,10 @@ function landing(app) {
     <header class="listening-cover"><div>
       <h1>${esc(h('overview'))}</h1><p>${esc(h('intro'))}</p>
       <div class="listening-cover-progress">${meter(done, scenes.length, h('finished'))}<span>${completion(app, scenes)}</span></div>
-      ${resume ? link(urlFor(resume), esc(h(listeningDraft(resume, runFor(app, resume)) ? 'resume' : 'go')), 'primary') : ''}
+      <div class="actions">
+        ${resume ? link(urlFor(resume), esc(h(listeningDraft(resume, runFor(app, resume)) ? 'resume' : 'go')), 'primary') : ''}
+        ${app.ctx.listeningSeries.length ? link('hoeren/serien', esc(h('tv')), 'secondary') : ''}
+      </div>
     </div><div class="listening-cover-mark" aria-hidden="true">${icons.listen}</div></header>
     <section aria-labelledby="listening-chapters"><h2 id="listening-chapters">${esc(h('units'))}</h2>
       <ol class="listening-chapters">${app.ctx.listeningChapters.map(chapter => `<li><a class="panel" href="#${urlFor(chapter)}">
@@ -46,13 +51,25 @@ function landing(app) {
   </div>`;
 }
 
+function seriesPage(app) {
+  return `${crumbs([[base, esc(h('nav'))], [null, esc(h('tv'))]])}<div class="listening">
+    <header class="listening-cover"><div><h1>${esc(h('tv'))}</h1><p>${esc(h('seriesIntro'))}</p></div>
+    <div class="listening-cover-mark" aria-hidden="true">${icons.listen}</div></header>
+    <ol class="listening-chapters">${app.ctx.listeningSeries.map(chapter => `<li><a class="panel" href="#${urlFor(chapter)}">
+      <small>${completion(app, chapter.scenes)}</small><h2>${label(chapter)}</h2><p>${esc(chapter.description[getLang()])}</p>
+      <span>${esc(h('go'))} ${icons.chevron}</span></a></li>`).join('')}</ol>
+    ${app.ctx.listeningEpisodeLibrary ? `<div class="actions">${link('hoeren/folgen', esc(h('tvMore')), 'secondary')}</div>` : ''}
+    </div>`;
+}
+
 function chapterPage(app, chapter) {
-  return `${crumbs([[base, esc(h('nav'))], [null, label(chapter)]])}
+  const parents = app.ctx.listeningSeries.includes(chapter) ? [[base, esc(h('nav'))], ['hoeren/serien', esc(h('tv'))]] : [[base, esc(h('nav'))]];
+  return `${crumbs([...parents, [null, label(chapter)]])}
     <div class="listening"><header class="listening-heading"><h1>${label(chapter)}</h1><p>${esc(chapter.description[getLang()])}</p></header>
     <ol class="listening-scene-list">${chapter.scenes.map(scene => {
       const run = runFor(app, scene);
       const result = run?.submitted ? scoreListening(scene, run) : null;
-      return `<li class="panel"><div><h2>${label(scene)}</h2><span>${result ? `${num(result.correct)} / ${num(result.total)}` :
+      return `<li class="panel"><div><h2>${label(scene)}</h2><span>${scene.source ? `${esc(scene.source)} · ` : ''}${result ? `${num(result.correct)} / ${num(result.total)}` :
         `${num(scene.tasks.length)} ${esc(h('exercises'))}`}</span></div>
         ${link(urlFor(scene), esc(h(result ? 'results' : listeningDraft(scene, run) ? 'resume' : 'go')), result ? 'quiet' : 'secondary')}</li>`;
     }).join('')}</ol></div>`;
@@ -74,26 +91,26 @@ function checkPage(app) {
     </div>`;
 }
 
-function gapSentence(scene, task) {
+function gapSentence(scene, task, field) {
   const text = scene.lines[task.segment].text;
   const start = text.indexOf(task.answer);
-  return `${esc(text.slice(0, start))}<b class="listening-gap" aria-label="${esc(h('blank'))}">___</b>${esc(text.slice(start + task.answer.length))}`;
+  return `${esc(text.slice(0, start))}${field}${esc(text.slice(start + task.answer.length))}`;
 }
 
 function taskCard(scene, task, index, run) {
   const answer = run.answers[index];
   const result = run.submitted ? checkListening(task, answer) : null;
+  const id = `listening-answer-${index}`;
+  const field = task.options ? '' : listeningInput({ id, attributes: `data-listening-answer="${index}"`, value: answer,
+    readOnly: run.submitted, target: task.kind === 'gap' ? task.answer : null });
   return `<fieldset class="panel listening-task${result ? result.correct ? ' yes' : ' no' : ''}">
     <legend>${num(index + 1)}. ${esc(h(task.kind))}</legend>
     ${task.options ? `<p lang="de" dir="ltr" id="listening-prompt-${index}">${esc(task.prompt)}</p>
       <div class="listening-choices" lang="de" dir="ltr" role="group" aria-labelledby="listening-prompt-${index}">${task.options.map((option, i) =>
         `<label><input type="radio" name="listening-answer-${index}" data-listening-answer="${index}" value="${i}" ${answer === String(i) ? 'checked' : ''}
           ${run.submitted ? 'disabled' : ''}> <span>${esc(option)}</span></label>`).join('')}</div>`
-      : `<label for="listening-answer-${index}">
-        <span ${task.kind === 'gap' ? 'lang="de" dir="ltr"' : ''}>${task.kind === 'gap' ? gapSentence(scene, task) : esc(h('dictationInstruction'))}</span>
-        <input class="listening-answer" type="text" id="listening-answer-${index}" data-listening-answer="${index}"
-          value="${esc(answer)}" dir="ltr" lang="de" maxlength="350" spellcheck="false" autocomplete="off" autocapitalize="off" ${run.submitted ? 'readonly' : ''}>
-      </label>`}
+      : task.kind === 'gap' ? `<p class="listening-inline" lang="de" dir="ltr">${gapSentence(scene, task, field)}</p>`
+        : `<label for="${id}"><span>${esc(h('dictationInstruction'))}</span>${field}</label>`}
     ${Number.isInteger(task.segment) && (!scene.assessment || run.submitted)
       ? button('listen-excerpt', esc(h('sentence')), 'quiet', `data-segment="${task.segment}"`) : ''}
     ${result ? `<div class="listening-feedback">
@@ -105,15 +122,16 @@ function taskCard(scene, task, index, run) {
 
 function scenePage(app, scene) {
   const run = runFor(app, scene) ?? makeListeningRun(scene);
-  const chapter = app.ctx.listeningChapters.find(unit => unit.scenes.includes(scene));
+  const chapter = sections(app).find(unit => unit.scenes.includes(scene));
   const parent = scene.assessment ? [checkPath, esc(h('heard'))] : [urlFor(chapter), label(chapter)];
   const next = chapter?.scenes[chapter.scenes.indexOf(scene) + 1];
   const score = run.submitted ? scoreListening(scene, run) : null;
-  const source = app.ctx.listeningAudio?.[scene.id] || `listening-audio/${scene.id}.mp3`;
-  return `${crumbs([[base, esc(h('nav'))], parent, [null, label(scene)]])}
+  const source = app.ctx.listeningAudio?.[scene.id] || `${scene.series ? 'listening-clips' : 'listening-audio'}/${scene.id}.mp3`;
+  const parents = scene.series ? [[base, esc(h('nav'))], ['hoeren/serien', esc(h('tv'))]] : [[base, esc(h('nav'))]];
+  return `${crumbs([...parents, parent, [null, label(scene)]])}
     <div class="listening listening-scene">
       <header class="listening-heading"><h1>${label(scene)}</h1>
-        <p>${num(scene.tasks.length)} ${esc(h('exercises'))}${scene.assessment ? ` · ${esc(h('heard'))}` : ''}</p></header>
+        <p>${num(scene.tasks.length)} ${esc(h('exercises'))}${scene.assessment ? ` · ${esc(h('heard'))}` : ''}${scene.source ? ` · ${esc(scene.source)}` : ''}</p></header>
       ${listeningPlayer(source, { limit: scene.assessment && !run.submitted ? run.plays : null })}
       ${score ? `<section class="panel listening-score" id="listening-result" tabindex="-1"><h2>${esc(h('results'))} · ${num(score.correct)} / ${num(score.total)}</h2></section>` : ''}
       ${scene.tasks.map((task, i) => taskCard(scene, task, i, run)).join('')}
@@ -128,11 +146,12 @@ function scenePage(app, scene) {
 }
 
 export function render(app, route) {
-  if (route.key === 'serien') return renderLibrary(app);
+  if (route.key === 'serien') return app.ctx.listeningSeries.length ? seriesPage(app) : renderLibrary(app);
+  if (route.key === 'folgen') return renderLibrary(app, { more: true });
   if (route.key === 'check') return checkPage(app);
   const scene = app.ctx.listeningScenes.get(route.key);
   if (scene) return scenePage(app, scene);
-  const unit = app.ctx.listeningChapters.find(chapter => chapter.id === route.key);
+  const unit = sections(app).find(chapter => chapter.id === route.key);
   return unit ? chapterPage(app, unit) : landing(app);
 }
 
@@ -210,8 +229,10 @@ export function onChange(app, event) {
   else if (event.target.hasAttribute('data-listening-speed')) audio?.speed(Number(event.target.value));
 }
 
-export function mount(app, root, route) {
-  if (route.key === 'serien') return mountLibrary(app, root);
+export function mount(app, root) {
+  if (isLibrary(app)) return mountLibrary(app, root);
+  const scene = currentScene(app);
+  if (scene) sizeListeningGaps(root, scene.tasks.flatMap((task, i) => task.kind === 'gap' ? [[`listening-answer-${i}`, task.answer]] : []));
   audio = mountListeningAudio(root);
   return () => {
     audio?.dispose();

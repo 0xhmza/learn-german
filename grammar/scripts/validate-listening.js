@@ -1,11 +1,11 @@
-export function validateListening(course, timings) {
+export function validateListening(course, timings, { minimumTasks = 4, minimumLines = 2 } = {}) {
   const failures = [];
   const fail = (id, reason) => failures.push(`Hören B1 ${id}: ${reason}`);
   const filled = text => typeof text === 'string' && Boolean(text.trim());
   const translated = value => filled(value?.de) && filled(value?.ar);
   const validId = id => typeof id === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id);
   if (!Array.isArray(course?.chapters) || !Array.isArray(course.assessment)) return ['Hören B1 needs chapters and assessment recordings.'];
-  const ids = new Set(['check', 'serien']);
+  const ids = new Set(['check', 'serien', 'folgen']);
   const recordings = new Set();
   function add(id) {
     if (!validId(id) || ids.has(id)) fail(id, 'invalid or duplicate route');
@@ -15,7 +15,7 @@ export function validateListening(course, timings) {
     add(scene.id);
     recordings.add(scene.id);
     if (!translated(scene.title)) fail(scene.id, 'needs German and Arabic titles');
-    if (!Array.isArray(scene.lines) || scene.lines.length < 2 || scene.lines.some(line => !filled(line.text) || !filled(line.voice))) {
+    if (!Array.isArray(scene.lines) || scene.lines.length < minimumLines || scene.lines.some(line => !filled(line.text) || !filled(line.voice))) {
       fail(scene.id, 'needs spoken lines');
       return;
     }
@@ -24,7 +24,7 @@ export function validateListening(course, timings) {
       return !Array.isArray(segment) || segment.length !== 2 || !segment.every(Number.isFinite) ||
         segment[0] < (i ? segments[i - 1]?.[1] : 0) || segment[1] <= segment[0];
     })) fail(scene.id, 'needs one ordered audio range per line');
-    if (!Array.isArray(scene.tasks) || scene.tasks.length < 4) { fail(scene.id, 'needs at least four exercises'); return; }
+    if (!Array.isArray(scene.tasks) || scene.tasks.length < minimumTasks) { fail(scene.id, `needs at least ${minimumTasks} exercises`); return; }
     for (const task of scene.tasks) {
       if (!filled(task.note)) fail(scene.id, 'exercise is missing feedback');
       if (['gist', 'detail', 'contrast'].includes(task.kind)) {

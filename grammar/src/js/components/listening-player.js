@@ -18,6 +18,8 @@ export function listeningPlayer(url, { limit = null, label = 'audio' } = {}) {
       ${limit === null ? `<label>${esc(h('speed'))} <select data-listening-speed aria-label="${esc(h('speed'))}"><option value="1">1×</option><option value=".85">0,85×</option><option value=".7">0,7×</option></select></label>`
         : `<span class="listening-plays" data-listening-plays>${esc(playerStatus(limit))}</span>`}
     </div>
+    <div class="listening-timeline"><progress data-listening-progress max="1" value="0" aria-label="${esc(h('playbackProgress'))}"></progress>
+      <span data-listening-time dir="ltr">0:00</span></div>
     <p class="listening-status" data-listening-audio-status role="status"></p>
   </section>`;
 }

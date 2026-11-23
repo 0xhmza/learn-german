@@ -7,7 +7,7 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **51 lessons on 10 grammar islands** (28 from B1.1, 23 for B1.2), grouped by grammar topic instead of by book chapter.
 - **460 core exercises and 51 additional applications** with worked explanations, plus seven practice sets that combine lessons.
 - **Four Sprachbausteine sets** across three difficulty levels, with ten gaps per letter. In Part 1 every gap in the letter is a dropdown with three choices. In Part 2 words are dragged from the shared word list into the gaps (mouse or finger), or placed by tapping a word and then a gap. The Sprachbausteine parts of the mock exams work the same way. [telc Deutsch B1 sample format](https://shop.telc.net/media/catalog/product/file/telc_deutsch_b1_zd_uebungstest_1.pdf)
-- **Hören B1** has 24 practice recordings, 4 assessment recordings, and 120 exercises. The original German recordings use synthesized voices and work in the offline build.
+- **Hören B1** has 24 practice recordings, 4 assessment recordings, and 120 exercises. The original German recordings use Piper voices and work offline. **Mit Serien üben** adds 24 short clips from the German dubs of The Simpsons and SpongeBob, with 72 comprehension, gap-fill and dictation exercises. [Piper](https://github.com/OHF-Voice/piper1-gpl)
 - **Three B1 readings** with offline Arabic word glosses, paragraph translations and comprehension checks.
 - **156 grammar flashcards** for recalling endings, irregular forms, connector meanings and word order, with spaced review for every lesson.
 - **telc Deutsch B1 exam trainer** with 17 named mock exams, saved drafts, scored reading and Sprachbausteine sections, and writing practice. Listening statements are available for practice.
@@ -25,7 +25,7 @@ Part of the [learn-german](docs/repository.md) repository.
 
 ## Use it
 
-Open the [grammar website](https://0xhmza.github.io/learn-german/grammar/) or double-click `index.html` in this folder to use it offline.
+Open the [grammar website](https://0xhmza.github.io/learn-german/grammar/) or double-click `index.html` in this folder to use it offline. Choose **Hören → Mit Serien üben** to play the built-in clips and answer questions about what you heard.
 
 ## Develop it
 
@@ -39,7 +39,9 @@ npm start
 
 Open http://127.0.0.1:4180. On Windows you can also double-click `Start-Grammatik.cmd`.
 
-In **Hören → Mit Serien üben**, the local server looks in `../media-player/media` and `../media` for matching episodes and German dub transcripts. Open the same page in the hosted or offline build to select a local media folder with pairs such as `simpsons.s06e01.mp4` and `simpsons.s06e01.de.srt`. The browser reads imported media locally. Automatically selected excerpts count as practice. The separate Hörcheck supplies the listening score on the dashboard.
+The published clip pack lives in `listening-clips/`. The dev server also lists compatible local episodes under **Weitere Folgen auf diesem Gerät**. The Hörcheck supplies the listening score on the dashboard.
+
+To preview new cuts, run `npm run prepare:series` with FFmpeg on your path and a local editorial file at `.listening-private/editorial.json`. The script reads the German dubs and matching transcripts in `../media-player/media` and `../media`. Run `npm run build:series` and open `dist/mit-serien/Deutsch-Grammatik-B1.html` to review the staged pack. To publish an updated pack, copy the selected MP3 files and their matching manifest into `listening-clips/`, run `npm run build`, and copy `dist/Deutsch-Grammatik-B1.html` to `index.html`.
 
 Offline single file: run `npm run build` once (after `npm install`), then double-click `dist/Deutsch-Grammatik-B1.html`. It contains everything, including the Arabic font.
 

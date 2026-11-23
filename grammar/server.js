@@ -6,7 +6,8 @@ import { readFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { assembleContent } from './scripts/assemble-content.js';
-import { createListeningApi, streamListeningAudio } from './listening-library.js';
+import { createListeningApi, isLocalListeningRequest, streamListeningAudio } from './listening-library.js';
+import { readSeriesPack, seriesDirectory } from './scripts/series-pack.js';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const srcRoot = path.join(root, 'src');
@@ -36,7 +37,7 @@ export function safePath(base, requestPath) {
   return file === base || file.startsWith(base + path.sep) ? file : null;
 }
 
-export function createApp({ dist = false, listeningMediaRoots = defaultMediaRoots } = {}) {
+export function createApp({ dist = false, listeningMediaRoots = defaultMediaRoots, seriesPackDirectory = seriesDirectory } = {}) {
   const localListening = createListeningApi(listeningMediaRoots);
   const base = dist ? path.join(root, 'dist') : srcRoot;
   const home = dist ? '/Deutsch-Grammatik-B1.html' : '/index.html';
@@ -49,21 +50,31 @@ export function createApp({ dist = false, listeningMediaRoots = defaultMediaRoot
       if (req.method !== 'GET' && req.method !== 'HEAD') return send(405, 'Method not allowed');
       const { pathname } = new URL(req.url, 'http://localhost');
       if (await localListening(req, res, pathname)) return;
-      if (pathname === '/shared/subtitles.js') {
-        return send(200, req.method === 'HEAD' ? '' : await readFile(path.resolve(root, '../public/subtitles.js')), types['.js']);
-      }
-      const recording = /^\/listening-audio\/([a-z][a-z0-9-]*\.mp3)$/.exec(pathname);
-      if (recording) {
-        const file = path.join(listeningAudioDir, recording[1]);
+      const series = /^\/listening-clips\/(serie-(?:simpsons|spongebob)-[a-z0-9-]+)\.mp3$/.exec(pathname);
+      const recording = /^\/listening-audio\/([a-z][a-z0-9-]*)\.mp3$/.exec(pathname);
+      if (series || recording) {
+        if (series && !isLocalListeningRequest(req)) return send(403, 'Local listening library.');
+        if (series && !seriesPackDirectory) return send(404, 'Not found');
+        const file = path.join(series ? seriesPackDirectory : listeningAudioDir, `${(series ?? recording)[1]}.mp3`);
         const info = await stat(file).catch(() => null);
         if (!info?.isFile()) return send(404, 'Not found');
         return await streamListeningAudio(req, res, file);
       }
-      if (!dist && pathname === '/content.json') return send(200, JSON.stringify(await assembleContent()), types['.json']);
+      if (!dist && pathname === '/content.json') {
+        const original = await assembleContent();
+        const local = isLocalListeningRequest(req);
+        const listeningSeries = local ? await readSeriesPack(seriesPackDirectory) : null;
+        const listeningEpisodeLibrary = local && listeningMediaRoots.length > 0;
+        return send(200, JSON.stringify({ ...original, ...(listeningSeries && { listeningSeries }),
+          ...(listeningEpisodeLibrary && { listeningEpisodeLibrary }) }), types['.json']);
+      }
       const file = safePath(base, pathname === '/' ? home : pathname);
+      const privatePreview = dist && file?.startsWith(path.join(base, 'mit-serien') + path.sep);
+      if (privatePreview && !isLocalListeningRequest(req)) return send(403, 'Local listening library.');
       if (!file) return send(404, 'Not found');
       const info = await stat(file).catch(() => null);
       if (!info?.isFile()) return send(404, 'Not found');
+      if (path.extname(file) === '.mp3') return await streamListeningAudio(req, res, file);
       return send(200, req.method === 'HEAD' ? '' : await readFile(file), types[path.extname(file)] || 'application/octet-stream');
     } catch (error) {
       console.error(error);

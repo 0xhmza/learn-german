@@ -2,25 +2,23 @@ import { num } from '../i18n/index.js';
 import { h } from '../i18n/listening.js';
 import { button, crumbs, esc } from '../components/html.js';
 import { checkListening } from '../engine/listening.js';
-import { buildListeningClips, EPISODE_FILE, transcriptRevision } from '../engine/listening-clips.js';
+import { EPISODE_FILE } from '../engine/listening-clips.js';
 import { mountListeningAudio } from '../components/listening-audio.js';
 import { listeningPlayer, playListening } from '../components/listening-player.js';
+import { listeningInput, sizeListeningGaps } from '../components/listening-gap.js';
 
 const canLoadLocal = () => ['127.0.0.1', 'localhost', '[::1]'].includes(globalThis.location?.hostname);
 const serverEpisodes = new Map();
-const imported = new Map();
 const modes = { word: 'tvWord', phrase: 'tvPhrase', dictation: 'tvDictation' };
 let listed = false;
 let loadingList = false;
-let importTicket = 0;
 let selection = 0;
 let media = null;
 let message = '';
 let audio = null;
-let objectUrl = null;
 
 const currentClip = () => media?.clips[media.index];
-const isOpen = app => app.route.view === 'listening' && app.route.key === 'serien';
+const isOpen = app => app.route.view === 'listening' && ['serien', 'folgen'].includes(app.route.key);
 const redraw = (app, selector) => {
   if (!isOpen(app)) return;
   app.rerender();
@@ -37,12 +35,12 @@ async function indexServer(app) {
     const pairs = data.episodes.filter(episode => EPISODE_FILE.test(episode.id) && episode.count > 0);
     serverEpisodes.clear();
     for (const episode of pairs) serverEpisodes.set(episode.id, episode);
-  } catch { /* Hosted builds can still use imported files. */ }
+  } catch { /* The ready-to-play series edition is also available as a static build. */ }
   finally { listed = true; loadingList = false; redraw(app); }
 }
 
 function visibleEpisodes() {
-  return [...new Map([...serverEpisodes, ...imported]).values()].sort((a, b) => a.id.localeCompare(b.id));
+  return [...serverEpisodes.values()].sort((a, b) => a.id.localeCompare(b.id));
 }
 
 function clipTask(clip) {
@@ -56,7 +54,9 @@ function clipCard(app) {
   const clip = currentClip();
   if (!clip) return `<section class="panel"><p>${esc(h('tvDone'))}</p>${button('listen-tv-repeat', esc(h('retry')))}</section>`;
   const task = clipTask(clip);
-  const line = task.before === undefined ? h('dictationInstruction') : `${esc(task.before)}<b class="listening-gap" aria-label="${esc(h('blank'))}">___</b>${esc(task.after)}`;
+  const cloze = task.before !== undefined;
+  const field = listeningInput({ id: 'tv-answer', attributes: 'data-listening-tv-answer', value: answer,
+    readOnly: Boolean(result), target: cloze ? task.answer : null });
   const practiceCount = clips.filter(item => app.state.listening.clips[item.id] === 'done').length;
   return `<section class="listening-scene">
     <div class="listening-scene-heading"><h2><bdi>${esc(episode.label)}</bdi></h2><span>${num(index + 1)} / ${num(clips.length)} · ${num(practiceCount)} ${esc(h('finished'))}</span></div>
@@ -64,12 +64,10 @@ function clipCard(app) {
       ${Object.entries(modes).map(([value, title]) => button('listen-tv-mode', esc(h(title)), 'quiet',
         `data-mode="${value}" aria-pressed="${value === mode}"`)).join('')}
     </div>
-    ${listeningPlayer(episode.file ? '' : `api/hoeren/${episode.id}/audio`)}
+    ${listeningPlayer(`api/hoeren/${episode.id}/audio`)}
     <section class="panel listening-task${result ? result.correct ? ' yes' : ' no' : ''}">
-      <label for="tv-answer">${esc(h('responseLabel'))}</label>
-      <p ${task.before === undefined ? '' : 'lang="de" dir="ltr"'}>${line}</p>
-      <input id="tv-answer" class="listening-answer" type="text" data-listening-tv-answer value="${esc(answer)}" lang="de" dir="ltr"
-        maxlength="350" autocomplete="off" autocapitalize="off" spellcheck="false" ${result ? 'readonly' : ''}>
+      ${cloze ? `<p class="listening-inline" lang="de" dir="ltr">${esc(task.before)}${field}${esc(task.after)}</p>` :
+        `<label for="tv-answer">${esc(h('dictationInstruction'))}${field}</label>`}
       ${result ? `<div class="listening-feedback" role="status">
         <strong>${esc(h(result.correct ? result.spelling ? 'correct' : 'partialNote' : 'listenAgain'))}</strong>
         <p><bdi lang="de">${esc(task.answer)}</bdi></p>
@@ -86,24 +84,22 @@ function clipCard(app) {
   </section>`;
 }
 
-export function renderLibrary(app) {
+export function renderLibrary(app, { more = false } = {}) {
   const episodes = visibleEpisodes();
-  return `${crumbs([['hoeren', esc(h('nav'))], [null, esc(h('tv'))]])}
+  const parents = [['hoeren', esc(h('nav'))]];
+  if (more) parents.push(['hoeren/serien', esc(h('tv'))]);
+  const title = esc(h(more ? 'tvMore' : 'tv'));
+  return `${crumbs([...parents, [null, title]])}
   <div class="listening">
-    <header class="listening-heading"><h1>${esc(h('tv'))}</h1><p>${esc(h('tvIntro'))}</p></header>
+    <header class="listening-heading"><h1>${title}</h1>${more ? '' : `<p>${esc(h('tvIntro'))}</p>`}</header>
     <section class="panel listening-library-source">
-      <div class="actions">
-        <label class="btn secondary file-btn">${esc(h('tvFolder'))}<input type="file" webkitdirectory multiple
-          data-listening-folder class="sr-only"></label>
-        ${canLoadLocal() ? button('listen-tv-refresh', esc(h('tvRefresh')), 'quiet', loadingList ? 'disabled' : '') : ''}
-      </div>
-      <details><summary>${esc(h('tvFormats'))}</summary><p>${esc(h('tvFileHelp'))}</p></details>
+      ${canLoadLocal() ? `<div class="actions">${button('listen-tv-refresh', esc(h('tvRefresh')), 'quiet', loadingList ? 'disabled' : '')}</div>` : ''}
       ${episodes.length ? `<label class="field"><span>${esc(h('tvEpisode'))}</span>
         <select data-listening-episode><option value="">—</option>${episodes.map(episode =>
           `<option value="${esc(episode.id)}" ${media?.episode.id === episode.id ? 'selected' : ''}>${esc(episode.label)} · ${num(episode.count)} ${esc(h('tvCount'))}</option>`).join('')}</select></label>`
         : `<p class="muted">${esc(h(loadingList || (!listed && canLoadLocal()) ? 'tvLoading' : 'tvEmpty'))}</p>`}
       ${message ? `<p role="status">${esc(h(message))}</p>` : ''}
-      <p class="muted">${esc(h('tvNote'))}</p>
+      ${episodes.length ? `<p class="muted">${esc(h('tvNote'))}</p>` : ''}
     </section>
     ${clipCard(app)}
   </div>`;
@@ -111,18 +107,15 @@ export function renderLibrary(app) {
 
 async function selectEpisode(app, id) {
   const ticket = ++selection;
-  const episode = imported.get(id) ?? serverEpisodes.get(id);
+  const episode = serverEpisodes.get(id);
   media = null;
   if (!episode) { message = ''; redraw(app); return; }
   message = 'tvLoading';
   redraw(app);
   try {
-    let clips = episode.clips;
-    if (!clips) {
-      const response = await fetch(`api/hoeren/${id}`);
-      if (!response.ok) throw new Error('Episode unavailable');
-      ({ clips } = await response.json());
-    }
+    const response = await fetch(`api/hoeren/${id}`);
+    if (!response.ok) throw new Error('Episode unavailable');
+    const { clips } = await response.json();
     if (ticket !== selection) return;
     const fresh = clips.findIndex(clip => !app.state.listening.clips[clip.id]);
     media = { episode, clips, index: fresh === -1 ? clips.length : fresh, answer: '', mode: 'word', heard: false, result: null };
@@ -132,38 +125,6 @@ async function selectEpisode(app, id) {
     message = 'tvError';
   }
   redraw(app);
-}
-
-async function importEpisodes(app, files) {
-  const ticket = ++importTicket;
-  const filesByPair = new Map();
-  for (const file of files) {
-    const kind = /\.de\.srt$/i.test(file.name) ? 'transcript' : /\.mp4$/i.test(file.name) ? 'file' : null;
-    if (!kind) continue;
-    const id = file.name.replace(/(?:\.de\.srt|\.mp4)$/i, '').toLowerCase();
-    if (!EPISODE_FILE.test(id)) continue;
-    const folder = file.webkitRelativePath.slice(0, file.webkitRelativePath.lastIndexOf('/') + 1);
-    const pair = filesByPair.get(folder + id) ?? { id };
-    pair[kind] = file;
-    filesByPair.set(folder + id, pair);
-  }
-  message = 'tvLoading';
-  redraw(app);
-  const episodes = await Promise.all([...filesByPair.values()].map(async ({ id, file, transcript }) => {
-    if (!file?.size || !transcript?.size || transcript.size > 3_000_000) return null;
-    try {
-      const text = await transcript.text();
-      const clips = buildListeningClips(id, globalThis.Subtitles.parse(text), transcriptRevision(text));
-      const series = id.split('.')[0];
-      const label = `${series === 'simpsons' ? 'The Simpsons' : 'SpongeBob Schwammkopf'} · ${id.split('.')[1].toUpperCase()}`;
-      return clips.length ? { id, label, series, file, count: clips.length, clips } : null;
-    } catch { return null; }
-  }));
-  if (ticket !== importTicket) return;
-  const good = episodes.filter(Boolean);
-  for (const episode of good) imported.set(episode.id, episode);
-  if (good.length) await selectEpisode(app, good[0].id);
-  else { message = 'tvNoPairs'; redraw(app); }
 }
 
 function resetClip(app, mode = media.mode) {
@@ -183,7 +144,6 @@ export function libraryChange(app, event) {
   const target = event.target;
   if (target.hasAttribute('data-listening-speed')) audio?.speed(Number(target.value));
   if (target.hasAttribute('data-listening-episode')) void selectEpisode(app, target.value);
-  if (target.hasAttribute('data-listening-folder') && target.files?.length) void importEpisodes(app, [...target.files]);
 }
 
 function syncCheckButton() {
@@ -236,16 +196,11 @@ export const libraryPause = () => audio?.pause();
 
 export function mountLibrary(app, root) {
   if (!listed && !loadingList && canLoadLocal()) void indexServer(app);
-  const element = root.querySelector('[data-listening-audio]');
-  if (element && media?.episode.file) {
-    objectUrl = URL.createObjectURL(media.episode.file);
-    element.src = objectUrl;
-  }
+  const clip = currentClip();
+  if (clip && media.mode !== 'dictation') sizeListeningGaps(root, [['tv-answer', clipTask(clip).answer]]);
   audio = mountListeningAudio(root);
   return () => {
     audio?.dispose();
     audio = null;
-    if (objectUrl) URL.revokeObjectURL(objectUrl);
-    objectUrl = null;
   };
 }

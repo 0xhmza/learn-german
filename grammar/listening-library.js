@@ -59,6 +59,13 @@ export async function streamListeningAudio(req, res, file) {
   pipeline(createReadStream(file, { start, end }), res, () => {});
 }
 
+export function isLocalListeningRequest(req) {
+  const host = req.headers.host ?? '';
+  return /^(127\.0\.0\.1|localhost|\[::1\])(?::\d+)?$/.test(host) &&
+    (!req.headers.origin || req.headers.origin === `http://${host}`) &&
+    !['cross-site', 'same-site'].includes(req.headers['sec-fetch-site']);
+}
+
 export function createListeningApi(roots) {
   let loading;
   let staleAt = 0;
@@ -67,9 +74,7 @@ export function createListeningApi(roots) {
       .end(head ? '' : JSON.stringify(value));
   return async function handle(req, res, pathname) {
     if (!/^\/(?:api\/hoeren)(?:\/|$)/.test(pathname)) return false;
-    const host = req.headers.host ?? '';
-    if (!/^(127\.0\.0\.1|localhost|\[::1\])(?::\d+)?$/.test(host) || (req.headers.origin && req.headers.origin !== `http://${host}`) ||
-      ['cross-site', 'same-site'].includes(req.headers['sec-fetch-site'])) {
+    if (!isLocalListeningRequest(req)) {
       json(res, { error: 'Local listening library.' }, 403);
       return true;
     }

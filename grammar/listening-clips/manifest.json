@@ -1,0 +1,1235 @@
+{
+  "course": {
+    "chapters": [
+      {
+        "id": "serie-simpsons",
+        "title": {
+          "de": "The Simpsons",
+          "ar": "The Simpsons"
+        },
+        "description": {
+          "de": "Hör auf Entscheidungen, Reaktionen und genaue Details.",
+          "ar": "استمع إلى القرارات وردود الأفعال والتفاصيل الدقيقة."
+        },
+        "scenes": [
+          {
+            "id": "serie-simpsons-wiedersehen",
+            "title": {
+              "de": "Wiedersehen beim Abendessen",
+              "ar": "لقاء على العشاء"
+            },
+            "source": "The Simpsons · S06 E04",
+            "lines": [
+              {
+                "text": "Ich bin sicher, wir mögen einander noch mehr, wenn wir uns erst zum Abendessen wiedersehen.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Wie blickt die Person auf das nächste Treffen?",
+                "options": [
+                  "Sie freut sich darauf und erwartet, dass sie sich näherkommen.",
+                  "Sie möchte das Treffen absagen.",
+                  "Sie befürchtet einen neuen Streit."
+                ],
+                "answer": 0,
+                "note": "Die Person erwartet, dass sie einander danach noch mehr mögen."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Bei welcher Gelegenheit sehen sie sich wieder?",
+                "options": [
+                  "Bei der Arbeit.",
+                  "Beim Abendessen.",
+                  "Beim Frühstück."
+                ],
+                "answer": 1,
+                "note": "Das nächste Treffen ist beim Abendessen geplant."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "wenn wir uns erst",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-rechnungen",
+            "title": {
+              "de": "Die Rechnungen zuerst",
+              "ar": "الفواتير أولًا"
+            },
+            "source": "The Simpsons · S06 E13",
+            "lines": [
+              {
+                "text": "Wenn ich alle Rechnungen bezahlt habe, kann ich endlich diesen elenden Dienst hier quittieren.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was möchte die Person tun?",
+                "options": [
+                  "Eine neue Rechnung schreiben.",
+                  "Ihre Stelle aufgeben.",
+                  "Mehr Dienste übernehmen."
+                ],
+                "answer": 1,
+                "note": "Die Person möchte mit dem Dienst aufhören."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was muss die Person vorher erledigen?",
+                "options": [
+                  "Einen Vertrag unterschreiben.",
+                  "Eine andere Wohnung finden.",
+                  "Alle Rechnungen bezahlen."
+                ],
+                "answer": 2,
+                "note": "Die Bezahlung der Rechnungen ist die Voraussetzung."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "Wenn ich alle Rechnungen",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-geruechte",
+            "title": {
+              "de": "Vor den Gerüchten",
+              "ar": "قبل انتشار الشائعات"
+            },
+            "source": "The Simpsons · S06 E16",
+            "lines": [
+              {
+                "text": "Hey, Leute, bevor ihr es gerüchteweise erfahrt, ich bin in Australien wegen Betruges angeklagt.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Warum erzählt die Person die Nachricht selbst?",
+                "options": [
+                  "Sie möchte eine Reise planen.",
+                  "Sie sucht neue Freunde in Australien.",
+                  "Die anderen sollen sie direkt erfahren."
+                ],
+                "answer": 2,
+                "note": "Sie spricht die Sache an, bevor Gerüchte die Runde machen."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was ist in Australien passiert?",
+                "options": [
+                  "Die Person wurde wegen Betrugs angeklagt.",
+                  "Die Person hat eine Strafe bezahlt.",
+                  "Die Person hat dort eine Arbeitsstelle gefunden."
+                ],
+                "answer": 0,
+                "note": "Es geht um eine Anklage wegen Betrugs."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "bevor ihr es gerüchteweise",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-ohne-hilfe",
+            "title": {
+              "de": "Ohne Hilfe aufstehen",
+              "ar": "النهوض دون مساعدة"
+            },
+            "source": "The Simpsons · S07 E05",
+            "lines": [
+              {
+                "text": "Ich habe das Gefühl, als könnte ich aus eigener Kraft nicht mehr aufstehen.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was beschreibt die Person?",
+                "options": [
+                  "Sie fühlt sich körperlich zu schwach zum Aufstehen.",
+                  "Sie hat keine Lust auf einen Spaziergang.",
+                  "Sie weiß nicht, wo sie ist."
+                ],
+                "answer": 0,
+                "note": "Sie hat das Gefühl, dass ihr die Kraft zum Aufstehen fehlt."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was glaubt die Person nicht zu schaffen?",
+                "options": [
+                  "Sich wieder hinzusetzen.",
+                  "Ohne Hilfe aufzustehen.",
+                  "Eine schwere Tasche zu tragen."
+                ],
+                "answer": 1,
+                "note": "„Aus eigener Kraft“ heißt hier „ohne Hilfe“."
+              },
+              {
+                "kind": "dictation",
+                "segment": 0,
+                "answer": "Ich habe das Gefühl, als könnte ich aus eigener Kraft nicht mehr aufstehen.",
+                "note": "Vergleiche den Satz mit dem Originalton."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-wohlfuehlen",
+            "title": {
+              "de": "Ein Ort zum Wohlfühlen",
+              "ar": "مكان يشعرون فيه بالراحة"
+            },
+            "source": "The Simpsons · S07 E14",
+            "lines": [
+              {
+                "text": "Aber uns ist klar geworden, dass wir uns an einem Ort wie diesem eigentlich viel wohler fühlen.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was hat die Gruppe erkannt?",
+                "options": [
+                  "Sie muss sofort an einen anderen Ort.",
+                  "An einem Ort wie diesem fühlt sie sich wohler.",
+                  "Sie hat ihren Weg verloren."
+                ],
+                "answer": 1,
+                "note": "Die Gruppe sagt, dass ein solcher Ort besser zu ihr passt."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Welche Formulierung passt zur Aussage?",
+                "options": [
+                  "Es ist eine feste Regel für alle.",
+                  "Es ist eine höfliche Bitte.",
+                  "Es geht um eine neue Erkenntnis."
+                ],
+                "answer": 2,
+                "note": "„Uns ist klar geworden“ kündigt eine Erkenntnis an."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "dass wir uns an",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-entdeckung",
+            "title": {
+              "de": "Eine überraschende Entdeckung",
+              "ar": "اكتشاف مفاجئ"
+            },
+            "source": "The Simpsons · S07 E23",
+            "lines": [
+              {
+                "text": "Es hat sich zufällig rausgestellt, dass ich doch amerikanischer Staatsbürger bin.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was hat die Person erfahren?",
+                "options": [
+                  "Sie hat die amerikanische Staatsbürgerschaft verloren.",
+                  "Sie hat einen Antrag in einem anderen Land gestellt.",
+                  "Sie besitzt bereits die amerikanische Staatsbürgerschaft."
+                ],
+                "answer": 2,
+                "note": "Die Person hat erfahren, dass sie amerikanischer Staatsbürger ist."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wie ist die Person darauf gekommen?",
+                "options": [
+                  "Durch Zufall.",
+                  "Durch eine geplante Prüfung.",
+                  "Durch eine Wahl."
+                ],
+                "answer": 0,
+                "note": "„Zufällig“ erklärt, wie sie es herausgefunden hat."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "dass ich doch amerikanischer",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-zukunft",
+            "title": {
+              "de": "Zurück, um etwas zu ändern",
+              "ar": "العودة لتغيير شيء ما"
+            },
+            "source": "The Simpsons · S06 E06",
+            "lines": [
+              {
+                "text": "Ich muss wieder zurück und die Zukunft wieder in Ordnung bringen.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was beabsichtigt die Person?",
+                "options": [
+                  "Sie will zurück und etwas berichtigen.",
+                  "Sie will bleiben und abwarten.",
+                  "Sie will die Vergangenheit vergessen."
+                ],
+                "answer": 0,
+                "note": "Die Person hält eine Rückkehr für nötig."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was soll wieder in Ordnung kommen?",
+                "options": [
+                  "Ein kaputter Gegenstand.",
+                  "Die Zukunft.",
+                  "Die Beziehung zu einer Person."
+                ],
+                "answer": 1,
+                "note": "Der Satz nennt ausdrücklich die Zukunft."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "wieder zurück und die",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-eindruck",
+            "title": {
+              "de": "Einen guten Eindruck machen",
+              "ar": "ترك انطباع جيد"
+            },
+            "source": "The Simpsons · S06 E07",
+            "lines": [
+              {
+                "text": "Ich muss sie irgendwie davon überzeugen, dass ich ein guter Mensch bin.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was möchte die Person erreichen?",
+                "options": [
+                  "Andere sollen für sie arbeiten.",
+                  "Andere sollen besser von ihr denken.",
+                  "Andere sollen sie in Ruhe lassen."
+                ],
+                "answer": 1,
+                "note": "Die anderen sollen glauben, dass die Person ein guter Mensch ist."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wie sicher ist die Person, was sie tun soll?",
+                "options": [
+                  "Sie hat schon einen genauen Plan.",
+                  "Sie hat das Problem schon gelöst.",
+                  "Sie kennt noch keinen konkreten Weg."
+                ],
+                "answer": 2,
+                "note": "„Irgendwie“ zeigt, dass der Weg noch offen ist."
+              },
+              {
+                "kind": "dictation",
+                "segment": 0,
+                "answer": "Ich muss sie irgendwie davon überzeugen, dass ich ein guter Mensch bin.",
+                "note": "Vergleiche den Satz mit dem Originalton."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-planung",
+            "title": {
+              "de": "Mitreden vor der Planung",
+              "ar": "المشاركة قبل التخطيط"
+            },
+            "source": "The Simpsons · S06 E25",
+            "lines": [
+              {
+                "text": "Bevor wir den Budgetplan erstellen, sollten Schüler und die Lehrerschaft angehört werden.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was wird vorgeschlagen?",
+                "options": [
+                  "Den Budgetplan sofort beschließen.",
+                  "Ein neues Schulfach einführen.",
+                  "Betroffene vor der Planung nach ihrer Meinung fragen."
+                ],
+                "answer": 2,
+                "note": "Die Anhörung soll vor der Erstellung des Plans stattfinden."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wer soll angehört werden?",
+                "options": [
+                  "Die Lernenden und die Lehrkräfte.",
+                  "Nur die Schulleitung.",
+                  "Nur die Eltern."
+                ],
+                "answer": 0,
+                "note": "Der Vorschlag nennt Schüler und Lehrerschaft."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "Bevor wir den Budgetplan",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-rolle",
+            "title": {
+              "de": "Eine Voraussetzung für die Rolle",
+              "ar": "شرط للحصول على الدور"
+            },
+            "source": "The Simpsons · S07 E02",
+            "lines": [
+              {
+                "text": "Ich muss bis morgen zwei Zentimeter größer werden, sonst kriege ich die Rolle nicht.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Warum macht sich die Person Sorgen?",
+                "options": [
+                  "Sie könnte die Rolle verpassen.",
+                  "Sie hat die Rolle bereits abgesagt.",
+                  "Sie muss ihren Text schneller lernen."
+                ],
+                "answer": 0,
+                "note": "Die Körpergröße ist für die Rolle wichtig."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was fehlt ihr noch?",
+                "options": [
+                  "Zwei Tage Vorbereitungszeit.",
+                  "Zwei Zentimeter Körpergröße.",
+                  "Zwei Seiten Text."
+                ],
+                "answer": 1,
+                "note": "Sie nennt zwei Zentimeter und die Frist bis morgen."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "sonst kriege ich die",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-feier",
+            "title": {
+              "de": "Der Beginn der Feier",
+              "ar": "بداية الحفلة"
+            },
+            "source": "The Simpsons · S07 E21",
+            "lines": [
+              {
+                "text": "Sobald mein Freund Zed auftaucht, werden wir mit der Party beginnen.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Warum beginnt die Feier noch nicht?",
+                "options": [
+                  "Es fehlt noch Musik.",
+                  "Ein Freund ist noch unterwegs.",
+                  "Die Gäste warten auf das Essen."
+                ],
+                "answer": 1,
+                "note": "Der Beginn hängt von der Ankunft eines Freundes ab."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wann wollen sie anfangen?",
+                "options": [
+                  "Noch bevor der Freund ankommt.",
+                  "Erst wenn alle wieder gehen.",
+                  "Sobald der Freund da ist."
+                ],
+                "answer": 2,
+                "note": "„Sobald“ zeigt, dass sie direkt danach beginnen."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "Sobald mein Freund Zed",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-simpsons-vertrauen",
+            "title": {
+              "de": "Vertrauen als Ansporn",
+              "ar": "الثقة حافزًا"
+            },
+            "source": "The Simpsons · S07 E16",
+            "lines": [
+              {
+                "text": "Ah, wenn ihr Kinder so fest an mich glaubt, werde ich mein Allerallerbestes geben.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Wie reagiert die Person auf das Vertrauen?",
+                "options": [
+                  "Sie lehnt die Aufgabe ab.",
+                  "Sie möchte die Kinder um Hilfe bitten.",
+                  "Sie nimmt sich vor, sich sehr anzustrengen."
+                ],
+                "answer": 2,
+                "note": "Die Kinder machen ihr Mut und sie verspricht, ihr Bestes zu geben."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wer glaubt an sie?",
+                "options": [
+                  "Die Kinder.",
+                  "Die Eltern.",
+                  "Die Kolleginnen und Kollegen."
+                ],
+                "answer": 0,
+                "note": "Die Person spricht die Kinder direkt an."
+              },
+              {
+                "kind": "dictation",
+                "segment": 0,
+                "answer": "Ah, wenn ihr Kinder so fest an mich glaubt, werde ich mein Allerallerbestes geben.",
+                "note": "Vergleiche den Satz mit dem Originalton."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "serie-spongebob",
+        "title": {
+          "de": "SpongeBob Schwammkopf",
+          "ar": "SpongeBob Schwammkopf"
+        },
+        "description": {
+          "de": "Versteh Bitten, Folgen und Bedingungen in kurzen Dialogen.",
+          "ar": "افهم الطلبات والنتائج والشروط في حوارات قصيرة."
+        },
+        "scenes": [
+          {
+            "id": "serie-spongebob-kontrolle",
+            "title": {
+              "de": "Sorge vor einer Kontrolle",
+              "ar": "القلق من التفتيش"
+            },
+            "source": "SpongeBob Schwammkopf · S03 E04",
+            "lines": [
+              {
+                "text": "Wenn hier irgendwas nicht korrekt ist, macht er uns den Laden zu.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Wovor hat die Person Angst?",
+                "options": [
+                  "Dass der Laden geschlossen wird.",
+                  "Dass mehr Kundschaft kommt.",
+                  "Dass jemand falsch bezahlt."
+                ],
+                "answer": 0,
+                "note": "Eine Schließung ist die mögliche Folge eines Problems."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Unter welcher Bedingung befürchtet sie das?",
+                "options": [
+                  "Wenn der Laden zu früh öffnet.",
+                  "Wenn etwas nicht in Ordnung ist.",
+                  "Wenn der Besuch zu lange dauert."
+                ],
+                "answer": 1,
+                "note": "Sie verbindet die Folge mit einem Fehler bei der Kontrolle."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "Wenn hier irgendwas nicht",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-leiser",
+            "title": {
+              "de": "Warum leiser sprechen?",
+              "ar": "لماذا يجب خفض الصوت؟"
+            },
+            "source": "SpongeBob Schwammkopf · S03 E04",
+            "lines": [
+              {
+                "text": "Ich glaube, wir sollten leiser sein, sonst lösen wir doch eine Lawine aus.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was schlägt die Person vor?",
+                "options": [
+                  "Laut um Hilfe zu rufen.",
+                  "Leiser zu sein.",
+                  "Schneller weiterzugehen."
+                ],
+                "answer": 1,
+                "note": "Sie schlägt vor, den Lärm zu verringern."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Welche Folge möchte sie vermeiden?",
+                "options": [
+                  "Einen Streit.",
+                  "Eine Verspätung.",
+                  "Eine Lawine."
+                ],
+                "answer": 2,
+                "note": "Der Lärm könnte eine Lawine auslösen."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "sonst lösen wir doch",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-erfolg",
+            "title": {
+              "de": "Eine unerwartete Nachricht",
+              "ar": "خبر غير متوقّع"
+            },
+            "source": "SpongeBob Schwammkopf · S03 E08",
+            "lines": [
+              {
+                "text": "Also sowas, ich wusste gar nicht, dass du derart erfolgreich bist.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was hört man in der Reaktion?",
+                "options": [
+                  "Enttäuschung über ein schlechtes Ergebnis.",
+                  "Ärger über eine Verspätung.",
+                  "Überraschung über den Erfolg der anderen Person."
+                ],
+                "answer": 2,
+                "note": "Die Person wusste bisher nicht, wie erfolgreich ihr Gegenüber war."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was kannte die Person vorher nicht?",
+                "options": [
+                  "Das Ausmaß des Erfolgs.",
+                  "Den Namen ihres Gegenübers.",
+                  "Den Grund für eine Absage."
+                ],
+                "answer": 0,
+                "note": "„Derart“ bedeutet hier „so sehr“."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "dass du derart erfolgreich",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-respekt",
+            "title": {
+              "de": "Eine Bitte um Respekt",
+              "ar": "طلب الاحترام"
+            },
+            "source": "SpongeBob Schwammkopf · S03 E16",
+            "lines": [
+              {
+                "text": "Also bitte, Krabs, ein bisschen Würde, wenn ich bitten darf.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was verlangt die Person?",
+                "options": [
+                  "Etwas mehr Würde.",
+                  "Eine schnelle Entscheidung.",
+                  "Eine genaue Erklärung."
+                ],
+                "answer": 0,
+                "note": "Der Sprecher erinnert sein Gegenüber an würdevolles Verhalten."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wie formuliert sie die Bitte?",
+                "options": [
+                  "Sie nennt einen festen Termin.",
+                  "Sie verwendet eine höfliche Wendung.",
+                  "Sie legt eine schriftliche Regel vor."
+                ],
+                "answer": 1,
+                "note": "„Wenn ich bitten darf“ ist eine höfliche Einleitung oder Ergänzung."
+              },
+              {
+                "kind": "dictation",
+                "segment": 0,
+                "answer": "Also bitte, Krabs, ein bisschen Würde, wenn ich bitten darf.",
+                "note": "Vergleiche den Satz mit dem Originalton."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-kostuem",
+            "title": {
+              "de": "Ein bekanntes Kostüm",
+              "ar": "زيّ تنكّري مألوف"
+            },
+            "source": "SpongeBob Schwammkopf · S03 E16",
+            "lines": [
+              {
+                "text": "Sogar Chip weiß, dass das Patrick im selben Kostüm ist, das er letztes Jahr Karneval anhatte.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Woran erkennt man Patrick?",
+                "options": [
+                  "An einer neuen Frisur.",
+                  "An seinem Kostüm.",
+                  "An einem Lied."
+                ],
+                "answer": 1,
+                "note": "Das Kostüm ist aus dem letzten Jahr bekannt."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wann trug er es schon einmal?",
+                "options": [
+                  "Bei einer Feier gestern.",
+                  "Im Urlaub vor zwei Jahren.",
+                  "Beim Karneval im letzten Jahr."
+                ],
+                "answer": 2,
+                "note": "Die Aussage nennt den Karneval im letzten Jahr."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "dass das Patrick im",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-anruf",
+            "title": {
+              "de": "Ein Anruf unter einer Bedingung",
+              "ar": "اتصال عند تحقق شرط"
+            },
+            "source": "SpongeBob Schwammkopf · S03 E20",
+            "lines": [
+              {
+                "text": "Ja, ruf uns an, wenn du ihn wieder siehst, du Quatschtüte.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was soll die andere Person tun?",
+                "options": [
+                  "Eine Nachricht ausdrucken.",
+                  "Persönlich vorbeikommen.",
+                  "Die Gruppe anrufen."
+                ],
+                "answer": 2,
+                "note": "Der Handlungsauftrag ist ein Anruf."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wann soll sie das tun?",
+                "options": [
+                  "Wenn sie die gesuchte Person wieder sieht.",
+                  "Sofort und ohne Grund.",
+                  "Wenn sie nach Hause kommt."
+                ],
+                "answer": 0,
+                "note": "Der Wenn-Satz erklärt, wann der Anruf erwartet wird."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "wenn du ihn wieder",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-vor-oeffnung",
+            "title": {
+              "de": "Ein Besucher vor der Öffnung",
+              "ar": "زائر قبل موعد الفتح"
+            },
+            "source": "SpongeBob Schwammkopf · S04 E04",
+            "lines": [
+              {
+                "text": "Mr. Krabs, irgend so ein Typ im Anzug will hier rein, bevor wir öffnen.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was wird gemeldet?",
+                "options": [
+                  "Ein Mann möchte schon vor der Öffnung hinein.",
+                  "Ein Kunde möchte länger bleiben.",
+                  "Ein Angestellter möchte früher gehen."
+                ],
+                "answer": 0,
+                "note": "Der Zutritt wird vor der regulären Öffnung gewünscht."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wie wird der Besucher beschrieben?",
+                "options": [
+                  "Er trägt eine Arbeitsuniform.",
+                  "Er trägt einen Anzug.",
+                  "Er trägt eine schwere Tasche."
+                ],
+                "answer": 1,
+                "note": "Der Sprecher nennt den Anzug als Merkmal."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "bevor wir öffnen",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-feierabend",
+            "title": {
+              "de": "Nach getaner Arbeit",
+              "ar": "بعد انتهاء العمل"
+            },
+            "source": "SpongeBob Schwammkopf · S04 E08",
+            "lines": [
+              {
+                "text": "Tja, da meine Arbeit nun beendet ist, folge ich dir gern bei deinem närrischen Treiben.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Welche Entscheidung trifft die Person?",
+                "options": [
+                  "Sie beginnt eine neue Schicht.",
+                  "Sie schließt sich der anderen Person an.",
+                  "Sie geht sofort nach Hause."
+                ],
+                "answer": 1,
+                "note": "Sie erklärt, dass sie dem Gegenüber folgen möchte."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Warum hat sie Zeit dafür?",
+                "options": [
+                  "Die andere Person erledigt ihre Arbeit.",
+                  "Der Betrieb öffnet erst später.",
+                  "Ihre Arbeit ist beendet."
+                ],
+                "answer": 2,
+                "note": "Der einleitende Da-Satz nennt die Begründung."
+              },
+              {
+                "kind": "dictation",
+                "segment": 0,
+                "answer": "Tja, da meine Arbeit nun beendet ist, folge ich dir gern bei deinem närrischen Treiben.",
+                "note": "Vergleiche den Satz mit dem Originalton."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-rueckkehr",
+            "title": {
+              "de": "Eine Bedingung für die Rückkehr",
+              "ar": "شرط للعودة"
+            },
+            "source": "SpongeBob Schwammkopf · S04 E08",
+            "lines": [
+              {
+                "text": "Und kommt bloß nicht wieder, bevor ihr euer kleines Problem geregelt habt.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Was sollen die anderen zuerst tun?",
+                "options": [
+                  "Einen Besucher suchen.",
+                  "Sich für morgen anmelden.",
+                  "Ein Problem lösen."
+                ],
+                "answer": 2,
+                "note": "Die Person fordert sie auf, ihre Schwierigkeit zu klären."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Wann dürfen sie zurückkommen?",
+                "options": [
+                  "Nachdem sie das Problem geregelt haben.",
+                  "Bevor sie mit der Lösung beginnen.",
+                  "Sobald sie einen neuen Termin haben."
+                ],
+                "answer": 0,
+                "note": "„Nicht … bevor“ macht die Regel deutlich."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "bevor ihr euer kleines",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-aufgaben",
+            "title": {
+              "de": "Zwei Aufgaben gleichzeitig",
+              "ar": "مهمتان في الوقت نفسه"
+            },
+            "source": "SpongeBob Schwammkopf · S04 E15",
+            "lines": [
+              {
+                "text": "Ich hol mir rasch Vorräte aus meiner Baumkuppel und du bewachst inzwischen das U -Boot.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Wie werden die Aufgaben verteilt?",
+                "options": [
+                  "Eine Person holt Vorräte, die andere bewacht etwas.",
+                  "Beide gehen gleichzeitig Vorräte holen.",
+                  "Eine Person bewacht, die andere wartet ohne Aufgabe."
+                ],
+                "answer": 0,
+                "note": "Die Aufgaben werden auf zwei Personen verteilt."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was soll bewacht werden?",
+                "options": [
+                  "Die Vorräte.",
+                  "Das U-Boot.",
+                  "Der Eingang zur Wohnung."
+                ],
+                "answer": 1,
+                "note": "Vom Bewachen des U-Boots ist im zweiten Teil die Rede."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "inzwischen das U -Boot",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-loesung",
+            "title": {
+              "de": "Eine Chance für die Mission",
+              "ar": "فرصة لإكمال المهمة"
+            },
+            "source": "SpongeBob Schwammkopf · S04 E15",
+            "lines": [
+              {
+                "text": "Ihr könntet eure Mission noch beenden, wenn ihr einen alternativen Treibstoff hättet.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Wie schätzt die Person die Lage ein?",
+                "options": [
+                  "Die Mission ist schon beendet.",
+                  "Die Mission kann unter einer Bedingung noch gelingen.",
+                  "Die Gruppe muss sofort umkehren."
+                ],
+                "answer": 1,
+                "note": "Die Situation ist schwierig, aber eine Lösung ist möglich."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was braucht die Gruppe dafür?",
+                "options": [
+                  "Ein größeres Fahrzeug.",
+                  "Mehr Vorräte.",
+                  "Einen anderen Treibstoff."
+                ],
+                "answer": 2,
+                "note": "Der alternative Treibstoff ist die genannte Voraussetzung."
+              },
+              {
+                "kind": "gap",
+                "segment": 0,
+                "answer": "wenn ihr einen alternativen",
+                "note": "Hör den Satzteil noch einmal im Zusammenhang."
+              }
+            ]
+          },
+          {
+            "id": "serie-spongebob-netz",
+            "title": {
+              "de": "Das kaputte Netz",
+              "ar": "الشبكة التالفة"
+            },
+            "source": "SpongeBob Schwammkopf · S04 E19",
+            "lines": [
+              {
+                "text": "Ist schon irgendwie komisch, weil ihm doch gestern sein Netz zerbröselt ist.",
+                "voice": "Originalton"
+              }
+            ],
+            "tasks": [
+              {
+                "kind": "gist",
+                "prompt": "Wie bewertet die Person die Situation?",
+                "options": [
+                  "Sie hält sie für ganz normal.",
+                  "Sie ärgert sich über eine Regel.",
+                  "Sie findet sie merkwürdig."
+                ],
+                "answer": 2,
+                "note": "„Komisch“ bedeutet hier „merkwürdig“."
+              },
+              {
+                "kind": "detail",
+                "prompt": "Was ist am Vortag passiert?",
+                "options": [
+                  "Ein Netz ist kaputtgegangen.",
+                  "Ein neues Netz wurde gekauft.",
+                  "Ein Netz wurde verloren."
+                ],
+                "answer": 0,
+                "note": "Sie bezieht sich auf das kaputte Netz von gestern."
+              },
+              {
+                "kind": "dictation",
+                "segment": 0,
+                "answer": "Ist schon irgendwie komisch, weil ihm doch gestern sein Netz zerbröselt ist.",
+                "note": "Vergleiche den Satz mit dem Originalton."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "assessment": []
+  },
+  "timings": {
+    "serie-simpsons-wiedersehen": [
+      [
+        0,
+        4.08
+      ]
+    ],
+    "serie-simpsons-rechnungen": [
+      [
+        0,
+        4.14
+      ]
+    ],
+    "serie-simpsons-geruechte": [
+      [
+        0,
+        5.28
+      ]
+    ],
+    "serie-simpsons-ohne-hilfe": [
+      [
+        0,
+        4.16
+      ]
+    ],
+    "serie-simpsons-wohlfuehlen": [
+      [
+        0,
+        4.67
+      ]
+    ],
+    "serie-simpsons-entdeckung": [
+      [
+        0,
+        4.27
+      ]
+    ],
+    "serie-simpsons-zukunft": [
+      [
+        0,
+        3.53
+      ]
+    ],
+    "serie-simpsons-eindruck": [
+      [
+        0,
+        3.4
+      ]
+    ],
+    "serie-simpsons-planung": [
+      [
+        0,
+        4.11
+      ]
+    ],
+    "serie-simpsons-rolle": [
+      [
+        0,
+        4.55
+      ]
+    ],
+    "serie-simpsons-feier": [
+      [
+        0,
+        3.69
+      ]
+    ],
+    "serie-simpsons-vertrauen": [
+      [
+        0,
+        4.69
+      ]
+    ],
+    "serie-spongebob-kontrolle": [
+      [
+        0,
+        4.12
+      ]
+    ],
+    "serie-spongebob-leiser": [
+      [
+        0,
+        4.33
+      ]
+    ],
+    "serie-spongebob-erfolg": [
+      [
+        0,
+        4.63
+      ]
+    ],
+    "serie-spongebob-respekt": [
+      [
+        0,
+        4.25
+      ]
+    ],
+    "serie-spongebob-kostuem": [
+      [
+        0,
+        4.85
+      ]
+    ],
+    "serie-spongebob-anruf": [
+      [
+        0,
+        4.17
+      ]
+    ],
+    "serie-spongebob-vor-oeffnung": [
+      [
+        0,
+        4.64
+      ]
+    ],
+    "serie-spongebob-feierabend": [
+      [
+        0,
+        4.97
+      ]
+    ],
+    "serie-spongebob-rueckkehr": [
+      [
+        0,
+        4.23
+      ]
+    ],
+    "serie-spongebob-aufgaben": [
+      [
+        0,
+        4.27
+      ]
+    ],
+    "serie-spongebob-loesung": [
+      [
+        0,
+        4
+      ]
+    ],
+    "serie-spongebob-netz": [
+      [
+        0,
+        4.03
+      ]
+    ]
+  }
+}
