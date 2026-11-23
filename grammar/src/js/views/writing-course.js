@@ -5,8 +5,8 @@ import { button, crumbs, esc, formatDay, link, meter, prose } from '../component
 import { icons } from '../components/icons.js';
 import { resumeCard } from '../components/widgets.js';
 import { stopFor } from '../components/stops.js';
-import { courseProgress, frequentWritingErrors, isClosedWriting, newWritingAttempt, nextReadinessTask,
-  readinessProgress, taskFinished, writingHash, writingScore } from '../engine/writing.js';
+import { courseProgress, frequentWritingErrors, hasWritingResponse, isClosedWriting, newWritingAttempt, nextReadinessTask,
+  readinessProgress, taskFinished, writingDeadline, writingHash, writingScore } from '../engine/writing.js';
 import * as workspace from './writing-workspace.js';
 
 const chapterHash = chapter => `schreiben/${chapter.id}`;
@@ -113,9 +113,9 @@ function renderReadiness(app) {
       <section><h2>${esc(w('readyAttempts'))}</h2>
         ${attempts.length ? `<ol class="writing-task-list">${attempts.map(task => {
           const attempt = state.writingCourse[task.id];
-          const score = writingScore(attempt.review);
+          const score = writingScore(attempt.secondReview ?? attempt.review);
           return `<li class="panel"><div><small>${formatDay(attempt.day)} · ${esc(w(task.register))}</small><h3>${l(task.title)}</h3>
-            <span>${score === null ? esc(w('awaiting')) : `${num(score)} / ${num(45)}`}</span></div>
+            <span>${!hasWritingResponse(attempt) ? esc(w('blankAttempt')) : score === null ? esc(w('awaiting')) : `${num(score)} / ${num(45)}`}</span></div>
             ${link(writingHash(task), esc(t('continueHere')))}</li>`;
         }).join('')}</ol>` : `<p class="muted">${esc(w('readyNone'))}</p>`}
       </section>
@@ -150,6 +150,14 @@ export const actions = {
     app.navigate(writingHash(task));
   }
 };
-export const mount = workspace.mount;
+export function mount(app, root, route) {
+  if (route.key !== 'bereit' || !app.ctx.writingCourse) return workspace.mount(app, root, route);
+  const next = nextReadinessTask(app.ctx.writingCourse, app.state);
+  const deadline = next && writingDeadline(next, app.state.writingCourse[next.id]);
+  if (!deadline) return;
+  const delay = Math.min(2147483647, Math.max(1, deadline - now()));
+  const timer = setTimeout(() => app.rerender(), delay);
+  return () => clearTimeout(timer);
+}
 export const onInput = workspace.onInput;
 export const onChange = workspace.onChange;

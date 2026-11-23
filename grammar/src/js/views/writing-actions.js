@@ -1,14 +1,22 @@
 import { w } from '../i18n/writing.js';
 import { iso, now } from '../dates.js';
 import { updateWritingMeter } from '../components/writing-meter.js';
-import { checkClosedWriting, criteria, isClosedWriting, newWritingAttempt, normalizeWritingReview, pointKey,
-  submitWriting, writingDeadline, WRITING_LIMIT } from '../engine/writing.js';
+import { checkClosedWriting, criteria, hasWritingResponse, isClosedWriting, newWritingAttempt, normalizeWritingReview,
+  pointKey, submitWriting, writingDeadline, writingScore, WRITING_LIMIT } from '../engine/writing.js';
 
 const taskFor = app => app.ctx.writingExercises.get(app.route.key);
 const attemptFor = (app, task) => app.state.writingCourse[task.id];
-const refresh = (app, selector) => {
+const refresh = (app, selector, scroll = false) => {
+  const openPanels = [...document.querySelectorAll('details[data-writing-panel][open]')].map(panel => panel.id);
   app.rerender();
-  if (selector) document.querySelector(selector)?.focus({ preventScroll: true });
+  for (const id of openPanels) {
+    const panel = document.getElementById(id);
+    if (panel) panel.open = true;
+  }
+  const target = selector && document.querySelector(selector);
+  if (!target) return;
+  target.focus({ preventScroll: true });
+  if (scroll) target.scrollIntoView({ block: 'start' });
 };
 
 function updateAttempt(app, task, update) {
@@ -29,14 +37,15 @@ function submit(app, task) {
     return;
   }
   app.store.flush();
-  app.rerender({ keepScroll: false });
-  document.querySelector('#writing-feedback')?.focus({ preventScroll: true });
+  refresh(app, '#writing-feedback', true);
 }
 
 export const actions = {
   'writing-start'(app) {
     const task = taskFor(app);
-    if (!task?.minutes || task.heldOut || attemptFor(app, task)) return;
+    if (!task?.minutes || task.heldOut) return;
+    const previous = attemptFor(app, task);
+    if (previous && (!previous.submitted || hasWritingResponse(previous))) return;
     app.store.update(state => { state.writingCourse[task.id] = newWritingAttempt(task, now()); });
     app.store.flush();
     refresh(app, '#writing-draft-0');
@@ -99,10 +108,10 @@ export const actions = {
     updateAttempt(app, task, attempt => {
       if (!attempt.submitted) return;
       attempt.revealed = true;
-      if (task.minutes) attempt.done = true;
+      if (task.minutes) attempt.done = hasWritingResponse(attempt);
       else attempt.revision ??= [...attempt.answers];
     });
-    refresh(app, '#writing-feedback');
+    refresh(app, '#writing-feedback', true);
   },
   'writing-finish'(app) {
     const task = taskFor(app);
@@ -151,7 +160,9 @@ export const actions = {
       ...(attempt.revision ? ['Überarbeitete Fassung', attempt.revision[i], ''] : [])
     ]);
     const grades = [attempt.review, attempt.secondReview].map((review, i) => review && [
-      i ? 'Zweite Bewertung' : 'Bewertung', ...criteria.map(key => `${key}: ${review.grades[key]} · ${review.reasons[key]}`), ''
+      `${w(i ? 'second' : 'review', 'de')} · ${writingScore(review)} / 45`,
+      ...criteria.map(key => `${w(key, 'de')}: ${review.grades[key]} · ${review.reasons[key]}`),
+      ...(review.tags.length ? [`${w('errorPractice', 'de')}: ${review.tags.map(tag => w(tag, 'de')).join(', ')}`] : []), ''
     ]).filter(Boolean).flat();
     const report = [task.title.de, attempt.day, '', ...script, ...grades].filter(line => line !== undefined).join('\n');
     const url = URL.createObjectURL(new Blob([report], { type: 'text/plain;charset=utf-8' }));

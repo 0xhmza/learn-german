@@ -108,7 +108,7 @@
 .writing-answer { border-radius: 12px; padding: .75rem; margin-block-start: .8rem; background: var(--warn-bg); color: var(--warn); }
 .writing-answer.positive { background: var(--good-bg); color: var(--good); }
 .writing-answer p { margin: .3rem 0 0; }
-.writing-step { display: grid; gap: .95rem; }
+.writing-step { display: grid; gap: .95rem; scroll-margin-block-start: calc(var(--head) + 1rem); }
 .writing-evidence ul { display: grid; gap: .35rem; list-style: none; padding: 0; margin: .7rem 0 0; }
 .writing-evidence li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem; padding: .45rem 0; border-block-start: 1px solid var(--line); }
 .writing-evidence li > div { flex: 1 1 160px; min-inline-size: 0; }

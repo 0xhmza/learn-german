@@ -1,4 +1,4 @@
-import { isDay } from '../dates.js';
+import { isDay, iso } from '../dates.js';
 
 export const WRITING_LIMIT = 12000;
 export const criteria = ['task', 'style', 'accuracy'];
@@ -14,6 +14,7 @@ export const pointKey = (prompt, point) => `${prompt}-${point}`;
 export const writingScore = review => review ? 3 * criteria.reduce((sum, key) => sum + values[review.grades[key]], 0) : null;
 export const isClosedWriting = task => task.kind === 'choice' || task.kind === 'order';
 export const taskFinished = attempt => Boolean(attempt?.done);
+export const hasWritingResponse = attempt => Boolean(attempt?.answers?.some(answer => answer.trim()));
 export const writingDeadline = (task, attempt) => task.minutes && attempt?.started ? attempt.started + task.minutes * 60000 : null;
 
 export function newWritingAttempt(task, now = null) {
@@ -37,6 +38,20 @@ export function submitWriting(task, attempt, now, day) {
   attempt.submitted = Math.min(now, deadline ?? Infinity);
   attempt.day = day;
   return true;
+}
+
+export function expireWritingDrafts(tasks, attempts, now) {
+  let expired = false;
+  for (const [id, attempt] of Object.entries(attempts)) {
+    const task = tasks.get(id);
+    if (!task?.minutes || attempt.submitted) continue;
+    const deadline = writingDeadline(task, attempt);
+    if (deadline !== null && now >= deadline) {
+      submitWriting(task, attempt, now, iso(new Date(deadline)));
+      expired = true;
+    }
+  }
+  return expired;
 }
 
 export function normalizeWritingReview(raw) {
@@ -68,7 +83,7 @@ export function normalizeWriting(raw, tasks) {
         attempt.submitted = submitted;
         attempt.day = old.day;
         attempt.revealed = old.revealed === true;
-        attempt.done = attempt.revealed && old.done === true;
+        attempt.done = attempt.revealed && old.done === true && (!task.minutes || hasWritingResponse(attempt));
         attempt.checks = criteria.filter(key => array(old.checks).includes(key));
         task.prompts.forEach((prompt, i) => prompt.points.forEach((_, j) => {
           const key = pointKey(i, j);
@@ -79,7 +94,7 @@ export function normalizeWriting(raw, tasks) {
         if (!task.minutes && (attempt.revealed || Array.isArray(old.revision))) {
           attempt.revision = task.prompts.map((_, i) => text(old.revision?.[i] ?? attempt.answers[i]));
         }
-        if (task.kind === 'telc') {
+        if (task.kind === 'telc' && hasWritingResponse(attempt)) {
           attempt.review = normalizeWritingReview(old.review);
           attempt.secondReview = attempt.review ? normalizeWritingReview(old.secondReview) : null;
         }
@@ -101,15 +116,28 @@ export function readinessProgress(course, state) {
     .sort((a, b) => state.writingCourse[a.id].started - state.writingCourse[b.id].started);
   let run = [];
   let achieved = false;
+  let awaitingReview = false;
+  const countedDays = new Set();
   for (const task of attempts) {
     const attempt = state.writingCourse[task.id];
+    if (!hasWritingResponse(attempt) || countedDays.has(attempt.day)) continue;
+    countedDays.add(attempt.day);
     const result = writingScore(attempt.review);
+    // Keep the last confirmed streak visible while results are pending.
+    // Later scores can start a fresh streak, but cannot bridge a missing review.
+    if (result === null) {
+      awaitingReview = true;
+      continue;
+    }
+    if (awaitingReview) {
+      run = [];
+      awaitingReview = false;
+    }
     const confirmed = writingScore(attempt.secondReview);
-    if (result !== 45 || (confirmed !== null && confirmed !== 45) || !attempt.answers[0].trim()) {
+    if (result !== 45 || (confirmed !== null && confirmed !== 45)) {
       run = [];
       continue;
     }
-    if (run.at(-1)?.day === attempt.day) run = [];
     run.push({ day: attempt.day, register: task.register, topic: task.topic, confirmed: confirmed === 45 });
     const lastThree = run.slice(-3);
     achieved ||= lastThree.length === 3 && new Set(lastThree.map(item => item.register)).size === 2

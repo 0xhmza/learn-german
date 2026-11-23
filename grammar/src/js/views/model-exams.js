@@ -1,6 +1,6 @@
 import { getLang, t, num } from '../i18n/index.js';
 import { button, crumbs, de, esc, link } from '../components/html.js';
-import { examChoices, examResult, isListening, isMatching } from '../engine/model-exams.js';
+import { examChoices, examResult, isListening, isMatching, isReading, lastReadingResult } from '../engine/model-exams.js';
 import { dropGap, wordChips, mountDragDrop, focusAfterPlacing } from '../components/dragdrop.js';
 import { currentLevel, levelHasContent, modelProgress, testsProgress } from '../engine/areas.js';
 import { resumeCard, levelSoonCard } from '../components/widgets.js';
@@ -281,7 +281,14 @@ export function onChange(app, event) {
 }
 
 function check(app, checked) {
-  updateDraft(app, draft => { draft.checked = checked; });
+  const section = app.ctx.modelTests.get(app.route.key).sections.find(part => part.id === app.route.section);
+  updateDraft(app, draft => {
+    if (isReading(section)) {
+      if (checked) delete draft.readingResult;
+      else if (draft.checked) draft.readingResult = lastReadingResult(section, draft);
+    }
+    draft.checked = checked;
+  });
   app.rerender({ keepScroll: false });
   document.querySelector(checked ? '#exam-result' : '[data-exam-item]')?.focus();
 }

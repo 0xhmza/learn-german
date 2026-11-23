@@ -42,6 +42,7 @@ const DEVICES = {
 // [name, hash, steps run in the page before the checks, full-page capture]
 const SCREENS = [
   ['home', 'home', null, true],
+  ['home-reading-retake', 'model-exams/petra/lesen-1', 'reading-retake'],
   ['module', 'island/relativsaetze', null, true],
   ['topics', 'topics'],
   ['grammar', 'grammatik', null, true],
@@ -52,6 +53,8 @@ const SCREENS = [
   ['writing-chapter', 'schreiben/persoenliche-mail'],
   ['writing-feedback', 'schreiben/besuch-planen', 'writing-feedback', true],
   ['writing-timed', 'schreiben/bereit', 'writing-timed-flow', true],
+  ['writing-expired', 'schreiben/bereit', 'writing-expired-away'],
+  ['writing-blank', 'schreiben/probe-bibliothek', 'writing-blank-mock'],
   ['writing-resume', 'home', 'resume-draft'],
   ['practice', 'practice'],
   ['exams', 'model-exams'],
@@ -190,6 +193,13 @@ const STEPS = String(async function steps(plan) {
       await open('[data-level="B2"]');
       if (level() !== 'B2') throw new Error('the dashboard did not switch to B2');
     }
+    if (name === 'reading-retake') {
+      if (document.querySelector('[data-action="exam-check"]')) click('[data-action="exam-check"]');
+      click('[data-action="exam-edit"]');
+      location.hash = 'home';
+      await wait(150);
+      if (!document.querySelector('.skills-radar li:first-child strong')) throw new Error('the last reading score disappeared during a retake');
+    }
     if (name === 'resume-draft') {
       await open('.progress-card.writing');
       await open('.resume-card .btn');
@@ -225,13 +235,19 @@ const STEPS = String(async function steps(plan) {
         throw new Error('writing counters did not update');
       }
       if (document.querySelector('.writing-model')) throw new Error('reference shown before writing');
+      window.scrollTo(0, document.documentElement.scrollHeight);
       click('[data-action="writing-submit"]');
       await wait(80);
+      const firstFeedback = document.querySelector('#writing-feedback');
+      const feedbackTop = firstFeedback.getBoundingClientRect().top;
+      if (feedbackTop < 0 || feedbackTop >= innerHeight / 2) throw new Error('self-check is out of view after submission');
       const frozen = document.querySelector('#writing-before-0');
+      document.querySelector('#writing-pre-revision').open = true;
       frozen.focus();
       frozen.setSelectionRange(0, 9);
       click('[data-evidence-id="0-0"]');
       if (!document.querySelector('.writing-evidence blockquote')?.textContent.includes('Liebe Lea')) throw new Error('evidence was not saved');
+      if (!document.querySelector('#writing-pre-revision').open) throw new Error('editing panel closed while marking evidence');
       click('[data-action="writing-reveal"]');
       await wait(80);
       if (document.querySelector('.writing-manuscript.original').textContent !== draft || !document.querySelector('.writing-model')) {
@@ -244,6 +260,38 @@ const STEPS = String(async function steps(plan) {
       await wait(200);
       const saved = JSON.parse(localStorage.getItem('gi-state-v1')).writingCourse['besuch-planen'];
       if (saved.answers[0] !== draft || saved.revision[0] !== revision.value || !saved.done) throw new Error('revision overwrote or failed to save the original');
+    }
+    if (name === 'writing-expired-away') {
+      const { setClock } = await import('/js/dates.js');
+      let time = Date.now();
+      setClock(() => new Date(time));
+      await open('[data-action="writing-start-readiness"]');
+      const editor = document.querySelector('#writing-draft-0');
+      editor.value = 'Mein gespeicherter Entwurf.';
+      fire(editor);
+      location.hash = 'home';
+      await wait(80);
+      time += 1801000;
+      location.hash = 'schreiben/bereit';
+      await wait(150);
+      const saved = JSON.parse(localStorage.getItem('gi-state-v1')).writingCourse['schreibprobe-1'];
+      if (!saved?.submitted || saved.answers[0] !== editor.value || !document.querySelector('[data-action="writing-start-readiness"]')) {
+        throw new Error('the readiness list did not finalize the expired attempt');
+      }
+    }
+    if (name === 'writing-blank-mock') {
+      const { setClock } = await import('/js/dates.js');
+      let time = Date.now();
+      setClock(() => new Date(time));
+      click('[data-action="writing-start"]');
+      time += 1801000;
+      await wait(350);
+      click('[data-action="writing-reveal"]');
+      if (!document.querySelector('.writing-model') || document.querySelector('.writing-ready-callout')) {
+        throw new Error('a blank mock must show the model without completion credit');
+      }
+      click('[data-action="writing-start"]');
+      if (!document.querySelector('[data-writing-timer]')) throw new Error('blank mock could not be restarted');
     }
     if (name === 'writing-timed-flow') {
       const { setClock } = await import('/js/dates.js');
@@ -424,6 +472,14 @@ const CHECKS = String(function checks(expectDir) {
     const size = parseFloat(style.fontSize);
     const large = size >= 24 || (size >= 18.6 && Number(style.fontWeight) >= 700);
     if (ratio < (large ? 3 : 4.5)) add(problems, `low contrast ${ratio.toFixed(2)}:1 on ${name(el)}`);
+  }
+
+  const radar = document.querySelector('.skills-radar svg');
+  if (radar) {
+    for (const label of radar.querySelectorAll('text')) {
+      const { x, width } = label.getBBox();
+      if (x < 0 || x + width > radar.viewBox.baseVal.width) problems.push(`radar label clipped: ${label.textContent}`);
+    }
   }
 
   // Mirroring: navigation and the player follow the reading direction.

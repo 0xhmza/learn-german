@@ -2,7 +2,8 @@ import { num } from '../i18n/index.js';
 import { w } from '../i18n/writing.js';
 
 export function writingCounts(text) {
-  const words = text.match(/[\p{L}\p{N}][\p{L}\p{M}\p{N}]*(?:[’'\u2011-][\p{L}\p{M}\p{N}]+)*/gu)?.length ?? 0;
+  // Count common abbreviations and numbers with separators as single units.
+  const words = text.match(/(?:z\.\s*b\.|d\.\s*h\.|u\.\s*[au]\.|\p{N}+(?:[.,:]\p{N}+)+|[\p{L}\p{N}][\p{L}\p{M}\p{N}]*(?:[’'´\u2011-][\p{L}\p{M}\p{N}]+)*)/giu)?.length ?? 0;
   return { words, lines: text ? text.split(/\r\n|\r|\n/).length : 0 };
 }
 

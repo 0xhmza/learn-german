@@ -15,7 +15,7 @@ const labels = {
   mock: ['Prüfungsprobe', 'محاكاة الامتحان'],
   ready: ['Prüfungsreife prüfen', 'تحقّق من استعدادك للامتحان'],
   readyIntro: ['Schreib zu neuen Themen in 30 Minuten. Eine Lehrkraft kann deine Antworten nach den telc-Kriterien bewerten.', 'اكتب عن مواضيع جديدة في 30 دقيقة. يمكن لمعلّم تقييم إجاباتك وفق معايير telc.'],
-  readyGoal: ['Dein Ziel im Schreibkurs sind drei 45/45-Bewertungen in Folge. Sie zählen an verschiedenen Tagen, zu drei Themen und mit persönlicher und halbformeller Anrede. Eine zweite Lehrkraft bestätigt mindestens eine Bewertung.', 'هدف الدورة هو الحصول على 45 من 45 ثلاث مرات متتالية، في أيام مختلفة وثلاثة مواضيع، وبأسلوب شخصي وشبه رسمي. ويؤكّد معلّم ثانٍ نتيجةً واحدة على الأقل.'],
+  readyGoal: ['Dein Ziel sind drei 45/45-Bewertungen in Folge: drei Themen, beide Anredeformen und mindestens eine bestätigte Zweitbewertung. Pro Tag zählt die erste Schreibprobe mit einer Antwort.', 'هدفك الحصول على 45 من 45 ثلاث مرات متتالية في ثلاثة مواضيع وبأسلوبي المخاطبة، مع تأكيد نتيجة واحدة على الأقل بتقييم ثانٍ. يُحتسب أول اختبار تدريبي تجيب عنه في كل يوم.'],
   readyStreak: ['Volle Punktzahl in Folge', 'نتائج كاملة متتالية'],
   readyAchieved: ['Du hast das Trainingsziel erreicht.', 'حقّقت هدف التدريب.'],
   readyNew: ['Neue Schreibprobe starten', 'ابدأ محاكاة جديدة'],
@@ -77,6 +77,8 @@ const labels = {
   timedStart: ['Zeit starten und Aufgabe öffnen', 'ابدأ التوقيت وافتح المهمة'],
   timedFinished: ['Die Abgabe ist gespeichert.', 'حُفظت إجابتك.'],
   timedExpired: ['Die Zeit ist um. Der aktuelle Text wurde abgegeben.', 'انتهى الوقت. سُلّم النص الحالي.'],
+  blankAttempt: ['Keine Antwort abgegeben.', 'لم تُسلّم إجابة.'],
+  retryTimed: ['Neue Runde starten', 'ابدأ محاولة جديدة'],
   print: ['Aufgabe drucken', 'اطبع المهمة'],
   export: ['Für die Lehrkraft herunterladen', 'نزّل للمعلّم'],
   review: ['Bewertung der Lehrkraft', 'تقييم المعلّم'],
@@ -108,4 +110,4 @@ const labels = {
   nextPractice: ['Eine neue Aufgabe wählen', 'اختر مهمة جديدة']
 };
 
-export const w = key => labels[key]?.[getLang() === 'ar' ? 1 : 0] ?? key;
+export const w = (key, language = getLang()) => labels[key]?.[language === 'ar' ? 1 : 0] ?? key;

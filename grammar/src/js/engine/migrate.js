@@ -4,7 +4,7 @@ import { isDay } from '../dates.js';
 import { nextLesson, runStars } from './progress.js';
 import { checkBadges, QUESTION_XP, XP, DAILY_GOALS } from './gamification.js';
 import { isRunValid } from './runs.js';
-import { examChoices, isListening, isMatching } from './model-exams.js';
+import { examChoices, isListening, isMatching, lastReadingResult } from './model-exams.js';
 import { normalizeWords } from './words.js';
 import { normalizeLast, LEVELS } from './areas.js';
 import { normalizeWriting } from './writing.js';
@@ -155,7 +155,9 @@ export function normalizeState(raw, ctx, day) {
         responses[item.number] = choice;
         used.add(choice);
       }
-      sections[section.id] = { responses, checked: !isListening(section) && value.checked === true };
+      const checked = !isListening(section) && value.checked === true;
+      const readingResult = checked ? null : lastReadingResult(section, value);
+      sections[section.id] = { responses, checked, ...(readingResult && { readingResult }) };
     }
     if (Object.keys(sections).length) state.modelExams[id] = sections;
   }

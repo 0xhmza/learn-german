@@ -1,7 +1,7 @@
 import { getLang, num } from '../i18n/index.js';
 import { w } from '../i18n/writing.js';
 import { button, esc, link, prose } from '../components/html.js';
-import { isClosedWriting, newWritingAttempt, checkClosedWriting, writingDeadline } from '../engine/writing.js';
+import { hasWritingResponse, isClosedWriting, newWritingAttempt, checkClosedWriting, writingDeadline } from '../engine/writing.js';
 import { comparison, editor, reviews, selfCheck } from './writing-review.js';
 
 export { actions, mount, onInput, onChange } from './writing-actions.js';
@@ -55,13 +55,13 @@ function printable(task) {
 
 function renderDraft(task, attempt, chapter) {
   const coaching = chapter && !task.diagnostic && !task.independent && !task.minutes
-    ? `<details class="panel writing-hint"><summary>${esc(w('tip'))}</summary>
+    ? `<details class="panel writing-hint" id="writing-hint" data-writing-panel><summary>${esc(w('tip'))}</summary>
       <p>${l(chapter.tip)}</p>
       <ul class="writing-phrases" lang="de" dir="ltr">${chapter.phrases.map(phrase => `<li>${esc(phrase)}</li>`).join('')}</ul></details>` : '';
   const prompts = task.prompts.map((prompt, i) => `<div class="writing-split">
     <section class="panel writing-assignment"><h2>${esc(w('question'))}${task.prompts.length > 1 ? ` ${num(i + 1)}` : ''}</h2>
       ${incoming(prompt)}${promptBlock(prompt)}
-      ${task.plan ? `<details class="writing-plan"><summary>${esc(w('plan'))}</summary>
+      ${task.plan ? `<details class="writing-plan" id="writing-plan" data-writing-panel><summary>${esc(w('plan'))}</summary>
         <p>${esc(w('planHint'))}</p>${prompt.points.map((point, j) =>
           `<label lang="de" dir="ltr">${esc(point)}<input type="text" maxlength="500" data-writing-plan="${j}" value="${esc(attempt.plan[j])}"></label>`).join('')}</details>` : ''}
     </section>
@@ -76,6 +76,7 @@ export function renderWorkspace(task, saved, chapter, next) {
   const timed = Boolean(task.minutes);
   const deadline = writingDeadline(task, saved);
   const attempt = saved ?? newWritingAttempt(task);
+  const blank = timed && attempt.submitted && !hasWritingResponse(attempt);
   const stage = isClosedWriting(task) ? closedExercise(task, attempt, next)
     : timed && !attempt.started ? `<section class="panel writing-timed-start">
       <h2>${num(task.minutes)} ${esc(w('minutes'))}</h2><p>${esc(w('timedIntro'))}</p>
@@ -87,15 +88,17 @@ export function renderWorkspace(task, saved, chapter, next) {
   return `<article class="writing-course writing-workspace" aria-labelledby="writing-title">
     <header class="writing-page-head writing-workspace-head">
       <div><h1 id="writing-title">${l(task.title)}</h1>
-        ${timed && attempt.submitted ? `<p>${esc(w(attempt.submitted === deadline ? 'timedExpired' : 'timedFinished'))}</p>` : ''}</div>
+        ${timed && attempt.submitted && !blank ? `<p>${esc(w(attempt.submitted === deadline ? 'timedExpired' : 'timedFinished'))}</p>` : ''}</div>
       ${timed && attempt.started && !attempt.submitted
         ? `<div class="writing-timer"><span>${esc(w('timer'))}</span><strong data-writing-timer role="timer" dir="ltr">${task.minutes}:00</strong></div>` : ''}
     </header>
     ${stage}
+    ${blank ? `<section class="panel writing-coach"><p>${esc(w('blankAttempt'))}</p>
+      ${task.heldOut ? link(next, esc(w('ready')), 'secondary') : button('writing-start', esc(w('retryTimed')), 'secondary')}</section>` : ''}
     ${attempt.done && !isClosedWriting(task) ? `<section class="writing-ready-callout">
       <div><h2>${esc(w('done'))}</h2><p>${esc(w('doneNote'))}</p></div>
       ${link(next, esc(w(next === 'schreiben/bereit' ? 'ready' : 'nextTask')), 'primary')}</section>` : ''}
-    ${attempt.submitted && !isClosedWriting(task) ? `<div class="actions">${button('writing-export', esc(w('export')))}</div>` : ''}
-    ${attempt.submitted && task.kind === 'telc' ? reviews(attempt) : ''}
+    ${attempt.submitted && !blank && !isClosedWriting(task) ? `<div class="actions">${button('writing-export', esc(w('export')))}</div>` : ''}
+    ${attempt.submitted && task.kind === 'telc' && !blank ? reviews(attempt) : ''}
   </article>`;
 }

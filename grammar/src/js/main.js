@@ -2,7 +2,8 @@
 import { indexContent } from './content.js';
 import { createStore, safeGet, safeSet, LANG_KEY, THEME_KEY } from './state.js';
 import { parse } from './router.js';
-import { today } from './dates.js';
+import { now, today } from './dates.js';
+import { expireWritingDrafts } from './engine/writing.js';
 import { t, setLang, getLang } from './i18n/index.js';
 import { award } from './engine/gamification.js';
 import { renderHud } from './components/hud.js';
@@ -181,6 +182,10 @@ async function boot() {
   function render(initial = false) {
     cleanup?.();
     cleanup = null;
+    if (expireWritingDrafts(ctx.writingExercises, store.state.writingCourse, now())) {
+      store.save();
+      store.flush();
+    }
     route = parse(location.hash, ctx);
     const needsCourse = COURSE_VIEWS.has(route.view) || (['model-exams', 'writing'].includes(route.view) && route.key);
     const blocked = needsCourse && !levelHasContent(currentLevel(store.state));

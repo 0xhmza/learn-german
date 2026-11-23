@@ -1,6 +1,6 @@
 import { getLang, num, t } from '../i18n/index.js';
 import { esc } from './html.js';
-import { examResult } from '../engine/model-exams.js';
+import { lastReadingResult } from '../engine/model-exams.js';
 import { overall } from '../engine/progress.js';
 import { writingScore } from '../engine/writing.js';
 
@@ -22,9 +22,9 @@ export function skillResults(ctx, state) {
   let readingRight = 0;
   for (const exam of ctx.modelTests.values()) {
     for (const section of exam.sections) {
-      const saved = state.modelExams[exam.id]?.[section.id];
-      if (!section.id.startsWith('lesen-') || !saved?.checked) continue;
-      const { total, correct } = examResult(section, saved.responses || {});
+      const result = lastReadingResult(section, state.modelExams[exam.id]?.[section.id]);
+      if (!result) continue;
+      const { total, correct } = result;
       readingTotal += total;
       readingRight += correct;
     }
@@ -70,7 +70,7 @@ export function skillsRadar(ctx, state) {
         const [labelX, labelY] = xy(i, 94);
         const side = i % 2 !== 0;
         return `<circle class="skills-radar-dot ${axis.value === null ? 'missing' : ''}" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="4"/>
-          <text class="skills-radar-label" x="${i === 1 ? 232 : i === 3 ? 8 : labelX.toFixed(2)}" y="${labelY.toFixed(2)}" dy="${side ? '-.65em' : '.32em'}" text-anchor="${i === 1 ? 'end' : i === 3 ? 'start' : 'middle'}">${esc(labels[i])}</text>`;
+          <text class="skills-radar-label" x="${i === 1 ? 203 : i === 3 ? 37 : labelX.toFixed(2)}" y="${labelY.toFixed(2)}" dy="${side ? '-.95em' : '.32em'}" text-anchor="middle">${esc(labels[i])}</text>`;
       }).join('')}
     </svg>
     <ul>${axes.map(({ value, count }, i) => `<li><a href="#${destinations[i]}">${esc(labels[i])}</a>

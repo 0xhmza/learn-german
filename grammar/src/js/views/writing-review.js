@@ -37,7 +37,7 @@ export function selfCheck(task, attempt, promptBlock) {
     <fieldset class="panel writing-checks"><legend>${esc(w('checklist'))}</legend>
       ${criteria.map(key => `<label><input type="checkbox" data-writing-check="${key}" ${attempt.checks.includes(key) ? 'checked' : ''}> <span>${esc(w(checkKeys[key]))}</span></label>`).join('')}
     </fieldset>
-    ${!task.minutes ? `<details class="panel writing-pre-revision"><summary>${esc(w('edit'))}</summary>
+    ${!task.minutes ? `<details class="panel writing-pre-revision" id="writing-pre-revision" data-writing-panel><summary>${esc(w('edit'))}</summary>
       ${task.prompts.map((prompt, i) => editor(prompt, i, 'revision', (attempt.revision ?? attempt.answers)[i], w('revise'))).join('')}</details>` : ''}
     <div class="actions">${button('writing-reveal', esc(w('reveal')), 'primary')}</div>
   </section>`;
