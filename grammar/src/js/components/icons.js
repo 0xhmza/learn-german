@@ -5,6 +5,7 @@ const svg = (body, extra = '', cls = 'ico') => `<svg class="${cls}" viewBox="0 0
 export const icons = {
   learn: svg('<path d="M4 19.5c2-1.6 4.2-2.4 6.5-2.4M4 4.5v15M4 4.5C6 3 8.2 2.3 10.5 2.3c2.3 0 3.8.7 5 1.7"/><circle cx="17" cy="15" r="4.5"/><path d="m15.4 15 1.1 1.1 2.1-2.2"/>'),
   vocab: svg('<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h6M9 11.5h4"/>'),
+  listen: svg('<path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="12" width="5" height="8" rx="2"/><rect x="16" y="12" width="5" height="8" rx="2"/>'),
   writing: svg('<path d="M4 20h4L19.5 8.5a2.8 2.8 0 0 0-4-4L4 16z"/><path d="m13.5 6.5 4 4"/><path d="M14 20h6"/>'),
   practice: svg('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/>'),
   exam: svg('<rect x="5" y="3.5" width="14" height="18" rx="2.5"/><path d="M9 3.5V2.8h6v.7"/><path d="m9 12 2 2 4-4.5M9 17.5h6"/>'),

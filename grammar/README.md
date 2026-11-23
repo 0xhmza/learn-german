@@ -7,6 +7,7 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **51 lessons on 10 grammar islands** (28 from B1.1, 23 for B1.2), grouped by grammar topic instead of by book chapter.
 - **460 core exercises and 51 additional applications** with worked explanations, plus seven practice sets that combine lessons.
 - **Four Sprachbausteine sets** across three difficulty levels, with ten gaps per letter. In Part 1 every gap in the letter is a dropdown with three choices. In Part 2 words are dragged from the shared word list into the gaps (mouse or finger), or placed by tapping a word and then a gap. The Sprachbausteine parts of the mock exams work the same way. [telc Deutsch B1 sample format](https://shop.telc.net/media/catalog/product/file/telc_deutsch_b1_zd_uebungstest_1.pdf)
+- **Hören B1** has 24 practice recordings, 4 assessment recordings, and 120 exercises. The original German recordings use synthesized voices and work in the offline build.
 - **Three B1 readings** with offline Arabic word glosses, paragraph translations and comprehension checks.
 - **156 grammar flashcards** for recalling endings, irregular forms, connector meanings and word order, with spaced review for every lesson.
 - **telc Deutsch B1 exam trainer** with 17 named mock exams, saved drafts, scored reading and Sprachbausteine sections, and writing practice. Listening statements are available for practice.
@@ -37,6 +38,8 @@ npm start
 ```
 
 Open http://127.0.0.1:4180. On Windows you can also double-click `Start-Grammatik.cmd`.
+
+In **Hören → Mit Serien üben**, the local server looks in `../media-player/media` and `../media` for matching episodes and German dub transcripts. Open the same page in the hosted or offline build to select a local media folder with pairs such as `simpsons.s06e01.mp4` and `simpsons.s06e01.de.srt`. The browser reads imported media locally. Automatically selected excerpts count as practice. The separate Hörcheck supplies the listening score on the dashboard.
 
 Offline single file: run `npm run build` once (after `npm install`), then double-click `dist/Deutsch-Grammatik-B1.html`. It contains everything, including the Arabic font.
 

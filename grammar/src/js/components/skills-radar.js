@@ -3,12 +3,13 @@ import { esc } from './html.js';
 import { lastReadingResult } from '../engine/model-exams.js';
 import { overall } from '../engine/progress.js';
 import { writingScore } from '../engine/writing.js';
+import { listeningAssessment } from '../engine/listening.js';
 
 const vocabulary = {
   de: { title: 'Dein Fertigkeitsprofil', caption: 'Ergebnisse aus bewerteten Aufgaben', reading: 'Lesen', listening: 'Hören',
-    empty: 'Noch keine Bewertung', questions: ['Aufgabe', 'Aufgaben'], writing: ['bewerteter Text', 'bewertete Texte'], listeningSample: ['Frage aus der Hörprobe', 'Fragen aus der Hörprobe'] },
+    empty: 'Noch keine Bewertung', questions: ['Aufgabe', 'Aufgaben'], writing: ['bewerteter Text', 'bewertete Texte'], listeningSample: ['Frage aus der Hörprobe', 'Fragen aus der Hörprobe'], listeningCheck: ['Hörcheck-Aufgabe', 'Hörcheck-Aufgaben'] },
   ar: { title: 'مستواك في المهارات', caption: 'نتائج المهام التي تم تقييمها', reading: 'القراءة', listening: 'الاستماع',
-    empty: 'لم يُقيّم بعد', questions: ['مهمة', 'مهام'], writing: ['نص مقيّم', 'نصوص مقيّمة'], listeningSample: ['سؤال من نموذج الاستماع', 'أسئلة من نموذج الاستماع'] }
+    empty: 'لم يُقيّم بعد', questions: ['مهمة', 'مهام'], writing: ['نص مقيّم', 'نصوص مقيّمة'], listeningSample: ['سؤال من نموذج الاستماع', 'أسئلة من نموذج الاستماع'], listeningCheck: ['مهمة في اختبار الاستماع', 'مهام في اختبار الاستماع'] }
 };
 const xy = (index, radius) => {
   const angle = -Math.PI / 2 + Math.PI / 2 * index;
@@ -35,7 +36,8 @@ export function skillResults(ctx, state) {
     return score === null ? [] : [score];
   });
   const writingTotal = writing.reduce((sum, score) => sum + score, 0);
-  const listening = state.listeningSample;
+  const training = listeningAssessment(ctx, state);
+  const listening = training.total ? training : state.listeningSample;
   return [
     { value: percent(readingRight, readingTotal), count: readingTotal },
     { value: percent(grammar.correct, grammar.attempted), count: grammar.attempted },
@@ -47,9 +49,8 @@ export function skillResults(ctx, state) {
 export function skillsRadar(ctx, state) {
   const copy = vocabulary[getLang()];
   const labels = [copy.reading, t('courseGrammar'), t('navWriting'), copy.listening];
-  const sample = ctx.learning.examSample;
-  const destinations = ['model-exams', 'grammatik', 'schreiben/bereit', sample ? `model-exams/${sample.model}/audio-practice` : 'model-exams'];
-  const captions = [copy.questions, copy.questions, copy.writing, copy.listeningSample];
+  const destinations = ['model-exams', 'grammatik', 'schreiben/bereit', 'hoeren'];
+  const captions = [copy.questions, copy.questions, copy.writing, listeningAssessment(ctx, state).total ? copy.listeningCheck : copy.listeningSample];
   const axes = skillResults(ctx, state);
   const radius = 75;
   const measured = axes.map((axis, i) => axis.value === null ? null : xy(i, radius * axis.value / 100));

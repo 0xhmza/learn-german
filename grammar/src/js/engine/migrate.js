@@ -8,6 +8,7 @@ import { examChoices, isListening, isMatching, lastReadingResult } from './model
 import { normalizeWords } from './words.js';
 import { normalizeLast, LEVELS } from './areas.js';
 import { normalizeWriting } from './writing.js';
+import { normalizeListening } from './listening.js';
 
 export const STATE_VERSION = 1;
 export const APP_ID = 'grammatikinseln';
@@ -32,6 +33,7 @@ export function defaultState(day) {
     modelExams: {},
     writingCourse: {},
     listeningSample: null,
+    listening: { runs: {}, clips: {} },
     words: {},
     last: {},
     lastRun: null,
@@ -80,6 +82,7 @@ export function normalizeState(raw, ctx, day) {
   state.words = normalizeWords(raw.words, isDay);
   state.last = normalizeLast(raw.last, isDay);
   state.writingCourse = normalizeWriting(raw.writingCourse, ctx.writingExercises);
+  state.listening = normalizeListening(raw.listening, ctx.listeningScenes);
   const listeningCount = ctx.learning?.examSample?.listening?.items.length;
   const right = raw.listeningSample?.correct;
   if (listeningCount && raw.listeningSample?.total === listeningCount && Number.isInteger(right) && right >= 0 && right <= listeningCount) {

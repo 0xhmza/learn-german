@@ -1,0 +1,76 @@
+.listening { display: grid; gap: 1.2rem; }
+.listening h1, .listening h2, .listening h3 { margin: 0; }
+.listening p { margin: .45rem 0 0; }
+.listening-heading p, .listening-cover p { color: var(--ink-2); max-inline-size: 59ch; }
+.listening-cover {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: clamp(1rem, 5vw, 3.5rem);
+  padding: clamp(1.35rem, 4.25vw, 3rem); border: 1px solid var(--line); border-radius: 26px;
+  background: linear-gradient(132deg, var(--t-mint), var(--t-blue) 85%);
+}
+.listening-cover h1 { font-size: clamp(2.15rem, 4.65vw, 3.75rem); line-height: 1.15; letter-spacing: -.035em; }
+[dir="rtl"] .listening-cover h1 { letter-spacing: normal; line-height: 1.42; }
+.listening-cover-progress { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; margin: .85rem 0; font-weight: 725; font-size: .86rem; }
+.listening-cover progress { accent-color: var(--good); inline-size: min(9rem, 90%); }
+.listening-cover-mark { display: grid; place-items: center; inline-size: clamp(4.2rem, 12vw, 9rem); aspect-ratio: 1;
+  border-radius: 36%; background: var(--surface); color: var(--good); box-shadow: var(--shadow); transform: rotate(-10deg); }
+.listening-cover-mark svg { inline-size: 58%; block-size: 58%; }
+.listening-chapters, .listening-scene-list, .listening-result-list { display: grid; gap: .65rem; margin: .65rem 0 0; padding: 0; list-style: none; }
+.listening-chapters, .listening-extras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.listening-chapters a { min-block-size: 100%; display: flex; flex-direction: column; align-items: start; color: var(--ink); gap: .35rem; text-decoration: none; }
+.listening-chapters a:hover { border-color: var(--good); }
+.listening-chapters a small, .listening-scene-list span, .listening-scene-heading span { color: var(--muted); font-size: .87rem; }
+.listening-chapters a p { color: var(--muted); margin: 0; }
+.listening-chapters a span { color: var(--good); margin-block-start: auto; font-weight: 735; display: inline-flex; align-items: center; gap: .15rem; }
+.listening-chapters a span svg { width: 1em; height: 1em; }
+.listening-extras a, .listening-check-page a { margin-block-start: .65rem; }
+.listening-extras p { color: var(--muted); }
+.listening-scene-list li, .listening-scene-heading, .listening-result-list li { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .6rem; }
+.listening-result-list li { border-block-end: 1px solid var(--line); padding-block: .25rem; }
+.listening-scene-list h2 { font-size: 1.15rem; }
+.listening-scene { display: grid; gap: 1rem; }
+.listening-player { display: grid; gap: .7rem; border-inline-start: 4px solid var(--good); }
+.listening-waves { color: var(--good); display: flex; align-items: center; gap: .28rem; block-size: 1.7rem; }
+.listening-waves svg { inline-size: 1.65rem; block-size: 1.65rem; margin-inline-end: .35rem; }
+.listening-waves i { background: var(--good); inline-size: .23rem; border-radius: 8px; block-size: 45%; opacity: .5; }
+.listening-waves i:nth-child(3n) { block-size: 78%; }
+.listening-waves i:nth-child(3n + 1) { block-size: 94%; }
+.listening-waves i:nth-child(4n) { block-size: 62%; }
+.listening-player.is-playing i { opacity: 1; animation: listening-wave .64s ease-in-out infinite alternate; }
+.listening-player.is-playing i:nth-child(odd) { animation-delay: -.32s; }
+@keyframes listening-wave { to { transform: scaleY(.4); } }
+.listening-controls { display: flex; gap: .45rem .65rem; flex-wrap: wrap; align-items: center; }
+.listening-controls label { color: var(--ink-2); }
+.listening-controls select, .listening-library-source select { color: var(--ink); background: var(--surface-2); border: 1px solid var(--line-strong); border-radius: 8px; min-block-size: 38px; padding: .3rem .45rem; }
+.listening-status:empty { display: none; }
+.listening-plays { color: var(--muted); font-size: .9rem; }
+.listening-task { min-inline-size: 0; margin: 0; }
+.listening-task legend { font-weight: 780; padding-inline: .35rem; color: var(--ink); }
+.listening-task p { white-space: normal; overflow-wrap: anywhere; }
+.listening-choices { display: grid; gap: .45rem; margin-block-start: .65rem; }
+.listening-choices label { display: flex; align-items: start; gap: .5rem; padding: .5rem .65rem; border: 1px solid var(--line); border-radius: 9px; min-block-size: 38px; }
+.listening-choices label:has(input:checked) { background: var(--brand-soft); border-color: var(--brand); }
+.listening-choices input { accent-color: var(--brand-strong); margin: .22rem 0 0; flex: none; }
+.listening-task label[for] { display: grid; gap: .5rem; }
+.listening-answer {
+  min-block-size: 44px; inline-size: 100%; padding: .55rem .65rem; border: 1px solid var(--line-strong); border-radius: 9px;
+  font: inherit; color: var(--ink); background: var(--surface-2); margin-block: .35rem;
+}
+.listening-gap { color: var(--brand-ink); margin-inline: .1rem; }
+.listening-task button[data-action="listen-excerpt"] { margin-block-start: .25rem; }
+.listening-score { background: var(--t-mint); scroll-margin-block-start: var(--head); }
+.listening-feedback { margin-block-start: .55rem; padding: .65rem; border-radius: 9px; background: var(--t-peach); color: var(--ink); }
+.listening-task.yes .listening-feedback { background: var(--good-bg); }
+.listening-feedback strong { color: var(--warn); }
+.listening-task.yes .listening-feedback strong { color: var(--good); }
+.listening-library-source .field { margin-block-start: .7rem; }
+.listening-library-source details { margin-block-start: .5rem; }
+.listening-modes { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+.listening-modes [aria-pressed="true"] { color: var(--good); background: var(--good-bg); border-color: var(--good-line); }
+@media (max-width: 600px) {
+  .listening-chapters, .listening-extras { grid-template-columns: minmax(0, 1fr); }
+  .listening-cover { grid-template-columns: minmax(0, 1fr); }
+  .listening-cover-mark { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .listening-player.is-playing i { animation: none; }
+}

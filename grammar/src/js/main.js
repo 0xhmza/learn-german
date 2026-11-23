@@ -21,6 +21,7 @@ import * as topics from './views/topics.js';
 import { vocab, writing, level } from './views/sections.js';
 import * as lesson from './views/lesson.js';
 import * as practice from './views/practice.js';
+import * as listening from './views/listening.js';
 import * as quiz from './views/quiz.js';
 import * as progress from './views/progress.js';
 import * as settings from './views/settings.js';
@@ -30,20 +31,21 @@ import * as cards from './views/cards.js';
 import * as modelExams from './views/model-exams.js';
 import { goToRun } from './views/practice.js';
 
-const views = { home, grammar, island, topics, level, vocab, writing, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+const views = { home, grammar, island, topics, level, vocab, writing, listening, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 // Main navigation: [hash, tab, label key, icon]. The bottom bar on phones
 // leaves out the exam trainer, which the practice page links to.
 const NAV = [
   ['home', 'home', 'tabHome', 'learn'],
   ['vokabeln', 'vocab', 'navVocab', 'vocab'],
   ['schreiben', 'writing', 'navWriting', 'writing'],
+  ['hoeren', 'listening', 'navListening', 'listen'],
   ['practice', 'practice', 'tabPractice', 'practice'],
   ['model-exams', 'model-exams', 'navExam', 'exam'],
   ['progress', 'progress', 'navProfile', 'profile']
 ];
 // Lessons and practice runs open as a focused player without the app navigation.
 const PLAYER_VIEWS = new Set(['lesson', 'quiz']);
-const COURSE_VIEWS = new Set(['island', 'topics', 'lesson', 'practice', 'quiz', 'readings', 'sprachbausteine', 'cards']);
+const COURSE_VIEWS = new Set(['island', 'topics', 'lesson', 'listening', 'practice', 'quiz', 'readings', 'sprachbausteine', 'cards']);
 const unavailableCourse = {
   title: app => t('levelSoonTitle', currentLevel(app.state)),
   render: app => levelSoonCard(currentLevel(app.state), 'h1')

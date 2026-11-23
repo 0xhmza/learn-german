@@ -404,6 +404,9 @@ export default {
   notices: 'إشعارات',
   // Platform shell, levels, Vokabeln and Schreiben.
   navVocab: 'المفردات',
+  navListening: 'الاستماع',
+  listeningTitle: 'تدريب الاستماع B1',
+  listeningSummary: 'استمع إلى مواقف يومية، وأكمل الفراغات، وتدرّب باستخدام مسلسلاتك.',
   navWriting: 'الكتابة',
   navExam: 'الامتحان',
   navProfile: 'ملفي',

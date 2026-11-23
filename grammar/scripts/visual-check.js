@@ -50,6 +50,10 @@ const SCREENS = [
   ['home-b2', 'home', 'switch-b2'],
   ['vocab', 'vokabeln'],
   ['writing', 'schreiben'],
+  ['listening', 'hoeren'],
+  ['listening-practice', 'hoeren/treffpunkt', 'listen-practice', true],
+  ['listening-check', 'hoeren/check-firma', 'listen-check', true],
+  ['listening-library', 'hoeren/serien', 'listen-local'],
   ['writing-chapter', 'schreiben/persoenliche-mail'],
   ['writing-feedback', 'schreiben/besuch-planen', 'writing-feedback', true],
   ['writing-timed', 'schreiben/bereit', 'writing-timed-flow', true],
@@ -119,7 +123,7 @@ function findBrowser() {
 async function launchBrowser(profile) {
   const child = spawn(findBrowser(), [
     '--headless=new', '--remote-debugging-port=0', `--user-data-dir=${profile}`, '--no-first-run',
-    '--no-default-browser-check', '--disable-extensions', '--disable-sync', '--hide-scrollbars',
+    '--no-default-browser-check', '--disable-extensions', '--disable-sync', '--hide-scrollbars', '--autoplay-policy=no-user-gesture-required',
     '--force-device-scale-factor=1', '--font-render-hinting=none', '--disable-features=Translate', 'about:blank'
   ], { stdio: ['ignore', 'ignore', 'pipe'] });
   const url = await new Promise((resolve, reject) => {
@@ -224,6 +228,87 @@ const STEPS = String(async function steps(plan) {
       if (document.querySelector('#exam-writing')?.value !== draft) throw new Error('switching levels lost the draft');
       await wait(170);
       if (JSON.parse(localStorage.getItem('gi-state-v1')).modelExams.petra.schreiben.writing !== draft) throw new Error('the writing draft was not persisted');
+    }
+    if (name === 'listen-practice' || name === 'listen-check') {
+      const media = document.querySelector('[data-listening-audio]');
+      if (!media) throw new Error('missing audio element');
+      media.muted = true;
+      const play = async () => {
+        click('[data-action="listen-play"]');
+        for (let i = 0; i < 40 && (media.paused || media.currentTime < .05); i++) await wait(75);
+        if (media.paused || media.currentTime < .05) throw new Error('the B1 recording did not play');
+        click('[data-action="listen-stop"]');
+        await wait(80);
+      };
+      if (!document.querySelector('[data-action="listen-submit"]').disabled) throw new Error('empty listening answers could be checked');
+      await play();
+      if (name === 'listen-check') {
+        await play();
+        if (!document.querySelector('[data-action="listen-play"]').disabled || document.querySelector('[data-action="listen-excerpt"]')) {
+          throw new Error('the Hörcheck did not enforce two full plays');
+        }
+      }
+      const id = location.hash.split('/').at(-1);
+      const content = await (await fetch('/content.json')).json();
+      const authored = [...content.listeningCourse.assessment, ...content.listeningCourse.chapters.flatMap(chapter => chapter.scenes)].find(scene => scene.id === id);
+      for (const [i, task] of authored.tasks.entries()) {
+        const field = document.querySelector(task.options ? `[name="listening-answer-${i}"][value="${task.answer}"]` : `#listening-answer-${i}`);
+        if (task.options) field.click();
+        else { field.value = task.answer; fire(field); }
+      }
+      click('[data-action="listen-submit"]');
+      await wait(150);
+      if (!document.querySelector('#listening-result') || !document.body.textContent.includes(authored.lines[0].text)) {
+        throw new Error('the score or transcript was not shown after submission');
+      }
+      const saved = JSON.parse(localStorage.getItem('gi-state-v1')).listening.runs[id];
+      if (!saved?.submitted || (name === 'listen-check' && saved.plays !== 2)) throw new Error('the listening submission was not saved');
+    }
+    if (name === 'listen-local') {
+      const library = await (await fetch('/api/hoeren')).json();
+      if (library.episodes.length) {
+        for (const series of ['simpsons', 'spongebob']) {
+          const episode = library.episodes.find(item => item.series === series);
+          if (!episode) continue;
+          for (let i = 0; i < 24 && !document.querySelector('[data-listening-episode]'); i++) await wait(100);
+          const picker = document.querySelector('[data-listening-episode]');
+          picker.value = episode.id;
+          picker.dispatchEvent(new Event('change', { bubbles: true }));
+          for (let i = 0; i < 24 && !document.querySelector('[data-listening-audio]'); i++) await wait(100);
+          const clip = (await (await fetch(`/api/hoeren/${episode.id}`)).json()).clips[0];
+          const media = document.querySelector('[data-listening-audio]');
+          media.muted = true;
+          click('[data-action="listen-play"]');
+          for (let i = 0; i < 72 && (media.paused || media.currentTime < clip.start); i++) await wait(75);
+          if (media.paused || media.currentTime < clip.start || media.currentTime >= clip.end + .3) throw new Error(`episode seek failed: ${episode.id}`);
+          media.currentTime = clip.end + .05;
+          for (let i = 0; i < 15 && !media.paused; i++) await wait(80);
+          if (!media.paused) throw new Error('episode continued past the clip boundary');
+        }
+      }
+      const folder = document.querySelector('[data-listening-folder]');
+      const example = await (await fetch('/listening-audio/treffpunkt.mp3')).blob();
+      const transfer = new DataTransfer();
+      const sentence = 'Wenn du etwas später kommst, warte ich direkt neben dem Stadtplan.';
+      transfer.items.add(new File([example], 'simpsons.s06e04.mp4', { type: example.type }));
+      transfer.items.add(new File([`1\n00:00:01,000 --> 00:00:06,500\n${sentence}\n`], 'simpsons.s06e04.de.srt', { type: 'text/plain' }));
+      folder.files = transfer.files;
+      folder.dispatchEvent(new Event('change', { bubbles: true }));
+      for (let i = 0; i < 24 && !document.querySelector('[data-listening-audio]')?.src.startsWith('blob:'); i++) await wait(100);
+      const local = document.querySelector('[data-listening-audio]');
+      if (!local?.src.startsWith('blob:')) throw new Error('the selected folder did not load an audio clip locally');
+      local.muted = true;
+      click('[data-action="listen-play"]');
+      for (let i = 0; i < 40 && (local.paused || local.currentTime < 1); i++) await wait(75);
+      if (local.paused || local.currentTime < 1) throw new Error('the imported audio clip did not seek');
+      click('[data-action="listen-stop"]');
+      const field = document.querySelector('#tv-answer');
+      field.value = 'Wenn';
+      fire(field);
+      click('[data-action="listen-tv-check"]');
+      if (!document.querySelector('.listening-task.yes')) throw new Error('the first gap was not graded');
+      click('[data-action="listen-tv-longer"]');
+      if (!document.querySelector('.listening-modes [data-mode="phrase"][aria-pressed="true"]')) throw new Error('the gap did not grow');
     }
     if (name === 'writing-feedback') {
       const editor = document.querySelector('#writing-draft-0');

@@ -71,7 +71,12 @@ export function indexContent(raw) {
   const writingExercises = new Map([
     ...[...writingChapters.values()].flatMap(chapter => chapter.tasks), ...(writingCourse?.readiness || [])
   ].map(task => [task.id, task]));
+  const withTiming = (scene, assessment = false) => ({ ...scene, assessment, segments: raw.listeningTimings?.[scene.id] || [] });
+  const listeningChapters = (raw.listeningCourse?.chapters ?? []).map(chapter => ({ ...chapter, scenes: chapter.scenes.map(scene => withTiming(scene)) }));
+  const listeningAssessment = (raw.listeningCourse?.assessment ?? []).map(scene => withTiming(scene, true));
+  const listeningScenes = new Map([...listeningChapters.flatMap(chapter => chapter.scenes), ...listeningAssessment].map(scene => [scene.id, scene]));
   return {
+    listeningChapters, listeningAssessment, listeningScenes, listeningAudio: raw.listeningAudio,
     writingCourse, writingChapters, writingExercises,
     version: raw.version,
     levels: raw.levels,

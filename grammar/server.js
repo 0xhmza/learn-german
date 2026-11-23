@@ -6,15 +6,19 @@ import { readFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { assembleContent } from './scripts/assemble-content.js';
+import { createListeningApi, streamListeningAudio } from './listening-library.js';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const srcRoot = path.join(root, 'src');
+const defaultMediaRoots = [path.resolve(root, '../media-player/media'), path.resolve(root, '../media')];
+const listeningAudioDir = path.join(root, 'listening-audio');
 const types = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.woff2': 'font/woff2',
+  '.mp3': 'audio/mpeg',
   '.svg': 'image/svg+xml',
   '.txt': 'text/plain; charset=utf-8'
 };
@@ -32,7 +36,8 @@ export function safePath(base, requestPath) {
   return file === base || file.startsWith(base + path.sep) ? file : null;
 }
 
-export function createApp({ dist = false } = {}) {
+export function createApp({ dist = false, listeningMediaRoots = defaultMediaRoots } = {}) {
+  const localListening = createListeningApi(listeningMediaRoots);
   const base = dist ? path.join(root, 'dist') : srcRoot;
   const home = dist ? '/Deutsch-Grammatik-B1.html' : '/index.html';
   return createServer(async (req, res) => {
@@ -43,6 +48,17 @@ export function createApp({ dist = false } = {}) {
     try {
       if (req.method !== 'GET' && req.method !== 'HEAD') return send(405, 'Method not allowed');
       const { pathname } = new URL(req.url, 'http://localhost');
+      if (await localListening(req, res, pathname)) return;
+      if (pathname === '/shared/subtitles.js') {
+        return send(200, req.method === 'HEAD' ? '' : await readFile(path.resolve(root, '../public/subtitles.js')), types['.js']);
+      }
+      const recording = /^\/listening-audio\/([a-z][a-z0-9-]*\.mp3)$/.exec(pathname);
+      if (recording) {
+        const file = path.join(listeningAudioDir, recording[1]);
+        const info = await stat(file).catch(() => null);
+        if (!info?.isFile()) return send(404, 'Not found');
+        return await streamListeningAudio(req, res, file);
+      }
       if (!dist && pathname === '/content.json') return send(200, JSON.stringify(await assembleContent()), types['.json']);
       const file = safePath(base, pathname === '/' ? home : pathname);
       if (!file) return send(404, 'Not found');

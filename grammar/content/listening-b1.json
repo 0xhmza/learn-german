@@ -1,0 +1,1822 @@
+{
+  "chapters": [
+    {
+      "id": "alltag",
+      "title": {
+        "de": "Termine und Verabredungen",
+        "ar": "المواعيد واللقاءات"
+      },
+      "description": {
+        "de": "Hör heraus, was sich geändert hat und was als Nächstes passiert.",
+        "ar": "استمع لتعرف ما تغيّر وما الخطوة التالية."
+      },
+      "scenes": [
+        {
+          "id": "treffpunkt",
+          "title": {
+            "de": "Ein anderer Treffpunkt",
+            "ar": "مكان لقاء جديد"
+          },
+          "lines": [
+            {
+              "text": "Hallo Nura, die Haltestelle am Rathaus ist wegen der Baustelle gesperrt.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Wir treffen uns deshalb um Viertel nach sechs am Südeingang des Parks.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Wenn du etwas später kommst, warte ich direkt neben dem Stadtplan.",
+              "voice": "Hedda"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Warum ruft die Person an?",
+              "options": [
+                "Sie sagt die Verabredung ab.",
+                "Sie erkundigt sich nach dem Bus.",
+                "Sie ändert den Treffpunkt."
+              ],
+              "answer": 2,
+              "note": "Die Baustelle macht den ursprünglichen Treffpunkt ungeeignet."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Wo wartet die Person bei einer Verspätung?",
+              "options": [
+                "Am Nordeingang.",
+                "Neben dem Stadtplan.",
+                "An der Haltestelle."
+              ],
+              "answer": 1,
+              "note": "Die letzte Aussage nennt den genauen Warteort."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "wegen der Baustelle",
+              "note": "„Wegen“ leitet den Grund ein."
+            },
+            {
+              "kind": "dictation",
+              "segment": 2,
+              "answer": "Wenn du etwas später kommst, warte ich direkt neben dem Stadtplan.",
+              "note": "Achte auf die Bedingung mit „wenn“."
+            },
+            {
+              "kind": "contrast",
+              "prompt": "Welche Fassung hörst du genau?",
+              "options": [
+                "Wir treffen uns deshalb um Viertel nach sechs am Südeingang des Parks.",
+                "Wir treffen uns deshalb um Viertel vor sechs am Südeingang des Parks.",
+                "Wir treffen uns deshalb um Viertel nach sechs am Nordeingang des Parks."
+              ],
+              "answer": 0,
+              "segment": 1,
+              "note": "„Viertel nach sechs“ ist 18:15 Uhr. Achte auch auf den Südeingang."
+            }
+          ]
+        },
+        {
+          "id": "termin-tausch",
+          "title": {
+            "de": "Ein früherer Termin",
+            "ar": "موعد أبكر"
+          },
+          "lines": [
+            {
+              "text": "Hier ist die Stadtbibliothek. Sie hatten einen Termin, um Ihren Ausweis abzuholen.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Am Freitag schließen wir früher, weil die Computer erneuert werden.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Sie können den Ausweis am Donnerstag ab drei Uhr abholen oder uns einen anderen Termin vorschlagen.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was soll die Person entscheiden?",
+              "options": [
+                "Ob ihr Ausweis verlängert wird.",
+                "Welche Filiale sie besuchen möchte.",
+                "Wann sie ihren Ausweis abholt."
+              ],
+              "answer": 2,
+              "note": "Es geht um einen Ersatztermin für die Abholung."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Welche Möglichkeit wird ausdrücklich angeboten?",
+              "options": [
+                "Donnerstag bis drei Uhr.",
+                "Donnerstag ab drei Uhr.",
+                "Freitag nach der Schließung."
+              ],
+              "answer": 1,
+              "note": "„Ab drei“ bezeichnet den frühesten möglichen Zeitpunkt."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "weil die Computer erneuert werden",
+              "note": "Der Nebensatz begründet die frühe Schließung."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "einen anderen Termin vorschlagen",
+              "note": "Der zweite Vorschlag ist zeitlich offen."
+            }
+          ]
+        },
+        {
+          "id": "picknick-plan",
+          "title": {
+            "de": "Ein Plan bei Regen",
+            "ar": "خطة في حال المطر"
+          },
+          "lines": [
+            {
+              "text": "Sollen wir das Picknick verschieben, falls es morgen regnet?",
+              "voice": "Katja"
+            },
+            {
+              "text": "Wir müssen es nicht absagen. Im Jugendzentrum ist ein Raum frei, den wir nutzen dürfen.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Gut, dann bringe ich das Essen dorthin und schreibe den anderen, sobald wir den Schlüssel haben.",
+              "voice": "Katja"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Worauf einigen sich die beiden?",
+              "options": [
+                "Sie verschieben das Picknick auf nächste Woche.",
+                "Sie reservieren einen Tisch in einem Restaurant.",
+                "Sie nutzen bei Regen einen Raum."
+              ],
+              "answer": 2,
+              "note": "Das Jugendzentrum bietet eine Alternative zum Picknick im Freien."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Wann schreibt die letzte Person den anderen?",
+              "options": [
+                "Sobald es zu regnen beginnt.",
+                "Sobald der Schlüssel da ist.",
+                "Sobald das Essen fertig ist."
+              ],
+              "answer": 1,
+              "note": "Die Nachricht hängt vom Schlüssel ab."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "falls es morgen regnet",
+              "note": "„Falls“ stellt die Bedingung."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "den wir nutzen dürfen",
+              "note": "Der Relativsatz bezieht sich auf „ein Raum“."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wohnen",
+      "title": {
+        "de": "Wohnen und Nachbarschaft",
+        "ar": "السكن والجيرة"
+      },
+      "description": {
+        "de": "Unterscheide Gründe, Zeitangaben und höfliche Bitten.",
+        "ar": "ميّز بين الأسباب والمواعيد والطلبات المهذّبة."
+      },
+      "scenes": [
+        {
+          "id": "wasser-abgestellt",
+          "title": {
+            "de": "Wasser im Haus",
+            "ar": "المياه في المبنى"
+          },
+          "lines": [
+            {
+              "text": "Am Mittwoch wird das Wasser von neun bis elf Uhr abgestellt, damit die Firma ein Rohr austauschen kann.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Bitte füllen Sie vorher etwas Trinkwasser ab, wenn Sie am Vormittag zu Hause sind.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Das warme Wasser kann danach noch eine halbe Stunde brauchen, bis es wieder normal läuft.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Wozu dient die Ansage?",
+              "options": [
+                "Sie bittet darum, ein beschädigtes Rohr zu melden.",
+                "Sie informiert über eine vorübergehende Unterbrechung.",
+                "Sie kündigt höhere Wasserkosten an."
+              ],
+              "answer": 1,
+              "note": "Die Ansage nennt die Zeit und den Grund für die Unterbrechung."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was kann nach elf Uhr noch fehlen?",
+              "options": [
+                "Warmes Wasser.",
+                "Trinkwasser in allen Wohnungen.",
+                "Der Zugang zum Gebäude."
+              ],
+              "answer": 0,
+              "note": "Die halbe Stunde gilt für das warme Wasser."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "wenn Sie am Vormittag zu Hause sind",
+              "note": "Die Empfehlung richtet sich an Menschen, die vormittags zu Hause sind."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "noch eine halbe Stunde",
+              "note": "„Noch“ bedeutet hier zusätzliche Wartezeit."
+            },
+            {
+              "kind": "contrast",
+              "prompt": "Welche Fassung hörst du genau?",
+              "options": [
+                "Das warme Wasser kann danach noch eine Viertelstunde brauchen, bis es wieder normal läuft.",
+                "Das warme Wasser kann danach noch eine halbe Stunde brauchen, bis es wieder normal läuft.",
+                "Das kalte Wasser kann danach noch eine halbe Stunde brauchen, bis es wieder normal läuft."
+              ],
+              "answer": 1,
+              "segment": 2,
+              "note": "Die Person spricht vom warmen Wasser und von einer halben Stunde."
+            }
+          ]
+        },
+        {
+          "id": "paket-nachbar",
+          "title": {
+            "de": "Ein Paket im Treppenhaus",
+            "ar": "طرد في مدخل المبنى"
+          },
+          "lines": [
+            {
+              "text": "Ich habe Ihr Paket angenommen, weil Sie gestern nicht da waren.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Danke, das ist nett. Könnte ich es heute gegen sieben bei Ihnen abholen?",
+              "voice": "Katja"
+            },
+            {
+              "text": "Gern. Klingeln Sie bitte nur einmal, damit das Baby nicht aufwacht.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was möchte die zweite Person?",
+              "options": [
+                "Ein Paket zur Post bringen lassen.",
+                "Die Adresse des Paketdienstes erfahren.",
+                "Das Paket beim Nachbarn abholen."
+              ],
+              "answer": 2,
+              "note": "Die Nachbarschaftshilfe ist bereits passiert. Jetzt geht es um die Abholung."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Warum soll die Person nur einmal klingeln?",
+              "options": [
+                "Der Nachbar arbeitet von zu Hause.",
+                "Ein Baby schläft.",
+                "Die Klingel ist kaputt."
+              ],
+              "answer": 1,
+              "note": "Das Baby soll nicht aufwachen."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "gegen sieben",
+              "note": "„Gegen“ bedeutet hier ungefähr."
+            },
+            {
+              "kind": "dictation",
+              "segment": 2,
+              "answer": "Gern. Klingeln Sie bitte nur einmal, damit das Baby nicht aufwacht.",
+              "note": "Der Satz endet mit dem Zweck der Bitte."
+            }
+          ]
+        },
+        {
+          "id": "fahrradraum",
+          "title": {
+            "de": "Mehr Platz für Fahrräder",
+            "ar": "مساحة أكبر للدراجات"
+          },
+          "lines": [
+            {
+              "text": "Bis Freitag sollen alle Fahrräder aus dem Flur entfernt werden, da der Durchgang frei bleiben muss.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Im Innenhof stehen vorübergehend zusätzliche Ständer zur Verfügung.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Wer sein Fahrrad im Keller lassen möchte, kann ab Montag einen Schlüssel im Büro abholen.",
+              "voice": "Hedda"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was ist die wichtigste Bitte?",
+              "options": [
+                "Am Montag den Innenhof freimachen.",
+                "Die Fahrräder aus dem Flur nehmen.",
+                "Die Fahrräder am Freitag zum Büro bringen."
+              ],
+              "answer": 1,
+              "note": "Der Flur soll als Durchgang frei bleiben."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Welche Alternative gibt es sofort?",
+              "options": [
+                "Ständer im Innenhof.",
+                "Einen Schlüssel zum Keller.",
+                "Eine neue Ecke im Flur."
+              ],
+              "answer": 0,
+              "note": "Der Schlüssel ist erst ab Montag erhältlich."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "da der Durchgang frei bleiben muss",
+              "note": "„Da“ nennt den Grund."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "einen Schlüssel im Büro abholen",
+              "note": "Der Schlüssel ist für den Keller gedacht."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arbeit",
+      "title": {
+        "de": "Arbeit und Zusammenarbeit",
+        "ar": "العمل والتعاون"
+      },
+      "description": {
+        "de": "Erkenne Zuständigkeiten und Absprachen im Berufsalltag.",
+        "ar": "استمع لتحديد المسؤوليات والاتفاقات في العمل."
+      },
+      "scenes": [
+        {
+          "id": "dienst-tauschen",
+          "title": {
+            "de": "Eine geteilte Schicht",
+            "ar": "مناوبة مشتركة"
+          },
+          "lines": [
+            {
+              "text": "Könntest du am Samstag meine Schicht übernehmen? Ich muss meine Tochter zum Arzt bringen.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Den Vormittag schaffe ich nicht, aber ab zwei Uhr kann ich an der Kasse arbeiten.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Dann frage ich Jonas, ob er den Anfang übernimmt. Ich melde mich, sobald er geantwortet hat.",
+              "voice": "Hedda"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Welche Lösung schlagen sie vor?",
+              "options": [
+                "Zwei Personen teilen sich die Schicht.",
+                "Die Schicht fällt ganz aus.",
+                "Die Kasse bleibt am Nachmittag geschlossen."
+              ],
+              "answer": 0,
+              "note": "Nur der Vormittag muss noch organisiert werden."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was kann die zweite Person übernehmen?",
+              "options": [
+                "Den Laden am Vormittag.",
+                "Den Arzttermin am Samstag.",
+                "Die Kasse ab zwei Uhr."
+              ],
+              "answer": 2,
+              "note": "Sie sagt ausdrücklich „ab zwei Uhr“."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "ob er den Anfang übernimmt",
+              "note": "Die Frage an Jonas steht als indirekter Fragesatz."
+            },
+            {
+              "kind": "dictation",
+              "segment": 1,
+              "answer": "Den Vormittag schaffe ich nicht, aber ab zwei Uhr kann ich an der Kasse arbeiten.",
+              "note": "Achte auf den Gegensatz zwischen Vormittag und Nachmittag."
+            },
+            {
+              "kind": "contrast",
+              "prompt": "Welche Fassung hörst du genau?",
+              "options": [
+                "Den Nachmittag schaffe ich nicht, aber ab zwei Uhr kann ich an der Kasse arbeiten.",
+                "Den Vormittag schaffe ich nicht, aber bis zwei Uhr kann ich an der Kasse arbeiten.",
+                "Den Vormittag schaffe ich nicht, aber ab zwei Uhr kann ich an der Kasse arbeiten."
+              ],
+              "answer": 2,
+              "segment": 1,
+              "note": "„Ab“ bedeutet hier: ab diesem Zeitpunkt und danach."
+            }
+          ]
+        },
+        {
+          "id": "besprechung-kurz",
+          "title": {
+            "de": "Eine kürzere Besprechung",
+            "ar": "اجتماع أقصر"
+          },
+          "lines": [
+            {
+              "text": "Die Besprechung am Mittwoch beginnt wie geplant um zehn Uhr, dauert aber nur eine halbe Stunde.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Schicken Sie mir deshalb Ihre Fragen bis Dienstagabend, damit ich die wichtigsten zuerst sammeln kann.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Die Entscheidung zum neuen Dienstplan verschieben wir auf nächste Woche.",
+              "voice": "Katja"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was ändert sich bei der Besprechung?",
+              "options": [
+                "Der Wochentag.",
+                "Der Beginn.",
+                "Die Dauer."
+              ],
+              "answer": 2,
+              "note": "„Wie geplant“ bestätigt die Uhrzeit. Neu ist die kürzere Dauer."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was sollen die Mitarbeitenden vorher tun?",
+              "options": [
+                "Eine halbe Stunde früher kommen.",
+                "Ihre Fragen schicken.",
+                "Den Dienstplan unterschreiben."
+              ],
+              "answer": 1,
+              "note": "Die Fragen sollen bis Dienstagabend eingehen."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "nur eine halbe Stunde",
+              "note": "Das kleine Wort „nur“ zeigt die Begrenzung."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "bis Dienstagabend",
+              "note": "Das ist die Frist für die Fragen."
+            }
+          ]
+        },
+        {
+          "id": "bestellung-laden",
+          "title": {
+            "de": "Eine falsche Lieferung",
+            "ar": "توصيل طلب غير صحيح"
+          },
+          "lines": [
+            {
+              "text": "Die Lieferung ist gerade angekommen, aber statt der blauen Tassen haben wir grüne bekommen.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Ruf bitte beim Lieferanten an und kläre, ob er die richtigen Tassen bis Donnerstag schicken kann.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Falls das zu knapp ist, stellen wir für die Veranstaltung erst einmal unsere weißen Tassen bereit.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Welches Problem gibt es?",
+              "options": [
+                "Die Lieferung enthält zu wenige Tassen.",
+                "Der Lieferant hat die Bestellung abgesagt.",
+                "Die Tassen wurden in der falschen Farbe geliefert."
+              ],
+              "answer": 2,
+              "note": "Die Tassen sind angekommen, nur die Farbe stimmt nicht."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Wann werden die weißen Tassen gebraucht?",
+              "options": [
+                "Wenn die Veranstaltung abgesagt wird.",
+                "Wenn die blauen nicht rechtzeitig eintreffen.",
+                "Sobald die grünen zurückgeschickt werden."
+              ],
+              "answer": 1,
+              "note": "Die weißen Tassen sind der Ersatz, falls Donnerstag zu knapp ist."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "statt der blauen Tassen",
+              "note": "„Statt“ stellt Bestellung und Lieferung gegenüber."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "für die Veranstaltung erst einmal",
+              "note": "„Erst einmal“ kennzeichnet die Übergangslösung."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lernen",
+      "title": {
+        "de": "Kurse und Lernen",
+        "ar": "الدورات والتعلّم"
+      },
+      "description": {
+        "de": "Hör auf Bedingungen, Aufgaben und Begründungen.",
+        "ar": "استمع للشروط والمهام والأسباب."
+      },
+      "scenes": [
+        {
+          "id": "kurs-wechsel",
+          "title": {
+            "de": "Kurswechsel",
+            "ar": "تغيير الدورة"
+          },
+          "lines": [
+            {
+              "text": "Der Abendkurs ist voll. Im Kurs am Samstag gibt es noch Plätze, allerdings beginnt er schon um halb neun.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Das würde gehen, wenn ich die erste Stunde online nachholen kann. An diesem Samstag arbeite ich.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Das ist möglich. Melden Sie sich bis Donnerstag an, damit wir Ihnen den Link rechtzeitig schicken können.",
+              "voice": "Katja"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Welche Lösung findet die Person?",
+              "options": [
+                "Sie kann den Samstagskurs besuchen und die erste Stunde online nachholen.",
+                "Sie bekommt einen Platz im Abendkurs.",
+                "Sie besucht ab Donnerstag einen reinen Onlinekurs."
+              ],
+              "answer": 0,
+              "note": "Das Onlineangebot betrifft nur die erste Stunde."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Bis wann soll die Anmeldung stattfinden?",
+              "options": [
+                "Bis Samstag um halb neun.",
+                "Bis heute Abend.",
+                "Bis Donnerstag."
+              ],
+              "answer": 2,
+              "note": "Der letzte Satz nennt Donnerstag als Frist."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "allerdings beginnt er schon",
+              "note": "„Allerdings“ leitet einen möglichen Nachteil ein."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "wenn ich die erste Stunde online nachholen kann",
+              "note": "Der Wechsel hängt von dieser Bedingung ab."
+            },
+            {
+              "kind": "contrast",
+              "prompt": "Welche Fassung hörst du genau?",
+              "options": [
+                "Der Abendkurs ist voll. Im Kurs am Samstag gibt es noch Plätze, allerdings beginnt er schon um halb neun.",
+                "Der Abendkurs ist voll. Im Kurs am Samstag gibt es noch Plätze, allerdings beginnt er schon um halb zehn.",
+                "Der Abendkurs ist voll. Im Kurs am Sonntag gibt es noch Plätze, allerdings beginnt er schon um halb neun."
+              ],
+              "answer": 0,
+              "segment": 0,
+              "note": "Die beiden wichtigen Details sind Samstag und halb neun."
+            }
+          ]
+        },
+        {
+          "id": "projekt-gruppe",
+          "title": {
+            "de": "Ein Gruppenprojekt",
+            "ar": "مشروع جماعي"
+          },
+          "lines": [
+            {
+              "text": "Für das Projekt gibt jede Gruppe am Dienstag einen kurzen Bericht ab.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Der Bericht soll auch dann abgegeben werden, wenn die Präsentation noch nicht fertig ist.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Wer am Montag Hilfe braucht, kann nach dem Kurs bleiben. Die Lehrerin beantwortet dort Fragen zum Aufbau.",
+              "voice": "Hedda"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was ist am Dienstag fällig?",
+              "options": [
+                "Die Wahl der Gruppe.",
+                "Der schriftliche Bericht.",
+                "Die fertige Präsentation."
+              ],
+              "answer": 1,
+              "note": "Die Präsentation darf am Dienstag noch unfertig sein."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Welche Hilfe wird angeboten?",
+              "options": [
+                "Fragen zum Aufbau nach dem Montagskurs.",
+                "Eine Verlängerung bis Donnerstag.",
+                "Eine fertige Präsentation für jede Gruppe."
+              ],
+              "answer": 0,
+              "note": "Das Hilfsangebot betrifft den Aufbau des Berichts."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "auch dann abgegeben werden",
+              "note": "Die Pflicht gilt trotz der unfertigen Präsentation."
+            },
+            {
+              "kind": "dictation",
+              "segment": 2,
+              "answer": "Wer am Montag Hilfe braucht, kann nach dem Kurs bleiben. Die Lehrerin beantwortet dort Fragen zum Aufbau.",
+              "note": "Im ersten Teil des Satzes erfährst du, an wen sich die Einladung richtet."
+            }
+          ]
+        },
+        {
+          "id": "lern-tandem",
+          "title": {
+            "de": "Ein Sprachtandem",
+            "ar": "تبادل لغوي"
+          },
+          "lines": [
+            {
+              "text": "Seit wir uns im Tandem treffen, spreche ich häufiger Deutsch. Beim Schreiben fühle ich mich aber noch unsicher.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Dann können wir einmal pro Woche kurze Nachrichten austauschen und uns am nächsten Tag Rückmeldung geben.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Gute Idee. Lass uns zuerst die Stellen besprechen, an denen man die Bedeutung schwer versteht.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was möchten die beiden zusätzlich üben?",
+              "options": [
+                "Die deutsche Aussprache im Chor.",
+                "Schreiben und Rückmeldungen geben.",
+                "Sprechen vor großen Gruppen."
+              ],
+              "answer": 1,
+              "note": "Die erste Person nennt das Schreiben als nächste Herausforderung."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Welche Stellen wollen sie zuerst besprechen?",
+              "options": [
+                "Stellen mit unklarer Bedeutung.",
+                "Stellen ohne Satzzeichen.",
+                "Alle langen Sätze."
+              ],
+              "answer": 0,
+              "note": "Verständlichkeit hat Vorrang."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "Seit wir uns im Tandem treffen",
+              "note": "„Seit“ markiert, wann die Veränderung begann."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "am nächsten Tag Rückmeldung geben",
+              "note": "Das Feedback folgt am nächsten Tag."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reisen",
+      "title": {
+        "de": "Unterwegs und auf Reisen",
+        "ar": "التنقّل والسفر"
+      },
+      "description": {
+        "de": "Halte Ziele, Zeiten und Alternativen auseinander.",
+        "ar": "ميّز بين الوجهات والأوقات والبدائل."
+      },
+      "scenes": [
+        {
+          "id": "bahn-umstieg",
+          "title": {
+            "de": "Ein anderer Anschluss",
+            "ar": "وسيلة مواصلة بديلة"
+          },
+          "lines": [
+            {
+              "text": "Wegen einer technischen Störung endet dieser Zug heute in Uelzen.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Reisende nach Hamburg können dort in den Regionalzug auf Gleis drei umsteigen.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Wer ein Ticket nur für diesen Zug hat, darf den Regionalzug trotzdem ohne Aufpreis nutzen.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was müssen Reisende nach Hamburg tun?",
+              "options": [
+                "In Uelzen umsteigen.",
+                "In Uelzen ein neues Ticket kaufen.",
+                "Im selben Zug bis Hamburg bleiben."
+              ],
+              "answer": 0,
+              "note": "Die Fahrt geht mit einem anderen Zug weiter."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was gilt für das vorhandene Ticket?",
+              "options": [
+                "Es gilt nur bis Uelzen.",
+                "Es muss am Gleis umgetauscht werden.",
+                "Es gilt im Regionalzug ohne Aufpreis."
+              ],
+              "answer": 2,
+              "note": "„Trotzdem“ hebt die Ausnahme für das Ticket hervor."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "Wegen einer technischen Störung",
+              "note": "Die Störung erklärt das vorzeitige Ende der Fahrt."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "trotzdem ohne Aufpreis",
+              "note": "Die Weiterfahrt kostet nichts zusätzlich."
+            },
+            {
+              "kind": "contrast",
+              "prompt": "Welche Fassung hörst du genau?",
+              "options": [
+                "Wer ein Ticket nur für diesen Zug hat, darf den Regionalzug nur gegen Aufpreis nutzen.",
+                "Wer ein Ticket nur für diesen Zug hat, darf den Regionalzug trotzdem ohne Aufpreis nutzen.",
+                "Wer ein Ticket für den Regionalzug hat, darf diesen Zug trotzdem ohne Aufpreis nutzen."
+              ],
+              "answer": 1,
+              "segment": 2,
+              "note": "Auch das Ticket für den ursprünglichen Zug gilt ohne Aufpreis im Regionalzug."
+            }
+          ]
+        },
+        {
+          "id": "zimmer-frueh",
+          "title": {
+            "de": "Ankunft vor dem Einchecken",
+            "ar": "الوصول قبل تسجيل الدخول"
+          },
+          "lines": [
+            {
+              "text": "Wir kommen schon gegen elf Uhr an. Können wir unser Gepäck bei Ihnen abstellen?",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Natürlich. Ihr Zimmer ist erst ab drei Uhr fertig, aber Ihre Koffer können Sie an der Rezeption lassen.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Wenn Sie inzwischen spazieren gehen möchten, gebe ich Ihnen gern einen Stadtplan mit.",
+              "voice": "Katja"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was wird den Gästen ermöglicht?",
+              "options": [
+                "Sie können ihr Gepäck früher abgeben.",
+                "Sie können das Zimmer schon um elf Uhr nutzen.",
+                "Sie dürfen später kostenlos auschecken."
+              ],
+              "answer": 0,
+              "note": "Die Koffer können an der Rezeption bleiben, während das Zimmer vorbereitet wird."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was bietet die Rezeption zusätzlich an?",
+              "options": [
+                "Ein Mittagessen.",
+                "Einen Abholservice.",
+                "Einen Stadtplan."
+              ],
+              "answer": 2,
+              "note": "Der Stadtplan ist für einen Spaziergang bis zum Einchecken gedacht."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "erst ab drei Uhr fertig",
+              "note": "„Erst ab“ erklärt, warum das Zimmer um elf noch nicht frei ist."
+            },
+            {
+              "kind": "dictation",
+              "segment": 2,
+              "answer": "Wenn Sie inzwischen spazieren gehen möchten, gebe ich Ihnen gern einen Stadtplan mit.",
+              "note": "Hör besonders auf „inzwischen“."
+            }
+          ]
+        },
+        {
+          "id": "radtour-umleitung",
+          "title": {
+            "de": "Eine Umleitung auf der Radtour",
+            "ar": "طريق تحويلة في جولة الدراجات"
+          },
+          "lines": [
+            {
+              "text": "Die Brücke am Fluss ist gesperrt, seit dort nach dem Hochwasser gebaut wird.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Wir fahren deshalb über die alte Landstraße. Der Umweg dauert ungefähr zwanzig Minuten.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Wenn euch das zu lang ist, können wir am Bahnhof umkehren und mit dem Zug zurückfahren.",
+              "voice": "Hedda"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Wie ändert sich die Strecke?",
+              "options": [
+                "Die Gruppe beendet die Tour sofort.",
+                "Die Gruppe nimmt eine andere Straße.",
+                "Die Gruppe fährt über die gesperrte Brücke."
+              ],
+              "answer": 1,
+              "note": "Die gesperrte Brücke ist der Grund für den Umweg."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was ist die Alternative bei Zeitmangel?",
+              "options": [
+                "Am Bahnhof umkehren und den Zug nehmen.",
+                "Zwanzig Minuten auf die Öffnung warten.",
+                "Das Fahrrad an der Brücke abstellen."
+              ],
+              "answer": 0,
+              "note": "Die Zugfahrt wird als freiwillige Alternative angeboten."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "ungefähr zwanzig Minuten",
+              "note": "Das ist die zusätzliche Fahrzeit."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "am Bahnhof umkehren",
+              "note": "„Umkehren“ heißt, den Rückweg anzutreten."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gesundheit",
+      "title": {
+        "de": "Gesundheit und Sport",
+        "ar": "الصحة والرياضة"
+      },
+      "description": {
+        "de": "Hör auf Empfehlungen und darauf, für wen sie gelten.",
+        "ar": "استمع للتوصيات وحدّد لمن تنطبق."
+      },
+      "scenes": [
+        {
+          "id": "praxis-aenderung",
+          "title": {
+            "de": "Ein Anruf aus der Praxis",
+            "ar": "اتصال من العيادة"
+          },
+          "lines": [
+            {
+              "text": "Guten Tag, hier ist die Praxis am Markt. Ihr Termin morgen findet wie geplant statt.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Bringen Sie bitte den ausgefüllten Fragebogen mit, damit wir beim Gespräch weniger Zeit für die Anmeldung brauchen.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Wenn Sie den Bogen nicht ausdrucken können, kommen Sie bitte fünfzehn Minuten früher.",
+              "voice": "Katja"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Wozu ruft die Praxis an?",
+              "options": [
+                "Sie sagt den Termin kurzfristig ab.",
+                "Sie verlegt den Termin in eine andere Praxis.",
+                "Sie erklärt, wie sich die Person auf den Termin vorbereitet."
+              ],
+              "answer": 2,
+              "note": "Der Termin bleibt bestehen, aber die Praxis gibt Hinweise zur Anmeldung."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Für wen gilt die frühere Ankunft?",
+              "options": [
+                "Nur für neue Patientinnen und Patienten.",
+                "Für Personen, die das Formular nicht ausdrucken können.",
+                "Für alle Personen mit einem Termin."
+              ],
+              "answer": 1,
+              "note": "Die Bedingung lautet, dass man den Bogen nicht ausdrucken kann."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "den ausgefüllten Fragebogen",
+              "note": "Der Bogen soll schon ausgefüllt sein."
+            },
+            {
+              "kind": "dictation",
+              "segment": 2,
+              "answer": "Wenn Sie den Bogen nicht ausdrucken können, kommen Sie bitte fünfzehn Minuten früher.",
+              "note": "„Wenn“ verbindet die Bedingung mit der früheren Ankunft."
+            },
+            {
+              "kind": "contrast",
+              "prompt": "Welche Fassung hörst du genau?",
+              "options": [
+                "Wenn Sie den Bogen nicht ausdrucken können, kommen Sie bitte fünfzehn Minuten später.",
+                "Wenn Sie den Bogen ausdrucken können, kommen Sie bitte fünfzehn Minuten früher.",
+                "Wenn Sie den Bogen nicht ausdrucken können, kommen Sie bitte fünfzehn Minuten früher."
+              ],
+              "answer": 2,
+              "segment": 2,
+              "note": "Hör auf „nicht“ und „früher“. Beide Wörter verändern die Anweisung."
+            }
+          ]
+        },
+        {
+          "id": "sport-regeln",
+          "title": {
+            "de": "Training im Sommer",
+            "ar": "التدريب صيفًا"
+          },
+          "lines": [
+            {
+              "text": "Bei der Hitze beginnen wir das Lauftraining heute erst um halb acht.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Wir bleiben auf der kurzen Strecke, damit niemand zu lange in der Sonne läuft.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Bringt bitte Wasser mit und meldet euch bei mir, falls euch während des Trainings schwindelig wird.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Warum verändert der Trainer das Training?",
+              "options": [
+                "Wegen der hohen Temperaturen.",
+                "Wegen eines Wettkampfs.",
+                "Wegen einer gesperrten Halle."
+              ],
+              "answer": 0,
+              "note": "Die Hitze ist der Grund für den späteren Beginn und die kurze Strecke."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was sollen die Teilnehmenden selbst mitbringen?",
+              "options": [
+                "Eine Uhr.",
+                "Ein Handtuch.",
+                "Wasser."
+              ],
+              "answer": 2,
+              "note": "Wasser wird ausdrücklich genannt."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "damit niemand zu lange",
+              "note": "Der Nebensatz erklärt den Zweck der kurzen Strecke."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "während des Trainings",
+              "note": "Die Anweisung gilt für die Zeit des Trainings."
+            }
+          ]
+        },
+        {
+          "id": "mittagspause",
+          "title": {
+            "de": "Bewegung in der Pause",
+            "ar": "الحركة في الاستراحة"
+          },
+          "lines": [
+            {
+              "text": "Seit ich mittags kurz spazieren gehe, kann ich mich am Nachmittag besser konzentrieren.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Ich würde gern mitkommen, obwohl ich nur zwanzig Minuten Pause habe.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Kein Problem. Wir gehen nur bis zur nächsten Kreuzung und drehen dort um.",
+              "voice": "Katja"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Warum geht die erste Person spazieren?",
+              "options": [
+                "Danach kann sie sich besser konzentrieren.",
+                "Sie bereitet sich auf einen langen Lauf vor.",
+                "Sie möchte in der Pause einkaufen."
+              ],
+              "answer": 0,
+              "note": "Sie beschreibt den Effekt am Nachmittag."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Wie berücksichtigen sie die kurze Pause?",
+              "options": [
+                "Sie gehen nach der Arbeit weiter.",
+                "Sie nehmen für den Rückweg den Bus.",
+                "Sie kehren an der nächsten Kreuzung um."
+              ],
+              "answer": 2,
+              "note": "Die nächste Kreuzung ist der Wendepunkt."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "mich am Nachmittag besser konzentrieren",
+              "note": "„Sich konzentrieren“ beschreibt hier den Nutzen der Bewegung."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "obwohl ich nur zwanzig Minuten Pause habe",
+              "note": "„Obwohl“ stellt den begrenzten Zeitraum dem Wunsch gegenüber."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "konsum",
+      "title": {
+        "de": "Einkaufen und Dienstleistungen",
+        "ar": "التسوّق والخدمات"
+      },
+      "description": {
+        "de": "Erkenne Angebote, Ausnahmen und Gründe für Entscheidungen.",
+        "ar": "تعرّف إلى العروض والاستثناءات وأسباب القرارات."
+      },
+      "scenes": [
+        {
+          "id": "rueckgabe",
+          "title": {
+            "de": "Rückgabe im Laden",
+            "ar": "إرجاع سلعة إلى المتجر"
+          },
+          "lines": [
+            {
+              "text": "Ich habe den Rucksack letzte Woche gekauft. Leider ist einer der Reißverschlüsse kaputt.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Wenn Sie den Kassenbon dabeihaben, können wir Ihnen entweder das Geld zurückgeben oder den Rucksack umtauschen.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Ich würde ihn lieber umtauschen, sofern Sie dasselbe Modell noch in Blau haben.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Warum ist der Kunde im Laden?",
+              "options": [
+                "Ein Teil des Rucksacks ist kaputt.",
+                "Der Rucksack ist zu groß.",
+                "Der Rucksack wurde doppelt berechnet."
+              ],
+              "answer": 0,
+              "note": "Der Kunde nennt den kaputten Reißverschluss."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was möchte der Kunde am liebsten?",
+              "options": [
+                "Bargeld ohne Kassenbon.",
+                "Ein anderes Modell zum gleichen Preis.",
+                "Dasselbe Modell in Blau."
+              ],
+              "answer": 2,
+              "note": "Der Umtausch hängt davon ab, ob es das Modell in Blau gibt."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "entweder das Geld zurückgeben",
+              "note": "„Entweder … oder“ führt zwei Möglichkeiten ein."
+            },
+            {
+              "kind": "dictation",
+              "segment": 2,
+              "answer": "Ich würde ihn lieber umtauschen, sofern Sie dasselbe Modell noch in Blau haben.",
+              "note": "Der Satz enthält eine höfliche Wahl und die Bedingung dafür."
+            },
+            {
+              "kind": "contrast",
+              "prompt": "Welche Fassung hörst du genau?",
+              "options": [
+                "Ich würde ihn lieber umtauschen, sofern Sie dasselbe Modell noch in Blau haben.",
+                "Ich würde ihn lieber umtauschen, sofern Sie dasselbe Modell noch in Grau haben.",
+                "Ich hätte lieber das Geld zurück, sofern Sie dasselbe Modell noch in Blau haben."
+              ],
+              "answer": 0,
+              "segment": 2,
+              "note": "Die Person bevorzugt den Umtausch, wenn Blau verfügbar ist."
+            }
+          ]
+        },
+        {
+          "id": "markt-preise",
+          "title": {
+            "de": "Ein Hinweis am Marktstand",
+            "ar": "إعلان في كشك السوق"
+          },
+          "lines": [
+            {
+              "text": "Ab heute berechnen wir für Einwegschalen zwanzig Cent extra.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Wer einen eigenen Behälter mitbringt, zahlt weiterhin nur den Preis für das Essen.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Falls Sie keinen Behälter haben, können Sie bei uns gegen Pfand eine Schale ausleihen und beim nächsten Besuch zurückgeben.",
+              "voice": "Hedda"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was möchte der Stand erreichen?",
+              "options": [
+                "Weniger Einwegschalen verwenden.",
+                "Weniger Essen pro Person verkaufen.",
+                "Kundinnen und Kunden zum Onlinekauf bewegen."
+              ],
+              "answer": 0,
+              "note": "Eigene und wiederverwendbare Behälter werden attraktiver."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Wie bekommt man eine ausleihbare Schale?",
+              "options": [
+                "Man bringt einen Kassenbon vom letzten Besuch.",
+                "Man bestellt sie einen Tag vorher.",
+                "Man hinterlegt Pfand."
+              ],
+              "answer": 2,
+              "note": "Das Pfand wird beim Ausleihen fällig."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "zwanzig Cent extra",
+              "note": "Das sind die zusätzlichen Kosten für eine Einwegschale."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "gegen Pfand eine Schale ausleihen",
+              "note": "„Gegen Pfand“ meint eine rückzahlbare Sicherheit."
+            }
+          ]
+        },
+        {
+          "id": "handy-reparatur",
+          "title": {
+            "de": "Ein repariertes Handy",
+            "ar": "هاتف بعد إصلاحه"
+          },
+          "lines": [
+            {
+              "text": "Guten Tag, Ihr Handy ist repariert. Wir mussten nur den Akku austauschen, deshalb kostet es weniger als geschätzt.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Sie können Ihr Gerät heute bis achtzehn Uhr abholen. Morgen bleibt das Geschäft wegen Inventur geschlossen.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Bringen Sie bitte den Abholschein mit, den wir Ihnen bei der Reparaturannahme gegeben haben.",
+              "voice": "Katja"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Warum ist der Preis niedriger?",
+              "options": [
+                "Es wurde nur der Akku gewechselt.",
+                "Die Kundin hat einen Rabattgutschein.",
+                "Eine andere Werkstatt übernimmt die Kosten."
+              ],
+              "answer": 0,
+              "note": "Der Aufwand war geringer als zunächst geschätzt."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Warum ist morgen keine Abholung möglich?",
+              "options": [
+                "Der Akku muss noch geliefert werden.",
+                "Der Abholschein wird erst morgen fertig.",
+                "Das Geschäft macht Inventur."
+              ],
+              "answer": 2,
+              "note": "Während der Inventur bleibt der Laden geschlossen."
+            },
+            {
+              "kind": "gap",
+              "segment": 0,
+              "answer": "weniger als geschätzt",
+              "note": "Der Vergleich bezieht sich auf den geschätzten Preis."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "den wir Ihnen bei der Reparaturannahme gegeben haben",
+              "note": "Der Relativsatz beschreibt den Abholschein."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemeinschaft",
+      "title": {
+        "de": "Medien und Gemeinschaft",
+        "ar": "الإعلام والمشاركة المجتمعية"
+      },
+      "description": {
+        "de": "Hör Meinungen, Gegenvorschläge und gemeinsame Entscheidungen.",
+        "ar": "استمع للآراء والبدائل والقرارات المشتركة."
+      },
+      "scenes": [
+        {
+          "id": "handy-kurs",
+          "title": {
+            "de": "Eine Handyregel im Kurs",
+            "ar": "قاعدة لاستخدام الهاتف في الدورة"
+          },
+          "lines": [
+            {
+              "text": "Ich finde es schwierig, mich zu konzentrieren, wenn ständig irgendwo ein Handy klingelt.",
+              "voice": "Hedda"
+            },
+            {
+              "text": "Ganz verbieten würde ich Handys nicht, weil manche die Wörterbuch-App benutzen.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Dann stellen wir sie lautlos und benutzen sie nur, wenn eine Aufgabe das erfordert.",
+              "voice": "Hedda"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Welche Lösung entsteht?",
+              "options": [
+                "Handys werden aus dem Raum verbannt.",
+                "Alle müssen dieselbe App installieren.",
+                "Handys bleiben lautlos und werden bei Bedarf genutzt."
+              ],
+              "answer": 2,
+              "note": "Die Gruppe einigt sich auf eine eingeschränkte Benutzung."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Warum ist die zweite Person gegen ein Verbot?",
+              "options": [
+                "Die Lehrerin hat das Verbot schon abgelehnt.",
+                "Manche nutzen ein Wörterbuch auf dem Handy.",
+                "Der Kurs findet nur online statt."
+              ],
+              "answer": 1,
+              "note": "Die Nutzung der Wörterbuch-App begründet den Einwand."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "weil manche die Wörterbuch-App benutzen",
+              "note": "Der Nebensatz beantwortet die Frage nach dem Grund."
+            },
+            {
+              "kind": "dictation",
+              "segment": 2,
+              "answer": "Dann stellen wir sie lautlos und benutzen sie nur, wenn eine Aufgabe das erfordert.",
+              "note": "Achte auf beide Teile der Vereinbarung."
+            },
+            {
+              "kind": "contrast",
+              "prompt": "Welche Fassung hörst du genau?",
+              "options": [
+                "Dann stellen wir sie lautlos und benutzen sie auch, wenn eine Aufgabe das nicht erfordert.",
+                "Dann stellen wir sie lautlos und benutzen sie nur, wenn eine Aufgabe das erfordert.",
+                "Dann schalten wir sie ganz aus und benutzen sie nur in der Pause."
+              ],
+              "answer": 1,
+              "segment": 2,
+              "note": "Die Regel lautet „lautlos“ und „nur, wenn eine Aufgabe das erfordert“."
+            }
+          ]
+        },
+        {
+          "id": "repair-cafe",
+          "title": {
+            "de": "Ein Reparaturtreff",
+            "ar": "لقاء لإصلاح الأغراض"
+          },
+          "lines": [
+            {
+              "text": "Unser Reparaturtreff öffnet am ersten Samstag im Monat. Wir helfen Ihnen dabei, kleine Geräte selbst zu reparieren.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Obwohl wir Werkzeug vor Ort haben, können wir keine passenden Ersatzteile garantieren.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Wenn Sie wissen, welches Teil kaputt ist, bringen Sie bitte nach Möglichkeit ein passendes Ersatzteil mit.",
+              "voice": "Stefan"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Was bietet der Treff an?",
+              "options": [
+                "Den kostenlosen Verkauf von Werkzeug.",
+                "Unterstützung bei eigenen Reparaturen.",
+                "Einen garantierten Austausch defekter Geräte."
+              ],
+              "answer": 1,
+              "note": "Die Gäste reparieren mit Hilfe der Freiwilligen selbst."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Was ist bei Ersatzteilen wichtig?",
+              "options": [
+                "Passende Teile sind vor Ort nicht garantiert.",
+                "Teile dürfen nicht mitgebracht werden.",
+                "Alle Teile stehen kostenlos bereit."
+              ],
+              "answer": 0,
+              "note": "Werkzeug und Ersatzteile werden unterschiedlich behandelt."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "keine passenden Ersatzteile garantieren",
+              "note": "„Keine“ gehört zur wichtigen Einschränkung."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "nach Möglichkeit ein passendes Ersatzteil",
+              "note": "„Nach Möglichkeit“ schwächt die Bitte ab."
+            }
+          ]
+        },
+        {
+          "id": "lesegruppe",
+          "title": {
+            "de": "Eine Buchrunde organisieren",
+            "ar": "تنظيم لقاء حول الكتب"
+          },
+          "lines": [
+            {
+              "text": "Für unsere Buchrunde würde ich diesmal ein kürzeres Buch vorschlagen, weil wir nur drei Wochen Zeit haben.",
+              "voice": "Katja"
+            },
+            {
+              "text": "Das passt. Wer das Buch nicht kaufen möchte, könnte es in der Stadtbibliothek ausleihen.",
+              "voice": "Stefan"
+            },
+            {
+              "text": "Lasst uns beim ersten Treffen nur über die ersten zwei Kapitel sprechen, damit niemand die Geschichte vorwegnimmt.",
+              "voice": "Katja"
+            }
+          ],
+          "tasks": [
+            {
+              "kind": "gist",
+              "prompt": "Warum wird ein kürzeres Buch vorgeschlagen?",
+              "options": [
+                "Die Bibliothek hat lange Bücher abgeschafft.",
+                "Das letzte Buch war zu leicht.",
+                "Die Gruppe hat wenig Zeit zum Lesen."
+              ],
+              "answer": 2,
+              "note": "Der Zeitraum beträgt nur drei Wochen."
+            },
+            {
+              "kind": "detail",
+              "prompt": "Worüber spricht die Gruppe beim ersten Treffen?",
+              "options": [
+                "Über alle Bücher aus der Bibliothek.",
+                "Über die ersten zwei Kapitel.",
+                "Über das Ende der Geschichte."
+              ],
+              "answer": 1,
+              "note": "Die Begrenzung vermeidet, zu viel zu verraten."
+            },
+            {
+              "kind": "gap",
+              "segment": 1,
+              "answer": "in der Stadtbibliothek ausleihen",
+              "note": "Ausleihen ist die Alternative zum Kauf."
+            },
+            {
+              "kind": "gap",
+              "segment": 2,
+              "answer": "damit niemand die Geschichte vorwegnimmt",
+              "note": "Das ist der Zweck der Begrenzung."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "id": "check-firma",
+      "title": {
+        "de": "Hinweise zum ersten Arbeitstag",
+        "ar": "تعليمات اليوم الأول في العمل"
+      },
+      "lines": [
+        {
+          "text": "Am Montag treffen sich alle neuen Mitarbeitenden zu Beginn am Haupteingang.",
+          "voice": "Hedda"
+        },
+        {
+          "text": "Wer schon einen Ausweis hat, kann direkt in den Schulungsraum gehen, nachdem er sich bei der Empfangsdame gemeldet hat.",
+          "voice": "Hedda"
+        },
+        {
+          "text": "Die Einführung beginnt erst um neun Uhr. Bringen Sie Ihre eigenen Kopfhörer mit, falls Sie bei der Computerübung lieber alleine zuhören.",
+          "voice": "Hedda"
+        }
+      ],
+      "tasks": [
+        {
+          "kind": "gist",
+          "prompt": "Für wen ist diese Nachricht bestimmt?",
+          "options": [
+            "Für alle Personen, die Kopfhörer bestellen wollen.",
+            "Für neue Mitarbeitende.",
+            "Für Kundinnen und Kunden mit einem Ausweis."
+          ],
+          "answer": 1,
+          "note": "Es geht um den Ablauf für die neuen Mitarbeitenden."
+        },
+        {
+          "kind": "detail",
+          "prompt": "Wer darf direkt in den Schulungsraum?",
+          "options": [
+            "Wer einen Ausweis hat und sich am Empfang gemeldet hat.",
+            "Wer noch keinen Ausweis hat.",
+            "Wer früher als neun Uhr am Eingang ist."
+          ],
+          "answer": 0,
+          "note": "Die Nachricht nennt zwei Voraussetzungen."
+        },
+        {
+          "kind": "detail",
+          "prompt": "Wann sind eigene Kopfhörer sinnvoll?",
+          "options": [
+            "Wenn man vor neun Uhr ankommt.",
+            "Wenn man den Ausweis vergessen hat.",
+            "Wenn man bei der Übung lieber allein zuhört."
+          ],
+          "answer": 2,
+          "note": "Eigene Kopfhörer sind eine Option, keine allgemeine Pflicht."
+        },
+        {
+          "kind": "gap",
+          "segment": 2,
+          "answer": "bei der Computerübung lieber alleine zuhören",
+          "note": "Die Formulierung erklärt, wann Kopfhörer nützlich sind."
+        }
+      ]
+    },
+    {
+      "id": "check-ausflug",
+      "title": {
+        "de": "Ein Ausflug im Vereinsprogramm",
+        "ar": "رحلة في برنامج النادي"
+      },
+      "lines": [
+        {
+          "text": "Für den Ausflug am Sonntag sind noch Plätze frei. Der Bus fährt um acht Uhr vor der Sporthalle ab.",
+          "voice": "Stefan"
+        },
+        {
+          "text": "Sie können bis Freitag kostenlos absagen. Danach müssen wir Ihnen den Fahrpreis berechnen, falls wir den Platz nicht weitergeben können.",
+          "voice": "Stefan"
+        },
+        {
+          "text": "Wer in der Nähe des Ziels wohnt, kann auch direkt zum Museum kommen. Schreiben Sie uns bitte vorher, wenn Sie das möchten.",
+          "voice": "Stefan"
+        }
+      ],
+      "tasks": [
+        {
+          "kind": "gist",
+          "prompt": "Worum geht es in der Ansage?",
+          "options": [
+            "Um neue Öffnungszeiten des Museums.",
+            "Um einen Busfahrplan für den Winter.",
+            "Um die Teilnahme an einem Ausflug."
+          ],
+          "answer": 2,
+          "note": "Die Ansage erklärt die Teilnahme und mögliche Änderungen."
+        },
+        {
+          "kind": "detail",
+          "prompt": "Wann kann eine späte Absage Geld kosten?",
+          "options": [
+            "Nur wenn man direkt zum Museum kommt.",
+            "Wenn der Platz nicht weitergegeben werden kann.",
+            "Immer, auch vor Freitag."
+          ],
+          "answer": 1,
+          "note": "Es kommt darauf an, ob der freie Platz anders vergeben werden kann."
+        },
+        {
+          "kind": "detail",
+          "prompt": "Was soll tun, wer direkt zum Museum fährt?",
+          "options": [
+            "Den Verein vorher informieren.",
+            "Am Sonntag erst zur Sporthalle kommen.",
+            "Ein separates Busticket kaufen."
+          ],
+          "answer": 0,
+          "note": "Die Ansage bittet um eine vorherige Nachricht."
+        },
+        {
+          "kind": "gap",
+          "segment": 1,
+          "answer": "falls wir den Platz nicht weitergeben können",
+          "note": "Der Nebensatz nennt die Bedingung für die Kosten."
+        }
+      ]
+    },
+    {
+      "id": "check-haus",
+      "title": {
+        "de": "Ein Tag im Nachbarschaftshaus",
+        "ar": "يوم في مركز الحي"
+      },
+      "lines": [
+        {
+          "text": "Am Samstag wollten wir das Nachbarschaftshaus von elf bis fünf Uhr öffnen. Wegen eines Stromproblems können wir erst nach Mittag beginnen.",
+          "voice": "Katja"
+        },
+        {
+          "text": "Die Führung durch das Gebäude findet um zwei Uhr statt. Der Bastelkurs fällt dagegen aus, weil die Werkstatt noch überprüft werden muss.",
+          "voice": "Katja"
+        },
+        {
+          "text": "Wer sich schon für den Kurs angemeldet hat, bekommt am Montag eine Nachricht mit einem neuen Vorschlag.",
+          "voice": "Katja"
+        }
+      ],
+      "tasks": [
+        {
+          "kind": "gist",
+          "prompt": "Was sagt die Ansage über das Programm?",
+          "options": [
+            "Alles findet zur geplanten Zeit statt.",
+            "Das Haus bleibt das ganze Wochenende geschlossen.",
+            "Ein Teil findet später statt und ein Kurs fällt aus."
+          ],
+          "answer": 2,
+          "note": "Der Beginn verschiebt sich, die Führung findet statt und der Kurs nicht."
+        },
+        {
+          "kind": "detail",
+          "prompt": "Was beginnt um zwei Uhr?",
+          "options": [
+            "Die Anmeldung für den Bastelkurs.",
+            "Die Führung.",
+            "Die Arbeit in der Werkstatt."
+          ],
+          "answer": 1,
+          "note": "Die Uhrzeit bezieht sich auf die Führung."
+        },
+        {
+          "kind": "detail",
+          "prompt": "Wer bekommt am Montag eine Nachricht?",
+          "options": [
+            "Die bereits angemeldeten Kursteilnehmenden.",
+            "Alle Besucherinnen und Besucher der Führung.",
+            "Nur die Personen, die das Gebäude verlassen haben."
+          ],
+          "answer": 0,
+          "note": "Der letzte Satz nennt die bereits angemeldeten Personen."
+        },
+        {
+          "kind": "gap",
+          "segment": 1,
+          "answer": "weil die Werkstatt noch überprüft werden muss",
+          "note": "Der Grund für den Ausfall ist die Überprüfung der Werkstatt."
+        }
+      ]
+    },
+    {
+      "id": "check-buero",
+      "title": {
+        "de": "Eine Information zum Bürgerbüro",
+        "ar": "معلومة عن مكتب خدمات المواطنين"
+      },
+      "lines": [
+        {
+          "text": "Unser Bürgerbüro nimmt bis Ende des Monats keine Termine am Telefon an, da die Telefonanlage ausgetauscht wird.",
+          "voice": "Stefan"
+        },
+        {
+          "text": "Online sind weiterhin Termine verfügbar. Falls Sie keinen Internetzugang haben, helfen Ihnen die Mitarbeitenden in der Stadtbibliothek bei der Buchung.",
+          "voice": "Stefan"
+        },
+        {
+          "text": "Die normalen Öffnungszeiten des Bürgerbüros ändern sich dadurch nicht. Bereits bestätigte Termine bleiben gültig.",
+          "voice": "Stefan"
+        }
+      ],
+      "tasks": [
+        {
+          "kind": "gist",
+          "prompt": "Was ändert sich vorübergehend?",
+          "options": [
+            "Wann das Büro geöffnet ist.",
+            "Wie man einen Termin vereinbart.",
+            "Wo sich das Bürgerbüro befindet."
+          ],
+          "answer": 1,
+          "note": "Nur die telefonische Terminvereinbarung fällt vorübergehend weg."
+        },
+        {
+          "kind": "detail",
+          "prompt": "Wo kann man Hilfe beim Buchen bekommen?",
+          "options": [
+            "In der Stadtbibliothek.",
+            "Bei der Firma für die Telefonanlage.",
+            "An der Tür des Bürgerbüros."
+          ],
+          "answer": 0,
+          "note": "Die Bibliothek hilft Personen ohne Internetzugang."
+        },
+        {
+          "kind": "detail",
+          "prompt": "Was gilt für bereits bestätigte Termine?",
+          "options": [
+            "Sie müssen erneut bestätigt werden.",
+            "Sie werden an die Bibliothek weitergegeben.",
+            "Sie bleiben gültig."
+          ],
+          "answer": 2,
+          "note": "Die Änderung betrifft nur neue Buchungen."
+        },
+        {
+          "kind": "gap",
+          "segment": 0,
+          "answer": "da die Telefonanlage ausgetauscht wird",
+          "note": "„Da“ führt den Grund für die vorübergehende Änderung ein."
+        }
+      ]
+    }
+  ]
+}

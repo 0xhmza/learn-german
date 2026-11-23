@@ -400,6 +400,9 @@ export default {
   // Platform shell, levels, Vokabeln and Schreiben.
   navVocab: 'Vokabeln',
   navWriting: 'Schreiben',
+  navListening: 'Hören',
+  listeningTitle: 'Hörtraining B1',
+  listeningSummary: 'Hör Alltagssituationen, fülle Lücken und übe mit deinen Serien.',
   navExam: 'Prüfung',
   navProfile: 'Profil',
   levelsTitle: 'Deine Stufen',
