@@ -1,0 +1,76 @@
+{
+  "komparativ": {
+    "steps": ["رخيص ← أرخص · صحي ← أكثر صحة", "السلطة أرخص. · سلطة أرخص", "", "مكوّنات أطزج · بمكوّنات أطزج"],
+    "examples": [
+      ["Ich suche *eine größere* Wohnung.", "أبحث عن شقة أكبر."],
+      ["Hast du *einen billigeren* Laptop gefunden?", "هل وجدت حاسوبًا أرخص؟"],
+      ["Wir brauchen *ein schnelleres* Internet.", "نحتاج إلى إنترنت أسرع."],
+      ["Mit *dem neueren* Handy mache ich bessere Fotos.", "بالهاتف الأحدث ألتقط صورًا أفضل."],
+      ["Im Sommer sind die Tage *länger*.", "في الصيف تكون الأيام أطول."],
+      ["Sie hat *eine bessere* Idee als ich.", "لديها فكرة أفضل من فكرتي."]
+    ]
+  },
+  "superlativ": {
+    "steps": ["رخيص ← الأرخص · طازج ← الأطزج", "الحساء هو الأرخص.", "الحساء الأرخص · الخبز الأطزج", "أفضل سلطة · مع أطزج حليب · أرخص العروض"],
+    "examples": [
+      ["Das ist *der schönste* Park der Stadt.", "هذه أجمل حديقة في المدينة."],
+      ["Im Winter sind die Nächte *am längsten*.", "في الشتاء تكون الليالي في أطول حالاتها."],
+      ["Ich nehme *das günstigste* Zimmer.", "سآخذ أرخص غرفة."],
+      ["Sie ist *meine beste* Freundin.", "هي أعز صديقاتي."],
+      ["Mit *dem schnellsten* Zug bist du in zwei Stunden da.", "بأسرع قطار تصل خلال ساعتين."],
+      ["Welcher Weg ist *am kürzesten*?", "أي طريق هو الأقصر؟"]
+    ]
+  },
+  "genitiv-adjektiv": {
+    "steps": ["رغم الرياح الباردة", "لصديق طيب · للجارة اللطيفة · لزملائي الجدد", "بسبب البرد الشديد · بسبب الأمطار الغزيرة", "رغم الرياح القوية · طعم الخبز الطازج"],
+    "examples": [
+      ["Das ist das Haus *meines neuen Chefs*.", "هذا بيت مديري الجديد."],
+      ["*Wegen des schlechten Wetters* fällt das Fest aus.", "بسبب الطقس السيئ يُلغى الحفل."],
+      ["*Trotz hoher Preise* kaufen viele Leute ein.", "رغم الأسعار المرتفعة يتسوّق كثير من الناس."],
+      ["Die Wohnung *einer guten Freundin* ist frei.", "شقة صديقة عزيزة شاغرة."],
+      ["*Während des langen Winters* lese ich viel.", "أثناء الشتاء الطويل أقرأ كثيرًا."],
+      ["Der Duft *frischen Kaffees* weckt mich.", "رائحة القهوة الطازجة توقظني."]
+    ]
+  },
+  "partizip1": {
+    "steps": ["يلعب", "يلعب + d ← لاعبًا", "الأطفال اللاعبون", "الأطفال الذين يلعبون في الفناء"],
+    "examples": [
+      ["Vorsicht vor dem *fahrenden* Zug!", "احذر القطار المتحرّك!"],
+      ["Das *weinende* Kind sucht seine Mutter.", "الطفل الباكي يبحث عن أمه."],
+      ["Wir suchen eine *passende* Wohnung.", "نبحث عن شقة مناسبة."],
+      ["*Lachend* kam sie ins Zimmer.", "دخلت الغرفة وهي تضحك."],
+      ["Die *steigenden* Preise machen mir Sorgen.", "الأسعار المرتفعة تقلقني."],
+      ["Ich trinke kein *kochendes* Wasser.", "لا أشرب الماء المغلي (الذي يغلي)."]
+    ],
+    "table": {
+      "de": [["Verb", "Partizip I", "mit Endung"], ["spielen", "spielen`d`", "die spielend`en` Kinder"], ["lachen", "lachen`d`", "ein lachend`es` Kind"], ["fahren", "fahren`d`", "der fahrend`e` Zug"], ["schlafen", "schlafen`d`", "mit schlafend`en` Hunden"], ["ohne Nomen", "als Adverb ohne Endung", "Sie kam `lachend` herein."]],
+      "ar": [["الفعل", "Partizip I", "مع النهاية"], ["spielen", "spielen`d`", "die spielend`en` Kinder"], ["lachen", "lachen`d`", "ein lachend`es` Kind"], ["fahren", "fahren`d`", "der fahrend`e` Zug"], ["schlafen", "schlafen`d`", "mit schlafend`en` Hunden"], ["دون اسم", "حال بلا نهاية", "Sie kam `lachend` herein."]]
+    }
+  },
+  "partizip-adjektiv": {
+    "steps": ["الزبونة المنتظِرة", "الدراجة المُصلَحة", "يفتح ← مفتوح · يكتب ← مكتوب · يبيع ← مَبيع", "مع طاولة مدهونة حديثًا"],
+    "examples": [
+      ["Die *wachsende* Stadt braucht mehr Schulen.", "المدينة النامية تحتاج إلى مزيد من المدارس."],
+      ["Ich esse gern *gekochte* Eier.", "أحب أكل البيض المسلوق."],
+      ["Das *verlorene* Handy wurde gefunden.", "عُثر على الهاتف المفقود."],
+      ["Wir sitzen am *brennenden* Kamin.", "نجلس عند المدفأة المشتعلة."],
+      ["Bitte füllen Sie das *beigefügte* Formular aus.", "يُرجى ملء الاستمارة المرفقة."],
+      ["Die *bestellten* Bücher sind angekommen.", "وصلت الكتب المطلوبة."]
+    ],
+    "table": {
+      "de": [["", "Partizip I", "Partizip II"], ["Bedeutung", "aktiv, gleichzeitig: etwas tut es gerade", "passiv oder abgeschlossen: mit ihm wurde etwas gemacht"], ["Form", "Infinitiv + `d`", "Partizip II aus dem Perfekt"], ["Beispiel", "die schließend`e` Tür", "die geschlossen`e` Tür"], ["Beispiel", "das kochend`e` Wasser", "das gekocht`e` Wasser"], ["Endung", "wie ein normales Adjektiv", "wie ein normales Adjektiv"]],
+      "ar": [["", "Partizip I", "Partizip II"], ["المعنى", "فاعل ومتزامن: يقوم بالفعل الآن", "مفعول أو منتهٍ: وقع عليه الفعل"], ["الصيغة", "المصدر + `d`", "Partizip II من الـPerfekt"], ["مثال", "die schließend`e` Tür (الباب الذي ينغلق)", "die geschlossen`e` Tür (الباب المغلق)"], ["مثال", "das kochend`e` Wasser (الماء الذي يغلي)", "das gekocht`e` Wasser (الماء المغلي سابقًا)"], ["النهاية", "مثل الصفة العادية", "مثل الصفة العادية"]]
+    }
+  },
+  "gradpartikeln": {
+    "steps": ["كان الفيلم مشوّقًا.", "كان الفيلم مشوّقًا جدًا. · كان الفيلم مملًّا بعض الشيء.", "كان الفيلم مشوّقًا إلى حدٍّ كبير.", "السترة غالية أكثر من اللازم.", "الهاتف الجديد أفضل بكثير."],
+    "examples": [
+      ["Die Prüfung war *ziemlich* schwer.", "كان الامتحان صعبًا إلى حدٍّ كبير."],
+      ["Das Essen ist *etwas* zu salzig.", "الطعام مالح قليلًا أكثر من اللازم."],
+      ["Ich bin *total* müde.", "أنا متعب تمامًا."],
+      ["Die Wohnung ist *besonders* hell.", "الشقة مضيئة بشكل خاص."],
+      ["Der Kaffee ist *zu* heiß zum Trinken.", "القهوة ساخنة جدًا لا يمكن شربها."],
+      ["Heute ist es *viel* kälter als gestern.", "اليوم أبرد بكثير من الأمس."]
+    ]
+  }
+}

@@ -55,7 +55,7 @@
   ],
   "example": "die schließende Tür · die geschlossene Tür",
   "stepExamples": [
-    "die reparierende Person",
+    "die wartende Kundin",
     "das reparierte Fahrrad",
     "öffnen → geöffnet · schreiben → geschrieben · verkaufen → verkauft",
     "mit einem frisch gestrichenen Tisch"
@@ -74,7 +74,7 @@
       "steps": [
         {
           "text": "افهم دور الاسم مع Partizip I",
-          "why": "الشخص هو من يصلح. من المصدر `reparieren` نصنع `reparierend` ثم نضيف `-e` للمؤنث بعد الأداة المحددة في الرفع."
+          "why": "الزبونة هي التي تنتظر. من المصدر `warten` نصنع `wartend` ثم نضيف `-e` للمؤنث بعد الأداة المحددة في الرفع."
         },
         {
           "text": "اختر Partizip II لوصف النتيجة",
@@ -109,7 +109,7 @@
       "steps": [
         {
           "text": "Verstehe die Rolle des Nomens beim Partizip I",
-          "why": "Die Person repariert selbst. Aus `reparieren` wird `reparierend`, dazu kommt `-e` für das Femininum nach dem bestimmten Artikel im Nominativ."
+          "why": "Die Kundin wartet selbst. Aus `warten` wird `wartend`, dazu kommt `-e` für das Femininum nach dem bestimmten Artikel im Nominativ."
         },
         {
           "text": "Wähle Partizip II für das Ergebnis",

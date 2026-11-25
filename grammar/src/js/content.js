@@ -13,6 +13,8 @@ export function indexContent(raw) {
   const byIsland = new Map(islands.map(island => [island.id, []]));
   for (const lesson of raw.lessons) {
     lessons.set(lesson.id, lesson);
+    // Extra examples and translations from content/lesson-examples/.
+    lesson.extra = raw.lessonExamples?.[lesson.id] || null;
     byIsland.get(lesson.island)?.push(lesson);
     for (const q of lesson.questions) {
       q.lesson = lesson.id;
@@ -134,12 +136,13 @@ export function localize(lesson, lang) {
     title: own.title,
     lead: own.lead,
     translation: ar.translation,
-    steps: own.steps.map((step, i) => ({ ...step, example: lesson.stepExamples[i] })),
+    steps: own.steps.map((step, i) => ({ ...step, example: lesson.stepExamples[i], translation: lesson.extra?.steps?.[i] || '' })),
+    examples: lesson.extra?.examples || [],
     explain: own.explain,
     pitfall: own.pitfall,
     recall: own.recall,
     links: lesson.links.map((url, i) => [own.linkTitles[i], url]),
-    table: own.table || ar.table || null
+    table: own.table || ar.table || lesson.extra?.table?.[lang] || lesson.extra?.table?.ar || null
   };
 }
 

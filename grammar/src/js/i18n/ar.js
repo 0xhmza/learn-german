@@ -118,6 +118,8 @@ export default {
   examWords: n => `عدد الكلمات: ${n}`,
   examGroupRead: "القراءة", examGroupLang: "إكمال النصوص", examGroupListen: "الاستماع", examGroupWrite: "الكتابة",
   studyTools: "طرق التدريب",
+  moreExamples: 'أمثلة إضافية',
+  moreExamplesHow: 'اقرأ كل جملة بصوت عالٍ وانتبه إلى الكلمات المظلّلة. انقر على الجملة لترى الترجمة.',
   lessonWorked: "مثال على الاستعمال",
   lessonApply: "تمرين تطبيقي إضافي",
   crossPractice: "تمارين تجمع أكثر من درس",

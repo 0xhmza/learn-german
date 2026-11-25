@@ -1,0 +1,50 @@
+{
+  "kausal-da-weil": {
+    "steps": ["أبقى في البيت. أنا مريض.", "أبقى في البيت لأنني مريض.", "بما أنني مريض أبقى في البيت.", "لماذا تبقى في البيت؟ – لأنني مريض."],
+    "examples": [
+      ["Ich komme später, *weil* mein Zug Verspätung *hat*.", "سآتي متأخرًا لأن قطاري متأخر."],
+      ["*Da* das Wetter schön *ist*, essen wir draußen.", "بما أن الطقس جميل نأكل في الخارج."],
+      ["Sie lernt Deutsch, *weil* sie in Berlin studieren *möchte*.", "تتعلّم الألمانية لأنها تريد الدراسة في برلين."],
+      ["*Da* der Laden geschlossen *war*, sind wir zurückgefahren.", "بما أن المحل كان مغلقًا عدنا."],
+      ["Er ist müde, *weil* er bis spät *gearbeitet hat*.", "هو متعب لأنه عمل حتى وقت متأخر."],
+      ["Warum rufst du an? – *Weil* ich deine Hilfe *brauche*.", "لماذا تتصل؟ – لأنني أحتاج مساعدتك."]
+    ]
+  },
+  "deshalb-daher": {
+    "steps": ["أبقى في البيت لأنني مريض.", "أنا مريض. لذلك أبقى في البيت.", "أنا مريض. لذلك أبقى في البيت.", "أنا مريض، لذا أبقى في البيت."],
+    "examples": [
+      ["Es regnet. *Deshalb nehme* ich den Bus.", "إنها تمطر. لذلك آخذ الحافلة."],
+      ["Ich hatte keine Zeit, *darum habe* ich nicht angerufen.", "لم يكن لديّ وقت، لذلك لم أتصل."],
+      ["Der Laden war zu. Wir sind *deswegen* nach Hause gegangen.", "كان المحل مغلقًا. لذلك عدنا إلى البيت."],
+      ["Sie spricht gut Arabisch, *daher versteht* sie ihre Kunden.", "تتحدّث العربية جيدًا، لذا تفهم زبائنها."],
+      ["Der Zug fiel aus. *Deshalb sind* wir zu spät gekommen.", "أُلغي القطار. لذلك وصلنا متأخرين."],
+      ["Ich möchte fit bleiben, *deswegen gehe* ich jeden Tag spazieren.", "أريد أن أبقى لائقًا، لذلك أتمشّى كل يوم."]
+    ]
+  },
+  "sodass": {
+    "steps": ["أمطرت بغزارة. بقينا في البيت.", "أمطرت بغزارة، بحيث بقينا في البيت.", "أمطرت بغزارة شديدة حتى إننا بقينا في البيت.", "تكلّم بصوت منخفض جدًا حتى إن أحدًا لم يفهمه."],
+    "examples": [
+      ["Der Bus kam zu spät, *sodass* ich den Zug *verpasst habe*.", "تأخرت الحافلة، بحيث فاتني القطار."],
+      ["Es war *so* laut, *dass* wir nicht schlafen *konnten*.", "كان المكان صاخبًا لدرجة أننا لم نستطع النوم."],
+      ["Sie hat viel geübt, *sodass* sie die Prüfung *bestanden hat*.", "تدرّبت كثيرًا، بحيث نجحت في الامتحان."],
+      ["Der Koffer war *so* schwer, *dass* ich ihn nicht tragen *konnte*.", "كانت الحقيبة ثقيلة لدرجة أنني لم أستطع حملها."],
+      ["Die Straße war gesperrt, *sodass* wir einen Umweg fahren *mussten*.", "كان الشارع مغلقًا، بحيث اضطررنا إلى طريق التفافي."],
+      ["Er sprach *so* schnell, *dass* ich nichts verstanden *habe*.", "تكلّم بسرعة كبيرة لدرجة أنني لم أفهم شيئًا."]
+    ],
+    "table": {
+      "de": [["Form", "Wo steht die Ursache?", "Beispiel"], ["`sodass`", "im Hauptsatz, ohne Betonung", "Es regnete, `sodass` wir blieben."], ["`so` + Adjektiv + `dass`", "`so` betont das Adjektiv im Hauptsatz", "Es regnete `so` stark, `dass` wir blieben."], ["Verb", "im `dass`-Satz am Ende", "…, sodass wir zu Hause geblieben `sind`."], ["Unterschied zu `deshalb`", "`deshalb` + Verb direkt danach", "Es regnete. `Deshalb blieben` wir."]],
+      "ar": [["الصيغة", "أين يقع السبب؟", "مثال"], ["`sodass`", "في الجملة الرئيسية دون تشديد", "Es regnete, `sodass` wir blieben."], ["`so` + صفة + `dass`", "`so` تؤكّد الصفة في الجملة الرئيسية", "Es regnete `so` stark, `dass` wir blieben."], ["الفعل", "في آخر جملة `dass`", "…, sodass wir zu Hause geblieben `sind`."], ["الفرق عن `deshalb`", "`deshalb` + الفعل مباشرة بعده", "Es regnete. `Deshalb blieben` wir."]]
+    }
+  },
+  "indem": {
+    "steps": ["كيف نوفّر الكهرباء؟", "نوفّر الكهرباء بإطفاء الضوء.", "بإطفاء الضوء نوفّر الكهرباء.", "نوفّر الكهرباء عن طريق إطفاء الضوء."],
+    "examples": [
+      ["Ich lerne neue Wörter, *indem* ich Karteikarten *benutze*.", "أتعلّم كلمات جديدة باستعمال البطاقات."],
+      ["Man bleibt gesund, *indem* man sich viel *bewegt*.", "يبقى المرء بصحة جيدة بالحركة الكثيرة."],
+      ["Sie hat ihr Deutsch verbessert, *indem* sie viele Podcasts *gehört hat*.", "حسّنت ألمانيتها بالاستماع إلى بودكاست كثيرة."],
+      ["*Indem* wir Rad *fahren*, schützen wir die Umwelt.", "بركوب الدراجة نحمي البيئة."],
+      ["Du kannst Geld sparen, *indem* du selbst *kochst*.", "يمكنك توفير المال بأن تطبخ بنفسك."],
+      ["Er öffnete die Dose, *indem* er ein Messer *benutzte*.", "فتح العلبة مستعملًا سكينًا."]
+    ]
+  }
+}

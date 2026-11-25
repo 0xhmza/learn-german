@@ -1,0 +1,65 @@
+{
+  "infinitiv-zu": {
+    "steps": ["أحاول … · أنوي … · من المهم …", "أعدك بأن آتي في الموعد.", "أن أقرأ · أن أفهم · أن أتصل", "لديّ رغبة في العمل في الخارج.", "أتعلّم الألمانية كي أتحدّث بثقة أكبر في الحياة اليومية."],
+    "examples": [
+      ["Ich habe vergessen, *das Fenster zu schließen*.", "نسيت أن أغلق النافذة."],
+      ["Es ist schwer, *eine Wohnung zu finden*.", "من الصعب إيجاد شقة."],
+      ["Hast du Lust, *mit uns ins Kino zu gehen*?", "هل ترغب في الذهاب معنا إلى السينما؟"],
+      ["Vergiss nicht, *deine Mutter anzurufen*!", "لا تنسَ أن تتصل بأمك!"],
+      ["Wir haben beschlossen, *im Sommer umzuziehen*.", "قرّرنا أن ننتقل في الصيف."],
+      ["Ich spare, *um ein Auto zu kaufen*.", "أدّخر كي أشتري سيارة."]
+    ],
+    "table": {
+      "de": [["Verbtyp", "Infinitiv mit zu", "Beispiel"], ["normales Verb", "`zu` + Infinitiv", "Ich versuche, pünktlich `zu kommen`."], ["trennbares Verb", "`zu` zwischen Präfix und Verb", "Ich verspreche, dich `anzurufen`."], ["mit Modalverb", "kein `zu`", "Ich `muss` heute arbeiten."], ["Ziel", "`um … zu`", "Ich lerne, `um` die Prüfung `zu` bestehen."], ["anderes Subjekt", "`dass`-Satz statt `zu`", "Ich hoffe, `dass` du kommst."]],
+      "ar": [["نوع الفعل", "المصدر مع zu", "مثال"], ["فعل عادي", "`zu` + المصدر", "Ich versuche, pünktlich `zu kommen`."], ["فعل منفصل", "`zu` بين البادئة والفعل", "Ich verspreche, dich `anzurufen`."], ["مع فعل ناقص", "بدون `zu`", "Ich `muss` heute arbeiten."], ["الهدف", "`um … zu`", "Ich lerne, `um` die Prüfung `zu` bestehen."], ["فاعل مختلف", "جملة `dass` بدل `zu`", "Ich hoffe, `dass` du kommst."]]
+    }
+  },
+  "statt-zu": {
+    "steps": ["أطبخ في البيت. · لا أطلب طعامًا.", "أطبخ … بدلًا من أن أطلب …", "…، بدلًا من شراء وجبات جاهزة.", "بدلًا من طلب الطعام أطبخ في البيت."],
+    "examples": [
+      ["Er spielt am Handy, *statt zu lernen*.", "يلعب على الهاتف بدلًا من أن يدرس."],
+      ["*Statt den Bus zu nehmen*, gehe ich zu Fuß.", "بدلًا من ركوب الحافلة أمشي."],
+      ["Ruf sie an, *statt ihr eine Nachricht zu schreiben*!", "اتصل بها بدلًا من أن تكتب لها رسالة!"],
+      ["Wir bleiben zu Hause, *anstatt in den Urlaub zu fahren*.", "نبقى في البيت بدلًا من أن نسافر في إجازة."],
+      ["*Anstatt sich zu beschweren*, sollte er helfen.", "بدلًا من أن يشتكي، ينبغي أن يساعد."],
+      ["Sie hat Tee getrunken, *statt Kaffee zu bestellen*.", "شربت شايًا بدلًا من أن تطلب قهوة."]
+    ]
+  },
+  "ohne-zu": {
+    "steps": ["غادرت. · لم تودّع.", "…، دون أن تودّع.", "تأكل الحساء دون أن تسخّنه أولًا.", "غادرت دون أن ألاحظ ذلك."],
+    "examples": [
+      ["Er ist gegangen, *ohne zu bezahlen*.", "غادر دون أن يدفع."],
+      ["Sie hat den Text übersetzt, *ohne ein Wörterbuch zu benutzen*.", "ترجمت النص دون أن تستعمل قاموسًا."],
+      ["*Ohne lange zu überlegen*, hat er Ja gesagt.", "قال نعم دون أن يفكّر طويلًا."],
+      ["Ich bin eingeschlafen, *ohne den Wecker zu stellen*.", "نمت دون أن أضبط المنبّه."],
+      ["Er hat mein Fahrrad genommen, *ohne mich zu fragen*.", "أخذ دراجتي دون أن يسألني."],
+      ["Wir sind losgefahren, *ohne dass* die Kinder es gemerkt haben.", "انطلقنا دون أن يلاحظ الأطفال ذلك."]
+    ]
+  },
+  "brauchen": {
+    "steps": ["أحتاج إلى حاسوب محمول جديد.", "ليس عليك أن تأتي اليوم.", "لا داعي لأن تأتي اليوم.", "ما عليك إلا أن تتصل.", "يجب أن تأتي غدًا."],
+    "examples": [
+      ["Du *brauchst* keine Angst *zu haben*.", "لا داعي لأن تخاف."],
+      ["Sie *brauchen* das Formular nicht *auszudrucken*.", "لا داعي لطباعة الاستمارة."],
+      ["Wir *brauchen* heute nicht früh *aufzustehen*.", "لا داعي لأن نستيقظ مبكرًا اليوم."],
+      ["Du *brauchst* nur auf den Knopf *zu drücken*.", "ما عليك إلا أن تضغط على الزر."],
+      ["Ich *brauche* dringend einen Termin.", "أحتاج بشكل عاجل إلى موعد."],
+      ["Ihr *braucht* euch keine Sorgen *zu machen*.", "لا داعي لأن تقلقوا."]
+    ]
+  },
+  "lassen": {
+    "steps": ["أُصلح نظارتي عند مختص.", "تسمح للأطفال باللعب في الخارج. · لا تسمح للأطفال باللعب هناك.", "يمكن إصلاح هذا. · أترك الحقيبة هنا.", "أنا أدَع · أنت تدَع · هو يدَع · نحن ندَع"],
+    "examples": [
+      ["Ich *lasse* mir die Haare *schneiden*.", "أقصّ شعري عند الحلّاق."],
+      ["Wir *lassen* das Auto in der Werkstatt *reparieren*.", "نُصلح السيارة في الورشة."],
+      ["Meine Eltern *lassen* mich nicht allein *reisen*.", "لا يسمح لي والداي بالسفر وحدي."],
+      ["*Lass* mich bitte *ausreden*!", "دعني أكمل كلامي من فضلك!"],
+      ["Ich habe meinen Schirm im Bus *gelassen*.", "تركت مظلّتي في الحافلة."],
+      ["Das Fenster *lässt sich* nicht öffnen.", "لا يمكن فتح النافذة."]
+    ],
+    "table": {
+      "de": [["Bedeutung", "Struktur", "Beispiel"], ["jemand anderes macht es", "`lassen` + Infinitiv", "Ich lasse das Auto reparieren."], ["erlauben", "`lassen` + Person + Infinitiv", "Sie lässt die Kinder spielen."], ["nicht mitnehmen", "`lassen` ohne Infinitiv", "Ich lasse die Tasche hier."], ["möglich sein", "`sich lassen` + Infinitiv", "Das lässt sich reparieren."], ["Perfekt mit Infinitiv", "`hat` + Infinitiv + `lassen`", "Ich habe das Auto reparieren lassen."]],
+      "ar": [["المعنى", "التركيب", "مثال"], ["شخص آخر يقوم بالعمل", "`lassen` + مصدر", "Ich lasse das Auto reparieren."], ["يسمح", "`lassen` + شخص + مصدر", "Sie lässt die Kinder spielen."], ["يترك (لا يأخذ)", "`lassen` بلا مصدر", "Ich lasse die Tasche hier."], ["يمكن", "`sich lassen` + مصدر", "Das lässt sich reparieren."], ["الـPerfekt مع مصدر", "`hat` + مصدر + `lassen`", "Ich habe das Auto reparieren lassen."]]
+    }
+  }
+}

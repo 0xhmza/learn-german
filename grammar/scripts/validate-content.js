@@ -384,6 +384,27 @@ export function validateContent(content) {
   }
   validateTrainer(content.listenTrainer, content.learning, fail, text, textList, bilingual);
   validateFlash(content.flashDecks, fail, text, bilingual);
+  // More examples per lesson (content/lesson-examples/).
+  const lessonIds = new Set(content.lessons.map(lesson => lesson.id));
+  for (const [id, extra] of Object.entries(content.lessonExamples || {})) {
+    const where = `lesson examples ${id}`;
+    const lesson = content.lessons.find(item => item.id === id);
+    if (!lessonIds.has(id)) { fail(where, 'unknown lesson'); continue; }
+    if (!Array.isArray(extra.steps) || extra.steps.length !== lesson.stepExamples.length) fail(where, 'needs one translation per step example ("" for word lists)');
+    else extra.steps.forEach((value, i) => { if (typeof value !== 'string' || value !== value.trim()) fail(`${where}.steps[${i}]`, 'must be text'); });
+    if (!Array.isArray(extra.examples) || extra.examples.length < 4 || extra.examples.length > 10) fail(where, 'needs 4–10 examples');
+    for (const [i, pair] of (extra.examples || []).entries()) {
+      if (!Array.isArray(pair) || pair.length !== 2) { fail(`${where}.examples[${i}]`, 'is [German, Arabic]'); continue; }
+      text(`${where}.examples[${i}]`, pair[0]);
+      text(`${where}.examples[${i}]`, pair[1]);
+      if ((pair[0].match(/\*/g) || []).length % 2 || !pair[0].includes('*')) fail(`${where}.examples[${i}]`, 'needs balanced *marks* around the rule');
+    }
+    if (extra.table) {
+      if (lesson.i18n.de.table || lesson.i18n.ar.table) fail(where, 'the lesson already has a table');
+      for (const lang of LANGS) table(`${where}.table.${lang}`, extra.table[lang]);
+    }
+  }
+  for (const id of lessonIds) if (!content.lessonExamples?.[id]) fail(`lesson ${id}`, 'has no extra examples in content/lesson-examples/');
   return errors.concat(validateModelTests(content.modelTests), validateWriting(content.writingCourse),
     validateListening(content.listeningCourse, content.listeningTimings));
 }

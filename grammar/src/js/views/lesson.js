@@ -47,6 +47,15 @@ function sources(ctx, lesson, view) {
   </details>`;
 }
 
+// More examples: the German sentence with the rule's words marked
+// (`*…*` in the content); a tap shows the Arabic translation.
+const marked = text => String(text).split('*').map((part, i) => (i % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join('');
+function moreExamples(examples) {
+  return `<p class="more-how">${t('moreExamplesHow')}</p><ol class="more-examples">${examples.map(([german, arabic]) => `<li><details>
+    <summary><span class="de" lang="de" dir="ltr">${marked(german)}</span></summary>
+    <p lang="ar" dir="rtl">${esc(arabic)}</p></details></li>`).join('')}</ol>`;
+}
+
 const practiceKey = id => `lesson-practice-${id}`;
 const xpIn = notes => notes.filter(note => note.type === 'xp' || note.type === 'goal').reduce((sum, note) => sum + note.amount, 0);
 
@@ -70,11 +79,12 @@ export function lessonFlow(app, lesson, view, lang = getLang()) {
     text('rule', t('glance'), () => renderGlance(lesson, lang)),
     check(1),
     ...view.steps.map((step, i) => text(`step-${i + 1}`, step.text, () => `
-      <div class="example">${germanLine(step.example)}</div><p>${prose(step.why)}</p>`)),
+      <div class="example">${germanLine(step.example)}${step.translation ? `<p class="example-tr" lang="ar" dir="rtl">${esc(step.translation)}</p>` : ''}</div><p>${prose(step.why)}</p>`)),
     check(2),
     text('details', t('detail'), () => `${view.explain.map(p => `<p>${prose(p)}</p>`).join('')}
       <details class="slide-recap"><summary>${t('recall')}</summary><p>${prose(view.recall[0])}</p>
         <details><summary>${t('showAnswer')}</summary><p>${prose(view.recall[1])}</p></details></details>`),
+    ...(view.examples.length ? [text('more', t('moreExamples'), () => moreExamples(view.examples))] : []),
     text('pitfall', t('pitfall'), () => wrongRight(lesson.pitfallPair) + `<p>${prose(view.pitfall)}</p>`),
     check(3)
   ];

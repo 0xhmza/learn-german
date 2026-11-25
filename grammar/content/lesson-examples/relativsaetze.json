@@ -1,0 +1,80 @@
+{
+  "relativ-dativ": {
+    "steps": ["الرجل يسكن في الجوار. أنا أساعد الرجل.", "", "الرجل الذي أساعده يسكن في الجوار.", "أزور الجارة التي أساعدها كثيرًا."],
+    "examples": [
+      ["Das ist die Kollegin, *der* ich das Buch gegeben habe.", "هذه الزميلة التي أعطيتها الكتاب."],
+      ["Der Freund, *dem* ich geschrieben habe, antwortet nicht.", "الصديق الذي كتبت له لا يرد."],
+      ["Die Kinder, *denen* wir helfen, lernen schnell.", "الأطفال الذين نساعدهم يتعلّمون بسرعة."],
+      ["Das Mädchen, *dem* das Fahrrad gehört, wohnt hier.", "الفتاة التي تملك الدراجة تسكن هنا."],
+      ["Ich kenne einen Arzt, *dem* ich vertraue.", "أعرف طبيبًا أثق به."],
+      ["Die Gäste, *denen* das Essen nicht geschmeckt hat, sind früh gegangen.", "الضيوف الذين لم يعجبهم الطعام غادروا مبكرًا."]
+    ]
+  },
+  "relativ-praep": {
+    "steps": ["ننتظر الحافلة.", "…، التي ننتظرها.", "هذه المرأة التي أعمل معها.", "الطاولة التي نجلس عليها · الطاولة التي نضع الكرسي عندها"],
+    "examples": [
+      ["Das ist der Kurs, *für den* ich mich angemeldet habe.", "هذه الدورة التي سجّلت فيها."],
+      ["Die Stadt, *in der* ich geboren bin, ist klein.", "المدينة التي وُلدت فيها صغيرة."],
+      ["Der Freund, *mit dem* ich telefoniert habe, kommt morgen.", "الصديق الذي تحدّثت معه هاتفيًا يأتي غدًا."],
+      ["Das Thema, *über das* wir sprechen, ist wichtig.", "الموضوع الذي نتحدّث عنه مهم."],
+      ["Die Leute, *bei denen* ich wohne, sind sehr nett.", "الناس الذين أسكن عندهم لطفاء جدًا."],
+      ["Das ist die Prüfung, *vor der* ich Angst habe.", "هذا هو الامتحان الذي أخاف منه."]
+    ],
+    "table": {
+      "de": [["Präposition + Kasus", "Maskulin", "Feminin", "Neutrum", "Plural"], ["`mit` (Dativ)", "mit dem", "mit der", "mit dem", "mit denen"], ["`für` (Akkusativ)", "für den", "für die", "für das", "für die"], ["`an` + Wo? (Dativ)", "an dem", "an der", "an dem", "an denen"], ["`an` + Wohin? (Akkusativ)", "an den", "an die", "an das", "an die"]],
+      "ar": [["حرف الجر + الحالة", "مذكر", "مؤنث", "محايد", "جمع"], ["`mit` (داتيف)", "mit dem", "mit der", "mit dem", "mit denen"], ["`für` (أكوزاتيف)", "für den", "für die", "für das", "für die"], ["`an` + أين؟ (داتيف)", "an dem", "an der", "an dem", "an denen"], ["`an` + إلى أين؟ (أكوزاتيف)", "an den", "an die", "an das", "an die"]]
+    }
+  },
+  "relativ-einschub": {
+    "steps": ["الجارة تنتقل غدًا.", "التي ساعدتها", "الجارة التي ساعدتها تنتقل غدًا.", "وجدت أمس المفتاح الذي تبحث عنه."],
+    "examples": [
+      ["Der Film, *den wir gestern gesehen haben*, war spannend.", "الفيلم الذي شاهدناه أمس كان مشوّقًا."],
+      ["Das Café, *in dem wir uns kennengelernt haben*, ist geschlossen.", "المقهى الذي تعارفنا فيه مغلق."],
+      ["Meine Schwester, *die in Wien lebt*, besucht uns.", "أختي التي تعيش في فيينا تزورنا."],
+      ["Der Zug, *der um acht abfährt*, ist voll.", "القطار الذي يغادر في الثامنة ممتلئ."],
+      ["Die Bücher, *die du mir geliehen hast*, gebe ich dir morgen zurück.", "سأعيد إليك غدًا الكتب التي أعرتني إياها."],
+      ["Der Kollege, *dem ich geholfen habe*, hat sich bedankt.", "شكرني الزميل الذي ساعدته."]
+    ]
+  },
+  "relativ-genitiv": {
+    "steps": ["المرأة", "", "…، التي يعمل ابنها هنا.", "الطفل الذي تحدّثت مع أمه"],
+    "examples": [
+      ["Der Mann, *dessen* Auto vor der Tür steht, ist mein Nachbar.", "الرجل الذي تقف سيارته أمام الباب هو جاري."],
+      ["Die Frau, *deren* Tasche gestohlen wurde, ruft die Polizei.", "المرأة التي سُرقت حقيبتها تتصل بالشرطة."],
+      ["Das Kind, *dessen* Eltern arbeiten, bleibt im Hort.", "الطفل الذي يعمل والداه يبقى في الرعاية النهارية."],
+      ["Die Studenten, *deren* Prüfung morgen ist, lernen viel.", "الطلاب الذين امتحانهم غدًا يدرسون كثيرًا."],
+      ["Das ist die Firma, *deren* Chef ich kenne.", "هذه الشركة التي أعرف مديرها."],
+      ["Der Autor, *dessen* Buch ich lese, kommt aus Syrien.", "الكاتب الذي أقرأ كتابه من سوريا."]
+    ],
+    "table": {
+      "de": [["Bezugswort", "Relativpronomen", "Beispiel"], ["Maskulin (der Mann)", "`dessen`", "der Mann, dessen Auto …"], ["Neutrum (das Kind)", "`dessen`", "das Kind, dessen Eltern …"], ["Feminin (die Frau)", "`deren`", "die Frau, deren Sohn …"], ["Plural (die Leute)", "`deren`", "die Leute, deren Haus …"], ["Wichtig", "kein Artikel danach", "deren Sohn, nicht deren der Sohn"]],
+      "ar": [["الاسم المرجعي", "ضمير الوصل", "مثال"], ["مذكر (der Mann)", "`dessen`", "der Mann, dessen Auto …"], ["محايد (das Kind)", "`dessen`", "das Kind, dessen Eltern …"], ["مؤنث (die Frau)", "`deren`", "die Frau, deren Sohn …"], ["جمع (die Leute)", "`deren`", "die Leute, deren Haus …"], ["مهم", "لا أداة تعريف بعده", "deren Sohn وليس deren der Sohn"]]
+    }
+  },
+  "relativ-ort": {
+    "steps": ["حيث أسكن توجد حديقة.", "هذا هو المكان الذي تذهب إليه.", "هذه هي المدينة التي جاء منها.", "الحديقة التي نجري فيها · الشخص الذي نراه"],
+    "examples": [
+      ["Das ist das Dorf, *wo* meine Großeltern wohnen.", "هذه القرية التي يسكن فيها جدّاي."],
+      ["Wir fahren dorthin, *wohin* alle fahren.", "نذهب إلى حيث يذهب الجميع."],
+      ["Ich gehe zurück in die Stadt, *woher* ich komme.", "أعود إلى المدينة التي جئت منها."],
+      ["Im Café, *wo* wir oft sitzen, gibt es guten Kuchen.", "في المقهى الذي نجلس فيه كثيرًا توجد كعكة لذيذة."],
+      ["Berlin ist die Stadt, *wohin* viele junge Leute ziehen.", "برلين هي المدينة التي ينتقل إليها كثير من الشباب."],
+      ["Dort, *wo* früher ein Kino war, ist jetzt ein Supermarkt.", "حيث كانت سينما في الماضي، يوجد الآن سوبرماركت."]
+    ],
+    "table": {
+      "de": [["Frage", "Relativwort", "Beispiel"], ["Wo?", "`wo` (= in dem / in der)", "die Stadt, wo ich wohne"], ["Wohin?", "`wohin` (= in die / in den)", "das Land, wohin sie zieht"], ["Woher?", "`woher` (= aus dem / aus der)", "der Ort, woher er kommt"], ["Bei Personen", "nie `wo`, sondern `der/die/das`", "die Frau, die dort wohnt"]],
+      "ar": [["السؤال", "أداة الوصل", "مثال"], ["أين؟", "`wo` (= in dem / in der)", "die Stadt, wo ich wohne"], ["إلى أين؟", "`wohin` (= in die / in den)", "das Land, wohin sie zieht"], ["من أين؟", "`woher` (= aus dem / aus der)", "der Ort, woher er kommt"], ["مع الأشخاص", "لا `wo` أبدًا بل `der/die/das`", "die Frau, die dort wohnt"]]
+    }
+  },
+  "relativ-was": {
+    "steps": ["هذا هو الفيلم الذي شاهدته.", "هذا كل ما أعرفه.", "هذا أفضل ما حدث لي.", "نجحت في الامتحان، وهذا يسعدني كثيرًا.", "هناك شيء أريد أن أتحدّث معك عنه."],
+    "examples": [
+      ["Ich glaube nicht alles, *was* im Internet steht.", "لا أصدّق كل ما يُكتب على الإنترنت."],
+      ["Es gibt nichts, *was* ich lieber esse.", "لا يوجد شيء أحب أكله أكثر من هذا."],
+      ["Das Schönste, *was* ich gesehen habe, war das Meer.", "أجمل ما رأيته كان البحر."],
+      ["Er kommt immer zu spät, *was* mich ärgert.", "يتأخر دائمًا، وهذا يزعجني."],
+      ["Das ist etwas, *worauf* ich mich freue.", "هذا شيء أتطلّع إليه."],
+      ["Vieles, *was* er erzählt, ist nicht wahr.", "كثير مما يحكيه غير صحيح."]
+    ]
+  }
+}

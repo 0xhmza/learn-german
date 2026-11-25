@@ -1,0 +1,65 @@
+{
+  "obwohl": {
+    "steps": ["إنها تمطر. أخرج للتنزّه.", "أخرج للتنزّه مع أنها تمطر.", "مع أنها تمطر أخرج للتنزّه.", "واصلت العمل مع أنها كانت متعبة."],
+    "examples": [
+      ["*Obwohl* ich müde *bin*, gehe ich zum Training.", "مع أنني متعب أذهب إلى التمرين."],
+      ["Er kauft das Handy, *obwohl* es sehr teuer *ist*.", "يشتري الهاتف مع أنه غالٍ جدًا."],
+      ["*Obwohl* wir früh losgefahren *sind*, kamen wir zu spät.", "مع أننا انطلقنا مبكرًا وصلنا متأخرين."],
+      ["Sie lacht, *obwohl* sie traurig *ist*.", "تضحك مع أنها حزينة."],
+      ["*Obwohl* der Kurs schwer *war*, habe ich viel gelernt.", "مع أن الدورة كانت صعبة تعلّمت كثيرًا."],
+      ["Ich verstehe dich, *obwohl* du sehr schnell *sprichst*.", "أفهمك مع أنك تتكلّم بسرعة كبيرة."]
+    ],
+    "table": {
+      "de": [["Wort", "Satzbau", "Beispiel"], ["`obwohl`", "Nebensatz: Verb am Ende", "`Obwohl` es regnet, gehe ich raus."], ["`trotzdem`", "Hauptsatz: Verb direkt danach", "Es regnet. `Trotzdem` gehe ich raus."], ["`aber`", "Position 0: Satzbau ändert sich nicht", "Es regnet, `aber` ich gehe raus."], ["`trotz`", "Präposition + Genitiv", "`Trotz` des Regens gehe ich raus."]],
+      "ar": [["الكلمة", "بناء الجملة", "مثال"], ["`obwohl`", "جملة تابعة: الفعل في الآخر", "`Obwohl` es regnet, gehe ich raus."], ["`trotzdem`", "جملة رئيسية: الفعل مباشرة بعدها", "Es regnet. `Trotzdem` gehe ich raus."], ["`aber`", "الموقع 0: لا يتغيّر الترتيب", "Es regnet, `aber` ich gehe raus."], ["`trotz`", "حرف جر + جينيتيف", "`Trotz` des Regens gehe ich raus."]]
+    }
+  },
+  "trotzdem": {
+    "steps": ["مع أنها تمطر أخرج للتنزّه.", "إنها تمطر. ومع ذلك أخرج للتنزّه.", "إنها تمطر. أخرج للتنزّه مع ذلك.", "إنها تمطر، لكنني أخرج للتنزّه مع ذلك."],
+    "examples": [
+      ["Ich bin krank. *Trotzdem gehe* ich zur Arbeit.", "أنا مريض. ومع ذلك أذهب إلى العمل."],
+      ["Das Essen war teuer. Es hat uns *trotzdem* geschmeckt.", "كان الطعام غاليًا. ومع ذلك أعجبنا."],
+      ["Ich habe wenig geschlafen, *trotzdem bin* ich fit.", "نمت قليلًا، ومع ذلك أنا نشيط."],
+      ["Er hatte keine Erfahrung. *Trotzdem hat* er die Stelle bekommen.", "لم تكن لديه خبرة. ومع ذلك حصل على الوظيفة."],
+      ["Es war kalt, aber wir sind *trotzdem* schwimmen gegangen.", "كان الجو باردًا، لكننا ذهبنا للسباحة مع ذلك."],
+      ["Die Prüfung war schwer. *Trotzdem habe* ich bestanden.", "كان الامتحان صعبًا. ومع ذلك نجحت."]
+    ]
+  },
+  "waehrend-adversativ": {
+    "steps": ["أخي يحب الرياضة. أنا أفضّل القراءة.", "بينما يحب أخي الرياضة، أفضّل أنا القراءة.", "أفضّل القراءة، في حين يحب أخي الرياضة.", "بينما أطبخ أستمع إلى الراديو. ↔ في حين أحب أنا الطبخ، يفضّل هو المطعم."],
+    "examples": [
+      ["*Während* ich gern früh aufstehe, schläft meine Frau lange.", "في حين أحب أنا الاستيقاظ مبكرًا، تنام زوجتي طويلًا."],
+      ["Im Norden regnet es, *während* im Süden die Sonne scheint.", "تمطر في الشمال، في حين تشرق الشمس في الجنوب."],
+      ["*Während* Tim Kaffee trinkt, mag Lea nur Tee.", "في حين يشرب تيم القهوة، لا تحب ليا إلا الشاي."],
+      ["Er spart jeden Euro, *während* sein Bruder alles ausgibt.", "يدّخر كل يورو، في حين ينفق أخوه كل شيء."],
+      ["*Während* die Stadt laut ist, ist es auf dem Land ruhig.", "في حين تكون المدينة صاخبة، يكون الريف هادئًا."],
+      ["Ich arbeite lieber im Team, *während* sie allein arbeiten möchte.", "أفضّل العمل ضمن فريق، في حين تريد هي العمل وحدها."]
+    ]
+  },
+  "je-desto": {
+    "steps": ["طويل ← أطول · جيد ← أفضل", "كلما سكنت هنا أطول، …", "…، عرفت المنطقة أفضل.", "كلما ارتفع الإيجار، قلّ المال المتبقّي."],
+    "examples": [
+      ["*Je* mehr ich übe, *desto* sicherer werde ich.", "كلما تدرّبت أكثر، صرت أكثر ثقة."],
+      ["*Je* früher wir losfahren, *umso* weniger Stau gibt es.", "كلما انطلقنا أبكر، قلّت الزحمة."],
+      ["*Je* länger der Film dauert, *desto* müder werde ich.", "كلما طال الفيلم، ازددت تعبًا."],
+      ["*Je* älter er wird, *desto* ruhiger ist er.", "كلما كبر في السن، صار أهدأ."],
+      ["*Je* mehr du liest, *desto* besser schreibst du.", "كلما قرأت أكثر، كتبت أفضل."],
+      ["*Je* billiger das Ticket ist, *umso* voller ist der Zug.", "كلما كانت التذكرة أرخص، كان القطار أكثر ازدحامًا."]
+    ],
+    "table": {
+      "de": [["Teil", "Satzbau", "Beispiel"], ["`je` + Komparativ", "Nebensatz: Verb am Ende", "`Je` länger ich hier `wohne`, …"], ["`desto` / `umso` + Komparativ", "Hauptsatz: Verb direkt danach", "… `desto` besser `kenne` ich die Gegend."], ["Komparativ-Gruppe", "bleibt zusammen", "je höher die Miete, desto weniger Geld"], ["`mehr` / `weniger`", "auch mit Nomen", "Je mehr Zeit, desto mehr Ideen."]],
+      "ar": [["الجزء", "بناء الجملة", "مثال"], ["`je` + صيغة المقارنة", "جملة تابعة: الفعل في الآخر", "`Je` länger ich hier `wohne`, …"], ["`desto` / `umso` + صيغة المقارنة", "جملة رئيسية: الفعل مباشرة بعدها", "… `desto` besser `kenne` ich die Gegend."], ["مجموعة المقارنة", "تبقى متصلة", "je höher die Miete, desto weniger Geld"], ["`mehr` / `weniger`", "مع الأسماء أيضًا", "Je mehr Zeit, desto mehr Ideen."]]
+    }
+  },
+  "doppelkonjunktionen": {
+    "steps": ["كلٌّ من A وB · ليس A فقط بل B أيضًا", "إمّا A أو B", "لا A ولا B", "صحيح أن A، لكن B"],
+    "examples": [
+      ["Ich spreche *sowohl* Arabisch *als auch* Deutsch.", "أتحدّث العربية والألمانية كلتيهما."],
+      ["Wir fahren *entweder* mit dem Zug *oder* mit dem Bus.", "سنذهب إمّا بالقطار أو بالحافلة."],
+      ["Er hat *weder* Zeit *noch* Geld.", "ليس لديه وقت ولا مال."],
+      ["Die Wohnung ist *zwar* klein, *aber* sehr gemütlich.", "صحيح أن الشقة صغيرة، لكنها مريحة جدًا."],
+      ["Sie ist *nicht nur* Lehrerin, *sondern auch* Musikerin.", "هي ليست معلّمة فقط، بل موسيقية أيضًا."],
+      ["*Entweder* du kommst jetzt, *oder* wir gehen ohne dich.", "إمّا أن تأتي الآن، أو نذهب بدونك."]
+    ]
+  }
+}

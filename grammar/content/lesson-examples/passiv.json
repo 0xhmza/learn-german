@@ -1,0 +1,54 @@
+{
+  "passiv-perfekt": {
+    "steps": ["أصلحت الشركة النافذة.", "النافذة …", "أُصلحت النافذة.", "…، لأن النوافذ أُصلحت."],
+    "examples": [
+      ["Das Paket *ist* gestern *geliefert worden*.", "سُلّم الطرد أمس."],
+      ["Die Straße *ist* letzte Woche *gesperrt worden*.", "أُغلق الشارع الأسبوع الماضي."],
+      ["Wann *ist* das Haus *gebaut worden*?", "متى بُني البيت؟"],
+      ["Mein Fahrrad *ist gestohlen worden*.", "سُرقت دراجتي."],
+      ["Die Gäste *sind* herzlich *begrüßt worden*.", "استُقبل الضيوف بحفاوة."],
+      ["Ich weiß nicht, ob die Rechnung schon *bezahlt worden ist*.", "لا أعرف إن كانت الفاتورة قد دُفعت."]
+    ],
+    "table": {
+      "de": [["Zeit", "Aktiv", "Passiv"], ["Präsens", "Man repariert das Auto.", "Das Auto `wird` repariert."], ["Präteritum", "Man reparierte das Auto.", "Das Auto `wurde` repariert."], ["Perfekt", "Man hat das Auto repariert.", "Das Auto `ist` repariert `worden`."], ["Nebensatz", "…, weil man es repariert hat.", "…, weil es repariert `worden ist`."]],
+      "ar": [["الزمن", "المبني للمعلوم", "المبني للمجهول"], ["المضارع", "Man repariert das Auto.", "Das Auto `wird` repariert."], ["الماضي البسيط", "Man reparierte das Auto.", "Das Auto `wurde` repariert."], ["الـPerfekt", "Man hat das Auto repariert.", "Das Auto `ist` repariert `worden`."], ["جملة تابعة", "…, weil man es repariert hat.", "…, weil es repariert `worden ist`."]]
+    }
+  },
+  "passiv-modal": {
+    "steps": ["المكوّنات", "يجب أن تكون المكوّنات …", "يجب أن تُفحص المكوّنات.", "…، لأنه يجب فحص المكوّنات. · كان يجب فحص المكوّنات."],
+    "examples": [
+      ["Die Rechnung *muss* bis Freitag *bezahlt werden*.", "يجب دفع الفاتورة حتى الجمعة."],
+      ["Hier *darf* nicht *geraucht werden*.", "لا يُسمح بالتدخين هنا."],
+      ["Das Formular *kann* auch online *ausgefüllt werden*.", "يمكن ملء الاستمارة عبر الإنترنت أيضًا."],
+      ["Die Fenster *sollen* morgen *geputzt werden*.", "ينبغي تنظيف النوافذ غدًا."],
+      ["Der Termin *musste* leider *verschoben werden*.", "للأسف كان يجب تأجيل الموعد."],
+      ["Ich glaube, dass das Problem schnell *gelöst werden kann*.", "أعتقد أن المشكلة يمكن حلّها بسرعة."]
+    ],
+    "table": {
+      "de": [["Satzart", "Struktur", "Beispiel"], ["Hauptsatz Präsens", "Modalverb … Partizip II + `werden`", "Das Auto `muss` repariert `werden`."], ["Hauptsatz Präteritum", "Modalverb (Präteritum) … Partizip II + `werden`", "Das Auto `musste` repariert `werden`."], ["Nebensatz", "… Partizip II + `werden` + Modalverb", "…, weil das Auto repariert `werden muss`."], ["Frage", "Modalverb + Subjekt … Partizip II + `werden`", "`Kann` das Auto repariert `werden`?"]],
+      "ar": [["نوع الجملة", "التركيب", "مثال"], ["جملة رئيسية في المضارع", "فعل ناقص … اسم مفعول + `werden`", "Das Auto `muss` repariert `werden`."], ["جملة رئيسية في الماضي", "فعل ناقص (ماضٍ) … اسم مفعول + `werden`", "Das Auto `musste` repariert `werden`."], ["جملة تابعة", "… اسم مفعول + `werden` + فعل ناقص", "…, weil das Auto repariert `werden muss`."], ["سؤال", "فعل ناقص + فاعل … اسم مفعول + `werden`", "`Kann` das Auto repariert `werden`?"]]
+    }
+  },
+  "subjektlos": {
+    "steps": ["يرقص الناس هنا.", "هنا يُرقَص.", "يُرقَص هنا. · اليوم يُرقَص هنا.", "يساعد الناس الضيوف. ← يُساعَد الضيوف."],
+    "examples": [
+      ["Am Sonntag *wird* nicht *gearbeitet*.", "لا يُعمل يوم الأحد."],
+      ["Im Kurs *wird* viel *gesprochen*.", "يُتكلّم كثيرًا في الدورة."],
+      ["*Es wird* gleich *gegessen*!", "سيُؤكل حالًا! (الطعام جاهز)"],
+      ["Hier *wird* nicht *geparkt*!", "ممنوع الوقوف هنا!"],
+      ["Den Kindern *wird* jeden Abend *vorgelesen*.", "يُقرأ للأطفال كل مساء."],
+      ["Auf der Party *wurde* bis Mitternacht *getanzt*.", "رُقص في الحفلة حتى منتصف الليل."]
+    ]
+  },
+  "erststellen-es": {
+    "steps": ["أتى ضيوف كثيرون إلى الحفل.", "أتى إلى الحفل ضيوف كثيرون.", "ضُحك كثيرًا.", "أمس ضُحك كثيرًا.", "وقع حادث. ← هل وقع حادث؟"],
+    "examples": [
+      ["*Es* klingelt an der Tür.", "يرنّ جرس الباب."],
+      ["*Es* waren viele Leute auf dem Markt.", "كان هناك كثير من الناس في السوق."],
+      ["*Es* wurde lange diskutiert.", "جرى نقاش طويل."],
+      ["*Es* fehlen noch zwei Unterschriften.", "ما زال ينقص توقيعان."],
+      ["*Es* hat sich nichts geändert.", "لم يتغيّر شيء."],
+      ["*Gestern* sind viele Gäste gekommen.", "أتى أمس ضيوف كثيرون. (لا حاجة إلى es لأن Gestern يشغل الموقع الأول)"]
+    ]
+  }
+}

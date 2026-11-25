@@ -53,7 +53,7 @@
   "stepExamples": [
     "Sie ging. · Sie verabschiedete sich nicht.",
     "…, ohne sich zu verabschieden.",
-    "Sie isst, ohne vorher aufzuwärmen.",
+    "Sie isst die Suppe, ohne sie vorher aufzuwärmen.",
     "Sie ging, ohne dass ich es bemerkte."
   ],
   "pitfallPair": "Sie ging ohne sich verabschieden. → Sie ging, ohne sich zu verabschieden.",
@@ -78,7 +78,7 @@
         },
         {
           "text": "ضع الفعل القابل للفصل في صورة المصدر الصحيحة",
-          "why": "مع `aufwärmen` تصبح الصيغة `aufzuwärmen`. وإذا ذكرت الطعام صراحةً تستطيع القول `ohne das Essen vorher aufzuwärmen`."
+          "why": "مع `aufwärmen` تصبح الصيغة `aufzuwärmen`. ويأتي المفعول به `sie` (الحساء) قبل مجموعة المصدر: `ohne sie vorher aufzuwärmen`."
         },
         {
           "text": "اختر ohne dass عند التصريح بفاعل مختلف",
@@ -113,7 +113,7 @@
         },
         {
           "text": "Bring trennbare Verben in die richtige Infinitivform",
-          "why": "Aus `aufwärmen` wird `aufzuwärmen`. Nennst du das Essen ausdrücklich, kannst du sagen: `ohne das Essen vorher aufzuwärmen`."
+          "why": "Aus `aufwärmen` wird `aufzuwärmen`. Das Objekt `sie` (die Suppe) steht vor der Infinitivgruppe: `ohne sie vorher aufzuwärmen`."
         },
         {
           "text": "Wähle ohne dass für ein anderes Subjekt",

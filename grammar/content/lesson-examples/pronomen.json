@@ -1,0 +1,46 @@
+{
+  "irgendein": {
+    "steps": ["هل لديك أي فكرة؟", "", "", "ليست هذه أي طاولة كانت."],
+    "examples": [
+      ["Gib mir bitte *irgendeinen* Stift.", "أعطني أي قلم من فضلك."],
+      ["Ich habe *irgendeine* Nachricht bekommen.", "وصلتني رسالة ما."],
+      ["Hast du noch *irgendwelche* Fragen?", "هل لديك أي أسئلة أخرى؟"],
+      ["Er wohnt in *irgendeinem* Dorf in Bayern.", "يسكن في قرية ما في بافاريا."],
+      ["Wir können *irgendein* Restaurant nehmen.", "يمكننا اختيار أي مطعم."],
+      ["Das ist nicht *irgendeine* Uhr, das ist ein Geschenk.", "ليست هذه أي ساعة، إنها هدية."]
+    ]
+  },
+  "indefinitpronomen": {
+    "steps": ["أبحث عن مكان لركن السيارة.", "هناك واحد شاغر.", "لا يوجد هنا أي مكان شاغر.", "هل تحتاج إلى طوابع؟ – نعم، أحتاج بعضها.", "هل سألت أحدًا؟ – لا، لم أسأل أحدًا."],
+    "examples": [
+      ["Ich brauche einen Regenschirm. Hast du *einen*?", "أحتاج مظلّة. هل لديك واحدة؟"],
+      ["Die Kekse sind lecker. Willst du *welche*?", "البسكويت لذيذ. هل تريد بعضه؟"],
+      ["Hier ist *keiner* von meinen Freunden.", "لا أحد من أصدقائي هنا."],
+      ["Ich habe mit *jemandem* aus deinem Kurs gesprochen.", "تحدّثت مع شخص من دورتك."],
+      ["Wir haben *niemanden* gesehen.", "لم نرَ أحدًا."],
+      ["Hast du ein Fahrrad? – Nein, ich habe *keins*.", "هل لديك دراجة؟ – لا، ليس لديّ واحدة."]
+    ]
+  },
+  "irgend-pronomen": {
+    "steps": ["أين قرأت هذا؟ – لم أعد أعرف بالضبط.", "قرأت هذا في مكان ما.", "يومًا ما سأقوم برحلة حول العالم.", "شخص ما اتصل. · هناك شيء غير صحيح هنا.", "أجد هذا غريبًا نوعًا ما."],
+    "examples": [
+      ["Ich habe meinen Schlüssel *irgendwo* verloren.", "أضعت مفتاحي في مكان ما."],
+      ["*Irgendjemand* hat die Tür offen gelassen.", "شخص ما ترك الباب مفتوحًا."],
+      ["Lass uns *irgendwann* zusammen essen gehen.", "لنخرج لتناول الطعام معًا يومًا ما."],
+      ["Er hat *irgendwas* gesagt, aber ich habe es nicht verstanden.", "قال شيئًا ما لكنني لم أفهمه."],
+      ["Wir finden *irgendwie* eine Lösung.", "سنجد حلًّا بطريقة ما."],
+      ["Fahren wir *irgendwohin* ans Meer!", "لنذهب إلى مكان ما على البحر!"]
+    ]
+  },
+  "pronominaladverbien": {
+    "steps": ["ينتظر · يتحدّث عن · يتوقّع", "", "ماذا تنتظر؟ · من تنتظر؟", "أنا سعيد بأنك ستأتي."],
+    "examples": [
+      ["*Worüber* sprecht ihr? – *Über* den Ausflug.", "عمّ تتحدّثون؟ – عن الرحلة."],
+      ["Ich habe keine Lust *darauf*.", "ليست لديّ رغبة في ذلك."],
+      ["*Womit* fährst du zur Arbeit? – Mit dem Rad.", "بماذا تذهب إلى العمل؟ – بالدراجة."],
+      ["Erinnerst du dich *daran*?", "هل تتذكّر ذلك؟"],
+      ["*Mit wem* gehst du ins Kino?", "مع من تذهب إلى السينما؟"],
+      ["Er hat sich *darüber* gefreut, dass wir gekommen sind.", "فرح بأننا أتينا."]
+    ]
+  }
+}

@@ -100,6 +100,8 @@ export default {
   examWords: n => `Wörter: ${n}`,
   examGroupRead: "Lesen", examGroupLang: "Sprachbausteine", examGroupListen: "Hören", examGroupWrite: "Schreiben",
   studyTools: "Übungsformate",
+  moreExamples: 'Mehr Beispiele',
+  moreExamplesHow: 'Lies jeden Satz laut und achte auf die markierten Wörter. Tippe auf einen Satz, um die Übersetzung zu sehen.',
   lessonWorked: "Beispiel zur Regel",
   lessonApply: "Zusatzübung zur Regel",
   crossPractice: "Übungen über mehrere Lektionen",

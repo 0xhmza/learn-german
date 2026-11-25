@@ -1,0 +1,61 @@
+{
+  "falls": {
+    "steps": ["ستمطر غدًا", "في حال أمطرت غدًا، …", "في حال أمطرت غدًا نبقى في البيت.", "نبقى في البيت في حال أمطرت غدًا."],
+    "examples": [
+      ["*Falls* du Hilfe *brauchst*, ruf mich an.", "في حال احتجت مساعدة اتصل بي."],
+      ["*Falls* der Zug Verspätung *hat*, nehme ich ein Taxi.", "في حال تأخر القطار آخذ سيارة أجرة."],
+      ["Nimm einen Schirm mit, *falls* es *regnet*.", "خذ مظلّة معك في حال أمطرت."],
+      ["*Falls* ich nicht da *bin*, leg das Paket vor die Tür.", "في حال لم أكن موجودًا ضع الطرد أمام الباب."],
+      ["Wir können verschieben, *falls* dir der Termin nicht *passt*.", "يمكننا التأجيل في حال لم يناسبك الموعد."],
+      ["*Falls* Sie Fragen *haben*, schreiben Sie mir.", "في حال كانت لديك أسئلة اكتب لي."]
+    ],
+    "table": {
+      "de": [["Wort", "Bedeutung", "Beispiel"], ["`wenn`", "Bedingung oder Zeitpunkt", "`Wenn` es regnet, bleiben wir hier."], ["`falls`", "nur Bedingung, eher unsicher", "`Falls` es regnet, bleiben wir hier."], ["`ob`", "indirekte Ja/Nein-Frage, keine Bedingung", "Ich weiß nicht, `ob` es regnet."], ["Satzbau", "Nebensatz: Verb am Ende", "Falls es morgen `regnet`, …"]],
+      "ar": [["الكلمة", "المعنى", "مثال"], ["`wenn`", "شرط أو وقت (إذا/عندما)", "`Wenn` es regnet, bleiben wir hier."], ["`falls`", "شرط فقط، أقل يقينًا (في حال)", "`Falls` es regnet, bleiben wir hier."], ["`ob`", "سؤال غير مباشر بنعم أو لا، ليس شرطًا", "Ich weiß nicht, `ob` es regnet."], ["بناء الجملة", "جملة تابعة: الفعل في الآخر", "Falls es morgen `regnet`, …"]]
+    }
+  },
+  "sonst": {
+    "steps": ["إذا لم تُسرع ستفوتك الحافلة.", "…، وإلا ستفوتك الحافلة.", "يُرجى الدفع اليوم. وإلا سيُلغى الطلب.", "يجب أن تكون هادئًا. وإلا ستوقظ الطفل."],
+    "examples": [
+      ["Zieh eine Jacke an, *sonst wirst* du krank.", "البس سترة، وإلا ستمرض."],
+      ["Wir müssen jetzt los, *sonst verpassen* wir den Film.", "يجب أن ننطلق الآن، وإلا فاتنا الفيلم."],
+      ["Schreib es dir auf, *sonst vergisst* du es.", "دوّنه، وإلا ستنساه."],
+      ["Melden Sie sich bis Freitag an. *Andernfalls ist* der Platz weg.", "سجّل حتى الجمعة. وإلا ضاع المكان."],
+      ["Sprich lauter, ich verstehe dich *sonst* nicht.", "تكلّم بصوت أعلى، وإلا لن أفهمك."],
+      ["Gieß die Blumen, *sonst vertrocknen* sie.", "اسقِ الزهور، وإلا ستذبل."]
+    ]
+  },
+  "irreale-bedingung": {
+    "steps": ["لديّ وقت قليل. نادرًا ما أطبخ.", "لو كان لديّ وقت أكثر، …", "…، لطبخت أكثر.", "كنت أستطيع العمل هنا لو كانت الغرفة أكبر."],
+    "examples": [
+      ["*Wenn* ich reich *wäre*, *würde* ich um die Welt *reisen*.", "لو كنت غنيًا لسافرت حول العالم."],
+      ["*Wenn* du mehr *schlafen würdest*, *wärst* du nicht so müde.", "لو نمت أكثر لما كنت متعبًا هكذا."],
+      ["*Hätte* ich ein Auto, *könnte* ich dich abholen.", "لو كانت لديّ سيارة لاستطعت أن أقلّك."],
+      ["*Wenn* es nicht so kalt *wäre*, *würden* wir draußen *sitzen*.", "لو لم يكن الجو باردًا هكذا لجلسنا في الخارج."],
+      ["Ich *würde* dir *helfen*, *wenn* ich Zeit *hätte*.", "كنت سأساعدك لو كان لديّ وقت."],
+      ["*Wenn* ich du *wäre*, *würde* ich den Job *nehmen*.", "لو كنت مكانك لقبلت الوظيفة."]
+    ]
+  },
+  "konjunktiv2-vergangenheit": {
+    "steps": ["لم أكن أعرف. لم آتِ مبكرًا.", "لو كنت عرفت ذلك، …", "…، لجئت مبكرًا.", "لو كنت عرفت ذلك لجئت مبكرًا.", "لو كان لديّ وقت لأتيت. ↔ لو كان قد توفّر لديّ وقت لكنت أتيت."],
+    "examples": [
+      ["*Wenn* ich früher *aufgestanden wäre*, *hätte* ich den Bus *erreicht*.", "لو استيقظت أبكر للحقت بالحافلة."],
+      ["*Hättest* du mich *angerufen*, *wäre* ich *gekommen*.", "لو اتصلت بي لكنت أتيت."],
+      ["*Wenn* wir mehr *gelernt hätten*, *hätten* wir *bestanden*.", "لو درسنا أكثر لنجحنا."],
+      ["Ich *wäre* gern *mitgekommen*, aber ich war krank.", "كنت أودّ أن آتي معكم، لكنني كنت مريضًا."],
+      ["*Wenn* es nicht *geregnet hätte*, *wären* wir *gewandert*.", "لو لم تمطر لكنّا قمنا بنزهة سيرًا."],
+      ["Das *hätte* ich nie *gedacht*!", "ما كنت لأتوقّع ذلك أبدًا!"]
+    ]
+  },
+  "konjunktiv2-vergangenheit-modal": {
+    "steps": ["لم أستطع مساعدتك.", "كنت أستطيع مساعدتك.", "لو كان لديّ وقت أكثر لاستطعت مساعدتك.", "…، لأنه لم يكن مسموحًا لي أن آتي.", "كاد الخطأ أن يُغفَل."],
+    "examples": [
+      ["Du *hättest* mich *fragen sollen*.", "كان عليك أن تسألني."],
+      ["Wir *hätten* früher *losfahren müssen*.", "كان يجب أن ننطلق أبكر."],
+      ["Ohne deine Hilfe *hätte* ich das nicht *schaffen können*.", "لولا مساعدتك لما استطعت إنجاز ذلك."],
+      ["Der Termin *hätte* früher *abgesagt werden müssen*.", "كان يجب إلغاء الموعد في وقت أبكر."],
+      ["Ich weiß, dass ich mehr *hätte lernen sollen*.", "أعرف أنه كان عليّ أن أدرس أكثر."],
+      ["Das Paket *wäre* fast *verloren gegangen*.", "كاد الطرد أن يضيع."]
+    ]
+  }
+}

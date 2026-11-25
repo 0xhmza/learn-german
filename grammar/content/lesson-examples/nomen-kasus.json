@@ -1,0 +1,87 @@
+{
+  "genitiv": {
+    "steps": ["المدخل + المبنى", "", "", "مفتاح آنا"],
+    "examples": [
+      ["Das ist das Auto *meines Bruders*.", "هذه سيارة أخي."],
+      ["Die Farbe *des Pullovers* gefällt mir.", "يعجبني لون الكنزة."],
+      ["Am Ende *der Woche* fahren wir weg.", "في نهاية الأسبوع نسافر."],
+      ["Der Name *des Kindes* ist Lina.", "اسم الطفل لينا."],
+      ["*Saras* Wohnung ist sehr hell.", "شقة سارة مضيئة جدًا."],
+      ["Die Zimmer *der Kinder* sind oben.", "غرف الأطفال في الطابق العلوي."]
+    ]
+  },
+  "genitiv-praep": {
+    "steps": ["بسبب · رغم · أثناء", "خلال أسبوع · خارج المدينة · بدلًا من رسالة", "بسبب المطر · رغم البرد", "أثناء الدورة · بينما الدورة جارية"],
+    "examples": [
+      ["*Wegen des Streiks* fahren heute keine Busse.", "بسبب الإضراب لا تسير اليوم أي حافلات."],
+      ["*Trotz der Kälte* sitzen wir draußen.", "رغم البرد نجلس في الخارج."],
+      ["*Während der Pause* trinke ich einen Tee.", "أثناء الاستراحة أشرب شايًا."],
+      ["Bitte antworten Sie *innerhalb einer Woche*.", "يُرجى الرد خلال أسبوع."],
+      ["Wir wohnen *außerhalb der Stadt*.", "نسكن خارج المدينة."],
+      ["*Statt eines Geschenks* schreibe ich ihr einen Brief.", "بدلًا من هدية أكتب لها رسالة."]
+    ],
+    "table": {
+      "de": [["Präposition", "Bedeutung", "Beispiel"], ["`wegen`", "Grund", "wegen des Regens"], ["`trotz`", "Gegengrund", "trotz der Kälte"], ["`während`", "Zeitraum", "während des Kurses"], ["`innerhalb`", "in einer Zeit / in einem Ort", "innerhalb einer Woche"], ["`außerhalb`", "nicht in einem Ort", "außerhalb der Stadt"], ["`statt` / `anstatt`", "Ersatz", "statt eines Briefes"]],
+      "ar": [["حرف الجر", "المعنى", "مثال"], ["`wegen`", "بسبب", "wegen des Regens"], ["`trotz`", "رغم", "trotz der Kälte"], ["`während`", "أثناء", "während des Kurses"], ["`innerhalb`", "خلال، داخل", "innerhalb einer Woche"], ["`außerhalb`", "خارج", "außerhalb der Stadt"], ["`statt` / `anstatt`", "بدلًا من", "statt eines Briefes"]]
+    }
+  },
+  "lokale-praep": {
+    "steps": ["حول …", "حول الحديقة · حول البيت", "على طول الجدار · على طول النهر", "نركب الدراجة على طول القناة."],
+    "examples": [
+      ["Der Hund läuft *um den Tisch herum*.", "يركض الكلب حول الطاولة."],
+      ["Wir fahren *um die Stadt herum*, nicht durch das Zentrum.", "نقود حول المدينة لا عبر المركز."],
+      ["Die Kinder tanzen *um den Baum herum*.", "يرقص الأطفال حول الشجرة."],
+      ["Wir spazieren *am Strand entlang*.", "نتمشّى على طول الشاطئ."],
+      ["Gehen Sie *an der Mauer entlang* bis zum Tor.", "امشِ على طول الجدار حتى البوابة."],
+      ["Der Weg führt *am See entlang*.", "يمتد الطريق على طول البحيرة."]
+    ]
+  },
+  "n-deklination": {
+    "steps": ["الزبون ينتظر منذ وقت طويل.", "أتصل بالزبون. · أساعد الزبون.", "الزميل · الطالب · الشرطي · المتدرّب", "الإنسان · السيد · الجار", "تحدّثنا مع زبائن كثيرين."],
+    "examples": [
+      ["Ich habe *einen neuen Kollegen*.", "لديّ زميل جديد."],
+      ["Kannst du *dem Studenten* helfen?", "هل يمكنك مساعدة الطالب؟"],
+      ["Wir fragen *den Polizisten* nach dem Weg.", "نسأل الشرطي عن الطريق."],
+      ["Das ist das Fahrrad *unseres Nachbarn*.", "هذه دراجة جارنا."],
+      ["Ich schreibe *Herrn* Müller eine E-Mail.", "أكتب رسالة إلكترونية إلى السيد مولر."],
+      ["Der Arzt spricht mit *dem Patienten*.", "يتحدّث الطبيب مع المريض."]
+    ]
+  },
+  "diminutiv": {
+    "steps": ["الطاولة ← الطاولة الصغيرة", "الخزانة ← الخزانة الصغيرة · البيت ← البيت الصغير", "الإبريق ← الإبريق الصغير", "الخزانة الصغيرة · مع الخزانة الصغيرة"],
+    "examples": [
+      ["Wir wohnen in *einem kleinen Häuschen*.", "نسكن في بيت صغير."],
+      ["Möchtest du *ein Stückchen* Kuchen?", "هل تريد قطعة صغيرة من الكعكة؟"],
+      ["Das *Mädchen* spielt im Garten.", "تلعب الفتاة في الحديقة."],
+      ["Ich trinke *ein Tässchen* Kaffee.", "أشرب فنجانًا صغيرًا من القهوة."],
+      ["Im Wald steht *ein Bäumchen*.", "في الغابة شجرة صغيرة."],
+      ["*Das Kätzchen* schläft auf dem Sofa.", "تنام القطة الصغيرة على الأريكة."]
+    ],
+    "table": {
+      "de": [["Nomen", "Diminutiv", "Was passiert?"], ["der Tisch", "das Tisch`chen`", "Endung `-chen`, Artikel `das`"], ["das Haus", "das H`ä`us`chen`", "`a/o/u/au` bekommen Umlaut"], ["die Kanne", "das K`ä`nn`chen`", "End-`e` fällt weg"], ["das Buch", "das B`ü`ch`lein`", "nach `-ch` oft `-lein`"], ["Plural", "die Tischchen · die Häuschen", "keine Pluralendung"]],
+      "ar": [["الاسم", "صيغة التصغير", "ماذا يحدث؟"], ["der Tisch", "das Tisch`chen`", "النهاية `-chen` والأداة `das`"], ["das Haus", "das H`ä`us`chen`", "تأخذ `a/o/u/au` الـUmlaut"], ["die Kanne", "das K`ä`nn`chen`", "تسقط `e` الأخيرة"], ["das Buch", "das B`ü`ch`lein`", "بعد `-ch` غالبًا `-lein`"], ["الجمع", "die Tischchen · die Häuschen", "لا نهاية للجمع"]]
+    }
+  },
+  "verben-als-nomen": {
+    "steps": ["أتعلّم كل مساء.", "التعلّم في المساء سهل عليّ.", "أثناء التعلّم لا أسمع موسيقى.", "أحتاج طاولة للتعلّم."],
+    "examples": [
+      ["*Das Schwimmen* tut meinem Rücken gut.", "السباحة مفيدة لظهري."],
+      ["*Beim Kochen* höre ich gern Musik.", "أحب سماع الموسيقى أثناء الطبخ."],
+      ["Das Wasser ist nicht *zum Trinken*.", "هذا الماء ليس للشرب."],
+      ["*Das Rauchen* ist hier verboten.", "التدخين ممنوع هنا."],
+      ["*Vom vielen Laufen* tun mir die Füße weh.", "تؤلمني قدماي من كثرة المشي."],
+      ["*Beim Aufräumen* habe ich meinen Schlüssel gefunden.", "وجدت مفتاحي أثناء الترتيب."]
+    ]
+  },
+  "nominalisierte-adjektive": {
+    "steps": ["رجل معروف يعمل هنا.", "أحد المعارف يعمل هنا.", "المعرفة (الرجل/المرأة) يعمل هنا.", "الموظفون · المسافرون · المصاب", "تعلّمت شيئًا جديدًا."],
+    "examples": [
+      ["*Die Kranken* liegen im zweiten Stock.", "المرضى في الطابق الثاني."],
+      ["Ein *Deutscher* hat mir den Weg gezeigt.", "أراني رجل ألماني الطريق."],
+      ["Wir helfen *den Obdachlosen* im Winter.", "نساعد المشرّدين في الشتاء."],
+      ["Ich wünsche dir *alles Gute*!", "أتمنى لك كل الخير!"],
+      ["Gibt es *etwas Neues*?", "هل هناك جديد؟"],
+      ["*Die Erwachsenen* zahlen zehn Euro, Kinder nichts.", "يدفع البالغون عشرة يورو والأطفال لا شيء."]
+    ]
+  }
+}

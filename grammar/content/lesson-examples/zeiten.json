@@ -1,0 +1,57 @@
+{
+  "plusquamperfekt": {
+    "steps": ["وصلت إلى المحطة. غادر القطار.", "عندما وصلت كان القطار قد غادر.", "كنت قد نسيت تذكرتي في البيت.", "تأخرت لأنني لم أكن قد سمعت المنبّه."],
+    "examples": [
+      ["Als wir ankamen, *hatte* der Film schon *begonnen*.", "عندما وصلنا كان الفيلم قد بدأ."],
+      ["Er war müde, weil er schlecht *geschlafen hatte*.", "كان متعبًا لأنه نام نومًا سيئًا."],
+      ["Ich *hatte* die Tür *abgeschlossen*, aber das Fenster war offen.", "كنت قد أقفلت الباب، لكن النافذة كانت مفتوحة."],
+      ["Sie *war* schon nach Hause *gegangen*.", "كانت قد ذهبت إلى البيت بالفعل."],
+      ["Wir *hatten* uns lange nicht *gesehen*.", "لم نكن قد رأينا بعضنا منذ مدة طويلة."],
+      ["Nachdem er *gefrühstückt hatte*, fuhr er zur Arbeit.", "بعد أن تناول الفطور ذهب إلى العمل."]
+    ]
+  },
+  "nachdem": {
+    "steps": ["أكلت. ثم خرجت للتنزّه.", "بعد أن أكلت خرجت للتنزّه.", "خرجت للتنزّه بعد أن أكلت.", "بعد أن آكل أخرج للتنزّه."],
+    "examples": [
+      ["*Nachdem* ich die Prüfung bestanden *hatte*, feierten wir.", "بعد أن نجحت في الامتحان احتفلنا."],
+      ["*Nachdem* sie *umgezogen war*, suchte sie neue Freunde.", "بعد أن انتقلت بحثت عن أصدقاء جدد."],
+      ["Wir gingen ins Bett, *nachdem* der Film zu Ende *war*.", "ذهبنا إلى النوم بعد أن انتهى الفيلم."],
+      ["*Nachdem* du *angekommen bist*, ruf mich bitte an.", "بعد أن تصل اتصل بي من فضلك."],
+      ["*Nachdem* er das Formular *ausgefüllt hatte*, gab er es ab.", "بعد أن ملأ الاستمارة سلّمها."],
+      ["Ich lese die Zeitung, *nachdem* ich *gefrühstückt habe*.", "أقرأ الجريدة بعد أن أتناول الفطور."]
+    ]
+  },
+  "bevor-bis": {
+    "steps": ["أستحمّ. ثم أتناول الفطور.", "قبل أن أتناول الفطور أستحمّ.", "أنتظر هنا حتى تأتي.", "قبل الفطور أستحمّ."],
+    "examples": [
+      ["*Bevor* du gehst, mach bitte das Licht aus.", "قبل أن تخرج أطفئ الضوء من فضلك."],
+      ["Wir müssen warten, *bis* der Arzt kommt.", "يجب أن ننتظر حتى يأتي الطبيب."],
+      ["*Bevor* ich unterschreibe, lese ich den Vertrag.", "قبل أن أوقّع أقرأ العقد."],
+      ["Bleib hier, *bis* ich zurück bin!", "ابقَ هنا حتى أعود!"],
+      ["Er hat lange gesucht, *bis* er eine Wohnung gefunden hat.", "بحث طويلًا حتى وجد شقة."],
+      ["*Vor dem Essen* wasche ich mir die Hände.", "قبل الطعام أغسل يديّ."]
+    ]
+  },
+  "seit-waehrend": {
+    "steps": ["أسكن في برلين منذ سنتين.", "منذ أن أسكن في برلين أتعلّم الألمانية.", "منذ أن صارت تركب الدراجة أصبحت لياقتها أفضل.", "بينما أطبخ أستمع إلى الراديو.", "أثناء الطعام لا يتحدّث في الهاتف أبدًا."],
+    "examples": [
+      ["*Seit* ich Sport mache, schlafe ich besser.", "منذ أن أمارس الرياضة أنام بشكل أفضل."],
+      ["*Seitdem* er in Hamburg arbeitet, sehen wir uns selten.", "منذ أن يعمل في هامبورغ نادرًا ما نلتقي."],
+      ["*Während* die Kinder schlafen, räume ich auf.", "بينما ينام الأطفال أرتّب."],
+      ["*Während* ich auf den Bus warte, lese ich.", "بينما أنتظر الحافلة أقرأ."],
+      ["*Während der Fahrt* darf man nicht telefonieren.", "لا يُسمح بالمكالمات أثناء القيادة."],
+      ["*Seit* wir uns kennen, sind wir Freunde.", "نحن أصدقاء منذ أن تعارفنا."]
+    ]
+  },
+  "futur1": {
+    "steps": ["كثير من الناس يعملون من البيت.", "بعد عشر سنوات سيعمل كثير من الناس من البيت.", "ليس موجودًا. لعلّه مريض.", "أعتقد أنها ستمطر غدًا.", "الأسبوع القادم أسافر جوًّا إلى روما."],
+    "examples": [
+      ["Ich *werde* dich morgen *anrufen*.", "سأتصل بك غدًا."],
+      ["In Zukunft *werden* Autos selbst *fahren*.", "في المستقبل ستقود السيارات نفسها."],
+      ["Das *wird* schon *klappen*!", "سينجح الأمر بالتأكيد!"],
+      ["Er *wird* wohl im Stau *stehen*.", "لعلّه عالق في الزحمة."],
+      ["Wir *werden* nächstes Jahr *heiraten*.", "سنتزوّج العام القادم."],
+      ["Ich hoffe, dass du die Prüfung bestehen *wirst*.", "أتمنى أن تنجح في الامتحان."]
+    ]
+  }
+}
