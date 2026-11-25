@@ -9,6 +9,7 @@ import { normalizeWords } from './words.js';
 import { normalizeLast, LEVELS } from './areas.js';
 import { normalizeWriting } from './writing.js';
 import { normalizeListening } from './listening.js';
+import { defaultTrainer, normalizeTrainer } from './listening-trainer.js';
 
 export const STATE_VERSION = 1;
 export const APP_ID = 'grammatikinseln';
@@ -34,6 +35,7 @@ export function defaultState(day) {
     writingCourse: {},
     listeningSample: null,
     listening: { runs: {}, clips: {} },
+    listenTrainer: defaultTrainer(),
     words: {},
     last: {},
     lastRun: null,
@@ -83,6 +85,7 @@ export function normalizeState(raw, ctx, day) {
   state.last = normalizeLast(raw.last, isDay);
   state.writingCourse = normalizeWriting(raw.writingCourse, ctx.writingExercises);
   state.listening = normalizeListening(raw.listening, ctx.listeningScenes);
+  state.listenTrainer = normalizeTrainer(raw.listenTrainer, ctx);
   const listeningCount = ctx.learning?.examSample?.listening?.items.length;
   const right = raw.listeningSample?.correct;
   if (listeningCount && raw.listeningSample?.total === listeningCount && Number.isInteger(right) && right >= 0 && right <= listeningCount) {

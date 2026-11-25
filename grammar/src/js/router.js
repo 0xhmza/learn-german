@@ -3,6 +3,9 @@
 import { parseRunKey } from './engine/runs.js';
 import { cefrBySlug } from './cefr.js';
 
+// Pages of the Hörtraining (#hoertraining/<key>).
+const TRAINER = new Set(['runde', 'einstufung', 'texte', 'methode', 'diktat', 'laute', 'zahlen', 'satzende', 'alltag', 'karten']);
+
 export function parse(hash, ctx) {
   const raw = String(hash || '').replace(/^#/, '');
   const parts = raw.split('/');
@@ -23,6 +26,9 @@ export function parse(hash, ctx) {
     if (key === undefined || key === 'bereit' || ctx.writingChapters?.has(key) || task) {
       return { view: 'writing', key: key ?? null, task, hash: raw, tab: 'writing' };
     }
+  }
+  if (view === 'hoertraining' && (key === undefined || TRAINER.has(key) || (key.startsWith('text-') && ctx.listenTrainer?.textById.has(key.slice(5))))) {
+    return { view: 'listening-trainer', key: key ?? null, hash: raw, tab: 'listening' };
   }
   if (view === 'hoeren' && (key === undefined || ['serien', 'check'].includes(key) ||
     (key === 'folgen' && ctx.listeningEpisodeLibrary) || ctx.listeningScenes?.has(key) ||

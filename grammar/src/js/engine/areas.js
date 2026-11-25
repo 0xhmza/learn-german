@@ -5,7 +5,7 @@ import { examResult } from './model-exams.js';
 import { wordList } from './words.js';
 import { CEFR } from '../cefr.js';
 
-export const AREAS = ['grammar', 'vocab', 'writing', 'tests'];
+export const AREAS = ['grammar', 'vocab', 'listening', 'writing', 'tests'];
 export const LEVELS = CEFR.map(level => level.id);
 export const DEFAULT_LEVEL = 'B1';
 
@@ -17,6 +17,7 @@ export const levelHasContent = level => CEFR.some(info => info.id === level && i
 export function areaOf(route) {
   if (route.view === 'lesson') return 'grammar';
   if (route.view === 'writing' && route.task) return 'writing';
+  if (route.view === 'listening-trainer') return route.key && !['methode', 'texte'].includes(route.key) ? 'listening' : null;
   if (route.view === 'model-exams' && route.key && route.section) return route.section === 'schreiben' ? 'writing' : 'tests';
   if (route.view === 'quiz') {
     if (/^write-/.test(route.key)) return 'writing';
@@ -37,7 +38,7 @@ export function recordVisit(state, route, day) {
 export function normalizeLast(raw, isDay) {
   const last = {};
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return last;
-  for (const area of ['grammar', 'writing', 'tests']) {
+  for (const area of ['grammar', 'listening', 'writing', 'tests']) {
     const entry = raw[area];
     if (entry && typeof entry.hash === 'string' && /^[a-z0-9/-]{1,120}$/i.test(entry.hash) && isDay(entry.day)) last[area] = { hash: entry.hash, day: entry.day };
   }

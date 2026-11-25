@@ -43,6 +43,16 @@ export function stopFor(app, area) {
       lesson, done
     };
   }
+  if (area === 'listening') {
+    if (!saved) return null;
+    const key = entryRoute.key;
+    // A finished round or placement check is not a place to continue.
+    const session = state.listenTrainer.session;
+    if (['runde', 'einstufung'].includes(key) && !(session?.kind === key && session.day === app.day() && session.at < session.tasks.length)) return null;
+    const text = key.startsWith('text-') ? ctx.listenTrainer.textById.get(key.slice(5)) : null;
+    const name = text ? text.title[lang] : { runde: t('lisRound'), einstufung: t('lisPlacement') }[key] || t('lisModes')[key];
+    return { title: esc(name), meta: `${esc(t('lisTrainer'))}${when(saved.day)}`, action: link(saved.hash, t('continueHere'), 'primary') };
+  }
   const work = saved || earlierWork(ctx, state, area);
   if (!work) return null;
   const route = saved ? entryRoute : parse(work.hash, ctx);

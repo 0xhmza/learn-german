@@ -382,8 +382,86 @@ export function validateContent(content) {
       fail('exam sample listening item', 'needs a key and a quote from the transcript');
     }
   }
+  validateTrainer(content.listenTrainer, content.learning, fail, text, textList, bilingual);
   return errors.concat(validateModelTests(content.modelTests), validateWriting(content.writingCourse),
     validateListening(content.listeningCourse, content.listeningTimings));
+}
+
+// Listening trainer: unique ids, levels, every option and quote in place.
+const LISTEN_LEVELS = new Set(['A2', 'B1', 'B2']);
+const LISTEN_TAGS = new Set(['zahl', 'frage', 'trennbar', 'kompositum', 'perfekt', 'nebensatz', 'passiv', 'konjunktiv']);
+const TEXT_KINDS = new Set(['announcement', 'phone', 'dialogue', 'voicemail', 'radio', 'podcast', 'discussion']);
+
+function validateTrainer(listening, learning, fail, text, textList, bilingual) {
+  if (!listening) return fail('listening trainer', 'missing content/listening-trainer.json');
+  const ids = new Set();
+  const unique = (where, id) => {
+    if (!ID.test(id || '')) fail(where, 'needs a lowercase id');
+    else if (ids.has(id)) fail(where, `duplicate id ${id}`);
+    ids.add(id);
+  };
+  const level = (where, value) => { if (!LISTEN_LEVELS.has(value)) fail(where, 'level must be A2, B1 or B2'); };
+  for (const clip of listening.clips || []) {
+    const where = `listening clip ${clip.id}`;
+    unique(where, clip.id);
+    level(where, clip.level);
+    text(where, clip.de);
+    text(where, clip.ar);
+    if (!Array.isArray(clip.tags) || clip.tags.some(tag => !LISTEN_TAGS.has(tag))) fail(where, 'unknown tag');
+  }
+  for (const contrast of listening.contrasts || []) {
+    const where = `listening contrast ${contrast.id}`;
+    unique(where, contrast.id);
+    for (const lang of LANGS) { text(where, contrast[lang]?.title); text(where, contrast[lang]?.tip); }
+    if (!Array.isArray(contrast.pairs) || contrast.pairs.length < 3) fail(where, 'needs at least three pairs');
+    for (const pair of contrast.pairs || []) {
+      if (!Array.isArray(pair) || pair.length !== 2 || pair[0] === pair[1]) fail(where, 'each pair needs two different words');
+      else textList(where, pair, 2, 2);
+    }
+  }
+  for (const item of listening.predict || []) {
+    const where = `listening ending ${item.id}`;
+    unique(where, item.id);
+    level(where, item.level);
+    text(where, item.start);
+    textList(where, item.options, 3, 3);
+    if (!Number.isInteger(item.answer) || !item.options?.[item.answer]) fail(where, 'answer must point to an option');
+    bilingual(where, item);
+  }
+  for (const [key, rule] of Object.entries(listening.rules || {})) bilingual(`listening rule ${key}`, rule);
+  for (const item of listening.casual || []) {
+    const where = `listening casual ${item.id}`;
+    unique(where, item.id);
+    level(where, item.level);
+    text(where, item.spoken);
+    textList(where, item.options, 3, 3);
+    if (!listening.rules?.[item.rule]) fail(where, 'unknown rule');
+  }
+  for (const item of listening.texts || []) {
+    const where = `listening text ${item.id}`;
+    unique(where, item.id);
+    level(where, item.level);
+    if (!TEXT_KINDS.has(item.kind)) fail(where, 'unknown kind');
+    bilingual(`${where} title`, item.title);
+    bilingual(`${where} situation`, item.situation);
+    if (item.recording && item.recording !== 'examSample') fail(where, 'unknown recording');
+    if (item.recording && !learning?.examSample?.listening?.audio) fail(where, 'recording is missing');
+    if (!Array.isArray(item.lines) || !item.lines.length) fail(where, 'needs lines');
+    for (const line of item.lines || []) {
+      if (!Array.isArray(line) || line.length !== 2 || !/^[A-D]$/.test(line[0])) fail(where, 'each line is [speaker A–D, text]');
+      else text(where, line[1]);
+    }
+    textList(`${where} gist`, item.gist?.options, 3, 3);
+    if (!Number.isInteger(item.gist?.answer) || !item.gist.options?.[item.gist.answer]) fail(where, 'gist answer must point to an option');
+    if (!Array.isArray(item.items) || item.items.length < 3) fail(where, 'needs at least three statements');
+    for (const statement of item.items || []) {
+      text(where, statement.prompt);
+      if (!['true', 'false'].includes(statement.answer)) fail(where, 'answer must be true or false');
+      if (!item.lines?.some(([, line]) => line.includes(statement.quote))) fail(where, `quote not in the text: ${statement.quote}`);
+    }
+    for (const [word, meaning] of Object.entries(item.words || {})) { text(where, word); text(where, meaning); }
+  }
+  if ((listening.clips || []).length < 30) fail('listening', 'needs at least 30 dictation clips');
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

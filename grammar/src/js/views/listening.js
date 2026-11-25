@@ -1,4 +1,4 @@
-import { getLang, num } from '../i18n/index.js';
+import { getLang, num, t } from '../i18n/index.js';
 import { h } from '../i18n/listening.js';
 import { button, crumbs, esc, link, meter } from '../components/html.js';
 import { icons } from '../components/icons.js';
@@ -45,6 +45,7 @@ function landing(app) {
       <span>${esc(h('openUnit'))} ${icons.chevron}</span></a></li>`).join('')}</ol>
     </section>
     <div class="listening-extras">
+      <section class="panel listening-trainer-link"><h2>${t('lisTrainer')}</h2><p>${t('lisTrainerIntro')}</p>${link('hoertraining', t('lisTrainerOpen'), 'primary')}</section>
       <section class="panel"><h2>${esc(h('heard'))}</h2><p>${esc(h('heardIntro'))}</p>${link(checkPath, esc(h('heard')), 'primary')}</section>
       <section class="panel"><h2>${esc(h('tv'))}</h2><p>${esc(h('tvIntro'))}</p>${link('hoeren/serien', esc(h('tv')), 'primary')}</section>
     </div>

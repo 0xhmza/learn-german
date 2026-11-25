@@ -19,6 +19,12 @@ export const icons = {
   cards: svg('<rect x="3" y="6" width="13" height="15" rx="2.5"/><path d="M8 3h10.5A2.5 2.5 0 0 1 21 5.5V17"/>'),
   read: svg('<path d="M3 5h6a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H3zM21 5h-6a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H21z"/>'),
   chevron: svg('<path d="m9 6 6 6-6 6"/>', '', 'ico flip-rtl'),
+  play: svg('<path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke-linejoin="round"/>'),
+  slow: svg('<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2.5h5"/>'),
+  ear: svg('<path d="M7 9a5 5 0 0 1 10 0c0 3-3 4-3 7a3 3 0 0 1-5.5 1.6"/><path d="M10 10a2 2 0 0 1 4 0c0 1.2-1 1.6-1.5 2.5"/>'),
+  hash: svg('<path d="M5 9h15M4 15h15M10 3 8 21M16 3l-2 18"/>'),
+  arrow: svg('<path d="M4 12h14M13 6l6 6-6 6"/>', '', 'ico flip-rtl'),
+  chat: svg('<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4.2A2.5 2.5 0 0 1 4 13.5z"/><path d="M8.5 8.5h7M8.5 12h4"/>'),
   sparkle: svg('<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>')
 };
 

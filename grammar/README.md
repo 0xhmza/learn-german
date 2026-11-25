@@ -8,6 +8,15 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **460 core exercises and 51 additional applications** with worked explanations, plus seven practice sets that combine lessons.
 - **Four Sprachbausteine sets** across three difficulty levels, with ten gaps per letter. In Part 1 every gap in the letter is a dropdown with three choices. In Part 2 words are dragged from the shared word list into the gaps (mouse or finger), or placed by tapping a word and then a gap. The Sprachbausteine parts of the mock exams work the same way. [telc Deutsch B1 sample format](https://shop.telc.net/media/catalog/product/file/telc_deutsch_b1_zd_uebungstest_1.pdf)
 - **Hören B1** has 24 practice recordings, 4 assessment recordings, and 120 exercises. The original German recordings use Piper voices and work offline. **Mit Serien üben** adds 24 short clips from the German dubs of The Simpsons and SpongeBob, with 72 comprehension, gap-fill and dictation exercises. [Piper](https://github.com/OHF-Voice/piper1-gpl)
+- **Hörtraining** (`#hoertraining`, linked from Hören) trains recognising words in connected speech, from A2 to B2. It has a placement check of about 12 minutes and a daily round of 10 to 15 minutes. The drills are:
+  - dictation of 60 sentences, with each mistake labelled as a sound, an ending, a word boundary, a number, an unknown or a missing word
+  - 13 sound contrasts for Arabic speakers, such as `b/p`, `o/u`, `ie/ei`, vowel length and `-en/-em`
+  - numbers, prices, times, dates, years and phone numbers
+  - predicting the verb at the end of the sentence
+  - everyday reduced forms such as `haste` and `hab's`
+  - audio review cards and nine listening texts, each heard for the gist, for details and with the transcript
+
+  A listening profile shows the estimated level, replays, speaking rate and mistake types, and a speed ladder suggests when to go faster. The drills use the browser's German speech voices. `#hoertraining/methode` explains the research behind each drill.
 - **Three B1 readings** with offline Arabic word glosses, paragraph translations and comprehension checks.
 - **156 grammar flashcards** for recalling endings, irregular forms, connector meanings and word order, with spaced review for every lesson.
 - **telc Deutsch B1 exam trainer** with 17 named mock exams, saved drafts, scored reading and Sprachbausteine sections, and writing practice. Listening statements are available for practice.

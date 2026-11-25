@@ -13,7 +13,7 @@ const src = path.join(root, 'src');
 const dist = path.join(root, 'dist');
 export const singleFile = path.join(dist, 'Deutsch-Grammatik-B1.html');
 // The single file embeds the B1 recordings and series excerpts for offline use.
-const BUDGET = { single: 5 * 1024 * 1024, script: 280 * 1024 };
+const BUDGET = { single: 6 * 1024 * 1024, script: 480 * 1024 };
 
 const between = (text, start, end, replacement) => {
   const a = text.indexOf(start);

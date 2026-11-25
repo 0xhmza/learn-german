@@ -22,10 +22,11 @@ import * as readings from '../src/js/views/readings.js';
 import * as sprachbausteine from '../src/js/views/sprachbausteine.js';
 import * as cards from '../src/js/views/cards.js';
 import * as modelExams from '../src/js/views/model-exams.js';
+import * as listeningTrainer from '../src/js/views/listening-trainer.js';
 import { context, freshState } from './support/context.js';
 
 const day = '2026-11-14';
-const views = { home, grammar, island, topics, level, vocab, writing, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+const views = { home, grammar, island, topics, level, vocab, writing, 'listening-trainer': listeningTrainer, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 
 function fakeApp(ctx, state) {
   const store = {
@@ -83,7 +84,9 @@ for (const lang of ['ar', 'de']) {
         '#model-exams', ...[...ctx.modelTests.values()].flatMap(model => [`#model-exams/${model.id}`, ...model.sections.map(section => `#model-exams/${model.id}/${section.id}`)]),
         ...[...ctx.practiceSets.keys()].map(id => `#practice/${id}`),
         ...[...ctx.readings.keys()].map(id => `#readings/${id}`),
-        ...[...ctx.sprachbausteine.keys()].map(id => `#sprachbausteine/${id}`)];
+        ...[...ctx.sprachbausteine.keys()].map(id => `#sprachbausteine/${id}`),
+        '#hoertraining', ...['runde', 'einstufung', 'texte', 'methode', 'diktat', 'laute', 'zahlen', 'satzende', 'alltag', 'karten'].map(key => `#hoertraining/${key}`),
+        ...ctx.listenTrainer.texts.map(text => `#hoertraining/text-${text.id}`)];
       for (const hash of routes) {
         const route = parse(hash, ctx);
         app.route = route;
@@ -189,14 +192,14 @@ test('both roadmaps use the same progress and hide completed topics without chan
   }
 });
 
-test('the dashboard shows the current level and progress in four areas, nothing more', () => {
+test('the dashboard shows the current level and progress in five areas, nothing more', () => {
   setLang('de');
   const ctx = context();
   const state = freshState(ctx, day);
   const app = fakeApp(ctx, state);
   const dashboard = home.render(app, parse('#home', ctx));
-  for (const href of ['grammatik', 'vokabeln', 'schreiben', 'model-exams']) assert.match(dashboard, new RegExp(`class="progress-card [^"]*" href="#${href}"`), href);
-  assert.equal((dashboard.match(/class="progress-card /g) || []).length, 4);
+  for (const href of ['grammatik', 'vokabeln', 'hoeren', 'schreiben', 'model-exams']) assert.match(dashboard, new RegExp(`class="progress-card [^"]*" href="#${href}"`), href);
+  assert.equal((dashboard.match(/class="progress-card /g) || []).length, 5);
   assert.doesNotMatch(dashboard, /#lesson\/|class="modules"|class="resume-card|goal-widget|rank-widget/);
   assert.ok(dashboard.indexOf('href="#level"') < dashboard.indexOf('streak-widget'), 'the level card sits above the streak');
   assert.match(dashboard, /Aktuelle Stufe/);

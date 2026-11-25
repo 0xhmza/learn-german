@@ -179,6 +179,9 @@ export function award(ctx, state, event, day) {
       if (correct === total) state.stats.flawlessExams += 1;
       gain(state, first ? XP.examFirst : XP.examAgain, day, notes);
     }
+  } else if (event.kind === 'listen') {
+    // Hörtraining drills: a few points per item, capped per event.
+    gain(state, Math.min(20, Math.max(0, Math.floor(event.xp) || 0)), day, notes);
   } else if (event.kind === 'test') {
     const { correct, total } = event;
     const ace = total > 0 && correct / total >= 0.9;

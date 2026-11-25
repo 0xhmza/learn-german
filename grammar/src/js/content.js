@@ -101,11 +101,19 @@ export function indexContent(raw) {
     glossary: new Map(Object.entries(raw.readings?.glossary || {})),
     sprachbausteine: new Map((raw.sprachbausteine || []).map(set => [set.id, set])),
     modelTests: new Map((raw.modelTests?.models || []).map(model => [model.id, model])),
+    listenTrainer: indexTrainer(raw.listenTrainer),
     route,
     chapters,
     bookRoute: chapters.flatMap(chapter => chapter.lessons),
     islandLessons: id => byIsland.get(id) || []
   };
+}
+
+// Hörtraining content: dictation clips, sound contrasts, sentence endings,
+// everyday speech and longer texts.
+function indexTrainer(raw = {}) {
+  const trainer = { clips: [], contrasts: [], predict: [], casual: [], texts: [], rules: {}, ...raw };
+  return { ...trainer, textById: new Map(trainer.texts.map(text => [text.id, text])) };
 }
 
 export const inFilter = (lesson, filter) => !filter || filter === 'all' || lesson.level === filter;

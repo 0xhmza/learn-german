@@ -11,8 +11,8 @@ export const contentDir = path.join(root, 'content');
 const readJson = async file => JSON.parse(await readFile(file, 'utf8'));
 
 export async function assembleContent(dir = contentDir) {
-  const [levels, islands, badges, lessonStudy, practiceSets, readings, sprachbausteine, modelTests, learning, roadmap, flashcards, writingCourse, listeningCourse] = await Promise.all(
-    ['levels.json', 'islands.json', 'badges.json', 'lesson-study.json', 'practice-sets.json', 'readings.json', 'sprachbausteine.json', 'telc-b1-model-tests.json', 'learning.json', 'roadmap.json', 'flashcards.json', 'writing-b1.json', 'listening-b1.json']
+  const [levels, islands, badges, lessonStudy, practiceSets, readings, sprachbausteine, modelTests, learning, roadmap, flashcards, writingCourse, listeningCourse, listenTrainer] = await Promise.all(
+    ['levels.json', 'islands.json', 'badges.json', 'lesson-study.json', 'practice-sets.json', 'readings.json', 'sprachbausteine.json', 'telc-b1-model-tests.json', 'learning.json', 'roadmap.json', 'flashcards.json', 'writing-b1.json', 'listening-b1.json', 'listening-trainer.json']
       .map(name => readJson(path.join(dir, name)))
   );
   const listeningTimings = await readJson(path.join(dir, '..', 'listening-audio', 'timings.json'));
@@ -35,7 +35,7 @@ export async function assembleContent(dir = contentDir) {
   const islandOrder = new Map(islands.map(island => [island.id, island.order]));
   islands.sort((a, b) => a.order - b.order);
   lessons.sort((a, b) => (islandOrder.get(a.island) ?? 99) - (islandOrder.get(b.island) ?? 99) || a.order - b.order);
-  const body = { levels, islands, badges, lessons, lessonStudy, practiceSets, readings, sprachbausteine, modelTests, learning, roadmap, flashcards, writingCourse, listeningCourse, listeningTimings };
+  const body = { levels, islands, badges, lessons, lessonStudy, practiceSets, readings, sprachbausteine, modelTests, learning, roadmap, flashcards, writingCourse, listeningCourse, listeningTimings, listenTrainer };
   const version = createHash('sha256').update(JSON.stringify(body)).digest('hex').slice(0, 12);
   return { version, ...body };
 }

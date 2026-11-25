@@ -22,6 +22,7 @@ import { vocab, writing, level } from './views/sections.js';
 import * as lesson from './views/lesson.js';
 import * as practice from './views/practice.js';
 import * as listening from './views/listening.js';
+import * as listeningTrainer from './views/listening-trainer.js';
 import * as quiz from './views/quiz.js';
 import * as progress from './views/progress.js';
 import * as settings from './views/settings.js';
@@ -31,7 +32,7 @@ import * as cards from './views/cards.js';
 import * as modelExams from './views/model-exams.js';
 import { goToRun } from './views/practice.js';
 
-const views = { home, grammar, island, topics, level, vocab, writing, listening, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+const views = { home, grammar, island, topics, level, vocab, writing, listening, 'listening-trainer': listeningTrainer, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 // Main navigation: [hash, tab, label key, icon]. The bottom bar on phones
 // leaves out the exam trainer, which the practice page links to.
 const NAV = [
