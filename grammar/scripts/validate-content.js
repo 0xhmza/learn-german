@@ -383,6 +383,7 @@ export function validateContent(content) {
     }
   }
   validateTrainer(content.listenTrainer, content.learning, fail, text, textList, bilingual);
+  validateFlash(content.flashDecks, fail, text, bilingual);
   return errors.concat(validateModelTests(content.modelTests), validateWriting(content.writingCourse),
     validateListening(content.listeningCourse, content.listeningTimings));
 }
@@ -476,4 +477,40 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     const cardCount = Object.values(content.flashcards).reduce((sum, deck) => sum + Object.keys(deck).length, 0);
     console.log(`✓ ${content.islands.length} islands, ${content.lessons.length} lessons, ${cardCount} recall cards, ${questionCount} core questions and ${Object.keys(content.lessonStudy).length} extra questions, ${content.practiceSets.length} practice sets, ${content.readings.texts.length} readings, ${content.sprachbausteine.length} Sprachbausteine sets. Content version ${content.version}.`);
   }
+}
+
+// Karteikarten: one file per level, unique deck and card ids, every card
+// with German, Arabic and the fields its kind needs.
+function validateFlash(files, fail, text, bilingual) {
+  const FLASH_KINDS = new Set(['vocab', 'verbs', 'grammar', 'phrases']);
+  const FLASH_TONES = new Set(['rose', 'lime', 'amber', 'sky', 'violet', 'teal', 'indigo', 'orange', 'pink', 'slate']);
+  if (!Array.isArray(files) || files.length !== 5) return fail('flashcards', 'needs content/karten/a1.json … c1.json');
+  const decks = new Set();
+  const cardIds = new Set();
+  const slug = value => String(value).normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
+  files.forEach((file, i) => {
+    if (file.level !== ['A1', 'A2', 'B1', 'B2', 'C1'][i]) fail(`flashcards ${i}`, 'files must be A1, A2, B1, B2, C1 in order');
+    for (const deck of file.decks || []) {
+      const where = `flashcard deck ${deck.id}`;
+      if (!ID.test(deck.id || '') || decks.has(deck.id) || deck.id.startsWith('b1-insel-')) fail(where, 'needs a unique lowercase id');
+      decks.add(deck.id);
+      if (!FLASH_KINDS.has(deck.kind)) fail(where, 'unknown kind');
+      if (!FLASH_TONES.has(deck.tone)) fail(where, 'unknown tone');
+      text(where, deck.emoji);
+      bilingual(`${where} title`, deck.title);
+      if (!Array.isArray(deck.cards) || deck.cards.length < 8) fail(where, 'needs at least eight cards');
+      for (const card of deck.cards || []) {
+        if (!Array.isArray(card) || card.length !== 4) { fail(where, 'each card is [German, Arabic, extra, example]'); continue; }
+        const [de, ar, extra, example] = card;
+        text(where, de);
+        text(where, ar);
+        if (deck.kind === 'grammar') text(`${where} answer`, extra);
+        if (typeof extra !== 'string' || typeof example !== 'string') fail(where, `${de}: extra and example must be text`);
+        if (deck.kind === 'vocab' && example && !example.trim()) fail(where, `${de}: empty example`);
+        const id = `${deck.id}~${slug(de)}`;
+        if (cardIds.has(id)) fail(where, `duplicate card ${de}`);
+        cardIds.add(id);
+      }
+    }
+  });
 }

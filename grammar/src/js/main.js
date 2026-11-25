@@ -23,6 +23,7 @@ import * as lesson from './views/lesson.js';
 import * as practice from './views/practice.js';
 import * as listening from './views/listening.js';
 import * as listeningTrainer from './views/listening-trainer.js';
+import * as flashcards from './views/flashcards.js';
 import * as quiz from './views/quiz.js';
 import * as progress from './views/progress.js';
 import * as settings from './views/settings.js';
@@ -32,12 +33,14 @@ import * as cards from './views/cards.js';
 import * as modelExams from './views/model-exams.js';
 import { goToRun } from './views/practice.js';
 
-const views = { home, grammar, island, topics, level, vocab, writing, listening, 'listening-trainer': listeningTrainer, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
+const views = { home, grammar, island, topics, level, vocab, writing, listening, 'listening-trainer': listeningTrainer, flashcards, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
 // Main navigation: [hash, tab, label key, icon]. The bottom bar on phones
-// leaves out the exam trainer, which the practice page links to.
+// leaves out the exam trainer and the flashcards, which the practice page
+// and the dashboard link to.
 const NAV = [
   ['home', 'home', 'tabHome', 'learn'],
   ['vokabeln', 'vocab', 'navVocab', 'vocab'],
+  ['karten', 'flash', 'navFlash', 'cards'],
   ['schreiben', 'writing', 'navWriting', 'writing'],
   ['hoeren', 'listening', 'navListening', 'listen'],
   ['practice', 'practice', 'tabPractice', 'practice'],
@@ -89,7 +92,7 @@ function applyTheme() {
 function drawNav() {
   const item = ([hash, tab, label, icon], cls) => `<a href="#${hash}" class="${cls}" data-tab="${tab}"><span class="nav-ico" aria-hidden="true">${icons[icon]}</span><span class="nav-label" data-t="${label}"></span></a>`;
   $('#rail-nav').innerHTML = NAV.map(entry => item(entry, 'rail-link')).join('');
-  $('#bottom-nav').innerHTML = NAV.filter(([hash]) => hash !== 'model-exams').map(entry => item(entry, 'tab-link')).join('');
+  $('#bottom-nav').innerHTML = NAV.filter(([hash]) => !['model-exams', 'karten'].includes(hash)).map(entry => item(entry, 'tab-link')).join('');
   for (const el of document.querySelectorAll('[data-logo]')) el.innerHTML = logo;
   for (const el of document.querySelectorAll('[data-icon]')) el.innerHTML = icons[el.dataset.icon];
 }

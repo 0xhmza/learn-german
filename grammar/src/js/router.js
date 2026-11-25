@@ -27,6 +27,7 @@ export function parse(hash, ctx) {
       return { view: 'writing', key: key ?? null, task, hash: raw, tab: 'writing' };
     }
   }
+  if (view === 'karten' && (key === undefined || key === 'heute' || ctx.flash?.byId.has(key))) return { view: 'flashcards', key: key ?? null, hash: raw, tab: 'flash' };
   if (view === 'hoertraining' && (key === undefined || TRAINER.has(key) || (key.startsWith('text-') && ctx.listenTrainer?.textById.has(key.slice(5))))) {
     return { view: 'listening-trainer', key: key ?? null, hash: raw, tab: 'listening' };
   }

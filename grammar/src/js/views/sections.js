@@ -41,7 +41,7 @@ export const vocab = {
       <span class="area-icon" aria-hidden="true">${icons.vocab}</span><div><h1>${t('navVocab')}</h1></div>
     </section>
     ${resume}${myWords(app)}
-    ${levelHasContent(currentLevel(app.state)) ? link('cards', t('vocabBridge'), 'secondary') : ''}`;
+    <p class="actions">${link('karten', t('fcTitle'), 'primary')}${levelHasContent(currentLevel(app.state)) ? link('cards', t('vocabBridge'), 'secondary') : ''}</p>`;
   },
   actions: {
     'word-remove'(app, target) {

@@ -16,6 +16,11 @@ export async function assembleContent(dir = contentDir) {
       .map(name => readJson(path.join(dir, name)))
   );
   const listeningTimings = await readJson(path.join(dir, '..', 'listening-audio', 'timings.json'));
+  // Karteikarten: one file per level (a1.json … c1.json).
+  const levelOrder = ['a1', 'a2', 'b1', 'b2', 'c1'];
+  const flashFiles = (await readdir(path.join(dir, 'karten'))).filter(name => levelOrder.includes(name.replace(/\.json$/, '')))
+    .sort((a, b) => levelOrder.indexOf(a.replace('.json', '')) - levelOrder.indexOf(b.replace('.json', '')));
+  const flashDecks = await Promise.all(flashFiles.map(name => readJson(path.join(dir, 'karten', name))));
   const audio = await readFile(path.join(dir, 'listening-petra.mp3'));
   learning.examSample.listening.audio = `data:audio/mpeg;base64,${audio.toString('base64')}`;
   const lessonDir = path.join(dir, 'lessons');
@@ -35,7 +40,7 @@ export async function assembleContent(dir = contentDir) {
   const islandOrder = new Map(islands.map(island => [island.id, island.order]));
   islands.sort((a, b) => a.order - b.order);
   lessons.sort((a, b) => (islandOrder.get(a.island) ?? 99) - (islandOrder.get(b.island) ?? 99) || a.order - b.order);
-  const body = { levels, islands, badges, lessons, lessonStudy, practiceSets, readings, sprachbausteine, modelTests, learning, roadmap, flashcards, writingCourse, listeningCourse, listeningTimings, listenTrainer };
+  const body = { levels, islands, badges, lessons, lessonStudy, practiceSets, readings, sprachbausteine, modelTests, learning, roadmap, flashcards, writingCourse, listeningCourse, listeningTimings, listenTrainer, flashDecks };
   const version = createHash('sha256').update(JSON.stringify(body)).digest('hex').slice(0, 12);
   return { version, ...body };
 }

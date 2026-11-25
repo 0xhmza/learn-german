@@ -64,7 +64,7 @@ export function render(app) {
         ${review.ids.length ? button('run', t('startReview'), previous ? 'secondary' : 'primary', 'data-key="daily"') : ''}
         ${mistakes ? button('run', t('practiceMistakes'), 'secondary', 'data-key="mistakes"') : ''}</div></section>
     <nav class="study-grid study-entry" aria-label="${t('studyTools')}">
-      ${[['sprachbausteine', 'sprachTitle', 'sprachSummary'], ['readings', 'readingsTitle', 'readingsIntro'], ['hoeren', 'listeningTitle', 'listeningSummary'], ['cards', 'cardsTitle', 'cardsIntro'], ['model-exams', 'courseExam', 'examToolDesc']].map(([route, heading, description]) => `<a class="panel study-tile" href="#${route}"><h2>${prose(t(heading))}</h2><p>${prose(t(description))}</p></a>`).join('')}
+      ${[['sprachbausteine', 'sprachTitle', 'sprachSummary'], ['readings', 'readingsTitle', 'readingsIntro'], ['hoeren', 'listeningTitle', 'listeningSummary'], ['karten', 'fcTitle', 'fcIntro'], ['model-exams', 'courseExam', 'examToolDesc']].map(([route, heading, description]) => `<a class="panel study-tile" href="#${route}"><h2>${prose(t(heading))}</h2><p>${prose(t(description))}</p></a>`).join('')}
     </nav>
     <details class="panel modes-panel"><summary>${t('otherModes')}</summary><div class="launcher">
       <section class="panel"><h2>${t('byTopic')}</h2>

@@ -1,4 +1,5 @@
 // Indexes the assembled content and resolves language-specific fields.
+import { buildFlash } from './engine/flashcards.js';
 
 export function indexContent(raw) {
   const islands = [...raw.islands].sort((a, b) => a.order - b.order);
@@ -78,7 +79,7 @@ export function indexContent(raw) {
     scenes: chapter.scenes.map(scene => ({ ...scene, series: true, segments: raw.listeningSeries.timings[scene.id] })) }));
   const listeningScenes = new Map([...listeningChapters, ...listeningSeries].flatMap(chapter => chapter.scenes)
     .concat(listeningAssessment).map(scene => [scene.id, scene]));
-  return {
+  const ctx = {
     listeningChapters, listeningAssessment, listeningSeries, listeningScenes, listeningAudio: raw.listeningAudio,
     listeningEpisodeLibrary: raw.listeningEpisodeLibrary === true,
     writingCourse, writingChapters, writingExercises,
@@ -107,6 +108,9 @@ export function indexContent(raw) {
     bookRoute: chapters.flatMap(chapter => chapter.lessons),
     islandLessons: id => byIsland.get(id) || []
   };
+  // Flashcard decks need the lesson cards, so they are built last.
+  ctx.flash = buildFlash(raw.flashDecks, ctx);
+  return ctx;
 }
 
 // Hörtraining content: dictation clips, sound contrasts, sentence endings,

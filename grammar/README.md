@@ -8,6 +8,13 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **460 core exercises and 51 additional applications** with worked explanations, plus seven practice sets that combine lessons.
 - **Four Sprachbausteine sets** across three difficulty levels, with ten gaps per letter. In Part 1 every gap in the letter is a dropdown with three choices. In Part 2 words are dragged from the shared word list into the gaps (mouse or finger), or placed by tapping a word and then a gap. The Sprachbausteine parts of the mock exams work the same way. [telc Deutsch B1 sample format](https://shop.telc.net/media/catalog/product/file/telc_deutsch_b1_zd_uebungstest_1.pdf)
 - **Hören B1** has 24 practice recordings, 4 assessment recordings, and 120 exercises. The original German recordings use Piper voices and work offline. **Mit Serien üben** adds 24 short clips from the German dubs of The Simpsons and SpongeBob, with 72 comprehension, gap-fill and dictation exercises. [Piper](https://github.com/OHF-Voice/piper1-gpl)
+- **Karteikarten** (`#karten`, in the side navigation and on the dashboard) is a page only for flashcards. It has 47 decks with 645 cards from A1 to C1: vocabulary, verbs, grammar and phrases.
+  - Levels are tabs and topics are filters. Each deck tile shows how many cards are due and how many are sure.
+  - The B1 grammar decks are built from the 156 lesson flashcards and share their review dates with the lessons.
+  - Study opens in focus mode. You can flip the card (Space, or tap), take a four-answer quiz, or type the German word, where nouns need their article.
+  - You grade each card Nochmal, Schwer, Gut or Leicht (keys 1–4, or swipe on a phone). A Leitner schedule brings it back the same day, tomorrow, or in 3, 7, 14 or 30 days.
+  - Articles are coloured by gender, and German is read aloud with the browser's voices. Each round ends with a summary and a retry of the missed cards.
+  - The content is in `content/karten/a1.json` … `c1.json`.
 - **Hörtraining** (`#hoertraining`, linked from Hören) trains recognising words in connected speech, from A2 to B2. It has a placement check of about 12 minutes and a daily round of 10 to 15 minutes. The drills are:
   - dictation of 60 sentences, with each mistake labelled as a sound, an ending, a word boundary, a number, an unknown or a missing word
   - 13 sound contrasts for Arabic speakers, such as `b/p`, `o/u`, `ie/ei`, vowel length and `-en/-em`

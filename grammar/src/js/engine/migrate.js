@@ -10,6 +10,7 @@ import { normalizeLast, LEVELS } from './areas.js';
 import { normalizeWriting } from './writing.js';
 import { normalizeListening } from './listening.js';
 import { defaultTrainer, normalizeTrainer } from './listening-trainer.js';
+import { defaultFlash, normalizeFlash } from './flashcards.js';
 
 export const STATE_VERSION = 1;
 export const APP_ID = 'grammatikinseln';
@@ -36,6 +37,7 @@ export function defaultState(day) {
     listeningSample: null,
     listening: { runs: {}, clips: {} },
     listenTrainer: defaultTrainer(),
+    flash: defaultFlash(),
     words: {},
     last: {},
     lastRun: null,
@@ -86,6 +88,7 @@ export function normalizeState(raw, ctx, day) {
   state.writingCourse = normalizeWriting(raw.writingCourse, ctx.writingExercises);
   state.listening = normalizeListening(raw.listening, ctx.listeningScenes);
   state.listenTrainer = normalizeTrainer(raw.listenTrainer, ctx);
+  state.flash = normalizeFlash(raw.flash, ctx);
   const listeningCount = ctx.learning?.examSample?.listening?.items.length;
   const right = raw.listeningSample?.correct;
   if (listeningCount && raw.listeningSample?.total === listeningCount && Number.isInteger(right) && right >= 0 && right <= listeningCount) {

@@ -1,0 +1,66 @@
+{
+  "level": "C1",
+  "decks": [
+    {"id":"c1-wissenschaft","kind":"vocab","emoji":"📚","tone":"slate","title":{"de":"Wissenschaftssprache","ar":"لغة العلوم"},"cards":[
+      ["die Hypothese","الفرضية","die Hypothesen","Die Hypothese konnte bestätigt werden."],
+      ["die These","الأطروحة","die Thesen","Der Autor vertritt die These, dass …"],
+      ["die Annahme","الافتراض","die Annahmen","Diese Annahme ist nicht belegt."],
+      ["die Erkenntnis","المعرفة المكتسبة، النتيجة","die Erkenntnisse","Neue Erkenntnisse verändern die Diskussion."],
+      ["der Befund","النتيجة (فحص أو بحث)","die Befunde","Die Befunde sind widersprüchlich."],
+      ["die Stichprobe","العيّنة","die Stichproben","Die Stichprobe umfasst 2000 Personen."],
+      ["der Zusammenhang","العلاقة، الصلة","die Zusammenhänge","Es besteht ein Zusammenhang zwischen Schlaf und Leistung."],
+      ["die Wechselwirkung","التفاعل المتبادل","die Wechselwirkungen","Wechselwirkungen mit anderen Medikamenten sind möglich."],
+      ["die Voraussetzung","الشرط المسبق","die Voraussetzungen","Gute Deutschkenntnisse sind Voraussetzung für das Studium."],
+      ["belegen","يُثبت بالدليل","er belegt","Zahlen belegen diesen Trend."],
+      ["widerlegen","يدحض","er widerlegt","Die Studie widerlegt diese Behauptung."],
+      ["erörtern","يناقش بعمق","er erörtert","Im Aufsatz sollen Sie das Problem erörtern."],
+      ["ableiten aus","يستنتج من","er leitet ab","Daraus lässt sich eine klare Empfehlung ableiten."],
+      ["hervorheben","يُبرز","er hebt hervor","Die Autorin hebt die Bedeutung der Bildung hervor."]
+    ]},
+    {"id":"c1-ausdruck","kind":"vocab","emoji":"🎩","tone":"violet","title":{"de":"Gehobener Ausdruck","ar":"تعبير راقٍ"},"cards":[
+      ["beträchtlich","كبير، معتبر","—","Die Kosten sind beträchtlich gestiegen."],
+      ["maßgeblich","حاسم، مؤثّر","—","Sie war maßgeblich an dem Projekt beteiligt."],
+      ["nachvollziehbar","مفهوم، يمكن تتبّعه","—","Ihre Entscheidung ist gut nachvollziehbar."],
+      ["unumgänglich","لا مفرّ منه","—","Eine Reform ist unumgänglich."],
+      ["zwiespältig","متناقض المشاعر","—","Ich habe zwiespältige Gefühle dabei."],
+      ["sich auseinandersetzen mit","يتعامل بعمق مع","er setzt sich auseinander","Wir müssen uns mit der Kritik auseinandersetzen."],
+      ["gewährleisten","يضمن","er gewährleistet","Die Sicherheit muss gewährleistet sein."],
+      ["beanstanden","يعترض على، يشكو","er beanstandet","Der Kunde hat die Rechnung beanstandet."],
+      ["verdeutlichen","يوضّح","er verdeutlicht","Das Beispiel verdeutlicht das Problem."],
+      ["befürworten","يؤيّد","er befürwortet","Die Mehrheit befürwortet den Vorschlag."],
+      ["einräumen","يعترف، يُقرّ","er räumt ein","Er räumt ein, einen Fehler gemacht zu haben."],
+      ["hinterfragen","يُسائل، يشكّك في","er hinterfragt","Man sollte Statistiken kritisch hinterfragen."],
+      ["bemängeln","ينتقد","er bemängelt","Die Prüfer bemängeln die fehlende Struktur."],
+      ["veranschaulichen","يوضّح بالأمثلة","er veranschaulicht","Eine Grafik veranschaulicht die Entwicklung."]
+    ]},
+    {"id":"c1-redewendungen","kind":"phrases","emoji":"🦉","tone":"rose","title":{"de":"Redewendungen","ar":"تعابير اصطلاحية"},"cards":[
+      ["etwas auf die lange Bank schieben","يؤجّل أمرًا طويلًا","= aufschieben","Er schiebt die Steuererklärung immer auf die lange Bank."],
+      ["den Nagel auf den Kopf treffen","يصيب كبد الحقيقة","= genau das Richtige sagen","Mit dieser Bemerkung hast du den Nagel auf den Kopf getroffen."],
+      ["ins Fettnäpfchen treten","يقع في موقف محرج","= etwas Peinliches sagen","Mit der Frage nach ihrem Alter bin ich ins Fettnäpfchen getreten."],
+      ["um den heißen Brei herumreden","يلفّ ويدور","= nicht direkt sprechen","Red nicht um den heißen Brei herum!"],
+      ["jemandem die Daumen drücken","يتمنّى له الحظ","= Glück wünschen","Ich drücke dir für die Prüfung die Daumen."],
+      ["Tomaten auf den Augen haben","لا يرى ما هو واضح","= etwas Offensichtliches nicht sehen","Hast du Tomaten auf den Augen? Der Schlüssel liegt doch da!"],
+      ["auf dem Holzweg sein","يكون على خطأ","= sich irren","Wenn du das glaubst, bist du auf dem Holzweg."],
+      ["Schwein haben","يحالفه الحظ","= Glück haben","Da hast du aber Schwein gehabt!"],
+      ["etwas unter den Teppich kehren","يخفي أمرًا ويتستّر عليه","= verheimlichen","Das Problem wurde lange unter den Teppich gekehrt."],
+      ["ins kalte Wasser springen","يبدأ شيئًا جديدًا دون تحضير","= ohne Vorbereitung anfangen","Im neuen Job musste ich ins kalte Wasser springen."],
+      ["den Faden verlieren","يفقد خيط الكلام","= nicht mehr wissen, was man sagen wollte","Bei der Präsentation habe ich kurz den Faden verloren."],
+      ["sich kein Blatt vor den Mund nehmen","يتكلّم بصراحة تامة","= offen sagen, was man denkt","Sie nimmt sich kein Blatt vor den Mund."],
+      ["zwei Fliegen mit einer Klappe schlagen","يضرب عصفورين بحجر واحد","= zwei Ziele auf einmal erreichen","Mit dem Rad zur Arbeit schlage ich zwei Fliegen mit einer Klappe."]
+    ]},
+    {"id":"c1-konnektoren","kind":"phrases","emoji":"🧷","tone":"teal","title":{"de":"Konnektoren und Präpositionen","ar":"أدوات ربط وحروف جر متقدّمة"},"cards":[
+      ["zumal","لا سيّما أن","Nebensatz: Verb am Ende","Ich bleibe zu Hause, zumal es regnet."],
+      ["sofern","ما دام، بشرط أن","Nebensatz: Verb am Ende","Sofern nichts dazwischenkommt, sind wir pünktlich."],
+      ["wenngleich","وإن كان","Nebensatz: Verb am Ende","Das Ergebnis ist gut, wenngleich nicht perfekt."],
+      ["wohingegen","في حين أن","Nebensatz: Verb am Ende","Er liebt den Sommer, wohingegen sie den Winter mag."],
+      ["es sei denn","إلا إذا","Hauptsatzstellung danach","Wir fahren morgen, es sei denn, es schneit."],
+      ["gleichwohl","ومع ذلك","Hauptsatz: Verb direkt danach","Der Plan ist teuer, gleichwohl ist er notwendig."],
+      ["demzufolge","بناءً على ذلك","Hauptsatz: Verb direkt danach","Die Preise steigen, demzufolge sinkt die Nachfrage."],
+      ["angesichts","في ضوء","+ Genitiv","Angesichts der hohen Kosten verschieben wir das Projekt."],
+      ["infolge","نتيجةً لـ","+ Genitiv","Infolge des Sturms fiel der Strom aus."],
+      ["ungeachtet","بغضّ النظر عن","+ Genitiv","Ungeachtet aller Kritik hält er an seinem Plan fest."],
+      ["hinsichtlich","فيما يتعلّق بـ","+ Genitiv","Hinsichtlich der Kosten gibt es noch Fragen."],
+      ["mithilfe","بمساعدة","+ Genitiv oder von + Dativ","Mithilfe eines Wörterbuchs verstand er den Text."]
+    ]}
+  ]
+}

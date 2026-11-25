@@ -4,6 +4,7 @@ import { t, num } from '../i18n/index.js';
 import { currentLevel, levelHasContent, grammarProgress, writingProgress, testsProgress, vocabProgress } from '../engine/areas.js';
 import { courseProgress as writingCourseProgress } from '../engine/writing.js';
 import { profile } from '../engine/listening-trainer.js';
+import { totals } from '../engine/flashcards.js';
 import { streakCard, levelCard, progressCard } from '../components/widgets.js';
 import { icons } from '../components/icons.js';
 import { skillsRadar } from '../components/skills-radar.js';
@@ -17,6 +18,13 @@ function listeningCard(ctx, state, day) {
     : info.due ? t('lisCardDue', num(info.due)) : t('lisCardMinutes', num(info.minutes));
   return progressCard({ area: 'listen', href: 'hoeren', icon: icons.listen, title: t('navListening'), detail,
     ...(info.measured ? { value: info.level } : {}) });
+}
+
+// Karteikarten: cards due today, or how many are already sure.
+function flashCard(ctx, state, day) {
+  const sum = totals(ctx, state, day);
+  return progressCard({ area: 'flash', href: sum.due ? 'karten/heute' : 'karten', icon: icons.cards, title: t('navFlash'),
+    detail: sum.learned ? t('fcDashDue', num(sum.due)) : t('fcDashStart'), value: num(sum.mastered) + ' / ' + num(sum.total), percent: Math.round(sum.mastered / Math.max(1, sum.total) * 100) });
 }
 
 export function render(app) {
@@ -34,6 +42,7 @@ export function render(app) {
     progressCard({ area: 'vocab', href: 'vokabeln', icon: icons.vocab, title: t('navVocab'),
       detail: t('wordsSaved'), value: num(vocabProgress(state).words) }),
     listeningCard(ctx, state, app.day()),
+    flashCard(ctx, state, app.day()),
     progressCard({ area: 'writing', href: 'schreiben', icon: icons.writing, title: t('navWriting'),
       ...courseProgress(ctx.writingCourse ? () => writingCourseProgress(ctx.writingCourse, state) : writingProgress, 'writingDone') }),
     progressCard({ area: 'tests', href: 'model-exams', icon: icons.exam, title: t('areaTests'),
