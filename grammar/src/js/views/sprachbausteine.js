@@ -2,6 +2,8 @@ import { t, num, getLang } from '../i18n/index.js';
 import { lessonTitle } from '../content.js';
 import { esc, de, prose, link, button, crumbs } from '../components/html.js';
 import { dropGap, wordChips, mountDragDrop, focusAfterPlacing } from '../components/dragdrop.js';
+import { levelSoonCard } from '../components/widgets.js';
+import { currentLevel, levelHasContent } from '../engine/areas.js';
 
 export const title = (app, route) => app.ctx.sprachbausteine.get(route.key)?.title[getLang()] ?? t('sprachTitle');
 
@@ -16,8 +18,10 @@ export function render(app, route) {
   const lang = getLang();
   const set = ctx.sprachbausteine.get(route.key);
   if (!set) {
-    return `${crumbs([['practice', t('practice')], [null, prose(t('sprachTitle'))]])}
-      <section class="simple-banner practice-head"><h1>${prose(t('sprachTitle'))}</h1><p>${prose(t('sprachIntro'))}</p></section>
+    const heading = `${crumbs([['practice', t('practice')], [null, prose(t('sprachTitle'))]])}
+      <section class="simple-banner practice-head"><h1>${prose(t('sprachTitle'))}</h1><p>${prose(t('sprachIntro'))}</p></section>`;
+    if (!levelHasContent(currentLevel(state))) return heading + levelSoonCard();
+    return `${heading}
       <div class="study-grid">${[...ctx.sprachbausteine.values()].map(item => {
         const saved = attempt(item, state);
         const action = saved.finished ? t('showResult') : saved.answers.some(Boolean) ? t('resumeRun') : t('sprachStart');

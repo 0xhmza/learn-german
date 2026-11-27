@@ -1,11 +1,10 @@
-// Progress: rank, totals, activity calendar, badges and per-island detail.
+// Progress: rank, totals, activity calendar and badges.
 import { t, num, getLang } from '../i18n/index.js';
-import { lessonTitle, islandName } from '../content.js';
-import { overall, pendingErrors, islandProgress, lessonStars } from '../engine/progress.js';
+import { overall, pendingErrors } from '../engine/progress.js';
 import { levelFor, displayStreak } from '../engine/gamification.js';
 import { icons, flame, bolt } from '../components/icons.js';
 import { addDays, diffDays } from '../dates.js';
-import { esc, prose, link, button, stars, formatDay } from '../components/html.js';
+import { esc, link, button, formatDay } from '../components/html.js';
 import { downloadBackup } from './settings.js';
 
 export const title = () => t('navProfile');
@@ -40,26 +39,6 @@ export function render(app) {
     return `<li class="badge ${earned ? 'earned' : 'locked'}"><span class="badge-icon" aria-hidden="true">${badge.emoji}</span>
       <span><strong>${esc(badge.name[lang])}</strong><small>${esc(badge.text[lang])}</small><em>${earned ? t('badgeEarned', formatDay(earned)) : t('badgeLocked')}</em></span></li>`;
   }).join('');
-  const islands = ctx.islands.map(island => {
-    const p = islandProgress(ctx, state, island.id);
-    return `<details class="panel island-stats"><summary><span class="sum-emoji ${island.palette}" aria-hidden="true">${p.conquered ? '🚩' : island.emoji}</span>
-      <span>${esc(islandName(island, lang))}</span><span class="muted">${t('learnedOf', num(p.learnedAll), num(p.totalAll))} · ★ ${num(p.stars)}</span></summary>
-      <ul class="stat-list">${ctx.islandLessons(island.id).map(lesson => {
-        const attempts = [...lesson.questions.map(q => q.id), `apply-${lesson.id}`, `write-${lesson.id}`].flatMap(id => state.results[id] || []);
-        const last = attempts.map(item => item.last).sort().at(-1);
-        const recent = attempts.filter(item => item.last === last);
-        const transfer = state.transfer[lesson.id];
-        const retry = transfer?.last && (!transfer.correct || transfer.hinted);
-        return `<li class="lesson-evidence">
-          <div class="row-between"><a href="#lesson/${lesson.id}">${prose(lessonTitle(lesson, lang))}</a>${stars(lessonStars(state, lesson.id), 14)}</div>
-          ${state.viewed[lesson.id] ? `<p>${t('viewed')} · ${formatDay(state.viewed[lesson.id])}</p>` : ''}
-          ${last ? `<p>${t('lastPractice', formatDay(last), t('practiceScore', num(recent.filter(item => item.correct).length), num(recent.length)))}</p>
-            <p>${t('answerEvidence', num(recent.filter(item => !item.self).length), num(recent.filter(item => item.self).length), num(recent.filter(item => item.hinted).length))}</p>` : ''}
-          ${transfer?.last ? `<p>${formatDay(transfer.last)} · ${t(retry ? 'transferTryAgain' : 'transferCorrect')}</p>` : ''}
-          ${transfer?.due ? `<p>${t('transferPending', formatDay(transfer.due))}</p>` : ''}
-        </li>`;
-      }).join('')}</ul></details>`;
-  }).join('');
   const streak = displayStreak(state, day);
   const tiles = [
     ['streak', flame, num(streak), t('streakTitle')],
@@ -88,9 +67,7 @@ export function render(app) {
       <div class="stat-tiles">${tiles}</div>
       <p class="muted section-note">${t('milestoneInfo')}</p></section>
     ${calendar(state, day)}
-    <section class="panel"><h2>${t('badges')}</h2><ul class="badges">${badges}</ul></section>
-    <div class="section-row"><h2>${t('byIsland')}</h2></div>
-    <div class="island-stats-list">${islands}</div>`;
+    <section class="panel"><h2>${t('badges')}</h2><ul class="badges">${badges}</ul></section>`;
 }
 
 export const actions = {

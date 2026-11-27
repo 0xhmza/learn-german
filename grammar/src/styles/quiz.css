@@ -45,10 +45,6 @@ textarea { width: 100%; display: block; min-height: 110px; resize: vertical; lin
 .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 14px 0; }
 .stat { background: var(--surface); border: 1px solid var(--line); padding: 12px 14px; border-radius: 13px; color: var(--muted); font-size: 13px; line-height: 1.5; }
 .stat strong { display: block; font-size: 24px; color: var(--ink); unicode-bidi: isolate; font-variant-numeric: tabular-nums; line-height: 1.3; }
-.stat-list li > span { white-space: nowrap; color: var(--muted); font-size: 13px; }
-.stat-list li { padding: 9px 0; border-top: 1px solid var(--line); font-size: 14px; }
-.stat-list li a { flex: 1; min-width: 0; color: var(--ink); }
-.stat-list progress { max-width: 100px; }
 .result-row { margin-top: 9px; border-top: 1px solid var(--line); padding: 10px 0 0; }
 .result-row summary { cursor: pointer; font-size: 14px; }
 .result-row p { margin-top: 4px; }

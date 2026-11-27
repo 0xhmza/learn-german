@@ -3,6 +3,7 @@
 const svg = (body, extra = '', cls = 'ico') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${body}</svg>`;
 
 export const icons = {
+  dashboard: svg('<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>'),
   learn: svg('<path d="M4 19.5c2-1.6 4.2-2.4 6.5-2.4M4 4.5v15M4 4.5C6 3 8.2 2.3 10.5 2.3c2.3 0 3.8.7 5 1.7"/><circle cx="17" cy="15" r="4.5"/><path d="m15.4 15 1.1 1.1 2.1-2.2"/>'),
   vocab: svg('<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h6M9 11.5h4"/>'),
   listen: svg('<path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="12" width="5" height="8" rx="2"/><rect x="16" y="12" width="5" height="8" rx="2"/>'),

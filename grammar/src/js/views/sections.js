@@ -2,12 +2,13 @@
 // content so far: grammar, writing tasks and the telc exam trainer.
 import { t, num, getLang } from '../i18n/index.js';
 import { CEFR } from '../cefr.js';
-import { islandName } from '../content.js';
-import { currentLevel, LEVELS, levelHasContent, writingTasks, writingProgress, vocabProgress } from '../engine/areas.js';
+import { islandName, lessonTitle } from '../content.js';
+import { currentLevel, levelHasContent, writingTasks, writingProgress, vocabProgress } from '../engine/areas.js';
+import { resetLesson } from '../engine/progress.js';
 import { resumeCard, levelSoonCard } from '../components/widgets.js';
 import { stopFor } from '../components/stops.js';
 import { icons } from '../components/icons.js';
-import { esc, prose, link, button, crumbs, formatDay } from '../components/html.js';
+import { esc, prose, link, button, crumbs, formatDay, plainText } from '../components/html.js';
 import { wordList, removeWord } from '../engine/words.js';
 import * as writingCourse from './writing-course.js';
 
@@ -69,11 +70,7 @@ function writingPage(app, route) {
   const { ctx, state } = app;
   const lang = getLang();
   const level = currentLevel(state);
-  const hero = `<section class="area-hero peach">
-      <span class="area-icon" aria-hidden="true">${icons.writing}</span>
-      <div><h1>${t('navWriting')}</h1><p>${t('writingIntro')}</p></div>
-    </section>`;
-  if (!levelHasContent(level)) return hero + levelSoonCard(level);
+  if (!levelHasContent(level)) return `<div class="writing-course">${writingCourse.cover()}${levelSoonCard()}</div>`;
   if (route?.key && ctx.writingCourse) return writingCourse.renderPage(app, route);
   const { exams, everyday } = writingTasks(ctx, state);
   const progress = writingProgress(ctx, state);
@@ -103,8 +100,9 @@ function writingPage(app, route) {
       </li>`).join('')}</ul>
     </section>`;
   if (ctx.writingCourse) return writingCourse.landing(app, library);
-  return `${hero}${resumeCard({ stop: stopFor(app, 'writing'), empty: startOpen ?? { title: t('studyCaughtUp') } })}
-    <div class="area-progress"><span>${t('writingDone', num(progress.done), num(progress.total))}</span><span class="bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span></div>${library}`;
+  return `<div class="writing-course">${writingCourse.cover()}
+    ${resumeCard({ stop: stopFor(app, 'writing'), empty: startOpen ?? { title: t('studyCaughtUp') } })}
+    <div class="area-progress"><span>${t('writingDone', num(progress.done), num(progress.total))}</span><span class="bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span></div>${library}</div>`;
 }
 
 export const writing = {
@@ -116,8 +114,24 @@ export const writing = {
   onChange: writingCourse.onChange
 };
 
-// Choosing the level. The dashboard, grammar, writing and exam pages follow
-// the chosen level; progress on other levels is kept.
+const lessonLevel = lesson => lesson.level.split('.')[0];
+
+function lessonResetPanel(ctx, current) {
+  const lang = getLang();
+  const groups = ctx.islands.map(island => {
+    const lessons = ctx.islandLessons(island.id).filter(lesson => lessonLevel(lesson) === current);
+    return lessons.length ? `<optgroup label="${esc(islandName(island, lang))}">${lessons.map(lesson =>
+      `<option value="${esc(lesson.id)}">${esc(plainText(lessonTitle(lesson, lang)))}</option>`).join('')}</optgroup>` : '';
+  }).join('');
+  if (!groups) return '';
+  return `<details class="panel level-reset">
+    <summary>${t('resetLessonBtn')}</summary><p class="muted">${t('resetLessonText')}</p>
+    <div class="form-row"><label for="reset-lesson">${t('chooseLesson')}
+      <select id="reset-lesson"><option value="" selected disabled>${t('chooseLesson')}</option>${groups}</select></label>
+      ${button('reset-lesson', t('resetLessonBtn'), 'secondary', 'disabled')}</div>
+  </details>`;
+}
+
 export const level = {
   title: () => t('levelPickTitle'),
   render(app, route) {
@@ -134,15 +148,30 @@ export const level = {
     }).join('');
     return `${crumbs([['home', t('tabHome')], [null, t('levelPickTitle')]])}
       <section class="page-head"><h1>${t('levelPickTitle')}</h1><p>${t('levelPickIntro')}</p></section>
+      ${lessonResetPanel(app.ctx, current)}
       <ul class="level-options">${options}</ul>`;
+  },
+  onChange(app, event) {
+    if (event.target.id === 'reset-lesson') {
+      document.querySelector('[data-action="reset-lesson"]').disabled = !event.target.value;
+    }
   },
   actions: {
     'pick-level'(app, target) {
       const chosen = target.dataset.level;
-      if (!LEVELS.includes(chosen)) return;
-      app.store.update(state => { state.settings.level = chosen; });
-      app.notify(t('levelChosen', chosen));
-      app.navigate('home');
+      if (app.setLevel(chosen, 'home')) app.notify(t('levelChosen', chosen));
+    },
+    'reset-lesson'(app, target) {
+      const select = document.querySelector('#reset-lesson');
+      const lesson = app.ctx.lessons.get(select.value);
+      if (!lesson || lessonLevel(lesson) !== currentLevel(app.state)) return;
+      const name = plainText(lessonTitle(lesson, getLang()));
+      if (!window.confirm(t('resetLessonConfirm', name))) return;
+      app.store.update(state => resetLesson(app.ctx, state, lesson.id));
+      select.selectedIndex = 0;
+      target.disabled = true;
+      select.focus();
+      app.notify(t('resetLessonDone'));
     }
   }
 };

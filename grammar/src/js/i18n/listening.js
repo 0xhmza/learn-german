@@ -3,7 +3,6 @@ import { getLang } from './index.js';
 const copy = {
   nav: ['Hören', 'الاستماع'],
   intro: ['Versteh Gespräche und Durchsagen aus dem Alltag. Hör auf den Sinn, auf wichtige Details und auf die Wörter dazwischen.', 'افهم الحوارات والإعلانات اليومية. استمع للمعنى العام والتفاصيل والكلمات التي تربط بينها.'],
-  overview: ['Hörtraining B1', 'تدريب الاستماع B1'],
   units: ['Themen zum Üben', 'مواضيع للتدريب'],
   audio: ['Audio abspielen', 'شغّل الصوت'],
   sentence: ['Ausschnitt hören', 'استمع إلى المقطع'],

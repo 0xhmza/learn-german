@@ -159,7 +159,7 @@ function completion(app, lesson, view, run) {
       ${sources(ctx, lesson, view)}
     </div>`;
   const bar = `<div class="action-bar"><div class="action-inner">
-      ${link('home', t('backToCourse'), 'secondary')}
+      ${link('grammatik', t('backToCourse'), 'secondary')}
       ${next ? link(`lesson/${next.id}`, t('nextLessonShort'), 'primary', 'data-continue') : link('practice', t('toPractice'), 'primary', 'data-continue')}
     </div></div>`;
   return { body, bar };

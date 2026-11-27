@@ -38,8 +38,8 @@ export function render(app) {
   const { ctx, state } = app;
   const level = currentLevel(state);
   const heading = `${crumbs([['home', t('tabHome')], [null, t('courseGrammar')]])}
-    <section class="page-head"><h1>${t('courseGrammar')} <span class="level-chip" lang="de" dir="ltr">${level}</span></h1></section>`;
-  if (!levelHasContent(level)) return `${heading}${levelSoonCard(level)}`;
+    <section class="page-head"><h1>${t('courseGrammar')}</h1></section>`;
+  if (!levelHasContent(level)) return `${heading}${levelSoonCard()}`;
   const filter = state.settings.levelFilter;
   const stats = overall(ctx, state, filter);
   const percent = Math.round((stats.learned / Math.max(1, stats.lessons)) * 100);

@@ -30,8 +30,6 @@
 .run-outcome .big { font-size: 30px; }
 .xp-line { font-weight: 750; color: var(--brand-ink); margin-bottom: 12px; }
 
-.lesson-evidence { padding-block: 9px; border-block-end: 1px solid var(--line); }
-.lesson-evidence p { color: var(--muted); font-size: 13px; }
 
 .exams-panel { grid-column: 1 / -1; }
 .exam-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 8px; }
@@ -60,10 +58,6 @@
 .badge-icon { font-size: 26px; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--gold-bg); border: 1px solid var(--gold-line); flex-shrink: 0; }
 .badge.locked .badge-icon { filter: grayscale(1); opacity: .45; background: var(--surface-3); border-color: var(--line); }
 .badge.locked strong { color: var(--ink-2); }
-.island-stats-list { display: grid; gap: 10px; }
-.island-stats summary { display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 750; flex-wrap: wrap; }
-.island-stats summary .muted { margin-inline-start: auto; font-weight: 600; }
-.stat-list li { gap: 10px; }
 
 .settings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
 .settings-grid .panel { display: grid; gap: 10px; align-content: start; }

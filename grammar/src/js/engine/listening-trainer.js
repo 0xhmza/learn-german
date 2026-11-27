@@ -13,7 +13,7 @@ export const NUMBER_KINDS = ['zahl', 'preis', 'uhrzeit', 'datum', 'jahr', 'telef
 // Speech rates of the speed ladder. Below 1 the audio is slowed down as a
 // temporary support; the trainer suggests going back to 1 once it is easy.
 export const RATES = [0.75, 0.85, 1, 1.1, 1.2, 1.3];
-export const LEVEL_THETA = { A1: 1.4, A2: 1.8, B1: 3, B2: 4.2, C1: 5 };
+export const LEVEL_THETA = { A1: 1.4, A2: 1.8, B1: 3, B2: 4.2, C1: 5, C2: 5 };
 const LEVEL_BASE = { A2: 1, B1: 2.3, B2: 3.6 };
 const MAX_ATTEMPTS = 300;
 const MAX_CARDS = 600;

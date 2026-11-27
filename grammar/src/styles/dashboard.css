@@ -133,11 +133,12 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
   .search-btn { inline-size: 40px; padding: 0; }
 }
 
-/* Dashboard: four progress cards with the level and streak. */
-.dash { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start; }
-.dash-main { display: grid; gap: 14px; min-inline-size: 0; }
+/* Dashboard progress, level and streak. */
+.dash { display: grid; grid-template: "main level" auto "main streak" 1fr / minmax(0, 1fr) 300px; gap: 14px 28px; align-items: start; }
+.dash-main { grid-area: main; display: grid; gap: 14px; min-inline-size: 0; }
 .dash-main h1 { font-size: clamp(24px, 2.8vw, 32px); }
-.dash-side { display: grid; gap: 14px; }
+.dash > .level-widget { grid-area: level; }
+.dash > .streak-widget { grid-area: streak; }
 .progress-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .progress-card { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-content: center; align-items: center; gap: 14px; padding: 20px; border-radius: 20px; background: var(--surface); border: 2px solid var(--line); color: var(--ink); min-block-size: 132px; transition: border-color .15s, transform .15s; }
 .progress-card:hover { color: var(--ink); border-color: var(--brand); transform: translateY(-2px); }
@@ -147,6 +148,7 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
 .progress-card.vocab .pc-icon { background: var(--t-sky); color: #1d6fa5; }
 .progress-card.writing .pc-icon { background: var(--t-peach); color: #b4531a; }
 .progress-card.tests .pc-icon { background: var(--done-soft); color: var(--done); }
+.progress-card.flash .pc-icon { background: linear-gradient(135deg, var(--t-pink), var(--t-lilac)); color: var(--brand-ink); }
 :root[data-theme="dark"] .progress-card.vocab .pc-icon { color: #8fd0ff; }
 :root[data-theme="dark"] .progress-card.writing .pc-icon { color: #ffb58a; }
 .pc-text { display: grid; gap: 2px; min-inline-size: 0; line-height: 1.35; }
@@ -181,14 +183,14 @@ a.widget:hover { border-color: var(--brand); color: var(--ink); }
 .area-progress .bar { margin: 0; block-size: 10px; }
 
 @media (max-width: 1200px) {
-  .dash { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .dash { grid-template: "level" "main" "streak" / minmax(0, 1fr); gap: 18px; }
 }
 @media (max-width: 767px) {
   .progress-cards { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .progress-card { min-block-size: 0; padding: 16px; gap: 10px 12px; }
   .pc-icon { inline-size: 44px; block-size: 44px; }
   .pc-value { font-size: 20px; }
-  .dash-side .widget { padding: 14px; gap: 8px; }
+  .dash > .widget { padding: 14px; }
 }
 
 .skills-radar { margin-block-start: 1.2rem; display: grid; grid-template-columns: minmax(130px, .8fr) minmax(0, 1fr); align-items: center; gap: .2rem 1.2rem; }

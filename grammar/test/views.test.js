@@ -214,13 +214,13 @@ test('switching the level changes the dashboard and the area pages', () => {
   const state = freshState(ctx, day);
   const app = fakeApp(ctx, state);
   const picker = level.render(app, parse('#level', ctx));
-  for (const id of ['A1', 'A2', 'B1', 'B2', 'C1']) assert.match(picker, new RegExp(`data-action="pick-level" data-level="${id}" aria-pressed="${id === 'B1'}"`), id);
+  for (const id of ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']) assert.match(picker, new RegExp(`data-action="pick-level" data-level="${id}" aria-pressed="${id === 'B1'}"`), id);
   state.settings.level = 'B2';
   const dashboard = home.render(app, parse('#home', ctx));
   assert.match(dashboard, /href="#level" aria-label="Aktuelle Stufe: B2/);
   assert.equal((dashboard.match(/Bald verfügbar/g) || []).length, 3, 'grammar, writing and exams wait for content');
-  assert.match(grammar.render(app, parse('#grammatik', ctx)), /B2 ist in Vorbereitung/);
-  assert.match(writing.render(app), /B2 ist in Vorbereitung/);
-  assert.match(modelExams.render(app, parse('#model-exams', ctx)), /B2 ist in Vorbereitung/);
+  assert.match(grammar.render(app, parse('#grammatik', ctx)), /<h1>Grammatik<\/h1>[\s\S]*Inhalte in Vorbereitung/);
+  assert.match(writing.render(app), /<h1>Schreiben<\/h1>[\s\S]*Inhalte in Vorbereitung/);
+  assert.match(modelExams.render(app, parse('#model-exams', ctx)), /<h1>Prüfungstraining<\/h1>[\s\S]*Inhalte in Vorbereitung/);
   assert.match(vocab.render(app), /Meine Wörter/);
 });

@@ -112,9 +112,12 @@ test('the flashcards page routes, renders and opens a study session', () => {
   app.route = parse('#karten', ctx);
   const hub = page.render(app, app.route);
   assert.match(hub, /Karteikarten/);
-  assert.match(hub, /data-action="fc-level" data-level="C1"/);
-  assert.match(hub, /href="#karten\/b1-wohnen"/, 'the course level B1 is shown first');
+  assert.doesNotMatch(hub, /data-action="fc-level"/);
+  assert.match(hub, /href="#karten\/b1-wohnen"/, 'the current B1 decks are shown');
+  assert.doesNotMatch(hub, /href="#karten\/a1-/);
   app.route = parse('#karten/a1-familie', ctx);
+  assert.doesNotMatch(page.render(app, app.route), /data-action="fc-start"/, 'a deep link cannot show a deck from another level');
+  state.settings.level = 'A1';
   const deck = page.render(app, app.route);
   assert.match(deck, /data-action="fc-start"/);
   assert.match(deck, /fc-art fc-die/, 'articles are coloured');
@@ -122,5 +125,10 @@ test('the flashcards page routes, renders and opens a study session', () => {
   assert.match(rendered, /class="fc-session/);
   assert.match(rendered, /Karte 1 von 12/);
   assert.equal(state.flash.lastDeck, 'a1-familie');
+  state.settings.level = 'C2';
+  app.route = parse('#karten/heute', ctx);
+  const empty = page.render(app, app.route);
+  assert.match(empty, /keine Karteikarten verfügbar/);
+  assert.doesNotMatch(empty, /class="fc-session|href="#karten\//);
   page.reset();
 });

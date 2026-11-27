@@ -1,6 +1,6 @@
 # Deutschpfad · درب الألمانية
 
-A German-learning platform for levels A1 to C1. Its first course, **Grammatikinseln · جُزُر القواعد**, covers the B1 grammar.
+A German-learning platform with a level selector from A1 to C2. Its first course, **Grammatikinseln · جُزُر القواعد**, covers B1 grammar.
 
 German grammar for levels B1.1 and B1.2, explained in Arabic and German. The topics follow the grammar progression of *Auf jeden Fall! Deutsch B1.1 / B1.2* (telc). All explanations, examples and exercises are original.
 
@@ -9,7 +9,7 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **Four Sprachbausteine sets** across three difficulty levels, with ten gaps per letter. In Part 1 every gap in the letter is a dropdown with three choices. In Part 2 words are dragged from the shared word list into the gaps (mouse or finger), or placed by tapping a word and then a gap. The Sprachbausteine parts of the mock exams work the same way. [telc Deutsch B1 sample format](https://shop.telc.net/media/catalog/product/file/telc_deutsch_b1_zd_uebungstest_1.pdf)
 - **Hören B1** has 24 practice recordings, 4 assessment recordings, and 120 exercises. The original German recordings use Piper voices and work offline. **Mit Serien üben** adds 24 short clips from the German dubs of The Simpsons and SpongeBob, with 72 comprehension, gap-fill and dictation exercises. [Piper](https://github.com/OHF-Voice/piper1-gpl)
 - **Karteikarten** (`#karten`, in the side navigation and on the dashboard) is a page only for flashcards. It has 47 decks with 645 cards from A1 to C1: vocabulary, verbs, grammar and phrases.
-  - Levels are tabs and topics are filters. Each deck tile shows how many cards are due and how many are sure.
+  - Decks and daily reviews follow the level selected in the header. Use the topic filters to narrow the deck list. Each deck shows due cards and mastery.
   - The B1 grammar decks are built from the 156 lesson flashcards and share their review dates with the lessons.
   - Study opens in focus mode. You can flip the card (Space, or tap), take a four-answer quiz, or type the German word, where nouns need their article.
   - You grade each card Nochmal, Schwer, Gut or Leicht (keys 1–4, or swipe on a phone). A Leitner schedule brings it back the same day, tomorrow, or in 3, 7, 14 or 30 days.
@@ -27,9 +27,9 @@ German grammar for levels B1.1 and B1.2, explained in Arabic and German. The top
 - **Three B1 readings** with offline Arabic word glosses, paragraph translations and comprehension checks.
 - **156 grammar flashcards** for recalling endings, irregular forms, connector meanings and word order, with spaced review for every lesson.
 - **telc Deutsch B1 exam trainer** with 17 named mock exams, saved drafts, scored reading and Sprachbausteine sections, and writing practice. Listening statements are available for practice.
-- **Dashboard** (Lernen tab): progress cards for grammar, vocabulary, writing and exams. Each opens its area page. The current level card sits above **Lernserie** and opens the level picker.
+- **Dashboard**: progress cards open the six study areas. The current level card opens the level page and appears above the progress cards on phones.
 - **Area pages** start with **Hier hast du aufgehört**: the last lesson, writing task or exam part with its date and a button to continue. The **Grammatik** page (`#grammatik`) has the course path: each grammar island is a module whose lessons sit on a vertical path that ends with the module exam. **Schreiben** lists every writing task with its status; **Prüfung** shows the checked exam parts; **Vokabeln** the last saved word.
-- **Levels A1, A2, B1, B2, C1**: switch on the level page (`#level`), opened from the level card. B1 has the grammar course, writing tasks and the telc exam trainer; the other levels show what is still in preparation.
+- **Levels A1 to C2**: switch in the header or on the level page (`#level`). Settings offers A1 to C1. B1 has the grammar course, writing tasks and the telc exam trainer. When the selected level has lessons, its level page also offers a lesson reset.
 - **Own word list**: tap a German word anywhere on the platform, or select it (double-click or long press), and choose **Zur Wortliste**. Words in the readings have the same button in the meaning panel. The exact string is saved with the date in the browser, included in backups, and listed under **Vokabeln → Meine Wörter**, where it can be removed or copied. The button stays hidden while a question is unanswered.
 - **Vokabeln** (`#vokabeln`) has a personal word list that is shared across levels. **Schreiben** (`#schreiben`) links back to the last writing task and shows the status of each task.
 - **Lesson player** in the style of mobile course apps: each lesson is a linear sequence of screens. Short explanation slides are followed by a quick check after the rule, the examples and the typical mistake, then the remaining questions and a completion screen with XP, score and streak. One button sits in the bottom bar; after checking, a green or red answer sheet shows the solution. Practice runs use the same player. Escape or ✕ closes it.

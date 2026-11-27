@@ -1,8 +1,6 @@
 import { getLang } from './index.js';
 
 const labels = {
-  course: ['Dein B1-Schreibkurs', 'دورة الكتابة على مستوى B1'],
-  tagline: ['Vom ersten Satz zur Prüfungsantwort', 'من الجملة الأولى إلى إجابة الامتحان'],
   intro: ['Schreib mit deinen eigenen Worten. Vergleiche deinen Entwurf mit einem Beispiel und mach daraus eine bessere Version.', 'اكتب بأسلوبك، ثم قارن مسودتك بمثال وحسّنها.'],
   chapters: ['Deine Kapitel', 'فصولك'],
   openChapter: ['Kapitel öffnen', 'افتح الفصل'],

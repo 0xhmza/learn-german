@@ -2,6 +2,8 @@ import { t, getLang } from '../i18n/index.js';
 import { lessonTitle } from '../content.js';
 import { esc, de, prose, link, crumbs } from '../components/html.js';
 import { readingWords } from '../reading-words.js';
+import { levelSoonCard } from '../components/widgets.js';
+import { currentLevel, levelHasContent } from '../engine/areas.js';
 
 export const title = (app, route) => app.ctx.readings.get(route.key)?.title[getLang()] ?? t('readingsTitle');
 
@@ -10,8 +12,10 @@ export function render(app, route) {
   const reading = ctx.readings.get(route.key);
   const lang = getLang();
   if (!reading) {
-    return `${crumbs([['practice', t('practice')], [null, prose(t('readingsTitle'))]])}
-      <section class="simple-banner practice-head"><h1>${prose(t('readingsTitle'))}</h1><p>${t('readingsIntro')}</p></section>
+    const heading = `${crumbs([['practice', t('practice')], [null, prose(t('readingsTitle'))]])}
+      <section class="simple-banner practice-head"><h1>${prose(t('readingsTitle'))}</h1><p>${t('readingsIntro')}</p></section>`;
+    if (!levelHasContent(currentLevel(app.state))) return heading + levelSoonCard();
+    return `${heading}
       <div class="study-grid">${[...ctx.readings.values()].map(item => `<article class="panel study-tile">
         <h2>${prose(item.title[lang])}</h2>${lang === 'ar' ? `<p>${de(item.title.de)}</p>` : ''}
         <p>${prose(item.summary[lang])}</p>${link(`readings/${item.id}`, t('openReading'))}</article>`).join('')}</div>`;

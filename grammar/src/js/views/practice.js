@@ -7,8 +7,9 @@ import { newRun, examSize, TEST_MINUTES } from '../engine/runs.js';
 import { dailyReview, resumableRun } from '../engine/study.js';
 import { currentLevel, levelHasContent } from '../engine/areas.js';
 import { esc, link, button, plainText, prose } from '../components/html.js';
+import { levelSoonCard } from '../components/widgets.js';
 
-export const title = () => t('practice');
+export const title = () => t('tabPractice');
 
 // Opens a run, creating it when it is missing or already finished.
 export function goToRun(app, key, reset = false) {
@@ -30,6 +31,12 @@ export function goToRun(app, key, reset = false) {
 
 export function render(app) {
   const { ctx, state } = app;
+  const navigation = `<nav class="study-grid study-entry" aria-label="${t('studyTools')}">
+    ${[['sprachbausteine', 'sprachTitle', 'sprachSummary'], ['readings', 'readingsTitle', 'readingsIntro'], ['hoeren', 'navListening', 'listeningSummary'], ['karten', 'fcTitle', 'fcIntro'], ['model-exams', 'courseExam', 'examToolDesc']].map(([route, heading, description]) => `<a class="panel study-tile" href="#${route}"><h2>${prose(t(heading))}</h2><p>${prose(t(description))}</p></a>`).join('')}
+  </nav>`;
+  if (!levelHasContent(currentLevel(state))) {
+    return `<section class="simple-banner practice-head"><h1>${t('reviewAndTrain')}</h1></section>${navigation}${levelSoonCard()}`;
+  }
   const lang = getLang();
   const filter = state.settings.levelFilter;
   const day = app.day();
@@ -63,9 +70,7 @@ export function render(app) {
         ${previous ? link(`practice/${previous.key}`, t('resumeSession'), 'primary') : ''}
         ${review.ids.length ? button('run', t('startReview'), previous ? 'secondary' : 'primary', 'data-key="daily"') : ''}
         ${mistakes ? button('run', t('practiceMistakes'), 'secondary', 'data-key="mistakes"') : ''}</div></section>
-    <nav class="study-grid study-entry" aria-label="${t('studyTools')}">
-      ${[['sprachbausteine', 'sprachTitle', 'sprachSummary'], ['readings', 'readingsTitle', 'readingsIntro'], ['hoeren', 'listeningTitle', 'listeningSummary'], ['karten', 'fcTitle', 'fcIntro'], ['model-exams', 'courseExam', 'examToolDesc']].map(([route, heading, description]) => `<a class="panel study-tile" href="#${route}"><h2>${prose(t(heading))}</h2><p>${prose(t(description))}</p></a>`).join('')}
-    </nav>
+    ${navigation}
     <details class="panel modes-panel"><summary>${t('otherModes')}</summary><div class="launcher">
       <section class="panel"><h2>${t('byTopic')}</h2>
         <p>${t('byTopicText')}</p>

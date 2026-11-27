@@ -3,7 +3,7 @@
 // opens in focus mode with a flipping card, swipe gestures, a quiz and a
 // typing mode, and ends with a short summary.
 import { t, num, getLang } from '../i18n/index.js';
-import { esc, prose, link, button, crumbs } from '../components/html.js';
+import { esc, prose, link, button, crumbs, meter } from '../components/html.js';
 import { icons } from '../components/icons.js';
 import { currentLevel } from '../engine/areas.js';
 import { award as awardEvent } from '../engine/gamification.js';
@@ -13,10 +13,15 @@ import { speak, stopAudio, chooseVoice, germanVoices } from '../components/speec
 const MODES = ['flip', 'quiz', 'type'];
 const SWIPE = 90;
 let session = null;
-let hub = { level: null, kind: 'all' };
+let hubKind = 'all';
 const pref = { mode: 'flip' };
 
 const flash = app => app.ctx.flash;
+const decksForLevel = app => flash(app).decks.filter(deck => deck.level === currentLevel(app.state));
+const currentDeck = (app, key) => {
+  const deck = flash(app).byId.get(key);
+  return deck?.level === currentLevel(app.state) ? deck : null;
+};
 const lang = () => getLang();
 const titleOf = deck => deck.title[lang()] || deck.title.de;
 const otherTitle = deck => deck.title[lang() === 'de' ? 'ar' : 'de'];
@@ -24,7 +29,7 @@ const kindName = kind => t('fcKinds')[kind];
 const reduce = app => app.reduceMotion?.() ?? false;
 
 export function title(app, route) {
-  const deck = flash(app).byId.get(route.key);
+  const deck = currentDeck(app, route.key);
   return deck ? titleOf(deck) : t('fcTitle');
 }
 
@@ -41,40 +46,38 @@ function ring(percent, size = 46) {
 
 // ── Hub ─────────────────────────────────────────────────────────────────
 
-function heroCards(app) {
-  const day = app.day();
-  const picks = F.queue(app.state, flash(app).decks.filter(deck => deck.kind === 'vocab' && deck.level === hub.level), day, { newLimit: 3, limit: 3 });
-  const words = (picks.length ? picks : flash(app).decks.find(deck => deck.kind === 'vocab')?.cards.slice(0, 3) || []).slice(0, 3);
-  return `<div class="fc-hero-art" aria-hidden="true">${words.map((card, i) => `<div class="fc-float fc-float-${i}"><span lang="de" dir="ltr">${esc(card.de)}</span><small lang="ar" dir="rtl">${esc(card.ar)}</small></div>`).join('')}</div>`;
-}
-
-function deckTile(app, deck, i) {
+function deckTile(app, deck) {
   const stats = F.deckStats(app.state, deck, app.day());
-  return `<li style="--i:${i}"><a class="fc-deck tone-${deck.tone}" href="#karten/${deck.id}">
-    <span class="fc-deck-top"><span class="fc-emoji" aria-hidden="true">${esc(deck.emoji)}</span>${ring(stats.percent)}</span>
-    <strong>${esc(titleOf(deck))}</strong>
-    <small class="fc-deck-sub" lang="${lang() === 'de' ? 'ar' : 'de'}" dir="${lang() === 'de' ? 'rtl' : 'ltr'}">${esc(otherTitle(deck))}</small>
-    <span class="fc-deck-meta"><span class="fc-chip">${kindName(deck.kind)}</span><span>${t('fcCardsN', num(stats.total))}</span>
-      ${stats.due ? `<span class="fc-due">${t('fcDueN', num(stats.due))}</span>` : stats.fresh === stats.total ? `<span class="fc-new">${t('fcNew')}</span>` : ''}</span>
+  const language = lang() === 'de' ? 'ar' : 'de';
+  const status = stats.due ? t('fcDueN', num(stats.due)) : stats.fresh === stats.total ? t('fcNew') : '';
+  return `<li><a class="fc-deck" href="#karten/${deck.id}">
+    <span class="fc-emoji" aria-hidden="true">${esc(deck.emoji)}</span>
+    <span class="fc-deck-label"><strong>${esc(titleOf(deck))}</strong>
+      <small class="fc-deck-sub"><bdi lang="${language}">${esc(otherTitle(deck))}</bdi></small></span>
+    <span class="fc-deck-meta">
+      <span>${kindName(deck.kind)}</span><span>${t('fcCardsN', num(stats.total))}</span>
+      ${status ? `<span class="fc-deck-status">${status}</span>` : ''}
+    </span>
+    <span class="fc-deck-mastery">${meter(stats.mastered, stats.total, t('fcMasteredPercent', num(stats.percent)))}<small aria-hidden="true">${num(stats.percent)}%</small></span>
   </a></li>`;
 }
 
 function hubPage(app) {
   const day = app.day();
-  hub.level ||= F.FLASH_LEVELS.includes(currentLevel(app.state)) ? currentLevel(app.state) : 'A1';
-  const all = F.totals(app.ctx, app.state, day);
+  const levelDecks = decksForLevel(app);
+  const heading = `<h1>${t('fcTitle')}</h1><p>${t('fcIntro')}</p>`;
+  if (!levelDecks.length) return `<section class="fc-hero panel">${heading}</section>
+    <p class="panel">${t('fcEmpty')}</p>`;
+  const all = F.totals(app.ctx, app.state, day, currentLevel(app.state));
   const streak = F.cardStreak(app.state, day);
   const todayQueue = todayCards(app);
-  const levelDecks = flash(app).decks.filter(deck => deck.level === hub.level);
-  const shown = levelDecks.filter(deck => hub.kind === 'all' || deck.kind === hub.kind);
-  const last = flash(app).byId.get(app.state.flash.lastDeck);
+  const last = currentDeck(app, app.state.flash.lastDeck);
   const kinds = ['all', ...F.KINDS.filter(kind => levelDecks.some(deck => deck.kind === kind))];
-  if (!kinds.includes(hub.kind)) hub.kind = 'all';
-  return `<section class="fc-hero">
-      <div class="fc-hero-copy">
-        <p class="fc-eyebrow">${icons.cards}<span>${t('fcEyebrow', num(flash(app).decks.length), num(flash(app).cards.size))}</span></p>
-        <h1>${t('fcTitle')}</h1>
-        <p>${t('fcIntro')}</p>
+  if (!kinds.includes(hubKind)) hubKind = 'all';
+  const shown = levelDecks.filter(deck => hubKind === 'all' || deck.kind === hubKind);
+  return `<section class="fc-hero panel">
+        ${heading}
+        <p class="fc-catalog-count">${t('fcEyebrow', num(levelDecks.length), num(all.total))}</p>
         <ul class="fc-stats">
           <li><strong>${num(all.due)}</strong><span>${t('fcStatDue')}</span></li>
           <li><strong>${num(all.learned)}</strong><span>${t('fcStatLearned')}</span></li>
@@ -85,20 +88,11 @@ function hubPage(app) {
           ${todayQueue.length ? button('fc-today', `${icons.sparkle}<span>${t('fcToday', num(todayQueue.length))}</span>`, 'primary fc-cta') : `<span class="fc-done-today">${icons.check}${t('fcAllDone')}</span>`}
           ${last ? link(`karten/${last.id}`, `${esc(last.emoji)} ${t('fcContinueDeck', esc(titleOf(last)))}`, 'secondary') : ''}
         </div>
-      </div>
-      ${heroCards(app)}
     </section>
-    <div class="fc-toolbar">
-      <div class="fc-levels" role="group" aria-label="${esc(t('fcLevel'))}">${F.FLASH_LEVELS.map(level => {
-        const stats = F.totals(app.ctx, app.state, day, level);
-        return `<button type="button" class="fc-level ${level === hub.level ? 'on' : ''}" data-action="fc-level" data-level="${level}" aria-pressed="${level === hub.level}">
-          <b lang="de" dir="ltr">${level}</b><small>${t('fcCardsN', num(stats.total))}</small>${stats.due ? '<i class="fc-dot" aria-hidden="true"></i>' : ''}</button>`;
-      }).join('')}</div>
-      <div class="fc-kinds" role="group" aria-label="${esc(t('fcTopic'))}">${kinds.map(kind => `<button type="button" class="fc-kind ${kind === hub.kind ? 'on' : ''}" data-action="fc-kind" data-kind="${kind}" aria-pressed="${kind === hub.kind}">${kind === 'all' ? t('fcAll') : kindName(kind)}</button>`).join('')}</div>
-    </div>
-    <h2 class="fc-section-title">${t('fcLevelDecks', hub.level, t('levelNames')[hub.level] || '')}</h2>
-    <ul class="fc-grid">${shown.map((deck, i) => deckTile(app, deck, i)).join('')}</ul>
-    <p class="fc-foot">${t('fcFoot')} ${link('cards', t('fcLessonCards'), 'quiet')}</p>`;
+    <h2 class="fc-section-title">${t('fcTopic')}</h2>
+    <div class="fc-kinds" role="group" aria-label="${esc(t('fcTopic'))}">${kinds.map(kind => `<button type="button" class="fc-kind" data-action="fc-kind" data-kind="${kind}" aria-pressed="${kind === hubKind}">${kind === 'all' ? t('fcAll') : kindName(kind)}</button>`).join('')}</div>
+    <ul class="fc-grid">${shown.map(deck => deckTile(app, deck)).join('')}</ul>
+    ${levelDecks.some(deck => deck.island) ? `<p class="fc-foot">${t('fcFoot')} ${link('cards', t('fcLessonCards'), 'quiet')}</p>` : ''}`;
 }
 
 // ── Deck page ───────────────────────────────────────────────────────────
@@ -127,7 +121,7 @@ function deckPage(app, deck) {
   return `${crumbs([['karten', t('fcTitle')], [null, esc(titleOf(deck))]])}
     <section class="fc-deck-head tone-${deck.tone}">
       <span class="fc-deck-emoji" aria-hidden="true">${esc(deck.emoji)}</span>
-      <div class="fc-deck-copy"><p class="fc-chips"><span class="fc-chip" lang="de" dir="ltr">${deck.level}</span><span class="fc-chip">${kindName(deck.kind)}</span></p>
+      <div class="fc-deck-copy"><p class="fc-chips"><span class="fc-chip">${kindName(deck.kind)}</span></p>
         <h1>${esc(titleOf(deck))}</h1><p class="fc-deck-sub">${esc(otherTitle(deck))}</p></div>
       <div class="fc-deck-progress">${ring(stats.percent, 84)}
         <ul><li>${t('fcCardsN', num(stats.total))}</li><li>${t('fcDueN', num(stats.due))}</li><li>${t('fcNewN', num(stats.fresh))}</li></ul></div>
@@ -157,16 +151,12 @@ function deckPage(app, deck) {
 // ── Session ─────────────────────────────────────────────────────────────
 
 function todayCards(app) {
-  const level = hub.level || currentLevel(app.state);
-  const decks = flash(app).decks;
-  const due = F.queue(app.state, decks, app.day(), { newLimit: 0, limit: 40 });
-  const fresh = F.queue(app.state, decks.filter(deck => deck.level === level), app.day(), { newLimit: 8, limit: 40 }).filter(card => !F.recordOf(app.state, card));
-  return [...due, ...fresh].slice(0, 30);
+  return F.queue(app.state, decksForLevel(app), app.day(), { newLimit: 8, limit: 30 });
 }
 
 function makeSession(app, route, cards, { title: heading, deck = null, mode = 'flip' }) {
   const usable = deck && !modeAvailable(deck, mode) ? 'flip' : mode;
-  session = { route: route.hash, heading, deck: deck?.id || null, mode: usable, cards, index: 0, flipped: false,
+  session = { route: route.hash, level: currentLevel(app.state), heading, deck: deck?.id || null, mode: usable, cards, index: 0, flipped: false,
     counts: { again: 0, hard: 0, good: 0, easy: 0 }, requeued: new Set(), wrong: [], answered: null, spoken: -1, done: false };
   prepare(app);
 }
@@ -370,8 +360,11 @@ function check(app, typed) {
 }
 
 export function render(app, route) {
-  if (session && session.route !== route.hash) session = null;
-  const deck = flash(app).byId.get(route.key);
+  if (session && (session.route !== route.hash || session.level !== currentLevel(app.state))) {
+    stopAudio();
+    session = null;
+  }
+  const deck = currentDeck(app, route.key);
   // #karten/heute (from the dashboard) opens today's cards directly.
   if (route.key === 'heute' && !session && !app.redrawing) {
     const cards = todayCards(app);
@@ -382,8 +375,7 @@ export function render(app, route) {
 }
 
 export const actions = {
-  'fc-level'(app, target) { hub.level = target.dataset.level; app.rerender(); document.querySelector(`[data-level="${hub.level}"]`)?.focus(); },
-  'fc-kind'(app, target) { hub.kind = target.dataset.kind; app.rerender(); document.querySelector(`[data-kind="${hub.kind}"]`)?.focus(); },
+  'fc-kind'(app, target) { hubKind = target.dataset.kind; app.rerender(); document.querySelector(`[data-kind="${hubKind}"]`)?.focus(); },
   'fc-mode'(app, target) { pref.mode = target.dataset.mode; app.rerender(); document.querySelector(`[data-mode="${pref.mode}"]`)?.focus(); },
   'fc-dir'(app, target) {
     app.store.update(state => { state.flash.dir = target.dataset.dir === 'ar' ? 'ar' : 'de'; });
@@ -540,5 +532,5 @@ export function mount(app) {
 // For tests: forget the open session and hub filters.
 export function reset() {
   session = null;
-  hub = { level: null, kind: 'all' };
+  hubKind = 'all';
 }

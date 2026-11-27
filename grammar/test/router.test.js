@@ -7,7 +7,8 @@ test('routes resolve against the content', () => {
   const ctx = context();
   assert.deepEqual(parse('', ctx).view, 'home');
   assert.deepEqual(parse('#home', ctx).view, 'home');
-  assert.deepEqual(parse('#island/passiv', ctx), { view: 'island', key: 'passiv', hash: 'island/passiv', tab: 'home' });
+  assert.equal(parse('#grammatik', ctx).tab, 'grammar');
+  assert.deepEqual(parse('#island/passiv', ctx), { view: 'island', key: 'passiv', hash: 'island/passiv', tab: 'grammar' });
   assert.deepEqual(parse('#island/atlantis', ctx).view, 'home');
   assert.deepEqual(parse('#lesson/passiv-perfekt', ctx).key, 'passiv-perfekt');
   assert.deepEqual(parse('#lesson/passiv-perfekt/x', ctx).view, 'home');
@@ -22,6 +23,7 @@ test('routes resolve against the content', () => {
   assert.deepEqual(parse('#schreiben', ctx).view, 'writing');
   assert.deepEqual(parse('#topics', ctx).view, 'topics');
   assert.deepEqual(parse('#level/b2', ctx), { view: 'level', key: 'b2', hash: 'level/b2', tab: 'home' });
+  assert.equal(parse('#level/c2', ctx).view, 'level');
   assert.deepEqual(parse('#level/d1', ctx).view, 'home');
   assert.deepEqual(parse('#vokabeln/x', ctx).view, 'home');
 });

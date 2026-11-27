@@ -16,18 +16,29 @@ const l = value => prose(value[getLang()]);
 const overview = 'schreiben';
 const ready = 'schreiben/bereit';
 
+export function cover(progress) {
+  return `<header class="writing-cover">
+    <div class="writing-cover-copy">
+      <h1>${esc(t('navWriting'))}</h1>
+      <p>${esc(w('intro'))}</p>
+      ${progress ? `<div class="writing-cover-progress">${meter(progress.done, progress.total, w('chapters'))}<span>${num(progress.done)} / ${num(progress.total)} ${esc(w('doneCount'))}</span></div>` : ''}
+    </div>
+    <div class="writing-cover-art" aria-hidden="true"><div class="writing-paper"><i></i><i></i><i></i><span>${icons.writing}</span></div></div>
+  </header>`;
+}
+
 export function landing(app, library) {
   const { ctx, state } = app;
   const course = ctx.writingCourse;
   if (!course) return library;
-  const { done, total } = courseProgress(course, state);
+  const progress = courseProgress(course, state);
   const tasks = course.chapters.flatMap(chapter => chapter.tasks);
   const firstOpen = tasks.find(task => !taskFinished(state.writingCourse[task.id]));
   const stop = stopFor(app, 'writing');
   const activeTask = ctx.writingExercises.get(app.state.last.writing?.hash.split('/')[1]);
   const next = activeTask && activeTask === firstOpen ? stop : firstOpen && {
     title: l(firstOpen.title),
-    action: link(writingHash(firstOpen), esc(w(done ? 'nextTask' : 'startCourse')), 'primary')
+    action: link(writingHash(firstOpen), esc(w(progress.done ? 'nextTask' : 'startCourse')), 'primary')
   };
   const tags = frequentWritingErrors(state);
   const followUps = tags.flatMap(tag => {
@@ -36,15 +47,7 @@ export function landing(app, library) {
     return task ? [`<div>${link(writingHash(task), l(task.title), 'secondary')}<small>${esc(w(tag))}</small></div>`] : [];
   });
   return `<div class="writing-course">
-    <header class="writing-cover">
-      <div class="writing-cover-copy">
-        <p class="writing-kicker">${esc(w('course'))}</p>
-        <h1>${esc(w('tagline'))}</h1>
-        <p>${esc(w('intro'))}</p>
-        <div class="writing-cover-progress">${meter(done, total, w('chapters'))}<span>${num(done)} / ${num(total)} ${esc(w('doneCount'))}</span></div>
-      </div>
-      <div class="writing-cover-art" aria-hidden="true"><div class="writing-paper"><i></i><i></i><i></i><span>${icons.writing}</span></div></div>
-    </header>
+    ${cover(progress)}
     ${resumeCard({ stop: activeTask && !taskFinished(state.writingCourse[activeTask.id]) ? stop : stop && !activeTask ? stop : null,
       empty: next || { title: w('ready'), action: link(ready, esc(w('ready')), 'primary') } })}
     ${followUps.length ? `<section class="panel writing-follow-ups"><h2>${esc(w('errorPractice'))}</h2><div>${followUps.join('')}</div></section>` : ''}

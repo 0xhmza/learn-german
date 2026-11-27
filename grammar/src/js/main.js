@@ -10,7 +10,7 @@ import { renderHud } from './components/hud.js';
 import { icons, logo } from './components/icons.js';
 import { mountWordPicker } from './components/wordpick.js';
 import { addWord } from './engine/words.js';
-import { areaOf, currentLevel, levelHasContent, recordVisit } from './engine/areas.js';
+import { areaOf, currentLevel, LEVELS, levelHasContent, recordVisit } from './engine/areas.js';
 import { levelSoonCard } from './components/widgets.js';
 import { createToaster, describeNotes } from './components/toast.js';
 import { esc, plainText, prose } from './components/html.js';
@@ -34,11 +34,10 @@ import * as modelExams from './views/model-exams.js';
 import { goToRun } from './views/practice.js';
 
 const views = { home, grammar, island, topics, level, vocab, writing, listening, 'listening-trainer': listeningTrainer, flashcards, lesson, practice, quiz, progress, settings, readings, sprachbausteine, cards, 'model-exams': modelExams };
-// Main navigation: [hash, tab, label key, icon]. The bottom bar on phones
-// leaves out the exam trainer and the flashcards, which the practice page
-// and the dashboard link to.
+// Main navigation: [hash, tab, label key, icon].
 const NAV = [
-  ['home', 'home', 'tabHome', 'learn'],
+  ['home', 'home', 'tabHome', 'dashboard'],
+  ['grammatik', 'grammar', 'courseGrammar', 'learn'],
   ['vokabeln', 'vocab', 'navVocab', 'vocab'],
   ['karten', 'flash', 'navFlash', 'cards'],
   ['schreiben', 'writing', 'navWriting', 'writing'],
@@ -49,10 +48,16 @@ const NAV = [
 ];
 // Lessons and practice runs open as a focused player without the app navigation.
 const PLAYER_VIEWS = new Set(['lesson', 'quiz']);
-const COURSE_VIEWS = new Set(['island', 'topics', 'lesson', 'listening', 'practice', 'quiz', 'readings', 'sprachbausteine', 'cards']);
+const COURSE_VIEWS = new Set(['island', 'topics', 'lesson', 'quiz', 'cards']);
+const COURSE_DETAIL_VIEWS = new Set(['listening', 'model-exams', 'writing', 'readings', 'sprachbausteine']);
+const LEVEL_LANDING = {
+  island: 'grammatik', topics: 'grammatik', lesson: 'grammatik', quiz: 'practice', cards: 'karten',
+  flashcards: 'karten', listening: 'hoeren', 'listening-trainer': 'hoertraining', writing: 'schreiben',
+  'model-exams': 'model-exams', readings: 'readings', sprachbausteine: 'sprachbausteine'
+};
 const unavailableCourse = {
-  title: app => t('levelSoonTitle', currentLevel(app.state)),
-  render: app => levelSoonCard(currentLevel(app.state), 'h1')
+  title: () => t('levelSoonTitle'),
+  render: () => levelSoonCard('h1')
 };
 // Actions available on every page.
 const globalActions = {
@@ -68,6 +73,7 @@ const $ = selector => document.querySelector(selector);
 const content = $('#content');
 const main = $('#main');
 const themeButton = $('#theme');
+const headerLevel = $('#header-level');
 const storage = (() => { try { return window.localStorage; } catch { return null; } })();
 
 async function loadContent() {
@@ -124,6 +130,8 @@ async function boot() {
   }
   const ctx = indexContent(raw);
   const store = createStore(ctx, { storage, day: today() });
+  headerLevel.innerHTML = LEVELS.map(level => `<option>${level}</option>`).join('');
+  headerLevel.hidden = false;
   const toaster = createToaster($('#toasts'));
   let route = null;
   let picker = null;
@@ -168,6 +176,15 @@ async function boot() {
       applyChrome();
       this.rerender();
     },
+    setLevel(next, destination) {
+      if (!LEVELS.includes(next)) return false;
+      const changed = next !== currentLevel(store.state);
+      if (changed) store.update(state => { state.settings.level = next; });
+      const landing = destination || (changed && route.key && LEVEL_LANDING[route.view]);
+      if (landing) this.navigate(landing);
+      else if (changed) this.rerender();
+      return changed;
+    },
     setTheme(mode) {
       if (mode === 'light' || mode === 'dark') {
         root.dataset.theme = mode;
@@ -182,6 +199,8 @@ async function boot() {
   };
 
   function drawChrome() {
+    headerLevel.value = currentLevel(store.state);
+    root.toggleAttribute('data-reduce-motion', store.state.settings.reduceMotion);
     $('#hud').innerHTML = renderHud(store.state, today());
   }
 
@@ -193,7 +212,7 @@ async function boot() {
       store.flush();
     }
     route = parse(location.hash, ctx);
-    const needsCourse = COURSE_VIEWS.has(route.view) || (['model-exams', 'writing'].includes(route.view) && route.key);
+    const needsCourse = COURSE_VIEWS.has(route.view) || (COURSE_DETAIL_VIEWS.has(route.view) && route.key);
     const blocked = needsCourse && !levelHasContent(currentLevel(store.state));
     view = blocked ? unavailableCourse : views[route.view];
     document.body.classList.toggle('player-mode', !blocked && PLAYER_VIEWS.has(route.view));
@@ -266,6 +285,7 @@ async function boot() {
     updateTopicSetting(event.target, 'hideCompleted', event.target.checked, '[data-hide-completed]');
   });
   for (const el of document.querySelectorAll('[data-lang]')) el.addEventListener('click', () => app.setLanguage(el.dataset.lang));
+  headerLevel.addEventListener('change', () => app.setLevel(headerLevel.value));
   themeButton.addEventListener('click', () => app.setTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
   matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', applyTheme);
   $('.skip').addEventListener('click', event => {

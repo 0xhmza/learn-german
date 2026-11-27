@@ -1,7 +1,13 @@
 .exam-layout { display: grid; gap: 16px; }
-.exam-featured { background: var(--hero-b); margin-block-end: 14px; }
-.coverage-list { padding-inline-start: 1.25em; margin-block: 6px; color: var(--ink-2); font-size: 14px; }
-.exam-overview .btn { margin-inline-end: 8px; margin-block-start: 10px; }
+.exam-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; color: var(--ink); transition: background-color .18s, border-color .18s, transform .18s; }
+.exam-card h2 { margin-block: 4px; color: inherit; }
+.exam-card > .ico { color: var(--brand-ink); }
+.exam-card.exam-featured { background: var(--hero-b); margin-block-end: 14px; }
+.exam-card:is(:hover, :focus-visible) { background: var(--brand-soft); border-color: var(--brand); color: var(--brand-ink); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :root:not([data-reduce-motion]) .exam-card:hover { transform: translateY(-3px); }
+}
+:root[data-reduce-motion] .exam-card { transition: none; }
 .exam-sample { display: grid; gap: 14px; align-items: start; }
 .exam-sample audio { width: min(100%, 28rem); }
 .exam-sample fieldset { min-inline-size: 0; border: 1px solid var(--line); border-radius: 8px; }

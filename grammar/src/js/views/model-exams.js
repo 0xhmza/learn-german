@@ -2,6 +2,7 @@ import { getLang, t, num } from '../i18n/index.js';
 import { button, crumbs, de, esc, link } from '../components/html.js';
 import { examChoices, examResult, isListening, isMatching, isReading, lastReadingResult } from '../engine/model-exams.js';
 import { dropGap, wordChips, mountDragDrop, focusAfterPlacing } from '../components/dragdrop.js';
+import { icons } from '../components/icons.js';
 import { currentLevel, levelHasContent, modelProgress, testsProgress } from '../engine/areas.js';
 import { resumeCard, levelSoonCard } from '../components/widgets.js';
 import { stopFor } from '../components/stops.js';
@@ -15,10 +16,6 @@ const modelNumber = model => t('examModel', num(model.number));
 const savedSection = (app, model, section) => app.state.modelExams[model.id]?.[section.id] || {};
 const hasWork = draft => draft.checked || draft.writing || Object.keys(draft.responses || {}).length;
 
-function coverage(sample) {
-  return `<ul class="coverage-list">${['readingScored', 'writingSelf', 'listeningStatements', ...(sample ? ['listeningSample', 'speakingSample'] : [])].map(key => `<li>${t(key)}</li>`).join('')}</ul>`;
-}
-
 export function title(app, route) {
   const model = app.ctx.modelTests.get(route.key);
   return model ? modelTitle(model) : t('examTrainerTitle');
@@ -29,30 +26,26 @@ function list(app) {
   const models = [...app.ctx.modelTests.values()];
   const added = models.find(model => model.id === sampleId);
   const card = (model, featured = false) => {
-      const saved = app.state.modelExams[model.id] || {};
-      const draft = saved.schreiben?.writing?.trim();
-      const started = Object.values(saved).some(hasWork);
-      const progress = modelProgress(model, app.state);
-      return `<article class="panel study-tile ${featured ? 'exam-featured' : ''}">
-        <p class="study-meta">${featured ? t('featuredModel') : modelNumber(model)}${started ? ` · ${t('examInProgress')}` : ''}</p>
+    const saved = app.state.modelExams[model.id] || {};
+    const status = saved.schreiben?.writing?.trim() ? 'taskDraft' : Object.values(saved).some(hasWork) ? 'examInProgress' : null;
+    const progress = modelProgress(model, app.state);
+    return `<a href="#${routeFor(model)}" class="panel exam-card ${featured ? 'exam-featured' : ''}">
+      <div><p class="study-meta">${modelNumber(model)}${status ? ` · ${t(status)}` : ''}</p>
         <h2>${esc(modelTitle(model))}</h2>
-        <p class="study-meta">${t('testsDone', num(progress.done), num(progress.total))}</p>
-        ${coverage(model.id === sampleId)}
-        <div class="actions">
-          ${draft ? link(`${routeFor(model)}/schreiben`, t('resumeWriting'), 'primary') : ''}
-          ${link(routeFor(model), t('examOpen'), featured && !draft ? 'primary' : 'secondary', `aria-label="${esc(`${t('examOpen')} · ${modelNumber(model)} · ${modelTitle(model)}`)}"`)}
-        </div></article>`;
+        <p class="study-meta">${t('testsDone', num(progress.done), num(progress.total))}</p></div>
+      ${icons.chevron}
+    </a>`;
   };
   const extra = models.filter(model => model !== added);
   const activeDrafts = extra.filter(model => app.state.modelExams[model.id]?.schreiben?.writing?.trim());
   const level = currentLevel(app.state);
   const head = `<section class="simple-banner practice-head"><h1>${t('examTrainerTitle')}</h1><p>${t('examTrainerIntro')}</p></section>`;
-  if (!levelHasContent(level)) return head + levelSoonCard(level);
+  if (!levelHasContent(level) || !models.length) return head + levelSoonCard();
   const progress = testsProgress(app.ctx, app.state);
   const percent = Math.round((progress.done / Math.max(1, progress.total)) * 100);
-  const first = added || models[0];
+  const stop = stopFor(app, 'tests');
   return `${head}
-    ${resumeCard({ stop: stopFor(app, 'tests'), empty: { title: esc(`${modelNumber(first)} · ${modelTitle(first)}`), action: link(`${routeFor(first)}/lesen-1`, t('startHere'), 'primary') } })}
+    ${stop ? resumeCard({ stop }) : ''}
     <div class="area-progress"><span>${t('testsDone', num(progress.done), num(progress.total))}</span><span class="bar" aria-hidden="true"><i style="inline-size:${percent}%"></i></span></div>
     ${added ? card(added, true) : ''}${activeDrafts.length ? `<div class="study-grid exam-catalog">${activeDrafts.map(model => card(model)).join('')}</div>` : ''}
     <details class="panel modes-panel"><summary>${t('allModels', num(extra.length - activeDrafts.length))}</summary>
@@ -93,7 +86,7 @@ export function render(app, route) {
       </details>
       ${renderWriting(app, model, section, sample)}`
     : `<div class="exam-layout ${section || sampleRoute ? 'with-part' : ''}">${navigation}
-      ${section ? renderPart(app, model, section) : sampleRoute && sample ? renderSample(route.section, sample) : `<section class="panel exam-overview"><h2>${t('examCoverage')}</h2>${coverage(sample)}${link(`${routeFor(model)}/lesen-1`, t('examOpen'), 'primary')}${savedSection(app, model, { id: 'schreiben' }).writing?.trim() ? link(`${routeFor(model)}/schreiben`, t('resumeWriting')) : ''}</section>`}</div>`;
+      ${section ? renderPart(app, model, section) : sampleRoute && sample ? renderSample(route.section, sample) : `<div class="actions">${link(routeFor(model, model.sections[0]), t('startHere'), 'primary')}${savedSection(app, model, { id: 'schreiben' }).writing?.trim() ? link(`${routeFor(model)}/schreiben`, t('resumeWriting')) : ''}</div>`}</div>`;
   return `${crumbs([writing ? ['schreiben', t('navWriting')] : ['model-exams', t('examTrainerNav')], [section || sampleRoute ? routeFor(model) : null, name], ...(section || sampleRoute ? [[null, heading]] : [])])}
     <section class="simple-banner practice-head${writing ? ' exam-writing-heading' : ''}"><h1>${heading}</h1>
       <p>${section || sampleRoute ? `${modelNumber(model)} · ${name}` : modelNumber(model)}</p></section>

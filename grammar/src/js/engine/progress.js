@@ -102,3 +102,19 @@ export function visitLesson(state, id) {
     state.player.animate = true;
   }
 }
+
+export function resetLesson(ctx, state, id) {
+  for (const field of ['completed', 'started', 'viewed', 'lessonSlides', 'transfer', 'stars', 'lessonBonus']) delete state[field][id];
+  for (const [questionId, question] of ctx.questions) if (question.lesson === id) delete state.results[questionId];
+  for (const card of ctx.decks.get(id) || []) delete state.cards[card.id];
+  for (const key of [id, ...['apply', 'quick', 'repair', 'write', 'lesson-practice', 'lesson-cards'].map(prefix => `${prefix}-${id}`)]) {
+    delete state.runs[key];
+  }
+  if (state.runs.daily?.ids.some(questionId => ctx.questions.get(questionId)?.lesson === id)) delete state.runs.daily;
+  if (!state.runs[state.lastRun]) state.lastRun = null;
+  if (state.lastLesson === id) state.lastLesson = null;
+  if (state.last.grammar?.hash === `lesson/${id}`) delete state.last.grammar;
+  if (state.last.writing?.hash === `practice/write-${id}`) delete state.last.writing;
+  if (state.player.at === id) state.player.at = null;
+  if (state.player.from === id) state.player.from = null;
+}

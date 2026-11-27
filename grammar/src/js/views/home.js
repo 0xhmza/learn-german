@@ -1,4 +1,4 @@
-// Learn tab (dashboard): progress in grammar, vocabulary, writing and exams
+// Dashboard: progress in the learning areas
 // for the current level, with the level picker and streak beside it.
 import { t, num } from '../i18n/index.js';
 import { currentLevel, levelHasContent, grammarProgress, writingProgress, testsProgress, vocabProgress } from '../engine/areas.js';
@@ -22,7 +22,8 @@ function listeningCard(ctx, state, day) {
 
 // Karteikarten: cards due today, or how many are already sure.
 function flashCard(ctx, state, day) {
-  const sum = totals(ctx, state, day);
+  const sum = totals(ctx, state, day, currentLevel(state));
+  if (!sum.total) return progressCard({ area: 'flash', href: 'karten', icon: icons.cards, title: t('navFlash'), detail: t('fcEmpty') });
   return progressCard({ area: 'flash', href: sum.due ? 'karten/heute' : 'karten', icon: icons.cards, title: t('navFlash'),
     detail: sum.learned ? t('fcDashDue', num(sum.due)) : t('fcDashStart'), value: num(sum.mastered) + ' / ' + num(sum.total), percent: Math.round(sum.mastered / Math.max(1, sum.total) * 100) });
 }
@@ -49,14 +50,12 @@ export function render(app) {
       ...courseProgress(testsProgress, 'testsDone') })
   ];
   return `<div class="dash">
+    ${levelCard(state)}
     <section class="dash-main" aria-labelledby="dash-title">
-      <h1 id="dash-title">${t('dashProgress')}</h1>
+      <h1 id="dash-title">${t('tabHome')}</h1>
       <div class="progress-cards">${cards.join('')}</div>
       ${ready ? skillsRadar(ctx, state) : ''}
     </section>
-    <aside class="dash-side">
-      ${levelCard(state)}
-      ${streakCard(state, app.day())}
-    </aside>
+    ${streakCard(state, app.day())}
   </div>`;
 }

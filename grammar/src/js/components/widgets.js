@@ -62,8 +62,8 @@ export function resumeCard({ stop, empty, eyebrow }) {
 }
 
 // For levels without content yet: what is missing and a way to switch.
-export function levelSoonCard(level, heading = 'h2') {
+export function levelSoonCard(heading = 'h2') {
   return `<section class="panel level-soon"><span class="empty-icon" aria-hidden="true">${icons.sparkle}</span>
-    <div><${heading}>${t('levelSoonTitle', level)}</${heading}><p>${t('levelSoonText')}</p>
+    <div><${heading}>${t('levelSoonTitle')}</${heading}><p>${t('levelSoonText')}</p>
       <p><a class="btn secondary" href="#level">${t('changeLevel')}</a></p></div></section>`;
 }

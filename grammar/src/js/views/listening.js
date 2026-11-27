@@ -2,6 +2,8 @@ import { getLang, num, t } from '../i18n/index.js';
 import { h } from '../i18n/listening.js';
 import { button, crumbs, esc, link, meter } from '../components/html.js';
 import { icons } from '../components/icons.js';
+import { levelSoonCard } from '../components/widgets.js';
+import { currentLevel, levelHasContent } from '../engine/areas.js';
 import { mountListeningAudio } from '../components/listening-audio.js';
 import { listeningPlayer, playListening, playerStatus } from '../components/listening-player.js';
 import { listeningInput, sizeListeningGaps } from '../components/listening-gap.js';
@@ -19,7 +21,7 @@ const sections = app => [...app.ctx.listeningChapters, ...app.ctx.listeningSerie
 const currentScene = app => app.ctx.listeningScenes.get(app.route.key);
 let audio = null;
 
-export const title = () => h('overview');
+export const title = () => t('navListening');
 
 function completion(app, scenes) {
   const done = scenes.filter(scene => runFor(app, scene)?.submitted).length;
@@ -27,25 +29,29 @@ function completion(app, scenes) {
 }
 
 function landing(app) {
-  const scenes = app.ctx.listeningChapters.flatMap(chapter => chapter.scenes);
+  const ready = levelHasContent(currentLevel(app.state));
+  const scenes = ready ? app.ctx.listeningChapters.flatMap(chapter => chapter.scenes) : [];
   const done = scenes.filter(scene => runFor(app, scene)?.submitted).length;
   const resume = scenes.find(scene => listeningDraft(scene, runFor(app, scene))) ?? scenes.find(scene => !runFor(app, scene)?.submitted);
-  return `<div class="listening">
+  const trainer = `<section class="panel listening-trainer-link"><h2>${t('lisTrainer')}</h2><p>${t('lisTrainerIntro')}</p>${link('hoertraining', t('lisTrainerOpen'), 'primary')}</section>`;
+  const cover = `
     <header class="listening-cover"><div>
-      <h1>${esc(h('overview'))}</h1><p>${esc(h('intro'))}</p>
-      <div class="listening-cover-progress">${meter(done, scenes.length, h('finished'))}<span>${completion(app, scenes)}</span></div>
+      <h1>${esc(title())}</h1><p>${esc(h('intro'))}</p>
+      ${ready ? `<div class="listening-cover-progress">${meter(done, scenes.length, h('finished'))}<span>${completion(app, scenes)}</span></div>
       <div class="actions">
         ${resume ? link(urlFor(resume), esc(h(listeningDraft(resume, runFor(app, resume)) ? 'resume' : 'go')), 'primary') : ''}
         ${app.ctx.listeningSeries.length ? link('hoeren/serien', esc(h('tv')), 'secondary') : ''}
-      </div>
-    </div><div class="listening-cover-mark" aria-hidden="true">${icons.listen}</div></header>
+      </div>` : ''}
+    </div><div class="listening-cover-mark" aria-hidden="true">${icons.listen}</div></header>`;
+  if (!ready) return `<div class="listening">${cover}${trainer}${levelSoonCard()}</div>`;
+  return `<div class="listening">${cover}
     <section aria-labelledby="listening-chapters"><h2 id="listening-chapters">${esc(h('units'))}</h2>
       <ol class="listening-chapters">${app.ctx.listeningChapters.map(chapter => `<li><a class="panel" href="#${urlFor(chapter)}">
       <small>${completion(app, chapter.scenes)}</small><h3>${label(chapter)}</h3><p>${esc(chapter.description[getLang()])}</p>
       <span>${esc(h('openUnit'))} ${icons.chevron}</span></a></li>`).join('')}</ol>
     </section>
     <div class="listening-extras">
-      <section class="panel listening-trainer-link"><h2>${t('lisTrainer')}</h2><p>${t('lisTrainerIntro')}</p>${link('hoertraining', t('lisTrainerOpen'), 'primary')}</section>
+      ${trainer}
       <section class="panel"><h2>${esc(h('heard'))}</h2><p>${esc(h('heardIntro'))}</p>${link(checkPath, esc(h('heard')), 'primary')}</section>
       <section class="panel"><h2>${esc(h('tv'))}</h2><p>${esc(h('tvIntro'))}</p>${link('hoeren/serien', esc(h('tv')), 'primary')}</section>
     </div>

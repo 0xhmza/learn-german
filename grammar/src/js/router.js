@@ -36,11 +36,11 @@ export function parse(hash, ctx) {
     [...(ctx.listeningChapters ?? []), ...(ctx.listeningSeries ?? [])].some(chapter => chapter.id === key))) {
     return { view: 'listening', key: key ?? null, hash: raw, tab: 'listening' };
   }
-  if (view === 'topics' && key === undefined) return { view: 'topics', key: null, hash: raw, tab: 'home' };
-  if (view === 'grammatik' && key === undefined) return { view: 'grammar', key: null, hash: raw, tab: 'home' };
+  if (view === 'topics' && key === undefined) return { view: 'topics', key: null, hash: raw, tab: 'grammar' };
+  if (view === 'grammatik' && key === undefined) return { view: 'grammar', key: null, hash: raw, tab: 'grammar' };
   if (view === 'level' && (key === undefined || cefrBySlug.has(key))) return { view: 'level', key: key ?? null, hash: raw, tab: 'home' };
-  if (view === 'island' && ctx.islandById.has(key)) return { view, key, hash: raw, tab: 'home' };
-  if (view === 'lesson' && ctx.lessons.has(key)) return { view, key, hash: raw, tab: 'home' };
+  if (view === 'island' && ctx.islandById.has(key)) return { view, key, hash: raw, tab: 'grammar' };
+  if (view === 'lesson' && ctx.lessons.has(key)) return { view, key, hash: raw, tab: 'grammar' };
   if (view === 'cards' && (key === undefined || ctx.decks.has(key))) return { view, key, hash: raw, tab: 'practice' };
   const libraries = { readings: ctx.readings, sprachbausteine: ctx.sprachbausteine };
   if (Object.hasOwn(libraries, view) && (key === undefined || libraries[view].has(key))) return { view, key, hash: raw, tab: 'practice' };
